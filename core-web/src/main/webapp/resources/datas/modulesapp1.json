@@ -1,0 +1,72 @@
+[
+  {
+    "id": "module1",
+    "title": "系统管理",
+    "icon": "resources/images/wrench.png",
+    "menus": [
+      {
+        "id": "menu1",
+        "text": "权限控制",
+        "leaf": false,
+        "icon": "admin/resources/images/lock.png",
+        "children": [
+          {
+            "id": "menu1_cm1",
+            "text": "用户管理",
+            "leaf": true,
+            "icon": "admin/resources/images/group.png",
+            "component": {
+              "id": "module1_menu1_window1",
+              "title": "用户管理",
+              "description": "用户管理面板",
+              "icon": "admin/resources/images/group.png",
+              "componentClass": "Kalix.admin.user.view.User"
+            }
+          },
+          {
+            "id": "menu2_cm3",
+            "text": "资源管理",
+            "leaf": true,
+            "component": {
+              "id": "module2_menu2_window3",
+              "title": "资源管理",
+              "description": "资源管理面板",
+              "icon": "",
+              "componentClass": "AppFrame.view.main.components.Resource"
+            }
+          }
+        ]
+      },
+      {
+        "id": "menu2",
+        "text": "系统常量",
+        "leaf": false,
+        "children": [
+          {
+            "id": "menu2_cm1",
+            "text": "字典管理",
+            "leaf": true,
+            "icon": "admin/resources/images/book.png",
+            "component": {
+              "id": "module1_menu1_window2",
+              "title": "字典管理",
+              "description": "字典管理面板",
+              "icon": "admin/resources/images/book.png",
+              "componentClass": "Kalix.admin.dict.view.Dict"
+            }
+          },
+          {
+            "id": "menu1_cm2",
+            "text": "子菜单2",
+            "leaf": true,
+            "attributes": {
+              "tabId": "haosou",
+              "tabTitle": "好搜",
+              "tabSrc": "http://www.so.com"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,55 @@
+[
+  {
+    "id": "module1",
+    "title": "模块1222",
+    "menus": [
+      {
+        "id": "menu1",
+        "text": "菜单1",
+        "leaf": false,
+        "children": [
+          {
+            "id": "menu1_cm1",
+            "text": "子菜单1222",
+            "parentId": "CHILD1",
+            "leaf": true,
+            "attributes": {
+              "tabId": "haosou",
+              "tabTitle": "好搜",
+              "tabSrc": "http://www.so.com"
+            }
+          }
+        ]
+      },
+      {
+        "id": "menu2",
+        "text": "菜单2222",
+        "leaf": false,
+        "children": [
+          {
+            "id": "menu1_cm2",
+            "text": "子菜单2",
+            "parentId": "CHILD1",
+            "leaf": true,
+            "attributes": {
+              "tabId": "haosou",
+              "tabTitle": "好搜",
+              "tabSrc": "http://www.so.com"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "module2",
+    "title": "模块2222",
+    "menus": [
+      {
+        "id": "module2_c1",
+        "text": "模块2_菜单221",
+        "leaf": true
+      }
+    ]
+  }
+]

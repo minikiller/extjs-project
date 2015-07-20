@@ -1,0 +1,12 @@
+[
+  {
+    "id": "app1",
+    "title": "系统应用",
+    "icon": "/kalix/resources/images/cog.png"
+  },
+  {
+    "id": "app2",
+    "title": "企业应用",
+    "icon": "/kalix/resources/images/lorry_flatbed.png"
+  }
+]
