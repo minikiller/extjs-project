@@ -11,7 +11,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <groupId>cn.com.rexen.extjs.admin</groupId>
-    <artifactId>admin.web</artifactId>
+    <artifactId>cn.com.rexen.extjs.admin.web</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>Extjs :: Admin - Web</name>
     <description>Extjs -Admin - Web</description>

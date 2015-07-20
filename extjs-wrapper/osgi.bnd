@@ -1,2 +1,3 @@
 Bundle-Activator=${bundle.namespace}.internal.InitActivator
 Include-Resource: src/main/webapp,src/main/resources
+Bundle-Category: Rexen Extjs Wrapper

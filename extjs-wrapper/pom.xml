@@ -9,7 +9,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <groupId>cn.com.rexen.extjs.wrapper</groupId>
-    <artifactId>extjs.wrapper</artifactId>
+    <artifactId>cn.com.rexen.extjs.wrapper</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>Extjs :: Wrapper</name>
     <description>Extjs - Wrapper</description>

@@ -81,6 +81,7 @@
             <groupId>cn.com.rexen.core</groupId>
             <artifactId>cn.com.rexen.core.util</artifactId>
             <version>1.0.0-SNAPSHOT</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
