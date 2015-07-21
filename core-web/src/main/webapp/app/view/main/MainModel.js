@@ -16,19 +16,19 @@ Ext.define('Kalix.view.main.MainModel', {
         system: {
             name: '应用开发框架',
             version: "V1.0",
-            icon: "/kalix/resources/images/logo_horizontal.png",
-            background: '/kalix/resources/images/f2.gif',
+            icon: "resources/images/logo_horizontal.png",
+            background: 'resources/images/f2.gif',
             copyright: "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;copyright 吉林锐迅信息技术有限公司"
         },
         user: {
-            url: "/kalix/resources/datas/user.json",
+            url: "resources/datas/user.json",
             quit: "/kalix/logout"
         },
         application: {
-            url: '/kalix/resources/datas/applications.json'
+            url: 'resources/datas/applications.json'
         },
         module: {
-            url: '/kalix/resources/datas/modules'
+            url: 'resources/datas/modules'
         },
         menu: {
             title: '菜单列表'

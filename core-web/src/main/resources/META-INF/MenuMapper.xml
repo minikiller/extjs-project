@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns="http://dozer.sourceforge.net"
+          xsi:schemaLocation="http://dozer.sourceforge.net
+       http://dozer.sourceforge.net/schema/beanmapping.xsd">
+
+    <mapping>
+        <class-a>cn.com.rexen.core.api.web.IMenu</class-a>
+        <class-b>cn.com.rexen.core.api.web.model.MenuBean</class-b>
+        <field>
+            <a>title</a>
+            <b>title</b>
+        </field>
+        <field>
+            <a>text</a>
+            <b>title</b>
+        </field>
+    </mapping>
+</mappings>

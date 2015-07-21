@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="org.apache.shiro.SecurityUtils" %>
+<%@ page import="org.apache.shiro.SecurityUtils,org.apache.shiro.subject.Subject" %>
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -10,13 +10,15 @@
     <link href="/core-web/ext-5.1.0/packages/ext-theme-classic/build/resources/ext-theme-classic-all.css"
           rel="stylesheet"/>
 
-    <script type="text/javascript" src="/kalix/app/loginApp.js"></script>
-    <script type="text/javascript" src="/kalix/js/Config.js"></script>
-    <script type="text/javascript" src="/kalix/js/DateFormat.js"></script>
+    <script type="text/javascript" src="app/loginApp.js"></script>
+    <script type="text/javascript" src="js/Config.js"></script>
+    <script type="text/javascript" src="js/DateFormat.js"></script>
 </head>
 <body>
 <%
-    SecurityUtils.getSubject().logout();
+    Subject subject=SecurityUtils.getSubject();
+    if(subject!=null)
+        subject.logout();
 %>
 </body>
 </html>

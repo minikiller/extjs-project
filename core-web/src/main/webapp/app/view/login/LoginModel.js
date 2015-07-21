@@ -10,6 +10,6 @@ Ext.define('Kalix.view.login.LoginModel', {
     alias: 'viewmodel.login',
     data: {
         title: '系统登陆',
-        loginUrl: "/kalix/login.jsp"
+        loginUrl: "login.jsp"
     }
 });

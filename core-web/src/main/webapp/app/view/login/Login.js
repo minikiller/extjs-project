@@ -16,7 +16,7 @@ Ext.define('Kalix.view.login.Login', {
     viewModel: {
         type: 'login'
     },
-    bodyStyle: "background-image:url('/kalix/resources/images/login_bg.jpg')",
+    bodyStyle: "background-image:url('resources/images/login_bg.jpg')",
     items: [{
         xtype: 'window',
         autoShow: true,
@@ -25,7 +25,7 @@ Ext.define('Kalix.view.login.Login', {
         closable: false,
         resizable: false,
         draggable: false,
-        icon: "/kalix/resources/images/computer.png",
+        icon: "resources/images/computer.png",
         bind: {
             title: '{title}'
         },
@@ -52,6 +52,7 @@ Ext.define('Kalix.view.login.Login', {
                     ]
                 },
                 {
+                    inputType: 'password',
                     fieldLabel: '密码',
                     id: 'passwordId',
                     name: 'password',
