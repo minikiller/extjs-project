@@ -1,4 +1,4 @@
-package cn.com.rexen.core.web;
+package cn.com.rexen.extjs.core.web;
 
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationToken;

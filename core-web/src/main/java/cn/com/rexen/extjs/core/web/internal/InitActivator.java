@@ -1,4 +1,4 @@
-package cn.com.rexen.core.web.internal;
+package cn.com.rexen.extjs.core.web.internal;
 
 import cn.com.rexen.core.util.SystemUtil;
 import org.apache.log4j.Logger;
@@ -10,7 +10,7 @@ import org.osgi.framework.BundleContext;
  */
 public class InitActivator implements BundleActivator {
 
-    private static final String BUNDLE_NAME = " Kalix Core Swagger ";
+    private static final String BUNDLE_NAME = " Extjs Core Web ";
     private static BundleContext context;
     private static Logger logger = Logger.getLogger(InitActivator.class);
 

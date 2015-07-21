@@ -1,4 +1,4 @@
-package cn.com.rexen.core.web;
+package cn.com.rexen.extjs.core.web;
 
 import cn.com.rexen.core.util.JNDIHelper;
 import org.apache.shiro.web.env.WebEnvironment;
