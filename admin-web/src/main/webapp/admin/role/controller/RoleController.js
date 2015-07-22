@@ -21,7 +21,7 @@ Ext.define('Kalix.admin.role.controller.RoleController', {
         var panel = Ext.create("Ext.panel.Panel", {
             border: false,
             autoScroll: true,
-            height: 600,
+            height: 640,
             items: [this.onInitSearchPanel(), this.onInitDataGrid()]
         })
 

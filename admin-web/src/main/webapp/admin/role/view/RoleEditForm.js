@@ -43,8 +43,8 @@ Ext.define('Kalix.admin.role.view.RoleEditForm', {
         {
             xtype: 'textarea',
             fieldLabel: '备注',
-            id: 'descriptionId',
-            name: 'description',
+            id: 'remarkId',
+            name: 'remark',
             beforeLabelTpl: [
                 '<span  >&nbsp;&nbsp;</span>'
             ]

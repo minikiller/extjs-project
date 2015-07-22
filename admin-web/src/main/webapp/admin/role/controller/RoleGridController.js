@@ -18,7 +18,7 @@ Ext.define('Kalix.admin.role.controller.RoleGridController', {
         });
         var win = Ext.create('Ext.Window', {
             width: 400,
-            height: 300,
+            height: 195,
             border: false,
             modal: true,
             //resizable:false,
@@ -49,7 +49,7 @@ Ext.define('Kalix.admin.role.controller.RoleGridController', {
 
         var win = Ext.create('Ext.Window', {
             width: 400,
-            height: 300,
+            height: 195,
             border: false,
             modal: true,
             //resizable:false,
@@ -64,7 +64,7 @@ Ext.define('Kalix.admin.role.controller.RoleGridController', {
      * 批量删除操作.
      */
     onDeleteAll: function () {
-        var selModel = Ext.getCmp("userDataGrid").getSelectionModel();
+        var selModel = Ext.getCmp("roleDataGrid").getSelectionModel();
         if (selModel.hasSelection()) {
             Ext.Msg.confirm("警告", "确定要删除吗？", function (button) {
                 if (button == "yes") {
@@ -128,7 +128,7 @@ Ext.define('Kalix.admin.role.controller.RoleGridController', {
                         var resp = Ext.JSON.decode(response.responseText);
                         Ext.MessageBox.alert(CONFIG.ALTER_TITLE_INFO, resp.msg);
                         if (resp.success) {
-                            var grid = Ext.getCmp("dictDataGrid");
+                            var grid = Ext.getCmp("roleDataGrid");
                             var store = grid.getStore();
                             store.reload();
                         }

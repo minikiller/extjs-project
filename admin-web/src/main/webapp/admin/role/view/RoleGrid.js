@@ -22,7 +22,7 @@ Ext.define('Kalix.admin.role.view.RoleGrid', {
     manageHeight: true,
     selModel: {selType: 'checkboxmodel', mode: "SIMPLE"},
     bind: {
-        store: '{dictStore}'
+        store: '{roleStore}'
     },
     bbar: [{
         xtype: 'pagingToolBarComponent',
@@ -32,20 +32,20 @@ Ext.define('Kalix.admin.role.view.RoleGrid', {
     }],
     columns: [
         {text: '编号', dataIndex: 'id'},
-        {text: '名称', dataIndex: 'label', width: 60},
+        {text: '名称', dataIndex: 'name', width: 120},
         {text: '创建人', dataIndex: 'createBy', width: 60},
         {
-            text: '创建日期', dataIndex: 'creationDate', width: 60, renderer: function (value) {
+            text: '创建日期', dataIndex: 'creationDate', width: 120, renderer: function (value) {
             var createDate = new Date(value);
             return createDate.format("yyyy-MM-dd hh:mm:ss");
         }
         },
         {text: '更新人', dataIndex: 'updateBy', width: 60},
         {
-            text: '更新日期', dataIndex: 'updateDate', width: 60, renderer: function (value) {
+            text: '更新日期', dataIndex: 'updateDate', width: 120, renderer: function (value) {
             var updateDate = new Date(value);
             return updateDate.format("yyyy-MM-dd hh:mm:ss");
-        }
+          }
         },
         {
             header: '操作',
@@ -65,10 +65,10 @@ Ext.define('Kalix.admin.role.view.RoleGrid', {
     ],
     tbar: [
         {
-            text: '新增', icon: 'admin/resources/images/book_add.png', handler: 'onAdd'
+            text: '新增', icon: 'admin/resources/images/user_add.png', handler: 'onAdd'
         }, "-",
         {
-            text: '批量删除', icon: 'admin/resources/images/book_delete.png', handler: 'onDeleteAll'
+            text: '批量删除', icon: 'admin/resources/images/user_delete.png', handler: 'onDeleteAll'
         }, "-"]
 
 });

@@ -21,7 +21,7 @@ Ext.define('Kalix.view.login.Login', {
         xtype: 'window',
         autoShow: true,
         width: 400,
-        height: 200,
+        height: 160,
         closable: false,
         resizable: false,
         draggable: false,
@@ -92,10 +92,10 @@ Ext.define('Kalix.view.login.Login', {
                  }*/],
             buttons: [
                 {
-                    text: '登陆', type: 'button', handler: 'onLogin'
+                    text: '登陆', type: 'button', glyph: 0xf002, handler: 'onLogin'
                 },
                 {
-                    text: '重置', handler: 'onReset'
+                    text: '重置', glyph: 0xf0e2,handler: 'onReset'
                 }
             ]
         }]

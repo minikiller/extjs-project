@@ -7,7 +7,7 @@
  */
 Ext.define('Kalix.admin.role.controller.RoleFormController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.dictFormController',
+    alias: 'controller.roleFormController',
 
     /**
      * 重置操作.
@@ -28,12 +28,12 @@ Ext.define('Kalix.admin.role.controller.RoleFormController', {
      * @returns {Ext.panel.Panel}
      */
     onSave: function () {
-        var form = Ext.getCmp("dictAddForm");
+        var form = Ext.getCmp("roleAddForm");
         if (form.isValid()) {
             form.submit({
                 success: function (form, action) {
                     Ext.Msg.alert(CONFIG.ALTER_TITLE_SUCCESS, action.result.msg);
-                    var grid = Ext.getCmp("dictDataGrid");
+                    var grid = Ext.getCmp("roleDataGrid");
                     var store = grid.getStore();
                     store.reload();
                 },
@@ -48,12 +48,12 @@ Ext.define('Kalix.admin.role.controller.RoleFormController', {
      * @returns {Ext.panel.Panel}
      */
     onUpdate: function () {
-        var form = Ext.getCmp("dictEditForm");
+        var form = Ext.getCmp("roleEditForm");
         if (form.isValid()) {
             form.submit({
                 success: function (form, action) {
                     Ext.Msg.alert(CONFIG.ALTER_TITLE_SUCCESS, action.result.msg);
-                    var grid = Ext.getCmp("dictDataGrid");
+                    var grid = Ext.getCmp("roleDataGrid");
                     var store = grid.getStore();
                     store.reload();
                 },

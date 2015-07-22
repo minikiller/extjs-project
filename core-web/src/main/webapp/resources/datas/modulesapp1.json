@@ -25,14 +25,15 @@
           },
           {
             "id": "menu2_cm3",
-            "text": "资源管理",
+            "text": "角色管理",
             "leaf": true,
+            "icon": "admin/resources/images/user.png",
             "component": {
               "id": "module2_menu2_window3",
-              "title": "资源管理",
-              "description": "资源管理面板",
-              "icon": "",
-              "componentClass": "AppFrame.view.main.components.Resource"
+              "title": "角色管理",
+              "description": "角色管理面板",
+              "icon": "admin/resources/images/user.png",
+              "componentClass": "Kalix.admin.role.view.Role"
             }
           }
         ]
@@ -57,12 +58,15 @@
           },
           {
             "id": "menu1_cm2",
-            "text": "子菜单2",
+            "text": "机构管理",
             "leaf": true,
-            "attributes": {
-              "tabId": "haosou",
-              "tabTitle": "好搜",
-              "tabSrc": "http://www.so.com"
+            "icon": "admin/resources/images/book.png",
+            "component": {
+              "id": "module1_menu1_window3",
+              "title": "机构管理",
+              "description": "机构管理面板",
+              "icon": "admin/resources/images/book.png",
+              "componentClass": "Kalix.admin.org.view.Org"
             }
           }
         ]

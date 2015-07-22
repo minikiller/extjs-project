@@ -82,7 +82,7 @@ Ext.define('Kalix.admin.dict.view.DictAddForm', {
             text: '保存',
             type: 'submit',
             handler: 'onSave',
-            glyph: 0xf0c7,
+            glyph: 0xf0c7
         },
         {
             text: '重置',
