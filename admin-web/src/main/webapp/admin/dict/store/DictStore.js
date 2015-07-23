@@ -15,7 +15,7 @@ Ext.define('Kalix.admin.dict.store.DictStore', {
     pageSize: 10,
     proxy: {
         type: "ajax",
-        url: '/camel/rest/dicts',
+        url: '/kalix/camel/rest/dicts',
         reader: {
             type: "json",
             root: "data",

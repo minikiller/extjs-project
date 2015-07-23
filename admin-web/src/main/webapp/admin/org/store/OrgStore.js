@@ -11,7 +11,6 @@ Ext.define('Kalix.admin.org.store.OrgStore', {
     xtype: 'orgStore',
     storeId: "orgStore",
     model: "Kalix.admin.org.model.OrgModel",
-    autoLoad: true,
     proxy: {
         type: "ajax",
         url: '/kalix/camel/rest/orgs'

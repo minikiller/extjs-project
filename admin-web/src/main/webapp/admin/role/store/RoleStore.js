@@ -15,7 +15,7 @@ Ext.define('Kalix.admin.role.store.RoleStore', {
     pageSize: 10,
     proxy: {
         type: "ajax",
-        url: '/camel/rest/roles',
+        url: '/kalix/camel/rest/roles',
         reader: {
             type: "json",
             root: "data",

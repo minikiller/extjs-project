@@ -59,6 +59,7 @@ Ext.define('Kalix.admin.dict.view.DictAddForm', {
             ]
         },
         {
+            xtype : 'numberfield',
             fieldLabel: '排序',
             id: 'sortId',
             name: 'sort',

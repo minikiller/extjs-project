@@ -42,6 +42,7 @@
         "id": "menu2",
         "text": "系统常量",
         "leaf": false,
+        "icon": "admin/resources/images/bricks.png",
         "children": [
           {
             "id": "menu2_cm1",
@@ -49,7 +50,7 @@
             "leaf": true,
             "icon": "admin/resources/images/book.png",
             "component": {
-              "id": "module1_menu1_window2",
+              "id": "module1_menu2_window1",
               "title": "字典管理",
               "description": "字典管理面板",
               "icon": "admin/resources/images/book.png",
@@ -60,13 +61,37 @@
             "id": "menu1_cm2",
             "text": "机构管理",
             "leaf": true,
-            "icon": "admin/resources/images/book.png",
+            "icon": "admin/resources/images/script.png",
             "component": {
-              "id": "module1_menu1_window3",
+              "id": "module1_menu2_window2",
               "title": "机构管理",
               "description": "机构管理面板",
-              "icon": "admin/resources/images/book.png",
+              "icon": "admin/resources/images/script.png",
               "componentClass": "Kalix.admin.org.view.Org"
+            }
+          },
+          {
+            "id": "menu1_cm3",
+            "text": "部门管理",
+            "leaf": true,
+            "icon": "admin/resources/images/building.png",
+            "component": {
+              "id": "module1_menu2_window3",
+              "title": "部门管理",
+              "description": "部门管理面板",
+              "icon": "admin/resources/images/building.png",
+              "componentClass": "Kalix.admin.dep.view.Dep"
+            }
+          },
+          {
+            "id": "menu1_cm4",
+            "text": "岗位管理",
+            "leaf": true,
+            "component": {
+              "id": "module1_menu2_window4",
+              "title": "岗位管理",
+              "description": "岗位管理面板",
+              "componentClass": "Kalix.admin.dep.view.Dep"
             }
           }
         ]

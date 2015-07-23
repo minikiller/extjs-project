@@ -17,14 +17,15 @@ Ext.define('Kalix.admin.org.view.OrgGrid', {
     viewModel: {
         type: 'orgViewModel'
     },
+    border:false,
     columnLines : true,
     stripeRows: true,
-    root:{
+    /*root:{
         id:'-1',
         name:'根机构'
-    },
+    },*/
     manageHeight: true,
-    rootVisible : true,
+    rootVisible : false,
     columns: [
         {text: '编号', dataIndex: 'id',hidden:true },
         {text: '上级机构', dataIndex: 'parentName',hidden:true },
@@ -69,7 +70,7 @@ Ext.define('Kalix.admin.org.view.OrgGrid', {
     ],
     tbar: [
         {
-            text: '新增', icon: 'admin/resources/images/book_add.png', handler: 'onAdd'
+            text: '新增', icon: 'admin/resources/images/script_add.png', handler: 'onAdd'
         }]
 
 });

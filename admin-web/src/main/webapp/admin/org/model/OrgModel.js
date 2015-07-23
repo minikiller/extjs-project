@@ -10,6 +10,7 @@ Ext.define('Kalix.admin.org.model.OrgModel', {
     fields: [
         {name: 'id', type: 'string'},
         {name: 'name', type: 'string'},
+        {name: 'text', type: 'string'},
         {name: 'code', type: 'string'},
         {name: 'centerCode', type: 'string'},
         {name: 'leaf', type: 'boolean'},
