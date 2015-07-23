@@ -14,6 +14,6 @@ Ext.define('Kalix.admin.org.viewModel.OrgViewModel', {
     data: {
         addTitle: '新增机构',
         editTitle: '编辑机构',
-        url: '/camel/rest/orgs'
+        url: '/kalix/camel/rest/orgs'
     }
 });

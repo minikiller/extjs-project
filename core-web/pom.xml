@@ -45,6 +45,12 @@
             <artifactId>pax-web-jetty-bundle</artifactId>
             <version>3.2.3</version>
         </dependency>
+        <dependency>
+            <groupId>cn.com.rexen.core</groupId>
+            <artifactId>cn.com.rexen.core.api</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
 </project>

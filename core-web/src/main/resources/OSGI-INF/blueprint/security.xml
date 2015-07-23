@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint
+        xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+
+    <!--<cm:property-placeholder persistent-id="rexen.project.urgent" update-strategy="reload" >
+        <cm:default-properties>
+            <cm:property name="filter" value="(security=cas)"/>
+            &lt;!&ndash;<cm:property name="urgent.realm" value="(&amp;(key=urgent)(security=cas))"/>&ndash;&gt;
+        </cm:default-properties>
+    </cm:property-placeholder>-->
+</blueprint>
