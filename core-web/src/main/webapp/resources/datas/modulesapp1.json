@@ -35,6 +35,19 @@
               "icon": "admin/resources/images/user.png",
               "componentClass": "Kalix.admin.role.view.Role"
             }
+          },
+          {
+            "id": "menu2_cm4",
+            "text": "工作组管理",
+            "leaf": true,
+            "icon": "admin/resources/images/user.png",
+            "component": {
+              "id": "module2_menu2_window4",
+              "title": "工作组管理",
+              "description": "工作组管理面板",
+              "icon": "admin/resources/images/user.png",
+              "componentClass": "Kalix.admin.workGroup.view.WorkGroup"
+            }
           }
         ]
       },

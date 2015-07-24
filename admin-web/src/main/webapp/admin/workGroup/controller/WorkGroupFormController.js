@@ -1,39 +1,39 @@
 /**
- * 角色表单控制器
+ * 工作组表单控制器
  *
  * @author majian <br/>
  *         date:2015-6-18
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.role.controller.RoleFormController', {
+Ext.define('Kalix.admin.workGroup.controller.WorkGroupFormController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.roleFormController',
+    alias: 'controller.workGroupFormController',
 
     /**
      * 重置操作.
      * @returns {Ext.panel.Panel}
      */
     onAddReset: function () {
-        Ext.getCmp("roleAddForm").reset();
+        Ext.getCmp("workGroupAddForm").reset();
     },
     /**
      * 重置操作.
      * @returns {Ext.panel.Panel}
      */
     onEditReset: function () {
-        Ext.getCmp("roleEditForm").reset();
+        Ext.getCmp("workGroupEditForm").reset();
     },
     /**
      * 保存操作.
      * @returns {Ext.panel.Panel}
      */
     onSave: function () {
-        var form = Ext.getCmp("roleAddForm");
+        var form = Ext.getCmp("workGroupAddForm");
         if (form.isValid()) {
             form.submit({
                 success: function (form, action) {
                     Ext.Msg.alert(CONFIG.ALTER_TITLE_SUCCESS, action.result.msg);
-                    var grid = Ext.getCmp("roleDataGrid");
+                    var grid = Ext.getCmp("workGroupDataGrid");
                     var store = grid.getStore();
                     store.reload();
                 },
@@ -48,12 +48,12 @@ Ext.define('Kalix.admin.role.controller.RoleFormController', {
      * @returns {Ext.panel.Panel}
      */
     onUpdate: function () {
-        var form = Ext.getCmp("roleEditForm");
+        var form = Ext.getCmp("workGroupEditForm");
         if (form.isValid()) {
             form.submit({
                 success: function (form, action) {
                     Ext.Msg.alert(CONFIG.ALTER_TITLE_SUCCESS, action.result.msg);
-                    var grid = Ext.getCmp("roleDataGrid");
+                    var grid = Ext.getCmp("workGroupDataGrid");
                     var store = grid.getStore();
                     store.reload();
                 },
