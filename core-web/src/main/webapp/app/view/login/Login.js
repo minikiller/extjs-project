@@ -92,10 +92,10 @@ Ext.define('Kalix.view.login.Login', {
                  }*/],
             buttons: [
                 {
-                    text: '登陆', type: 'button', glyph: 0xf002, handler: 'onLogin'
+                    text: '登陆', type: 'button', icon: 'resources/images/key.png', handler: 'onLogin'
                 },
                 {
-                    text: '重置', glyph: 0xf0e2,handler: 'onReset'
+                    text: '重置', icon: 'resources/images/arrow_undo.png', handler: 'onReset'
                 }
             ]
         }]
