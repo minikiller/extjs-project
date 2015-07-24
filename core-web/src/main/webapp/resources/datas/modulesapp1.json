@@ -95,19 +95,17 @@
               "icon": "admin/resources/images/building.png",
               "componentClass": "Kalix.admin.dep.view.Dep"
             }
+          },
+          {
+            "id": "menu1_cm441",
+            "text": "岗位管理",
+            "leaf": true,
+            "component": {
+              "id": "module1_menu2_window441",
+              "title": "岗位管理",
+              "description": "岗位管理面板"
+            }
           }
-          /*,
-                    {
-                      "id": "menu1_cm441",
-                      "text": "岗位管理",
-                      "leaf": true,
-                      "component": {
-                        "id": "module1_menu2_window441",
-                        "title": "岗位管理",
-                        "description": "岗位管理面板",
-                        "componentClass": "Kalix.admin.dep.view.Dep"
-                      }
-                    }*/
         ]
       }
     ]
