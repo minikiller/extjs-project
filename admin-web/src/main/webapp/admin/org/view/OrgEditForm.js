@@ -32,6 +32,16 @@ Ext.define('Kalix.admin.org.view.OrgEditForm', {
         {xtype: 'hiddenfield', name: 'id'},
         {xtype: 'hiddenfield', name: 'parentId',id:'parentIdId',value:'-1'},
         {xtype: 'hiddenfield', name: 'isLeaf',value:'1'},
+        {xtype: 'hiddenfield', name: 'areaId', id: 'areaIdId', value: '-1'},
+        {
+            fieldLabel: '所属区域',
+            id: "areaName",
+            isFormField: false,
+            disabled: true,
+            beforeLabelTpl: [
+                '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
+            ]
+        },
         {
             fieldLabel: '上级机构',
             id:"parentName",

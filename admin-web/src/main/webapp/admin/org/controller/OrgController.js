@@ -9,6 +9,8 @@ Ext.define('Kalix.admin.org.controller.OrgController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.orgController',
     requires: [
+        "Kalix.admin.area.view.AreaList",
+        "Kalix.admin.org.view.OrgList",
         'Kalix.admin.org.view.OrgGrid'
     ],
     /**
@@ -19,12 +21,78 @@ Ext.define('Kalix.admin.org.controller.OrgController', {
 
         var panel = Ext.create("Ext.panel.Panel", {
             border: false,
+            layout: "border",
             autoScroll: true,
             height: 630,
-            items: [ this.onInitDataGrid()]
+            items: [this.onInitAreaList(), this.onInitDataGrid()]
         })
 
         return panel;
+    },
+    /**
+     * 区域单击
+     */
+    onAreaClick: function (view, record, item, index, e) {
+        var grid = Ext.getCmp("orgDataGrid");
+        grid.areaId = record.data.id;
+        grid.areaName = record.data.name;
+        var store = grid.getStore();
+        store.setProxy({
+            type: "ajax",
+            url: '/kalix/camel/rest/orgs/area/' + record.data.id
+        });
+        store.reload();
+    },
+    /**
+     * 区域刷新
+     */
+    onAreaRefersh: function () {
+        Ext.getCmp("orgAreaList").getStore().reload();
+    },
+    /**
+     * 区域展开
+     * @constructor
+     */
+    onAreaAxpandAll: function () {
+        Ext.getCmp("orgAreaList").expandAll(function () {
+        });
+    },
+    /**
+     * 区域收起
+     * @constructor
+     */
+    onAreaCollapseAll: function () {
+        Ext.getCmp("orgAreaList").collapseAll(function () {
+        });
+    },
+    /**
+     * 初始化区域列表.
+     * @returns {Ext.panel.Panel}
+     */
+    onInitAreaList: function () {
+        var orgListPanel = Ext.create("Kalix.admin.area.view.AreaList", {
+            store: Ext.create("Kalix.admin.area.store.AreaStore"),
+            region: "west",
+            id: "orgAreaList",
+            title: '区域列表',
+            listeners: {
+                itemClick: this.onAreaClick
+            },
+            tbar: [
+                {
+                    text: '刷新', icon: 'admin/resources/images/shape_square_go.png',
+                    handler: this.onAreaRefersh
+                },
+                {
+                    text: '展开', icon: 'admin/resources/images/arrow_down.png',
+                    handler: this.onAreaAxpandAll
+                },
+                {
+                    text: '收起', icon: 'admin/resources/images/arrow_up.png',
+                    handler: this.onAreaCollapseAll
+                }]
+        });
+        return orgListPanel;
     },
     /**
      * 初始化数据表格.

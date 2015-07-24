@@ -58,6 +58,19 @@
             }
           },
           {
+            "id": "menu1_cm55",
+            "text": "区域管理",
+            "leaf": true,
+            "icon": "admin/resources/images/shape_square.png",
+            "component": {
+              "id": "module1_menu2_window55",
+              "title": "区域管理",
+              "description": "区域管理面板",
+              "icon": "admin/resources/images/shape_square.png",
+              "componentClass": "Kalix.admin.area.view.Area"
+            }
+          },
+          {
             "id": "menu1_cm2",
             "text": "机构管理",
             "leaf": true,
@@ -82,18 +95,19 @@
               "icon": "admin/resources/images/building.png",
               "componentClass": "Kalix.admin.dep.view.Dep"
             }
-          },
-          {
-            "id": "menu1_cm4",
-            "text": "岗位管理",
-            "leaf": true,
-            "component": {
-              "id": "module1_menu2_window4",
-              "title": "岗位管理",
-              "description": "岗位管理面板",
-              "componentClass": "Kalix.admin.dep.view.Dep"
-            }
           }
+          /*,
+                    {
+                      "id": "menu1_cm441",
+                      "text": "岗位管理",
+                      "leaf": true,
+                      "component": {
+                        "id": "module1_menu2_window441",
+                        "title": "岗位管理",
+                        "description": "岗位管理面板",
+                        "componentClass": "Kalix.admin.dep.view.Dep"
+                      }
+                    }*/
         ]
       }
     ]

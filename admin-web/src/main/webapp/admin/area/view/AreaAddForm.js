@@ -1,23 +1,23 @@
 /**
- * 机构新增表单
+ * 区域新增表单
  *
  * @author majian <br/>
- *         date:2015-7-21
+ *         date:2015-7-24
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.org.view.OrgAddForm', {
+Ext.define('Kalix.admin.area.view.AreaAddForm', {
     extend: 'Ext.FormPanel',
     requires: [
-        'Kalix.admin.org.viewModel.OrgViewModel',
-        'Kalix.admin.org.controller.OrgFormController'
+        'Kalix.admin.area.viewModel.AreaViewModel',
+        'Kalix.admin.area.controller.AreaFormController'
     ],
-    alias: 'widget.orgAddForm',
+    alias: 'widget.areaAddForm',
     viewModel: {
-        type: 'orgViewModel'
+        type: 'areaViewModel'
     },
-    controller: 'orgFormController',
-    id: "orgAddForm",
-    xtype: "orgAddForm",
+    controller: 'areaFormController',
+    id: "areaAddForm",
+    xtype: "areaAddForm",
     labelAlign: 'center',
     labelWidth: 75,
     autoWidth: true,
@@ -28,23 +28,13 @@ Ext.define('Kalix.admin.org.view.OrgAddForm', {
     buttonAlign: "center",
     defaultType: 'textfield',
     items: [
-        {xtype: 'hiddenfield', name: 'parentId',id:'parentIdId',value:'-1'},
-        {xtype: 'hiddenfield', name: 'isLeaf',value:'1'},
-        {xtype: 'hiddenfield', name: 'areaId', id: 'areaIdId', value: '-1'},
+        {xtype: 'hiddenfield', name: 'parentId', id: 'parentIdId', value: '-1'},
+        {xtype: 'hiddenfield', name: 'isLeaf', value: '1'},
         {
-            fieldLabel: '所属区域',
-            id: "areaName",
+            fieldLabel: '上级区域',
+            id: "parentName",
             isFormField: false,
             disabled: true,
-            beforeLabelTpl: [
-                '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
-            ]
-        },
-        {
-            fieldLabel: '上级机构',
-            id:"parentName",
-            isFormField: false,
-            disabled:true,
             beforeLabelTpl: [
                 '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
             ]
@@ -60,11 +50,11 @@ Ext.define('Kalix.admin.org.view.OrgAddForm', {
             ]
         },
         {
-            fieldLabel: '机构代码',
+            fieldLabel: '区域代码',
             id: 'codeId',
             name: 'code',
             allowBlank: false,
-            blankText: '机构不能为空!',
+            blankText: '区域不能为空!',
             beforeLabelTpl: [
                 '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
             ]
@@ -78,6 +68,16 @@ Ext.define('Kalix.admin.org.view.OrgAddForm', {
             beforeLabelTpl: [
                 '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
             ]
+        },
+        {
+            fieldLabel: '纬度',
+            id: 'wdId',
+            name: 'wd'
+        },
+        {
+            fieldLabel: '经度',
+            id: 'jdId',
+            name: 'jd'
         }
     ],
     buttons: [

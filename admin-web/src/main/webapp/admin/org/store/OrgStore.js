@@ -10,9 +10,5 @@ Ext.define('Kalix.admin.org.store.OrgStore', {
     alias: 'store.orgStore',
     xtype: 'orgStore',
     storeId: "orgStore",
-    model: "Kalix.admin.org.model.OrgModel",
-    proxy: {
-        type: "ajax",
-        url: '/kalix/camel/rest/orgs'
-    }
+    model: "Kalix.admin.org.model.OrgModel"
 });

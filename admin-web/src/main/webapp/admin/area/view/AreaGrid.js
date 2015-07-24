@@ -1,43 +1,39 @@
 /**
- * 机构表格
+ * 区域表格
  * @author majian <br/>
- *         date:2015-7-21
+ *         date:2015-7-24
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.org.view.OrgGrid', {
+Ext.define('Kalix.admin.area.view.AreaGrid', {
     extend: 'Ext.tree.Panel',
     requires: [
-        'Kalix.admin.org.viewModel.OrgViewModel',
-        'Kalix.admin.org.controller.OrgGridController'
+        'Kalix.admin.area.viewModel.AreaViewModel',
+        'Kalix.admin.area.controller.AreaGridController'
     ],
-    alias: 'widget.orgGrid',
-    id: "orgDataGrid",
-    xtype: 'orgGrid',
-    controller: 'orgGridController',
+    alias: 'widget.areaGrid',
+    id: "areaDataGrid",
+    xtype: 'areaGrid',
+    controller: 'areaGridController',
     viewModel: {
-        type: 'orgViewModel'
+        type: 'areaViewModel'
     },
-    data: {
-        areaId: null,
-        areaName: null
-    },
-    border:false,
-    columnLines : true,
+    border: false,
+    columnLines: true,
     stripeRows: true,
     /*root:{
-        id:'-1',
-        name:'根机构'
-    },*/
+     id:'-1',
+     name:'根机构'
+     },*/
     manageHeight: true,
-    rootVisible : false,
-    region: "center",
-    title: '机构列表',
+    rootVisible: false,
     columns: [
-        {text: '编号', dataIndex: 'id',hidden:true },
-        {text: '上级机构', dataIndex: 'parentName',hidden:true },
-        {xtype : 'treecolumn', text: '名称',dataIndex: 'name', width: 255},
-        {text: '机构代码', dataIndex: 'code', width: 60},
+        {text: '编号', dataIndex: 'id', hidden: true},
+        {text: '上级区域', dataIndex: 'parentName', hidden: true},
+        {xtype: 'treecolumn', text: '名称', dataIndex: 'name', width: 255},
+        {text: '区域代码', dataIndex: 'code', width: 60},
         {text: '中心代码', dataIndex: 'centerCode', width: 60},
+        {text: '经度', dataIndex: 'jd', width: 60},
+        {text: '纬度', dataIndex: 'wd', width: 60},
         {text: '创建人', dataIndex: 'createBy', width: 60},
         {
             text: '创建日期', dataIndex: 'creationDate', width: 160, renderer: function (value) {
@@ -60,15 +56,15 @@ Ext.define('Kalix.admin.org.view.OrgGrid', {
                 icon: "resources/images/pencil.png",
                 tooltip: '修改',
                 handler: 'onEdit',
-                isDisabled: function(view, rowIdx, colIdx, item, record) {
-                    return record.data.name=="根机构"?true:false;
+                isDisabled: function (view, rowIdx, colIdx, item, record) {
+                    return record.data.name == "根机构" ? true : false;
                 }
             }, {
                 icon: "resources/images/cancel.png",
                 tooltip: '删除',
                 handler: 'onDelete',
-                isDisabled: function(view, rowIdx, colIdx, item, record) {
-                    return record.data.name=="根机构"?true:false;
+                isDisabled: function (view, rowIdx, colIdx, item, record) {
+                    return record.data.name == "根机构" ? true : false;
                 }
 
             }]
@@ -76,9 +72,9 @@ Ext.define('Kalix.admin.org.view.OrgGrid', {
     ],
     tbar: [
         {
-            text: '新增', icon: 'admin/resources/images/script_add.png', handler: 'onAdd'
+            text: '新增', icon: 'admin/resources/images/shape_square_add.png', handler: 'onAdd'
         }, {
-            text: '刷新', icon: 'admin/resources/images/script_go.png', handler: 'onRefersh'
+            text: '刷新', icon: 'admin/resources/images/shape_square_go.png', handler: 'onRefersh'
         }]
 
 });

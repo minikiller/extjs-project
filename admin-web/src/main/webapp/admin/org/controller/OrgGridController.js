@@ -9,14 +9,30 @@ Ext.define('Kalix.admin.org.controller.OrgGridController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.orgGridController',
     /**
+     * 刷新.
+     * @returns {Ext.panel.Panel}
+     */
+    onRefersh: function () {
+        var grid = Ext.getCmp("orgDataGrid");
+        var store = grid.getStore();
+        store.reload();
+    },
+    /**
      * 打开新增操作.
      * @returns {Ext.panel.Panel}
      */
     onAdd: function () {
+
+        if (this.getView().areaId == null || this.getView().areaName == null) {
+            Ext.Msg.alert(CONFIG.ALTER_TITLE_FAILURE, "请选择一个区域!");
+            return;
+        }
         var rows=Ext.getCmp("orgDataGrid").getSelectionModel().getSelection();
         var addFormPanel = Ext.create('Kalix.admin.org.view.OrgAddForm', {
             url: this.getView().getViewModel().get("url")
         });
+        addFormPanel.getComponent("areaIdId").setValue(this.getView().areaId);
+        addFormPanel.getComponent("areaName").setValue(this.getView().areaName);
         if(rows!=null&&rows.length>0){
             if(rows[0]!=null){
                 addFormPanel.getComponent("parentName").setValue(rows[0].data.name);
@@ -28,11 +44,11 @@ Ext.define('Kalix.admin.org.controller.OrgGridController', {
         }
         var win = Ext.create('Ext.Window', {
             width: 400,
-            height: 220,
+            height: 250,
             border: false,
             modal: true,
             //resizable:false,
-            icon: 'admin/resources/images/book_add.png',
+            icon: 'admin/resources/images/script_add.png',
             title: this.getView().getViewModel().get("addTitle"),
             items: [addFormPanel]
         });
@@ -56,16 +72,18 @@ Ext.define('Kalix.admin.org.controller.OrgGridController', {
             code: rec.data.code,
             centerCode: rec.data.centerCode
         });
+        editFormPanel.getComponent("areaIdId").setValue(this.getView().areaId);
+        editFormPanel.getComponent("areaName").setValue(this.getView().areaName);
         editFormPanel.getComponent("parentName").setValue(rec.data.parentName);
         editFormPanel.loadRecord(OrgModel);
 
         var win = Ext.create('Ext.Window', {
             width: 400,
-            height: 220,
+            height: 250,
             border: false,
             modal: true,
             //resizable:false,
-            icon: 'admin/resources/images/book_edit.png',
+            icon: 'admin/resources/images/script_edit.png',
             title: this.getView().getViewModel().get("editTitle"),
             items: [editFormPanel]
         });
