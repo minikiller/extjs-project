@@ -1,4 +1,4 @@
-package cn.com.rexen.extjs.admin.web.internal;
+package cn.com.rexen.extjs.notice.web.internal;
 
 import cn.com.rexen.core.util.SystemUtil;
 import org.apache.log4j.Logger;
@@ -12,7 +12,7 @@ import org.osgi.service.http.HttpService;
  */
 public class InitActivator implements BundleActivator {
 
-    private static final String BUNDLE_NAME = " Extjs Admin Web ";
+    private static final String BUNDLE_NAME = " Extjs Notice Web ";
     private static BundleContext context;
     private static Logger logger = Logger.getLogger(InitActivator.class);
     private ServiceReference reference;
@@ -24,8 +24,8 @@ public class InitActivator implements BundleActivator {
 
         reference = bundleContext.getServiceReference(HttpService.class.getName());
         HttpService httpService = (HttpService) bundleContext.getService(reference);
-        httpService.registerResources("/kalix/app/admin", "/admin", null);
-        httpService.registerResources("/kalix/admin/resources/images", "/resources/images", null);
+        httpService.registerResources("/kalix/app/notice", "/notice", null);
+        httpService.registerResources("/kalix/notice/resources/images", "/resources/images", null);
     }
 
     @Override

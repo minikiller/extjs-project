@@ -110,6 +110,19 @@
             }
           },
           {
+            "id": "menu1_cm4",
+            "text": "公告管理",
+            "leaf": true,
+            "icon": "admin/resources/images/building.png",
+            "component": {
+              "id": "module1_menu2_window4",
+              "title": "公告管理",
+              "description": "公告管理面板",
+              "icon": "admin/resources/images/building.png",
+              "componentClass": "Kalix.notice.view.Notice"
+            }
+          },
+          {
             "id": "menu1_cm441",
             "text": "岗位管理",
             "leaf": true,

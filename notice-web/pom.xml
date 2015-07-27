@@ -10,11 +10,11 @@
         <groupId>cn.com.rexen.extjs</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <groupId>cn.com.rexen.extjs.admin</groupId>
-    <artifactId>cn.com.rexen.extjs.admin.web</artifactId>
+    <groupId>cn.com.rexen.extjs.notice</groupId>
+    <artifactId>cn.com.rexen.extjs.notice.web</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>Extjs :: Admin - Web</name>
-    <description>Extjs -Admin - Web</description>
+    <name>Extjs :: Notice - Web</name>
+    <description>Extjs :: Notice - Web</description>
     <packaging>bundle</packaging>
 
     <properties>

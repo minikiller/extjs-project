@@ -25,7 +25,7 @@ Ext.define('Kalix.view.main.Main', {
         type: 'border'
     },
     listeners: {
-        resize: 'onResize'
+        //resize: 'onResize'
     },
 
     items: [{
