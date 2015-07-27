@@ -88,17 +88,22 @@ Ext.define('Kalix.view.main.region.Top', {
                 }]
         };
 
+
+        var currentUserName = Ext.util.Cookies.get('currentUserName');
+        if (currentUserName != null) {
+            user.setText(currentUserName);
+        }
         //初始化用户
-        Ext.Ajax.request({
-            url: this.getViewModel().get("user.url"),
-            method: "GET",
-            callback: function (options, success, response) {
-                var _user = Ext.JSON.decode(response.responseText);
-                if (_user) {
-                    user.setText(eval("_user.name"));
-                }
-            }
-        });
+        //Ext.Ajax.request({
+        //    url: this.getViewModel().get("user.url"),
+        //    method: "GET",
+        //    callback: function (options, success, response) {
+        //        var _user = Ext.JSON.decode(response.responseText);
+        //        if (_user) {
+        //            user.setText(eval("_user.name"));
+        //        }
+        //    }
+        //});
 
         this.callParent(arguments);
     },

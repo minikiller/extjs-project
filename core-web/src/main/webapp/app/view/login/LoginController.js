@@ -26,6 +26,7 @@ Ext.define('Kalix.view.login.LoginController', {
                         return;
                     }
                     if (resp.location != null) {
+                        Ext.util.Cookies.set('currentUserName', resp.user.name);
                         window.location.href = resp.location;
                     }
                 },
