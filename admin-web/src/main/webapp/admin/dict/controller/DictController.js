@@ -43,13 +43,13 @@ Ext.define('Kalix.admin.dict.controller.DictController', {
                 name: 'username',
                 allowBlank: true,
                 emptyText: "请输入用户名",
-                id: 'username'
+                itemId: 'username'
             }, {
                 fieldLabel: '昵称',
                 name: 'nickname',
                 allowBlank: true,
                 emptyText: "请输入用户昵称",
-                id: 'nickname'
+                itemId: 'nickname'
             }, {
                 xtype: 'combobox',
                 fieldLabel: '性别',
@@ -58,7 +58,7 @@ Ext.define('Kalix.admin.dict.controller.DictController', {
                 displayField: 'text',
                 valueField: 'sex',
                 name: 'sex',
-                id: 'sex',
+                itemId: 'sex',
                 allowBlank: true
             }, {
                 fieldLabel: '注册时间从',
@@ -67,7 +67,7 @@ Ext.define('Kalix.admin.dict.controller.DictController', {
                 readOnly: false,
                 format: 'Y-m-d H:i:s',
                 allowBlank: true,
-                id: 'registDateFrom'
+                itemId: 'registDateFrom'
             }, {
                 fieldLabel: '到',
                 name: 'registDate',
@@ -75,7 +75,7 @@ Ext.define('Kalix.admin.dict.controller.DictController', {
                 readOnly: false,
                 format: 'Y-m-d H:i:s',
                 allowBlank: true,
-                id: 'registDateTo'
+                itemId: 'registDateTo'
             }]
         });
         var formPanel = Ext.create('Ext.form.FormPanel', {
@@ -91,19 +91,19 @@ Ext.define('Kalix.admin.dict.controller.DictController', {
                 glyph: 0xf002,
                 type: 'submit',
                 handler: function () {
-                    store.on('beforeload', function () {
-                        store.proxy.extraParams = {
-                            username_LIKE_STRING: Ext.getCmp('username')
-                                .getValue(),
-                            nickname_LIKE_STRING: Ext.getCmp('nickname')
-                                .getValue(),
-                            sex_EQ_INT: Ext.getCmp('sex').getValue(),
-                            registDate_GT_DATE: Ext.getCmp('registDateFrom')
-                                .getValue(),
-                            registDate_LT_DATE: Ext.getCmp('registDateTo')
-                                .getValue()
-                        };
-                    });
+                    //store.on('beforeload', function () {
+                    //    store.proxy.extraParams = {
+                    //        username_LIKE_STRING: Ext.getCmp('username')
+                    //            .getValue(),
+                    //        nickname_LIKE_STRING: Ext.getCmp('nickname')
+                    //            .getValue(),
+                    //        sex_EQ_INT: Ext.getCmp('sex').getValue(),
+                    //        registDate_GT_DATE: Ext.getCmp('registDateFrom')
+                    //            .getValue(),
+                    //        registDate_LT_DATE: Ext.getCmp('registDateTo')
+                    //            .getValue()
+                    //    };
+                    //});
                     store.load({
                         params: {
                             start: 0,

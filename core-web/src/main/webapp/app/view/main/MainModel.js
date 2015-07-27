@@ -21,7 +21,7 @@ Ext.define('Kalix.view.main.MainModel', {
             copyright: "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;copyright 吉林锐迅信息技术有限公司"
         },
         user: {
-            url: "resources/datas/user.json",
+            url: "/kalix/camel/rest/users/info",
             quit: "/kalix/logout"
         },
         application: {

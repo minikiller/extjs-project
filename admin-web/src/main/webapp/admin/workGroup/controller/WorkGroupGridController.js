@@ -85,22 +85,22 @@ Ext.define('Kalix.admin.workGroup.controller.WorkGroupGridController', {
                             var resp = Ext.JSON.decode(response.responseText);
                             Ext.MessageBox.alert(CONFIG.ALTER_TITLE_INFO, resp.msg);
                             if (resp.success) {
-                                var username = Ext.getCmp("username").getValue();
-                                var name = Ext.getCmp("name").getValue();
-                                var sex = Ext.getCmp("sex").getValue();
-                                var status = Ext.getCmp("status").getValue();
-                                var grid = Ext.getCmp("userDataGrid");
-                                var store = grid.getStore();
-                                store.reload({
-                                    params: {
-                                        start: 0,
-                                        limit: pageSize,
-                                        username: username,
-                                        name: name,
-                                        sex: sex,
-                                        status: status
-                                    }
-                                });
+                                //var username = Ext.getCmp("username").getValue();
+                                //var name = Ext.getCmp("name").getValue();
+                                //var sex = Ext.getCmp("sex").getValue();
+                                //var status = Ext.getCmp("status").getValue();
+                                //var grid = Ext.getCmp("userDataGrid");
+                                //var store = grid.getStore();
+                                //store.reload({
+                                //    params: {
+                                //        start: 0,
+                                //        limit: pageSize,
+                                //        username: username,
+                                //        name: name,
+                                //        sex: sex,
+                                //        status: status
+                                //    }
+                                //});
                             }
                         }
                     });

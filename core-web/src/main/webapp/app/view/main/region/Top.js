@@ -95,7 +95,7 @@ Ext.define('Kalix.view.main.region.Top', {
             callback: function (options, success, response) {
                 var _user = Ext.JSON.decode(response.responseText);
                 if (_user) {
-                    user.setText(eval("_user." + _user.label));
+                    user.setText(eval("_user.name"));
                 }
             }
         });

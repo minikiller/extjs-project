@@ -42,7 +42,7 @@ Ext.define('Kalix.admin.user.controller.UserController', {
                 items: [{
                     xtype: 'textfield',
                     fieldLabel: '登录名',
-                    id: "admin_user_usernameSearchId",
+                    itemId: "admin_user_usernameSearchId",
                     name: 'username'
                 }]
             }, {
@@ -52,7 +52,7 @@ Ext.define('Kalix.admin.user.controller.UserController', {
                 items: [{
                     xtype: 'textfield',
                     fieldLabel: '姓名',
-                    id: "admin_user_nameSearchId",
+                    itemId: "admin_user_nameSearchId",
                     name: 'name'
                 }]
             },

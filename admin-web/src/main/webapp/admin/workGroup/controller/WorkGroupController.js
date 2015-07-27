@@ -42,7 +42,7 @@ Ext.define('Kalix.admin.workGroup.controller.WorkGroupController', {
                 items: [{
                     xtype: 'textfield',
                     fieldLabel: '名称',
-                    id: "admin_workGroup_nameId",
+                    itemId: "admin_workGroup_nameId",
                     name: 'name'
                 }]
             },
