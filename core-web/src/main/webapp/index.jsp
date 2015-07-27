@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Kalix</title>
     <script src="/core-web/ext-5.1.0/ext-all.js"></script>
+    <%--<script src="/core-web/ext-5.1.0/ext-all-debug.js"></script>--%>
     <script src="/core-web/ext-5.1.0/packages/ext-locale/ext-locale-zh_CN.js"></script>
     <link href="/core-web/ext-5.1.0/packages/ext-theme-classic/build/resources/ext-theme-classic-all.css"
           rel="stylesheet"/>
