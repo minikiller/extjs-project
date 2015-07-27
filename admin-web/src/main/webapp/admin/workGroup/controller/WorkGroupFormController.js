@@ -14,26 +14,26 @@ Ext.define('Kalix.admin.workGroup.controller.WorkGroupFormController', {
      * @returns {Ext.panel.Panel}
      */
     onAddReset: function () {
-        Ext.getCmp("workGroupAddForm").reset();
+        this.getView().reset();
     },
     /**
      * 重置操作.
      * @returns {Ext.panel.Panel}
      */
     onEditReset: function () {
-        Ext.getCmp("workGroupEditForm").reset();
+        this.getView().reset();
     },
     /**
      * 保存操作.
      * @returns {Ext.panel.Panel}
      */
     onSave: function () {
-        var form = Ext.getCmp("workGroupAddForm");
+        var form = this.getView();
         if (form.isValid()) {
             form.submit({
                 success: function (form, action) {
                     Ext.Msg.alert(CONFIG.ALTER_TITLE_SUCCESS, action.result.msg);
-                    var grid = Ext.getCmp("workGroupDataGrid");
+                    var grid = Ext.ComponentQuery.query('workGroupGridPanel')[0];
                     var store = grid.getStore();
                     store.reload();
                 },
@@ -48,12 +48,12 @@ Ext.define('Kalix.admin.workGroup.controller.WorkGroupFormController', {
      * @returns {Ext.panel.Panel}
      */
     onUpdate: function () {
-        var form = Ext.getCmp("workGroupEditForm");
+        var form = this.getView();
         if (form.isValid()) {
             form.submit({
                 success: function (form, action) {
                     Ext.Msg.alert(CONFIG.ALTER_TITLE_SUCCESS, action.result.msg);
-                    var grid = Ext.getCmp("workGroupDataGrid");
+                    var grid = Ext.ComponentQuery.query('workGroupGridPanel')[0];
                     var store = grid.getStore();
                     store.reload();
                 },

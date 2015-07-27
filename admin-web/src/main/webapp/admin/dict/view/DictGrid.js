@@ -11,8 +11,7 @@ Ext.define('Kalix.admin.dict.view.DictGrid', {
         'Kalix.admin.dict.controller.DictGridController'
     ],
     alias: 'widget.dictGrid',
-    id: "dictDataGrid",
-    xtype: 'dictGrid',
+    xtype: 'dictGridPanel',
     controller: 'dictGridController',
     viewModel: {
         type: 'dictViewModel'

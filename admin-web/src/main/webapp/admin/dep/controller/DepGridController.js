@@ -13,7 +13,7 @@ Ext.define('Kalix.admin.dep.controller.DepGridController', {
      * @returns {Ext.panel.Panel}
      */
     onRefersh: function () {
-        var grid = Ext.getCmp("depDataGrid");
+        var grid = this.getView();
         var store = grid.getStore();
         store.reload();
     },
@@ -26,20 +26,20 @@ Ext.define('Kalix.admin.dep.controller.DepGridController', {
             Ext.Msg.alert(CONFIG.ALTER_TITLE_FAILURE,"请选择一个机构!");
             return;
         }
-        var rows=Ext.getCmp("depDataGrid").getSelectionModel().getSelection();
+        var rows = this.getView().getSelectionModel().getSelection();
         var addFormPanel = Ext.create('Kalix.admin.dep.view.DepAddForm', {
             url: this.getView().getViewModel().get("url")
         });
-        addFormPanel.getComponent("orgIdId").setValue(this.getView().orgId);
-        addFormPanel.getComponent("orgName").setValue(this.getView().orgName);
+        addFormPanel.down("#orgIdId").setValue(this.getView().orgId);
+        addFormPanel.down("#orgName").setValue(this.getView().orgName);
         if(rows!=null&&rows.length>0){
             if(rows[0]!=null){
-                addFormPanel.getComponent("parentName").setValue(rows[0].data.name);
-                addFormPanel.getComponent("parentIdId").setValue(rows[0].data.id);
+                addFormPanel.down("#parentName").setValue(rows[0].data.name);
+                addFormPanel.down("#parentIdId").setValue(rows[0].data.id);
             }
         }else{
-            addFormPanel.getComponent("parentName").setValue("根部门");
-            addFormPanel.getComponent("parentIdId").setValue(-1);
+            addFormPanel.down("#parentName").setValue("根部门");
+            addFormPanel.down("#parentIdId").setValue(-1);
         }
         var win = Ext.create('Ext.Window', {
             width: 400,
@@ -71,9 +71,9 @@ Ext.define('Kalix.admin.dep.controller.DepGridController', {
             code: rec.data.code,
             centerCode: rec.data.centerCode
         });
-        editFormPanel.getComponent("parentName").setValue(rec.data.parentName);
-        editFormPanel.getComponent("orgIdId").setValue(this.getView().orgId);
-        editFormPanel.getComponent("orgName").setValue(this.getView().orgName);
+        editFormPanel.down("#parentName").setValue(rec.data.parentName);
+        editFormPanel.down("#orgIdId").setValue(this.getView().orgId);
+        editFormPanel.down("#orgName").setValue(this.getView().orgName);
         editFormPanel.loadRecord(depModel);
 
         var win = Ext.create('Ext.Window', {
@@ -107,7 +107,6 @@ Ext.define('Kalix.admin.dep.controller.DepGridController', {
                         var resp = Ext.JSON.decode(response.responseText);
                         Ext.MessageBox.alert(CONFIG.ALTER_TITLE_INFO, resp.msg);
                         if (resp.success) {
-                            var grid = Ext.getCmp("depDataGrid");
                             var store = grid.getStore();
                             store.reload();
                         }

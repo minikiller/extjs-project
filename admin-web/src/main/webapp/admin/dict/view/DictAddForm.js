@@ -16,7 +16,6 @@ Ext.define('Kalix.admin.dict.view.DictAddForm', {
         type: 'dictViewModel'
     },
     controller: 'dictFormController',
-    id: "dictAddForm",
     xtype: "dictAddForm",
     labelAlign: 'center',
     labelWidth: 75,
@@ -30,7 +29,7 @@ Ext.define('Kalix.admin.dict.view.DictAddForm', {
     items: [
         {
             fieldLabel: '标签名',
-            id: 'labelId',
+            itemId: 'labelId',
             name: 'label',
             allowBlank: false,
             blankText: '标签名不能为空!',
@@ -40,7 +39,7 @@ Ext.define('Kalix.admin.dict.view.DictAddForm', {
         },
         {
             fieldLabel: '数据值',
-            id: 'valueId',
+            itemId: 'valueId',
             name: 'value',
             allowBlank: false,
             blankText: '数据值不能为空!',
@@ -50,7 +49,7 @@ Ext.define('Kalix.admin.dict.view.DictAddForm', {
         },
         {
             fieldLabel: '类型',
-            id: 'typeId',
+            itemId: 'typeId',
             name: 'type',
             allowBlank: false,
             blankText: '类型不能为空!',
@@ -61,7 +60,7 @@ Ext.define('Kalix.admin.dict.view.DictAddForm', {
         {
             xtype : 'numberfield',
             fieldLabel: '排序',
-            id: 'sortId',
+            itemId: 'sortId',
             name: 'sort',
             allowBlank: false,
             beforeLabelTpl: [
@@ -71,7 +70,7 @@ Ext.define('Kalix.admin.dict.view.DictAddForm', {
         {
             xtype: 'textarea',
             fieldLabel: '备注',
-            id: 'descriptionId',
+            itemId: 'descriptionId',
             name: 'description',
             beforeLabelTpl: [
                 '<span  >&nbsp;&nbsp;</span>'

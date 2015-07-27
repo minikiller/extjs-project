@@ -13,6 +13,7 @@ Ext.define('Kalix.admin.user.controller.UserGridController', {
      * @returns {Ext.panel.Panel}
      */
     onAdd: function () {
+
         var addFormPanel = Ext.create('Kalix.admin.user.view.UserAddForm', {
             url: this.getView().getViewModel().get("url")
         });
@@ -40,18 +41,8 @@ Ext.define('Kalix.admin.user.controller.UserGridController', {
         var editFormPanel = Ext.create('Kalix.admin.user.view.UserEditForm', {
             url: this.getView().getViewModel().get("url")
         });
-        var userModel = Ext.create("Kalix.admin.user.model.UserModel", {
-            id: rec.data.id,
-            loginName: rec.data.loginName,
-            name: rec.data.name,
-            password: rec.data.password,
-            email: rec.data.email,
-            phone: rec.data.email,
-            mobile: rec.data.mobile,
-            available: rec.data.available
-        });
-        editFormPanel.getComponent("confirmPasswordId").setValue(rec.data.password);
-        editFormPanel.loadRecord(userModel);
+        editFormPanel.down("#confirmPasswordId").setValue(rec.data.password);
+        editFormPanel.loadRecord(rec);
 
         var win = Ext.create('Ext.Window', {
             width: 400,
@@ -70,7 +61,8 @@ Ext.define('Kalix.admin.user.controller.UserGridController', {
      * 批量删除操作.
      */
     onDeleteAll: function () {
-        var selModel = Ext.getCmp("userDataGrid").getSelectionModel();
+
+        var selModel = Ext.ComponentQuery.query('#userDataGrid').getSelectionModel();
         if (selModel.hasSelection()) {
             Ext.Msg.confirm("警告", "确定要删除吗？", function (button) {
                 if (button == "yes") {
@@ -134,7 +126,6 @@ Ext.define('Kalix.admin.user.controller.UserGridController', {
                         var resp = Ext.JSON.decode(response.responseText);
                         Ext.MessageBox.alert(CONFIG.ALTER_TITLE_INFO, resp.msg);
                         if (resp.success) {
-                            var grid = Ext.getCmp("userDataGrid");
                             var store = grid.getStore();
                             store.reload();
                         }

@@ -11,8 +11,7 @@ Ext.define('Kalix.admin.area.view.AreaGrid', {
         'Kalix.admin.area.controller.AreaGridController'
     ],
     alias: 'widget.areaGrid',
-    id: "areaDataGrid",
-    xtype: 'areaGrid',
+    xtype: 'areaGridPanel',
     controller: 'areaGridController',
     viewModel: {
         type: 'areaViewModel'

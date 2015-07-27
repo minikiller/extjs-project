@@ -16,7 +16,6 @@ Ext.define('Kalix.admin.workGroup.view.WorkGroupEditForm', {
         type: 'workGroupViewModel'
     },
     controller: 'workGroupFormController',
-    id: "workGroupEditForm",
     xtype: 'workGroupEditForm',
     labelAlign: 'center',
     labelWidth: 75,
@@ -32,7 +31,7 @@ Ext.define('Kalix.admin.workGroup.view.WorkGroupEditForm', {
         {xtype: 'hiddenfield', name: 'id'},
         {
             fieldLabel: '名称',
-            id: 'nameId',
+            itemId: 'nameId',
             name: 'name',
             allowBlank: false,
             blankText: '名称不能为空!',
@@ -43,7 +42,7 @@ Ext.define('Kalix.admin.workGroup.view.WorkGroupEditForm', {
         {
             xtype: 'textarea',
             fieldLabel: '备注',
-            id: 'remarkId',
+            itemId: 'remarkId',
             name: 'remark',
             beforeLabelTpl: [
                 '<span  >&nbsp;&nbsp;</span>'

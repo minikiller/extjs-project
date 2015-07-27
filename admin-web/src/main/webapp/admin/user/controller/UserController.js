@@ -112,7 +112,14 @@ Ext.define('Kalix.admin.user.controller.UserController', {
      * @returns {Ext.panel.Panel}
      */
     onInitDataGrid: function () {
-        var dataGird = Ext.create("Kalix.admin.user.view.UserGrid");
+        var dataStore = Ext.create("Kalix.admin.user.store.UserStore");
+        var dataGird = Ext.create("Kalix.admin.user.view.UserGrid", {
+            store: dataStore,
+            bbar: [{
+                xtype: 'pagingToolBarComponent',
+                store: dataStore
+            }]
+        });
         return dataGird;
     }
 });

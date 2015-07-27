@@ -11,8 +11,7 @@ Ext.define('Kalix.admin.workGroup.view.WorkGroupGrid', {
         'Kalix.admin.workGroup.controller.WorkGroupGridController'
     ],
     alias: 'widget.workGroupGrid',
-    id: "workGroupDataGrid",
-    xtype: 'workGroupGrid',
+    xtype: 'workGroupGridPanel',
     controller: 'workGroupGridController',
     viewModel: {
         type: 'workGroupViewModel'

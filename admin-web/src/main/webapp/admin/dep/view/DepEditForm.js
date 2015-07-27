@@ -16,7 +16,6 @@ Ext.define('Kalix.admin.dep.view.DepEditForm', {
         type: 'depViewModel'
     },
     controller: 'depFormController',
-    id: "depEditForm",
     xtype: 'depEditForm',
     labelAlign: 'center',
     labelWidth: 75,
@@ -30,12 +29,12 @@ Ext.define('Kalix.admin.dep.view.DepEditForm', {
     buttonAlign: "center",
     items: [
         {xtype: 'hiddenfield', name: 'id'},
-        {xtype: 'hiddenfield', name: 'parentId',id:'parentIdId',value:'-1'},
-        {xtype: 'hiddenfield', name: 'orgId',id:'orgIdId',value:'-1'},
+        {xtype: 'hiddenfield', name: 'parentId', itemId: 'parentIdId', value: '-1'},
+        {xtype: 'hiddenfield', name: 'orgId', itemId: 'orgIdId', value: '-1'},
         {xtype: 'hiddenfield', name: 'isLeaf',value:'1'},
         {
             fieldLabel: '所属机构',
-            id:"orgName",
+            itemId: "orgName",
             isFormField: false,
             disabled:true,
             beforeLabelTpl: [
@@ -44,7 +43,7 @@ Ext.define('Kalix.admin.dep.view.DepEditForm', {
         },
         {
             fieldLabel: '上级部门',
-            id:"parentName",
+            itemId: "parentName",
             isFormField: false,
             disabled:true,
             beforeLabelTpl: [
@@ -53,7 +52,7 @@ Ext.define('Kalix.admin.dep.view.DepEditForm', {
         },
         {
             fieldLabel: '名称',
-            id: 'nameId',
+            itemId: 'nameId',
             name: 'name',
             allowBlank: false,
             blankText: '名称不能为空!',
@@ -63,7 +62,7 @@ Ext.define('Kalix.admin.dep.view.DepEditForm', {
         },
         {
             fieldLabel: '部门代码',
-            id: 'codeId',
+            itemId: 'codeId',
             name: 'code',
             allowBlank: false,
             blankText: '部门不能为空!',
@@ -73,7 +72,7 @@ Ext.define('Kalix.admin.dep.view.DepEditForm', {
         },
         {
             fieldLabel: '中心代码',
-            id: 'centerCodeId',
+            itemId: 'centerCodeId',
             name: 'centerCode',
             allowBlank: false,
             blankText: '中心代码不能为空!',

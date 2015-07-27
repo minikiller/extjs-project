@@ -18,7 +18,6 @@ Ext.define('Kalix.admin.user.view.User', {
     items: [],
     initComponent: function () {
         var userController = this.getController("userController");
-
         this.items[0] = userController.onInitPanel();
 
         this.callParent(arguments);

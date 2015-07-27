@@ -13,7 +13,7 @@ Ext.define('Kalix.admin.org.controller.OrgGridController', {
      * @returns {Ext.panel.Panel}
      */
     onRefersh: function () {
-        var grid = Ext.getCmp("orgDataGrid");
+        var grid = this.getView();
         var store = grid.getStore();
         store.reload();
     },
@@ -27,20 +27,20 @@ Ext.define('Kalix.admin.org.controller.OrgGridController', {
             Ext.Msg.alert(CONFIG.ALTER_TITLE_FAILURE, "请选择一个区域!");
             return;
         }
-        var rows=Ext.getCmp("orgDataGrid").getSelectionModel().getSelection();
+        var rows = this.getView().getSelectionModel().getSelection();
         var addFormPanel = Ext.create('Kalix.admin.org.view.OrgAddForm', {
             url: this.getView().getViewModel().get("url")
         });
-        addFormPanel.getComponent("areaIdId").setValue(this.getView().areaId);
-        addFormPanel.getComponent("areaName").setValue(this.getView().areaName);
+        addFormPanel.down("#areaIdId").setValue(this.getView().areaId);
+        addFormPanel.down("#areaName").setValue(this.getView().areaName);
         if(rows!=null&&rows.length>0){
             if(rows[0]!=null){
-                addFormPanel.getComponent("parentName").setValue(rows[0].data.name);
-                addFormPanel.getComponent("parentIdId").setValue(rows[0].data.id);
+                addFormPanel.down("#parentName").setValue(rows[0].data.name);
+                addFormPanel.down("#parentIdId").setValue(rows[0].data.id);
             }
         }else{
-            addFormPanel.getComponent("parentName").setValue("根机构");
-            addFormPanel.getComponent("parentIdId").setValue(-1);
+            addFormPanel.down("#parentName").setValue("根机构");
+            addFormPanel.down("#parentIdId").setValue(-1);
         }
         var win = Ext.create('Ext.Window', {
             width: 400,
@@ -158,7 +158,6 @@ Ext.define('Kalix.admin.org.controller.OrgGridController', {
                         var resp = Ext.JSON.decode(response.responseText);
                         Ext.MessageBox.alert(CONFIG.ALTER_TITLE_INFO, resp.msg);
                         if (resp.success) {
-                            var grid = Ext.getCmp("orgDataGrid");
                             var store = grid.getStore();
                             store.reload();
                         }

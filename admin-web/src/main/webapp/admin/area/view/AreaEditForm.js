@@ -16,7 +16,6 @@ Ext.define('Kalix.admin.area.view.AreaEditForm', {
         type: 'areaViewModel'
     },
     controller: 'areaFormController',
-    id: "areaEditForm",
     xtype: 'areaEditForm',
     labelAlign: 'center',
     labelWidth: 75,
@@ -34,7 +33,7 @@ Ext.define('Kalix.admin.area.view.AreaEditForm', {
         {xtype: 'hiddenfield', name: 'isLeaf', value: '1'},
         {
             fieldLabel: '上级区域',
-            id: "parentName",
+            itemId: "parentName",
             isFormField: false,
             disabled: true,
             beforeLabelTpl: [
@@ -43,7 +42,7 @@ Ext.define('Kalix.admin.area.view.AreaEditForm', {
         },
         {
             fieldLabel: '名称',
-            id: 'nameId',
+            itemId: 'nameId',
             name: 'name',
             allowBlank: false,
             blankText: '名称不能为空!',
@@ -53,7 +52,7 @@ Ext.define('Kalix.admin.area.view.AreaEditForm', {
         },
         {
             fieldLabel: '区域代码',
-            id: 'codeId',
+            itemId: 'codeId',
             name: 'code',
             allowBlank: false,
             blankText: '区域不能为空!',
@@ -63,7 +62,7 @@ Ext.define('Kalix.admin.area.view.AreaEditForm', {
         },
         {
             fieldLabel: '中心代码',
-            id: 'centerCodeId',
+            itemId: 'centerCodeId',
             name: 'centerCode',
             allowBlank: false,
             blankText: '中心代码不能为空!',

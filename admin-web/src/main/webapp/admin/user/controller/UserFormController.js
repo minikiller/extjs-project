@@ -14,26 +14,26 @@ Ext.define('Kalix.admin.user.controller.UserFormController', {
      * @returns {Ext.panel.Panel}
      */
     onAddReset: function () {
-        Ext.getCmp("userAddForm").getComponent("confirmPasswordId").setValue("");
-        Ext.getCmp("userAddForm").reset();
+        this.getView().down("#confirmPasswordId").setValue("");
+        this.getView().reset();
     },
     /**
      * 重置操作.
      * @returns {Ext.panel.Panel}
      */
     onEditReset: function () {
-        Ext.getCmp("userEditForm").getComponent("confirmPasswordId").setValue("");
-        Ext.getCmp("userEditForm").reset();
+        this.getView().down("#confirmPasswordId").setValue("");
+        this.getView().reset();
     },
     /**
      * 保存操作.
      * @returns {Ext.panel.Panel}
      */
     onSave: function () {
-        var form = Ext.getCmp("userAddForm");
+        var form = this.getView();
         if (form.isValid()) {
-            var confirmPasswordValue = Ext.getCmp("confirmPasswordId").getValue();
-            var passwordValue = Ext.getCmp("passwordId").getValue();
+            var confirmPasswordValue = form.down("#confirmPasswordId").getValue();
+            var passwordValue = form.down("#passwordId").getValue();
             if (confirmPasswordValue != passwordValue) {
                 Ext.Msg.alert(CONFIG.ALTER_TITLE_FAILURE, "密码与确认密码必须一致!");
                 return;
@@ -41,23 +41,9 @@ Ext.define('Kalix.admin.user.controller.UserFormController', {
             form.submit({
                 success: function (form, action) {
                     Ext.Msg.alert(CONFIG.ALTER_TITLE_SUCCESS, action.result.msg);
-                    var grid = Ext.getCmp("userDataGrid");
+                    var grid = Ext.ComponentQuery.query('userGridPanel')[0];
                     var store = grid.getStore();
                     store.reload();
-                    /*var username = Ext.getCmp("username").getValue();
-                     var name = Ext.getCmp("name").getValue();
-                     var sex = Ext.getCmp("sex").getValue();
-                     var status = Ext.getCmp("status").getValue();
-                     store.reload({
-                     params: {
-                     start: 0,
-                     limit: pageSize,
-                     username: username,
-                     name: name,
-                     sex: sex,
-                     status: status
-                     }
-                     });*/
                 },
                 failure: function (form, action) {
                     Ext.Msg.alert(CONFIG.ALTER_TITLE_FAILURE, action.result.msg);
@@ -70,10 +56,10 @@ Ext.define('Kalix.admin.user.controller.UserFormController', {
      * @returns {Ext.panel.Panel}
      */
     onUpdate: function () {
-        var form = Ext.getCmp("userEditForm");
+        var form = this.getView();
         if (form.isValid()) {
-            var confirmPasswordValue = Ext.getCmp("confirmPasswordId").getValue();
-            var passwordValue = Ext.getCmp("passwordId").getValue();
+            var confirmPasswordValue = form.down("#confirmPasswordId").getValue();
+            var passwordValue = form.down("#passwordId").getValue();
             if (confirmPasswordValue != passwordValue) {
                 Ext.Msg.alert(CONFIG.ALTER_TITLE_FAILURE, "密码与确认密码必须一致!");
                 return;
@@ -81,7 +67,7 @@ Ext.define('Kalix.admin.user.controller.UserFormController', {
             form.submit({
                 success: function (form, action) {
                     Ext.Msg.alert(CONFIG.ALTER_TITLE_SUCCESS, action.result.msg);
-                    var grid = Ext.getCmp("userDataGrid");
+                    var grid = Ext.ComponentQuery.query('userGridPanel')[0];
                     var store = grid.getStore();
                     store.reload();
                 },

@@ -14,26 +14,26 @@ Ext.define('Kalix.admin.dep.controller.DepFormController', {
      * @returns {Ext.panel.Panel}
      */
     onAddReset: function () {
-        Ext.getCmp("depAddForm").reset();
+        this.getView().reset();
     },
     /**
      * 重置操作.
      * @returns {Ext.panel.Panel}
      */
     onEditReset: function () {
-        Ext.getCmp("depEditForm").reset();
+        this.getView().reset();
     },
     /**
      * 保存操作.
      * @returns {Ext.panel.Panel}
      */
     onSave: function () {
-        var form = Ext.getCmp("depAddForm");
+        var form = this.getView();
         if (form.isValid()) {
             form.submit({
                 success: function (form, action) {
                     Ext.Msg.alert(CONFIG.ALTER_TITLE_SUCCESS, action.result.msg);
-                    var grid = Ext.getCmp("depDataGrid");
+                    var grid = Ext.ComponentQuery.query('depGridPanel')[0];
                     var store = grid.getStore();
                     store.reload();
                 },
@@ -48,12 +48,12 @@ Ext.define('Kalix.admin.dep.controller.DepFormController', {
      * @returns {Ext.panel.Panel}
      */
     onUpdate: function () {
-        var form = Ext.getCmp("depEditForm");
+        var form = this.getView();
         if (form.isValid()) {
             form.submit({
                 success: function (form, action) {
                     Ext.Msg.alert(CONFIG.ALTER_TITLE_SUCCESS, action.result.msg);
-                    var grid = Ext.getCmp("depDataGrid");
+                    var grid = Ext.ComponentQuery.query('depGridPanel')[0];
                     var store = grid.getStore();
                     store.reload();
                 },

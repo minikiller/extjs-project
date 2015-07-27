@@ -14,26 +14,26 @@ Ext.define('Kalix.admin.org.controller.OrgFormController', {
      * @returns {Ext.panel.Panel}
      */
     onAddReset: function () {
-        Ext.getCmp("orgAddForm").reset();
+        this.getView().reset();
     },
     /**
      * 重置操作.
      * @returns {Ext.panel.Panel}
      */
     onEditReset: function () {
-        Ext.getCmp("orgEditForm").reset();
+        this.getView().reset();
     },
     /**
      * 保存操作.
      * @returns {Ext.panel.Panel}
      */
     onSave: function () {
-        var form = Ext.getCmp("orgAddForm");
+        var form = this.getView();
         if (form.isValid()) {
             form.submit({
                 success: function (form, action) {
                     Ext.Msg.alert(CONFIG.ALTER_TITLE_SUCCESS, action.result.msg);
-                    var grid = Ext.getCmp("orgDataGrid");
+                    var grid = Ext.ComponentQuery.query('orgGridPanel')[0];
                     var store = grid.getStore();
                     store.reload();
                 },
@@ -48,12 +48,12 @@ Ext.define('Kalix.admin.org.controller.OrgFormController', {
      * @returns {Ext.panel.Panel}
      */
     onUpdate: function () {
-        var form = Ext.getCmp("orgEditForm");
+        var form = this.getView();
         if (form.isValid()) {
             form.submit({
                 success: function (form, action) {
                     Ext.Msg.alert(CONFIG.ALTER_TITLE_SUCCESS, action.result.msg);
-                    var grid = Ext.getCmp("orgDataGrid");
+                    var grid = Ext.ComponentQuery.query('orgGridPanel')[0];
                     var store = grid.getStore();
                     store.reload();
                 },

@@ -131,7 +131,6 @@ Ext.define('Kalix.admin.dict.controller.DictGridController', {
                         var resp = Ext.JSON.decode(response.responseText);
                         Ext.MessageBox.alert(CONFIG.ALTER_TITLE_INFO, resp.msg);
                         if (resp.success) {
-                            var grid = Ext.getCmp("dictDataGrid");
                             var store = grid.getStore();
                             store.reload();
                         }

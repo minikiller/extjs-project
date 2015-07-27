@@ -16,7 +16,6 @@ Ext.define('Kalix.admin.user.view.UserEditForm', {
         type: 'userViewModel'
     },
     controller: 'userFormController',
-    id: "userEditForm",
     xtype: 'userEditForm',
     labelAlign: 'center',
     labelWidth: 75,
@@ -33,7 +32,7 @@ Ext.define('Kalix.admin.user.view.UserEditForm', {
 
         {
             fieldLabel: '登录名',
-            id: 'loginNameId',
+            itemId: 'loginNameId',
             name: 'loginName',
             allowBlank: false,
             blankText: '登录名不能为空!',
@@ -43,7 +42,7 @@ Ext.define('Kalix.admin.user.view.UserEditForm', {
         },
         {
             fieldLabel: '姓名',
-            id: 'nameId',
+            itemId: 'nameId',
             name: 'name',
             allowBlank: false,
             blankText: '姓名不能为空!',
@@ -54,7 +53,7 @@ Ext.define('Kalix.admin.user.view.UserEditForm', {
         {
             inputType: 'password',
             fieldLabel: '密码',
-            id: 'passwordId',
+            itemId: 'passwordId',
             name: 'password',
             allowBlank: false,
             blankText: '密码不能为空!',
@@ -66,7 +65,7 @@ Ext.define('Kalix.admin.user.view.UserEditForm', {
             inputType: 'password',
             fieldLabel: '确认密码',
             isFormField: false,
-            id: 'confirmPasswordId',
+            itemId: 'confirmPasswordId',
             allowBlank: false,
             blankText: '确认密码不能为空!',
             beforeLabelTpl: [
@@ -75,7 +74,7 @@ Ext.define('Kalix.admin.user.view.UserEditForm', {
         },
         {
             fieldLabel: '邮箱',
-            id: 'emailId',
+            itemId: 'emailId',
             name: 'email',
             allowBlank: false,
             blankText: '邮箱不能为空!',
@@ -85,7 +84,7 @@ Ext.define('Kalix.admin.user.view.UserEditForm', {
         },
         {
             fieldLabel: '电话号',
-            id: 'phoneId',
+            itemId: 'phoneId',
             name: 'phone',
             allowBlank: false,
             blankText: '电话号不能为空!',
@@ -95,7 +94,7 @@ Ext.define('Kalix.admin.user.view.UserEditForm', {
         },
         {
             fieldLabel: '手机号',
-            id: 'mobileId',
+            itemId: 'mobileId',
             name: 'mobile',
             allowBlank: false,
             blankText: '手机号不能为空!',

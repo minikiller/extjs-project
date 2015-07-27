@@ -18,11 +18,11 @@ Ext.define('Kalix.admin.org.controller.OrgController', {
      * @returns {Ext.panel.Panel}
      */
     onInitPanel: function () {
-
         var panel = Ext.create("Ext.panel.Panel", {
             border: false,
             layout: "border",
             autoScroll: true,
+            itemId: "mainPanel",
             height: 630,
             items: [this.onInitAreaList(), this.onInitDataGrid()]
         })
@@ -33,7 +33,8 @@ Ext.define('Kalix.admin.org.controller.OrgController', {
      * 区域单击
      */
     onAreaClick: function (view, record, item, index, e) {
-        var grid = Ext.getCmp("orgDataGrid");
+
+        var grid = Ext.ComponentQuery.query('orgGridPanel')[0];
         grid.areaId = record.data.id;
         grid.areaName = record.data.name;
         var store = grid.getStore();
@@ -47,14 +48,14 @@ Ext.define('Kalix.admin.org.controller.OrgController', {
      * 区域刷新
      */
     onAreaRefersh: function () {
-        Ext.getCmp("orgAreaList").getStore().reload();
+        Ext.ComponentQuery.query('orgPanel')[0].down("#mainPanel>#orgAreaList").getStore().reload();
     },
     /**
      * 区域展开
      * @constructor
      */
     onAreaAxpandAll: function () {
-        Ext.getCmp("orgAreaList").expandAll(function () {
+        Ext.ComponentQuery.query('orgPanel')[0].down("#mainPanel>#orgAreaList").expandAll(function () {
         });
     },
     /**
@@ -62,7 +63,7 @@ Ext.define('Kalix.admin.org.controller.OrgController', {
      * @constructor
      */
     onAreaCollapseAll: function () {
-        Ext.getCmp("orgAreaList").collapseAll(function () {
+        Ext.ComponentQuery.query('orgPanel')[0].down("#mainPanel>#orgAreaList").collapseAll(function () {
         });
     },
     /**
@@ -73,7 +74,7 @@ Ext.define('Kalix.admin.org.controller.OrgController', {
         var orgListPanel = Ext.create("Kalix.admin.area.view.AreaList", {
             store: Ext.create("Kalix.admin.area.store.AreaStore"),
             region: "west",
-            id: "orgAreaList",
+            itemId: "orgAreaList",
             title: '区域列表',
             listeners: {
                 itemClick: this.onAreaClick

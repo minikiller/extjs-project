@@ -14,7 +14,7 @@ Ext.define('Kalix.admin.area.controller.AreaGridController', {
      * @returns {Ext.panel.Panel}
      */
     onRefersh: function () {
-        var grid = Ext.getCmp("areaDataGrid");
+        var grid = this.getView();
         var store = grid.getStore();
         store.reload();
     },
@@ -23,18 +23,18 @@ Ext.define('Kalix.admin.area.controller.AreaGridController', {
      * @returns {Ext.panel.Panel}
      */
     onAdd: function () {
-        var rows = Ext.getCmp("areaDataGrid").getSelectionModel().getSelection();
+        var rows = this.getView().getSelectionModel().getSelection();
         var addFormPanel = Ext.create('Kalix.admin.area.view.AreaAddForm', {
             url: this.getView().getViewModel().get("url")
         });
         if (rows != null && rows.length > 0) {
             if (rows[0] != null) {
-                addFormPanel.getComponent("parentName").setValue(rows[0].data.name);
-                addFormPanel.getComponent("parentIdId").setValue(rows[0].data.id);
+                addFormPanel.down("#parentName").setValue(rows[0].data.name);
+                addFormPanel.down("#parentIdId").setValue(rows[0].data.id);
             }
         } else {
-            addFormPanel.getComponent("parentName").setValue("根区域");
-            addFormPanel.getComponent("parentIdId").setValue(-1);
+            addFormPanel.down("#parentName").setValue("根区域");
+            addFormPanel.down("#parentIdId").setValue(-1);
         }
         var win = Ext.create('Ext.Window', {
             width: 400,
@@ -68,7 +68,7 @@ Ext.define('Kalix.admin.area.controller.AreaGridController', {
             wd: rec.data.wd,
             centerCode: rec.data.centerCode
         });
-        editFormPanel.getComponent("parentName").setValue(rec.data.parentName);
+        editFormPanel.down("#parentName").setValue(rec.data.parentName);
         editFormPanel.loadRecord(areaModel);
 
         var win = Ext.create('Ext.Window', {
@@ -102,7 +102,6 @@ Ext.define('Kalix.admin.area.controller.AreaGridController', {
                         var resp = Ext.JSON.decode(response.responseText);
                         Ext.MessageBox.alert(CONFIG.ALTER_TITLE_INFO, resp.msg);
                         if (resp.success) {
-                            var grid = Ext.getCmp("areaDataGrid");
                             var store = grid.getStore();
                             store.reload();
                         }

@@ -128,7 +128,6 @@ Ext.define('Kalix.admin.workGroup.controller.WorkGroupGridController', {
                         var resp = Ext.JSON.decode(response.responseText);
                         Ext.MessageBox.alert(CONFIG.ALTER_TITLE_INFO, resp.msg);
                         if (resp.success) {
-                            var grid = Ext.getCmp("workGroupDataGrid");
                             var store = grid.getStore();
                             store.reload();
                         }

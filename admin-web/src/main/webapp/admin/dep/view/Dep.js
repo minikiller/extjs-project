@@ -11,6 +11,7 @@ Ext.define('Kalix.admin.dep.view.Dep', {
         'Kalix.admin.dep.viewModel.DepViewModel',
         'Kalix.admin.dep.controller.DepController'
     ],
+    xtype: 'depPanel',
     controller: 'depController',
     viewModel: {
         type: 'depViewModel'

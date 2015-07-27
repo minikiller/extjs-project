@@ -11,8 +11,7 @@ Ext.define('Kalix.admin.role.view.RoleGrid', {
         'Kalix.admin.role.controller.RoleGridController'
     ],
     alias: 'widget.roleGrid',
-    id: "roleDataGrid",
-    xtype: 'roleGrid',
+    xtype: 'roleGridPanel',
     controller: 'roleGridController',
     viewModel: {
         type: 'roleViewModel'

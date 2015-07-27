@@ -40,12 +40,7 @@ Ext.define('Kalix.admin.role.controller.RoleGridController', {
         var editFormPanel = Ext.create('Kalix.admin.role.view.RoleEditForm', {
             url: this.getView().getViewModel().get("url")
         });
-        var dictModel = Ext.create("Kalix.admin.role.model.RoleModel", {
-            id: rec.data.id,
-            name: rec.data.name,
-            remark: rec.data.remark
-        });
-        editFormPanel.loadRecord(dictModel);
+        editFormPanel.loadRecord(rec);
 
         var win = Ext.create('Ext.Window', {
             width: 400,
@@ -128,7 +123,6 @@ Ext.define('Kalix.admin.role.controller.RoleGridController', {
                         var resp = Ext.JSON.decode(response.responseText);
                         Ext.MessageBox.alert(CONFIG.ALTER_TITLE_INFO, resp.msg);
                         if (resp.success) {
-                            var grid = Ext.getCmp("roleDataGrid");
                             var store = grid.getStore();
                             store.reload();
                         }

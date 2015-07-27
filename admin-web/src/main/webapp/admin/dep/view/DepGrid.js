@@ -11,8 +11,7 @@ Ext.define('Kalix.admin.dep.view.DepGrid', {
         'Kalix.admin.dep.controller.DepGridController'
     ],
     alias: 'widget.depGrid',
-    id: "depDataGrid",
-    xtype: 'depGrid',
+    xtype: 'depGridPanel',
     controller: 'depGridController',
     viewModel: {
         type: 'depViewModel'

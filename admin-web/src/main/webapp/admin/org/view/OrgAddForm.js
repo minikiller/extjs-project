@@ -16,7 +16,6 @@ Ext.define('Kalix.admin.org.view.OrgAddForm', {
         type: 'orgViewModel'
     },
     controller: 'orgFormController',
-    id: "orgAddForm",
     xtype: "orgAddForm",
     labelAlign: 'center',
     labelWidth: 75,
@@ -28,12 +27,12 @@ Ext.define('Kalix.admin.org.view.OrgAddForm', {
     buttonAlign: "center",
     defaultType: 'textfield',
     items: [
-        {xtype: 'hiddenfield', name: 'parentId',id:'parentIdId',value:'-1'},
+        {xtype: 'hiddenfield', name: 'parentId', itemId: 'parentIdId', value: '-1'},
         {xtype: 'hiddenfield', name: 'isLeaf',value:'1'},
-        {xtype: 'hiddenfield', name: 'areaId', id: 'areaIdId', value: '-1'},
+        {xtype: 'hiddenfield', name: 'areaId', itemId: 'areaIdId', value: '-1'},
         {
             fieldLabel: '所属区域',
-            id: "areaName",
+            itemId: "areaName",
             isFormField: false,
             disabled: true,
             beforeLabelTpl: [

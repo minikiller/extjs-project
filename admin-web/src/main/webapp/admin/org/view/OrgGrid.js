@@ -11,8 +11,7 @@ Ext.define('Kalix.admin.org.view.OrgGrid', {
         'Kalix.admin.org.controller.OrgGridController'
     ],
     alias: 'widget.orgGrid',
-    id: "orgDataGrid",
-    xtype: 'orgGrid',
+    xtype: 'orgGridPanel',
     controller: 'orgGridController',
     viewModel: {
         type: 'orgViewModel'

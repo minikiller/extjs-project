@@ -16,8 +16,7 @@ Ext.define('Kalix.admin.role.view.RoleAddForm', {
         type: 'roleViewModel'
     },
     controller: 'roleFormController',
-    id: "roleAddForm",
-    xtype: "roleAddForm",
+    xtype: "roleAddFormPanel",
     labelAlign: 'center',
     labelWidth: 75,
     autoWidth: true,
@@ -30,7 +29,7 @@ Ext.define('Kalix.admin.role.view.RoleAddForm', {
     items: [
         {
             fieldLabel: '名称',
-            id: 'nameId',
+            itemId: 'nameId',
             name: 'name',
             allowBlank: false,
             blankText: '名称不能为空!',
@@ -41,7 +40,7 @@ Ext.define('Kalix.admin.role.view.RoleAddForm', {
         {
             xtype: 'textarea',
             fieldLabel: '备注',
-            id: 'remarkId',
+            itemId: 'remarkId',
             name: 'remark',
             beforeLabelTpl: [
                 '<span  >&nbsp;&nbsp;</span>'

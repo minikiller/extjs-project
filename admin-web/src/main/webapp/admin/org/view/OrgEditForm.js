@@ -16,7 +16,6 @@ Ext.define('Kalix.admin.org.view.OrgEditForm', {
         type: 'orgViewModel'
     },
     controller: 'orgFormController',
-    id: "orgEditForm",
     xtype: 'orgEditForm',
     labelAlign: 'center',
     labelWidth: 75,
@@ -30,12 +29,12 @@ Ext.define('Kalix.admin.org.view.OrgEditForm', {
     buttonAlign: "center",
     items: [
         {xtype: 'hiddenfield', name: 'id'},
-        {xtype: 'hiddenfield', name: 'parentId',id:'parentIdId',value:'-1'},
+        {xtype: 'hiddenfield', name: 'parentId', itemId: 'parentIdId', value: '-1'},
         {xtype: 'hiddenfield', name: 'isLeaf',value:'1'},
-        {xtype: 'hiddenfield', name: 'areaId', id: 'areaIdId', value: '-1'},
+        {xtype: 'hiddenfield', name: 'areaId', itemId: 'areaIdId', value: '-1'},
         {
             fieldLabel: '所属区域',
-            id: "areaName",
+            itemId: "areaName",
             isFormField: false,
             disabled: true,
             beforeLabelTpl: [
@@ -44,7 +43,7 @@ Ext.define('Kalix.admin.org.view.OrgEditForm', {
         },
         {
             fieldLabel: '上级机构',
-            id:"parentName",
+            itemId: "parentName",
             isFormField: false,
             disabled:true,
             beforeLabelTpl: [
@@ -53,7 +52,7 @@ Ext.define('Kalix.admin.org.view.OrgEditForm', {
         },
         {
             fieldLabel: '名称',
-            id: 'nameId',
+            itemId: 'nameId',
             name: 'name',
             allowBlank: false,
             blankText: '名称不能为空!',
@@ -63,7 +62,7 @@ Ext.define('Kalix.admin.org.view.OrgEditForm', {
         },
         {
             fieldLabel: '机构代码',
-            id: 'codeId',
+            itemId: 'codeId',
             name: 'code',
             allowBlank: false,
             blankText: '机构不能为空!',
@@ -73,7 +72,7 @@ Ext.define('Kalix.admin.org.view.OrgEditForm', {
         },
         {
             fieldLabel: '中心代码',
-            id: 'centerCodeId',
+            itemId: 'centerCodeId',
             name: 'centerCode',
             allowBlank: false,
             blankText: '中心代码不能为空!',

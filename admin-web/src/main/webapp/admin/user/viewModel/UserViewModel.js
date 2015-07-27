@@ -15,10 +15,5 @@ Ext.define('Kalix.admin.user.viewModel.UserViewModel', {
         addTitle: '新增用户',
         editTitle: '编辑用户',
         url: '/kalix/camel/rest/users'
-    },
-    stores: {
-        userStore: {
-            type: 'userStore'
-        }
     }
 });

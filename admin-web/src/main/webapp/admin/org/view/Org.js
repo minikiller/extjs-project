@@ -12,6 +12,7 @@ Ext.define('Kalix.admin.org.view.Org', {
         'Kalix.admin.org.controller.OrgController'
     ],
     controller: 'orgController',
+    xtype: 'orgPanel',
     viewModel: {
         type: 'orgViewModel'
     },

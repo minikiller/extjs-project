@@ -11,8 +11,7 @@ Ext.define('Kalix.admin.user.view.UserGrid', {
         'Kalix.admin.user.controller.UserGridController'
     ],
     alias: 'widget.userGrid',
-    id: "userDataGrid",
-    xtype: 'userGrid',
+    xtype: 'userGridPanel',
     controller: 'userGridController',
     viewModel: {
         type: 'userViewModel'
@@ -21,15 +20,6 @@ Ext.define('Kalix.admin.user.view.UserGrid', {
     stripeRows: true,
     manageHeight: true,
     selModel: {selType: 'checkboxmodel', mode: "SIMPLE"},
-    bind: {
-        store: '{userStore}'
-    },
-    bbar: [{
-        xtype: 'pagingToolBarComponent',
-        bind: {
-            store: '{userStore}'
-        }
-    }],
     columns: [
         {text: '编号', dataIndex: 'id', width: 40},
         {text: '登录名', dataIndex: 'loginName', width: 80},
@@ -88,6 +78,6 @@ Ext.define('Kalix.admin.user.view.UserGrid', {
         }, "-",
         {
             text: '批量删除', icon: 'admin/resources/images/group_delete.png', handler: 'onDeleteAll'
-        }, "-"]
-
+        }, "-"
+    ]
 });
