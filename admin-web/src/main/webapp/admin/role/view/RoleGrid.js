@@ -20,15 +20,15 @@ Ext.define('Kalix.admin.role.view.RoleGrid', {
     stripeRows: true,
     manageHeight: true,
     selModel: {selType: 'checkboxmodel', mode: "SIMPLE"},
-    bind: {
-        store: '{roleStore}'
-    },
-    bbar: [{
-        xtype: 'pagingToolBarComponent',
-        bind: {
-            store: '{roleStore}'
-        }
-    }],
+    //bind: {
+    //    store: '{roleStore}'
+    //},
+    //bbar: [{
+    //    xtype: 'pagingToolBarComponent',
+    //    bind: {
+    //        store: '{roleStore}'
+    //    }
+    //}],
     columns: [
         {text: '编号', dataIndex: 'id'},
         {text: '名称', dataIndex: 'name', width: 120},
@@ -61,13 +61,6 @@ Ext.define('Kalix.admin.role.view.RoleGrid', {
 
             }]
         }
-    ],
-    tbar: [
-        {
-            text: '新增', icon: 'admin/resources/images/user_add.png', handler: 'onAdd'
-        }, "-",
-        {
-            text: '批量删除', icon: 'admin/resources/images/user_delete.png', handler: 'onDeleteAll'
-        }, "-"]
+    ]
 
 });

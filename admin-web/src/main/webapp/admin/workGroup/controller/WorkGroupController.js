@@ -84,7 +84,14 @@ Ext.define('Kalix.admin.workGroup.controller.WorkGroupController', {
      * @returns {Ext.panel.Panel}
      */
     onInitDataGrid: function () {
-        var dataGird = Ext.create("Kalix.admin.workGroup.view.WorkGroupGrid");
+        var dataStore = Ext.create("Kalix.admin.workGroup.store.WorkGroupStore");
+        var dataGird = Ext.create("Kalix.admin.workGroup.view.WorkGroupGrid", {
+            store: dataStore,
+            bbar: [{
+                xtype: 'pagingToolBarComponent',
+                store: dataStore
+            }]
+        });
         return dataGird;
     }
 });

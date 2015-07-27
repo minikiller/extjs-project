@@ -15,10 +15,5 @@ Ext.define('Kalix.admin.dict.viewModel.DictViewModel', {
         addTitle: '新增字典',
         editTitle: '编辑字典',
         url: '/kalix/camel/rest/dicts'
-    },
-    stores: {
-        dictStore: {
-            type: 'dictStore'
-        }
     }
 });

@@ -20,15 +20,6 @@ Ext.define('Kalix.admin.dict.view.DictGrid', {
     stripeRows: true,
     manageHeight: true,
     selModel: {selType: 'checkboxmodel', mode: "SIMPLE"},
-    bind: {
-        store: '{dictStore}'
-    },
-    bbar: [{
-        xtype: 'pagingToolBarComponent',
-        bind: {
-            store: '{dictStore}'
-        }
-    }],
     columns: [
         {text: '编号', dataIndex: 'id'},
         {text: '标签名', dataIndex: 'label', width: 60},

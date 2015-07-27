@@ -195,7 +195,14 @@ Ext.define('Kalix.admin.dict.controller.DictController', {
      * @returns {Ext.panel.Panel}
      */
     onInitDataGrid: function () {
-        var dataGird = Ext.create("Kalix.admin.dict.view.DictGrid");
+        var dataStore = Ext.create("Kalix.admin.user.store.UserStore");
+        var dataGird = Ext.create("Kalix.admin.dict.view.DictGrid", {
+            store: dataStore,
+            bbar: [{
+                xtype: 'pagingToolBarComponent',
+                store: dataStore
+            }]
+        });
         return dataGird;
     }
 });

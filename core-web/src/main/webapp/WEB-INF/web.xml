@@ -39,7 +39,7 @@
         <url-pattern>/camel/rest/*</url-pattern>
     </servlet-mapping>
 
-    <!--<listener>
+    <listener>
         <listener-class>org.apache.shiro.web.env.EnvironmentLoaderListener</listener-class>
     </listener>
 
@@ -55,7 +55,7 @@
     <filter-mapping>
         <filter-name>ShiroFilter</filter-name>
         <url-pattern>/*</url-pattern>
-    </filter-mapping>-->
+    </filter-mapping>
 
 
     <welcome-file-list>

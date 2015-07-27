@@ -84,7 +84,14 @@ Ext.define('Kalix.admin.role.controller.RoleController', {
      * @returns {Ext.panel.Panel}
      */
     onInitDataGrid: function () {
-        var dataGird = Ext.create("Kalix.admin.role.view.RoleGrid");
+        var dataStore = Ext.create("Kalix.admin.role.store.RoleStore");
+        var dataGird = Ext.create("Kalix.admin.role.view.RoleGrid", {
+            store: dataStore,
+            bbar: [{
+                xtype: 'pagingToolBarComponent',
+                store: dataStore
+            }]
+        });
         return dataGird;
     }
 });

@@ -20,15 +20,6 @@ Ext.define('Kalix.admin.workGroup.view.WorkGroupGrid', {
     stripeRows: true,
     manageHeight: true,
     selModel: {selType: 'checkboxmodel', mode: "SIMPLE"},
-    bind: {
-        store: '{workGroupStore}'
-    },
-    bbar: [{
-        xtype: 'pagingToolBarComponent',
-        bind: {
-            store: '{workGroupStore}'
-        }
-    }],
     columns: [
         {text: '编号', dataIndex: 'id'},
         {text: '名称', dataIndex: 'name', width: 120},

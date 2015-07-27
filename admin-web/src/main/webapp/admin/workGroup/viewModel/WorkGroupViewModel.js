@@ -15,10 +15,5 @@ Ext.define('Kalix.admin.workGroup.viewModel.WorkGroupViewModel', {
         addTitle: '新增工作组',
         editTitle: '编辑工作组',
         url: '/kalix/camel/rest/workGroups'
-    },
-    stores: {
-        workGroupStore: {
-            type: 'workGroupStore'
-        }
     }
 });
