@@ -23,7 +23,7 @@ Ext.define('Kalix.admin.org.view.OrgGrid', {
     border:false,
     columnLines : true,
     stripeRows: true,
-    /*root:{
+    /*rootProperty:{
         id:'-1',
         name:'根机构'
     },*/

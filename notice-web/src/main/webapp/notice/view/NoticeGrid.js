@@ -16,29 +16,10 @@ Ext.define('Kalix.notice.view.NoticeGrid', {
     viewModel: {
         type: 'noticeViewModel'
     },
-
-
     autoLoad: true,
     stripeRows: true,
     manageHeight: true,
     selModel: {selType: 'checkboxmodel', mode: "SIMPLE"},
-    //publishes: ["currentNotice"],
-    bind: {
-        //autoLoad: true,
-        store: '{notices}'
-        //currentNotice: "{currentNotice}",
-    },
-    /* config: {
-     currentNotice: null
-     },*/
-
-    bbar: [{
-        xtype: 'pagingToolBarComponent',
-        bind: {
-            //autoLoad: true,
-            store: '{notices}'
-        }
-    }],
     columns: [
         {text: '编号', dataIndex: 'id', width: 40},
         {text: '标题', dataIndex: 'title', width: 80},

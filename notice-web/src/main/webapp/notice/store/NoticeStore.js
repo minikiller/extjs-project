@@ -18,7 +18,7 @@ Ext.define('Kalix.notice.store.NoticeStore', {
         url: '/kalix/camel/rest/notices',
         reader: {
             type: "json",
-            root: "data",
+            rootProperty: "data",
             totalProperty: 'totalCount'
         }
     },

@@ -17,7 +17,7 @@ Ext.define('Kalix.notice.view.NoticeAddForm', {
     },
 
     controller: 'noticeFormController',
-    id: "noticeAddForm",
+    itemId: "noticeAddForm",
     xtype: "noticeAddForm",
     labelAlign: 'center',
     labelWidth: 75,
@@ -43,6 +43,7 @@ Ext.define('Kalix.notice.view.NoticeAddForm', {
             fieldLabel: '内容',
             id: 'contentId',
             name: 'content',
+            xtype: 'textarea',
             allowBlank: false,
             blankText: '内容不能为空!',
             beforeLabelTpl: [

@@ -18,7 +18,7 @@ Ext.define('Kalix.admin.role.store.RoleStore', {
         url: '/kalix/camel/rest/roles',
         reader: {
             type: "json",
-            root: "data",
+            rootProperty: "data",
             totalProperty: 'totalCount'
         }
     }

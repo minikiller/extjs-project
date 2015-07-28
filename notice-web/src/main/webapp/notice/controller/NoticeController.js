@@ -10,7 +10,8 @@ Ext.define('Kalix.notice.controller.NoticeController', {
     alias: 'controller.noticeController',
     requires: [
         'Kalix.view.components.common.PagingToolBar',
-        'Kalix.notice.view.NoticeGrid'
+        'Kalix.notice.view.NoticeGrid',
+        'Kalix.notice.store.NoticeStore'
     ],
     /**
      * 初始化面板.
@@ -86,7 +87,7 @@ Ext.define('Kalix.notice.controller.NoticeController', {
                 text: '重置',
                 glyph: 0xf0e2,
                 handler: function () {
-                    searchForm.getForm().reset();
+                    formPanel.getForm().reset();
                 }
             }]
         });
@@ -105,8 +106,15 @@ Ext.define('Kalix.notice.controller.NoticeController', {
      * @returns {Ext.panel.Panel}
      */
     onInitDataGrid: function () {
+        var noticeStore = Ext.create('Kalix.notice.store.NoticeStore');
         var dataGird = Ext.create("Kalix.notice.view.NoticeGrid",
-            {itemId: "noticeDataGrid",});
+            {
+                store: noticeStore,
+                bbar: [{
+                    xtype: 'pagingToolBarComponent',
+                    store: noticeStore
+                }]
+            });
         return dataGird;
     }
 });

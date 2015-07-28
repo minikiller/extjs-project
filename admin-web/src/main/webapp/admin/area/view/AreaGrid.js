@@ -19,7 +19,7 @@ Ext.define('Kalix.admin.area.view.AreaGrid', {
     border: false,
     columnLines: true,
     stripeRows: true,
-    /*root:{
+    /*rootProperty:{
      id:'-1',
      name:'根机构'
      },*/

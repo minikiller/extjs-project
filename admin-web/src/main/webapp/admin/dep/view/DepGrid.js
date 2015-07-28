@@ -25,7 +25,7 @@ Ext.define('Kalix.admin.dep.view.DepGrid', {
     title:'部门列表',
     columnLines : true,
     stripeRows: true,
-    /*root:{
+    /*rootProperty:{
         id:'-1',
         name:'根机构'
     },*/

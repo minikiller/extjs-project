@@ -18,7 +18,7 @@ Ext.define('Kalix.admin.workGroup.store.WorkGroupStore', {
         url: '/kalix/camel/rest/workGroups',
         reader: {
             type: "json",
-            root: "data",
+            rootProperty: "data",
             totalProperty: 'totalCount'
         }
     }

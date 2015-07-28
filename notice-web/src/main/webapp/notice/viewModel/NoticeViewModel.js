@@ -16,7 +16,6 @@ Ext.define('Kalix.notice.viewModel.NoticeViewModel', {
         addTitle: '新增公告',
         editTitle: '编辑公告',
         url: '/kalix/camel/rest/notices',
-        currentNotice: null,
     },
     /*formulas: {
      dirty: {
@@ -39,9 +38,9 @@ Ext.define('Kalix.notice.viewModel.NoticeViewModel', {
      }
      }
      },*/
-    stores: {
+    /*stores: {
         notices: {
             type: 'noticeStore'
         }
-    }
+     }*/
 });

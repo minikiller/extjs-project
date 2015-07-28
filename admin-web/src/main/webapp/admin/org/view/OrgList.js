@@ -20,7 +20,7 @@ Ext.define('Kalix.admin.org.view.OrgList', {
     collapsible: true,
     autoScroll: true,
     border: false,
-    /*root:{
+    /*rootProperty:{
      id:'-1',
      name:'根机构'
      },*/
