@@ -18,7 +18,7 @@ Ext.define('Kalix.admin.dict.store.DictStore', {
         url: '/kalix/camel/rest/dicts',
         reader: {
             type: "json",
-            root: "data",
+            rootProperty: "data",
             totalProperty: 'totalCount'
         }
     }

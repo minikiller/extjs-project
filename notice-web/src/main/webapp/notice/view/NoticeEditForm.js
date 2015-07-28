@@ -46,7 +46,6 @@ Ext.define('Kalix.notice.view.NoticeEditForm', {
             name: 'title',
             allowBlank: false,
             blankText: '标题不能为空!',
-            bind: '{currentNotice.title}',
             beforeLabelTpl: [
                 '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
             ]
@@ -54,10 +53,10 @@ Ext.define('Kalix.notice.view.NoticeEditForm', {
         {
             fieldLabel: '内容',
             id: 'contentId',
+            xtype: 'textarea',
             name: 'content',
             allowBlank: false,
             blankText: '内容不能为空!',
-            bind: {value: '{currentNotice.content}'},
             beforeLabelTpl: [
                 '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
             ]

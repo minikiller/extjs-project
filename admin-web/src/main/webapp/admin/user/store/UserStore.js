@@ -18,7 +18,7 @@ Ext.define('Kalix.admin.user.store.UserStore', {
         url: '/kalix/camel/rest/users',
         reader: {
             type: "json",
-            root: "data",
+            rootProperty: "data",
             totalProperty: 'totalCount'
         }
     }

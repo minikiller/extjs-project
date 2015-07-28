@@ -20,7 +20,7 @@ Ext.define('Kalix.admin.area.view.AreaList', {
     collapsible: true,
     autoScroll: true,
     border: true,
-    /*root:{
+    /*rootProperty:{
      id:'-1',
      name:'根机构'
      },*/

@@ -14,28 +14,26 @@ Ext.define('Kalix.notice.controller.NoticeFormController', {
      * @returns {Ext.panel.Panel}
      */
     onAddReset: function () {
-        Ext.getCmp("noticeAddForm").getComponent("confirmPasswordId").setValue("");
-        Ext.getCmp("noticeAddForm").reset();
+        this.getView().reset();
     },
     /**
      * 重置操作.
      * @returns {Ext.panel.Panel}
      */
     onEditReset: function () {
-        Ext.getCmp("noticeEditForm").getComponent("confirmPasswordId").setValue("");
-        Ext.getCmp("noticeEditForm").reset();
+        this.getView().reset();
     },
     /**
      * 保存操作.
      * @returns {Ext.panel.Panel}
      */
     onSave: function () {
-        var form = Ext.getCmp("noticeAddForm");
+        var form = this.getView();
         if (form.isValid()) {
             form.submit({
                 success: function (form, action) {
                     Ext.Msg.alert(CONFIG.ALTER_TITLE_SUCCESS, action.result.msg);
-                    var grid = Ext.getCmp("noticeDataGrid");
+                    var grid = Ext.ComponentQuery.query('noticeGrid')[0];
                     var store = grid.getStore();
                     store.reload();
                     /*var noticename = Ext.getCmp("noticename").getValue();
@@ -64,12 +62,13 @@ Ext.define('Kalix.notice.controller.NoticeFormController', {
      * @returns {Ext.panel.Panel}
      */
     onUpdate: function () {
-        var form = Ext.getCmp("noticeEditForm");
+        var form = this.getView();
         if (form.isValid()) {
             form.submit({
                 success: function (form, action) {
                     Ext.Msg.alert(CONFIG.ALTER_TITLE_SUCCESS, action.result.msg);
-                    var grid = Ext.getCmp("noticeDataGrid");
+                    var grid = Ext.ComponentQuery.query('noticeGrid')[0];
+                    ;
                     var store = grid.getStore();
                     store.reload();
                 },
