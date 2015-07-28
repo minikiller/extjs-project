@@ -50,15 +50,17 @@ Ext.define('Kalix.admin.workGroup.view.WorkGroupGrid', {
                 tooltip: '删除',
                 handler: 'onDelete'
 
+            }, {
+                icon: "admin/resources/images/user_add.png",
+                tooltip: '添加用户',
+                handler: 'onAddUser'
+
             }]
         }
     ],
     tbar: [
         {
             text: '新增', icon: 'admin/resources/images/user_add.png', handler: 'onAdd'
-        }, "-",
-        {
-            text: '批量删除', icon: 'admin/resources/images/user_delete.png', handler: 'onDeleteAll'
-        }, "-"]
+        }]
 
 });

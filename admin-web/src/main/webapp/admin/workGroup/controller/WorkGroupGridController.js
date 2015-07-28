@@ -61,6 +61,23 @@ Ext.define('Kalix.admin.workGroup.controller.WorkGroupGridController', {
         win.show();
     },
     /**
+     * 添加用户.
+     */
+    onAddUser: function () {
+        var addUserForm = Ext.create('Kalix.admin.workGroup.view.AddUserForm');
+        var win = Ext.create('Ext.Window', {
+            width: 400,
+            height: 195,
+            border: false,
+            modal: true,
+            //resizable:false,
+            icon: 'admin/resources/images/user_add.png',
+            title: "添加用户",
+            items: [addUserForm]
+        });
+        win.show();
+    },
+    /**
      * 批量删除操作.
      */
     onDeleteAll: function () {

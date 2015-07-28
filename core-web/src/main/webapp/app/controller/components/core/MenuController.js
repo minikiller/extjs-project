@@ -21,8 +21,13 @@ Ext.define('Kalix.controller.components.core.MenuController', {
     onItemClick: function (view, record, item, index, e) {
         if (record.data.leaf) {
             var centerTabPanel = Ext.getCmp("centerTabPanel");
-
             var currentTab = centerTabPanel.getComponent(record.data.component.id);
+            //var loadMask = new Ext.LoadMask({
+            //    msg: '加载中...',
+            //    target:Ext.ComponentQuery.query('maincenter')[0]
+            //});
+            //loadMask.show();
+
             if (!currentTab) {
                 Ext.require(record.data.component.componentClass);
                 currentTab = new Ext.Panel({
@@ -36,6 +41,7 @@ Ext.define('Kalix.controller.components.core.MenuController', {
                 });
                 centerTabPanel.add(currentTab);
             }
+            //loadMask.hide();
             centerTabPanel.setActiveTab(currentTab);
         }
     }
