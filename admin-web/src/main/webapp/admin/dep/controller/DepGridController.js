@@ -140,7 +140,8 @@ Ext.define('Kalix.admin.dep.controller.DepGridController', {
                 {
                     xtype: 'displayfield',
                     labelAlign: 'right',
-                    fieldLabel: '部门',
+                    fieldLabel: '&nbsp;&nbsp;&nbsp;&nbsp;部门',
+                    labelWidth: 60,
                     value: rec.data.name
                 }]
         });
