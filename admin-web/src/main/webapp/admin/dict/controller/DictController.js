@@ -195,7 +195,7 @@ Ext.define('Kalix.admin.dict.controller.DictController', {
      * @returns {Ext.panel.Panel}
      */
     onInitDataGrid: function () {
-        var dataStore = Ext.create("Kalix.admin.user.store.UserStore");
+        var dataStore = Ext.create("Kalix.admin.dict.store.DictStore");
         var dataGird = Ext.create("Kalix.admin.dict.view.DictGrid", {
             store: dataStore,
             bbar: [{

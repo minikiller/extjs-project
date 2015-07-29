@@ -39,7 +39,7 @@ Ext.define('Kalix.admin.workGroup.view.WorkGroupGrid', {
         },
         {
             header: '操作',
-            width: 60,
+            width: 80,
             xtype: "actioncolumn",
             items: [{
                 icon: "resources/images/pencil.png",
@@ -51,10 +51,14 @@ Ext.define('Kalix.admin.workGroup.view.WorkGroupGrid', {
                 handler: 'onDelete'
 
             }, {
-                icon: "admin/resources/images/user_add.png",
+                icon: "admin/resources/images/group_add.png",
                 tooltip: '添加用户',
                 handler: 'onAddUser'
 
+            }, {
+                icon: "admin/resources/images/user_add.png",
+                tooltip: '添加角色',
+                handler: 'onAddRole'
             }]
         }
     ],

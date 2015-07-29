@@ -11,6 +11,7 @@ Ext.define('Kalix.admin.workGroup.view.WorkGroup', {
         'Kalix.admin.workGroup.viewModel.WorkGroupViewModel',
         'Kalix.admin.workGroup.controller.WorkGroupController'
     ],
+    xtype: 'workGroupPanel',
     controller: 'workGroupController',
     viewModel: {
         type: 'workGroupViewModel'

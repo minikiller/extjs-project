@@ -8,6 +8,9 @@
 Ext.define('Kalix.admin.role.controller.RoleGridController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.roleGridController',
+    requires: [
+        'Kalix.admin.user.view.UserAddItemSelector'
+    ],
     /**
      * 打开新增操作.
      * @returns {Ext.panel.Panel}
@@ -54,6 +57,108 @@ Ext.define('Kalix.admin.role.controller.RoleGridController', {
         });
 
         win.show();
+    },
+    /**
+     * 保存添加信息
+     */
+    onSaveAddUser: function (roleUserUrl, userAddForm, rec) {
+        if (userAddForm != null && userAddForm.isValid()) {
+            var userIds = userAddForm.down("#userAddItemSelector").getValue();
+            var roleId = rec.data.id;
+            Ext.Ajax.request({
+                url: roleUserUrl,
+                paramsAsJson: true,
+                params: {
+                    "roleId": roleId,
+                    "userIds": userIds.join(',')
+                },
+                method: "GET",
+                callback: function (options, success, response) {
+                    var resp = Ext.JSON.decode(response.responseText);
+                    if (resp != null && resp.success) {
+                        Ext.MessageBox.alert(CONFIG.ALTER_TITLE_INFO, resp.msg);
+                    } else {
+                        Ext.MessageBox.alert(CONFIG.ALTER_TITLE_FAILURE, resp.msg);
+                    }
+                }
+            });
+        }
+    },
+    /**
+     * 添加用户.
+     */
+    onAddUser: function (grid, rowIndex, colIndex) {
+        var rec = grid.getStore().getAt(rowIndex);
+        if (rec == null) {
+            Ext.MessageBox.alert(CONFIG.ALTER_TITLE_INFO, "请选择要添加用户的角色!");
+            return;
+        }
+
+        var win = Ext.create('Ext.Window', {
+            width: 710,
+            height: 460,
+            border: false,
+            modal: true,
+            //resizable:false,
+            icon: 'admin/resources/images/group_add.png',
+            title: "添加用户",
+            items: [
+                {
+                    xtype: 'displayfield',
+                    labelAlign: 'right',
+                    fieldLabel: '角色',
+                    value: rec.data.name
+                }]
+        });
+        win.show();
+        var loadMask = new Ext.LoadMask({
+            msg: '加载中...',
+            target: win
+        });
+        loadMask.show();
+        var roleUserUrl = this.getView().getViewModel().get("url") + "/roleUsers";
+        var me = this;
+        //获得已选用户
+        Ext.Ajax.request({
+            url: roleUserUrl + "/users/" + rec.data.id,
+            method: "GET",
+            callback: function (options, success, response) {
+                var users = Ext.JSON.decode(response.responseText);
+                var dataSotre = Ext.create("Kalix.admin.user.store.UserItemSelectorStore");
+                var addUserForm = Ext.create('Ext.form.Panel', {
+                    width: 700,
+                    itemId: "addUserForm",
+                    bodyPadding: 10,
+                    height: 400,
+                    layout: 'fit',
+                    items: [
+                        {
+                            itemId: 'userAddItemSelector',
+                            xtype: 'userAddItemSelector',
+                            value: users,
+                            store: dataSotre
+                        }
+                    ],
+                    buttons: [
+                        {
+                            text: '保存', glyph: 0xf0c7, handler: function () {
+                            me.onSaveAddUser(roleUserUrl, this.up('#addUserForm'), rec);
+                        }
+                        },
+                        {
+                            text: '重置', glyph: 0xf0e2, handler: function () {
+                            var field = this.up('#addUserForm').down("#userAddItemSelector");
+                            if (!field.disabled) {
+                                field.clearValue();
+                            }
+                        }
+                        }
+                    ]
+                });
+                win.add(addUserForm);
+                loadMask.hide();
+            }
+        });
     },
     /**
      * 批量删除操作.

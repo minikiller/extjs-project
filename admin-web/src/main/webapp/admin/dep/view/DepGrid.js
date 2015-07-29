@@ -70,6 +70,10 @@ Ext.define('Kalix.admin.dep.view.DepGrid', {
                     return record.data.name=="根机构"?true:false;
                 }
 
+            }, {
+                icon: "admin/resources/images/group_add.png",
+                tooltip: '添加用户',
+                handler: 'onAddUser'
             }]
         }
     ],

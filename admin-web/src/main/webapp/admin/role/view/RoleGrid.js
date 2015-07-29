@@ -58,6 +58,10 @@ Ext.define('Kalix.admin.role.view.RoleGrid', {
                 icon: "resources/images/cancel.png",
                 tooltip: '删除',
                 handler: 'onDelete'
+            }, {
+                icon: "admin/resources/images/group_add.png",
+                tooltip: '添加用户',
+                handler: 'onAddUser'
 
             }]
         }

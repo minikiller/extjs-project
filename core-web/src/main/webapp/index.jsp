@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Kalix</title>
+
     <%--<script src="/core-web/ext-5.1.0/ext-all.js"></script>--%>
     <script src="/core-web/ext-5.1.0/bootstrap.js"></script>
     <script src="/core-web/ext-5.1.0/packages/ext-locale/ext-locale-zh_CN.js"></script>
@@ -15,6 +16,7 @@
     <script type="text/javascript" src="resources/js/DateFormat.js"></script>
     <!-- 引入Font Awesome的css文件 -->
     <link type="text/css" rel="stylesheet" href="resources/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/core-web/ext-5.1.0/ux/css/ItemSelector.css"/>
 
 
 </head>

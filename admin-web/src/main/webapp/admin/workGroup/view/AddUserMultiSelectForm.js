@@ -5,29 +5,29 @@
  *         date:2015-7-28
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.workGroup.view.AddUserForm', {
+Ext.define('Kalix.admin.workGroup.view.AddUserMultiSelectForm', {
     extend: 'Ext.container.Container',
+    xtype: 'multi-selector',
+    width: 300,
+    height: 300,
     requires: [
         'Ext.view.MultiSelector',
         'Kalix.admin.user.model.UserModel'
     ],
-    xtype: 'multi-selector',
-    width: 400,
-    height: 300,
     layout: 'fit',
     items: [{
         xtype: 'multiselector',
-        title: '已选用户',
-        fieldName: 'name',
+        title: 'Selected Dx',
+        fieldName: 'mobile',
         viewConfig: {
             deferEmptyText: false,
-            emptyText: '没有选择用户'
+            emptyText: 'No Dx selected'
         },
         search: {
-            field: 'name',
+            field: 'mobile',
             store: {
                 model: 'Kalix.admin.user.model.UserModel',
-                sorters: 'name',
+                sorters: 'mobile',
                 autoLoad: true,
                 proxy: {
                     type: 'ajax',

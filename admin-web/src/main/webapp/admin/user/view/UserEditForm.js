@@ -86,8 +86,6 @@ Ext.define('Kalix.admin.user.view.UserEditForm', {
             fieldLabel: '电话号',
             itemId: 'phoneId',
             name: 'phone',
-            allowBlank: false,
-            blankText: '电话号不能为空!',
             beforeLabelTpl: [
                 '<span >&nbsp;&nbsp;</span>'
             ]
