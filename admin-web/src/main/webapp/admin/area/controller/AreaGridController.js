@@ -60,16 +60,8 @@ Ext.define('Kalix.admin.area.controller.AreaGridController', {
         var editFormPanel = Ext.create('Kalix.admin.area.view.AreaEditForm', {
             url: this.getView().getViewModel().get("url")
         });
-        var areaModel = Ext.create("Kalix.admin.area.model.AreaModel", {
-            id: rec.data.id,
-            name: rec.data.name,
-            code: rec.data.code,
-            jd: rec.data.jd,
-            wd: rec.data.wd,
-            centerCode: rec.data.centerCode
-        });
         editFormPanel.down("#parentName").setValue(rec.data.parentName);
-        editFormPanel.loadRecord(areaModel);
+        editFormPanel.loadRecord(rec);
 
         var win = Ext.create('Ext.Window', {
             width: 400,

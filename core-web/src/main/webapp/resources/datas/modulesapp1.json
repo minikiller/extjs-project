@@ -48,6 +48,19 @@
               "icon": "admin/resources/images/user.png",
               "componentClass": "Kalix.admin.workGroup.view.WorkGroup"
             }
+          },
+          {
+            "id": "menu2_cm5",
+            "text": "应用管理",
+            "leaf": true,
+            "icon": "admin/resources/images/user.png",
+            "component": {
+              "id": "module2_menu2_window5",
+              "title": "应用管理",
+              "description": "应用管理面板",
+              "icon": "admin/resources/images/user.png",
+              "componentClass": "Kalix.app.application.view.Application"
+            }
           }
         ]
       },

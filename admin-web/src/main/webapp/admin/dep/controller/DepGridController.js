@@ -68,16 +68,9 @@ Ext.define('Kalix.admin.dep.controller.DepGridController', {
         var editFormPanel = Ext.create('Kalix.admin.dep.view.DepEditForm', {
             url: this.getView().getViewModel().get("url")
         });
-        var depModel = Ext.create("Kalix.admin.dep.model.DepModel", {
-            id: rec.data.id,
-            name: rec.data.name,
-            code: rec.data.code,
-            centerCode: rec.data.centerCode
-        });
         editFormPanel.down("#parentName").setValue(rec.data.parentName);
-        editFormPanel.down("#orgIdId").setValue(this.getView().orgId);
         editFormPanel.down("#orgName").setValue(this.getView().orgName);
-        editFormPanel.loadRecord(depModel);
+        editFormPanel.loadRecord(rec);
 
         var win = Ext.create('Ext.Window', {
             width: 400,
