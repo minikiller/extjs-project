@@ -29,7 +29,7 @@ Ext.define('Kalix.admin.area.view.AreaEditForm', {
     buttonAlign: "center",
     items: [
         {xtype: 'hiddenfield', name: 'id'},
-        {xtype: 'hiddenfield', name: 'parentId', id: 'parentIdId', value: '-1'},
+        //{xtype: 'hiddenfield', name: 'parentId', id: 'parentIdId', value: '-1'},
         {xtype: 'hiddenfield', name: 'isLeaf', value: '1'},
         {
             fieldLabel: '上级区域',
