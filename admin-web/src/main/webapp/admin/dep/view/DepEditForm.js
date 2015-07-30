@@ -29,7 +29,7 @@ Ext.define('Kalix.admin.dep.view.DepEditForm', {
     buttonAlign: "center",
     items: [
         {xtype: 'hiddenfield', name: 'id'},
-        {xtype: 'hiddenfield', name: 'parentId', itemId: 'parentIdId', value: '-1'},
+        //{xtype: 'hiddenfield', name: 'parentId', itemId: 'parentIdId', value: '-1'},
         {xtype: 'hiddenfield', name: 'orgId', itemId: 'orgIdId', value: '-1'},
         {xtype: 'hiddenfield', name: 'isLeaf',value:'1'},
         {

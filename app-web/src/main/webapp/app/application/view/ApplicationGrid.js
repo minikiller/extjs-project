@@ -1,37 +1,30 @@
 /**
- * 角色表格
+ * 应用表格
  * @author majian <br/>
- *         date:2015-7-10
+ *         date:2015-7-3
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.role.view.RoleGrid', {
+Ext.define('Kalix.app.application.view.ApplicationGrid', {
     extend: 'Ext.grid.Panel',
     requires: [
-        'Kalix.admin.role.viewModel.RoleViewModel',
-        'Kalix.admin.role.controller.RoleGridController'
+        'Kalix.app.application.viewModel.ApplicationViewModel',
+        'Kalix.app.application.controller.ApplicationGridController'
     ],
-    alias: 'widget.roleGrid',
-    xtype: 'roleGridPanel',
-    controller: 'roleGridController',
+    alias: 'widget.applicationGrid',
+    xtype: 'applicationGridPanel',
+    controller: 'applicationGridController',
     viewModel: {
-        type: 'roleViewModel'
+        type: 'applicationViewModel'
     },
     autoLoad: true,
     stripeRows: true,
     manageHeight: true,
     selModel: {selType: 'checkboxmodel', mode: "SIMPLE"},
-    //bind: {
-    //    store: '{roleStore}'
-    //},
-    //bbar: [{
-    //    xtype: 'pagingToolBarComponent',
-    //    bind: {
-    //        store: '{roleStore}'
-    //    }
-    //}],
     columns: [
-        {text: '编号', dataIndex: 'id'},
-        {text: '名称', dataIndex: 'name', width: 120},
+        {text: '编号', dataIndex: 'id', width: 40},
+        {text: '名称', dataIndex: 'name', width: 80},
+        {text: '代码', dataIndex: 'code', width: 60},
+        {text: '路径', dataIndex: 'location', width: 60},
         {text: '创建人', dataIndex: 'createBy', width: 60},
         {
             text: '创建日期', dataIndex: 'creationDate', width: 120, renderer: function (value) {
@@ -44,12 +37,12 @@ Ext.define('Kalix.admin.role.view.RoleGrid', {
             text: '更新日期', dataIndex: 'updateDate', width: 120, renderer: function (value) {
             var updateDate = new Date(value);
             return updateDate.format("yyyy-MM-dd hh:mm:ss");
-          }
+        }
         },
         {
             header: '操作',
-            width: 60,
             xtype: "actioncolumn",
+            width: 60,
             items: [{
                 icon: "resources/images/pencil.png",
                 tooltip: '修改',
@@ -58,21 +51,16 @@ Ext.define('Kalix.admin.role.view.RoleGrid', {
                 icon: "resources/images/cancel.png",
                 tooltip: '删除',
                 handler: 'onDelete'
-            }, {
-                icon: "admin/resources/images/group_add.png",
-                tooltip: '添加用户',
-                handler: 'onAddUser'
 
             }]
         }
     ],
     tbar: [
         {
-            text: '新增', icon: 'admin/resources/images/user_add.png', handler: 'onAdd'
+            text: '新增', icon: 'admin/resources/images/group_add.png', handler: 'onAdd'
         }, "-",
         {
-            text: '批量删除', icon: 'admin/resources/images/user_delete.png', handler: 'onDeleteAll'
+            text: '批量删除', icon: 'admin/resources/images/group_delete.png', handler: 'onDeleteAll'
         }, "-"
     ]
-
 });

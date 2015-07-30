@@ -137,8 +137,9 @@ Ext.define('Kalix.admin.workGroup.controller.WorkGroupGridController', {
             items: [
                 {
                     xtype: 'displayfield',
-                    labelAlign: 'right',
-                    fieldLabel: '工作组',
+                    //labelAlign: 'right',
+                    fieldLabel: '&nbsp;&nbsp;&nbsp;&nbsp;工作组',
+                    labelWidth: 60,
                     value: rec.data.name
                 }]
         });
@@ -214,7 +215,8 @@ Ext.define('Kalix.admin.workGroup.controller.WorkGroupGridController', {
                 {
                     xtype: 'displayfield',
                     labelAlign: 'right',
-                    fieldLabel: '工作组',
+                    fieldLabel: '&nbsp;&nbsp;&nbsp;&nbsp;工作组',
+                    labelWidth: 60,
                     value: rec.data.name
                 }]
         });

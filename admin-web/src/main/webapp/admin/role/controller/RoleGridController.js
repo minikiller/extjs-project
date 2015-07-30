@@ -106,7 +106,8 @@ Ext.define('Kalix.admin.role.controller.RoleGridController', {
                 {
                     xtype: 'displayfield',
                     labelAlign: 'right',
-                    fieldLabel: '角色',
+                    fieldLabel: '&nbsp;&nbsp;&nbsp;&nbsp;角色',
+                    labelWidth: 60,
                     value: rec.data.name
                 }]
         });
