@@ -237,5 +237,6 @@
         <module>admin-web</module>
         <module>notice-web</module>
         <module>app-web</module>
+        <module>workflow-web</module>
     </modules>
 </project>

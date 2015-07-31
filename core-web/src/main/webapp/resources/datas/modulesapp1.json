@@ -149,6 +149,19 @@
             }
           },
           {
+            "id": "menu1_cm5",
+            "text": "流程定义管理",
+            "leaf": true,
+            "icon": "admin/resources/images/building.png",
+            "component": {
+              "id": "module1_menu2_window5",
+              "title": "流程定义管理",
+              "description": "流程定义管理面板",
+              "icon": "admin/resources/images/building.png",
+              "componentClass": "Kalix.workflow.view.ProcessDefinition"
+            }
+          },
+          {
             "id": "menu1_cm441",
             "text": "岗位管理",
             "leaf": true,
