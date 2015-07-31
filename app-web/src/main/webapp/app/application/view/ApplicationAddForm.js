@@ -38,7 +38,7 @@ Ext.define('Kalix.app.application.view.ApplicationAddForm', {
             ]
         },
         {
-            fieldLabel: '代码',
+            fieldLabel: '应用代码',
             itemId: 'codeId',
             name: 'code',
             allowBlank: false,

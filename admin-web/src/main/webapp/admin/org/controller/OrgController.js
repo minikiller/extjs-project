@@ -9,8 +9,8 @@ Ext.define('Kalix.admin.org.controller.OrgController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.orgController',
     requires: [
-        "Kalix.admin.area.view.AreaList",
-        "Kalix.admin.org.view.OrgList",
+        "Kalix.admin.area.view.AreaTreeList",
+        "Kalix.admin.org.view.OrgTreeList",
         'Kalix.admin.org.view.OrgGrid'
     ],
     /**
@@ -24,7 +24,7 @@ Ext.define('Kalix.admin.org.controller.OrgController', {
             autoScroll: true,
             itemId: "mainPanel",
             height: 630,
-            items: [this.onInitAreaList(), this.onInitDataGrid()]
+            items: [this.onInitAreaTreeList(), this.onInitDataGrid()]
         })
 
         return panel;
@@ -48,14 +48,14 @@ Ext.define('Kalix.admin.org.controller.OrgController', {
      * 区域刷新
      */
     onAreaRefersh: function () {
-        Ext.ComponentQuery.query('orgPanel')[0].down("#mainPanel>#orgAreaList").getStore().reload();
+        Ext.ComponentQuery.query('orgPanel')[0].down("#mainPanel>#orgAreaTreeList").getStore().reload();
     },
     /**
      * 区域展开
      * @constructor
      */
     onAreaAxpandAll: function () {
-        Ext.ComponentQuery.query('orgPanel')[0].down("#mainPanel>#orgAreaList").expandAll(function () {
+        Ext.ComponentQuery.query('orgPanel')[0].down("#mainPanel>#orgAreaTreeList").expandAll(function () {
         });
     },
     /**
@@ -63,18 +63,18 @@ Ext.define('Kalix.admin.org.controller.OrgController', {
      * @constructor
      */
     onAreaCollapseAll: function () {
-        Ext.ComponentQuery.query('orgPanel')[0].down("#mainPanel>#orgAreaList").collapseAll(function () {
+        Ext.ComponentQuery.query('orgPanel')[0].down("#mainPanel>#orgAreaTreeList").collapseAll(function () {
         });
     },
     /**
      * 初始化区域列表.
      * @returns {Ext.panel.Panel}
      */
-    onInitAreaList: function () {
-        var orgListPanel = Ext.create("Kalix.admin.area.view.AreaList", {
+    onInitAreaTreeList: function () {
+        var areaListPanel = Ext.create("Kalix.admin.area.view.AreaTreeList", {
             store: Ext.create("Kalix.admin.area.store.AreaStore"),
             region: "west",
-            itemId: "orgAreaList",
+            itemId: "orgAreaTreeList",
             title: '区域列表',
             listeners: {
                 itemClick: this.onAreaClick
@@ -93,7 +93,7 @@ Ext.define('Kalix.admin.org.controller.OrgController', {
                     handler: this.onAreaCollapseAll
                 }]
         });
-        return orgListPanel;
+        return areaListPanel;
     },
     /**
      * 初始化数据表格.

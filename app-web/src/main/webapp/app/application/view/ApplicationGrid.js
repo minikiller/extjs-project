@@ -23,7 +23,7 @@ Ext.define('Kalix.app.application.view.ApplicationGrid', {
     columns: [
         {text: '编号', dataIndex: 'id', width: 40},
         {text: '名称', dataIndex: 'name', width: 80},
-        {text: '代码', dataIndex: 'code', width: 60},
+        {text: '应用代码', dataIndex: 'code', width: 60},
         {text: '路径', dataIndex: 'location', width: 60},
         {text: '创建人', dataIndex: 'createBy', width: 60},
         {

@@ -1,22 +1,22 @@
 /**
- * 应用编辑表单
+ * 功能编辑表单
  *
  * @author majian <br/>
- *         date:2015-6-18
+ *         date:2015-7-21
  * @version 1.0.0
  */
-Ext.define('Kalix.app.application.view.ApplicationEditForm', {
+Ext.define('Kalix.app.function.view.FunctionEditForm', {
     extend: 'Ext.FormPanel',
     requires: [
-        'Kalix.app.application.viewModel.ApplicationViewModel',
-        'Kalix.app.application.controller.ApplicationFormController'
+        'Kalix.app.function.viewModel.FunctionViewModel',
+        'Kalix.app.function.controller.FunctionFormController'
     ],
-    alias: 'widget.applicationEditForm',
+    alias: 'widget.functionEditForm',
     viewModel: {
-        type: 'applicationViewModel'
+        type: 'functionViewModel'
     },
-    controller: 'applicationFormController',
-    xtype: 'applicationEditForm',
+    controller: 'functionFormController',
+    xtype: 'functionEditForm',
     labelAlign: 'center',
     labelWidth: 75,
     autoWidth: true,
@@ -29,6 +29,27 @@ Ext.define('Kalix.app.application.view.ApplicationEditForm', {
     buttonAlign: "center",
     items: [
         {xtype: 'hiddenfield', name: 'id'},
+        {xtype: 'hiddenfield', name: 'parentId', itemId: 'parentIdId', value: '-1'},
+        {xtype: 'hiddenfield', name: 'isLeaf', value: '1'},
+        {xtype: 'hiddenfield', name: 'applicationId', itemId: 'applicationIdId', value: '-1'},
+        {
+            fieldLabel: '所属应用',
+            itemId: "applicationName",
+            isFormField: false,
+            disabled: true,
+            beforeLabelTpl: [
+                '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
+            ]
+        },
+        {
+            fieldLabel: '上级功能',
+            itemId: "parentName",
+            isFormField: false,
+            disabled: true,
+            beforeLabelTpl: [
+                '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
+            ]
+        },
         {
             fieldLabel: '名称',
             itemId: 'nameId',
@@ -40,21 +61,13 @@ Ext.define('Kalix.app.application.view.ApplicationEditForm', {
             ]
         },
         {
-            fieldLabel: '应用代码',
+            fieldLabel: '机构代码',
             itemId: 'codeId',
             name: 'code',
             allowBlank: false,
-            blankText: '代码不能为空!',
+            blankText: '机构不能为空!',
             beforeLabelTpl: [
                 '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
-            ]
-        },
-        {
-            fieldLabel: '路径',
-            itemId: 'locationId',
-            name: 'location',
-            beforeLabelTpl: [
-                '<span>&nbsp;&nbsp;</span>'
             ]
         },
         {

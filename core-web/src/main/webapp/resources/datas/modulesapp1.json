@@ -61,6 +61,19 @@
               "icon": "admin/resources/images/user.png",
               "componentClass": "Kalix.app.application.view.Application"
             }
+          },
+          {
+            "id": "menu2_cm6",
+            "text": "功能管理",
+            "leaf": true,
+            "icon": "admin/resources/images/user.png",
+            "component": {
+              "id": "module2_menu2_window6",
+              "title": "功能管理",
+              "description": "功能管理面板",
+              "icon": "admin/resources/images/user.png",
+              "componentClass": "Kalix.app.function.view.Function"
+            }
           }
         ]
       },
