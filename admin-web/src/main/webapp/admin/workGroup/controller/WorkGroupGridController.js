@@ -26,7 +26,7 @@ Ext.define('Kalix.admin.workGroup.controller.WorkGroupGridController', {
             border: false,
             modal: true,
             //resizable:false,
-            icon: 'admin/resources/images/book_add.png',
+            icon: 'admin/resources/images/cup_add.png',
             title: this.getView().getViewModel().get("addTitle"),
             items: [addFormPanel]
         });
@@ -57,7 +57,7 @@ Ext.define('Kalix.admin.workGroup.controller.WorkGroupGridController', {
             border: false,
             modal: true,
             //resizable:false,
-            icon: 'admin/resources/images/book_edit.png',
+            icon: 'admin/resources/images/cup_edit.png',
             title: this.getView().getViewModel().get("editTitle"),
             items: [editFormPanel]
         });

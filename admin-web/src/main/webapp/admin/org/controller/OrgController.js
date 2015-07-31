@@ -81,7 +81,7 @@ Ext.define('Kalix.admin.org.controller.OrgController', {
             },
             tbar: [
                 {
-                    text: '刷新', icon: 'admin/resources/images/shape_square_go.png',
+                    text: '刷新', icon: 'admin/resources/images/arrow_refresh.png',
                     handler: this.onAreaRefersh
                 },
                 {

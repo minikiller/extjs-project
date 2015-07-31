@@ -74,9 +74,9 @@ Ext.define('Kalix.app.function.view.FunctionGrid', {
     ],
     tbar: [
         {
-            text: '新增', icon: 'app/resources/images/script_add.png', handler: 'onAdd'
+            text: '新增', icon: 'app/resources/images/note_add.png', handler: 'onAdd'
         }, {
-            text: '刷新', icon: 'app/resources/images/script_go.png', handler: 'onRefersh'
+            text: '刷新', icon: 'app/resources/images/arrow_refresh.png', handler: 'onRefersh'
         }]
 
 });

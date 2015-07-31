@@ -48,7 +48,7 @@ Ext.define('Kalix.app.function.controller.FunctionGridController', {
             border: false,
             modal: true,
             //resizable:false,
-            icon: 'app/resources/images/script_add.png',
+            icon: 'app/resources/images/note_add.png',
             title: this.getView().getViewModel().get("addTitle"),
             items: [addFormPanel]
         });
@@ -77,7 +77,7 @@ Ext.define('Kalix.app.function.controller.FunctionGridController', {
             border: false,
             modal: true,
             //resizable:false,
-            icon: 'app/resources/images/script_edit.png',
+            icon: 'app/resources/images/note_edit.png',
             title: this.getView().getViewModel().get("editTitle"),
             items: [editFormPanel]
         });

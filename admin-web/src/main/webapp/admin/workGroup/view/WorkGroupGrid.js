@@ -64,7 +64,7 @@ Ext.define('Kalix.admin.workGroup.view.WorkGroupGrid', {
     ],
     tbar: [
         {
-            text: '新增', icon: 'admin/resources/images/user_add.png', handler: 'onAdd'
+            text: '新增', icon: 'admin/resources/images/cup_add.png', handler: 'onAdd'
         }]
 
 });

@@ -23,7 +23,7 @@ Ext.define('Kalix.app.application.controller.ApplicationGridController', {
             border: false,
             modal: true,
             //resizable:false,
-            icon: 'app/resources/images/group_add.png',
+            icon: 'app/resources/images/application_add.png',
             title: this.getView().getViewModel().get("addTitle"),
             items: [addFormPanel]
         });
@@ -49,7 +49,7 @@ Ext.define('Kalix.app.application.controller.ApplicationGridController', {
             border: false,
             modal: true,
             //resizable:false,
-            icon: 'app/resources/images/group_edit.png',
+            icon: 'app/resources/images/application_edit.png',
             title: this.getView().getViewModel().get("editTitle"),
             items: [editFormPanel]
         });

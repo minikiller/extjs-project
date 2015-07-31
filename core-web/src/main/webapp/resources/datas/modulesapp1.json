@@ -40,12 +40,12 @@
             "id": "menu2_cm4",
             "text": "工作组管理",
             "leaf": true,
-            "icon": "admin/resources/images/user.png",
+            "icon": "admin/resources/images/cup.png",
             "component": {
               "id": "module2_menu2_window4",
               "title": "工作组管理",
               "description": "工作组管理面板",
-              "icon": "admin/resources/images/user.png",
+              "icon": "admin/resources/images/cup.png",
               "componentClass": "Kalix.admin.workGroup.view.WorkGroup"
             }
           },
@@ -53,12 +53,12 @@
             "id": "menu2_cm5",
             "text": "应用管理",
             "leaf": true,
-            "icon": "admin/resources/images/user.png",
+            "icon": "app/resources/images/application.png",
             "component": {
               "id": "module2_menu2_window5",
               "title": "应用管理",
               "description": "应用管理面板",
-              "icon": "admin/resources/images/user.png",
+              "icon": "app/resources/images/application.png",
               "componentClass": "Kalix.app.application.view.Application"
             }
           },
@@ -66,12 +66,12 @@
             "id": "menu2_cm6",
             "text": "功能管理",
             "leaf": true,
-            "icon": "admin/resources/images/user.png",
+            "icon": "app/resources/images/note.png",
             "component": {
               "id": "module2_menu2_window6",
               "title": "功能管理",
               "description": "功能管理面板",
-              "icon": "admin/resources/images/user.png",
+              "icon": "app/resources/images/note.png",
               "componentClass": "Kalix.app.function.view.Function"
             }
           }

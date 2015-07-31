@@ -57,10 +57,10 @@ Ext.define('Kalix.app.application.view.ApplicationGrid', {
     ],
     tbar: [
         {
-            text: '新增', icon: 'admin/resources/images/group_add.png', handler: 'onAdd'
+            text: '新增', icon: 'app/resources/images/application_add.png', handler: 'onAdd'
         }, "-",
         {
-            text: '批量删除', icon: 'admin/resources/images/group_delete.png', handler: 'onDeleteAll'
+            text: '批量删除', icon: 'app/resources/images/application_delete.png', handler: 'onDeleteAll'
         }, "-"
     ]
 });

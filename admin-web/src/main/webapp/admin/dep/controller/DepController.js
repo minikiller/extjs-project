@@ -119,7 +119,7 @@ Ext.define('Kalix.admin.dep.controller.DepController', {
             },
             tbar: [
                 {
-                    text: '刷新', icon: 'admin/resources/images/shape_square_go.png',
+                    text: '刷新', icon: 'admin/resources/images/arrow_refresh.png',
                     handler: this.onAreaRefersh
                 },
                 {
@@ -148,7 +148,7 @@ Ext.define('Kalix.admin.dep.controller.DepController', {
             },
             tbar: [
                 {
-                    text: '刷新', icon: 'admin/resources/images/script_go.png',
+                    text: '刷新', icon: 'admin/resources/images/arrow_refresh.png',
                     handler: this.onOrgRefersh
                 },
                 {

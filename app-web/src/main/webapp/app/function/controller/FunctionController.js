@@ -80,7 +80,7 @@ Ext.define('Kalix.app.function.controller.FunctionController', {
             },
             tbar: [
                 {
-                    text: '刷新', icon: 'app/resources/images/shape_square_go.png',
+                    text: '刷新', icon: 'app/resources/images/arrow_refresh.png',
                     handler: this.onApplicationRefersh
                 }]
         });

@@ -77,7 +77,7 @@ Ext.define('Kalix.admin.org.view.OrgGrid', {
         {
             text: '新增', icon: 'admin/resources/images/script_add.png', handler: 'onAdd'
         }, {
-            text: '刷新', icon: 'admin/resources/images/script_go.png', handler: 'onRefersh'
+            text: '刷新', icon: 'admin/resources/images/arrow_refresh.png', handler: 'onRefersh'
         }]
 
 });
