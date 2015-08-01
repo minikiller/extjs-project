@@ -162,6 +162,45 @@
             }
           },
           {
+            "id": "menu1_cm6",
+            "text": "流程演示程序",
+            "leaf": true,
+            "icon": "admin/resources/images/building.png",
+            "component": {
+              "id": "module1_menu2_window6",
+              "title": "流程演示程序",
+              "description": "流程演示程序",
+              "icon": "admin/resources/images/building.png",
+              "componentClass": "Kalix.demo.view.Notice"
+            }
+          },
+          {
+            "id": "menu1_cm7",
+            "text": "待办任务列表",
+            "leaf": true,
+            "icon": "admin/resources/images/building.png",
+            "component": {
+              "id": "module1_menu2_window7",
+              "title": "待办任务列表",
+              "description": "待办任务列表",
+              "icon": "admin/resources/images/building.png",
+              "componentClass": "Kalix.workflow.view.Task"
+            }
+          },
+          {
+            "id": "menu1_cm8",
+            "text": "流程历史列表",
+            "leaf": true,
+            "icon": "admin/resources/images/building.png",
+            "component": {
+              "id": "module1_menu2_window8",
+              "title": "流程历史列表",
+              "description": "流程历史列表",
+              "icon": "admin/resources/images/building.png",
+              "componentClass": "Kalix.workflow.view.ProcessHistory"
+            }
+          },
+          {
             "id": "menu1_cm441",
             "text": "岗位管理",
             "leaf": true,
