@@ -205,7 +205,7 @@ Ext.define('Kalix.demo.controller.NoticeGridController', {
     onOpenCurrentProcess: function (grid, rowIndex, colIndex) {
         var rec = grid.getStore().getAt(rowIndex);
         var imgUrl = this.getView().getViewModel().get("processShowUrl") + "?processInstanceId=" + rec.data.processInstanceId;
-        var win = Ext.create('Kalix.workflow.view.components.ActivitiProcessImageWindow', {
+        var win = Ext.create('Kalix.workflow.components.ActivitiProcessImageWindow', {
             html: "<iframe  width='100%' height='100%' frameborder='0' src='" + imgUrl + "'></iframe>",
             title: this.getView().getViewModel().get("processShowTitile") + "-" + rec.data.title
         });
