@@ -67,7 +67,6 @@ Ext.define('Kalix.admin.role.view.RoleGrid', {
                 icon: "admin/resources/images/application_add.png",
                 tooltip: '权限分配',
                 handler: 'onAuthorization'
-
             }]
         }
     ],

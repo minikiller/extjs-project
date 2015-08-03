@@ -244,6 +244,6 @@ Ext.define('Kalix.admin.role.controller.RoleGridController', {
      * @param colIndex
      */
     onAuthorization: function (grid, rowIndex, colIndex) {
-
+        Ext.create('Kalix.app.components.AuthorizationWindow').show();
     }
 });

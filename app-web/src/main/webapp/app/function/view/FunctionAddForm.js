@@ -15,6 +15,9 @@ Ext.define('Kalix.app.function.view.FunctionAddForm', {
     viewModel: {
         type: 'functionViewModel'
     },
+    data: {
+        parentPermission: null
+    },
     controller: 'functionFormController',
     xtype: "functionAddForm",
     labelAlign: 'center',
@@ -29,6 +32,7 @@ Ext.define('Kalix.app.function.view.FunctionAddForm', {
     items: [
         {xtype: 'hiddenfield', name: 'parentId', itemId: 'parentIdId', value: '-1'},
         {xtype: 'hiddenfield', name: 'isLeaf', value: '1'},
+        {xtype: 'hiddenfield', itemId: 'permissionId', name: 'permission', value: '-1'},
         {xtype: 'hiddenfield', name: 'applicationId', itemId: 'applicationIdId', value: '-1'},
         {
             fieldLabel: '所属应用',
@@ -63,7 +67,7 @@ Ext.define('Kalix.app.function.view.FunctionAddForm', {
             id: 'codeId',
             name: 'code',
             allowBlank: false,
-            blankText: '机构不能为空!',
+            blankText: '功能代码不能为空!',
             beforeLabelTpl: [
                 '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
             ]
