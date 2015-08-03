@@ -28,6 +28,8 @@ Ext.define('Kalix.workflow.view.ProcessDefinitionGrid', {
         {text: '版本', dataIndex: 'version', width: 60},
         {
             text: '状态', dataIndex: 'suspensionState', width: 60, renderer: function (value) {
+            //Ext.ComponentQuery.query('processDefinitionGrid')[0]
+            //alert(Ext.ComponentQuery.query('processDefinitionGrid')[0].getComponent("operationColumn"));
             if (value == 1)
                 return "有效";
             else
@@ -37,7 +39,8 @@ Ext.define('Kalix.workflow.view.ProcessDefinitionGrid', {
         {
             header: '操作',
             xtype: "actioncolumn",
-            width: 60,
+            itemId: 'operationColumn',
+            width: 75,
             items: [{
                 icon: "resources/images/pencil.png",
                 tooltip: '修改',
@@ -47,9 +50,28 @@ Ext.define('Kalix.workflow.view.ProcessDefinitionGrid', {
                 tooltip: '删除',
                 handler: 'onDelete'
 
+            }, {
+                itemId: 'activateButton',
+                getClass: function (v, meta, record) {
+                    if (record.data.suspensionState == 1) {
+                        return "kalix_stop";
+                    }
+                    return "kalix_start";
+                },
+                getTip: function (value, metadata, record, row, col, store) {
+                    if (record.data.suspensionState == 1) {
+                        return "无效";
+                    }
+                    return '有效';
+                },
+                handler: 'onIsActivate'
+            }, {
+                icon: "resources/images/magnifier.png",
+                tooltip: '查看',
+                handler: 'onOpenProcessDefinition'
             }]
         }
-    ],
+    ]
     /*tbar: [
      {
      text: '新增', icon: 'admin/resources/images/group_add.png', handler: 'onAdd'

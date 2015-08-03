@@ -16,6 +16,7 @@
     <script type="text/javascript" src="resources/js/DateFormat.js"></script>
     <!-- 引入Font Awesome的css文件 -->
     <link type="text/css" rel="stylesheet" href="resources/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="resources/css/index.css">
     <link rel="stylesheet" type="text/css" href="/core-web/ext-5.1.0/ux/css/ItemSelector.css"/>
 
 

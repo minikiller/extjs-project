@@ -165,5 +165,20 @@ Ext.define('Kalix.workflow.controller.TaskGridController', {
                 });
             }
         });
+    },
+    /**
+     * 查看当前环节
+     * @param grid
+     * @param rowIndex
+     * @param colIndex
+     */
+    onOpenCurrentProcess: function (grid, rowIndex, colIndex) {
+        var rec = grid.getStore().getAt(rowIndex);
+        var imgUrl = this.getView().getViewModel().get("processShowUrl") + "?taskId=" + rec.data.id;
+        var win = Ext.create('Kalix.workflow.components.ActivitiProcessImageWindow', {
+            html: "<iframe  width='100%' height='100%' frameborder='0' src='" + imgUrl + "'></iframe>",
+            title: this.getView().getViewModel().get("processShowTitile") + "-" + rec.data.title
+        });
+        win.show();
     }
 });

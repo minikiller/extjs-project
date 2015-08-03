@@ -43,7 +43,6 @@ Ext.define('Kalix.notice.view.NoticeGrid', {
                 icon: "resources/images/cancel.png",
                 tooltip: '删除',
                 handler: 'onDelete'
-
             }]
         }
     ],
@@ -53,6 +52,6 @@ Ext.define('Kalix.notice.view.NoticeGrid', {
         }, "-",
         {
             text: '批量删除', icon: 'admin/resources/images/group_delete.png', handler: 'onDeleteAll'
-        }, "-"],
+        }, "-"]
 
 });

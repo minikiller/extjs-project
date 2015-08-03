@@ -168,5 +168,47 @@ Ext.define('Kalix.demo.controller.NoticeGridController', {
                 });
             }
         });
+    },
+    /**
+     * 流程激活
+     * @param grid
+     * @param rowIndex
+     * @param colIndex
+     */
+    onIsStart: function (grid, rowIndex, colIndex) {
+        var rec = grid.getStore().getAt(rowIndex);
+        var postUrl;
+        if (rec.data.status != "INACTIVE") {
+            Ext.MessageBox.alert(CONFIG.ALTER_TITLE_ERROR, "流程已经启动!");
+            return;
+        }
+        postUrl = this.getView().getViewModel().get("processUrl") + "/startProcess?id=" + rec.data.id;
+        Ext.Ajax.request({
+            url: postUrl,
+            method: 'GET',
+            callback: function (options, success, response) {
+                var resp = Ext.JSON.decode(response.responseText);
+                Ext.MessageBox.alert(CONFIG.ALTER_TITLE_INFO, resp.msg);
+                if (resp.success) {
+                    var store = grid.getStore();
+                    store.reload();
+                }
+            }
+        });
+    },
+    /**
+     * 查看当前环节
+     * @param grid
+     * @param rowIndex
+     * @param colIndex
+     */
+    onOpenCurrentProcess: function (grid, rowIndex, colIndex) {
+        var rec = grid.getStore().getAt(rowIndex);
+        var imgUrl = this.getView().getViewModel().get("processShowUrl") + "?processInstanceId=" + rec.data.processInstanceId;
+        var win = Ext.create('Kalix.workflow.components.ActivitiProcessImageWindow', {
+            html: "<iframe  width='100%' height='100%' frameborder='0' src='" + imgUrl + "'></iframe>",
+            title: this.getView().getViewModel().get("processShowTitile") + "-" + rec.data.title
+        });
+        win.show();
     }
 });

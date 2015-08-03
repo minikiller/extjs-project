@@ -36,7 +36,7 @@ Ext.define('Kalix.demo.view.NoticeGrid', {
         {
             header: '操作',
             xtype: "actioncolumn",
-            width: 60,
+            width: 80,
             items: [{
                 icon: "resources/images/pencil.png",
                 tooltip: '修改',
@@ -46,6 +46,19 @@ Ext.define('Kalix.demo.view.NoticeGrid', {
                 tooltip: '删除',
                 handler: 'onDelete'
 
+            }, {
+                itemId: 'activateButton',
+                getClass: function (v, meta, record) {
+                    return "kalix_start";
+                },
+                getTip: function (value, metadata, record, row, col, store) {
+                    return '启动';
+                },
+                handler: 'onIsStart'
+            }, {
+                icon: "resources/images/magnifier.png",
+                tooltip: '查看',
+                handler: 'onOpenCurrentProcess'
             }]
         }
     ],
@@ -55,6 +68,6 @@ Ext.define('Kalix.demo.view.NoticeGrid', {
         }, "-",
         {
             text: '批量删除', icon: 'admin/resources/images/group_delete.png', handler: 'onDeleteAll'
-        }, "-"],
+        }, "-"]
 
 });

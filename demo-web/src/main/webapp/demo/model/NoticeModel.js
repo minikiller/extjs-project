@@ -14,5 +14,7 @@ Ext.define('Kalix.demo.model.NoticeModel', {
         {name: 'publishPeople', type: 'string'},//发布人
         {name: 'publishDate', type: 'int'},//发布时间
         {name: 'status', type: 'string'},//工作流状态
+        {name: 'processInstanceId', type: 'string'}//流程实例编号
+
     ]
 });
