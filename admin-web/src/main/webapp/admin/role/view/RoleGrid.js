@@ -48,7 +48,7 @@ Ext.define('Kalix.admin.role.view.RoleGrid', {
         },
         {
             header: '操作',
-            width: 60,
+            width: 75,
             xtype: "actioncolumn",
             items: [{
                 icon: "resources/images/pencil.png",
@@ -62,6 +62,11 @@ Ext.define('Kalix.admin.role.view.RoleGrid', {
                 icon: "admin/resources/images/group_add.png",
                 tooltip: '添加用户',
                 handler: 'onAddUser'
+
+            }, {
+                icon: "admin/resources/images/application_add.png",
+                tooltip: '权限分配',
+                handler: 'onAuthorization'
 
             }]
         }

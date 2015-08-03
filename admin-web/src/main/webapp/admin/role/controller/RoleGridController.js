@@ -236,5 +236,14 @@ Ext.define('Kalix.admin.role.controller.RoleGridController', {
                 });
             }
         });
+    },
+    /**
+     * 授权
+     * @param grid
+     * @param rowIndex
+     * @param colIndex
+     */
+    onAuthorization: function (grid, rowIndex, colIndex) {
+
     }
 });

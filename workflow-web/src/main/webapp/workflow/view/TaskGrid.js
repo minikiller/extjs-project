@@ -26,7 +26,12 @@ Ext.define('Kalix.workflow.view.TaskGrid', {
 
         {text: '描述', dataIndex: 'description', width: 160},
         {text: '执行人', dataIndex: 'assignee', width: 80},
-        {text: '创建时间', dataIndex: 'createTime', width: 60},
+        {
+            text: '创建时间', dataIndex: 'createTime', width: 60, renderer: function (value) {
+            var createDate = new Date(value);
+            return createDate.format("yyyy-MM-dd hh:mm:ss");
+        }
+        },
         {
             header: '操作',
             xtype: "actioncolumn",
