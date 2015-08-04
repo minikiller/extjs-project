@@ -11,9 +11,12 @@ Ext.define('Kalix.app.components.AuthorizationWindow', {
     height: 500,
     border: false,
     modal: true,
+    data: {
+        roleId: null,
+        authorizationUrl: null
+    },
     title: "权限分配",
     layout: 'form',
-    buttonAlign: 'right',
     items: [{
         itemId: 'authorizationTree',
         xtype: 'treepanel',
@@ -21,12 +24,7 @@ Ext.define('Kalix.app.components.AuthorizationWindow', {
         autoScroll: true,
         border: true,
         rootVisible: false,
-        store: {
-            proxy: {
-                type: "ajax",
-                url: '/kalix/camel/rest/applications/authorization'
-            }
-        },
+        store: null,
         listeners: {
             checkchange: function (node, checked, obj) {
                 node.cascadeBy(function (n) {
@@ -49,22 +47,55 @@ Ext.define('Kalix.app.components.AuthorizationWindow', {
                 }
             }
         }
-    }, {
-        xtype: 'button',
-        text: '保存',
-        handler: function () {
-            var records = Ext.ComponentQuery.query('authorizationWindow')[0].down('#authorizationTree').getChecked();
-            var ids = [];
-            Ext.Array.each(records, function (rec) {
-                ids.push(rec.get('id'));
-            });
-            alert(ids.join(','));
+    }],
+    buttons: [
+        {
+            xtype: 'button',
+            text: '保存',
+            handler: function () {
+                var authorizationUrl = Ext.ComponentQuery.query('authorizationWindow')[0].authorizationUrl;
+                var roleId = Ext.ComponentQuery.query('authorizationWindow')[0].roleId;
+                if (authorizationUrl == null || authorizationUrl == "") {
+                    Ext.MessageBox.alert(CONFIG.ALTER_TITLE_FAILURE, "保存路径不能为空!");
+                    return;
+                }
+                if (roleId == null || roleId == "") {
+                    Ext.MessageBox.alert(CONFIG.ALTER_TITLE_FAILURE, "角色编号不能为空!");
+                    return;
+                }
+                var records = Ext.ComponentQuery.query('authorizationWindow')[0].down('#authorizationTree').getChecked();
+                var ids = [];
+                Ext.Array.each(records, function (rec) {
+                    if (rec.get("parentId") == "root") {
+                        ids.push("app:" + rec.get('id'));
+                    } else {
+                        ids.push("fun:" + rec.get('id'));
+                    }
+                });
+                Ext.Ajax.request({
+                    url: authorizationUrl,
+                    paramsAsJson: true,
+                    params: {
+                        "roleId": roleId,
+                        "authorizationIds": ids.join(',')
+                    },
+                    method: "GET",
+                    callback: function (options, success, response) {
+                        var resp = Ext.JSON.decode(response.responseText);
+                        if (resp != null && resp.success) {
+                            Ext.MessageBox.alert(CONFIG.ALTER_TITLE_INFO, resp.msg);
+                        } else {
+                            Ext.MessageBox.alert(CONFIG.ALTER_TITLE_FAILURE, resp.msg);
+                        }
+                    }
+                });
+            }
+        }, {
+            xtype: 'button',
+            text: '关闭',
+            handler: function () {
+                Ext.ComponentQuery.query('authorizationWindow')[0].close();
+            }
         }
-    }, {
-        xtype: 'button',
-        text: '关闭',
-        handler: function () {
-            Ext.ComponentQuery.query('authorizationWindow')[0].close();
-        }
-    }]
+    ]
 });

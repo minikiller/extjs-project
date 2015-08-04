@@ -244,6 +244,16 @@ Ext.define('Kalix.admin.role.controller.RoleGridController', {
      * @param colIndex
      */
     onAuthorization: function (grid, rowIndex, colIndex) {
-        Ext.create('Kalix.app.components.AuthorizationWindow').show();
+        var authorizationWindow = Ext.create('Kalix.app.components.AuthorizationWindow');
+        var rec = grid.getStore().getAt(rowIndex);
+        authorizationWindow.roleId = rec.data.id;
+        authorizationWindow.authorizationUrl = this.getView().getViewModel().get("authorizationUrl");
+        authorizationWindow.show();
+        var store = authorizationWindow.down("#authorizationTree").getStore();
+        store.setProxy({
+            type: "ajax",
+            url: '/kalix/camel/rest/roles/' + rec.data.id + "/authorizations"
+        });
+        store.reload();
     }
 });
