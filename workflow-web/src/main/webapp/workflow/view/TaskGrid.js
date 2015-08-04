@@ -37,18 +37,15 @@ Ext.define('Kalix.workflow.view.TaskGrid', {
             xtype: "actioncolumn",
             width: 80,
             items: [{
-                icon: "resources/images/pencil.png",
-                tooltip: '修改',
-                handler: 'onEdit'
-            }, {
-                icon: "resources/images/cancel.png",
-                tooltip: '删除',
-                handler: 'onDelete'
-            }, {
                 icon: "resources/images/magnifier.png",
                 tooltip: '查看',
                 handler: 'onOpenCurrentProcess'
-            }]
+            },
+                {
+                    icon: "resources/images/control_play_blue.png",
+                    tooltip: '处理',
+                    handler: 'onCompleteTask'
+                }]
         }
     ]
     /*tbar: [

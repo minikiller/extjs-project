@@ -165,5 +165,41 @@ Ext.define('Kalix.workflow.controller.ProcessHistoryGridController', {
                 });
             }
         });
+    },
+
+    onOpenHistoryActivity: function (grid, rowIndex, colIndex) {
+        var rec = grid.getStore().getAt(rowIndex);
+        /* var historyActivityFormPanel = Ext.create('Kalix.workflow.view.ActivityHistoryGrid', {
+         url: this.getView().getViewModel().get("historyActivityUrl"),
+         //noticeRef:this.lookupReference('noticeRef'),
+         });*/
+        //alert(rec.id);
+        var activityHistoryStore = Ext.create('Kalix.workflow.store.ActivityHistoryStore', {
+            proxy: {
+                url: '/kalix/camel/rest/workflow/activities?historyProcessId=' + rec.id,
+
+            }
+        });
+        var dataGird = Ext.create("Kalix.workflow.view.ActivityHistoryGrid",
+            {
+                store: activityHistoryStore,
+
+                //url:'/kalix/camel/rest/workflow/activities',
+            });
+        var win = Ext.create('Ext.Window', {
+            width: 600,
+            height: 500,
+            border: false,
+            modal: true,
+
+            //resizable:false,
+            icon: 'admin/resources/images/group_edit.png',
+            bind: {
+                title: '{editTitle}'
+            },
+            items: [dataGird]
+        });
+        //this.getView().getViewModel.set('rec',record);
+        win.show();
     }
 });

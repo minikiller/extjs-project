@@ -10,6 +10,7 @@ Ext.define('Kalix.workflow.controller.TaskGridController', {
     alias: 'controller.taskGridController',
 
 
+
     /**
      * 打开新增操作.
      * @returns {Ext.panel.Panel}
@@ -180,5 +181,15 @@ Ext.define('Kalix.workflow.controller.TaskGridController', {
             title: this.getView().getViewModel().get("processShowTitile") + "-" + rec.data.title
         });
         win.show();
+    },
+        /**
+         * 处理任务项
+         * @param grid
+         * @param rowIndex
+         * @param colIndex
+         */
+        onCompleteTask: function (grid, rowIndex, colIndex) {
+            var rec = grid.getStore().getAt(rowIndex);
+        },
     }
-});
+);

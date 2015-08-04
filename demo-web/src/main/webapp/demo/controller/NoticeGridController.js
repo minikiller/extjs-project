@@ -48,7 +48,7 @@ Ext.define('Kalix.demo.controller.NoticeGridController', {
     onEdit: function (grid, rowIndex, colIndex) {
 
         var sm = grid.getSelectionModel();
-        var rec = grid.getStore().getAt(rowIndex)
+        var rec = grid.getStore().getAt(rowIndex);
         console.log(sm);
         console.log('fdfdfdf' + rec);
 
