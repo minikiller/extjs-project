@@ -12,8 +12,8 @@ Ext.define('Kalix.app.function.viewModel.FunctionViewModel', {
     ],
     alias: 'viewmodel.functionViewModel',
     data: {
-        addTitle: '新增机构',
-        editTitle: '编辑机构',
+        addTitle: '新增功能',
+        editTitle: '编辑功能',
         url: '/kalix/camel/rest/functions'
     }
 });

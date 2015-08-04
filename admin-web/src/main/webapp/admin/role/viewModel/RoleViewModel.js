@@ -14,7 +14,8 @@ Ext.define('Kalix.admin.role.viewModel.RoleViewModel', {
     data: {
         addTitle: '新增角色',
         editTitle: '编辑角色',
-        url: '/kalix/camel/rest/roles'
+        url: '/kalix/camel/rest/roles',
+        authorizationUrl: '/kalix/camel/rest/roles/authorizations'
     }
     //stores: {
     //    roleStore: {

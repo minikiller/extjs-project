@@ -23,7 +23,7 @@ Ext.define('Kalix.app.function.controller.FunctionGridController', {
      */
     onAdd: function () {
 
-        if (this.getView().applicationId == null || this.getView().applicationName == null) {
+        if (this.getView().applicationId == null || this.getView().applicationName == null || this.getView().applicationCode == null) {
             Ext.Msg.alert(CONFIG.ALTER_TITLE_FAILURE, "请选择一个区域!");
             return;
         }
@@ -31,10 +31,12 @@ Ext.define('Kalix.app.function.controller.FunctionGridController', {
         var addFormPanel = Ext.create('Kalix.app.function.view.FunctionAddForm', {
             url: this.getView().getViewModel().get("url")
         });
+        addFormPanel.parentPermission = this.getView().applicationCode;
         addFormPanel.down("#applicationIdId").setValue(this.getView().applicationId);
         addFormPanel.down("#applicationName").setValue(this.getView().applicationName);
         if (rows != null && rows.length > 0) {
             if (rows[0] != null) {
+                addFormPanel.parentPermission = rows[0].data.permission;
                 addFormPanel.down("#parentName").setValue(rows[0].data.name);
                 addFormPanel.down("#parentIdId").setValue(rows[0].data.id);
             }

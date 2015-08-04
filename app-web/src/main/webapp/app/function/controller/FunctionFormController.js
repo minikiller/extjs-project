@@ -29,6 +29,7 @@ Ext.define('Kalix.app.function.controller.FunctionFormController', {
      */
     onSave: function () {
         var form = this.getView();
+        form.down("#permissionId").setValue(form.parentPermission + ":" + form.down("#codeId").getValue());
         if (form.isValid()) {
             form.submit({
                 success: function (form, action) {

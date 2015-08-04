@@ -18,7 +18,8 @@ Ext.define('Kalix.app.function.view.FunctionGrid', {
     },
     data: {
         applicationId: null,
-        applicationName: null
+        applicationName: null,
+        applicationCode: null
     },
     border: false,
     columnLines: true,
@@ -34,6 +35,7 @@ Ext.define('Kalix.app.function.view.FunctionGrid', {
     columns: [
         {text: '编号', dataIndex: 'id', hidden: true},
         {text: '上级功能', dataIndex: 'parentName', hidden: true},
+        {text: '权限代码', dataIndex: 'permission', hidden: true},
         {xtype: 'treecolumn', text: '名称', dataIndex: 'name', width: 255},
         {text: '功能代码', dataIndex: 'code', width: 60},
         {text: '创建人', dataIndex: 'createBy', width: 60},

@@ -35,6 +35,7 @@ Ext.define('Kalix.app.function.controller.FunctionController', {
 
         var grid = Ext.ComponentQuery.query('functionGridPanel')[0];
         grid.applicationId = record.data.id;
+        grid.applicationCode = record.data.code;
         grid.applicationName = record.data.name;
         var store = grid.getStore();
         store.setProxy({

@@ -61,11 +61,11 @@ Ext.define('Kalix.app.function.view.FunctionEditForm', {
             ]
         },
         {
-            fieldLabel: '机构代码',
+            fieldLabel: '功能代码',
             itemId: 'codeId',
             name: 'code',
             allowBlank: false,
-            blankText: '机构不能为空!',
+            blankText: '功能代码不能为空!',
             beforeLabelTpl: [
                 '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
             ]
