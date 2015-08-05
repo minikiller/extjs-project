@@ -169,37 +169,41 @@ Ext.define('Kalix.workflow.controller.ProcessHistoryGridController', {
 
     onOpenHistoryActivity: function (grid, rowIndex, colIndex) {
         var rec = grid.getStore().getAt(rowIndex);
-        /* var historyActivityFormPanel = Ext.create('Kalix.workflow.view.ActivityHistoryGrid', {
-         url: this.getView().getViewModel().get("historyActivityUrl"),
-         //noticeRef:this.lookupReference('noticeRef'),
-         });*/
-        //alert(rec.id);
-        var activityHistoryStore = Ext.create('Kalix.workflow.store.ActivityHistoryStore', {
-            proxy: {
-                url: '/kalix/camel/rest/workflow/activities?historyProcessId=' + rec.id,
+        //获得已选用户
+        Ext.Ajax.request({
+            url: "/kalix/camel/rest/workflow/bizData?processDefinitionId=" + rec.data.processDefinitionId,
+            method: "GET",
+            callback: function (options, success, response) {
+                var component = Ext.JSON.decode(response.responseText);
+                var activityHistoryStore = Ext.create('Kalix.workflow.store.ActivityHistoryStore', {
+                    proxy: {
+                        url: '/kalix/camel/rest/workflow/activities?historyProcessId=' + rec.data.id
+                    }
+                });
+                var dataGird = Ext.create(component.componentClass,
+                    {
+                        store: activityHistoryStore
+                    });
+                var dataGridFieldSet = Ext.create("Ext.form.FieldSet", {
+                    title: "流程历史列表"
+                });
+                dataGridFieldSet.add(dataGird);
+                var win = Ext.create('Ext.Window', {
+                    width: 605,
+                    height: 210,
+                    border: false,
+                    modal: true,
 
+                    //resizable:false,
+                    icon: 'admin/resources/images/group_edit.png',
+                    bind: {
+                        title: '{editTitle}'
+                    },
+                    items: [dataGridFieldSet]
+                });
+                //this.getView().getViewModel.set('rec',record);
+                win.show();
             }
         });
-        var dataGird = Ext.create("Kalix.workflow.view.ActivityHistoryGrid",
-            {
-                store: activityHistoryStore,
-
-                //url:'/kalix/camel/rest/workflow/activities',
-            });
-        var win = Ext.create('Ext.Window', {
-            width: 600,
-            height: 500,
-            border: false,
-            modal: true,
-
-            //resizable:false,
-            icon: 'admin/resources/images/group_edit.png',
-            bind: {
-                title: '{editTitle}'
-            },
-            items: [dataGird]
-        });
-        //this.getView().getViewModel.set('rec',record);
-        win.show();
     }
 });

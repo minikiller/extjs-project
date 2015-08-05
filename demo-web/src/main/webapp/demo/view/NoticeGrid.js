@@ -28,7 +28,7 @@ Ext.define('Kalix.demo.view.NoticeGrid', {
         {text: '工作流状态', dataIndex: 'status', width: 60},
         {text: '当前环节', dataIndex: 'currentNode', width: 60},
         {
-            text: '创建日期', dataIndex: 'publishDate', width: 120, renderer: function (value) {
+            text: '创建日期', dataIndex: 'creationDate', width: 120, renderer: function (value) {
             var createDate = new Date(value);
             return createDate.format("yyyy-MM-dd hh:mm:ss");
         }

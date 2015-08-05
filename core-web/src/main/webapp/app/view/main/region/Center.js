@@ -14,8 +14,9 @@ Ext.define('Kalix.view.main.region.Center', {
      */
     alias: 'widget.maincenter',
 
-
-    bodyStyle: "background-image:url('resources/images/center_bg.jpg')",
+    bodyStyle: {
+        background: 'url(resources/images/center_bg.png) right bottom no-repeat #caeaff'
+    },
     id: 'centerPanel',
     items: [{
         xtype: 'tabpanel',

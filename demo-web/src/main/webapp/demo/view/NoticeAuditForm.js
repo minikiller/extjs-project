@@ -21,7 +21,7 @@ Ext.define('Kalix.demo.view.NoticeAuditForm', {
     },
 
     bind: {
-        currentNotice: "{currentNotice}",
+        currentNotice: "{currentNotice}"
     },
     controller: 'noticeFormController',
     id: "noticeEditForm",
@@ -65,7 +65,7 @@ Ext.define('Kalix.demo.view.NoticeAuditForm', {
     ],
     buttons: [
         {
-            text: '保存', glyph: 0xf0c7, type: 'submit', handler: 'onUpdate',
+            text: '保存', glyph: 0xf0c7, type: 'submit', handler: 'onUpdate'
         },
         {
             text: '重置', glyph: 0xf0e2, handler: 'onEditReset'

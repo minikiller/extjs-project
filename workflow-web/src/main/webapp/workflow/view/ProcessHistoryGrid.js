@@ -33,11 +33,10 @@ Ext.define('Kalix.workflow.view.ProcessHistoryGrid', {
         },
         {
             text: '结束时间', dataIndex: 'endTime', width: 60, renderer: function (value) {
-            if (value != null) {
+            if (value != null && value != "") {
                 var createDate = new Date(value);
                 return createDate.format("yyyy-MM-dd hh:mm:ss");
-            }
-            else {
+            } else {
                 return "";
             }
         }
@@ -55,7 +54,7 @@ Ext.define('Kalix.workflow.view.ProcessHistoryGrid', {
                 handler: 'onOpenHistoryActivity'
             },]
         }
-    ],
+    ]
     /*tbar: [
      {
      text: '新增', icon: 'admin/resources/images/group_add.png', handler: 'onAdd'

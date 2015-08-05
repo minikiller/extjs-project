@@ -15,7 +15,7 @@ Ext.define('Kalix.workflow.store.TaskStore', {
     pageSize: 10,
     proxy: {
         type: "ajax",
-        url: '/kalix/camel/rest/workflow/tasks?userId=spajj',
+        url: '/kalix/camel/rest/workflow/tasks',
         reader: {
             type: "json",
             rootProperty: "data",
