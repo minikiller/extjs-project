@@ -21,7 +21,7 @@ Ext.define('Kalix.app.application.controller.ApplicationController', {
         var panel = Ext.create("Ext.panel.Panel", {
             border: false,
             autoScroll: true,
-            height: 640,
+            height: document.body.clientHeight - 110, //客户端屏幕高度-底部-工具条以及选项卡
             items: [this.onInitSearchPanel(), this.onInitDataGrid()]
         })
 
@@ -115,6 +115,7 @@ Ext.define('Kalix.app.application.controller.ApplicationController', {
         var dataStore = Ext.create("Kalix.app.application.store.ApplicationStore");
         var dataGird = Ext.create("Kalix.app.application.view.ApplicationGrid", {
             store: dataStore,
+            height: document.body.clientHeight - 210,
             bbar: [{
                 xtype: 'pagingToolBarComponent',
                 store: dataStore

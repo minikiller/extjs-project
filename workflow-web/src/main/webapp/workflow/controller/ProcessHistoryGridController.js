@@ -180,19 +180,21 @@ Ext.define('Kalix.workflow.controller.ProcessHistoryGridController', {
                         url: '/kalix/camel/rest/workflow/activities?historyProcessId=' + rec.data.id
                     }
                 });
-                var dataGird = Ext.create(component.componentClass,
-                    {
-                        store: activityHistoryStore
-                    });
+                var dataGird = Ext.create(component.componentClass, {
+                    store: activityHistoryStore,
+                    width: 605,
+                    height: 280
+                });
                 var dataGridFieldSet = Ext.create("Ext.form.FieldSet", {
                     title: "流程历史列表"
                 });
                 dataGridFieldSet.add(dataGird);
                 var win = Ext.create('Ext.Window', {
-                    width: 605,
-                    height: 210,
                     border: false,
                     modal: true,
+                    width: 605,
+                    height: 410,
+                    titke: "流程历史查看",
 
                     //resizable:false,
                     icon: 'admin/resources/images/group_edit.png',
