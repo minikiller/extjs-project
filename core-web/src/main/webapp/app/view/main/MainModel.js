@@ -25,7 +25,7 @@ Ext.define('Kalix.view.main.MainModel', {
             quit: "/kalix/logout"
         },
         application: {
-            url: 'resources/datas/applications.json'
+            url: '/kalix/camel/rest/system/applications'
         },
         module: {
             url: 'resources/datas/modules'
