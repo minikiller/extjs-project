@@ -15,7 +15,14 @@ Ext.define('Kalix.admin.user.store.UserStore', {
     pageSize: 10,
     proxy: {
         type: "ajax",
-        url: '/kalix/camel/rest/users',
+        url: '/kalix/camel/rest/users/list',
+        paramsAsJson: true,
+        actionMethods: {
+            create: 'POST',
+            read: 'POST',
+            update: 'POST',
+            destroy: 'POST'
+        },
         reader: {
             type: "json",
             rootProperty: "data",

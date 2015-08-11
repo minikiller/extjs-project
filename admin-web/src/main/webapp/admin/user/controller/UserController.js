@@ -40,9 +40,8 @@ Ext.define('Kalix.admin.user.controller.UserController', {
                 layout: 'form',
                 items: [{
                     xtype: 'textfield',
-                    fieldLabel: '登录名',
-                    itemId: "admin_user_usernameSearchId",
-                    name: 'username'
+                    itemId: 'loginName',
+                    fieldLabel: '登录名'
                 }]
             }, {
                 columnWidth: .2,
@@ -51,8 +50,7 @@ Ext.define('Kalix.admin.user.controller.UserController', {
                 items: [{
                     xtype: 'textfield',
                     fieldLabel: '姓名',
-                    itemId: "admin_user_nameSearchId",
-                    name: 'name'
+                    itemId: 'name'
                 }]
             },
                 {
@@ -63,8 +61,7 @@ Ext.define('Kalix.admin.user.controller.UserController', {
                         xtype: 'combobox',
                         fieldLabel: '状态',
                         editable: false,
-                        id: "admin_user_statusSearchId",
-                        name: 'status',
+                        itemId: 'available',
                         value: '-1',
                         store: [
                             ['-1', '全部'],
@@ -81,6 +78,18 @@ Ext.define('Kalix.admin.user.controller.UserController', {
                         xtype: 'button',
                         text: '查询',
                         handler: function () {
+                            var queryPanel = this.up().up();
+                            var loginNameValue = queryPanel.down("#loginName").getValue();
+                            var nameValue = queryPanel.down("#name").getValue();
+                            var availableValue = queryPanel.down("#available").getValue();
+                            var grid = Ext.ComponentQuery.query('userGridPanel')[0];
+                            var store = grid.getStore();
+                            store.on('beforeload', function (store, options) {
+                                var params = {loginName: loginNameValue, name: nameValue, available: availableValue};
+                                Ext.apply(store.proxy.extraParams, params);
+                            });
+                            store.load({params: {start: 0, limit: 10, page: 1}});
+                            //var grid = Ext.ComponentQuery.query('userGridPanel')[0];
                         }
                     }]
                 }]

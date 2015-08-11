@@ -28,7 +28,7 @@ Ext.define('Kalix.view.main.MainModel', {
             url: '/kalix/camel/rest/system/applications'
         },
         module: {
-            url: 'resources/datas/modules'
+            url: '/kalix/camel/rest/system/applications/'
         },
         menu: {
             title: '菜单列表'
