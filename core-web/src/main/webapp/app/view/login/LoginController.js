@@ -29,9 +29,6 @@ Ext.define('Kalix.view.login.LoginController', {
                         Ext.util.Cookies.set('currentUserName', resp.user.name);
                         window.location.href = resp.location;
                     }
-                },
-                failure: function (response, options) {
-                    Ext.MessageBox.alert(CONFIG.ALTER_TITLE_FAILURE, "网络错误,登陆失败!");
                 }
             });
 
