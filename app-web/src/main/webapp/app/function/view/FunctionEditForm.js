@@ -29,7 +29,6 @@ Ext.define('Kalix.app.function.view.FunctionEditForm', {
     buttonAlign: "center",
     items: [
         {xtype: 'hiddenfield', name: 'id'},
-        {xtype: 'hiddenfield', name: 'parentId', itemId: 'parentIdId', value: '-1'},
         {xtype: 'hiddenfield', name: 'isLeaf', value: '1'},
         {xtype: 'hiddenfield', name: 'applicationId', itemId: 'applicationIdId', value: '-1'},
         {
