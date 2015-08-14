@@ -10,7 +10,8 @@ Ext.define('Kalix.admin.user.controller.UserController', {
     alias: 'controller.userController',
     requires: [
         'Kalix.view.components.common.PagingToolBar',
-        'Kalix.admin.user.view.UserGrid'
+        'Kalix.admin.user.view.UserGrid',
+        'Kalix.view.components.common.SecurityToolbar'
     ],
     /**
      * 初始化面板.
@@ -120,10 +121,24 @@ Ext.define('Kalix.admin.user.controller.UserController', {
      * @returns {Ext.panel.Panel}
      */
     onInitDataGrid: function () {
+        var securityToolbar = Ext.create("Kalix.view.components.common.SecurityToolbar");
+        securityToolbar.verifyButton([
+            {
+                text: '新增',
+                xtype: 'button',
+                permission: 'admin:sysModule:permissionControl:userMenu:add',
+                icon: 'admin/resources/images/group_add.png',
+                handler: 'onAdd'
+            }
+        ]);
+        //securityToolbar.add({
+        //    text: '新增',xtype:'button',permission:'admin:sysModule:permissionControl:userMenu:add', icon: 'admin/resources/images/group_add.png', handler: 'onAdd'
+        //});
         var dataStore = Ext.create("Kalix.admin.user.store.UserStore");
         var dataGird = Ext.create("Kalix.admin.user.view.UserGrid", {
             store: dataStore,
             height: document.body.clientHeight - 210,
+            tbar: securityToolbar,
             bbar: [{
                 xtype: 'pagingToolBarComponent',
                 store: dataStore
