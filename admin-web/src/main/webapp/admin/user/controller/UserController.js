@@ -129,6 +129,19 @@ Ext.define('Kalix.admin.user.controller.UserController', {
                 permission: 'admin:sysModule:permissionControl:userMenu:add',
                 icon: 'admin/resources/images/group_add.png',
                 handler: 'onAdd'
+            }, {
+                text: '修改',
+                xtype: 'button',
+                permission: 'admin:sysModule:permissionControl:userMenu:update',
+                icon: "resources/images/pencil.png",
+                handler: 'onEdit'
+            }, {
+                text: '删除',
+                xtype: 'button',
+                permission: 'admin:sysModule:permissionControl:userMenu:delete',
+                icon: "resources/images/cancel.png",
+                handler: 'onDelete'
+
             }
         ]);
         //securityToolbar.add({
@@ -144,6 +157,9 @@ Ext.define('Kalix.admin.user.controller.UserController', {
                 store: dataStore
             }]
         });
+        //var columns=dataGird.getColumns();
+        //alert(columns.length);
+        //dataGird.add(actionColumn);
         return dataGird;
     }
 });

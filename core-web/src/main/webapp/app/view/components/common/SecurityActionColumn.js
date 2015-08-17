@@ -1,14 +1,14 @@
 /**
- * 权限控制工具条
+ * 权限控制操作列
  *
  * @author majian <br/>
- *         date:2015-8-14
+ *         date:2015-8-17
  * @version 1.0.0
  */
-Ext.define('Kalix.view.components.common.SecurityToolbar', {
-    extend: 'Ext.toolbar.Toolbar',
-    alias: 'widget.securityToolbar',
-    xtype: 'securityToolbar',
+Ext.define('Kalix.view.components.common.SecurityActionColumn', {
+    extend: 'Ext.grid.column.Action',
+    alias: 'widget.securityActionColumn',
+    xtype: 'securityActionColumn',
     verifyButton: function (buttons) {
         if (buttons == null) {
             return;
@@ -23,7 +23,7 @@ Ext.define('Kalix.view.components.common.SecurityToolbar', {
                 permissions += "_";
             }
         }
-        var securityToolbar = this;
+        var securityActionColumn = this;
         //查询授权
         Ext.Ajax.request({
             url: "/kalix/camel/rest/system/applications/modules/menus/buttons/" + permissions,
@@ -31,11 +31,10 @@ Ext.define('Kalix.view.components.common.SecurityToolbar', {
             callback: function (options, success, response) {
                 var resp = Ext.JSON.decode(response.responseText);
                 if (resp != null && resp.buttons != null) {
-                    var _buttons = new Array();
                     for (var i = 0; i < buttons.length; i++) {
                         var button = buttons[i];
                         if (button.permission == null) {
-                            securityToolbar.add(button);
+                            securityActionColumn.add(button);
                             continue;
                         }
                         var respButtons = resp.buttons;
@@ -43,12 +42,11 @@ Ext.define('Kalix.view.components.common.SecurityToolbar', {
                             var respButton = respButtons[p];
                             if (respButton.permission == button.permission) {
                                 if (respButton.status) {
-                                    _buttons.push(button);
+                                    securityActionColumn.add(button);
                                 }
                             }
                         }
                     }
-                    securityToolbar.add(_buttons);
                 }
             }
         });

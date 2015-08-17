@@ -55,21 +55,9 @@ Ext.define('Kalix.admin.user.view.UserGrid', {
             }
             return "停用";
         }
-        },
-        {
-            header: '操作',
-            xtype: "actioncolumn",
-            width: 60,
-            items: [{
-                icon: "resources/images/pencil.png",
-                tooltip: '修改',
-                handler: 'onEdit'
-            }, {
-                icon: "resources/images/cancel.png",
-                tooltip: '删除',
-                handler: 'onDelete'
-
-            }]
         }
-    ]
+    ],
+    initComponent: function () {
+        this.callParent(arguments);
+    }
 });
