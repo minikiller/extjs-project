@@ -239,5 +239,6 @@
         <module>app-web</module>
         <module>workflow-web</module>
         <module>demo-web</module>
+        <module>audit-extjs</module>
     </modules>
 </project>
