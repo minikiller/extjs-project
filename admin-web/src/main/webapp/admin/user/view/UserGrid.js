@@ -19,6 +19,7 @@ Ext.define('Kalix.admin.user.view.UserGrid', {
     autoLoad: true,
     stripeRows: true,
     manageHeight: true,
+    forceFit : true,
     selModel: {selType: 'checkboxmodel', mode: "SIMPLE"},
     columns: [
         {text: '编号', dataIndex: 'id', width: 40},
