@@ -5,7 +5,7 @@
  *         date:2015-8-14
  * @version 1.0.0
  */
-Ext.define('Kalix.view.components.common.SecurityToolbar', {
+Ext.define('kalix.view.components.common.SecurityToolbar', {
     extend: 'Ext.toolbar.Toolbar',
     alias: 'widget.securityToolbar',
     xtype: 'securityToolbar',

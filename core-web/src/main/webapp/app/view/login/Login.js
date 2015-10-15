@@ -5,11 +5,11 @@
  *         date:2015-7-10
  * @version 1.0.0
  */
-Ext.define('Kalix.view.login.Login', {
+Ext.define('kalix.view.login.Login', {
     extend: 'Ext.panel.Panel',
     requires: [
-        'Kalix.view.login.LoginController',
-        'Kalix.view.login.LoginModel'
+        'kalix.view.login.LoginController',
+        'kalix.view.login.LoginModel'
     ],
     xtype: 'login',
     controller: 'login',
@@ -21,7 +21,7 @@ Ext.define('Kalix.view.login.Login', {
         xtype: 'window',
         autoShow: true,
         width: 400,
-        height: 160,
+        height: 210,
         closable: false,
         resizable: false,
         draggable: false,

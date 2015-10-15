@@ -5,7 +5,7 @@
  *         date:2015-7-10
  * @version 1.0.0
  */
-Ext.define('Kalix.view.login.LoginController', {
+Ext.define('kalix.view.login.LoginController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.login',
 

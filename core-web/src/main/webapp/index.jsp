@@ -1,26 +1,19 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html manifest="">
 <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="UTF-8">
-    <title>Kalix</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    <%--<script src="/core-web/ext-5.1.0/ext-all.js"></script>--%>
-    <script src="/core-web/ext-5.1.0/bootstrap.js"></script>
-    <script src="/core-web/ext-5.1.0/packages/ext-locale/ext-locale-zh_CN.js"></script>
-    <link href="/core-web/ext-5.1.0/packages/ext-theme-classic/build/resources/ext-theme-classic-all.css"
-          rel="stylesheet"/>
+    <title>kalix</title>
+    <link href="resources/ext/kalix-all.css" rel="stylesheet"/>
 
-    <script type="text/javascript" src="app/mainApp.js"></script>
+    <script type="text/javascript" src="resources/js/ext-all-debug.js"></script>
+    <script type="text/javascript" src="resources/js/locale-zh_CN.js"></script>     
+    <script type="text/javascript" src="resources/js/app.js"></script> 
     <script type="text/javascript" src="resources/js/Config.js"></script>
     <script type="text/javascript" src="resources/js/DateFormat.js"></script>
-    <!-- 引入Font Awesome的css文件 -->
-    <link type="text/css" rel="stylesheet" href="resources/css/font-awesome.min.css">
-    <link type="text/css" rel="stylesheet" href="resources/css/index.css">
-    <link rel="stylesheet" type="text/css" href="/core-web/ext-5.1.0/ux/css/ItemSelector.css"/>
-
-
 </head>
-<body>
-</body>
+<body></body>
 </html>

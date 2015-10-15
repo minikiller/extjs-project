@@ -5,7 +5,7 @@
  *         date:2015-7-10
  * @version 1.0.0
  */
-Ext.define('Kalix.view.login.LoginModel', {
+Ext.define('kalix.view.login.LoginModel', {
     extend: 'Ext.app.ViewModel',
     alias: 'viewmodel.login',
     data: {

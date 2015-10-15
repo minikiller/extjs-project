@@ -1,0 +1,15 @@
+[ {
+  "id" : "AdminApplication",
+  "title" : "系统应用",
+  "description" : "统一用户管理",
+  "icon" : "resources/images/cog.png",
+  "componentClass" : "app.admin",
+  "index" : 0
+}, {
+  "id" : "TestApplication",
+  "title" : "测试应用",
+  "description" : "测试应用",
+  "icon" : "admin/resources/images/building.png",
+  "componentClass" : null,
+  "index" : 0
+} ]

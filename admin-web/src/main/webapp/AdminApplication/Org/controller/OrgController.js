@@ -1,0 +1,108 @@
+/**
+ * 机构模块控制器
+ *
+ * @author majian <br/>
+ *         date:2015-7-21
+ * @version 1.0.0
+ */
+Ext.define('kalix.AdminApplication.Org.controller.OrgController', {
+    extend: 'Ext.app.ViewController',
+    alias: 'controller.orgController',
+    requires: [
+        "kalix.AdminApplication.Area.view.AreaTreeList",
+        "kalix.AdminApplication.Org.view.OrgTreeList",
+        'kalix.AdminApplication.Org.view.OrgGrid'
+    ],
+    /**
+     * 初始化面板.
+     * @returns {Ext.panel.Panel}
+     */
+    onInitPanel: function () {
+        var panel = Ext.create("Ext.panel.Panel", {
+            border: false,
+            layout: "border",
+            autoScroll: true,
+            itemId: "mainPanel",
+            height: 630,
+            items: [this.onInitAreaTreeList(), this.onInitDataGrid()]
+        })
+
+        return panel;
+    },
+    /**
+     * 区域单击
+     */
+    onAreaClick: function (view, record, item, index, e) {
+
+        var grid = Ext.ComponentQuery.query('orgGridPanel')[0];
+        grid.areaId = record.data.id;
+        grid.areaName = record.data.name;
+        var store = grid.getStore();
+        store.setProxy({
+            type: "ajax",
+            url: '/kalix/camel/rest/orgs/area/' + record.data.id
+        });
+        store.reload();
+    },
+    /**
+     * 区域刷新
+     */
+    onAreaRefersh: function () {
+        Ext.ComponentQuery.query('orgPanel')[0].down("#mainPanel>#orgAreaTreeList").getStore().reload();
+    },
+    /**
+     * 区域展开
+     * @constructor
+     */
+    onAreaAxpandAll: function () {
+        Ext.ComponentQuery.query('orgPanel')[0].down("#mainPanel>#orgAreaTreeList").expandAll(function () {
+        });
+    },
+    /**
+     * 区域收起
+     * @constructor
+     */
+    onAreaCollapseAll: function () {
+        Ext.ComponentQuery.query('orgPanel')[0].down("#mainPanel>#orgAreaTreeList").collapseAll(function () {
+        });
+    },
+    /**
+     * 初始化区域列表.
+     * @returns {Ext.panel.Panel}
+     */
+    onInitAreaTreeList: function () {
+        var areaListPanel = Ext.create("kalix.AdminApplication.Area.view.AreaTreeList", {
+            store: Ext.create("kalix.AdminApplication.Area.store.AreaStore"),
+            region: "west",
+            itemId: "orgAreaTreeList",
+            title: '区域列表',
+            listeners: {
+                itemClick: this.onAreaClick
+            },
+            tbar: [
+                {
+                    text: '刷新', icon: 'admin/resources/images/arrow_refresh.png',
+                    handler: this.onAreaRefersh
+                },
+                {
+                    text: '展开', icon: 'admin/resources/images/arrow_down.png',
+                    handler: this.onAreaAxpandAll
+                },
+                {
+                    text: '收起', icon: 'admin/resources/images/arrow_up.png',
+                    handler: this.onAreaCollapseAll
+                }]
+        });
+        return areaListPanel;
+    },
+    /**
+     * 初始化数据表格.
+     * @returns {Ext.panel.Panel}
+     */
+    onInitDataGrid: function () {
+        var dataGird = Ext.create("kalix.AdminApplication.Org.view.OrgGrid", {
+            store: Ext.create("kalix.AdminApplication.Org.store.OrgStore")
+        });
+        return dataGird;
+    }
+});

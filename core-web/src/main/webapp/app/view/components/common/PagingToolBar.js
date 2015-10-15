@@ -5,7 +5,7 @@
  *         date:2015-7-6
  * @version 1.0.0
  */
-Ext.define('Kalix.view.components.common.PagingToolBar', {
+Ext.define('kalix.view.components.common.PagingToolBar', {
     extend: 'Ext.toolbar.Paging',
     alias: 'widget.pagingToolBarComponent',
     xtype: 'pagingToolBarComponent',

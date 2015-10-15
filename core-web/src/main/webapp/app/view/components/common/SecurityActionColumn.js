@@ -5,7 +5,7 @@
  *         date:2015-8-17
  * @version 1.0.0
  */
-Ext.define('Kalix.view.components.common.SecurityActionColumn', {
+Ext.define('kalix.view.components.common.SecurityActionColumn', {
     extend: 'Ext.grid.column.Action',
     alias: 'widget.securityActionColumn',
     xtype: 'securityActionColumn',
