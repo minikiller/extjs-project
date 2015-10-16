@@ -19,7 +19,7 @@ Ext.define('kalix.AdminApplication.User.controller.UserGridController', {
         });
         var win = Ext.create('Ext.Window', {
             width: 400,
-            height: 350,
+            //height: 350,
             border: false,
             modal: true,
             //resizable:false,

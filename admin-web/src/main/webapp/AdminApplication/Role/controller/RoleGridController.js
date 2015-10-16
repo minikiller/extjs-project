@@ -21,11 +21,11 @@ Ext.define('kalix.AdminApplication.Role.controller.RoleGridController', {
         });
         var win = Ext.create('Ext.Window', {
             width: 400,
-            height: 195,
-            border: false,
+            //height: 195,
+            //border: true,
             modal: true,
             //resizable:false,
-            icon: 'resources/images/book_add.png',
+            icon: 'admin/resources/images/book_add.png',
             title: this.getView().getViewModel().get("addTitle"),
             items: [addFormPanel]
         });
@@ -51,7 +51,7 @@ Ext.define('kalix.AdminApplication.Role.controller.RoleGridController', {
             border: false,
             modal: true,
             //resizable:false,
-            icon: 'resources/images/book_edit.png',
+            icon: 'admin/resources/images/book_edit.png',
             title: this.getView().getViewModel().get("editTitle"),
             items: [editFormPanel]
         });
@@ -100,7 +100,7 @@ Ext.define('kalix.AdminApplication.Role.controller.RoleGridController', {
             border: false,
             modal: true,
             //resizable:false,
-            icon: 'resources/images/group_add.png',
+            icon: 'admin/resources/images/group_add.png',
             title: "添加用户",
             items: [
                 {

@@ -71,9 +71,9 @@ Ext.define('kalix.AdminApplication.Area.view.AreaGrid', {
     ],
     tbar: [
         {
-            text: '新增', icon: 'resources/images/shape_square_add.png', handler: 'onAdd'
+            text: '新增', icon: 'admin/resources/images/shape_square_add.png', handler: 'onAdd'
         }, {
-            text: '刷新', icon: 'resources/images/arrow_refresh.png', handler: 'onRefersh'
+            text: '刷新', icon: 'admin/resources/images/arrow_refresh.png', handler: 'onRefersh'
         }]
 
 });

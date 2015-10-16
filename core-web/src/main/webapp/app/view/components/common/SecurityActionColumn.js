@@ -26,7 +26,7 @@ Ext.define('kalix.view.components.common.SecurityActionColumn', {
         var securityActionColumn = this;
         //查询授权
         Ext.Ajax.request({
-            url: "/kalix/camel/rest/system/applications/modules/menus/buttons/" + permissions,
+            url: "/kalix/camel/rest/system/applications/modules/children/buttons/" + permissions,
             method: "GET",
             callback: function (options, success, response) {
                 var resp = Ext.JSON.decode(response.responseText);

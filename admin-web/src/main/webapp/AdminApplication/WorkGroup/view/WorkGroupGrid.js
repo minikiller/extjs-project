@@ -51,12 +51,12 @@ Ext.define('kalix.AdminApplication.WorkGroup.view.WorkGroupGrid', {
                 handler: 'onDelete'
 
             }, {
-                icon: "resources/images/group_add.png",
+                icon: "admin/resources/images/group_add.png",
                 tooltip: '添加用户',
                 handler: 'onAddUser'
 
             }, {
-                icon: "resources/images/user_add.png",
+                icon: "admin/resources/images/user_add.png",
                 tooltip: '添加角色',
                 handler: 'onAddRole'
             }]
@@ -64,7 +64,7 @@ Ext.define('kalix.AdminApplication.WorkGroup.view.WorkGroupGrid', {
     ],
     tbar: [
         {
-            text: '新增', icon: 'resources/images/cup_add.png', handler: 'onAdd'
+            text: '新增', icon: 'admin/resources/images/cup_add.png', handler: 'onAdd'
         }]
 
 });

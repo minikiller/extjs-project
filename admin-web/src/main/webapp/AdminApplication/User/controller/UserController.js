@@ -21,7 +21,7 @@ Ext.define('kalix.AdminApplication.User.controller.UserController', {
         var panel = Ext.create("Ext.panel.Panel", {
             border: false,
             autoScroll: true,
-            height: document.body.clientHeight - 110, //客户端屏幕高度-底部-工具条以及选项卡
+            //height: document.body.clientHeight - 110, //客户端屏幕高度-底部-工具条以及选项卡
             items: [this.onInitSearchPanel(), this.onInitDataGrid()]
         })
 
@@ -150,7 +150,7 @@ Ext.define('kalix.AdminApplication.User.controller.UserController', {
         var dataStore = Ext.create("kalix.AdminApplication.User.store.UserStore");
         var dataGird = Ext.create("kalix.AdminApplication.User.view.UserGrid", {
             store: dataStore,
-            height: document.body.clientHeight - 210,
+            height: document.body.clientHeight - 224,
             tbar: securityToolbar,
             bbar: [{
                 xtype: 'pagingToolBarComponent',

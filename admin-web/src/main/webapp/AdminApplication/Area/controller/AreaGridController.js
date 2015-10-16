@@ -38,11 +38,11 @@ Ext.define('kalix.AdminApplication.Area.controller.AreaGridController', {
         }
         var win = Ext.create('Ext.Window', {
             width: 400,
-            height: 280,
+            //height: 280,
             border: false,
             modal: true,
             //resizable:false,
-            icon: 'resources/images/shape_square_add.png',
+            icon: 'admin/resources/images/shape_square_add.png',
             title: this.getView().getViewModel().get("addTitle"),
             items: [addFormPanel]
         });
@@ -69,7 +69,7 @@ Ext.define('kalix.AdminApplication.Area.controller.AreaGridController', {
             border: false,
             modal: true,
             //resizable:false,
-            icon: 'resources/images/shape_square_edit.png',
+            icon: 'admin/resources/images/shape_square_edit.png',
             title: this.getView().getViewModel().get("editTitle"),
             items: [editFormPanel]
         });

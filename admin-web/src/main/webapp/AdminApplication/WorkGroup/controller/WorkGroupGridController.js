@@ -26,7 +26,7 @@ Ext.define('kalix.AdminApplication.WorkGroup.controller.WorkGroupGridController'
             border: false,
             modal: true,
             //resizable:false,
-            icon: 'resources/images/cup_add.png',
+            icon: 'admin/resources/images/cup_add.png',
             title: this.getView().getViewModel().get("addTitle"),
             items: [addFormPanel]
         });
@@ -57,7 +57,7 @@ Ext.define('kalix.AdminApplication.WorkGroup.controller.WorkGroupGridController'
             border: false,
             modal: true,
             //resizable:false,
-            icon: 'resources/images/cup_edit.png',
+            icon: 'admin/resources/images/cup_edit.png',
             title: this.getView().getViewModel().get("editTitle"),
             items: [editFormPanel]
         });
@@ -132,7 +132,7 @@ Ext.define('kalix.AdminApplication.WorkGroup.controller.WorkGroupGridController'
             border: false,
             modal: true,
             //resizable:false,
-            icon: 'resources/images/group_add.png',
+            icon: 'admin/resources/images/group_add.png',
             title: "添加用户",
             items: [
                 {
@@ -209,7 +209,7 @@ Ext.define('kalix.AdminApplication.WorkGroup.controller.WorkGroupGridController'
             border: false,
             modal: true,
             //resizable:false,
-            icon: 'resources/images/user_add.png',
+            icon: 'admin/resources/images/user_add.png',
             title: "添加角色",
             items: [
                 {

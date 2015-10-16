@@ -7,7 +7,7 @@
 Ext.define('kalix.AdminApplication.Role.view.RoleGrid', {
     extend: 'Ext.grid.Panel',
     requires: [
-        'kalix.AdminApplication.Role.viewModel.RoleViewModel',
+        'kalix.AdminApplication.Role.view.RoleViewModel',
         'kalix.AdminApplication.Role.controller.RoleGridController'
     ],
     alias: 'widget.roleGrid',
@@ -16,6 +16,7 @@ Ext.define('kalix.AdminApplication.Role.view.RoleGrid', {
     viewModel: {
         type: 'roleViewModel'
     },
+    frame: true,
     autoLoad: true,
     stripeRows: true,
     manageHeight: true,
@@ -59,12 +60,12 @@ Ext.define('kalix.AdminApplication.Role.view.RoleGrid', {
                 tooltip: '删除',
                 handler: 'onDelete'
             }, {
-                icon: "resources/images/group_add.png",
+                icon: "admin/resources/images/group_add.png",
                 tooltip: '添加用户',
                 handler: 'onAddUser'
 
             }, {
-                icon: "resources/images/application_add.png",
+                icon: "admin/resources/images/application_add.png",
                 tooltip: '权限分配',
                 handler: 'onAuthorization'
             }]
@@ -72,10 +73,10 @@ Ext.define('kalix.AdminApplication.Role.view.RoleGrid', {
     ],
     tbar: [
         {
-            text: '新增', icon: 'resources/images/user_add.png', handler: 'onAdd'
+            text: '新增', icon: 'admin/resources/images/user_add.png', handler: 'onAdd'
         }, "-",
         {
-            text: '批量删除', icon: 'resources/images/user_delete.png', handler: 'onDeleteAll'
+            text: '批量删除', icon: 'admin/resources/images/user_delete.png', handler: 'onDeleteAll'
         }, "-"
     ]
 

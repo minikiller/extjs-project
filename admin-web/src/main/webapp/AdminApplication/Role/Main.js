@@ -8,7 +8,7 @@
 Ext.define('kalix.AdminApplication.Role.Main', {
     extend: 'Ext.panel.Panel',
     requires: [
-        'kalix.AdminApplication.Role.viewModel.RoleViewModel',
+        'kalix.AdminApplication.Role.view.RoleViewModel',
         'kalix.AdminApplication.Role.controller.RoleController'
     ],
     controller: 'roleController',

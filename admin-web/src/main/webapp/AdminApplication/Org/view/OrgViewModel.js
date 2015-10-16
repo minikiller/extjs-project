@@ -8,7 +8,7 @@
 Ext.define('kalix.AdminApplication.Org.view.OrgViewModel', {
     extend: 'Ext.app.ViewModel',
     requires: [
-        'Kalix.admin.org.store.OrgStore'
+        'kalix.AdminApplication.Org.store.OrgStore'
     ],
     alias: 'viewmodel.orgViewModel',
     data: {

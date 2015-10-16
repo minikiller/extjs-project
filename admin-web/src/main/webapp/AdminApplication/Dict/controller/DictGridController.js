@@ -18,7 +18,7 @@ Ext.define('kalix.AdminApplication.Dict.controller.DictGridController', {
         });
         var win = Ext.create('Ext.Window', {
             width: 400,
-            height: 300,
+            //height: 300,
             border: false,
             modal: true,
             //resizable:false,

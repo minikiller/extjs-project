@@ -42,11 +42,11 @@ Ext.define('kalix.view.login.Login', {
             method: "GET",
             items: [
                 {
-                    fieldLabel: '登录名',
+                    fieldLabel: '账号',
                     id: 'loginNameId',
                     name: 'loginName',
                     allowBlank: false,
-                    blankText: '登录名不能为空!',
+                    blankText: '账号不能为空!',
                     beforeLabelTpl: [
                         '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
                     ]

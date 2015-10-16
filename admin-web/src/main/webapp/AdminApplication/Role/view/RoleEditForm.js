@@ -8,7 +8,7 @@
 Ext.define('kalix.AdminApplication.Role.view.RoleEditForm', {
     extend: 'Ext.FormPanel',
     requires: [
-        'kalix.AdminApplication.Role.viewModel.RoleViewModel',
+        'kalix.AdminApplication.Role.view.RoleViewModel',
         'kalix.AdminApplication.Role.controller.RoleFormController'
     ],
     alias: 'widget.roleEditForm',

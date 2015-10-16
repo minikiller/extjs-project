@@ -17,6 +17,7 @@ Ext.define('kalix.AdminApplication.Dict.view.DictAddForm', {
     },
     controller: 'dictFormController',
     xtype: "dictAddForm",
+    layout:'form',
     labelAlign: 'center',
     labelWidth: 75,
     autoWidth: true,
@@ -28,53 +29,42 @@ Ext.define('kalix.AdminApplication.Dict.view.DictAddForm', {
     defaultType: 'textfield',
     items: [
         {
-            fieldLabel: '标签名',
+            fieldLabel: '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>标签名',
             itemId: 'labelId',
             name: 'label',
             allowBlank: false,
             blankText: '标签名不能为空!',
-            beforeLabelTpl: [
-                '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
-            ]
+
         },
         {
-            fieldLabel: '数据值',
+            fieldLabel: '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>数据值',
             itemId: 'valueId',
             name: 'value',
             allowBlank: false,
             blankText: '数据值不能为空!',
-            beforeLabelTpl: [
-                '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
-            ]
+
         },
         {
-            fieldLabel: '类型',
+            fieldLabel: '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>类型',
             itemId: 'typeId',
             name: 'type',
             allowBlank: false,
             blankText: '类型不能为空!',
-            beforeLabelTpl: [
-                '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
-            ]
+
         },
         {
             xtype: 'numberfield',
-            fieldLabel: '排序',
+            fieldLabel: '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>排序',
             itemId: 'sortId',
             name: 'sort',
             allowBlank: false,
-            beforeLabelTpl: [
-                '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
-            ]
+
         },
         {
             xtype: 'textarea',
             fieldLabel: '备注',
             itemId: 'descriptionId',
             name: 'description',
-            beforeLabelTpl: [
-                '<span  >&nbsp;&nbsp;</span>'
-            ]
         }
     ],
     buttons: [
