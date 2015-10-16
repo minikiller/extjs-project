@@ -6,7 +6,7 @@
  * @version 1.0.0
  */
 Ext.define('kalix.AdminApplication.Role.view.RoleAddForm', {
-    extend: 'Ext.FormPanel',
+    extend: 'kalix.view.components.common.FormPanel',
     requires: [
         'kalix.AdminApplication.Role.view.RoleViewModel',
         'kalix.AdminApplication.Role.controller.RoleFormController'
@@ -17,21 +17,10 @@ Ext.define('kalix.AdminApplication.Role.view.RoleAddForm', {
     },
     controller: 'roleFormController',
     xtype: "roleAddFormPanel",
-    layout:'form',
-    //width: 400,
-    bodyPadding: 10,
-    labelAlign: 'top',
-    labelWidth: 75,
-    /*autoWidth: true,
-    autoHeight: true,*/
     jsonSubmit: true,
-    //bodyStyle: "padding:15px",
-    frame: true,
-    buttonAlign: "center",
-    defaultType: 'textfield',
     items: [
         {
-            fieldLabel: '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>名称',
+            fieldLabel: '名称',
             itemId: 'nameId',
             name: 'name',
             allowBlank: false,
@@ -54,5 +43,6 @@ Ext.define('kalix.AdminApplication.Role.view.RoleAddForm', {
         {
             text: '重置', glyph: 0xf0e2, handler: 'onAddReset'
         }
-    ]
+    ],
+
 });

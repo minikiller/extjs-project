@@ -6,7 +6,7 @@
  * @version 1.0.0
  */
 Ext.define('kalix.AdminApplication.User.view.UserAddForm', {
-    extend: 'Ext.FormPanel',
+    extend: 'kalix.view.components.common.FormPanel',
     requires: [
         'kalix.AdminApplication.User.view.UserViewModel',
         'kalix.AdminApplication.User.controller.UserFormController'
@@ -17,15 +17,7 @@ Ext.define('kalix.AdminApplication.User.view.UserAddForm', {
     },
     controller: 'userFormController',
     xtype: "userAddForm",
-    labelAlign: 'center',
-    labelWidth: 75,
-    autoWidth: true,
-    autoHeight: true,
     jsonSubmit: true,
-    bodyStyle: "padding:15px",
-    frame: true,
-    buttonAlign: "center",
-    defaultType: 'textfield',
     items: [
         {
             fieldLabel: '登录名',
@@ -33,9 +25,6 @@ Ext.define('kalix.AdminApplication.User.view.UserAddForm', {
             name: 'loginName',
             allowBlank: false,
             blankText: '登录名不能为空!',
-            beforeLabelTpl: [
-                '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
-            ]
         },
         {
             fieldLabel: '姓名',
@@ -43,9 +32,6 @@ Ext.define('kalix.AdminApplication.User.view.UserAddForm', {
             name: 'name',
             allowBlank: false,
             blankText: '姓名不能为空!',
-            beforeLabelTpl: [
-                '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
-            ]
         },
         {
             inputType: 'password',
@@ -54,9 +40,6 @@ Ext.define('kalix.AdminApplication.User.view.UserAddForm', {
             name: 'password',
             allowBlank: false,
             blankText: '密码不能为空!',
-            beforeLabelTpl: [
-                '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
-            ]
         },
         {
             inputType: 'password',
@@ -65,9 +48,6 @@ Ext.define('kalix.AdminApplication.User.view.UserAddForm', {
             itemId: 'confirmPasswordId',
             allowBlank: false,
             blankText: '确认密码不能为空!',
-            beforeLabelTpl: [
-                '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
-            ]
         },
         {
             fieldLabel: '邮箱',
@@ -75,17 +55,11 @@ Ext.define('kalix.AdminApplication.User.view.UserAddForm', {
             name: 'email',
             allowBlank: false,
             blankText: '邮箱不能为空!',
-            beforeLabelTpl: [
-                '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
-            ]
         },
         {
             fieldLabel: '电话号',
             itemId: 'phoneId',
             name: 'phone',
-            beforeLabelTpl: [
-                '<span>&nbsp;&nbsp;</span>'
-            ]
         },
         {
             fieldLabel: '手机号',
@@ -93,9 +67,6 @@ Ext.define('kalix.AdminApplication.User.view.UserAddForm', {
             name: 'mobile',
             allowBlank: false,
             blankText: '手机号不能为空!',
-            beforeLabelTpl: [
-                '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
-            ]
         },
         {
             xtype: 'combobox',
@@ -107,17 +78,14 @@ Ext.define('kalix.AdminApplication.User.view.UserAddForm', {
                 ['1', '启用'],
                 ['0', '停用']
             ],
-            beforeLabelTpl: [
-                '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
-            ]
         }
     ],
     buttons: [
         {
-            text: '保存', glyph: 0xf0c7, type: 'submit', handler: 'onSave'
+            text: '保存', glyph: 'xf0c7@FontAwesome', type: 'submit', handler: 'onSave'
         },
         {
-            text: '重置', glyph: 0xf0e2, handler: 'onAddReset'
+            text: '重置', glyph: 'xf0e2@FontAwesome', handler: 'onAddReset'
         }
     ]
 });

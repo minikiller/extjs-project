@@ -7,6 +7,7 @@
  */
 Ext.define('kalix.AdminApplication.User.controller.UserGridController', {
     extend: 'Ext.app.ViewController',
+    requires:['kalix.core.Notify'],
     alias: 'controller.userGridController',
     /**
      * 打开新增操作.
@@ -19,11 +20,10 @@ Ext.define('kalix.AdminApplication.User.controller.UserGridController', {
         });
         var win = Ext.create('Ext.Window', {
             width: 400,
-            //height: 350,
             border: false,
             modal: true,
             //resizable:false,
-            icon: 'resources/images/group_add.png',
+            icon: 'admin/resources/images/group_add.png',
             title: this.getView().getViewModel().get("addTitle"),
             items: [addFormPanel]
         });
@@ -55,11 +55,10 @@ Ext.define('kalix.AdminApplication.User.controller.UserGridController', {
 
             var win = Ext.create('Ext.Window', {
                 width: 400,
-                height: 350,
                 border: false,
                 modal: true,
                 //resizable:false,
-                icon: 'resources/images/group_edit.png',
+                icon: 'admin/resources/images/group_edit.png',
                 title: this.getView().getViewModel().get("editTitle"),
                 items: [editFormPanel]
             });
@@ -140,7 +139,11 @@ Ext.define('kalix.AdminApplication.User.controller.UserGridController', {
                 }
             });
         } else {
-            Ext.Msg.alert(CONFIG.ALTER_TITLE_ERROR, "请选择要删除的记录！");
+             //Ext.Msg.alert(CONFIG.ALTER_TITLE_ERROR, "请选择要删除的记录！");
+            this.showError( "请选择要删除的记录！",CONFIG.ALTER_TITLE_ERROR);
         }
+    },
+    showError: function (msg,title){
+        kalix.core.Notify.error( msg,title);
     }
 });

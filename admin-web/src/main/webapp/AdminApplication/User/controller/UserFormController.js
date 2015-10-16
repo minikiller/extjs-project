@@ -8,6 +8,7 @@
 Ext.define('kalix.AdminApplication.User.controller.UserFormController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.userFormController',
+    requires:['kalix.core.Notify'],
 
     /**
      * 重置操作.
@@ -40,7 +41,8 @@ Ext.define('kalix.AdminApplication.User.controller.UserFormController', {
             }
             form.submit({
                 success: function (form, action) {
-                    Ext.Msg.alert(CONFIG.ALTER_TITLE_SUCCESS, action.result.msg);
+                    kalix.core.Notify.success( action.result.msg,CONFIG.ALTER_TITLE_SUCCESS);
+                    //Ext.Msg.alert(CONFIG.ALTER_TITLE_SUCCESS, action.result.msg);
                     var grid = Ext.ComponentQuery.query('userGridPanel')[0];
                     var store = grid.getStore();
                     store.reload();

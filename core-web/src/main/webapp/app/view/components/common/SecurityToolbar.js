@@ -50,7 +50,11 @@ Ext.define('kalix.view.components.common.SecurityToolbar', {
                     }
                     securityToolbar.add(_buttons);
                 }
+            },
+            failure: function(xhr, params) {
+                console.log('Permission call failure!');
             }
+
         });
     },
     initComponent: function () {
