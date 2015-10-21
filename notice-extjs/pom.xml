@@ -2,25 +2,25 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
+        <relativePath>..</relativePath>
         <artifactId>extjs-project</artifactId>
         <groupId>cn.com.rexen.extjs</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>cn.com.rexen.extjs.wrapper</groupId>
-    <artifactId>extjs-wrapper</artifactId>
-    <name>Extjs :: Wrapper</name>
-    <description>Extjs - Wrapper</description>
+    <groupId>cn.com.rexen.extjs.notice</groupId>
+    <artifactId>notice-extjs</artifactId>
+    <name>Extjs :: Notice - Web</name>
+    <description>Extjs :: Notice - Web</description>
     <packaging>bundle</packaging>
 
     <properties>
-        <bundle.symbolicName>cn.com.rexen.extjs.core.wrapper</bundle.symbolicName>
+        <bundle.symbolicName>cn.com.rexen.extjs.notice.web</bundle.symbolicName>
         <bundle.namespace>${bundle.symbolicName}</bundle.namespace>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
-
 </project>

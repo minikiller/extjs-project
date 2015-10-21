@@ -239,12 +239,12 @@
 
     <modules>
         <module>extjs-wrapper</module>
-        <module>core-web</module>
-        <module>admin-web</module>
+        <module>core-extjs</module>
+        <module>admin-extjs</module>
         <!--<module>notice-web</module>-->
-        <module>app-web</module>
-        <module>workflow-web</module>
-        <module>demo-web</module>
+        <module>app-extjs</module>
+        <module>workflow-extjs</module>
+        <module>demo-extjs</module>
         <module>audit-extjs</module>
     </modules>
 </project>
