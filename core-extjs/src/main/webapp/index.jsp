@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="org.apache.shiro.SecurityUtils,org.apache.shiro.subject.Subject" %>
 <!DOCTYPE HTML>
 <html manifest="">
 <head>
@@ -21,5 +22,11 @@
 
 
 </head>
-<body></body>
+<body>
+<%
+    Subject subject=SecurityUtils.getSubject();
+    if(subject!=null)
+        response.sendRedirect("login.jsp");
+%>
+</body>
 </html>
