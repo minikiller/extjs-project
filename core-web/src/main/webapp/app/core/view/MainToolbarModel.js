@@ -1,6 +1,9 @@
 /**
- * This class is the view model for the Main view of the application.
+ * ����������ģ��
+ *
+ * date:2015-10-26
  */
+
 Ext.define('kalix.core.view.MainToolbarModel', {
     extend: 'Ext.app.ViewModel',
     alias: 'viewmodel.maintoolbar',

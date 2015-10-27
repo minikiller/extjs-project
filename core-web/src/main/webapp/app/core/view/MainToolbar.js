@@ -1,13 +1,17 @@
+/**
+ * 顶部工具条
+ *
+ * date:2015-10-26
+ */
+
 Ext.define('kalix.core.view.MainToolbar', {
     extend: 'Ext.toolbar.Toolbar',
     xtype: 'maintoolbar',
 
     requires: [
-        'kalix.core.controller.MainToolbarController',
         'kalix.core.view.MainToolbarModel'
     ],
 
-    controller: 'maintoolbar',
     viewModel: 'maintoolbar',
 
     id: 'mainToolbar',

@@ -1,13 +1,10 @@
 /**
- * This class is the main view for the application. It is specified in app.js as the
- * "mainView" property. That setting automatically applies the "viewport"
- * plugin causing this view to become the body element (i.e., the viewport).
+ * 主应用入口
  *
- * TODO - Replace this content of this view to suite the needs of your application.
+ * date:2015-10-26
  */
 Ext.define('kalix.core.view.Main', {
     extend: 'Ext.container.Viewport',
-    xtype: 'app-main',
 
     requires: [
         'kalix.core.controller.MainController',
@@ -29,37 +26,31 @@ Ext.define('kalix.core.view.Main', {
         align: 'stretch'
     },
 
-
     items: [{
         xtype: 'toolbar',
         cls: 'sencha-dash-dash-headerbar toolbar-btn-shadow',
         height: 64,
         itemId: 'headerBar',
-        items: [
-            {
-                xtype: 'component',
-                reference: 'senchaLogo',
-                cls: 'sencha-logo',
-                html: '<div class="main-logo"><img src="resources/images/logo_horizontal.png">R-Plus快速开发平台</div>',
-                width: 250
-            },
-            {
-                margin: '0 0 0 8',
-                cls: 'delete-focus-bg',
-                iconCls: 'x-fa fa-navicon',
-                id: 'main-navigation-btn',
-                handler: 'onToggleNavigationSize'
-            },
-            {
-                xtype: 'maintoolbar'
-            },
-            {
-                xtype: 'tbspacer',
-                flex: 1
-            },
-            {
-                xtype: 'profilebar'
-            }
+        items: [{
+            xtype: 'component',
+            reference: 'senchaLogo',
+            cls: 'sencha-logo',
+            html: '<div class="main-logo"></div>',
+            width: 250
+        }, {
+            margin: '0 0 0 8',
+            cls: 'delete-focus-bg',
+            iconCls: 'x-fa fa-navicon',
+            id: 'main-navigation-btn',
+            handler: 'onToggleNavigationSize'
+        }, {
+            xtype: 'maintoolbar'
+        }, {
+            xtype: 'tbspacer',
+            flex: 1
+        }, {
+            xtype: 'profilebar'
+        }
         ]
     }, {
         xtype: 'maincontainerwrap',
@@ -79,7 +70,7 @@ Ext.define('kalix.core.view.Main', {
                 selectionchange: "onNavigationTreeSelectionChange",
                 beforeRender: function () {
                     console.log('before render tree list')
-                }
+            }
             }
         }, {
             xtype: "container",
@@ -93,5 +84,6 @@ Ext.define('kalix.core.view.Main', {
             }
         }
         ]
-    }]
+    }
+    ]
 });

@@ -4,23 +4,13 @@
  * Sencha Cmd when upgrading.
  */
 Ext.application({
-    name: 'kalix',
+  name: 'kalix',
 
-    extend: 'kalix.core.Application',
+  extend: 'kalix.core.Application',
 
-    requires: [
-        'kalix.core.view.Main'
-    ],
+  requires: [
+    'kalix.core.view.Main'
+  ],
 
-    // The name of the initial view to create. With the classic toolkit this class
-    // will gain a "viewport" plugin if it does not extend Ext.Viewport. With the
-    // modern toolkit, the main view will be added to the Viewport.
-    //
-    mainView: 'kalix.core.view.Main'
-
-    //-------------------------------------------------------------------------
-    // Most customizations should be made to kalix.Application. If you need to
-    // customize this file, doing so below this section reduces the likelihood
-    // of merge conflicts when upgrading to new versions of Sencha Cmd.
-    //-------------------------------------------------------------------------
+  mainView: 'kalix.core.view.Main'
 });

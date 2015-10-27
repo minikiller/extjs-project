@@ -1,35 +1,24 @@
 /**
- * The main application class. An instance of this class is created by app.js when it
- * calls Ext.application(). This is the ideal place to handle application launch and
- * initialization details.
+ * 主应用程序
+ *
+ * date:2015-10-26
  */
 
 Ext.define('kalix.core.Application', {
-    extend: 'Ext.app.Application',
+  extend: 'Ext.app.Application',
 
-    name: 'kalix',
+  name: 'kalix',
 
-    stores: [
-        'kalix.core.store.NavigationTree',
-        'kalix.core.store.MainToolbar'
-    ],
+  stores: [
+    'kalix.core.store.NavigationTree',
+    'kalix.core.store.MainToolbar'
+  ],
 
-    models: [],
+  models: [],
 
+  defaultToken: 'AdminApplication',
 
-    defaultToken: 'AdminApplication',
-
-    launch: function () {
-        // TODO - Launch the application
-    },
-
-    onAppUpdate: function () {
-        Ext.Msg.confirm('Application Update', 'This application has an update, reload?',
-            function (choice) {
-                if (choice === 'yes') {
-                    window.location.reload();
-                }
-            }
-        );
-    }
+  launch: function () {
+    // TODO - Launch the application
+  }
 });
