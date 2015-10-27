@@ -5,36 +5,36 @@
  */
 
 Ext.define('kalix.core.view.MainToolbar', {
-    extend: 'Ext.toolbar.Toolbar',
-    xtype: 'maintoolbar',
+  extend : 'Ext.toolbar.Toolbar',
+  xtype : 'maintoolbar',
 
-    requires: [
-        'kalix.core.view.MainToolbarModel'
-    ],
+  requires : [
+    'kalix.core.view.MainToolbarModel'
+  ],
 
-    viewModel: 'maintoolbar',
+  viewModel : 'maintoolbar',
 
-    id: 'mainToolbar',
+  id : 'mainToolbar',
 
-    bind: {
-        items: '{items}'
-    },
+  bind : {
+    items : '{items}'
+  },
 
-    border: false,
+  border : false,
 
-    setItems: function (items) {
-        var toolbar = this;
-        toolbar.removeAll()
-        items.forEach(function (item, index) {
-            toolbar.add(Ext.create('Ext.button.Button', {
-                id: item.id,
-                href: '#' + item.id,
-                text: item.title,
-                icon: item.icon,
-                hrefTarget: '_self',
-                border: 0,
-                margin: '0 5 0 10'
-            }));
-        });
-    }
+  setItems : function (items) {
+    var toolbar = this;
+    toolbar.removeAll()
+    items.forEach(function (item, index) {
+      toolbar.add(Ext.create('Ext.button.Button', {
+          id : item.id,
+          href : '#' + item.id,
+          text : item.title,
+          icon : item.icon,
+          hrefTarget : '_self',
+          border : 0,
+          margin : '0 5 0 10'
+        }));
+    });
+  }
 });

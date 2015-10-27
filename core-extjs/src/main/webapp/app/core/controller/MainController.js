@@ -3,25 +3,25 @@
  *
  * date:2015-10-26
  */
-
+ 
 Ext.define('kalix.core.controller.MainController', {
-  extend: 'Ext.app.ViewController',
-  alias: 'controller.main',
+  extend : 'Ext.app.ViewController',
+  alias : 'controller.main',
 
-  listen: {
-    controller: {
-      '#': {
-        unmatchedroute: 'onRouteChange'
+  listen : {
+    controller : {
+      '#' : {
+        unmatchedroute : 'onRouteChange'
       }
     }
   },
 
-  routes: {
-    ':node': 'onRouteChange'
+  routes : {
+    ':node' : 'onRouteChange'
   },
 
   //willdo
-  setCurrentView: function (hashTag) {
+  setCurrentView : function (hashTag) {
     hashTag = hashTag || '';
     hashTag = hashTag.path.join('.');
     console.log(hashTag)
@@ -40,9 +40,9 @@ Ext.define('kalix.core.controller.MainController', {
     lastView = mainLayout.getActiveItem();
     if (!existingItem) {
       newView = Ext.create('kalix.' + (hashTag.toLowerCase() || 'pages.Error404Window') + '.Main', {
-        hideMode: 'offsets',
-        routeId: hashTag
-      });
+          hideMode : 'offsets',
+          routeId : hashTag
+        });
     }
 
     if (!newView || !newView.isWindow) {
@@ -73,19 +73,19 @@ Ext.define('kalix.core.controller.MainController', {
     //vmData.currentView = newView;
   },
 
-  onNavigationTreeSelectionChange: function (tree, node) {
+  onNavigationTreeSelectionChange : function (tree, node) {
     if (node && node.get('view')) {
       this.redirectTo(node.get("routeId"));
     }
   },
 
-  onToggleNavigationSize: function () {
+  onToggleNavigationSize : function () {
     var me = this,
-        refs = me.getReferences(),
-        navigationList = refs.navigationTreeList,
-        wrapContainer = refs.mainContainerWrap,
-        collapsing = !navigationList.getMicro(),
-        new_width = collapsing ? 64 : 250;
+    refs = me.getReferences(),
+    navigationList = refs.navigationTreeList,
+    wrapContainer = refs.mainContainerWrap,
+    collapsing = !navigationList.getMicro(),
+    new_width = collapsing ? 64 : 250;
 
     if (Ext.isIE9m || !Ext.os.is.Desktop) {
       Ext.suspendLayouts();
@@ -109,9 +109,9 @@ Ext.define('kalix.core.controller.MainController', {
 
       // Start this layout first since it does not require a layout
       refs.senchaLogo.animate({
-        dynamic: true,
-        to: {
-          width: new_width
+        dynamic : true,
+        to : {
+          width : new_width
         }
       });
 
@@ -120,7 +120,7 @@ Ext.define('kalix.core.controller.MainController', {
       // be flushed to the element and animate to that new size.
       navigationList.width = new_width;
       wrapContainer.updateLayout({
-        isRoot: true
+        isRoot : true
       });
 
       // We need to switch to micro mode on the navlist *after* the animation (this
@@ -128,28 +128,28 @@ Ext.define('kalix.core.controller.MainController', {
       // visible.
       if (collapsing) {
         navigationList.on({
-          afterlayoutanimation: function () {
+          afterlayoutanimation : function () {
             navigationList.setMicro(true);
           },
-          single: true
+          single : true
         });
       }
     }
   },
 
-  onRouteChange: function (hash) {
+  onRouteChange : function (hash) {
     hash = this.parseHash(hash);
     Ext.getStore('MainToolbar').load();
     Ext.getStore('NavigationTree').load(this.getFirstPath(hash));
     this.setCurrentView(hash);
   },
 
-  getFirstPath: function (hashObj) {
+  getFirstPath : function (hashObj) {
     return hashObj.path[0];
   },
 
   // admin/deashoard?name=soni
-  parseHash: function (hash) {
+  parseHash : function (hash) {
     var ary = hash.split('?');
     var path = ary[0];
     var query = '';
@@ -157,12 +157,12 @@ Ext.define('kalix.core.controller.MainController', {
       query = ary[1];
     }
     return {
-      path: path.split('/'),
-      query: this.parseQuery(query)
+      path : path.split('/'),
+      query : this.parseQuery(query)
     };
   },
 
-  parseQuery: function (query) {
+  parseQuery : function (query) {
     if (!query) {
       return query;
     }

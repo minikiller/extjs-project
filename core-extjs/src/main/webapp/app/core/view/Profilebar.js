@@ -1,23 +1,23 @@
 Ext.define('kalix.core.view.Profilebar', {
-    extend: 'Ext.toolbar.Toolbar',
-    xtype: 'profilebar',
+  extend : 'Ext.toolbar.Toolbar',
+  xtype : 'profilebar',
 
-    requires: [
-        'kalix.core.view.ProfilebarModel'
-    ],
+  requires : [
+    'kalix.core.view.ProfilebarModel'
+  ],
 
-    viewModel: 'profilebar',
+  viewModel : 'profilebar',
 
-    itemId: 'profilebar',
+  itemId : 'profilebar',
 
-    layout: {
-        type: 'hbox'
-    },
+  layout : {
+    type : 'hbox'
+  },
 
-    border: false,
+  border : false,
 
-    items: [{
-        xtype: 'button',
+  items : [{
+      xtype : 'button',
       bind : {
         text : '{user.name}'
       },
@@ -25,7 +25,7 @@ Ext.define('kalix.core.view.Profilebar', {
       hrefTarget : '_self',
       margin : '0 5 0 10'
     }, {
-        xtype: 'button',
+      xtype : 'button',
       text : '退出',
       bind : {
         href : '{user.quit}'
@@ -33,5 +33,5 @@ Ext.define('kalix.core.view.Profilebar', {
       hrefTarget : '_self',
       margin : '0 5 0 10'
     }
-    ]
+  ]
 });

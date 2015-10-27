@@ -1,10 +1,10 @@
 Ext.define('kalix.core.view.MainTreelist', {
-  extend: 'Ext.list.Tree',
-  xtype: 'maintreelist',
+  extend : 'Ext.list.Tree',
+  xtype : 'maintreelist',
 
-  id: 'mainTreelist',
+  id : 'mainTreelist',
 
-  constructor: function () {
+  constructor : function () {
     this.callParent(arguments);
 
     var navigationTreeStore = this.getStore('NavigationTree');

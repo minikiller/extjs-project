@@ -5,20 +5,20 @@
  */
 
 Ext.define('kalix.core.Application', {
-  extend: 'Ext.app.Application',
+  extend : 'Ext.app.Application',
 
-  name: 'kalix',
+  name : 'kalix',
 
-  stores: [
+  stores : [
     'kalix.core.store.NavigationTree',
     'kalix.core.store.MainToolbar'
   ],
 
-  models: [],
+  models : [],
 
-  defaultToken: 'AdminApplication',
+  defaultToken : 'AdminApplication',
 
-  launch: function () {
+  launch : function () {
     // TODO - Launch the application
   }
 });

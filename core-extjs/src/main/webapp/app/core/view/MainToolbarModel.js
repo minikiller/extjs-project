@@ -1,9 +1,9 @@
 /**
- * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½
+ * ¶¥²¿¹¤¾ßÌõÄ£ÐÍ
  *
  * date:2015-10-26
  */
-
+ 
 Ext.define('kalix.core.view.MainToolbarModel', {
     extend: 'Ext.app.ViewModel',
     alias: 'viewmodel.maintoolbar',
