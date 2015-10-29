@@ -23,7 +23,7 @@ Ext.define('kalix.view.login.LoginMain', {
   method : "POST",
   defaultType : 'textfield',
   frame : true,
-  url : 'login',
+  url : 'login.jsp',
 
   bodyBorder : false,
   bodyPadding : 20,
@@ -36,7 +36,7 @@ Ext.define('kalix.view.login.LoginMain', {
   items : [{
       inputType : 'textfield',
       fieldLabel : '账号',
-      name : 'loginName',
+      name : 'username',
       allowBlank : false,
       blankText : '账号不能为空!',
       beforeLabelTpl : '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'

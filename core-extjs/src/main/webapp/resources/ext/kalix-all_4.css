@@ -3230,3 +3230,8 @@
 .x-button-blue-toolbar-small-cell > .x-grid-cell-inner > .x-btn-blue-toolbar-small {
     vertical-align: top;
 }
+
+.field-required{
+  color:red;
+  font-weight:bold;
+}
