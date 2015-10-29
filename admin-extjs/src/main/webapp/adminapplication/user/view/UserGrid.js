@@ -99,30 +99,32 @@ Ext.define('kalix.adminapplication.user.view.UserGrid', {
       {
         text : '查看',
         xtype : 'button',
-        permission : 'admin:sysModule:permissionControl:userMenu:add',
-        icon : 'resources/images/user_add.png',
+        permission : 'admin:sysModule:permissionControl:userMenu:view',
+        icon : 'admin/resources/images/user.png',
         handler : 'onView'
-      },{
-        text : '新增',
-        xtype : 'button',
-        permission : 'admin:sysModule:permissionControl:userMenu:add',
-        icon : 'resources/images/user_add.png',
-        handler : 'onAdd'
-      }
+      },
     ],
     
     //需要验证权限后添加的按钮
-    verifyItems : [{
+    verifyItems : [
+      {
+        text : '新增',
+        xtype : 'button',
+        permission : 'admin:sysModule:permissionControl:userMenu:add',
+        icon : 'admin/resources/images/user_add.png',
+        handler : 'onAdd'
+      },
+      {
         text : '修改',
         xtype : 'button',
         permission : 'admin:sysModule:permissionControl:userMenu:update',
-        icon : "resources/images/user_edit.png",
+        icon : "admin/resources/images/user_edit.png",
         handler : 'onEdit'
       }, {
         text : '删除',
         xtype : 'button',
         permission : 'admin:sysModule:permissionControl:userMenu:delete',
-        icon : "resources/images/user_delete.png",
+        icon : "admin/resources/images/user_delete.png",
         handler : 'onDelete'
       }
     ]

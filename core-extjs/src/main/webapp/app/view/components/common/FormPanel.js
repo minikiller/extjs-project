@@ -7,6 +7,7 @@ Ext.define('kalix.view.components.common.FormPanel', {
   extend : 'Ext.form.Panel',
   xtype : "baseForm",
 
+  layout:'form',
   defaultType : 'textfield',
   bodyPadding : 10,
   buttonAlign : "center",

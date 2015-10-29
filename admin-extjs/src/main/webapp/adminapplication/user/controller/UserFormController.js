@@ -8,7 +8,7 @@
 Ext.define('kalix.adminapplication.user.controller.UserFormController', {
   extend : 'Ext.app.ViewController',
   alias : 'controller.userFormController',
-  //requires:['kalix.core.Notify'],
+  requires:['kalix.core.Notify'],
   
   /**
    * 重置操作.
@@ -72,13 +72,13 @@ Ext.define('kalix.adminapplication.user.controller.UserFormController', {
           if(res.success){
             view.close();
             kalix.getApplication().getStore('userStore').reload();
-            //kalix.core.Notify.success( action.result.msg,CONFIG.ALTER_TITLE_SUCCESS);
+            kalix.core.Notify.success( res.msg,CONFIG.ALTER_TITLE_SUCCESS);
           }else{
             Ext.Msg.alert(CONFIG.ALTER_TITLE_FAILURE, res.msg);
           }
         },
         failure : function (response, opts) {
-          Ext.Msg.alert(CONFIG.ALTER_TITLE_FAILURE, '用户添加失败，请稍后重试！');
+          Ext.Msg.alert(CONFIG.ALTER_TITLE_FAILURE, res.msg);
         }
       });
     } else {

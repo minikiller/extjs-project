@@ -11,6 +11,7 @@
     <title>kalix</title>
     <link href="resources/ext/kalix-all.css" rel="stylesheet"/>
 
+    <script type="text/javascript" src="resources/js/underscore-min.js"></script>
     <script type="text/javascript" src="resources/js/ext-all.js"></script>
     <script type="text/javascript" src="resources/js/locale-zh_CN.js"></script>     
     <script type="text/javascript" src="resources/js/app.js"></script> 

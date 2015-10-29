@@ -7,7 +7,7 @@
  */
 Ext.define('kalix.adminapplication.user.controller.UserGridController', {
   extend : 'Ext.app.ViewController',
-  //requires:['kalix.core.Notify'],
+  requires:['kalix.core.Notify'],
   requires : [
     'kalix.adminapplication.user.view.UserForm',
     'kalix.adminapplication.user.view.UserViewModel'
@@ -82,13 +82,13 @@ Ext.define('kalix.adminapplication.user.controller.UserGridController', {
               var res = Ext.JSON.decode(response.responseText);
               if (res.success) {
                 kalix.getApplication().getStore('userStore').reload();
-                //kalix.core.Notify.success( action.result.msg,CONFIG.ALTER_TITLE_SUCCESS);
+                kalix.core.Notify.success( res.msg,CONFIG.ALTER_TITLE_SUCCESS);
               } else {
                 Ext.Msg.alert(CONFIG.ALTER_TITLE_FAILURE, res.msg);
               }
             },
             failure : function (response, opts) {
-              Ext.Msg.alert(CONFIG.ALTER_TITLE_FAILURE, '删除失败，请稍后重试！');
+              Ext.Msg.alert(CONFIG.ALTER_TITLE_FAILURE, res.msg);
             }
           });
         }

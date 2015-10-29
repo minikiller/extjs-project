@@ -21,7 +21,7 @@ Ext.define('kalix.adminapplication.user.view.UserViewForm', {
   border : false,
   modal : true,
   resizable : false,
-  icon : 'resources/images/user.png',
+  icon : 'admin/resources/images/user.png',
   title : '查看用户',
 
   items : [{
@@ -67,7 +67,7 @@ Ext.define('kalix.adminapplication.user.view.UserViewForm', {
       ],
       buttons : [{
           text : '关闭',
-          glyph : 'xf0e2@FontAwesome',
+          glyph : 'xf00d@FontAwesome',
           handler : 'onClose'
         }
       ]

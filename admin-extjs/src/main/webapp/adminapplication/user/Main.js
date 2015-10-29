@@ -54,7 +54,8 @@ Ext.define('kalix.adminapplication.user.Main', {
         }, {
           xtype : 'button',
           text : '查询',
-          handler : 'onSearch'
+          handler : 'onSearch',
+          glyph : 'xf002@FontAwesome',
         }
       ]
     }, {
