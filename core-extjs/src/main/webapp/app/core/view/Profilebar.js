@@ -21,12 +21,14 @@ Ext.define('kalix.core.view.Profilebar', {
       bind : {
         text : '{user.name}'
       },
+      glyph : 'xf007@FontAwesome',
       href : '#profile',
       hrefTarget : '_self',
       margin : '0 5 0 10'
     }, {
       xtype : 'button',
       text : '退出',
+      glyph : 'xf08b@FontAwesome',
       bind : {
         href : '{user.quit}'
       },
