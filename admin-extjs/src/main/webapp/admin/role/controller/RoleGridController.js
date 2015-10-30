@@ -142,12 +142,12 @@ Ext.define('kalix.admin.role.controller.RoleGridController', {
                     ],
                     buttons: [
                         {
-                            text: '保存', glyph: 0xf0c7, handler: function () {
+                            text: '保存', glyph: 'xf0c7@FontAwesome', handler: function () {
                             me.onSaveAddUser(roleUserUrl, this.up('#addUserForm'), rec);
                         }
                         },
                         {
-                            text: '重置', glyph: 0xf0e2, handler: function () {
+                            text: '重置', glyph: 'xf0e2@FontAwesome', handler: function () {
                             var field = this.up('#addUserForm').down("#userAddItemSelector");
                             if (!field.disabled) {
                                 field.clearValue();

@@ -114,10 +114,10 @@ Ext.define('Kalix.admin.user.view.UserAddForm', {
     ],
     buttons: [
         {
-            text: '保存', glyph: 0xf0c7, type: 'submit', handler: 'onSave'
+            text: '保存', glyph: 'xf0c7@FontAwesome', type: 'submit', handler: 'onSave'
         },
         {
-            text: '重置', glyph: 0xf0e2, handler: 'onAddReset'
+            text: '重置', glyph: 'xf0e2@FontAwesome', handler: 'onAddReset'
         }
     ]
 });

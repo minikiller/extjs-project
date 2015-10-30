@@ -83,12 +83,12 @@ Ext.define('kalix.admin.dep.view.DepAddForm', {
         {
             text: '保存',
             type: 'submit',
-            glyph: 0xf0c7,
+            glyph: 'xf0c7@FontAwesome',
             handler: 'onSave'
         },
         {
             text: '重置',
-            glyph: 0xf0e2,
+            glyph: 'xf0e2@FontAwesome',
             handler: 'onAddReset'
         }
     ]

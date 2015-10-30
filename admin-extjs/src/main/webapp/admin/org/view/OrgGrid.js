@@ -56,14 +56,14 @@ Ext.define('kalix.admin.org.view.OrgGrid', {
             width: 60,
             xtype: "actioncolumn",
             items: [{
-                icon: "resources/images/pencil.png",
+                icon: "admin/resources/images/pencil.png",
                 tooltip: '修改',
                 handler: 'onEdit',
                 isDisabled: function(view, rowIdx, colIdx, item, record) {
                     return record.data.name=="根机构"?true:false;
                 }
             }, {
-                icon: "resources/images/cancel.png",
+                icon: "admin/resources/images/cancel.png",
                 tooltip: '删除',
                 handler: 'onDelete',
                 isDisabled: function(view, rowIdx, colIdx, item, record) {

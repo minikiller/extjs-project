@@ -45,11 +45,11 @@ Ext.define('kalix.admin.dict.view.DictGrid', {
             width: 60,
             xtype: "actioncolumn",
             items: [{
-                icon: "resources/images/pencil.png",
+                icon: "admin/resources/images/pencil.png",
                 tooltip: '修改',
                 handler: 'onEdit'
             }, {
-                icon: "resources/images/cancel.png",
+                icon: "admin/resources/images/cancel.png",
                 tooltip: '删除',
                 handler: 'onDelete'
 

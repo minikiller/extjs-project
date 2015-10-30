@@ -113,7 +113,7 @@ Ext.define('kalix.admin.dict.controller.DictController', {
                 }
             }, {
                 text: '重置',
-                glyph: 0xf0e2,
+                glyph: 'xf0e2@FontAwesome',
                 handler: function () {
                     searchForm.getForm().reset();
                 }

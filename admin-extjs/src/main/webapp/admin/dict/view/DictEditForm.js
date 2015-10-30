@@ -6,7 +6,7 @@
  * @version 1.0.0
  */
 Ext.define('kalix.admin.dict.view.DictEditForm', {
-    extend: 'Ext.FormPanel',
+    extend: 'kalix.view.components.common.FormPanel',
     requires: [
         'kalix.admin.dict.viewModel.DictViewModel',
         'kalix.admin.dict.controller.DictFormController'
@@ -35,9 +35,7 @@ Ext.define('kalix.admin.dict.view.DictEditForm', {
             name: 'label',
             allowBlank: false,
             blankText: '标签名不能为空!',
-            beforeLabelTpl: [
-                '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
-            ]
+
         },
         {
             fieldLabel: '数据值',
@@ -45,9 +43,7 @@ Ext.define('kalix.admin.dict.view.DictEditForm', {
             name: 'value',
             allowBlank: false,
             blankText: '数据值不能为空!',
-            beforeLabelTpl: [
-                '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
-            ]
+
         },
         {
             fieldLabel: '类型',
@@ -55,9 +51,7 @@ Ext.define('kalix.admin.dict.view.DictEditForm', {
             name: 'type',
             allowBlank: false,
             blankText: '类型不能为空!',
-            beforeLabelTpl: [
-                '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
-            ]
+
         },
         {
             xtype : 'numberfield',
@@ -65,26 +59,22 @@ Ext.define('kalix.admin.dict.view.DictEditForm', {
             itemId: 'sortId',
             name: 'sort',
             allowBlank: false,
-            beforeLabelTpl: [
-                '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
-            ]
+
         },
         {
             xtype: 'textarea',
             fieldLabel: '备注',
             itemId: 'descriptionId',
             name: 'description',
-            beforeLabelTpl: [
-                '<span  >&nbsp;&nbsp;</span>'
-            ]
+
         }
     ],
     buttons: [
         {
-            text: '保存', glyph: 0xf0c7, type: 'submit', handler: 'onUpdate'
+            text: '保存', glyph: 'xf0c7@FontAwesome', type: 'submit', handler: 'onUpdate'
         },
         {
-            text: '重置', glyph: 0xf0e2, handler: 'onEditReset'
+            text: '重置', glyph: 'xf0e2@FontAwesome', handler: 'onEditReset'
         }
     ]
 });
