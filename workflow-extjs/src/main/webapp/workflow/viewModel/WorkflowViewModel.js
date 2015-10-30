@@ -5,11 +5,11 @@
  *         date:2015-7-6
  * @version 1.0.0
  */
-Ext.define('Kalix.workflow.viewModel.WorkflowViewModel', {
+Ext.define('kalix.workflow.viewModel.WorkflowViewModel', {
     extend: 'Ext.app.ViewModel',
     requires: [
-        'Kalix.workflow.store.ProcessDefinitionStore',
-        'Kalix.workflow.model.ProcessDefinitionModel'
+        'kalix.workflow.processdefinition.store.ProcessDefinitionStore',
+        'kalix.workflow.processdefinition.model.ProcessDefinitionModel'
     ],
     alias: 'viewmodel.workflowViewModel',
     data: {

@@ -5,7 +5,7 @@
  *         date:2015-8-3
  * @version 1.0.0
  */
-Ext.define('Kalix.workflow.components.ActivitiProcessImageWindow', {
+Ext.define('kalix.workflow.components.ActivitiProcessImageWindow', {
     extend: 'Ext.Window',
     width: 920,
     height: 500,

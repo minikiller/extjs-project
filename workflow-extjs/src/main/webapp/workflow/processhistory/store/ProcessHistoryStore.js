@@ -5,17 +5,17 @@
  *         date:2015-7-3
  * @version 1.0.0
  */
-Ext.define('kalix.workflow.store.ActivityHistoryStore', {
+Ext.define('kalix.workflow.processhistory.store.ProcessHistoryStore', {
     extend: 'Ext.data.Store',
-    model: 'kalix.workflow.model.ActivityHistoryModel',
-    alias: 'store.activityHistoryStore',
-    xtype: 'activityHistoryStore',
-    storeId: "activityHistoryStore",
+    model: 'kalix.workflow.processhistory.model.ProcessHistoryModel',
+    alias: 'store.processHistoryStore',
+    xtype: 'processHistoryStore',
+    storeId: "processHistoryStore",
     autoLoad: true,
     pageSize: 10,
     proxy: {
         type: "ajax",
-        url: '/kalix/camel/rest/workflow/activities',
+        url: '/kalix/camel/rest/workflow/historys',
         reader: {
             type: "json",
             rootProperty: "data",

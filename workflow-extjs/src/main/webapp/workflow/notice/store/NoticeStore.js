@@ -5,17 +5,17 @@
  *         date:2015-7-3
  * @version 1.0.0
  */
-Ext.define('kalix.workflow.store.ActivityHistoryStore', {
+Ext.define('kalix.workflow.notice.store.NoticeStore', {
     extend: 'Ext.data.Store',
-    model: 'kalix.workflow.model.ActivityHistoryModel',
-    alias: 'store.activityHistoryStore',
-    xtype: 'activityHistoryStore',
-    storeId: "activityHistoryStore",
+    model: 'kalix.workflow.notice.model.NoticeModel',
+    alias: 'store.noticeStore',
+    xtype: 'noticeStore',
+    storeId: "noticeStore",
     autoLoad: true,
     pageSize: 10,
     proxy: {
         type: "ajax",
-        url: '/kalix/camel/rest/workflow/activities',
+        url: '/kalix/camel/rest/notices',
         reader: {
             type: "json",
             rootProperty: "data",

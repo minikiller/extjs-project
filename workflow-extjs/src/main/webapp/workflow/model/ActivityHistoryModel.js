@@ -5,7 +5,7 @@
  *         date:2015-7-3
  * @version 1.0.0
  */
-Ext.define('Kalix.workflow.model.ActivityHistoryModel', {
+Ext.define('kalix.workflow.model.ActivityHistoryModel', {
     extend: 'Ext.data.Model',
     fields: [
         {name: 'id', type: 'string'},
