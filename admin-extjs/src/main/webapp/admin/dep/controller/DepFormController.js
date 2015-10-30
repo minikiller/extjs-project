@@ -5,7 +5,7 @@
  *         date:2015-7-23
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.dep.controller.DepFormController', {
+Ext.define('kalix.admin.dep.controller.DepFormController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.depFormController',
 

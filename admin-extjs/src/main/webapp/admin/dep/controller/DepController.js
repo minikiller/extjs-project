@@ -5,13 +5,13 @@
  *         date:2015-7-23
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.dep.controller.DepController', {
+Ext.define('kalix.admin.dep.controller.DepController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.depController',
     requires: [
-        "Kalix.admin.area.view.AreaTreeList",
-        "Kalix.admin.org.view.OrgTreeList",
-        'Kalix.admin.dep.view.DepGrid'
+        "kalix.admin.area.view.AreaTreeList",
+        "kalix.admin.org.view.OrgTreeList",
+        'kalix.admin.dep.view.DepGrid'
     ],
     /**
      * 初始化面板.
@@ -109,8 +109,8 @@ Ext.define('Kalix.admin.dep.controller.DepController', {
      * @returns {Ext.panel.Panel}
      */
     onInitAreaTreeList: function () {
-        var areaTreeListPanel = Ext.create("Kalix.admin.area.view.AreaTreeList", {
-            store: Ext.create("Kalix.admin.area.store.AreaStore"),
+        var areaTreeListPanel = Ext.create("kalix.admin.area.view.AreaTreeList", {
+            store: Ext.create("kalix.admin.area.store.AreaStore"),
             region: "west",
             itemId: "depAreaTreeList",
             title: '区域列表',
@@ -138,8 +138,8 @@ Ext.define('Kalix.admin.dep.controller.DepController', {
      * @returns {Ext.panel.Panel}
      */
     onInitOrgTreeList: function () {
-        var orgTreeListPanel = Ext.create("Kalix.admin.org.view.OrgTreeList", {
-            store: Ext.create("Kalix.admin.org.store.OrgStore"),
+        var orgTreeListPanel = Ext.create("kalix.admin.org.view.OrgTreeList", {
+            store: Ext.create("kalix.admin.org.store.OrgStore"),
             itemId: "depOrgTreeList",
             region: "west",
             title: '机构列表',
@@ -167,8 +167,8 @@ Ext.define('Kalix.admin.dep.controller.DepController', {
      * @returns {Ext.panel.Panel}
      */
     onInitDataGrid: function () {
-        var dataGird = Ext.create("Kalix.admin.dep.view.DepGrid",{
-            store:Ext.create("Kalix.admin.dep.store.DepStore")
+        var dataGird = Ext.create("kalix.admin.dep.view.DepGrid",{
+            store:Ext.create("kalix.admin.dep.store.DepStore")
         });
         return dataGird;
     }

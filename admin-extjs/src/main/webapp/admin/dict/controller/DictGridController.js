@@ -5,7 +5,7 @@
  *         date:2015-6-18
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.dict.controller.DictGridController', {
+Ext.define('kalix.admin.dict.controller.DictGridController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.dictGridController',
     /**
@@ -13,7 +13,7 @@ Ext.define('Kalix.admin.dict.controller.DictGridController', {
      * @returns {Ext.panel.Panel}
      */
     onAdd: function () {
-        var addFormPanel = Ext.create('Kalix.admin.dict.view.DictAddForm', {
+        var addFormPanel = Ext.create('kalix.admin.dict.view.DictAddForm', {
             url: this.getView().getViewModel().get("url")
         });
         var win = Ext.create('Ext.Window', {
@@ -37,10 +37,10 @@ Ext.define('Kalix.admin.dict.controller.DictGridController', {
      */
     onEdit: function (grid, rowIndex, colIndex) {
         var rec = grid.getStore().getAt(rowIndex);
-        var editFormPanel = Ext.create('Kalix.admin.dict.view.DictEditForm', {
+        var editFormPanel = Ext.create('kalix.admin.dict.view.DictEditForm', {
             url: this.getView().getViewModel().get("url")
         });
-        var dictModel = Ext.create("Kalix.admin.dict.model.DictModel", {
+        var dictModel = Ext.create("kalix.admin.dict.model.DictModel", {
             id: rec.data.id,
             label: rec.data.label,
             value: rec.data.value,

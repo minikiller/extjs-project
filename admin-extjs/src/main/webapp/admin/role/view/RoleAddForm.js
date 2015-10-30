@@ -5,11 +5,11 @@
  *         date:2015-7-10
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.role.view.RoleAddForm', {
+Ext.define('kalix.admin.role.view.RoleAddForm', {
     extend: 'Ext.FormPanel',
     requires: [
-        'Kalix.admin.role.viewModel.RoleViewModel',
-        'Kalix.admin.role.controller.RoleFormController'
+        'kalix.admin.role.viewModel.RoleViewModel',
+        'kalix.admin.role.controller.RoleFormController'
     ],
     alias: 'widget.roleAddForm',
     viewModel: {

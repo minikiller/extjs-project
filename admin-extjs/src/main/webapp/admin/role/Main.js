@@ -5,14 +5,14 @@
  *         date:2015-6-18
  * @version 1.0.0
  */
-Ext.define('kalix.adminapplication.user.Main', {
+Ext.define('kalix.admin.role.Main', {
   extend : 'Ext.container.Container',
   requires : [
-    'kalix.adminapplication.user.store.UserStore',  //用户模型集合
-    'kalix.adminapplication.user.view.UserGrid',
-    'kalix.adminapplication.user.controller.UserController'
+    'kalix.admin.role.store.RoleStore',  //用户模型集合
+    'kalix.admin.role.view.RoleGrid',
+    'kalix.admin.role.controller.RoleController'
   ],
-  controller: 'userController',
+  controller: 'roleController',
 
   items : [{
       xtype : 'form',
@@ -60,12 +60,12 @@ Ext.define('kalix.adminapplication.user.Main', {
         }
       ]
     }, {
-      xtype : 'userGridPanel',
-      id : 'userGridPanel',
+      xtype : 'roleGridPanel',
+      id : 'roleGridPanel',
       title : '用户列表',
       margin : 10,
       store : {
-        type : 'userStore'
+        type : 'roleStore'
       }
     }
   ]

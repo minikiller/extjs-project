@@ -15,6 +15,8 @@ Ext.define('kalix.view.login.LoginMain', {
     requires: [
         'kalix.view.login.LoginController'
     ],
+    //layout:'form',
+
     xtype: 'login',
     controller: 'login',
     icon: 'resources/images/lock.png',

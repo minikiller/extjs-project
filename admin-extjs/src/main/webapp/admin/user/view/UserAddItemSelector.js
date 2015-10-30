@@ -5,7 +5,7 @@
  *         date:2015-7-28
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.user.view.UserAddItemSelector', {
+Ext.define('kalix.admin.user.view.UserAddItemSelector', {
     extend: 'Ext.ux.form.ItemSelector',
     xtype: 'userAddItemSelector',
     anchor: '100%',

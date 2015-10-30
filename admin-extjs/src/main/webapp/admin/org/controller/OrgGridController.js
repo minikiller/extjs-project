@@ -5,7 +5,7 @@
  *         date:2015-7-21
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.org.controller.OrgGridController', {
+Ext.define('kalix.admin.org.controller.OrgGridController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.orgGridController',
     /**
@@ -28,7 +28,7 @@ Ext.define('Kalix.admin.org.controller.OrgGridController', {
             return;
         }
         var rows = this.getView().getSelectionModel().getSelection();
-        var addFormPanel = Ext.create('Kalix.admin.org.view.OrgAddForm', {
+        var addFormPanel = Ext.create('kalix.admin.org.view.OrgAddForm', {
             url: this.getView().getViewModel().get("url")
         });
         addFormPanel.down("#areaIdId").setValue(this.getView().areaId);
@@ -63,10 +63,10 @@ Ext.define('Kalix.admin.org.controller.OrgGridController', {
      */
     onEdit: function (grid, rowIndex, colIndex) {
         var rec = grid.getStore().getAt(rowIndex);
-        var editFormPanel = Ext.create('Kalix.admin.org.view.OrgEditForm', {
+        var editFormPanel = Ext.create('kalix.admin.org.view.OrgEditForm', {
             url: this.getView().getViewModel().get("url")
         });
-        var OrgModel = Ext.create("Kalix.admin.org.model.OrgModel", {
+        var OrgModel = Ext.create("kalix.admin.org.model.OrgModel", {
             id: rec.data.id,
             name: rec.data.name,
             code: rec.data.code,

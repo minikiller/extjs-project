@@ -16,7 +16,7 @@ Ext.define('kalix.core.Application', {
 
   models : [],
 
-  defaultToken : 'AdminApplication',
+  defaultToken : 'admin',
 
   launch : function () {
     // TODO - Launch the application

@@ -5,12 +5,12 @@
  *         date:2015-7-10
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.role.controller.RoleController', {
+Ext.define('kalix.admin.role.controller.RoleController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.roleController',
     requires: [
-        'Kalix.view.components.common.PagingToolBar',
-        'Kalix.admin.role.view.RoleGrid'
+        'kalix.view.components.common.PagingToolBar',
+        'kalix.admin.role.view.RoleGrid'
     ],
     /**
      * 初始化面板.
@@ -84,8 +84,8 @@ Ext.define('Kalix.admin.role.controller.RoleController', {
      * @returns {Ext.panel.Panel}
      */
     onInitDataGrid: function () {
-        var dataStore = Ext.create("Kalix.admin.role.store.RoleStore");
-        var dataGird = Ext.create("Kalix.admin.role.view.RoleGrid", {
+        var dataStore = Ext.create("kalix.admin.role.store.RoleStore");
+        var dataGird = Ext.create("kalix.admin.role.view.RoleGrid", {
             store: dataStore,
             height: document.body.clientHeight - 210,
             bbar: [{

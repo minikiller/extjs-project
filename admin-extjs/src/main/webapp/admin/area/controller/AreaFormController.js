@@ -5,7 +5,7 @@
  *         date:2015-7-21
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.area.controller.AreaFormController', {
+Ext.define('kalix.admin.area.controller.AreaFormController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.areaFormController',
 

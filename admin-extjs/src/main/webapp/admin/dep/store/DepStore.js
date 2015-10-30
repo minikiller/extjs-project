@@ -5,11 +5,11 @@
  *         date:2015-7-23
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.dep.store.DepStore', {
+Ext.define('kalix.admin.dep.store.DepStore', {
     extend: 'Ext.data.TreeStore',
     alias: 'store.depStore',
     xtype: 'depStore',
     storeId: "depStore",
-    model: "Kalix.admin.dep.model.DepModel",
+    model: "kalix.admin.dep.model.DepModel",
     autoLoad: true
 });

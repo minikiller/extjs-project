@@ -5,9 +5,9 @@
  *         date:2015-7-9
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.dict.store.DictStore', {
+Ext.define('kalix.admin.dict.store.DictStore', {
     extend: 'Ext.data.Store',
-    model: 'Kalix.admin.dict.model.DictModel',
+    model: 'kalix.admin.dict.model.DictModel',
     alias: 'store.dictStore',
     xtype: 'dictStore',
     storeId: "dictStore",

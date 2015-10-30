@@ -5,10 +5,10 @@
  *         date:2015-7-10
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.role.viewModel.RoleViewModel', {
+Ext.define('kalix.admin.role.viewModel.RoleViewModel', {
     extend: 'Ext.app.ViewModel',
     requires: [
-        'Kalix.admin.role.store.RoleStore'
+        'kalix.admin.role.store.RoleStore'
     ],
     alias: 'viewmodel.roleViewModel',
     data: {

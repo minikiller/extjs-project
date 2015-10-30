@@ -5,7 +5,7 @@
  *         date:2015-7-23
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.dep.model.DepModel', {
+Ext.define('kalix.admin.dep.model.DepModel', {
     extend: 'Ext.data.TreeModel',
     fields: [
         {name: 'id', type: 'string'},

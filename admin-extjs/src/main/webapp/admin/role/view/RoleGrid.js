@@ -4,11 +4,11 @@
  *         date:2015-7-10
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.role.view.RoleGrid', {
+Ext.define('kalix.admin.role.view.RoleGrid', {
     extend: 'Ext.grid.Panel',
     requires: [
-        'Kalix.admin.role.viewModel.RoleViewModel',
-        'Kalix.admin.role.controller.RoleGridController'
+        'kalix.admin.role.viewModel.RoleViewModel',
+        'kalix.admin.role.controller.RoleGridController'
     ],
     alias: 'widget.roleGrid',
     xtype: 'roleGridPanel',

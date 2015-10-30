@@ -5,161 +5,21 @@
  *         date:2015-6-18
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.user.controller.UserController', {
+Ext.define('kalix.admin.user.controller.UserController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.userController',
-    requires: [
-        'Kalix.view.components.common.PagingToolBar',
-        'Kalix.admin.user.view.UserGrid',
-        'Kalix.view.components.common.SecurityToolbar'
+    
+    requires : [
+      'kalix.admin.user.store.UserStore'
     ],
-    /**
-     * 初始化面板.
-     * @returns {Ext.panel.Panel}
-     */
-    onInitPanel: function () {
-        var panel = Ext.create("Ext.panel.Panel", {
-            border: false,
-            autoScroll: true,
-            height: document.body.clientHeight - 110, //客户端屏幕高度-底部-工具条以及选项卡
-            items: [this.onInitSearchPanel(), this.onInitDataGrid()]
-        })
+    
+    onSearch : function(target, event){
+      var form = target.findParentByType('form').getForm();
+      var store = kalix.getApplication().getStore('userStore');
 
-        return panel;
-    },
-    /**
-     * 初始化查询面板.
-     * @returns {Ext.panel.Panel}
-     */
-    onInitSearchPanel: function () {
-        var formPanelRow1 = {
-            border: false,
-            layout: 'column',
-            items: [{
-                columnWidth: .2,
-                border: false,
-                layout: 'form',
-                items: [{
-                    xtype: 'textfield',
-                    itemId: 'loginName',
-                    fieldLabel: '登录名'
-                }]
-            }, {
-                columnWidth: .2,
-                border: false,
-                layout: 'form',
-                items: [{
-                    xtype: 'textfield',
-                    fieldLabel: '姓名',
-                    itemId: 'name'
-                }]
-            },
-                {
-                    columnWidth: .2,
-                    border: false,
-                    layout: 'form',
-                    items: [{
-                        xtype: 'combobox',
-                        fieldLabel: '状态',
-                        editable: false,
-                        itemId: 'available',
-                        value: '-1',
-                        store: [
-                            ['-1', '全部'],
-                            ['1', '启用'],
-                            ['0', '停用']
-                        ]
-                    }]
-                },
-                {
-                    columnWidth: .2,
-                    border: false,
-                    layout: 'form',
-                    items: [{
-                        xtype: 'button',
-                        text: '查询',
-                        handler: function () {
-                            var queryPanel = this.up().up();
-                            var loginNameValue = queryPanel.down("#loginName").getValue();
-                            var nameValue = queryPanel.down("#name").getValue();
-                            var availableValue = queryPanel.down("#available").getValue();
-                            var grid = Ext.ComponentQuery.query('userGridPanel')[0];
-                            var store = grid.getStore();
-                            store.on('beforeload', function (store, options) {
-                                var params = {loginName: loginNameValue, name: nameValue, available: availableValue};
-                                Ext.apply(store.proxy.extraParams, params);
-                            });
-                            store.load({params: {start: 0, limit: 10, page: 1}});
-                            //var grid = Ext.ComponentQuery.query('userGridPanel')[0];
-                        }
-                    }]
-                }]
-        };
-
-
-        //form
-        var formPanel = Ext.create('Ext.form.FormPanel', {
-            border: false,
-            layout: 'form',
-            labelWidth: 65,
-            labelAlign: 'right',
-            items: [formPanelRow1],
-            buttonAlign: 'center'
-        });
-
-
-        var searchPanel = Ext.create("Ext.panel.Panel", {
-            title: '条件查询',
-            border: false,
-            items: [formPanel]
-        });
-
-        return searchPanel;
-    },
-    /**
-     * 初始化数据表格.
-     * @returns {Ext.panel.Panel}
-     */
-    onInitDataGrid: function () {
-        var securityToolbar = Ext.create("Kalix.view.components.common.SecurityToolbar");
-        securityToolbar.verifyButton([
-            {
-                text: '新增',
-                xtype: 'button',
-                permission: 'admin:sysModule:permissionControl:userMenu:add',
-                icon: 'admin/resources/images/group_add.png',
-                handler: 'onAdd'
-            }, {
-                text: '修改',
-                xtype: 'button',
-                permission: 'admin:sysModule:permissionControl:userMenu:update',
-                icon: "resources/images/pencil.png",
-                handler: 'onEdit'
-            }, {
-                text: '删除',
-                xtype: 'button',
-                permission: 'admin:sysModule:permissionControl:userMenu:delete',
-                icon: "resources/images/cancel.png",
-                handler: 'onDelete'
-
-            }
-        ]);
-        //securityToolbar.add({
-        //    text: '新增',xtype:'button',permission:'admin:sysModule:permissionControl:userMenu:add', icon: 'admin/resources/images/group_add.png', handler: 'onAdd'
-        //});
-        var dataStore = Ext.create("Kalix.admin.user.store.UserStore");
-        var dataGird = Ext.create("Kalix.admin.user.view.UserGrid", {
-            store: dataStore,
-            height: document.body.clientHeight - 210,
-            tbar: securityToolbar,
-            bbar: [{
-                xtype: 'pagingToolBarComponent',
-                store: dataStore
-            }]
-        });
-        //var columns=dataGird.getColumns();
-        //alert(columns.length);
-        //dataGird.add(actionColumn);
-        return dataGird;
+      store.on('beforeload', function (store, options) {
+          Ext.apply(store.proxy.extraParams, form.getFieldValues());
+      });
+      store.load();
     }
 });

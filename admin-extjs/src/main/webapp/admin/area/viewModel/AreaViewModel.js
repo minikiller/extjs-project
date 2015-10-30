@@ -5,10 +5,10 @@
  *         date:2015-7-21
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.area.viewModel.AreaViewModel', {
+Ext.define('kalix.admin.area.viewModel.AreaViewModel', {
     extend: 'Ext.app.ViewModel',
     requires: [
-        'Kalix.admin.area.store.AreaStore'
+        'kalix.admin.area.store.AreaStore'
     ],
     alias: 'viewmodel.areaViewModel',
     data: {

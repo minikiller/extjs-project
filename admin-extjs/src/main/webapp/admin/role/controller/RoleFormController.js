@@ -5,7 +5,7 @@
  *         date:2015-6-18
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.role.controller.RoleFormController', {
+Ext.define('kalix.admin.role.controller.RoleFormController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.roleFormController',
 

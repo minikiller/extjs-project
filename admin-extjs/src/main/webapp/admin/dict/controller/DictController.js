@@ -5,12 +5,12 @@
  *         date:2015-6-18
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.dict.controller.DictController', {
+Ext.define('kalix.admin.dict.controller.DictController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.dictController',
     requires: [
-        'Kalix.view.components.common.PagingToolBar',
-        'Kalix.admin.dict.view.DictGrid'
+        'kalix.view.components.common.PagingToolBar',
+        'kalix.admin.dict.view.DictGrid'
     ],
     /**
      * 初始化面板.
@@ -195,8 +195,8 @@ Ext.define('Kalix.admin.dict.controller.DictController', {
      * @returns {Ext.panel.Panel}
      */
     onInitDataGrid: function () {
-        var dataStore = Ext.create("Kalix.admin.dict.store.DictStore");
-        var dataGird = Ext.create("Kalix.admin.dict.view.DictGrid", {
+        var dataStore = Ext.create("kalix.admin.dict.store.DictStore");
+        var dataGird = Ext.create("kalix.admin.dict.view.DictGrid", {
             store: dataStore,
             height: document.body.clientHeight - 210,
             bbar: [{

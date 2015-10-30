@@ -5,11 +5,11 @@
  *         date:2015-7-21
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.dep.controller.DepGridController', {
+Ext.define('kalix.admin.dep.controller.DepGridController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.depGridController',
     requires: [
-        'Kalix.admin.user.view.UserAddItemSelector'
+        'kalix.admin.user.view.UserAddItemSelector'
     ],
     /**
      * 刷新.
@@ -30,7 +30,7 @@ Ext.define('Kalix.admin.dep.controller.DepGridController', {
             return;
         }
         var rows = this.getView().getSelectionModel().getSelection();
-        var addFormPanel = Ext.create('Kalix.admin.dep.view.DepAddForm', {
+        var addFormPanel = Ext.create('kalix.admin.dep.view.DepAddForm', {
             url: this.getView().getViewModel().get("url")
         });
         addFormPanel.down("#orgIdId").setValue(this.getView().orgId);
@@ -65,7 +65,7 @@ Ext.define('Kalix.admin.dep.controller.DepGridController', {
      */
     onEdit: function (grid, rowIndex, colIndex) {
         var rec = grid.getStore().getAt(rowIndex);
-        var editFormPanel = Ext.create('Kalix.admin.dep.view.DepEditForm', {
+        var editFormPanel = Ext.create('kalix.admin.dep.view.DepEditForm', {
             url: this.getView().getViewModel().get("url")
         });
         editFormPanel.down("#parentName").setValue(rec.data.parentName);
@@ -152,7 +152,7 @@ Ext.define('Kalix.admin.dep.controller.DepGridController', {
             method: "GET",
             callback: function (options, success, response) {
                 var users = Ext.JSON.decode(response.responseText);
-                var dataSotre = Ext.create("Kalix.admin.user.store.UserItemSelectorStore");
+                var dataSotre = Ext.create("kalix.admin.user.store.UserItemSelectorStore");
                 dataSotre.setProxy({
                     type: 'ajax',
                     limitParam: null,

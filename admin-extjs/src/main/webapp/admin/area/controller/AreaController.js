@@ -5,11 +5,11 @@
  *         date:2015-7-21
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.area.controller.AreaController', {
+Ext.define('kalix.admin.area.controller.AreaController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.areaController',
     requires: [
-        'Kalix.admin.area.view.AreaGrid'
+        'kalix.admin.area.view.AreaGrid'
     ],
     /**
      * 初始化面板.
@@ -32,8 +32,8 @@ Ext.define('Kalix.admin.area.controller.AreaController', {
      * @returns {Ext.panel.Panel}
      */
     onInitDataGrid: function () {
-        var dataGird = Ext.create("Kalix.admin.area.view.AreaGrid", {
-            store: Ext.create("Kalix.admin.area.store.AreaStore")
+        var dataGird = Ext.create("kalix.admin.area.view.AreaGrid", {
+            store: Ext.create("kalix.admin.area.store.AreaStore")
         });
         return dataGird;
     }

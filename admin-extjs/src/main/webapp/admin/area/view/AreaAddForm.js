@@ -5,11 +5,11 @@
  *         date:2015-7-24
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.area.view.AreaAddForm', {
+Ext.define('kalix.admin.area.view.AreaAddForm', {
     extend: 'Ext.FormPanel',
     requires: [
-        'Kalix.admin.area.viewModel.AreaViewModel',
-        'Kalix.admin.area.controller.AreaFormController'
+        'kalix.admin.area.viewModel.AreaViewModel',
+        'kalix.admin.area.controller.AreaFormController'
     ],
     alias: 'widget.areaAddForm',
     viewModel: {

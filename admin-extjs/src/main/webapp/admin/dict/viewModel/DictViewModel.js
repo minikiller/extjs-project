@@ -5,10 +5,10 @@
  *         date:2015-7-9
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.dict.viewModel.DictViewModel', {
+Ext.define('kalix.admin.dict.viewModel.DictViewModel', {
     extend: 'Ext.app.ViewModel',
     requires: [
-        'Kalix.admin.dict.store.DictStore'
+        'kalix.admin.dict.store.DictStore'
     ],
     alias: 'viewmodel.dictViewModel',
     data: {

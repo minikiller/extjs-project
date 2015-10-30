@@ -5,18 +5,18 @@
  *         date:2015-7-10
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.role.controller.RoleGridController', {
+Ext.define('kalix.admin.role.controller.RoleGridController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.roleGridController',
     requires: [
-        'Kalix.admin.user.view.UserAddItemSelector'
+        'kalix.admin.user.view.UserAddItemSelector'
     ],
     /**
      * 打开新增操作.
      * @returns {Ext.panel.Panel}
      */
     onAdd: function () {
-        var addFormPanel = Ext.create('Kalix.admin.role.view.RoleAddForm', {
+        var addFormPanel = Ext.create('kalix.admin.role.view.RoleAddForm', {
             url: this.getView().getViewModel().get("url")
         });
         var win = Ext.create('Ext.Window', {
@@ -40,7 +40,7 @@ Ext.define('Kalix.admin.role.controller.RoleGridController', {
      */
     onEdit: function (grid, rowIndex, colIndex) {
         var rec = grid.getStore().getAt(rowIndex);
-        var editFormPanel = Ext.create('Kalix.admin.role.view.RoleEditForm', {
+        var editFormPanel = Ext.create('kalix.admin.role.view.RoleEditForm', {
             url: this.getView().getViewModel().get("url")
         });
         editFormPanel.loadRecord(rec);
@@ -125,7 +125,7 @@ Ext.define('Kalix.admin.role.controller.RoleGridController', {
             method: "GET",
             callback: function (options, success, response) {
                 var users = Ext.JSON.decode(response.responseText);
-                var dataSotre = Ext.create("Kalix.admin.user.store.UserItemSelectorStore");
+                var dataSotre = Ext.create("kalix.admin.user.store.UserItemSelectorStore");
                 var addUserForm = Ext.create('Ext.form.Panel', {
                     width: 700,
                     itemId: "addUserForm",
@@ -244,7 +244,7 @@ Ext.define('Kalix.admin.role.controller.RoleGridController', {
      * @param colIndex
      */
     onAuthorization: function (grid, rowIndex, colIndex) {
-        var authorizationWindow = Ext.create('Kalix.app.components.AuthorizationWindow');
+        var authorizationWindow = Ext.create('kalix.app.components.AuthorizationWindow');
         var rec = grid.getStore().getAt(rowIndex);
         authorizationWindow.roleId = rec.data.id;
         authorizationWindow.authorizationUrl = this.getView().getViewModel().get("authorizationUrl");

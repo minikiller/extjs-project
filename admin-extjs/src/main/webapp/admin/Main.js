@@ -1,6 +1,6 @@
 //todo 定义系统应用页面
 
-Ext.define('kalix.adminapplication.Main', {
+Ext.define('kalix.admin.Main', {
     extend: 'Ext.container.Container',
 
     layout: 'vbox',

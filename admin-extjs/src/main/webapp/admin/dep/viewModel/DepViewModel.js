@@ -5,10 +5,10 @@
  *         date:2015-7-23
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.dep.viewModel.DepViewModel', {
+Ext.define('kalix.admin.dep.viewModel.DepViewModel', {
     extend: 'Ext.app.ViewModel',
     requires: [
-        'Kalix.admin.dep.store.DepStore'
+        'kalix.admin.dep.store.DepStore'
     ],
     alias: 'viewmodel.depViewModel',
     data: {

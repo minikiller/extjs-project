@@ -26,7 +26,7 @@ public class InitActivator implements BundleActivator {
         reference = bundleContext.getServiceReference(HttpService.class.getName());
         httpService = (HttpService) bundleContext.getService(reference);
         httpService.registerResources("/kalix/app/admin", "/admin", null);
-        httpService.registerResources("/kalix/app/adminapplication", "/adminapplication", null);
+//        httpService.registerResources("/kalix/app/admin", "/admin", null);
         httpService.registerResources("/kalix/admin/resources/images", "/resources/images", null);
     }
 
@@ -38,7 +38,7 @@ public class InitActivator implements BundleActivator {
             bundleContext.ungetService(reference);
         context = null;
         if (httpService != null) {
-            httpService.unregister("/kalix/app/AdminApplication");
+            httpService.unregister("/kalix/app/admin");
             httpService.unregister("/kalix/admin/resources/images");
         }
     }

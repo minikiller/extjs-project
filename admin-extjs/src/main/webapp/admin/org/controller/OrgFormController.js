@@ -5,7 +5,7 @@
  *         date:2015-7-21
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.org.controller.OrgFormController', {
+Ext.define('kalix.admin.org.controller.OrgFormController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.orgFormController',
 

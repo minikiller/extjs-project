@@ -5,7 +5,7 @@
  *         date:2015-7-10
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.role.model.RoleModel', {
+Ext.define('kalix.admin.role.model.RoleModel', {
     extend: 'Ext.data.Model',
     fields: [
         {name: 'id', type: 'string'},

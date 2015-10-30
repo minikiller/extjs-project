@@ -4,11 +4,11 @@
  *         date:2015-7-23
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.dep.view.DepGrid', {
+Ext.define('kalix.admin.dep.view.DepGrid', {
     extend: 'Ext.tree.Panel',
     requires: [
-        'Kalix.admin.dep.viewModel.DepViewModel',
-        'Kalix.admin.dep.controller.DepGridController'
+        'kalix.admin.dep.viewModel.DepViewModel',
+        'kalix.admin.dep.controller.DepGridController'
     ],
     alias: 'widget.depGrid',
     xtype: 'depGridPanel',

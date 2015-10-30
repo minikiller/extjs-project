@@ -6,12 +6,12 @@
  * @version 1.0.0
  */
 
-Ext.define('kalix.adminapplication.user.view.UserForm', {
+Ext.define('kalix.admin.user.view.UserForm', {
   extend : 'Ext.window.Window',
   requires : [
     'kalix.view.components.common.FormPanel',
-    'kalix.adminapplication.user.view.UserViewModel',
-    'kalix.adminapplication.user.controller.UserFormController'
+    'kalix.admin.user.view.UserViewModel',
+    'kalix.admin.user.controller.UserFormController'
   ],
   alias : 'widget.UserForm',
   viewModel : 'userViewModel',

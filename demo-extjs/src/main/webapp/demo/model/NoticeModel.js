@@ -5,7 +5,7 @@
  *         date:2015-7-3
  * @version 1.0.0
  */
-Ext.define('Kalix.demo.model.NoticeModel', {
+Ext.define('kalix.demo.model.NoticeModel', {
     extend: 'Ext.data.Model',
     fields: [
         {name: 'id', type: 'string'},

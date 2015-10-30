@@ -5,12 +5,12 @@
  *         date:2015-7-24
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.area.store.AreaStore', {
+Ext.define('kalix.admin.area.store.AreaStore', {
     extend: 'Ext.data.TreeStore',
     alias: 'store.areaStore',
     xtype: 'areaStore',
     storeId: "areaStore",
-    model: "Kalix.admin.area.model.AreaModel",
+    model: "kalix.admin.area.model.AreaModel",
     proxy: {
         type: "ajax",
         url: '/kalix/camel/rest/areas'

@@ -4,7 +4,7 @@
  *         date:2015-8-5
  * @version 1.0.0
  */
-Ext.define('Kalix.demo.view.EndWindow', {
+Ext.define('kalix.demo.view.EndWindow', {
     extend: 'Ext.Window',
     xtype: 'endWindow',
     width: 500,

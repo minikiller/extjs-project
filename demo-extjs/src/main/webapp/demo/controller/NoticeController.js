@@ -5,13 +5,13 @@
  *         date:2015-6-18
  * @version 1.0.0
  */
-Ext.define('Kalix.demo.controller.NoticeController', {
+Ext.define('kalix.demo.controller.NoticeController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.noticeController',
     requires: [
-        'Kalix.view.components.common.PagingToolBar',
-        'Kalix.demo.view.NoticeGrid',
-        'Kalix.demo.store.NoticeStore'
+        'kalix.view.components.common.PagingToolBar',
+        'kalix.demo.view.NoticeGrid',
+        'kalix.demo.store.NoticeStore'
     ],
     /**
      * 初始化面板.
@@ -106,8 +106,8 @@ Ext.define('Kalix.demo.controller.NoticeController', {
      * @returns {Ext.panel.Panel}
      */
     onInitDataGrid: function () {
-        var noticeStore = Ext.create('Kalix.demo.store.NoticeStore');
-        var dataGird = Ext.create("Kalix.demo.view.NoticeGrid",
+        var noticeStore = Ext.create('kalix.demo.store.NoticeStore');
+        var dataGird = Ext.create("kalix.demo.view.NoticeGrid",
             {
                 store: noticeStore,
                 bbar: [{

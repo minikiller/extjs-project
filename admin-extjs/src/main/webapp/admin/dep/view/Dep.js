@@ -5,11 +5,11 @@
  *         date:2015-7-21
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.dep.view.Dep', {
+Ext.define('kalix.admin.dep.view.Dep', {
     extend: 'Ext.panel.Panel',
     requires: [
-        'Kalix.admin.dep.viewModel.DepViewModel',
-        'Kalix.admin.dep.controller.DepController'
+        'kalix.admin.dep.viewModel.DepViewModel',
+        'kalix.admin.dep.controller.DepController'
     ],
     xtype: 'depPanel',
     controller: 'depController',

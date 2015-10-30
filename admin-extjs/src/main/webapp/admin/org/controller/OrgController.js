@@ -5,13 +5,13 @@
  *         date:2015-7-21
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.org.controller.OrgController', {
+Ext.define('kalix.admin.org.controller.OrgController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.orgController',
     requires: [
-        "Kalix.admin.area.view.AreaTreeList",
-        "Kalix.admin.org.view.OrgTreeList",
-        'Kalix.admin.org.view.OrgGrid'
+        "kalix.admin.area.view.AreaTreeList",
+        "kalix.admin.org.view.OrgTreeList",
+        'kalix.admin.org.view.OrgGrid'
     ],
     /**
      * 初始化面板.
@@ -71,8 +71,8 @@ Ext.define('Kalix.admin.org.controller.OrgController', {
      * @returns {Ext.panel.Panel}
      */
     onInitAreaTreeList: function () {
-        var areaListPanel = Ext.create("Kalix.admin.area.view.AreaTreeList", {
-            store: Ext.create("Kalix.admin.area.store.AreaStore"),
+        var areaListPanel = Ext.create("kalix.admin.area.view.AreaTreeList", {
+            store: Ext.create("kalix.admin.area.store.AreaStore"),
             region: "west",
             itemId: "orgAreaTreeList",
             title: '区域列表',
@@ -100,8 +100,8 @@ Ext.define('Kalix.admin.org.controller.OrgController', {
      * @returns {Ext.panel.Panel}
      */
     onInitDataGrid: function () {
-        var dataGird = Ext.create("Kalix.admin.org.view.OrgGrid",{
-            store:Ext.create("Kalix.admin.org.store.OrgStore")
+        var dataGird = Ext.create("kalix.admin.org.view.OrgGrid",{
+            store:Ext.create("kalix.admin.org.store.OrgStore")
         });
         return dataGird;
     }

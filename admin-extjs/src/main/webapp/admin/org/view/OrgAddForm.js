@@ -5,11 +5,11 @@
  *         date:2015-7-21
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.org.view.OrgAddForm', {
+Ext.define('kalix.admin.org.view.OrgAddForm', {
     extend: 'Ext.FormPanel',
     requires: [
-        'Kalix.admin.org.viewModel.OrgViewModel',
-        'Kalix.admin.org.controller.OrgFormController'
+        'kalix.admin.org.viewModel.OrgViewModel',
+        'kalix.admin.org.controller.OrgFormController'
     ],
     alias: 'widget.orgAddForm',
     viewModel: {

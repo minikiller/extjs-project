@@ -5,7 +5,7 @@
  *         date:2015-7-28
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.role.view.RoleAddItemSelector', {
+Ext.define('kalix.admin.role.view.RoleAddItemSelector', {
     extend: 'Ext.ux.form.ItemSelector',
     xtype: 'roleAddItemSelector',
     anchor: '100%',

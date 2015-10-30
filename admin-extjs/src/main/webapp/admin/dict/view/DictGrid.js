@@ -4,11 +4,11 @@
  *         date:2015-7-3
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.dict.view.DictGrid', {
+Ext.define('kalix.admin.dict.view.DictGrid', {
     extend: 'Ext.grid.Panel',
     requires: [
-        'Kalix.admin.dict.viewModel.DictViewModel',
-        'Kalix.admin.dict.controller.DictGridController'
+        'kalix.admin.dict.viewModel.DictViewModel',
+        'kalix.admin.dict.controller.DictGridController'
     ],
     alias: 'widget.dictGrid',
     xtype: 'dictGridPanel',

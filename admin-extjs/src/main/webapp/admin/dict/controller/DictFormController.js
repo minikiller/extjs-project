@@ -5,7 +5,7 @@
  *         date:2015-6-18
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.dict.controller.DictFormController', {
+Ext.define('kalix.admin.dict.controller.DictFormController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.dictFormController',
 

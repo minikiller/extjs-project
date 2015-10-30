@@ -4,11 +4,11 @@
  *         date:2015-7-24
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.area.view.AreaGrid', {
+Ext.define('kalix.admin.area.view.AreaGrid', {
     extend: 'Ext.tree.Panel',
     requires: [
-        'Kalix.admin.area.viewModel.AreaViewModel',
-        'Kalix.admin.area.controller.AreaGridController'
+        'kalix.admin.area.viewModel.AreaViewModel',
+        'kalix.admin.area.controller.AreaGridController'
     ],
     alias: 'widget.areaGrid',
     xtype: 'areaGridPanel',

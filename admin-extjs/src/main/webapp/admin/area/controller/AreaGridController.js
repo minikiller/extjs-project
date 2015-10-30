@@ -5,7 +5,7 @@
  *         date:2015-7-21
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.area.controller.AreaGridController', {
+Ext.define('kalix.admin.area.controller.AreaGridController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.areaGridController',
 
@@ -24,7 +24,7 @@ Ext.define('Kalix.admin.area.controller.AreaGridController', {
      */
     onAdd: function () {
         var rows = this.getView().getSelectionModel().getSelection();
-        var addFormPanel = Ext.create('Kalix.admin.area.view.AreaAddForm', {
+        var addFormPanel = Ext.create('kalix.admin.area.view.AreaAddForm', {
             url: this.getView().getViewModel().get("url")
         });
         if (rows != null && rows.length > 0) {
@@ -57,7 +57,7 @@ Ext.define('Kalix.admin.area.controller.AreaGridController', {
      */
     onEdit: function (grid, rowIndex, colIndex) {
         var rec = grid.getStore().getAt(rowIndex);
-        var editFormPanel = Ext.create('Kalix.admin.area.view.AreaEditForm', {
+        var editFormPanel = Ext.create('kalix.admin.area.view.AreaEditForm', {
             url: this.getView().getViewModel().get("url")
         });
         editFormPanel.down("#parentName").setValue(rec.data.parentName);

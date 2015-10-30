@@ -5,7 +5,7 @@
  *         date:2015-7-9
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.dict.model.DictModel', {
+Ext.define('kalix.admin.dict.model.DictModel', {
     extend: 'Ext.data.Model',
     fields: [
         {name: 'id', type: 'string'},

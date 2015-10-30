@@ -5,11 +5,11 @@
  *         date:2015-7-23
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.dep.view.DepAddForm', {
+Ext.define('kalix.admin.dep.view.DepAddForm', {
     extend: 'Ext.FormPanel',
     requires: [
-        'Kalix.admin.dep.viewModel.DepViewModel',
-        'Kalix.admin.dep.controller.DepFormController'
+        'kalix.admin.dep.viewModel.DepViewModel',
+        'kalix.admin.dep.controller.DepFormController'
     ],
     alias: 'widget.depAddForm',
     viewModel: {

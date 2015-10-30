@@ -5,7 +5,7 @@
  *         date:2015-6-18
  * @version 1.0.0
  */
-Ext.define('Kalix.demo.controller.NoticeGridController', {
+Ext.define('kalix.demo.controller.NoticeGridController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.noticeGridController',
 
@@ -18,7 +18,7 @@ Ext.define('Kalix.demo.controller.NoticeGridController', {
      * @returns {Ext.panel.Panel}
      */
     onAdd: function () {
-        var addFormPanel = Ext.create('Kalix.demo.view.NoticeAddForm', {
+        var addFormPanel = Ext.create('kalix.demo.view.NoticeAddForm', {
             url: this.getView().getViewModel().get("url")
         });
         var win = Ext.create('Ext.Window', {
@@ -53,10 +53,10 @@ Ext.define('Kalix.demo.controller.NoticeGridController', {
         console.log('fdfdfdf' + rec);
 
         /*var rec = grid.getStore().getAt(rowIndex);
-         var editFormPanel = Ext.create('Kalix.notice.view.NoticeEditForm', {
+         var editFormPanel = Ext.create('kalix.notice.view.NoticeEditForm', {
          url: this.getView().getViewModel().get("url")
          });
-         var noticeModel = Ext.create("Kalix.notice.model.NoticeModel", {
+         var noticeModel = Ext.create("kalix.notice.model.NoticeModel", {
          id: rec.data.id,
          title: rec.data.title,
          content: rec.data.content,
@@ -64,7 +64,7 @@ Ext.define('Kalix.demo.controller.NoticeGridController', {
         //var grid = this.lookupReference('fooGrid');
         //this.setCurrentNotice(record);
 
-        var editFormPanel = Ext.create('Kalix.demo.view.NoticeEditForm', {
+        var editFormPanel = Ext.create('kalix.demo.view.NoticeEditForm', {
             url: this.getView().getViewModel().get("url"),
             //noticeRef:this.lookupReference('noticeRef'),
         });
@@ -205,7 +205,7 @@ Ext.define('Kalix.demo.controller.NoticeGridController', {
     onOpenCurrentProcess: function (grid, rowIndex, colIndex) {
         var rec = grid.getStore().getAt(rowIndex);
         var imgUrl = this.getView().getViewModel().get("processShowUrl") + "?processInstanceId=" + rec.data.processInstanceId;
-        var win = Ext.create('Kalix.workflow.components.ActivitiProcessImageWindow', {
+        var win = Ext.create('kalix.workflow.components.ActivitiProcessImageWindow', {
             html: "<iframe  width='100%' height='100%' frameborder='0' src='" + imgUrl + "'></iframe>",
             title: this.getView().getViewModel().get("processShowTitile") + "-" + rec.data.title
         });

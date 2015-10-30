@@ -5,9 +5,9 @@
  *         date:2015-7-3
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.user.store.UserStore', {
+Ext.define('kalix.admin.user.store.UserStore', {
     extend: 'Ext.data.Store',
-    model: 'Kalix.admin.user.model.UserModel',
+    model: 'kalix.admin.user.model.UserModel',
     alias: 'store.userStore',
     xtype: 'userStore',
     storeId: "userStore",

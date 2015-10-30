@@ -4,7 +4,7 @@
  *         date:2015-8-5
  * @version 1.0.0
  */
-Ext.define('Kalix.demo.view.ModifyWindow', {
+Ext.define('kalix.demo.view.ModifyWindow', {
     extend: 'Ext.Window',
     xtype: 'modifyWindow',
     width: 500,

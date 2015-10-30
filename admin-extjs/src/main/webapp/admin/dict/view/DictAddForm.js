@@ -5,11 +5,11 @@
  *         date:2015-6-18
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.dict.view.DictAddForm', {
+Ext.define('kalix.admin.dict.view.DictAddForm', {
     extend: 'Ext.FormPanel',
     requires: [
-        'Kalix.admin.dict.viewModel.DictViewModel',
-        'Kalix.admin.dict.controller.DictFormController'
+        'kalix.admin.dict.viewModel.DictViewModel',
+        'kalix.admin.dict.controller.DictFormController'
     ],
     alias: 'widget.dictAddForm',
     viewModel: {
