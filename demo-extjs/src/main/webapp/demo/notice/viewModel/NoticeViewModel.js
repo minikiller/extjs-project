@@ -5,11 +5,11 @@
  *         date:2015-7-6
  * @version 1.0.0
  */
-Ext.define('kalix.demo.viewModel.NoticeViewModel', {
+Ext.define('kalix.demo.notice.viewModel.NoticeViewModel', {
     extend: 'Ext.app.ViewModel',
     requires: [
-        'kalix.demo.store.NoticeStore',
-        'kalix.demo.model.NoticeModel'
+        'kalix.demo.notice.store.NoticeStore',
+        'kalix.demo.notice.model.NoticeModel'
     ],
     alias: 'viewmodel.noticeViewModel',
     data: {

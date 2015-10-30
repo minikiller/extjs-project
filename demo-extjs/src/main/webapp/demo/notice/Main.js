@@ -5,11 +5,11 @@
  *         date:2015-6-18
  * @version 1.0.0
  */
-Ext.define('kalix.demo.view.Notice', {
+Ext.define('kalix.demo.notice.Main', {
     extend: 'Ext.panel.Panel',
     requires: [
-        'kalix.demo.viewModel.NoticeViewModel',
-        'kalix.demo.controller.NoticeController'
+        'kalix.demo.notice.viewModel.NoticeViewModel',
+        'kalix.demo.notice.controller.NoticeController'
     ],
     controller: 'noticeController',
     viewModel: {

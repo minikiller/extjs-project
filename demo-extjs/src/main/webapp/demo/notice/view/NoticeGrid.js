@@ -4,11 +4,11 @@
  *         date:2015-7-3
  * @version 1.0.0
  */
-Ext.define('kalix.demo.view.NoticeGrid', {
+Ext.define('kalix.demo.notice.view.NoticeGrid', {
     extend: 'Ext.grid.Panel',
     requires: [
-        'kalix.demo.viewModel.NoticeViewModel',
-        'kalix.demo.controller.NoticeGridController'
+        'kalix.demo.notice.viewModel.NoticeViewModel',
+        'kalix.demo.notice.controller.NoticeGridController'
     ],
     alias: 'widget.noticeGrid',
     xtype: 'noticeGrid',

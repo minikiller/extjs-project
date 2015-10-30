@@ -4,7 +4,7 @@
  *         date:2015-8-5
  * @version 1.0.0
  */
-Ext.define('kalix.demo.view.AuditWindow', {
+Ext.define('kalix.demo.notice.view.AuditWindow', {
     extend: 'Ext.Window',
     xtype: 'auditWindow',
     width: 500,

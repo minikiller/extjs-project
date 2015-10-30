@@ -5,11 +5,11 @@
  *         date:2015-6-18
  * @version 1.0.0
  */
-Ext.define('kalix.demo.view.NoticeEditForm', {
+Ext.define('kalix.demo.notice.view.NoticeEditForm', {
     extend: 'Ext.FormPanel',
     requires: [
-        'kalix.demo.viewModel.NoticeViewModel',
-        'kalix.demo.controller.NoticeFormController'
+        'kalix.demo.notice.viewModel.NoticeViewModel',
+        'kalix.demo.notice.controller.NoticeFormController'
     ],
     alias: 'widget.noticeEditForm',
     viewModel: {
