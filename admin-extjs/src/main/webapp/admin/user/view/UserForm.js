@@ -22,9 +22,10 @@ Ext.define('kalix.admin.user.view.UserForm', {
   border : false,
   modal : true,
   resizable : false,
-  icon : 'admin/resources/images/user_add.png',
-  title : '新增用户',
-
+  bind:{
+    icon:'{icon}',
+    title:'{title}'
+  },
   items : [{
       xtype : 'baseForm',
       items : [{

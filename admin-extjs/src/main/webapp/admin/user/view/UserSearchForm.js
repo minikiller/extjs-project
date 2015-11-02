@@ -16,7 +16,6 @@ Ext.define('kalix.admin.user.view.UserSearchForm', {
     margin: 10,
     method: "POST",
     url: 'login',
-    autoShow:true,
     items: [
         {
                 xtype: 'textfield',

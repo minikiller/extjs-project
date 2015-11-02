@@ -13,8 +13,9 @@ Ext.define('kalix.admin.user.view.UserViewModel', {
   ],
   data : {
     url : '/kalix/camel/rest/users',
-    
     rec : Ext.create('kalix.admin.user.model.UserModel'),
-    validation : {}  //验证错误信息
+    validation : {},  //验证错误信息
+    icon : '',
+    title : ''
   }
 });

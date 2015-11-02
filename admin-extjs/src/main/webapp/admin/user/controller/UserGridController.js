@@ -34,7 +34,12 @@ Ext.define('kalix.admin.user.controller.UserGridController', {
    * 打开新增操作.
    */
   onAdd : function () {
-    Ext.create('kalix.admin.user.view.UserForm').show();
+    var view=Ext.create('kalix.admin.user.view.UserForm');
+    var viewModel = view.lookupViewModel();
+
+    viewModel.set('icon','admin/resources/images/user_add.png');
+    viewModel.set('title','新增用户');
+    view.show();
   },
   /**
    * 打开编辑操作.
@@ -50,7 +55,11 @@ Ext.define('kalix.admin.user.controller.UserGridController', {
       rec.set('password', '');
       
       var view = Ext.create('kalix.admin.user.view.UserForm');
-      view.lookupViewModel().set('rec', rec);
+      var viewModel = view.lookupViewModel();
+
+      viewModel.set('rec', rec);
+      viewModel.set('icon','admin/resources/images/user_edit.png');
+      viewModel.set('title','修改用户');
       view.show();
     } else {
       Ext.Msg.alert(CONFIG.ALTER_TITLE_ERROR, "请选择要编辑的记录！");
