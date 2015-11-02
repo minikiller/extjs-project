@@ -3,7 +3,7 @@
  */
 
 Ext.define('kalix.admin.user.view.UserSearchForm', {
-    extends: 'Ext.form.Panel',
+    extend: 'Ext.form.Panel',
     requires: [
         'kalix.admin.user.controller.UserController'
     ],
