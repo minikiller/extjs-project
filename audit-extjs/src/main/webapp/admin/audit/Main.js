@@ -1,17 +1,17 @@
 /**
- * 用户模块控制器
+ * 用户组件
  *
- * @author majian
+ * @author majian <br/>
  *         date:2015-6-18
  * @version 1.0.0
  */
-Ext.define('Kalix.audit.controller.AuditController', {
+Ext.define('kalix.admin.audit.Main', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.auditController',
     requires: [
-        'Kalix.view.components.common.PagingToolBar',
-        'Kalix.audit.view.AuditGrid',
-        'Kalix.audit.store.AuditStore'
+        'kalix.view.components.common.PagingToolBar',
+        'kalix.admin.audit.view.AuditGrid',
+        'kalix.admin.audit.store.AuditStore'
     ],
     /**
      * 初始化面板.
@@ -106,8 +106,8 @@ Ext.define('Kalix.audit.controller.AuditController', {
      * @returns {Ext.panel.Panel}
      */
     onInitDataGrid: function () {
-        var auditStore = Ext.create('Kalix.audit.store.AuditStore');
-        var dataGird = Ext.create("Kalix.audit.view.AuditGrid",
+        var auditStore = Ext.create('kalix.admin.audit.store.AuditStore');
+        var dataGird = Ext.create("kalix.admin.audit.view.AuditGrid",
             {
                 store: auditStore,
                 bbar: [{

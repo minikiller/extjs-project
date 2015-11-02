@@ -32,9 +32,9 @@ public class InitActivator implements BundleActivator {
     @Override
     public void stop(BundleContext bundleContext) throws Exception {
         SystemUtil.succeedPrintln(String.format("Stop %s bundle!!", BUNDLE_NAME));
-        if(httpService!=null){
+        /*if(httpService!=null){
             httpService.unregister("CamelServlet");
-        }
+        }*/
         if (reference != null){
             bundleContext.ungetService(reference);
         }

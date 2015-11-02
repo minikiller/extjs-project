@@ -5,11 +5,11 @@
  *         date:2015-7-6
  * @version 1.0.0
  */
-Ext.define('Kalix.audit.viewModel.AuditViewModel', {
+Ext.define('kalix.admin.audit.viewModel.AuditViewModel', {
     extend: 'Ext.app.ViewModel',
     requires: [
-        'Kalix.audit.store.AuditStore',
-        'Kalix.audit.model.AuditModel'
+        'kalix.admin.audit.store.AuditStore',
+        'kalix.admin.audit.model.AuditModel'
     ],
     alias: 'viewmodel.auditViewModel',
     data: {

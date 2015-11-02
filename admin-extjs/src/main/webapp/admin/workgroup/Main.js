@@ -16,7 +16,7 @@ Ext.define('kalix.admin.workgroup.Main', {
 
   items : [{
       xtype : 'form',
-      title : '用户查询',
+      title : '工作组查询',
       bodyPadding : 10,
       layout : 'column',
       margin : 10,
@@ -62,7 +62,7 @@ Ext.define('kalix.admin.workgroup.Main', {
     }, {
       xtype : 'workGroupGridPanel',
       id : 'workGroupGridPanel',
-      title : '用户列表',
+      title : '工作组列表',
       margin : 10,
       store : {
         type : 'workGroupStore'

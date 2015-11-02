@@ -16,7 +16,7 @@ Ext.define('kalix.admin.role.Main', {
 
   items : [{
       xtype : 'form',
-      title : '用户查询',
+      title : '角色查询',
       bodyPadding : 10,
       layout : 'column',
       margin : 10,
@@ -62,7 +62,7 @@ Ext.define('kalix.admin.role.Main', {
     }, {
       xtype : 'roleGridPanel',
       id : 'roleGridPanel',
-      title : '用户列表',
+      title : '角色列表',
       margin : 10,
       store : {
         type : 'roleStore'

@@ -5,11 +5,11 @@
  *         date:2015-6-18
  * @version 1.0.0
  */
-Ext.define('Kalix.audit.view.Audit', {
+Ext.define('kalix.admin.audit.view.Audit', {
     extend: 'Ext.panel.Panel',
     requires: [
-        'Kalix.audit.viewModel.AuditViewModel',
-        'Kalix.audit.controller.AuditController'
+        'kalix.admin.audit.viewModel.AuditViewModel',
+        'kalix.admin.audit.controller.AuditController'
     ],
     controller: 'auditController',
     viewModel: {

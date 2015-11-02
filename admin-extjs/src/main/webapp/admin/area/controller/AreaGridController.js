@@ -14,8 +14,10 @@ Ext.define('kalix.admin.area.controller.AreaGridController', {
      * @returns {Ext.panel.Panel}
      */
     onRefersh: function () {
+      console.log('refresh')
         var grid = this.getView();
         var store = grid.getStore();
+        console.log(store)
         store.reload();
     },
     /**
@@ -38,7 +40,7 @@ Ext.define('kalix.admin.area.controller.AreaGridController', {
         }
         var win = Ext.create('Ext.Window', {
             width: 400,
-            height: 280,
+            //height: 280,
             border: false,
             modal: true,
             //resizable:false,

@@ -6,21 +6,24 @@
  * @version 1.0.0
  */
 Ext.define('kalix.admin.area.Main', {
-    extend: 'Ext.panel.Panel',
+    extend: 'Ext.container.Container',
     requires: [
-        'kalix.admin.area.viewModel.AreaViewModel',
-        'kalix.admin.area.controller.AreaController'
+      //'kalix.admin.area.view.AreaViewModel',
+      //'kalix.admin.area.controller.AreaController'
+      'kalix.admin.area.view.AreaGrid',
+      'kalix.admin.area.store.AreaStore'
     ],
-    controller: 'areaController',
-    viewModel: {
-        type: 'areaViewModel'
-    },
-    items: [],
-    initComponent: function () {
-        var areaController = this.getController("areaController");
-
-        this.items[0] = areaController.onInitPanel();
-
-        this.callParent(arguments);
-    }
+    //controller: 'areaController',
+    //viewModel: 'areaViewModel',
+    items: [{
+      xtype : 'areaGridPanel',
+      columnLines: true,
+      
+      title : '区域列表',
+      margin : 10,
+      
+      manageHeight: true,
+      rootVisible: false,
+      store : Ext.create('kalix.admin.area.store.AreaStore')
+    }]
 });

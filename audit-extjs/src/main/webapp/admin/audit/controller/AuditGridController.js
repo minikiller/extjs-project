@@ -5,12 +5,12 @@
  *         date:2015-6-18
  * @version 1.0.0
  */
-Ext.define('Kalix.audit.controller.AuditGridController', {
+Ext.define('kalix.admin.audit.controller.AuditGridController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.auditGridController',
 
     onPersonSelect: function (grid, record, index, eOpts) {
-        //this.setCurrentAudit(audit);
+        //this.setCurrentAudit(admin.audit);
         console.log(record);
     },
     /**
@@ -18,7 +18,7 @@ Ext.define('Kalix.audit.controller.AuditGridController', {
      * @returns {Ext.panel.Panel}
      */
     onAdd: function () {
-        var addFormPanel = Ext.create('Kalix.audit.view.AuditAddForm', {
+        var addFormPanel = Ext.create('kalix.admin.audit.view.AuditAddForm', {
             url: this.getView().getViewModel().get("url")
         });
         var win = Ext.create('Ext.Window', {
@@ -52,10 +52,10 @@ Ext.define('Kalix.audit.controller.AuditGridController', {
         console.log(sm);
 
         /*var rec = grid.getStore().getAt(rowIndex);
-         var editFormPanel = Ext.create('Kalix.audit.view.AuditEditForm', {
+         var editFormPanel = Ext.create('kalix.admin.audit.view.AuditEditForm', {
          url: this.getView().getViewModel().get("url")
          });
-         var auditModel = Ext.create("Kalix.audit.model.AuditModel", {
+         var auditModel = Ext.create("kalix.admin.audit.model.AuditModel", {
          id: rec.data.id,
          title: rec.data.title,
          content: rec.data.content,
@@ -63,7 +63,7 @@ Ext.define('Kalix.audit.controller.AuditGridController', {
         //var grid = this.lookupReference('fooGrid');
         //this.setCurrentAudit(record);
 
-        var editFormPanel = Ext.create('Kalix.audit.view.AuditEditForm', {
+        var editFormPanel = Ext.create('kalix.admin.audit.view.AuditEditForm', {
             url: this.getView().getViewModel().get("url"),
             //auditRef:this.lookupReference('auditRef'),
         });

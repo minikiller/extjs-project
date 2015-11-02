@@ -1,45 +1,34 @@
 /**
- * 用户编辑表单
+ * 用户新增表单
  *
  * @author majian
  *         date:2015-6-18
  * @version 1.0.0
  */
-Ext.define('Kalix.audit.view.AuditEditForm', {
+Ext.define('kalix.admin.audit.view.AuditAddForm', {
     extend: 'Ext.FormPanel',
     requires: [
-        'Kalix.audit.viewModel.AuditViewModel',
-        'Kalix.audit.controller.AuditFormController'
+        'kalix.admin.audit.viewModel.AuditViewModel',
+        'kalix.admin.audit.controller.AuditFormController'
     ],
-    alias: 'widget.auditEditForm',
+    alias: 'widget.auditAddForm',
     viewModel: {
         type: 'auditViewModel'
     },
-    currentAudit: null,
-    config: {
-        currentAudit: null
-    },
 
-    bind: {
-        currentAudit: "{currentAudit}",
-    },
     controller: 'auditFormController',
-    id: "auditEditForm",
-    xtype: 'auditEditForm',
+    itemId: "auditAddForm",
+    xtype: "auditAddForm",
     labelAlign: 'center',
     labelWidth: 75,
     autoWidth: true,
     autoHeight: true,
+    jsonSubmit: true,
     bodyStyle: "padding:15px",
     frame: true,
-    jsonSubmit: true,
-    method: "PUT",
-    defaultType: 'textfield',
     buttonAlign: "center",
-
+    defaultType: 'textfield',
     items: [
-        {xtype: 'hiddenfield', name: 'id', bind: {value: '{currentAudit.id}'}},
-
         {
             fieldLabel: '标题',
             id: 'titleId',
@@ -53,8 +42,8 @@ Ext.define('Kalix.audit.view.AuditEditForm', {
         {
             fieldLabel: '内容',
             id: 'contentId',
-            xtype: 'textarea',
             name: 'content',
+            xtype: 'textarea',
             allowBlank: false,
             blankText: '内容不能为空!',
             beforeLabelTpl: [
@@ -65,10 +54,10 @@ Ext.define('Kalix.audit.view.AuditEditForm', {
     ],
     buttons: [
         {
-            text: '保存', glyph: 0xf0c7, type: 'submit', handler: 'onUpdate',
+            text: '保存', glyph: 0xf0c7, type: 'submit', handler: 'onSave',
         },
         {
-            text: '重置', glyph: 0xf0e2, handler: 'onEditReset'
+            text: '重置', glyph: 0xf0e2, handler: 'onAddReset'
         }
     ]
 });

@@ -5,7 +5,7 @@
  *         date:2015-6-18
  * @version 1.0.0
  */
-Ext.define('Kalix.audit.controller.AuditFormController', {
+Ext.define('kalix.admin.audit.controller.AuditFormController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.auditFormController',
 

@@ -5,7 +5,7 @@
  *         date:2015-7-3
  * @version 1.0.0
  */
-Ext.define('Kalix.audit.model.AuditModel', {
+Ext.define('kalix.admin.audit.model.AuditModel', {
     extend: 'Ext.data.Model',
     fields: [
         {name: 'id', type: 'string'},

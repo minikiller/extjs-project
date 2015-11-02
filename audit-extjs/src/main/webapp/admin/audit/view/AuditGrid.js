@@ -4,11 +4,11 @@
  *         date:2015-7-3
  * @version 1.0.0
  */
-Ext.define('Kalix.audit.view.AuditGrid', {
+Ext.define('kalix.admin.audit.view.AuditGrid', {
     extend: 'Ext.grid.Panel',
     requires: [
-        'Kalix.audit.viewModel.AuditViewModel',
-        'Kalix.audit.controller.AuditGridController'
+        'kalix.admin.audit.viewModel.AuditViewModel',
+        'kalix.admin.audit.controller.AuditGridController'
     ],
     alias: 'widget.auditGrid',
     xtype: 'auditGrid',
