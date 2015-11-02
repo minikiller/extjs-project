@@ -35,7 +35,7 @@ Ext.define('kalix.admin.user.controller.UserGridController', {
   onAdd : function () {
     var view=Ext.create('kalix.admin.user.view.UserForm');
     var viewModel = view.lookupViewModel();
-
+    viewModel.set('rec', Ext.create('kalix.roffice.news.model.NewsModel'));
     viewModel.set('icon','admin/resources/images/user_add.png');
     viewModel.set('title','新增用户');
     view.show();
