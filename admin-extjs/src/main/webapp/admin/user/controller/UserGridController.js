@@ -7,13 +7,12 @@
  */
 Ext.define('kalix.admin.user.controller.UserGridController', {
   extend : 'Ext.app.ViewController',
-  requires:['kalix.core.Notify'],
   requires : [
+    'kalix.core.Notify',
     'kalix.admin.user.view.UserForm',
     'kalix.admin.user.view.UserViewModel'
   ],
   alias : 'controller.userGridController',
-
   /**
    * 查看操作.
    */
@@ -106,4 +105,5 @@ Ext.define('kalix.admin.user.controller.UserGridController', {
       Ext.Msg.alert(CONFIG.ALTER_TITLE_ERROR, "请选择要删除的记录！");
     }
   }
+
 });
