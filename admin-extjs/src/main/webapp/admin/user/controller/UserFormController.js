@@ -9,15 +9,6 @@ Ext.define('kalix.admin.user.controller.UserFormController', {
   extend : 'Ext.app.ViewController',
   alias : 'controller.userFormController',
   requires:['kalix.core.Notify'],
-  
-  /**
-   * 重置操作.
-   * 
-   */
-  onClose : function () {
-    this.getView().close();
-  },
-
   /**
    * 重置操作.
    * 

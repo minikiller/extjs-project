@@ -21,7 +21,6 @@ Ext.define('kalix.admin.user.view.UserGrid', {
     /*viewConfig: {
         forceFit: true,
     },*/
-
     columns: [
         {
             xtype: "rownumberer",
