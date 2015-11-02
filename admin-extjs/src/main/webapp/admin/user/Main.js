@@ -75,7 +75,7 @@ Ext.define('kalix.admin.user.Main', {
         //}
         //,
         {
-            xtype:'userSearchForm',
+            xtype:'userSearchForm'
         }
     ]
 });

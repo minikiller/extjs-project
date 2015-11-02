@@ -8,7 +8,7 @@ Ext.define('kalix.admin.user.view.UserSearchForm', {
         'kalix.admin.user.controller.UserController'
     ],
     alias: 'widget.userSearchForm',
-    xtype: 'userSearchFormPanel',
+    xtype: 'userSearchForm',
     controller: 'userController',
     title: '用户查询',
     bodyPadding: 10,
