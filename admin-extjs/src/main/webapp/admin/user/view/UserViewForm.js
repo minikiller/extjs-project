@@ -68,7 +68,7 @@ Ext.define('kalix.admin.user.view.UserViewForm', {
       buttons : [{
           text : '关闭',
           glyph : 'xf00d@FontAwesome',
-          handler : 'onClose'
+          handler : function () { this.up('.window').close(); }
         }
       ]
     }

@@ -16,7 +16,7 @@ Ext.define('kalix.admin.dict.Main', {
 
   items : [{
       xtype : 'form',
-      title : '用户查询',
+      title : '字典查询',
       bodyPadding : 10,
       layout : 'column',
       margin : 10,
@@ -62,7 +62,7 @@ Ext.define('kalix.admin.dict.Main', {
     }, {
       xtype : 'dictGridPanel',
       id : 'dictGridPanel',
-      title : '用户列表',
+      title : '字典列表',
       margin : 10,
       store : {
         type : 'dictStore'
