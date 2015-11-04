@@ -7,8 +7,10 @@
  */
 Ext.define('kalix.admin.app.function.store.FunctionStore', {
     extend: 'Ext.data.TreeStore',
+    /*model: 'kalix.admin.app.function.model.FunctionModel',
+    require:'kalix.admin.app.function.model.FunctionModel',*/
     alias: 'store.functionStore',
     xtype: 'functionStore',
-    storeId: "functionStore",
-    model: "kalix.admin.app.function.model.FunctionModel"
+    storeId: 'functionStore'
+
 });

@@ -9,6 +9,6 @@ Ext.define('kalix.admin.org.store.OrgStore', {
     extend: 'Ext.data.TreeStore',
     alias: 'store.orgStore',
     xtype: 'orgStore',
-    storeId: "orgStore",
-    model: "kalix.admin.org.model.OrgModel"
+    storeId: 'orgStore'
+    //model: 'kalix.admin.org.model.OrgModel'
 });

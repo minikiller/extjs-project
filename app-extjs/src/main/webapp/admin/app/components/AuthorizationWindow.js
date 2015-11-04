@@ -4,7 +4,7 @@
  *         date:2015-8-3
  * @version 1.0.0
  */
-Ext.define('kalix.app.components.AuthorizationWindow', {
+Ext.define('kalix.admin.app.components.AuthorizationWindow', {
     extend: 'Ext.Window',
     xtype: 'authorizationWindow',
     width: 680,
