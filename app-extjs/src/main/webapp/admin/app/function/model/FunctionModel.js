@@ -7,6 +7,7 @@
  */
 Ext.define('kalix.admin.app.function.model.FunctionModel', {
     extend: 'Ext.data.TreeModel',
+    xtype:'functionModel',
     fields: [
         {name: 'id', type: 'string'},
         {name: 'name', type: 'string'},

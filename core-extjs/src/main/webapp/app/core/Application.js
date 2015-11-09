@@ -5,20 +5,24 @@
  */
 
 Ext.define('kalix.core.Application', {
-  extend : 'Ext.app.Application',
+    extend: 'Ext.app.Application',
 
-  name : 'kalix',
+    name: 'kalix',
 
-  stores : [
-    'kalix.core.store.NavigationTree',
-    'kalix.core.store.MainToolbar'
-  ],
+    stores: [
+        'kalix.core.store.NavigationTree',
+        'kalix.core.store.MainToolbar'
+    ],
 
-  models : [],
+    models: [],
 
-  defaultToken : 'admin',
+    defaultToken: 'admin',
 
-  launch : function () {
-    // TODO - Launch the application
-  }
+    launch: function () {
+        //格式化时间类型代码，防止出现T字符
+        Ext.JSON.encodeDate = function (d) {
+            return Ext.Date.format(d, '"Y-m-d h:i:s"');
+        };
+        // TODO - Launch the application
+    }
 });

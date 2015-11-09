@@ -9,7 +9,7 @@ Ext.define('kalix.admin.dep.store.DepStore', {
     extend: 'Ext.data.TreeStore',
     alias: 'store.depStore',
     xtype: 'depStore',
-    storeId: "depStore",
-    model: "kalix.admin.dep.model.DepModel",
+    storeId: 'depStore',
+    //model: 'kalix.admin.dep.model.DepModel',
     autoLoad: true
 });

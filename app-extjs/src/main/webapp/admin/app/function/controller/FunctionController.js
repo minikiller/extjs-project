@@ -40,7 +40,7 @@ Ext.define('kalix.admin.app.function.controller.FunctionController', {
         var store = grid.getStore();
         store.setProxy({
             type: "ajax",
-            url: '/kalix/camel/rest/functions/admin.application/' + record.data.id
+            url: '/kalix/camel/rest/functions/application/' + record.data.id
         });
         store.reload();
     },

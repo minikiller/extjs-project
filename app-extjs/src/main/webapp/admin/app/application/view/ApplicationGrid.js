@@ -21,18 +21,18 @@ Ext.define('kalix.admin.app.application.view.ApplicationGrid', {
     manageHeight: true,
     selModel: {selType: 'checkboxmodel', mode: "SIMPLE"},
     columns: [
-        {text: '编号', dataIndex: 'id', width: 40},
-        {text: '名称', dataIndex: 'name', width: 80},
-        {text: '应用代码', dataIndex: 'code', width: 60},
-        {text: '路径', dataIndex: 'location', width: 60},
-        {text: '创建人', dataIndex: 'createBy', width: 60},
+        {text: '编号', dataIndex: 'id', flex:1},
+        {text: '名称', dataIndex: 'name', flex:1},
+        {text: '应用代码', dataIndex: 'code', flex:1},
+        {text: '路径', dataIndex: 'location', flex:1},
+        {text: '创建人', dataIndex: 'createBy', flex:1},
         {
             text: '创建日期', dataIndex: 'creationDate', width: 120, renderer: function (value) {
             var createDate = new Date(value);
             return createDate.format("yyyy-MM-dd hh:mm:ss");
         }
         },
-        {text: '更新人', dataIndex: 'updateBy', width: 60},
+        {text: '更新人', dataIndex: 'updateBy', flex:1},
         {
             text: '更新日期', dataIndex: 'updateDate', width: 120, renderer: function (value) {
             var updateDate = new Date(value);
@@ -44,11 +44,11 @@ Ext.define('kalix.admin.app.application.view.ApplicationGrid', {
             xtype: "actioncolumn",
             width: 60,
             items: [{
-                icon: "resources/images/pencil.png",
+                icon: "admin/resources/images/pencil.png",
                 tooltip: '修改',
                 handler: 'onEdit'
             }, {
-                icon: "resources/images/cancel.png",
+                icon: "admin/resources/images/cancel.png",
                 tooltip: '删除',
                 handler: 'onDelete'
 
