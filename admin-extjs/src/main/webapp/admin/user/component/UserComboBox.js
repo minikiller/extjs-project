@@ -13,9 +13,9 @@ Ext.define('kalix.admin.user.component.UserComboBox', {
     alias: 'widget.userComboBox',
     allowBlank: false,
     labelAlign: 'right',
-    //xtype: 'userCombobox',
+    xtype: 'userCombobox',
     queryMode: 'remote',
-    //valueField: 'name', need to change
+    valueField: 'name',
     //name: 'salerId',need to change
     displayField: 'name',
     queryParam: 'name',
