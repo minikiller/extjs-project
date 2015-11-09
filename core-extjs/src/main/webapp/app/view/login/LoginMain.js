@@ -35,7 +35,7 @@ Ext.define('kalix.view.login.LoginMain', {
         //labelWidth: 60,
         margin : '5 0'
     },*/
-    width: 400,
+    width: 300,
     //header: false,
     layout: {
         type: 'vbox',
@@ -92,17 +92,19 @@ Ext.define('kalix.view.login.LoginMain', {
         text: '登陆',
         handler: 'onLogin',
         //width:'250',
-        scale: 'large',
+        //scale: 'large',
         //ui: 'soft-green',
         iconAlign: 'right',
-        iconCls: 'x-fa fa-sign-in'
+        glyph: 'xf090@FontAwesome'
+        //iconCls: 'x-fa fa-sign-in'
     }, {
         text: '重置',
-        scale: 'large',
+        //scale: 'large',
         handler: 'onReset',
         //ui: 'soft-green',
         iconAlign: 'right',
-        iconCls: 'x-fa fa-undo'
+        glyph: 'xf0e2@FontAwesome',
+        //iconCls: 'x-fa fa-undo'
     }
     ],
     initComponent: function () {

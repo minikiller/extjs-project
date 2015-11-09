@@ -42,7 +42,7 @@ Ext.define('kalix.admin.audit.view.AuditGrid', {
              tooltip: '修改',
              handler: 'onEdit'
              }, */{
-                icon: "resources/images/cancel.png",
+                icon: "admin/resources/images/cancel.png",
                 tooltip: '删除',
                 handler: 'onDelete'
 
