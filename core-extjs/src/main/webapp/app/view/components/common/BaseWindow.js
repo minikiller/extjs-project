@@ -29,6 +29,9 @@ Ext.define('kalix.view.components.common.BaseWindow', {
     defaults: {
         layout: 'form',
         xtype: 'baseForm',
-        flex: 1
+        flex: 1,
+        defaults:{
+            labelAlign: 'right'
+        }
     }
 });
