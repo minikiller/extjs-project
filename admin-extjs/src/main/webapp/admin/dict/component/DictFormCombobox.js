@@ -4,7 +4,7 @@
 Ext.define('kalix.admin.dict.component.DictFormCombobox', {
     extend: 'Ext.form.field.ComboBox',
     requires:[
-        'kalix.admin.dict.store.DictNoPageStore'
+        //'kalix.admin.dict.store.DictNoPageStore'
     ],
     alias: 'widget.dictFormCombobox',
     editable: false,
@@ -18,8 +18,8 @@ Ext.define('kalix.admin.dict.component.DictFormCombobox', {
             var store=kalix.getApplication().getStore('dictNoPageStore');
             var tempStore=Ext.create('Ext.data.Store');
 
-            tempStore.setData(store.getData());
-            tempStore.filter('type',this.dictType);
+            store.filter('type',this.dictType);
+            tempStore.setData(store.getData().clone());
             this.setStore(tempStore);
 
             return true;
