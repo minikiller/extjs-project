@@ -64,7 +64,8 @@ Ext.define('kalix.core.controller.MainController', {
     }
 
     var node = node = Ext.getStore('NavigationTree').findNode('routeId', hashTag);
-    this.getReferences().navigationTreeList.setSelection(node);
+
+    //this.getReferences().navigationTreeList.setSelection(node);
 
     if (newView.isFocusable(true)) {
       newView.focus();
