@@ -31,11 +31,11 @@ Ext.define('kalix.core.store.NavigationTree', {
     }
   },
 
-  load : function (hashToken) {
-    if (this.state.hashToken != hashToken) {
-      this.proxy.url = this.baseUrl + hashToken;
+  load : function (options) {
+    if (this.state.hashToken != options.hashToken) {
+      this.proxy.url = this.baseUrl + options.hashToken;
+      this.state.hashToken = options.hashToken;
       this.callParent(arguments);
-      this.state.hashToken = hashToken;
     }
   },
 
