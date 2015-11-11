@@ -38,11 +38,11 @@ Ext.define('kalix.demo.notice.view.NoticeGrid', {
             xtype: "actioncolumn",
             width: 80,
             items: [{
-                icon: "resources/images/pencil.png",
+                icon: "admin/resources/images/pencil.png",
                 tooltip: '修改',
                 handler: 'onEdit'
             }, {
-                icon: "resources/images/cancel.png",
+                icon: "admin/resources/images/cancel.png",
                 tooltip: '删除',
                 handler: 'onDelete'
 
@@ -56,7 +56,7 @@ Ext.define('kalix.demo.notice.view.NoticeGrid', {
                 },
                 handler: 'onIsStart'
             }, {
-                icon: "resources/images/magnifier.png",
+                icon: "admin/resources/images/magnifier.png",
                 tooltip: '查看',
                 handler: 'onOpenCurrentProcess'
             }]

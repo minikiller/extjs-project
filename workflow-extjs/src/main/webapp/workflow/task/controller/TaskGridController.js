@@ -174,7 +174,7 @@ Ext.define('kalix.workflow.task.controller.TaskGridController', {
         onOpenCurrentProcess: function (grid, rowIndex, colIndex) {
             var rec = grid.getStore().getAt(rowIndex);
             var imgUrl = this.getView().getViewModel().get("processShowUrl") + "?taskId=" + rec.data.id;
-            var win = Ext.create('kalix.workflow.task.components.ActivitiProcessImageWindow', {
+            var win = Ext.create('kalix.workflow.components.ActivitiProcessImageWindow', {
                 html: "<iframe  width='100%' height='100%' frameborder='0' src='" + imgUrl + "'></iframe>",
                 title: this.getView().getViewModel().get("processShowTitile") + "-" + rec.data.name
             });
@@ -209,15 +209,14 @@ Ext.define('kalix.workflow.task.controller.TaskGridController', {
                             approvalWindow.down("#id").setValue(entity.id);
                             approvalWindow.down("#title").setValue(entity.title);
                             approvalWindow.down("#content").setValue(entity.content);
-                            var activityHistoryStore = Ext.create('kalix.workflow.task.store.ActivityHistoryStore', {
+                            var activityHistoryStore = Ext.create('kalix.workflow.store.ActivityHistoryStore', {
                                 proxy: {
                                     url: '/kalix/camel/rest/workflow/activities?historyProcessId=' + rec.data.processInstanceId
                                 }
                             });
-                            var dataGird = Ext.create("kalix.workflow.task.view.ActivityHistoryGrid", {
+                            var dataGird = Ext.create("kalix.workflow.view.ActivityHistoryGrid", {
                                 store: activityHistoryStore,
                                 width: 460,
-                                height: 120
                             });
                             approvalWindow.activityHistoryStore = activityHistoryStore;
                             var dataGridFieldSet = Ext.create("Ext.form.FieldSet", {

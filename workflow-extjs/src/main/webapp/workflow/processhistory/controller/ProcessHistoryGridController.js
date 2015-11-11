@@ -183,15 +183,15 @@ Ext.define('kalix.workflow.processhistory.controller.ProcessHistoryGridControlle
                     method: "GET",
                     callback: function (options, success, response) {
                         var component = Ext.JSON.decode(response.responseText);
-                        var activityHistoryStore = Ext.create('kalix.workflow.processhistory.store.ActivityHistoryStore', {
+                        var activityHistoryStore = Ext.create('kalix.workflow.store.ActivityHistoryStore', {
                             proxy: {
                                 url: '/kalix/camel/rest/workflow/activities?historyProcessId=' + rec.data.id
                             }
                         });
-                        var dataGird = Ext.create("kalix.workflow.processhistory.view.ActivityHistoryGrid", {
+                        var dataGird = Ext.create("kalix.workflow.view.ActivityHistoryGrid", {
                             store: activityHistoryStore,
                             width: 605,
-                            height: 280
+                            //height: 280
                         });
                         var dataGridFieldSet = Ext.create("Ext.form.FieldSet", {
                             title: "流程历史列表"
@@ -204,7 +204,7 @@ Ext.define('kalix.workflow.processhistory.controller.ProcessHistoryGridControlle
                             border: false,
                             modal: true,
                             width: 605,
-                            height: 480,
+                            //height: 480,
                             title: "流程历史查看",
                             //resizable:false,
                             icon: 'admin/resources/images/group_edit.png',

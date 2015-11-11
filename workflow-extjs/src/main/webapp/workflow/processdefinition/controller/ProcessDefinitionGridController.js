@@ -202,7 +202,7 @@ Ext.define('kalix.workflow.processdefinition.controller.ProcessDefinitionGridCon
     onOpenProcessDefinition: function (grid, rowIndex, colIndex) {
         var rec = grid.getStore().getAt(rowIndex);
         var imgUrl = this.getView().getViewModel().get("processShowUrl") + "?processDefinitionId=" + rec.data.id;
-        var win = Ext.create('kalix.workflow.processdefinition.components.ActivitiProcessImageWindow', {
+        var win = Ext.create('kalix.workflow.components.ActivitiProcessImageWindow', {
             html: "<iframe  width='100%' height='100%' frameborder='0' src='" + imgUrl + "'></iframe>",
             title: this.getView().getViewModel().get("processShowTitile") + "-" + rec.data.name
         });

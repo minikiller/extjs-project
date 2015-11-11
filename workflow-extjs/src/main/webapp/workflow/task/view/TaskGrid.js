@@ -37,12 +37,12 @@ Ext.define('kalix.workflow.task.view.TaskGrid', {
             xtype: "actioncolumn",
             width: 80,
             items: [{
-                icon: "resources/images/magnifier.png",
+                icon: "admin/resources/images/magnifier.png",
                 tooltip: '查看',
                 handler: 'onOpenCurrentProcess'
             },
                 {
-                    icon: "resources/images/control_play_blue.png",
+                    icon: "admin/resources/images/control_play_blue.png",
                     tooltip: '处理',
                     handler: 'onCompleteTask'
                 }]

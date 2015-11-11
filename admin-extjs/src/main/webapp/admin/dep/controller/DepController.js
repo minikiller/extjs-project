@@ -119,15 +119,15 @@ Ext.define('kalix.admin.dep.controller.DepController', {
             },
             tbar: [
                 {
-                    text: '刷新', icon: 'admin/resources/images/arrow_refresh.png',
+                    tooltip: '刷新', icon: 'admin/resources/images/arrow_refresh.png',
                     handler: this.onAreaRefersh
                 },
                 {
-                    text: '展开', icon: 'admin/resources/images/arrow_down.png',
+                    tooltip: '展开', icon: 'admin/resources/images/arrow_down.png',
                     handler: this.onAreaExpandAll
                 },
                 {
-                    text: '收起', icon: 'admin/resources/images/arrow_up.png',
+                    tooltip: '收起', icon: 'admin/resources/images/arrow_up.png',
                     handler: this.onAreaCollapseAll
                 }]
         });
@@ -148,15 +148,15 @@ Ext.define('kalix.admin.dep.controller.DepController', {
             },
             tbar: [
                 {
-                    text: '刷新', icon: 'admin/resources/images/arrow_refresh.png',
+                    tooltip: '刷新', icon: 'admin/resources/images/arrow_refresh.png',
                     handler: this.onOrgRefersh
                 },
                 {
-                    text: '展开', icon: 'admin/resources/images/arrow_down.png',
+                    tooltip: '展开', icon: 'admin/resources/images/arrow_down.png',
                     handler: this.onOrgExpandAll
                 },
                 {
-                    text: '收起', icon: 'admin/resources/images/arrow_up.png',
+                    tooltip: '收起', icon: 'admin/resources/images/arrow_up.png',
                     handler: this.onOrgCollapseAll
                 }]
         });
@@ -167,6 +167,7 @@ Ext.define('kalix.admin.dep.controller.DepController', {
      * @returns {Ext.panel.Panel}
      */
     onInitDataGrid: function () {
+        //Ext.QuickTips.init();
         var dataGird = Ext.create("kalix.admin.dep.view.DepGrid",{
             store:Ext.create("kalix.admin.dep.store.DepStore")
         });
