@@ -64,7 +64,8 @@ Ext.define('kalix.core.controller.MainController', {
     }
 
     var node = node = Ext.getStore('NavigationTree').findNode('routeId', hashTag);
-    this.getReferences().navigationTreeList.setSelection(node);
+
+    //this.getReferences().navigationTreeList.setSelection(node);
 
     if (newView.isFocusable(true)) {
       newView.focus();
@@ -138,9 +139,22 @@ Ext.define('kalix.core.controller.MainController', {
   },
 
   onRouteChange : function (hash) {
+    var toolbarStore=Ext.getStore('MainToolbar');
+    var treeStore=Ext.getStore('NavigationTree');
+
     hash = this.parseHash(hash);
-    Ext.getStore('MainToolbar').load();
-    Ext.getStore('NavigationTree').load(this.getFirstPath(hash));
+    toolbarStore.load();
+    treeStore.load(this.getFirstPath(hash));
+
+    if(hash.path.length>1) {
+      treeStore.treeSelInfo.selected=true;
+      treeStore.treeSelInfo.level1=hash.path[0];
+      treeStore.treeSelInfo.level2=hash.path[1];
+    }
+    else{
+      treeStore.treeSelInfo.selected=false;
+    }
+
     this.setCurrentView(hash);
   },
 

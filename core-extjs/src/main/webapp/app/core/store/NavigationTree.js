@@ -16,7 +16,12 @@ Ext.define('kalix.core.store.NavigationTree', {
   },
 
   baseUrl : '/kalix/camel/rest/system/applications/',
-
+  treeSelInfo:{
+    tree:null,
+    selected:false,
+    level1:'',
+    level2:''
+  },
   proxy : {
     type : 'ajax',
     url : '',
