@@ -13,6 +13,7 @@ Ext.define('kalix.admin.dict.store.DictNoPageStore', {
     storeId: "dictNoPageStore",
     autoLoad: true,
     singleton: true,
+    pageSize:0,
     proxy: {
         type: "ajax",
         url: '/kalix/camel/rest/dicts/list',

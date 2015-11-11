@@ -21,14 +21,14 @@ Ext.define('kalix.admin.dict.component.DictGridColumn', {
                     var tempValue=data[idx].data.value;
                     var tempLabel=data[idx].data.label;
 
-                    tplStr+='<tpl if="'+this.dictType+'=='+tempValue+'">'+tempLabel+'</tpl>'
+                    tplStr+='<tpl if="'+this.dataIndex+'=='+tempValue+'">'+tempLabel+'</tpl>'
                 }
 
                 var tpl = new Ext.XTemplate(tplStr);
                 this.tpl=tpl;
             }
             else{
-                this.tpl="<tpl>{"+this.dictType+"}</tpl>"
+                this.tpl="<tpl>{"+this.dataIndex+"}</tpl>"
             }
 
             return true;
