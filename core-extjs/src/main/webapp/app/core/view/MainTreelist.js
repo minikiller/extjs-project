@@ -14,8 +14,7 @@ Ext.define('kalix.core.view.MainTreelist', {
             navigationTreeStore.each(function (recorder) {
                 last.push(recorder);
             });
-
-            navigationTreeStore.treeSelInfo.tree = self;
+            navigationTreeStore.treeSelInfo.tree=this;
         }, this);
 
         navigationTreeStore.on("load", function () {
@@ -42,8 +41,6 @@ Ext.define('kalix.core.view.MainTreelist', {
                         var childItem=self.getItem(childNodes[idx]);
 
                         if(childItem.getNode().getData().routeId==routeId){
-                            //item.setExpanded(true);
-                            //childItem.setSelected(true);
                             item.expand();
                             self.setSelection(childItem.getNode());
                             hasFind=true;
@@ -55,7 +52,6 @@ Ext.define('kalix.core.view.MainTreelist', {
                     {
                         return false;
                     }
-                    //alert(navigationTreeStore.treeSelInfo.level1);
                 }
             });
 
