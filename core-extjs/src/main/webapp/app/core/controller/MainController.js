@@ -75,7 +75,10 @@ Ext.define('kalix.core.controller.MainController', {
   },
 
   onNavigationTreeSelectionChange : function (tree, node) {
+    //var parentModuleId=node.parentNode.get('id');
+
     if (node && node.get('view')) {
+      //this.redirectTo(parentModuleId+'/'+node.get("routeId"));
       this.redirectTo(node.get("routeId"));
     }
   },
@@ -153,7 +156,10 @@ Ext.define('kalix.core.controller.MainController', {
     }
     else{
       treeStore.treeSelInfo.selected=false;
+      treeStore.treeSelInfo.level1=hash.path[0];
     }
+
+    //alert(123);
 
     this.setCurrentView(hash);
   },
