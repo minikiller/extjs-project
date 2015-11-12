@@ -4,13 +4,15 @@
  * Sencha Cmd when upgrading.
  */
 Ext.application({
-  name: 'kalix',
+    name: 'kalix',
 
-  extend: 'kalix.core.Application',
+    extend: 'kalix.core.Application',
 
-  requires: [
-    'kalix.core.view.Main'
-  ],
+    requires: [
+        'kalix.core.view.Main'
+    ],
 
-  mainView: 'kalix.core.view.Main'
+    mainView: 'kalix.core.view.Main',
+
+
 });
