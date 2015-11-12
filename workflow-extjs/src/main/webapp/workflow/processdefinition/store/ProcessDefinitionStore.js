@@ -6,7 +6,7 @@
  * @version 1.0.0
  */
 Ext.define('kalix.workflow.processdefinition.store.ProcessDefinitionStore', {
-    extend: 'Ext.data.Store',
+    extend: 'kalix.store.BaseStore',
     model: 'kalix.workflow.processdefinition.model.ProcessDefinitionModel',
     alias: 'store.processDefinitionStore',
     xtype: 'processDefinitionStore',

@@ -6,7 +6,7 @@
  * @version 1.0.0
  */
 Ext.define('kalix.admin.role.store.RoleItemSelectorStore', {
-    extend: 'Ext.data.Store',
+    extend: 'kalix.store.BaseStore',
     model: 'kalix.admin.role.model.RoleModel',
     alias: 'store.roleItemSelectorStore',
     xtype: 'roleItemSelectorStore',

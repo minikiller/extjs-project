@@ -6,7 +6,7 @@
  * @version 1.0.0
  */
 Ext.define('kalix.admin.dict.store.DictNoPageStore', {
-    extend: 'Ext.data.Store',
+    extend: 'kalix.store.BaseStore',
     model: 'kalix.admin.dict.model.DictModel',
     alias: 'store.dictNoPageStore',
     xtype: 'dictNoPageStore',

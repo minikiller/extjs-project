@@ -7,7 +7,7 @@
 Ext.define('kalix.core.Application', {
     extend: 'Ext.app.Application',
 
-    requires:'Ext.ux.ActivityMonitor',
+    //requires:'Ext.ux.ActivityMonitor',
 
     name: 'kalix',
 
@@ -25,8 +25,8 @@ Ext.define('kalix.core.Application', {
         Ext.JSON.encodeDate = function (d) {
             return Ext.Date.format(d, '"Y-m-d h:i:s"');
         };
-        Ext.ux.ActivityMonitor.init({ verbose : true });
-        Ext.ux.ActivityMonitor.start();
+        //Ext.ux.ActivityMonitor.init({ verbose : true });
+       // Ext.ux.ActivityMonitor.start();
         // TODO - Launch the application
     }
 });

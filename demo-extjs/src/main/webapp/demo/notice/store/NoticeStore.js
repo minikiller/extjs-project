@@ -6,7 +6,7 @@
  * @version 1.0.0
  */
 Ext.define('kalix.demo.notice.store.NoticeStore', {
-    extend: 'Ext.data.Store',
+    extend: 'kalix.store.BaseStore',
     model: 'kalix.demo.notice.model.NoticeModel',
     alias: 'store.noticeStore',
     xtype: 'noticeStore',

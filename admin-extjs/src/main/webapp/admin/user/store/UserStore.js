@@ -6,7 +6,7 @@
  * @version 1.0.0
  */
 Ext.define('kalix.admin.user.store.UserStore', {
-    extend: 'Ext.data.Store',
+    extend: 'kalix.store.BaseStore',
     model: 'kalix.admin.user.model.UserModel',
     alias: 'store.userStore',
     xtype: 'userStore',

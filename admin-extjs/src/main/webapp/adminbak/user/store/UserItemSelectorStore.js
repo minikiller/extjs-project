@@ -6,7 +6,7 @@
  * @version 1.0.0
  */
 Ext.define('Kalix.admin.user.store.UserItemSelectorStore', {
-    extend: 'Ext.data.Store',
+    extend: 'kalix.store.BaseStore',
     model: 'Kalix.admin.user.model.UserModel',
     alias: 'store.userItemSelectorStore',
     xtype: 'userItemSelectorStore',

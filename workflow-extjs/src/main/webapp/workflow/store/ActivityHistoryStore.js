@@ -6,7 +6,7 @@
  * @version 1.0.0
  */
 Ext.define('kalix.workflow.store.ActivityHistoryStore', {
-    extend: 'Ext.data.Store',
+    extend: 'kalix.store.BaseStore',
     model: 'kalix.workflow.model.ActivityHistoryModel',
     alias: 'store.activityHistoryStore',
     xtype: 'activityHistoryStore',

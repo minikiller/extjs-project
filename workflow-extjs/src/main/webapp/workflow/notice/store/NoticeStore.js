@@ -6,7 +6,7 @@
  * @version 1.0.0
  */
 Ext.define('kalix.workflow.notice.store.NoticeStore', {
-    extend: 'Ext.data.Store',
+    extend: 'kalix.store.BaseStore',
     model: 'kalix.workflow.notice.model.NoticeModel',
     alias: 'store.noticeStore',
     xtype: 'noticeStore',
