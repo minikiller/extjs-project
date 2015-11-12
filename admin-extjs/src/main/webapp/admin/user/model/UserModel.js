@@ -117,13 +117,14 @@ Ext.define('kalix.admin.user.model.UserModel', {
             message: '邮箱格式无效!'
         }
         ],
+        /*
         phone: [{
             type: 'format',
             matcher: /^(\d{3}-\d{7,8}|\d{4}-\d{7,8}|\s*)$/,
             message: '电话号码格式不正确!'
         }
-        ],
-        mobile: [{
+        ],*/
+         mobile: [{
             type: 'presence',
             message: '手机号码不能为空!'
         }, {

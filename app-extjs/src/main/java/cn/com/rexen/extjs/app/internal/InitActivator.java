@@ -19,7 +19,10 @@ public class InitActivator implements BundleActivator {
     private static final String BUNDLE_NAME = " Extjs Admin App ";
     private static BundleContext context;
     private static Logger logger = Logger.getLogger(InitActivator.class);
+    public static final String KALIX_APP_ROFFICE_PATH = "/kalix/app/app";
+    public static final String KALIX_ROFFICE_RESOURCES_IMAGES = "/kalix/app/resources/images";
     private ServiceReference reference;
+    private HttpService httpService;
 
     @Override
     public void start(BundleContext bundleContext) throws Exception {
@@ -27,8 +30,8 @@ public class InitActivator implements BundleActivator {
         context = bundleContext;
 
         reference = bundleContext.getServiceReference(HttpService.class.getName());
-        HttpService httpService = (HttpService) bundleContext.getService(reference);
-        httpService.registerResources("/kalix/app/admin/app", "/admin/app", null);
+        httpService = (HttpService) bundleContext.getService(reference);
+        httpService.registerResources("/kalix/app/app", "/app", null);
         httpService.registerResources("/kalix/app/resources/images", "/resources/images", null);
     }
 
@@ -38,6 +41,10 @@ public class InitActivator implements BundleActivator {
 
         if (reference != null)
             bundleContext.ungetService(reference);
+        if (httpService != null) {
+            httpService.unregister(KALIX_APP_ROFFICE_PATH);
+            httpService.unregister(KALIX_ROFFICE_RESOURCES_IMAGES);
+        }
         context = null;
     }
 }
