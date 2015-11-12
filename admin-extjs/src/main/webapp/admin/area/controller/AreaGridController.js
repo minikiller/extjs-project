@@ -27,7 +27,7 @@ Ext.define('kalix.admin.area.controller.AreaGridController', {
     onAdd: function () {
         var rows = this.getView().getSelectionModel().getSelection();
         var addFormPanel = Ext.create('kalix.admin.area.view.AreaAddForm', {
-            url: this.getView().getViewModel().get("url")
+            url: '/kalix/camel/rest/areas'
         });
         if (rows != null && rows.length > 0) {
             if (rows[0] != null) {
@@ -45,7 +45,7 @@ Ext.define('kalix.admin.area.controller.AreaGridController', {
             modal: true,
             //resizable:false,
             icon: 'admin/resources/images/shape_square_add.png',
-            title: this.getView().getViewModel().get("addTitle"),
+            title: '新增区域',
             items: [addFormPanel]
         });
 
@@ -60,19 +60,19 @@ Ext.define('kalix.admin.area.controller.AreaGridController', {
     onEdit: function (grid, rowIndex, colIndex) {
         var rec = grid.getStore().getAt(rowIndex);
         var editFormPanel = Ext.create('kalix.admin.area.view.AreaEditForm', {
-            url: this.getView().getViewModel().get("url")
+            url: '/kalix/camel/rest/areas'
         });
         editFormPanel.down("#parentName").setValue(rec.data.parentName);
         editFormPanel.loadRecord(rec);
 
         var win = Ext.create('Ext.Window', {
             width: 400,
-            height: 280,
+            //height: 280,
             border: false,
             modal: true,
             //resizable:false,
             icon: 'admin/resources/images/shape_square_edit.png',
-            title: this.getView().getViewModel().get("editTitle"),
+            title: '编辑区域',
             items: [editFormPanel]
         });
 

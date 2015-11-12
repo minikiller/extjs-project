@@ -6,7 +6,7 @@
  * @version 1.0.0
  */
 Ext.define('kalix.admin.area.view.AreaAddForm', {
-    extend: 'Ext.FormPanel',
+    extend: 'kalix.view.components.common.FormPanel',
     requires: [
         'kalix.admin.area.viewModel.AreaViewModel',
         'kalix.admin.area.controller.AreaFormController'
@@ -25,6 +25,7 @@ Ext.define('kalix.admin.area.view.AreaAddForm', {
     bodyStyle: "padding:15px",
     frame: true,
     buttonAlign: "center",
+    //layout: 'form',
     defaultType: 'textfield',
     items: [
         {xtype: 'hiddenfield', name: 'parentId', id: 'parentIdId', value: '-1'},
@@ -34,9 +35,7 @@ Ext.define('kalix.admin.area.view.AreaAddForm', {
             itemId: "parentName",
             isFormField: false,
             disabled: true,
-            beforeLabelTpl: [
-                '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
-            ]
+
         },
         {
             fieldLabel: '名称',
@@ -44,9 +43,7 @@ Ext.define('kalix.admin.area.view.AreaAddForm', {
             name: 'name',
             allowBlank: false,
             blankText: '名称不能为空!',
-            beforeLabelTpl: [
-                '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
-            ]
+
         },
         {
             fieldLabel: '区域代码',
@@ -54,9 +51,7 @@ Ext.define('kalix.admin.area.view.AreaAddForm', {
             name: 'code',
             allowBlank: false,
             blankText: '区域不能为空!',
-            beforeLabelTpl: [
-                '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
-            ]
+
         },
         {
             fieldLabel: '中心代码',
@@ -64,9 +59,7 @@ Ext.define('kalix.admin.area.view.AreaAddForm', {
             name: 'centerCode',
             allowBlank: false,
             blankText: '中心代码不能为空!',
-            beforeLabelTpl: [
-                '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
-            ]
+
         },
         {
             fieldLabel: '纬度',
