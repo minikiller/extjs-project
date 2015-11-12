@@ -44,7 +44,7 @@ Ext.define('kalix.admin.org.controller.OrgGridController', {
         }
         var win = Ext.create('Ext.Window', {
             width: 400,
-            height: 250,
+            //height: 250,
             border: false,
             modal: true,
             //resizable:false,
@@ -79,7 +79,7 @@ Ext.define('kalix.admin.org.controller.OrgGridController', {
 
         var win = Ext.create('Ext.Window', {
             width: 400,
-            height: 250,
+            //height: 250,
             border: false,
             modal: true,
             //resizable:false,

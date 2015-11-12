@@ -31,20 +31,23 @@ Ext.define('kalix.admin.org.view.OrgGrid', {
     rootVisible : false,
     region: "center",
     title: '机构列表',
+    defaults:{
+        flex:1
+    },
     columns: [
         {text: '编号', dataIndex: 'id',hidden:true },
         {text: '上级机构', dataIndex: 'parentName',hidden:true },
-        {xtype : 'treecolumn', text: '名称',dataIndex: 'name', width: 255},
-        {text: '机构代码', dataIndex: 'code', width: 60},
-        {text: '中心代码', dataIndex: 'centerCode', width: 60},
-        {text: '创建人', dataIndex: 'createBy', width: 60},
+        {xtype : 'treecolumn', text: '名称',dataIndex: 'name'},
+        {text: '机构代码', dataIndex: 'code'},
+        {text: '中心代码', dataIndex: 'centerCode'},
+        {text: '创建人', dataIndex: 'createBy'},
         {
-            text: '创建日期', dataIndex: 'creationDate', width: 160, renderer: function (value) {
+            text: '创建日期', dataIndex: 'creationDate', renderer: function (value) {
             var createDate = new Date(value);
             return createDate.format("yyyy-MM-dd hh:mm:ss");
         }
         },
-        {text: '更新人', dataIndex: 'updateBy', width: 60},
+        {text: '更新人', dataIndex: 'updateBy'},
         {
             text: '更新日期', dataIndex: 'updateDate', width: 160, renderer: function (value) {
             var updateDate = new Date(value);
@@ -53,7 +56,7 @@ Ext.define('kalix.admin.org.view.OrgGrid', {
         },
         {
             header: '操作',
-            width: 60,
+            //width: 60,
             xtype: "actioncolumn",
             items: [{
                 icon: "admin/resources/images/pencil.png",
