@@ -32,15 +32,15 @@ Ext.define('kalix.core.view.MainTreelist', {
                 var item = self.getItem(recorder);
 
                 if (navigationTreeStore.treeSelInfo.selected) {
-                    var routeId=navigationTreeStore.treeSelInfo.level1+ '/' +
-                        navigationTreeStore.treeSelInfo.level2;
+                    //var routeId=navigationTreeStore.treeSelInfo.level1+ '/' +
+                    //    navigationTreeStore.treeSelInfo.level2;
                     var childNodes=item.getNode().childNodes;
 
                     for(var idx=0;idx<childNodes.length;++idx)
                     {
                         var childItem=self.getItem(childNodes[idx]);
 
-                        if(childItem.getNode().getData().routeId==routeId){
+                        if(childItem.getNode().getData().routeId.split('/')[1]==navigationTreeStore.treeSelInfo.level2){
                             item.expand();
                             self.setSelection(childItem.getNode());
                             hasFind=true;

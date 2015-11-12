@@ -152,11 +152,14 @@ Ext.define('kalix.core.controller.MainController', {
             treeStore.treeSelInfo.level2 = hash.path[1];
 
             if (treeStore.treeSelInfo.tree != null) {
-                hash.path[0] = treeStore.treeSelInfo.tree.getSelection().get('icon');
+                treeStore.load({hashToken: this.getFirstPath(hash)});
+                hash.path = treeStore.treeSelInfo.tree.getSelection().get('routeId').split('/');
                 this.setCurrentView(hash);
             }
         }
         else {
+            treeStore.load({hashToken: this.getFirstPath(hash)});
+            this.setCurrentView(hash);
             treeStore.treeSelInfo.selected = false;
         }
 
@@ -184,7 +187,7 @@ Ext.define('kalix.core.controller.MainController', {
                                 var routeId=children[cidx].routeId;
 
                                 if(routeId && hash.path[1]==routeId.split('/')[1]){
-                                    hash.path[0]=children[cidx].icon;
+                                    hash.path=routeId.split('/');
                                     this.setCurrentView(hash);
                                     hasFind=true;
                                     break;
@@ -198,10 +201,6 @@ Ext.define('kalix.core.controller.MainController', {
                     }
                 }
             );
-        }
-        else {
-            treeStore.load({hashToken: this.getFirstPath(hash)});
-            this.setCurrentView(hash);
         }
     },
 
