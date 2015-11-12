@@ -6,7 +6,7 @@
  * @version 1.0.0
  */
 Ext.define('kalix.admin.app.application.store.ApplicationStore', {
-    extend: 'Ext.data.Store',
+    extend: 'kalix.store.BaseStore',
     model: 'kalix.admin.app.application.model.ApplicationModel',
     alias: 'store.applicationStore',
     xtype: 'applicationStore',

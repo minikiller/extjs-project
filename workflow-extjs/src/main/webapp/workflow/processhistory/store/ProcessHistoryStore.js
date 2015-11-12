@@ -6,7 +6,7 @@
  * @version 1.0.0
  */
 Ext.define('kalix.workflow.processhistory.store.ProcessHistoryStore', {
-    extend: 'Ext.data.Store',
+    extend: 'kalix.store.BaseStore',
     model: 'kalix.workflow.processhistory.model.ProcessHistoryModel',
     alias: 'store.processHistoryStore',
     xtype: 'processHistoryStore',

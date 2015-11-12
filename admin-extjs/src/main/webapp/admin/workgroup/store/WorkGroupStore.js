@@ -6,7 +6,7 @@
  * @version 1.0.0
  */
 Ext.define('kalix.admin.workgroup.store.WorkGroupStore', {
-    extend: 'Ext.data.Store',
+    extend: 'kalix.store.BaseStore',
     model: 'kalix.admin.workgroup.model.WorkGroupModel',
     alias: 'store.workGroupStore',
     xtype: 'workGroupStore',

@@ -7,7 +7,7 @@
  */
 
 Ext.define('kalix.core.store.NavigationTree', {
-  extend : 'Ext.data.TreeStore',
+  extend : 'kalix.store.BaseTreeStore',
 
   storeId : 'NavigationTree',
 

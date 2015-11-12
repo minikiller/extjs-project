@@ -6,7 +6,7 @@
  * @version 1.0.0
  */
 Ext.define('kalix.workflow.task.store.TaskStore', {
-    extend: 'Ext.data.Store',
+    extend: 'kalix.store.BaseStore',
     model: 'kalix.workflow.task.model.TaskModel',
     alias: 'store.taskStore',
     xtype: 'taskStore',

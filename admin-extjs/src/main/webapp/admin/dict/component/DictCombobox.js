@@ -16,7 +16,7 @@ Ext.define('kalix.admin.dict.component.DictCombobox', {
     listeners:{
         beforerender:function(){
             var store=kalix.getApplication().getStore('dictNoPageStore');
-            var tempStore=Ext.create('Ext.data.Store');
+            var tempStore=Ext.create('kalix.store.BaseStore');
 
             store.filter('type',this.dictType);
             tempStore.setData(store.getData().clone());
