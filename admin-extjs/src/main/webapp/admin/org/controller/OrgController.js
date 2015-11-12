@@ -81,15 +81,15 @@ Ext.define('kalix.admin.org.controller.OrgController', {
             },
             tbar: [
                 {
-                    text: '刷新', icon: 'admin/resources/images/arrow_refresh.png',
+                    tooltip: '刷新', icon: 'admin/resources/images/arrow_refresh.png',
                     handler: this.onAreaRefersh
                 },
                 {
-                    text: '展开', icon: 'admin/resources/images/arrow_down.png',
+                    tooltip: '展开', icon: 'admin/resources/images/arrow_down.png',
                     handler: this.onAreaAxpandAll
                 },
                 {
-                    text: '收起', icon: 'admin/resources/images/arrow_up.png',
+                    tooltip: '收起', icon: 'admin/resources/images/arrow_up.png',
                     handler: this.onAreaCollapseAll
                 }]
         });

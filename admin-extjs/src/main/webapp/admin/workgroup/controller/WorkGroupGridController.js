@@ -22,7 +22,7 @@ Ext.define('kalix.admin.workgroup.controller.WorkGroupGridController', {
         });
         var win = Ext.create('Ext.Window', {
             width: 400,
-            height: 195,
+            //height: 195,
             border: false,
             modal: true,
             //resizable:false,
@@ -53,7 +53,7 @@ Ext.define('kalix.admin.workgroup.controller.WorkGroupGridController', {
 
         var win = Ext.create('Ext.Window', {
             width: 400,
-            height: 195,
+            //height: 195,
             border: false,
             modal: true,
             //resizable:false,
@@ -128,7 +128,7 @@ Ext.define('kalix.admin.workgroup.controller.WorkGroupGridController', {
 
         var win = Ext.create('Ext.Window', {
             width: 710,
-            height: 460,
+            //height: 460,
             border: false,
             modal: true,
             //resizable:false,
@@ -162,14 +162,15 @@ Ext.define('kalix.admin.workgroup.controller.WorkGroupGridController', {
                     width: 700,
                     itemId: "addUserForm",
                     bodyPadding: 10,
-                    height: 400,
+                    //height: 400,
                     layout: 'fit',
                     items: [
                         {
                             itemId: 'userAddItemSelector',
                             xtype: 'userAddItemSelector',
                             value: users,
-                            store: dataSotre
+                            store: dataSotre,
+                            height:300
                         }
                     ],
                     buttons: [
@@ -205,7 +206,7 @@ Ext.define('kalix.admin.workgroup.controller.WorkGroupGridController', {
 
         var win = Ext.create('Ext.Window', {
             width: 710,
-            height: 460,
+            //height: 460,
             border: false,
             modal: true,
             //resizable:false,
@@ -239,7 +240,7 @@ Ext.define('kalix.admin.workgroup.controller.WorkGroupGridController', {
                     width: 700,
                     itemId: "addRoleForm",
                     bodyPadding: 10,
-                    height: 400,
+                    //height: 400,
                     layout: 'fit',
                     items: [
                         {

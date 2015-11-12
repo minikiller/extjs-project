@@ -46,7 +46,7 @@ Ext.define('kalix.admin.app.function.controller.FunctionGridController', {
         }
         var win = Ext.create('Ext.Window', {
             width: 400,
-            height: 285,
+            //height: 285,
             border: false,
             modal: true,
             //resizable:false,
@@ -75,7 +75,7 @@ Ext.define('kalix.admin.app.function.controller.FunctionGridController', {
 
         var win = Ext.create('Ext.Window', {
             width: 400,
-            height: 285,
+            //height: 285,
             border: false,
             modal: true,
             //resizable:false,

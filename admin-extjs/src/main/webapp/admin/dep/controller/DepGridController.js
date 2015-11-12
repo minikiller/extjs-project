@@ -46,7 +46,7 @@ Ext.define('kalix.admin.dep.controller.DepGridController', {
         }
         var win = Ext.create('Ext.Window', {
             width: 400,
-            height: 245,
+            //height: 245,
             border: false,
             modal: true,
             //resizable:false,
@@ -74,7 +74,7 @@ Ext.define('kalix.admin.dep.controller.DepGridController', {
 
         var win = Ext.create('Ext.Window', {
             width: 400,
-            height: 245,
+            //height: 245,
             border: false,
             modal: true,
             //resizable:false,
@@ -123,7 +123,7 @@ Ext.define('kalix.admin.dep.controller.DepGridController', {
 
         var win = Ext.create('Ext.Window', {
             width: 710,
-            height: 460,
+            //height: 460,
             border: false,
             modal: true,
             //resizable:false,
@@ -167,13 +167,14 @@ Ext.define('kalix.admin.dep.controller.DepGridController', {
                     width: 700,
                     itemId: "addUserForm",
                     bodyPadding: 10,
-                    height: 400,
+                    //height: 400,
                     layout: 'fit',
                     items: [
                         {
                             itemId: 'userAddItemSelector',
                             xtype: 'userAddItemSelector',
                             value: users,
+                            height: 400,
                             store: dataSotre
                         }
                     ],

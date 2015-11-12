@@ -9,7 +9,7 @@ Ext.define('kalix.admin.workgroup.view.AddUserMultiSelectForm', {
     extend: 'Ext.container.Container',
     xtype: 'multi-selector',
     width: 300,
-    height: 300,
+    //height: 300,
     requires: [
         'Ext.view.MultiSelector',
         'kalix.admin.user.model.UserModel'

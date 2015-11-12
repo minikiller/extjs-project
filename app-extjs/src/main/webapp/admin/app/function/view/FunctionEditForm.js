@@ -81,10 +81,10 @@ Ext.define('kalix.admin.app.function.view.FunctionEditForm', {
     ],
     buttons: [
         {
-            text: '保存', glyph: 0xf0c7, type: 'submit', handler: 'onUpdate'
+            text: '保存', glyph: 'xf0c7@FontAwesome', type: 'submit', handler: 'onUpdate'
         },
         {
-            text: '重置', glyph: 0xf0e2, handler: 'onEditReset'
+            text: '重置', glyph: 'xf0e2@FontAwesome',handler: 'onEditReset'
         }
     ]
 });

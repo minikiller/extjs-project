@@ -19,7 +19,7 @@ Ext.define('kalix.admin.app.application.controller.ApplicationGridController', {
         });
         var win = Ext.create('Ext.Window', {
             width: 400,
-            height: 252,
+            //height: 252,
             border: false,
             modal: true,
             //resizable:false,
@@ -45,7 +45,7 @@ Ext.define('kalix.admin.app.application.controller.ApplicationGridController', {
 
         var win = Ext.create('Ext.Window', {
             width: 400,
-            height: 252,
+            //height: 252,
             border: false,
             modal: true,
             //resizable:false,
