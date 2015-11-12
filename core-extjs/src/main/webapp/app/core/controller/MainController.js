@@ -136,7 +136,7 @@ Ext.define('kalix.core.controller.MainController', {
             var applicationId = node.parentNode.get('applicationId');
             var routeId = node.get("routeId");
 
-            this.redirectTo(applicationId+'/'+routeId.split('/')[1]);
+            this.redirectTo(applicationId + '/' + routeId.split('/')[1]);
         }
     },
     onRouteChange: function (hash) {
@@ -151,8 +151,8 @@ Ext.define('kalix.core.controller.MainController', {
             treeStore.treeSelInfo.level1 = hash.path[0];
             treeStore.treeSelInfo.level2 = hash.path[1];
 
-            if (treeStore.treeSelInfo.tree.getSelection() != null) {
-                hash.path[0]=treeStore.treeSelInfo.tree.getSelection().get('icon');
+            if (treeStore.treeSelInfo.tree != null) {
+                hash.path[0] = treeStore.treeSelInfo.tree.getSelection().get('icon');
                 this.setCurrentView(hash);
             }
         }
@@ -160,9 +160,9 @@ Ext.define('kalix.core.controller.MainController', {
             treeStore.treeSelInfo.selected = false;
         }
 
-        if (hash.path.length > 1 && treeStore.treeSelInfo.tree.getSelection()==null) {
+        if (hash.path.length > 1 && treeStore.treeSelInfo.tree == null) {
             treeStore.load({
-                    scope:this,
+                    scope: this,
                     hashToken: this.getFirstPath(hash),
                     callback: function (records, operation, success) {
                         //if (hash.path.length > 1) {
@@ -175,11 +175,31 @@ Ext.define('kalix.core.controller.MainController', {
                         //else {
                         //    treeStore.treeSelInfo.selected = false;
                         //}
+                        var hasFind = false;
+
+                        for (var pidx = 0; pidx < records.length; ++pidx) {
+                            var children = records[pidx].get('children')
+
+                            for (var cidx = 0; cidx <children.length; ++cidx) {
+                                var routeId=children[cidx].routeId;
+
+                                if(routeId && hash.path[1]==routeId.split('/')[1]){
+                                    hash.path[0]=children[cidx].icon;
+                                    this.setCurrentView(hash);
+                                    hasFind=true;
+                                    break;
+                                }
+                            }
+
+                            if(hasFind){
+                                break;
+                            }
+                        }
                     }
                 }
             );
         }
-        else{
+        else {
             treeStore.load({hashToken: this.getFirstPath(hash)});
             this.setCurrentView(hash);
         }
