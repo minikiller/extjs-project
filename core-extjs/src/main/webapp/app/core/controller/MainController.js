@@ -145,12 +145,13 @@ Ext.define('kalix.core.controller.MainController', {
 
         hash = this.parseHash(hash);
         toolbarStore.load();
-
+        //do some init for menu refresh when the anchor like #app/menu
         if (hash.path.length > 1) {
             treeStore.treeSelInfo.selected = true;
             treeStore.treeSelInfo.level1 = hash.path[0];
             treeStore.treeSelInfo.level2 = hash.path[1];
-
+            //if the menu tree has been selected,we got the routeId from the
+            //select tree item binging module.
             if (treeStore.treeSelInfo.tree != null) {
                 treeStore.load({hashToken: this.getFirstPath(hash)});
                 hash.path = treeStore.treeSelInfo.tree.getSelection().get('routeId').split('/');
@@ -162,22 +163,17 @@ Ext.define('kalix.core.controller.MainController', {
             this.setCurrentView(hash);
             treeStore.treeSelInfo.selected = false;
         }
-
+        //if the tree menu isn't selected and url anchor like #app/menu.
+        //it must in the situation when we refresh the page.
+        //in this case,the tree need to be auto selected at right place.
+        //we couldn't get the tree selection item because the select status
+        //will lost after page reload. so we need get the info from the async
+        //treeStore load.
         if (hash.path.length > 1 && treeStore.treeSelInfo.tree == null) {
             treeStore.load({
                     scope: this,
                     hashToken: this.getFirstPath(hash),
                     callback: function (records, operation, success) {
-                        //if (hash.path.length > 1) {
-                        //    treeStore.treeSelInfo.selected = true;
-                        //    treeStore.treeSelInfo.level1 = hash.path[0];
-                        //    treeStore.treeSelInfo.level2 = hash.path[1];
-                        //   // hash.path[0]=treeStore.treeSelInfo.tree.getSelection().getNode().get('icon');
-                        //    this.setCurrentView(hash);
-                        //}
-                        //else {
-                        //    treeStore.treeSelInfo.selected = false;
-                        //}
                         var hasFind = false;
 
                         for (var pidx = 0; pidx < records.length; ++pidx) {
