@@ -244,7 +244,8 @@ Ext.define('kalix.admin.role.controller.RoleGridController', {
      * @param colIndex
      */
     onAuthorization: function (grid, rowIndex, colIndex) {
-        var authorizationWindow = Ext.create('kalix.app.components.AuthorizationWindow');
+        var authorizationWindow = Ext.create('kalix.app.components.AuthorizationWindow'
+            );
         var rec = grid.getStore().getAt(rowIndex);
         authorizationWindow.roleId = rec.data.id;
         authorizationWindow.authorizationUrl = this.getView().getViewModel().get("authorizationUrl");

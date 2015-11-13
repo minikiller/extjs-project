@@ -20,7 +20,7 @@ Ext.define('kalix.app.components.AuthorizationWindow', {
     items: [{
         itemId: 'authorizationTree',
         xtype: 'treepanel',
-        //height: 430,
+        height: 430,
         autoScroll: true,
         border: true,
         rootVisible: false,
