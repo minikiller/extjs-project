@@ -23,6 +23,11 @@ Ext.define('kalix.core.controller.MainController', {
     //willdo
     setCurrentView: function (hashTag) {
         hashTag = hashTag || '';
+
+        for(var idx=0;idx<hashTag.path.length;++idx){
+            hashTag.path[idx]=hashTag.path[idx].substr(0,1).toLowerCase()+hashTag.path[idx].substr(1);
+        }
+
         hashTag = hashTag.path.join('.');
         console.log(hashTag)
 
@@ -39,8 +44,10 @@ Ext.define('kalix.core.controller.MainController', {
 
         lastView = mainLayout.getActiveItem();
         if (!existingItem) {
-            newView = Ext.create('kalix.' + (hashTag.toLowerCase() || 'pages.Error404Window') + '.Main', {
-                hideMode: 'offsets',
+            //newView = Ext.create('kalix.' + (hashTag.toLowerCase() || 'pages.Error404Window') + '.Main', {
+            newView = Ext.create('kalix.' + (hashTag|| 'pages.Error404Window') + '.Main', {
+
+                    hideMode: 'offsets',
                 routeId: hashTag
             });
         }
