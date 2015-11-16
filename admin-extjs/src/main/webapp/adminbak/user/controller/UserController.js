@@ -124,13 +124,13 @@ Ext.define('Kalix.admin.user.controller.UserController', {
         var securityToolbar = Ext.create("Kalix.view.components.common.SecurityToolbar");
         securityToolbar.verifyButton([
             {
-                text: '新增',
+                text: '添加',
                 xtype: 'button',
                 permission: 'admin:sysModule:permissionControl:userMenu:add',
                 icon: 'admin/resources/images/group_add.png',
                 handler: 'onAdd'
             }, {
-                text: '修改',
+                text: '编辑',
                 xtype: 'button',
                 permission: 'admin:sysModule:permissionControl:userMenu:update',
                 icon: "resources/images/pencil.png",
@@ -145,7 +145,7 @@ Ext.define('Kalix.admin.user.controller.UserController', {
             }
         ]);
         //securityToolbar.add({
-        //    text: '新增',xtype:'button',permission:'admin:sysModule:permissionControl:userMenu:add', icon: 'admin/resources/images/group_add.png', handler: 'onAdd'
+        //    text: '添加',xtype:'button',permission:'admin:sysModule:permissionControl:userMenu:add', icon: 'admin/resources/images/group_add.png', handler: 'onAdd'
         //});
         var dataStore = Ext.create("Kalix.admin.user.store.UserStore");
         var dataGird = Ext.create("Kalix.admin.user.view.UserGrid", {

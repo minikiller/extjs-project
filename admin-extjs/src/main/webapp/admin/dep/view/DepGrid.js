@@ -59,7 +59,7 @@ Ext.define('kalix.admin.dep.view.DepGrid', {
             xtype: "actioncolumn",
             items: [{
                 icon: "admin/resources/images/pencil.png",
-                tooltip: '修改',
+                tooltip: '编辑',
                 handler: 'onEdit',
                 isDisabled: function (view, rowIdx, colIdx, item, record) {
                     return record.data.name == "根部门" ? true : false;
@@ -81,7 +81,7 @@ Ext.define('kalix.admin.dep.view.DepGrid', {
     ],
     tbar: [
         {
-            text: '新增', icon: 'admin/resources/images/building_add.png', handler: 'onAdd'
+            text: '添加', icon: 'admin/resources/images/building_add.png', handler: 'onAdd'
         }, {
             text: '刷新', icon: 'admin/resources/images/arrow_refresh.png', handler: 'onRefersh'
         }]

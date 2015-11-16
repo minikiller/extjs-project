@@ -39,7 +39,7 @@ Ext.define('kalix.admin.audit.view.AuditGrid', {
             width: 60,
             items: [/*{
              icon: "resources/images/pencil.png",
-             tooltip: '修改',
+             tooltip: '编辑',
              handler: 'onEdit'
              }, */{
                 icon: "admin/resources/images/cancel.png",
@@ -51,7 +51,7 @@ Ext.define('kalix.admin.audit.view.AuditGrid', {
     ],
     /*tbar: [
      {
-     text: '新增', icon: 'admin/resources/images/group_add.png', handler: 'onAdd'
+     text: '添加', icon: 'admin/resources/images/group_add.png', handler: 'onAdd'
      }, "-",
      {
      text: '批量删除', icon: 'admin/resources/images/group_delete.png', handler: 'onDeleteAll'

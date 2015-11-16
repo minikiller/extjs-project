@@ -43,7 +43,7 @@ Ext.define('kalix.admin.workgroup.view.WorkGroupGrid', {
             xtype: "actioncolumn",
             items: [{
                 icon: "admin/resources/images/pencil.png",
-                tooltip: '修改',
+                tooltip: '编辑',
                 handler: 'onEdit'
             }, {
                 icon: "admin/resources/images/cancel.png",
@@ -64,7 +64,7 @@ Ext.define('kalix.admin.workgroup.view.WorkGroupGrid', {
     ],
     tbar: [
         {
-            text: '新增', icon: 'admin/resources/images/cup_add.png', handler: 'onAdd'
+            text: '添加', icon: 'admin/resources/images/cup_add.png', handler: 'onAdd'
         }]
 
 });

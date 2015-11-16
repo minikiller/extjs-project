@@ -60,7 +60,7 @@ Ext.define('kalix.admin.org.view.OrgGrid', {
             xtype: "actioncolumn",
             items: [{
                 icon: "admin/resources/images/pencil.png",
-                tooltip: '修改',
+                tooltip: '编辑',
                 handler: 'onEdit',
                 isDisabled: function(view, rowIdx, colIdx, item, record) {
                     return record.data.name=="根机构"?true:false;
@@ -78,7 +78,7 @@ Ext.define('kalix.admin.org.view.OrgGrid', {
     ],
     tbar: [
         {
-            text: '新增', icon: 'admin/resources/images/script_add.png', handler: 'onAdd'
+            text: '添加', icon: 'admin/resources/images/script_add.png', handler: 'onAdd'
         }, {
             text: '刷新', icon: 'admin/resources/images/arrow_refresh.png', handler: 'onRefersh'
         }]

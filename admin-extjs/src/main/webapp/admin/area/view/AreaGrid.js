@@ -88,7 +88,7 @@ Ext.define('kalix.admin.area.view.AreaGrid', {
         xtype: "actioncolumn",
         items: [{
             icon: "admin/resources/images/pencil.png",
-            tooltip: '修改',
+            tooltip: '编辑',
             handler: 'onEdit',
             flex:1,
             isDisabled: function (view, rowIdx, colIdx, item, record) {
@@ -108,7 +108,7 @@ Ext.define('kalix.admin.area.view.AreaGrid', {
     }
     ],
     tbar: [{
-        text: '新增',
+        text: '添加',
         icon: 'admin/resources/images/shape_square_add.png',
         handler: 'onAdd'
     }, {
