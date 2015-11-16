@@ -37,7 +37,7 @@ Ext.define('kalix.workflow.notice.view.NoticeGrid', {
             width: 60,
             items: [{
                 icon: "resources/images/pencil.png",
-                tooltip: '修改',
+                tooltip: '编辑',
                 handler: 'onEdit'
             }, {
                 icon: "resources/images/cancel.png",
@@ -48,7 +48,7 @@ Ext.define('kalix.workflow.notice.view.NoticeGrid', {
     ],
     tbar: [
         {
-            text: '新增', icon: 'admin/resources/images/group_add.png', handler: 'onAdd'
+            text: '添加', icon: 'admin/resources/images/group_add.png', handler: 'onAdd'
         }, "-",
         {
             text: '批量删除', icon: 'admin/resources/images/group_delete.png', handler: 'onDeleteAll'

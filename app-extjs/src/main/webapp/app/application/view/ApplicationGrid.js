@@ -45,7 +45,7 @@ Ext.define('kalix.app.application.view.ApplicationGrid', {
             width: 60,
             items: [{
                 icon: "admin/resources/images/pencil.png",
-                tooltip: '修改',
+                tooltip: '编辑',
                 handler: 'onEdit'
             }, {
                 icon: "admin/resources/images/cancel.png",
@@ -57,7 +57,7 @@ Ext.define('kalix.app.application.view.ApplicationGrid', {
     ],
     tbar: [
         {
-            text: '新增', icon: 'app/resources/images/application_add.png', handler: 'onAdd'
+            text: '添加', icon: 'app/resources/images/application_add.png', handler: 'onAdd'
         }, "-",
         {
             text: '批量删除', icon: 'app/resources/images/application_delete.png', handler: 'onDeleteAll'
