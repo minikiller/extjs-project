@@ -18,7 +18,7 @@ Ext.define('kalix.core.Application', {
 
     models: [],
 
-    defaultToken: 'admin',
+    defaultToken: '',
 
     launch: function () {
         //格式化时间类型代码，防止出现T字符

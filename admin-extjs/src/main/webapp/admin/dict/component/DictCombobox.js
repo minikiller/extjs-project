@@ -12,6 +12,8 @@ Ext.define('kalix.admin.dict.component.DictCombobox', {
     queryMode: 'local',
     valueField: 'value',
     displayField: 'label',
+    selectOnFocus:true,
+    typeAhead:true,
     queryParam: 'name',
     listeners:{
         beforerender:function(){

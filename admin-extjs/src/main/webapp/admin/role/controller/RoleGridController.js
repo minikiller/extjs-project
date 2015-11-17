@@ -21,7 +21,7 @@ Ext.define('kalix.admin.role.controller.RoleGridController', {
         });
         var win = Ext.create('Ext.Window', {
             width: 400,
-            height: 195,
+            //height: 195,
             border: false,
             modal: true,
             //resizable:false,
@@ -47,7 +47,7 @@ Ext.define('kalix.admin.role.controller.RoleGridController', {
 
         var win = Ext.create('Ext.Window', {
             width: 400,
-            height: 195,
+            //height: 195,
             border: false,
             modal: true,
             //resizable:false,
@@ -96,7 +96,7 @@ Ext.define('kalix.admin.role.controller.RoleGridController', {
 
         var win = Ext.create('Ext.Window', {
             width: 710,
-            height: 460,
+            //height: 460,
             border: false,
             modal: true,
             //resizable:false,
