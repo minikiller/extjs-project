@@ -14,6 +14,8 @@ Ext.define('kalix.admin.role.model.RoleModel', {
         {name: 'createBy', type: 'string'},
         {name: 'creationDate', type: 'int'},
         {name: 'updateBy', type: 'string'},
-        {name: 'updateDate', type: 'int'}
+        {name: 'updateDate', type: 'int'},
+        {name: 'app', type: 'string'},
+        {name: 'version', type: 'int'},
     ]
 });

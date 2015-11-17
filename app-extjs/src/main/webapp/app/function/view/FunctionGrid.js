@@ -32,29 +32,32 @@ Ext.define('kalix.app.function.view.FunctionGrid', {
     rootVisible: false,
     region: "center",
     title: '功能列表',
+    defaults: {
+        flex:1
+    },
     columns: [
         {text: '编号', dataIndex: 'id', hidden: true},
         {text: '上级功能', dataIndex: 'parentName', hidden: true},
         {text: '权限代码', dataIndex: 'permission', hidden: true},
-        {xtype: 'treecolumn', text: '名称', dataIndex: 'name', width: 255},
-        {text: '功能代码', dataIndex: 'code', width: 60},
-        {text: '创建人', dataIndex: 'createBy', width: 60},
+        {xtype: 'treecolumn', text: '名称', dataIndex: 'name',flex:2},
+        {text: '功能代码', dataIndex: 'code'},
+        {text: '创建人', dataIndex: 'createBy'},
         {
-            text: '创建日期', dataIndex: 'creationDate', width: 160, renderer: function (value) {
+            text: '创建日期', dataIndex: 'creationDate', renderer: function (value) {
             var createDate = new Date(value);
             return createDate.format("yyyy-MM-dd hh:mm:ss");
         }
         },
-        {text: '更新人', dataIndex: 'updateBy', width: 60},
+        {text: '更新人', dataIndex: 'updateBy'},
         {
-            text: '更新日期', dataIndex: 'updateDate', width: 160, renderer: function (value) {
+            text: '更新日期', dataIndex: 'updateDate', renderer: function (value) {
             var updateDate = new Date(value);
             return updateDate.format("yyyy-MM-dd hh:mm:ss");
         }
         },
         {
             header: '操作',
-            width: 60,
+            flex:1,
             xtype: "actioncolumn",
             items: [{
                 icon: "admin/resources/images/pencil.png",

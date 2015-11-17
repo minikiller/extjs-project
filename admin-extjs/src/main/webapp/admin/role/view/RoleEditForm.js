@@ -27,6 +27,7 @@ Ext.define('kalix.admin.role.view.RoleEditForm', {
     method: "PUT",
     defaultType: 'textfield',
     buttonAlign: "center",
+    layout:'form',
     items: [
         {xtype: 'hiddenfield', name: 'id'},
         {
@@ -40,10 +41,26 @@ Ext.define('kalix.admin.role.view.RoleEditForm', {
             ]
         },
         {
+            fieldLabel: '所属应用',
+            //itemId: 'nameId',
+            name: 'app',
+            allowBlank: false,
+            blankText: '所属应用不能为空!',
+            beforeLabelTpl: [
+                '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
+            ]
+        },
+        {
             xtype: 'textarea',
             fieldLabel: '备注',
             itemId: 'remarkId',
             name: 'remark',
+            beforeLabelTpl: [
+                '<span  >&nbsp;&nbsp;</span>'
+            ]
+        },{
+            name: 'version',
+            hidden:true,
             beforeLabelTpl: [
                 '<span  >&nbsp;&nbsp;</span>'
             ]
