@@ -57,43 +57,35 @@ Ext.define('kalix.controller.BaseFormController', {
             }));
         }
     },
-    onDelete: function (target, event) {
-        var grid = this.getView();
-        var viewModel = this.getViewModel();
+    onDelete: function (grid, rowIndex, colIndex) {
         var storeId=this.storeId;
+        var selModel=grid.getStore().getData().items[rowIndex];
 
-        if (viewModel.get('sel')) {
-            var model = viewModel.get('rec');
-            Ext.Msg.confirm("警告", "确定要删除吗？", function (button) {
-                if (button == "yes") {
-                    model.erase({
-                        failure: function (record, operation) {
-                            // do something if the erase failed
-                        },
-                        success: function (record, operation) {
-                            kalix.getApplication().getStore(storeId).reload();
-                        },
-                        callback: function (record, operation, success) {
-                            var res = Ext.JSON.decode(operation.getResponse().responseText);
+        Ext.Msg.confirm("警告", "确定要删除吗？", function (button) {
+            if (button == "yes") {
+                selModel.erase({
+                    failure: function (record, operation) {
+                        // do something if the erase failed
+                    },
+                    success: function (record, operation) {
+                        kalix.getApplication().getStore(storeId).reload();
+                    },
+                    callback: function (record, operation, success) {
+                        var res = Ext.JSON.decode(operation.getResponse().responseText);
 
-                            if (success) {
-                                kalix.core.Notify.success(res.msg, CONFIG.ALTER_TITLE_SUCCESS);
-                            }
-                            else {
-                                Ext.Msg.alert(CONFIG.ALTER_TITLE_FAILURE, res.msg);
-                            }
+                        if (success) {
+                            kalix.core.Notify.success(res.msg, CONFIG.ALTER_TITLE_SUCCESS);
                         }
-                    });
-                }
-            });
+                        else {
+                            Ext.Msg.alert(CONFIG.ALTER_TITLE_FAILURE, res.msg);
+                        }
+                    }
+                });
+            }
+        });
 
-
-            grid.setSelection(null);
-            viewModel.set('sel', false);
-
-        } else {
-            Ext.Msg.alert(CONFIG.ALTER_TITLE_ERROR, "请选择要删除的记录！");
-        }
+        grid.setSelection(null);
+        viewModel.set('sel', false);
     },
     onClose: function (panel, eOpts) {
         var viewModel = this.getViewModel();
