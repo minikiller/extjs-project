@@ -11,64 +11,97 @@ Ext.define('kalix.view.components.common.SecurityActionColumn', {
     xtype: 'securityActionColumn',
     permissions:[],
     header: '操作',
+    hideColumnFun:function(value, meta, record) {
+        return 'x-hide-grid-column';
+    },
     items: [
     {
         icon: "resources/images/read.png",
         tooltip: '查看',
-        handler: 'onView',
-        getClass: function(value, meta, record) {
-            return 'x-hide-grid-column';
-        }
+        handler: 'onView'
     },
     {
         icon: "resources/images/edit.png",
         tooltip: '编辑',
-        handler: 'onEdit',
-        getClass: function(value, meta, record) {
-            return 'x-hide-grid-column';
-        }
+        handler: 'onEdit'
     }, {
         icon: "resources/images/delete.png",
         tooltip: '删除',
-        handler: 'onDelete',
-        getClass: function(value, meta, record) {
-            return 'x-hide-grid-column';
-        }
+        handler: 'onDelete'
     }],
     listeners:{
         beforerender:function(){
-            var params = this.permissions.join('_');
             var scope=this;
-            Ext.Ajax.request({
-                url: "/kalix/camel/rest/system/applications/modules/children/buttons/" + params,
-                method: "GET",
-                async:false,
-                callback: function (options, success, response) {
-                    var resp = Ext.JSON.decode(response.responseText);
-                    var respButtons = resp.buttons;
 
-                    _.forEach(respButtons,function(item){
-                        if(item.status){
-                            var permissionSplit=item.permission.split(':');
+            if(this.permissions.length>0){
+                var params = this.permissions.join('_');
 
-                            switch(permissionSplit[permissionSplit.length-1]){
-                                case 'read':
-                                    scope.items[0].getClass=null;
-                                    break;
-                                case 'update':
-                                    scope.items[1].getClass=null;
-                                    break;
-                                case 'delete':
-                                    scope.items[2].getClass=null;
-                                    break;
+                _.forEach(scope.items,function(item){
+                    item.getClass=scope.hideColumnFun;
+                });
+
+                Ext.Ajax.request({
+                    url: "/kalix/camel/rest/system/applications/modules/children/buttons/" + params,
+                    method: "GET",
+                    async:false,
+                    callback: function (options, success, response) {
+                        var resp = Ext.JSON.decode(response.responseText);
+                        var respButtons = resp.buttons;
+
+                        _.forEach(respButtons,function(item){
+                            if(item.status){
+                                var permissionSplit=item.permission.split(':');
+
+                                switch(permissionSplit[permissionSplit.length-1]){
+                                    case 'read':
+                                        scope.items[0].getClass=null;
+                                        break;
+                                    case 'update':
+                                        scope.items[1].getClass=null;
+                                        break;
+                                    case 'delete':
+                                        scope.items[2].getClass=null;
+                                        break;
+                                }
                             }
-                        }
-                    });
-                },
-                failure: function(xhr, params) {
-                    console.log('Permission call failure!');
-                }
-            });
+                        });
+                    },
+                    failure: function(xhr, params) {
+                        console.log('Permission call failure!');
+                    }
+                });
+            }
+            else{
+                var params = _.map(scope.items, function(item){
+                    return item.permission;
+                });
+
+                params = params.join('_');
+                //查询授权
+                Ext.Ajax.request({
+                    url: "/kalix/camel/rest/system/applications/modules/children/buttons/" + params,
+                    method: "GET",
+                    async:false,
+                    callback: function (options, success, response) {
+                        var resp = Ext.JSON.decode(response.responseText);
+                        var respButtons = resp.buttons;
+
+                        _.forEach(scope.items, function(item){
+                            var findObj=_.find(respButtons, function(button){
+                                return button.permission == item.permission;
+                            });
+
+                            if(!findObj.status){
+                                item.getClass=scope.hideColumnFun;
+                            }
+                        });
+
+                    },
+                    failure: function(xhr, params) {
+                        console.log('Permission call failure!');
+                    }
+                });
+            }
         }
     }
 });
