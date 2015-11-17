@@ -150,6 +150,17 @@ Ext.define('kalix.core.controller.MainController', {
         var toolbarStore = Ext.getStore('MainToolbar');
         var treeStore = Ext.getStore('NavigationTree');
 
+        if(''==hash){
+            toolbarStore.load({scope: this,callback: function (records, operation, success){
+                if(records.length>0){
+                    this.redirectTo(records[0].id);
+                }
+            }});
+
+            return;
+        }
+
+
         hash = this.parseHash(hash);
         toolbarStore.load();
         //do some init for menu refresh when the anchor like #app/menu
