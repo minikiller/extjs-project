@@ -28,29 +28,55 @@ Ext.define('kalix.controller.BaseFormController', {
         var viewModel = this.getViewModel();
         var model = viewModel.get('rec');
         var view = this.getView();
-        var storeId=this.storeId;
+        var storeId = this.storeId;
 
         if (model.isValid()) {
             model.modified = model.data;
-            model.save({
-                failure: function (record, operation) {
-                },
-                success: function (record, operation) {
-                    view.close();
-                    model.dirty=false;
-                    kalix.getApplication().getStore(storeId).reload();
-                },
-                callback: function (record, operation, success) {
-                    var res = Ext.JSON.decode(operation.getResponse().responseText);
 
-                    if (success) {
-                        kalix.core.Notify.success(res.msg, CONFIG.ALTER_TITLE_SUCCESS);
-                    }
-                    else {
-                        Ext.Msg.alert(CONFIG.ALTER_TITLE_FAILURE, res.msg);
+            if (0 == model.id) {
+                kalix.getApplication().getStore(storeId).add(model);
+            }
+
+            kalix.getApplication().getStore(storeId).sync(
+                {
+                    failure: function () {
+                    },
+                    success: function () {
+                        view.close();
+                        model.dirty = false;
+                        //kalix.getApplication().getStore(storeId).reload();
+                    },
+                    callback: function (batch) {
+                        var res = Ext.JSON.decode(batch.operations[0].getResponse().responseText);
+
+                        if (batch.operations[0].success) {
+                            kalix.core.Notify.success(res.msg, CONFIG.ALTER_TITLE_SUCCESS);
+                        }
+                        else {
+                            Ext.Msg.alert(CONFIG.ALTER_TITLE_FAILURE, res.msg);
+                        }
                     }
                 }
-            });
+            );
+            //model.save({
+            //    failure: function (record, operation) {
+            //    },
+            //    success: function (record, operation) {
+            //        view.close();
+            //        model.dirty=false;
+            //        kalix.getApplication().getStore(storeId).reload();
+            //    },
+            //    callback: function (record, operation, success) {
+            //        var res = Ext.JSON.decode(operation.getResponse().responseText);
+            //
+            //        if (success) {
+            //            kalix.core.Notify.success(res.msg, CONFIG.ALTER_TITLE_SUCCESS);
+            //        }
+            //        else {
+            //            Ext.Msg.alert(CONFIG.ALTER_TITLE_FAILURE, res.msg);
+            //        }
+            //    }
+            //});
         } else {
             viewModel.set('validation', _.pick(model.getValidation().data, function (value, key, object) {
                 return value !== true;
@@ -58,8 +84,8 @@ Ext.define('kalix.controller.BaseFormController', {
         }
     },
     onDelete: function (grid, rowIndex, colIndex) {
-        var storeId=this.storeId;
-        var selModel=grid.getStore().getData().items[rowIndex];
+        var storeId = this.storeId;
+        var selModel = grid.getStore().getData().items[rowIndex];
 
         Ext.Msg.confirm("警告", "确定要删除吗？", function (button) {
             if (button == "yes") {
@@ -83,49 +109,75 @@ Ext.define('kalix.controller.BaseFormController', {
                 });
             }
         });
-
-        grid.setSelection(null);
-        viewModel.set('sel', false);
     },
     onClose: function (panel, eOpts) {
         var viewModel = this.getViewModel();
         var model = viewModel.get('rec');
-        var storeId=this.storeId;
+        var storeId = this.storeId;
 
         if (model.dirty) {
-            if (0 != model.get('id')) {
-                Ext.Msg.confirm("警告", "要保存修改吗？", function (button) {
-                    if (button == "yes") {
-                        if (model.isValid()) {
-                            model.modified = model.data;
-                            model.save({
-                                failure: function (record, operation) {
+            Ext.Msg.confirm("警告", "要保存修改吗？", function (button) {
+                if (button == "yes") {
+                    if (model.isValid()) {
+                        model.modified = model.data;
+
+                        if (0 == model.id) {
+                            kalix.getApplication().getStore(storeId).add(model);
+                        }
+
+                        kalix.getApplication().getStore(storeId).sync(
+                            {
+                                failure: function () {
                                 },
-                                success: function (record, operation) {
+                                success: function () {
                                     kalix.getApplication().getStore(storeId).reload();
                                 },
-                                callback: function (record, operation, success) {
-                                    var res = Ext.JSON.decode(operation.getResponse().responseText);
+                                callback: function (batch) {
+                                    var res = Ext.JSON.decode(batch.operations[0].getResponse().responseText);
 
-                                    if (success) {
+                                    if (batch.operations[0].success) {
                                         kalix.core.Notify.success(res.msg, CONFIG.ALTER_TITLE_SUCCESS);
                                     }
                                     else {
                                         Ext.Msg.alert(CONFIG.ALTER_TITLE_FAILURE, res.msg);
                                     }
                                 }
-                            });
-                        } else {
-                            viewModel.set('validation', _.pick(model.getValidation().data, function (value, key, object) {
-                                return value !== true;
-                            }));
-                        }
+                            }
+                        );
+                    } else {
+                        viewModel.set('validation', _.pick(model.getValidation().data, function (value, key, object) {
+                            return value !== true;
+                        }));
                     }
-                    else{
-                        model.set(model.modified);
-                    }
-                });
-            }
+                    //if (model.isValid()) {
+                    //    model.modified = model.data;
+                    //    model.save({
+                    //        failure: function (record, operation) {
+                    //        },
+                    //        success: function (record, operation) {
+                    //            kalix.getApplication().getStore(storeId).reload();
+                    //        },
+                    //        callback: function (record, operation, success) {
+                    //            var res = Ext.JSON.decode(operation.getResponse().responseText);
+                    //
+                    //            if (success) {
+                    //                kalix.core.Notify.success(res.msg, CONFIG.ALTER_TITLE_SUCCESS);
+                    //            }
+                    //            else {
+                    //                Ext.Msg.alert(CONFIG.ALTER_TITLE_FAILURE, res.msg);
+                    //            }
+                    //        }
+                    //    });
+                    //} else {
+                    //    viewModel.set('validation', _.pick(model.getValidation().data, function (value, key, object) {
+                    //        return value !== true;
+                    //    }));
+                    //}
+                }
+                else {
+                    model.set(model.modified);
+                }
+            });
         }
     }
 });
