@@ -55,7 +55,7 @@ Ext.define('kalix.view.components.common.SecurityGridColumnRUD', {
                                     case 'view':
                                         scope.items[0].getClass=null;
                                         break;
-                                    case 'update':
+                                    case 'edit':
                                         scope.items[1].getClass=null;
                                         break;
                                     case 'delete':
