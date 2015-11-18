@@ -12,5 +12,24 @@ Ext.define("kalix.model.BaseModel", {
             this.modified={};
             this.dirty=false;
         }
-    }
+    },
+    fields: [{
+        name: 'id',
+        type: 'string'
+    }, {
+        name: 'createBy',
+        type: 'string'
+    }, {
+        name: 'creationDate',
+        type: 'int'
+    },{
+        name: 'updateBy',
+        type: 'string'
+    }, {
+        name: 'updateDate',
+        type: 'int'
+    }, {
+        name: 'version',
+        type: 'int'
+    }]
 });

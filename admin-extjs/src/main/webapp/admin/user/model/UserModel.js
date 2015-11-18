@@ -8,7 +8,7 @@
 
 
 Ext.define('kalix.admin.user.model.UserModel', {
-    extend: 'Ext.data.Model',
+    extend: 'kalix.model.BaseModel',
 
     //ext 在创建模型时，会自动生成 id， 而且此行为不能取消
     //未找到相关设置
@@ -70,23 +70,7 @@ Ext.define('kalix.admin.user.model.UserModel', {
                     return item[0] === available;
                 })[1];
             }
-        }, {
-            name: 'createBy',
-            type: 'string'
-        }, {
-            name: 'creationDate',
-            type: 'int'
-        }, {
-            name: 'updateBy',
-            type: 'string'
-        }, {
-            name: 'updateDate',
-            type: 'int'
-        }, {
-            name: 'version',
-            type: 'int'
-        }
-    ],
+        }],
 
     validators: {
         loginName: [{
