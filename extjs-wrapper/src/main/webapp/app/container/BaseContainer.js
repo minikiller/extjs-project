@@ -1,6 +1,6 @@
 /**
  */
-Ext.define('kalix.contanier.BaseContanier', {
+Ext.define('kalix.container.BaseContainer', {
     extend: 'Ext.container.Container',
     storeId: '',
     listeners: {
