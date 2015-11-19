@@ -11,15 +11,7 @@ Ext.define('kalix.admin.dict.store.DictNoPageStore', {
     alias: 'store.dictNoPageStore',
     xtype: 'dictNoPageStore',
     storeId: "dictNoPageStore",
-    autoLoad: true,
-    singleton: true,
     pageSize:0,
-    proxy: {
-        type: "ajax",
-        url: '/kalix/camel/rest/dicts/list',
-        reader: {
-            type: "json"
-        },
-        noCache: false
-    }
+    singleton: true,
+    proxyUrl: '/kalix/camel/rest/dicts/list'
 });
