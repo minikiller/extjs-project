@@ -1,4 +1,5 @@
-/**model of contract
+/**
+ *  base model of all business model
  *  @author chenyanxu
  *
  */
@@ -24,7 +25,13 @@ Ext.define("kalix.model.BaseModel", {
             name: 'createBy'
         },
         {
+            name:'creationDate'
+        },
+        {
             name: 'updateBy'
+        },
+        {
+            name: 'updateDate'
         }
     ]
 });
