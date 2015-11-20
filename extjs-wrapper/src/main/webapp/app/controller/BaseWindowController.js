@@ -1,9 +1,5 @@
 /**
- * 用户表单控制器
- *
- * @author majian <br/>
- *         date:2015-6-18
- * @version 1.0.0
+ * @author chenyanxu
  */
 Ext.define('kalix.controller.BaseWindowController', {
     extend: 'Ext.app.ViewController',

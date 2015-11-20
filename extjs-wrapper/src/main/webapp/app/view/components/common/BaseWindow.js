@@ -1,9 +1,5 @@
 /**
- * 用户新增表单
- *
- * @author majian <br/>
- *         date:2015-6-18
- * @version 1.0.0
+ * @aurchor chenyanxu
  */
 
 Ext.define('kalix.view.components.common.BaseWindow', {

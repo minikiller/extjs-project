@@ -1,9 +1,5 @@
 /**
- * 权限控制工具条
- *
- * @author majian <br/>
- *         date:2015-8-14
- * @version 1.0.0
+ * @author chenyanxu
  */
 Ext.define('kalix.view.components.common.SecurityGridColumnRUD', {
     extend: 'Ext.grid.column.Action',
