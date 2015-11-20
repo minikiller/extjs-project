@@ -9,6 +9,7 @@ Ext.define('kalix.container.BaseContainer', {
 
             store.on('beforeload', function (store, opts, target) {
                 var jsonStr = Ext.JSON.encode(target.items.getAt(0).getForm().getFieldValues());
+
                 store.proxy.extraParams = {'jsonStr': jsonStr};
             }, this, target);
         }

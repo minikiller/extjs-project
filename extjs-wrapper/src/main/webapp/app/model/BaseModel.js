@@ -18,8 +18,7 @@ Ext.define("kalix.model.BaseModel", {
             name: 'id'
         },
         {
-            name: 'version',
-            type: 'int'
+            name: 'version'
         },
         {
             name: 'createBy'

@@ -39,14 +39,14 @@ Ext.define('kalix.view.components.common.BaseWindow', {
         glyph: 'xf0c7@FontAwesome',
         handler: 'onSave',
         bind: {
-            hidden: '{!add_operation}'
+            hidden: '{view_operation}'
         }
     }, {
         text: '重置',
         glyph: 'xf0e2@FontAwesome',
         handler: 'onReset',
         bind: {
-            hidden: '{!add_operation}'
+            hidden: '{view_operation}'
         }
     },
         {
@@ -56,7 +56,7 @@ Ext.define('kalix.view.components.common.BaseWindow', {
                 this.up('.window').close();
             },
             bind: {
-                hidden: '{add_operation}'
+                hidden: '{!view_operation}'
             }
         }
     ]

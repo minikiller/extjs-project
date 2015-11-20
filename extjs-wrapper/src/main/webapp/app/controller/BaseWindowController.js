@@ -5,9 +5,9 @@
  *         date:2015-6-18
  * @version 1.0.0
  */
-Ext.define('kalix.controller.BaseFormController', {
+Ext.define('kalix.controller.BaseWindowController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.baseFormController',
+    alias: 'controller.baseWindowController',
     requires: ['kalix.core.Notify'],
     storeId: '',
     /**
@@ -48,14 +48,14 @@ Ext.define('kalix.controller.BaseFormController', {
 
             store.sync(
                 {
-                    failure: function () {
-                    },
                     success: function () {
                         view.close();
                         model.dirty = false;
-                        store.reload();
                     },
                     callback: function (batch) {
+                        store.currentPage = 1;
+                        store.load();
+
                         var res = Ext.JSON.decode(batch.operations[0].getResponse().responseText);
 
                         if (batch.operations[0].success) {
@@ -76,9 +76,10 @@ Ext.define('kalix.controller.BaseFormController', {
     onClose: function (panel, eOpts) {
         var viewModel = this.getViewModel();
         var model = viewModel.get('rec');
-        var store = kalix.getApplication().getStore(this.storeId);
 
         if (model.dirty) {
+            var store = kalix.getApplication().getStore(this.storeId);
+
             Ext.Msg.confirm("警告", "要保存修改吗？", function (button) {
                 if (button == "yes") {
                     if (model.isValid()) {
@@ -90,12 +91,10 @@ Ext.define('kalix.controller.BaseFormController', {
 
                         store.sync(
                             {
-                                failure: function () {
-                                },
-                                success: function () {
-                                    store.reload();
-                                },
                                 callback: function (batch) {
+                                    store.currentPage = 1;
+                                    store.load();
+
                                     var res = Ext.JSON.decode(batch.operations[0].getResponse().responseText);
 
                                     if (batch.operations[0].success) {

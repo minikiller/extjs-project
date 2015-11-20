@@ -17,6 +17,7 @@ Ext.define('kalix.controller.BaseGridController', {
         vm.set('rec', selModel);
         vm.set('icon', viewModel.get('view_image_path'));
         vm.set('title', viewModel.get('view_title'));
+        vm.set('view_operation', true);
         view.show();
         grid.setSelection(selModel);
     },
@@ -49,7 +50,6 @@ Ext.define('kalix.controller.BaseGridController', {
         vm.set('rec', selModel);
         vm.set('icon', viewModel.get('edit_image_path'));
         vm.set('title', viewModel.get('edit_title'));
-        vm.set('add_operation', false);
         view.show();
         grid.setSelection(selModel);
     },
@@ -63,12 +63,10 @@ Ext.define('kalix.controller.BaseGridController', {
                 store.remove(model);
                 store.sync(
                     {
-                        failure: function () {
-                        },
-                        success: function () {
-                            store.reload();
-                        },
                         callback: function (batch) {
+                            store.currentPage = 1;
+                            store.load();
+
                             var res = Ext.JSON.decode(batch.operations[0].getResponse().responseText);
 
                             if (batch.operations[0].success) {
