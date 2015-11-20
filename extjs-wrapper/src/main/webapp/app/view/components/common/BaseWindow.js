@@ -9,10 +9,12 @@
 Ext.define('kalix.view.components.common.BaseWindow', {
     extend: 'Ext.window.Window',
     requires: [
-        'kalix.view.components.common.FormPanel'
+        'kalix.view.components.common.FormPanel',
+        'kalix.controller.BaseWindowController',
     ],
     alias: 'widget.baseWindow',
     xtype: "baseWindow",
+    controller: 'baseWindowController',
     width: 800,
     border: false,
     modal: true,
