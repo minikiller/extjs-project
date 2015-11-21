@@ -9,8 +9,7 @@ Ext.define('kalix.admin.dict.component.DictCombobox', {
     queryMode: 'local',
     valueField: 'value',
     displayField: 'label',
-    selectOnFocus:true,
-    typeAhead:true,
+    //selectOnFocus:true,
     listeners:{
         beforerender:function(){
             var store=kalix.getApplication().getStore('dictNoPageStore');
