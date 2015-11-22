@@ -7,6 +7,7 @@ Ext.define('kalix.view.components.common.SecurityGridColumnRUD', {
     xtype: 'securityGridColumnRUD',
     permissions: [],
     header: '操作',
+    iconPath:'',
     hideColumnFun: function (value, meta, record) {
         return 'x-hide-grid-column';
     },
@@ -32,6 +33,12 @@ Ext.define('kalix.view.components.common.SecurityGridColumnRUD', {
             _.forEach(scope.items, function (item) {
                 item.getClass = scope.hideColumnFun;
             });
+
+            if(scope.iconPath!=''){
+                scope.items[0].icon=scope.iconPath+'_view.png';
+                scope.items[1].icon=scope.iconPath+'_edit.png';
+                scope.items[2].icon=scope.iconPath+'_delete.png';
+            }
 
             if (this.permissions.length > 0) {
                 var params = this.permissions.join('_');
