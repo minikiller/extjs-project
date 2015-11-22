@@ -19,6 +19,31 @@ Ext.define('kalix.view.components.common.PagingToolBar', {
     nextText: "下一页",
     lastText: "最后页",
     refreshText: "刷新",
-    displayInfo: true
+    displayInfo: true,
+    pageSizeList:[10,20,30,40,50],
+    pageSize:10,
+    getPagingItems: function () {
+        var parentItems = this.callParent(arguments);
+        var me = this;
+
+        return Ext.Array.insert(parentItems, 0,
+            [
+                {
+                    xtype: 'combobox',
+                    width:70,
+                    scope: me,
+                    editable: false,
+                    store: me.pageSizeList,
+                    value:me.pageSize,
+                    listeners:{
+                        select:function( combo, record, eOpts ){
+                            var store=combo.findParentByType('pagingtoolbar').getStore();
+
+                            store.pageSize=combo.value;
+                            store.loadPage(1);
+                        }
+                    }
+                }]);
+    }
 
 });
