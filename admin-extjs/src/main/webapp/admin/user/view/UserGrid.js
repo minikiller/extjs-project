@@ -134,20 +134,20 @@ Ext.define('kalix.admin.user.view.UserGrid', {
             {
                 text: '添加',
                 xtype: 'button',
-                permission: 'admin:sysModule:permissionControl:userMenu:add',
+                permission: 'admin:permissionModule:userMenu:add',
                 icon: 'admin/resources/images/user_add.png',
                 handler: 'onAdd'
             },
             {
                 text: '编辑',
                 xtype: 'button',
-                permission: 'admin:sysModule:permissionControl:userMenu:update',
+                permission: 'admin:permissionModule:userMenu:edit',
                 icon: "admin/resources/images/user_edit.png",
                 handler: 'onEdit'
             }, {
                 text: '删除',
                 xtype: 'button',
-                permission: 'admin:sysModule:permissionControl:userMenu:delete',
+                permission: 'admin:permissionModule:userMenu:delete',
                 icon: "admin/resources/images/user_delete.png",
                 handler: 'onDelete'
             }
