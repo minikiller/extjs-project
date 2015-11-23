@@ -52,7 +52,7 @@ Ext.define('kalix.admin.role.controller.RoleController', {
                     layout: 'form',
                     items: [{
                         xtype: 'button',
-                        glyph: 0xf002,
+                        glyph: 'xf002@FontAwesome',
                         text: '查询',
                         handler: function () {
                         }

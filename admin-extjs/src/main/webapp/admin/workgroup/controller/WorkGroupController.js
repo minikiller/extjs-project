@@ -21,7 +21,7 @@ Ext.define('kalix.admin.workgroup.controller.WorkGroupController', {
         var panel = Ext.create("Ext.panel.Panel", {
             border: false,
             autoScroll: true,
-            height: document.body.clientHeight - 110, //客户端屏幕高度-底部-工具条以及选项卡
+            //height: document.body.clientHeight - 110, //客户端屏幕高度-底部-工具条以及选项卡
             items: [this.onInitSearchPanel(), this.onInitDataGrid()]
         })
 
@@ -52,7 +52,7 @@ Ext.define('kalix.admin.workgroup.controller.WorkGroupController', {
                     layout: 'form',
                     items: [{
                         xtype: 'button',
-                        glyph: 0xf002,
+                        glyph: 'xf002@FontAwesome',
                         text: '查询',
                         handler: function () {
                         }
@@ -87,7 +87,7 @@ Ext.define('kalix.admin.workgroup.controller.WorkGroupController', {
         var dataStore = Ext.create("kalix.admin.workgroup.store.WorkGroupStore");
         var dataGird = Ext.create("kalix.admin.workgroup.view.WorkGroupGrid", {
             store: dataStore,
-            height: document.body.clientHeight - 210,
+            //height: document.body.clientHeight - 210,
             bbar: [{
                 xtype: 'pagingToolBarComponent',
                 store: dataStore

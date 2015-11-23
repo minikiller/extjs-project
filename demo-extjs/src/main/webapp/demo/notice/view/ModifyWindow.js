@@ -79,7 +79,7 @@ Ext.define('kalix.demo.notice.view.ModifyWindow', {
             }
             },
             {
-                text: '关闭', glyph: 0xf0e2, handler: function () {
+                text: '关闭', glyph: 'xf0e2@FontAwesome', handler: function () {
                 Ext.ComponentQuery.query('modifyWindow')[0].close();
             }
             }

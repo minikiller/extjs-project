@@ -21,7 +21,7 @@ Ext.define('kalix.admin.dict.controller.DictController', {
         var panel = Ext.create("Ext.panel.Panel", {
             border: false,
             autoScroll: true,
-            height: document.body.clientHeight - 110, //客户端屏幕高度-底部-工具条以及选项卡
+            //height: document.body.clientHeight - 110, //客户端屏幕高度-底部-工具条以及选项卡
             items: [this.onInitSearchPanel(), this.onInitDataGrid()]
         })
 
@@ -88,7 +88,7 @@ Ext.define('kalix.admin.dict.controller.DictController', {
 
             buttons: [{
                 text: '查询',
-                glyph: 0xf002,
+                glyph: 'xf002@FontAwesome',
                 type: 'submit',
                 handler: function () {
                     //store.on('beforeload', function () {
@@ -198,7 +198,7 @@ Ext.define('kalix.admin.dict.controller.DictController', {
         var dataStore = Ext.create("kalix.admin.dict.store.DictStore");
         var dataGird = Ext.create("kalix.admin.dict.view.DictGrid", {
             store: dataStore,
-            height: document.body.clientHeight - 210,
+            //height: document.body.clientHeight - 210,
             bbar: [{
                 xtype: 'pagingToolBarComponent',
                 store: dataStore

@@ -81,6 +81,7 @@ Ext.define('kalix.app.application.controller.ApplicationController', {
                     items: [{
                         xtype: 'button',
                         text: '查询',
+                        glyph: 'xf002@FontAwesome',
                         handler: function () {
                         }
                     }]
