@@ -19,30 +19,38 @@ Ext.define('kalix.admin.dict.view.DictGrid', {
     autoLoad: true,
     stripeRows: true,
     manageHeight: true,
-    selModel: {selType: 'checkboxmodel', mode: "SIMPLE"},
+    //selModel: {selType: 'checkboxmodel', mode: "SIMPLE"},
     columns: [
-        {text: '编号', dataIndex: 'id'},
-        {text: '标签名', dataIndex: 'label', width: 60},
-        {text: '数据值', dataIndex: 'value', width: 60},
-        {text: '类型', dataIndex: 'type', width: 60},
-        {text: '排序', dataIndex: 'sort', width: 60},
-        {text: '创建人', dataIndex: 'createBy', width: 60},
         {
-            text: '创建日期', dataIndex: 'creationDate', width: 60, renderer: function (value) {
-            var createDate = new Date(value);
-            return createDate.format("yyyy-MM-dd hh:mm:ss");
-        }
+            xtype: "rownumberer",
+            text: "行号",
+            width: 50,
+            align:'center'
         },
-        {text: '更新人', dataIndex: 'updateBy', width: 60},
+        {text: '编号', dataIndex: 'id',hidden:true},
+        {text: '标签名', dataIndex: 'label', flex: 1},
+        {text: '数据值', dataIndex: 'value', flex: 1},
+        {text: '类型', dataIndex: 'type', flex: 1},
+        {text: '排序', dataIndex: 'sort', flex: 1},
+        {text: '创建人', dataIndex: 'createBy', flex: 1},
         {
-            text: '更新日期', dataIndex: 'updateDate', width: 60, renderer: function (value) {
-            var updateDate = new Date(value);
-            return updateDate.format("yyyy-MM-dd hh:mm:ss");
-        }
+            text: '创建日期', dataIndex: 'creationDate', flex: 1,
+            renderer: function (value) {
+                var createDate = new Date(value);
+                return createDate.format("yyyy-MM-dd hh:mm:ss");
+            }
+        },
+        {text: '更新人', dataIndex: 'updateBy', flex: 1},
+        {
+            text: '更新日期', dataIndex: 'updateDate', flex: 1,
+            renderer: function (value) {
+                var updateDate = new Date(value);
+                return updateDate.format("yyyy-MM-dd hh:mm:ss");
+            }
         },
         {
             header: '操作',
-            width: 60,
+            flex: 1,
             xtype: "actioncolumn",
             items: [{
                 icon: "admin/resources/images/pencil.png",

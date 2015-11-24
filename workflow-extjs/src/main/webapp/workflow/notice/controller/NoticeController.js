@@ -60,7 +60,7 @@ Ext.define('kalix.workflow.notice.controller.NoticeController', {
             buttonAlign: 'center',
             buttons: [{
                 text: '查询',
-                glyph: 0xf002,
+                glyph: 'xf002@FontAwesome',
                 type: 'submit',
                 handler: function () {
                     store.on('beforeload', function () {
@@ -85,7 +85,7 @@ Ext.define('kalix.workflow.notice.controller.NoticeController', {
                 }
             }, {
                 text: '重置',
-                glyph: 0xf0e2,
+                glyph: 'xf0e2@FontAwesome',
                 handler: function () {
                     formPanel.getForm().reset();
                 }

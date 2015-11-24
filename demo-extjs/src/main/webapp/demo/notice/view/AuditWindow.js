@@ -93,7 +93,7 @@ Ext.define('kalix.demo.notice.view.AuditWindow', {
             }
             },
             {
-                text: '关闭', glyph: 0xf0e2, handler: function () {
+                text: '关闭', glyph: 'xf0e2@FontAwesome', handler: function () {
                 Ext.ComponentQuery.query('auditWindow')[0].close();
             }
             }

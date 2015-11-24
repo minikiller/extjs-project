@@ -21,7 +21,13 @@ Ext.define('kalix.app.application.view.ApplicationGrid', {
     manageHeight: true,
     selModel: {selType: 'checkboxmodel', mode: "SIMPLE"},
     columns: [
-        {text: '编号', dataIndex: 'id', flex:1},
+        {
+            xtype: "rownumberer",
+            text: "行号",
+            width: 50,
+            align:'center'
+        },
+        {text: '编号', dataIndex: 'id', hidden:true},
         {text: '名称', dataIndex: 'name', flex:1},
         {text: '应用代码', dataIndex: 'code', flex:1},
         {text: '路径', dataIndex: 'location', flex:1},
