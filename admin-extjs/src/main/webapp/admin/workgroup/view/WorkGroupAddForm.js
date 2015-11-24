@@ -37,6 +37,17 @@ Ext.define('kalix.admin.workgroup.view.WorkGroupAddForm', {
                 '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
             ]
         },
+        ,
+        {
+            fieldLabel: '所属应用',
+            //itemId: 'nameId',
+            name: 'app',
+            allowBlank: false,
+            blankText: '所属应用不能为空!',
+            beforeLabelTpl: [
+                '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
+            ]
+        },
         {
             xtype: 'textarea',
             fieldLabel: '备注',

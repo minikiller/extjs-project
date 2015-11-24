@@ -19,7 +19,7 @@ Ext.define('kalix.admin.workgroup.view.WorkGroupGrid', {
     autoLoad: true,
     stripeRows: true,
     manageHeight: true,
-    selModel: {selType: 'checkboxmodel', mode: "SIMPLE"},
+    //selModel: {selType: 'checkboxmodel', mode: "SIMPLE"},
 
     columns: [
         {
@@ -29,21 +29,24 @@ Ext.define('kalix.admin.workgroup.view.WorkGroupGrid', {
             align:'center'
         },
         {text: '编号', dataIndex: 'id',hidden:true},
+        {text: '所属应用', dataIndex: 'app',flex:1},
         {text: '名称', dataIndex: 'name',flex:1},
-        {text: '创建人', dataIndex: 'createBy',flex:2},
-        {
-            text: '创建日期', dataIndex: 'creationDate', renderer: function (value) {
+        {text: '备注', dataIndex: 'remark',flex:2},
+        {text: '创建人', dataIndex: 'createBy',flex:1},
+        /*{
+            text: '创建日期', dataIndex: 'creationDate',
+            renderer: function (value) {
             var createDate = new Date(value);
             return createDate.format("yyyy-MM-dd hh:mm:ss");
         }
-        },
-        {text: '更新人', dataIndex: 'updateBy',flex:2},
-        {
+        },*/
+        {text: '更新人', dataIndex: 'updateBy',flex:1},
+        /*{
             text: '更新日期', dataIndex: 'updateDate', renderer: function (value) {
             var updateDate = new Date(value);
             return updateDate.format("yyyy-MM-dd hh:mm:ss");
         }
-        },
+        },*/
         {
             header: '操作',
             flex:1,
