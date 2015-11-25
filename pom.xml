@@ -250,5 +250,6 @@
         <module>workflow-extjs</module>
         <module>demo-extjs</module>
         <module>audit-extjs</module>
+        <module>attachment-extjs</module>
     </modules>
 </project>

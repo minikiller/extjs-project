@@ -73,6 +73,10 @@ Ext.define('kalix.controller.BaseWindowController', {
         var viewModel = this.getViewModel();
         var model = viewModel.get('rec');
 
+        if (model == null) {
+            return;
+        }
+
         if (model.dirty) {
             var store = kalix.getApplication().getStore(this.storeId);
 
