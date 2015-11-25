@@ -19,7 +19,7 @@
     <script type="text/javascript" src="resources/js/Config.js"></script>
     <script type="text/javascript" src="resources/js/DateFormat.js"></script>
     <!-- 引入Font Awesome的css文件 -->
-    <%--<link type="text/css" rel="stylesheet" href="resources/css/font-awesome.min.css"/>--%>
+    <link type="text/css" rel="stylesheet" href="resources/css/KitchenSink-all_2.css"/>
     <link type="text/css" rel="stylesheet" href="resources/css/index.css"/>
     <link type="text/css" rel="stylesheet" href="resources/css/notify.css"/>
 

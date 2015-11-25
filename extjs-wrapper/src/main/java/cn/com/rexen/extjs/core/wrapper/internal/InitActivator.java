@@ -23,6 +23,7 @@ public class InitActivator implements BundleActivator {
 //        httpService.registerResources("/core-web/ext-5.1.0", "/ext-5.1.0", null);
         httpService.registerResources("/kalix/Ext", "/ext-6.0.0", null);
         httpService.registerResources("/kalix/resources","/resources",null);
+//        httpService.registerResources("/kalix/pivot","/pivot",null);
         httpService.registerResources("/kalix/app","/app",null);
     }
 
@@ -37,6 +38,7 @@ public class InitActivator implements BundleActivator {
 //            httpService.unregister("/core-web/ext-5.1.0");
             httpService.unregister("/kalix/Ext");
             httpService.unregister("/kalix/resources");
+//            httpService.unregister("/kalix/pivot");
             httpService.unregister("/kalix/app");
         }
 
