@@ -10,6 +10,7 @@ Ext.define('kalix.admin.workgroup.model.WorkGroupModel', {
     fields: [
         {name: 'id', type: 'string'},
         {name: 'name', type: 'string'},
+        {name: 'app', type: 'string'},
         {name: 'remark', type: 'string'},
         {name: 'createBy', type: 'string'},
         {name: 'creationDate', type: 'int'},
