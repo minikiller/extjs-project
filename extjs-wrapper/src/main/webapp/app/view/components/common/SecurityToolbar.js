@@ -22,12 +22,26 @@ Ext.define('kalix.view.components.common.SecurityToolbar', {
             return;
         }
 
-        var params = _.map(this.verifyItems, function (item) {
-            return item.permission;
+        var params='';
+        var securityToolbar = this;
+
+        verifyItems.forEach(function(item){
+            if(item.permission!=''){
+                if(params==''){
+                    params=item.permission;
+                }
+                else{
+                    params=params+'_'+item.permission;
+                }
+            }
+            else{
+                securityToolbar.add(item);
+            }
         });
 
-        params = params.join('_');
-        var securityToolbar = this;
+        if(params==''){
+            return;
+        }
 
         //查询授权
         Ext.Ajax.request({
@@ -37,11 +51,15 @@ Ext.define('kalix.view.components.common.SecurityToolbar', {
                 var resp = Ext.JSON.decode(response.responseText);
                 var respButtons = resp.buttons;
 
-                securityToolbar.add(_.filter(verifyItems, function (item) {
-                    return _.find(respButtons, function (button) {
-                        return button.permission == item.permission;
-                    }).status;
-                }));
+                respButtons.forEach(function(btn){
+                    if(btn.status){
+                        verifyItems.forEach(function(item){
+                            if(btn.permission==item.permission){
+                                securityToolbar.add(item);
+                            }
+                        });
+                    }
+                });
             },
             failure: function (xhr, params) {
                 console.log('Permission call failure!');
