@@ -16,6 +16,7 @@ public class InitActivator implements BundleActivator {
     private static BundleContext context;
     private static Logger logger = Logger.getLogger(InitActivator.class);
     private ServiceReference reference;
+    private HttpService httpService;
 
     @Override
     public void start(BundleContext bundleContext) throws Exception {
@@ -23,7 +24,7 @@ public class InitActivator implements BundleActivator {
         context = bundleContext;
 
         reference = bundleContext.getServiceReference(HttpService.class.getName());
-        HttpService httpService = (HttpService) bundleContext.getService(reference);
+        httpService = (HttpService) bundleContext.getService(reference);
         httpService.registerResources("/kalix/app/notice", "/notice", null);
         httpService.registerResources("/kalix/notice/resources/images", "/resources/images", null);
     }
@@ -31,6 +32,11 @@ public class InitActivator implements BundleActivator {
     @Override
     public void stop(BundleContext bundleContext) throws Exception {
         SystemUtil.succeedPrintln(String.format("Stop %s bundle!!", BUNDLE_NAME));
+
+        if(httpService!=null){
+            httpService.unregister("/kalix/app/notice");
+            httpService.unregister("/kalix/notice/resources/images");
+        }
 
         if (reference != null)
             bundleContext.ungetService(reference);

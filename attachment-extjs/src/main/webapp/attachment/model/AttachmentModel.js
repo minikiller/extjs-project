@@ -10,6 +10,7 @@ Ext.define("kalix.attachment.model.AttachmentModel", {
         {name: 'attachmentName'},
         {name: 'attachmentType'},
         {name: 'attachmentSize'},
-        {name: 'attachmentPath'}
+        {name: 'attachmentPath'},
+        {name: 'uploadDate', type: 'date', dateFormat: 'Y-m-d H:i:s'}
     ]
 });
