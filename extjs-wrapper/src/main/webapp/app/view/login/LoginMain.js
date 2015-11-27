@@ -20,7 +20,7 @@ Ext.define('kalix.view.login.LoginMain', {
     xtype: 'login',
     controller: 'login',
     icon: 'resources/images/lock.png',
-    title: '系统登陆',
+    title: '系统登录',
     id: 'loginForm',
     method: "POST",
     defaultType: 'textfield',
@@ -89,7 +89,7 @@ Ext.define('kalix.view.login.LoginMain', {
     ],
 
     buttons: [{
-        text: '登陆',
+        text: '登录',
         handler: 'onLogin',
         //width:'250',
         //scale: 'large',

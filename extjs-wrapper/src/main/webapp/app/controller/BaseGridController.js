@@ -4,10 +4,10 @@
 Ext.define('kalix.controller.BaseGridController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.baseGridController',
-    storeId:'',
-    cfgForm:'',
-    cfgViewForm:'',
-    cfgModel:'',
+    storeId: '',
+    cfgForm: '',
+    cfgViewForm: '',
+    cfgModel: '',
     onView: function (grid, rowIndex, colIndex) {
         var viewModel = this.getViewModel();
         var selModel = grid.getStore().getData().items[rowIndex];
@@ -55,11 +55,11 @@ Ext.define('kalix.controller.BaseGridController', {
     },
     onDelete: function (grid, rowIndex, colIndex) {
         var model = grid.getStore().getData().items[rowIndex];
-        var store=kalix.getApplication().getStore(this.storeId);
+        var store = kalix.getApplication().getStore(this.storeId);
 
         Ext.Msg.confirm("警告", "确定要删除吗？", function (button) {
             if (button == "yes") {
-                store.proxy.extraParams={};
+                store.proxy.extraParams = {};
                 store.remove(model);
                 store.sync(
                     {
@@ -80,5 +80,10 @@ Ext.define('kalix.controller.BaseGridController', {
                 );
             }
         });
+    },
+
+    addTooltip: function (value, metadata, record, rowIndex, colIndex, store) {
+        metadata.tdAttr = 'data-qtip="' + value + '"';
+        return value;
     }
 });
