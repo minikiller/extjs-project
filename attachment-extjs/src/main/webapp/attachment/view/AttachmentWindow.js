@@ -6,7 +6,8 @@ Ext.define('kalix.attachment.view.AttachmentWindow', {
     requires: [
         'kalix.controller.BaseWindowController',
         'kalix.attachment.viewModel.AttachmentViewModel',
-        'kalix.attachment.view.AttachmentGrid'
+        'kalix.attachment.view.AttachmentGrid',
+        'kalix.attachment.view.AttachmentForm'
     ],
     alias: 'widget.attachmentWindow',
     xtype: "attachmentWindow",
@@ -17,10 +18,14 @@ Ext.define('kalix.attachment.view.AttachmentWindow', {
     },
     layout: 'container',
     defaults: {},
-    items: [{
-        xtype: 'attachmentGrid',
-        margin: 5
-    }
+    items: [
+        {
+            xtype: 'attachmentGrid',
+            margin: 5
+        },
+        {
+            xtype: 'attachmentForm'
+        }
     ],
     listeners: {
         beforeshow: function () {

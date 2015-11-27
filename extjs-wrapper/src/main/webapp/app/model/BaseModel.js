@@ -25,13 +25,13 @@ Ext.define("kalix.model.BaseModel", {
             name: 'createBy'
         },
         {
-            name: 'creationDate', type: 'date', dateFormat: 'Y-m-d H:i:s'
+            name: 'creationDate'
         },
         {
             name: 'updateBy'
         },
         {
-            name: 'updateDate', type: 'date', dateFormat: 'Y-m-d H:i:s'
+            name: 'updateDate'
         }
     ]
 });

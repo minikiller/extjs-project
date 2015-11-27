@@ -42,7 +42,7 @@ Ext.define('kalix.attachment.view.AttachmentGrid', {
             },
             {
                 text: '上传日期',
-                dataIndex: 'creationDate',
+                dataIndex: 'uploadDate',
                 xtype: 'datecolumn',
                 format: 'Y-m-d'
             },
