@@ -85,5 +85,12 @@ Ext.define('kalix.controller.BaseGridController', {
     addTooltip: function (value, metadata, record, rowIndex, colIndex, store) {
         metadata.tdAttr = 'data-qtip="' + value + '"';
         return value;
+    },
+
+    renderMoney: function (val, metadata, record, rowIndex, colIndex, store) {
+        var out = Ext.util.Format.number(val, '0.00');
+        out = '￥' + out + '万元';
+        metadata.tdAttr = 'data-qtip="' + out + '"';
+        return out;
     }
 });
