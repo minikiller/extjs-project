@@ -5,7 +5,9 @@ Ext.define('kalix.attachment.view.AttachmentGrid', {
     extend: 'kalix.view.components.common.BaseGrid',
     requires: [
         'kalix.attachment.controller.AttachmentGridController',
-        'kalix.attachment.store.AttachmentStore'
+        'kalix.attachment.store.AttachmentStore',
+        'kalix.attachment.view.AttachmentForm',
+        'kalix.attachment.view.AttachmentFileField'
     ],
     alias: 'widget.attachmentGrid',
     xtype: 'attachmentGrid',
@@ -17,6 +19,8 @@ Ext.define('kalix.attachment.view.AttachmentGrid', {
     store: {
         type: 'attachmentStore'
     },
+    //scrollable : true,
+    height:460,
     columns: {
         defaults: {flex: 1},
         items: [
@@ -37,23 +41,32 @@ Ext.define('kalix.attachment.view.AttachmentGrid', {
                 dataIndex: 'attachmentName'
             },
             {
-                text: '大小',
+                text: '类型',
                 dataIndex: 'attachmentType'
+            },
+            {
+                text: '大小(MB)',
+                xtype:'templatecolumn',
+                //xtype:'numbercolumn',
+                //dataIndex: 'attachmentSize',
+                tpl:'<tpl>{[(values.attachmentSize/1048576).toFixed(3)]}</tpl>',
             },
             {
                 text: '上传日期',
                 dataIndex: 'uploadDate',
                 xtype: 'datecolumn',
-                format: 'Y-m-d'
+                format: 'Y-m-d H:i'
             },
             {
                 xtype: 'securityGridColumnCommon',
+                flex:0,
+                width:60,
                 items: [
                     {
                         icon: "resources/images/download.png",
                         permission: 'roffice:cmModule:contractMenu:delete',
                         tooltip: '下载',
-                        handler: 'onDelete'
+                        handler: 'onDownload'
                     },
                     {
                         icon: "resources/images/delete.png",
@@ -67,16 +80,12 @@ Ext.define('kalix.attachment.view.AttachmentGrid', {
     },
     tbar: {
         xtype: 'securityToolbar',
+        height:35,
+        padding:'5 0 0 10',
         verifyItems: [
             {
-                text: '上传',
-                xtype: 'filebutton',
-                permission: 'roffice:cmModule:contractMenu:add',
-                bind: {icon: '{add_image_path}'},
-                //handler: 'onUpload',
-                listeners: {
-                    change: 'onChange'
-                }
+                xtype: 'attachmentForm',
+                permission: ''
             }
         ]
     }

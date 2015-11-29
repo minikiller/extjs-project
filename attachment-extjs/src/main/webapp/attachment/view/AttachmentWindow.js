@@ -18,19 +18,22 @@ Ext.define('kalix.attachment.view.AttachmentWindow', {
     },
     layout: 'container',
     defaults: {},
+    height: 550,
     items: [
         {
-            xtype: 'attachmentGrid',
-            margin: 5
-        },
-        {
-            xtype: 'attachmentForm'
+            xtype: 'attachmentGrid'
         }
     ],
     listeners: {
         beforeshow: function () {
             var store = this.items.getAt(0).store;
             var mainId = this.getViewModel().get('rec').id;
+
+            store.on('load', function (target, records, successful, eOpts) {
+                //records.forEach(function(item) {
+                    //item.set('attachmentSize', item.get('attachmentSize') / 1048576);
+                //});
+            });
 
             store.proxy.extraParams = {jsonStr: '{mainId:' + mainId + '}'}
             store.load();
