@@ -21,6 +21,30 @@ Ext.define('kalix.controller.BaseGridController', {
         view.show();
         grid.setSelection(selModel);
     },
+    itemdblclick: function (target, record, item, index, e, eOpts) {
+        var grid = this.getView();
+        var columns = grid.columns;
+        var lastColumn = columns[columns.length - 1];
+
+        if (lastColumn.text == '操作') {
+            var items = lastColumn.items;
+
+            for (var idx = 0; idx < items.length; ++idx) {
+                var item = items[idx];
+
+                if (item.handler == 'onView') {
+                    if (item.hasPermission) {
+                        this.onView(grid, index, 0);
+                    }
+                    else {
+                        Ext.Msg.alert(CONFIG.ALTER_TITLE_INFO, '无查看权限');
+                    }
+
+                    break;
+                }
+            }
+        }
+    },
     /**
      * 打开添加操作.
      */

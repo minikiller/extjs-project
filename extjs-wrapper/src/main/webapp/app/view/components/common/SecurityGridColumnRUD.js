@@ -38,6 +38,9 @@ Ext.define('kalix.view.components.common.SecurityGridColumnRUD', {
                 scope.items[0].icon=scope.iconPath+'_view.png';
                 scope.items[1].icon=scope.iconPath+'_edit.png';
                 scope.items[2].icon=scope.iconPath+'_delete.png';
+                scope.items[0].hasPermission = false;
+                scope.items[1].hasPermission = false;
+                scope.items[2].hasPermission = false;
             }
 
             if (this.permissions.length > 0) {
@@ -57,12 +60,15 @@ Ext.define('kalix.view.components.common.SecurityGridColumnRUD', {
                                 switch (permissionSplit[permissionSplit.length - 1]) {
                                     case 'view':
                                         scope.items[0].getClass = null;
+                                        scope.items[0].hasPermission = true;
                                         break;
                                     case 'edit':
                                         scope.items[1].getClass = null;
+                                        scope.items[0].hasPermission = true;
                                         break;
                                     case 'delete':
                                         scope.items[2].getClass = null;
+                                        scope.items[0].hasPermission = true;
                                         break;
                                 }
                             }
