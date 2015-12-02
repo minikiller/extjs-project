@@ -71,7 +71,7 @@ Ext.define('kalix.view.components.common.BaseComboBox', {
                     if (obj) {
                         var mobj = Ext.create('Ext.data.Model', obj);//we create a new model when we find the target in remote server.
 
-                        store.removeAll();//clear the auto load records,we don't need them for bombobox selection.
+                        store.removeAll();//clear the auto load records,we don't need them for combobox selection.
                         store.add(Ext.create('Ext.data.Model', obj));
                         this.target.setSelection(mobj)
                     }
