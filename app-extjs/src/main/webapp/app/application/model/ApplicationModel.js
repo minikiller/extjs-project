@@ -16,6 +16,7 @@ Ext.define('kalix.app.application.model.ApplicationModel', {
         {name: 'createBy', type: 'string'},
         {name: 'creationDate', type: 'int'},
         {name: 'updateBy', type: 'string'},
-        {name: 'updateDate', type: 'int'}
+        {name: 'updateDate', type: 'int'},
+        {name: 'status', defaultValue: false}
     ]
 });

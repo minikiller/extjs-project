@@ -132,5 +132,30 @@ Ext.define('kalix.app.application.controller.ApplicationGridController', {
                 });
             }
         });
+    },
+    onAppStartStop: function () {
+        var model = arguments[5];
+        var url = '';
+
+        if (model.get('status')) {
+            url = '/kalix/camel/rest/osgi/bundle/stop?id=' + model.get('code');
+        }
+        else {
+            url = '/kalix/camel/rest/osgi/bundle/start?id=' + model.get('code');
+        }
+
+        Ext.Ajax.request({
+            url: url,
+            success: function (response, opts) {
+                var obj = Ext.decode(response.responseText);
+
+                Ext.MessageBox.alert(CONFIG.ALTER_TITLE_SUCCESS, obj.msg);
+            },
+            failure: function (response, opts) {
+                var obj = Ext.decode(response.responseText);
+
+                Ext.MessageBox.alert(CONFIG.ALTER_TITLE_ERROR, obj.msg);
+            }
+        });
     }
 });
