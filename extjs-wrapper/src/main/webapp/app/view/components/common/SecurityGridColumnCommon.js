@@ -31,11 +31,14 @@ Ext.define('kalix.view.components.common.SecurityGridColumnCommon', {
                             return button.permission == item.permission;
                         });
 
-                        if(!findObj.status){
-                            item.getClass=scope.hideColumnFun;
+                        if (findObj.status) {
+                            item.hasPermission = true;
+                        }
+                        else {
+                            item.getClass = scope.hideColumnFun;
+                            item.hasPermission = false;
                         }
                     });
-
                 },
                 failure: function(xhr, params) {
                     console.log('Permission call failure!');

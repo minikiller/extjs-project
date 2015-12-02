@@ -13,6 +13,9 @@ Ext.define('kalix.view.components.common.BaseGrid', {
     xtype: 'baseGrid',
     autoLoad: true,
     stripeRows: true,
+    listeners: {
+        itemdblclick: 'itemdblclick'
+    },
     bbar: [{
         xtype: 'pagingToolBarComponent',
         border: false,
