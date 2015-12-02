@@ -11,7 +11,7 @@ Ext.define('kalix.app.application.store.ApplicationStore', {
     alias: 'store.applicationStore',
     xtype: 'applicationStore',
     storeId: "applicationStore",
-    autoLoad: true,
+    autoLoad: false,
     pageSize: 10,
     proxy: {
         type: "ajax",
