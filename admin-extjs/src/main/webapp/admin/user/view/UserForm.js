@@ -80,7 +80,7 @@ Ext.define('kalix.admin.user.view.UserForm', {
         }, {
           fieldLabel : '手机号',
           labelAlign : 'right',
-          //allowBlank : false,
+          allowBlank : false,
           bind : {
             //activeError : '{validation.mobile}',
             value : '{rec.mobile}'

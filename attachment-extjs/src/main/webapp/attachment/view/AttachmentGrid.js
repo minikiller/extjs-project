@@ -22,14 +22,15 @@ Ext.define('kalix.attachment.view.AttachmentGrid', {
     //scrollable : true,
     height:460,
     columns: {
-        defaults: {flex: 1},
+        defaults: {flex: 1,renderer: 'addTooltip'},
         items: [
             {
                 xtype: "rownumberer",
                 text: "行号",
                 width: 50,
                 flex: 0,
-                align: 'center'
+                align: 'center',
+                renderer:this.update
             },
             {
                 text: '编号',

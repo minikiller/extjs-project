@@ -20,7 +20,7 @@ Ext.define('kalix.admin.user.component.UserComboBox', {
     displayField: 'name',
     queryParam: 'name',
     minChars: 0,
-    forceSelection: true,
+    //forceSelection: true,
     //selectOnFocus:true,
     typeAhead:true,
     store: {

@@ -112,8 +112,8 @@ Ext.define('kalix.controller.BaseGridController', {
     },
 
     renderMoney: function (val, metadata, record, rowIndex, colIndex, store) {
-        var out = Ext.util.Format.number(val, '0.00');
-        out = '￥' + out + '万元';
+        var out = Ext.util.Format.currency(val);
+        out = out + '元';
         metadata.tdAttr = 'data-qtip="' + out + '"';
         return out;
     }

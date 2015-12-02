@@ -1,5 +1,5 @@
 /**
- * @auchor chenyanxu
+ * @author chenyanxu
  */
 
 Ext.JSON.toArray = function (obj) {
