@@ -110,11 +110,16 @@ Ext.define('kalix.controller.BaseGridController', {
         metadata.tdAttr = 'data-qtip="' + value + '"';
         return value;
     },
-
+    //金额格式化
     renderMoney: function (val, metadata, record, rowIndex, colIndex, store) {
         var out = Ext.util.Format.currency(val);
         out = out + '元';
         metadata.tdAttr = 'data-qtip="' + out + '"';
         return out;
+    },
+    //百分比格式化
+    renderPercent: function (val, metadata, record, rowIndex, colIndex, store) {
+        var percentage = (val * 100).toFixed(2)+'%';
+        return percentage;
     }
 });
