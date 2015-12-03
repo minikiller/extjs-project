@@ -134,6 +134,7 @@ Ext.define('kalix.app.application.controller.ApplicationGridController', {
         });
     },
     onAppStartStop: function () {
+        var store = arguments[0].getStore()
         var model = arguments[5];
         var url = '';
 
@@ -146,9 +147,11 @@ Ext.define('kalix.app.application.controller.ApplicationGridController', {
 
         Ext.Ajax.request({
             url: url,
+            scope: {store: store},
             success: function (response, opts) {
                 var obj = Ext.decode(response.responseText);
 
+                store.load();
                 Ext.MessageBox.alert(CONFIG.ALTER_TITLE_SUCCESS, obj.msg);
             },
             failure: function (response, opts) {
