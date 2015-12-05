@@ -20,7 +20,7 @@ public class InitActivator implements BundleActivator {
 
     @Override
     public void start(BundleContext bundleContext) throws Exception {
-        SystemUtil.succeedPrintln(String.format("Start-up %s bundle!!", BUNDLE_NAME));
+        SystemUtil.succeedPrintln(String.format("Start-up %s bundle!!"+bundleContext.getBundle(), BUNDLE_NAME));
         context = bundleContext;
 
         reference = bundleContext.getServiceReference(HttpService.class.getName());
