@@ -37,7 +37,7 @@ Ext.define('kalix.app.application.view.ApplicationGrid', {
                     var obj = Ext.decode(response.responseText);
 
                     records.forEach(function (record) {
-                        if (obj.appStatus[record.get('code')]) {
+                        if (obj[record.get('code')]) {
                             record.set('status', true);
                         }
                         else {

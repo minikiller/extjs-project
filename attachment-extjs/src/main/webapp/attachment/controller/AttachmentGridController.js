@@ -81,7 +81,7 @@ Ext.define('kalix.attachment.controller.AttachmentGridController', {
                 });
 
 
-                store.proxy.extraParams = {};
+                //store.proxy.extraParams = {};
                 store.remove(model);
                 store.sync(
                     {
