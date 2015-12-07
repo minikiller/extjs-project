@@ -1,3 +1,8 @@
+.x-action-col-icon{
+    width:16px;
+    height:16px;
+    cursor: pointer;
+}
 .kalix_start {
     background-image: url(/kalix/admin/resources/images/control_play_blue.png) !important;
 }
