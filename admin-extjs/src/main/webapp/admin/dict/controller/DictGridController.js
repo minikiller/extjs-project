@@ -22,7 +22,7 @@ Ext.define('kalix.admin.dict.controller.DictGridController', {
             border: false,
             modal: true,
             //resizable:false,
-            icon: 'admin/resources/images/book_add.png',
+            icon: 'admin/resources/images/dict_add.png',
             title: this.getView().getViewModel().get("addTitle"),
             items: [addFormPanel]
         });
@@ -56,7 +56,7 @@ Ext.define('kalix.admin.dict.controller.DictGridController', {
             border: false,
             modal: true,
             //resizable:false,
-            icon: 'admin/resources/images/book_edit.png',
+            icon: 'admin/resources/images/dict_edit.png',
             title: this.getView().getViewModel().get("editTitle"),
             items: [editFormPanel]
         });

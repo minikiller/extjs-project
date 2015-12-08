@@ -6,16 +6,10 @@
  * @version 1.0.0
  */
 Ext.define('kalix.admin.role.model.RoleModel', {
-    extend: 'Ext.data.Model',
+    extend: 'kalix.model.BaseModel',
     fields: [
-        {name: 'id', type: 'string'},
         {name: 'name', type: 'string'},
         {name: 'remark', type: 'string'},
-        {name: 'createBy', type: 'string'},
-        {name: 'creationDate', type: 'int'},
-        {name: 'updateBy', type: 'string'},
-        {name: 'updateDate', type: 'int'},
-        {name: 'app', type: 'string'},
-        {name: 'version', type: 'int'},
+        {name: 'app', type: 'string'}
     ]
 });

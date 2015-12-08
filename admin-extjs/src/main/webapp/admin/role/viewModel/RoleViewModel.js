@@ -7,19 +7,20 @@
  */
 Ext.define('kalix.admin.role.viewModel.RoleViewModel', {
     extend: 'Ext.app.ViewModel',
-    requires: [
-        'kalix.admin.role.store.RoleStore'
-    ],
     alias: 'viewmodel.roleViewModel',
     data: {
-        addTitle: '新增角色',
-        editTitle: '编辑角色',
+        rec: null,
+        validation: {},  //验证错误信息
+        icon: '',
+        title: '',
+        view_operation: false,
+        view_title: '查看角色',
+        add_title: '添加角色',
+        edit_title: '修改角色',
+        add_image_path: '/kalix/admin/resources/images/user_add.png',
+        view_image_path: '/kalix/admin/resources/images/user_view.png',
+        edit_image_path: '/kalix/admin/resources/images/user_edit.png',
         url: '/kalix/camel/rest/roles',
         authorizationUrl: '/kalix/camel/rest/roles/authorizations'
     }
-    //stores: {
-    //    roleStore: {
-    //        type: 'roleStore'
-    //    }
-    //}
 });

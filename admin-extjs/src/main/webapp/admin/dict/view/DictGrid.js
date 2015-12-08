@@ -66,10 +66,10 @@ Ext.define('kalix.admin.dict.view.DictGrid', {
     ],
     tbar: [
         {
-            text: '添加', icon: 'admin/resources/images/book_add.png', handler: 'onAdd'
+            text: '添加', icon: 'admin/resources/images/dict_add.png', handler: 'onAdd'
         }, "-",
         {
-            text: '批量删除', icon: 'admin/resources/images/book_delete.png', handler: 'onDeleteAll'
+            text: '批量删除', icon: 'admin/resources/images/dict_delete.png', handler: 'onDeleteAll'
         }, "-"]
 
 });

@@ -22,6 +22,15 @@ Ext.define('kalix.admin.user.controller.UserGridController', {
     },
     //修改密码
     onKey: function (grid, rowIndex, colIndex) {
+        var viewModel = this.getViewModel();
+        var selModel = grid.getStore().getData().items[rowIndex];
 
+        var view = Ext.create('kalix.admin.user.view.UserKeyWindow');
+        var vm = view.lookupViewModel();
+        vm.set('rec', selModel);
+        vm.set('icon', viewModel.get('key_image_path'));
+        vm.set('title', viewModel.get('key_title'));
+        view.show();
+        grid.setSelection(selModel);
     }
 });

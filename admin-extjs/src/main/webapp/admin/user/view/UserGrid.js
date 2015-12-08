@@ -123,7 +123,7 @@ Ext.define('kalix.admin.user.view.UserGrid', {
                     },{
                         icon: "/kalix/admin/resources/images/user_key.png",
                         permission: 'admin:permissionModule:userMenu:key',
-                        tooltip: '修改密码',
+                        tooltip: '重置密码',
                         handler: 'onKey',
                     }]
             }
