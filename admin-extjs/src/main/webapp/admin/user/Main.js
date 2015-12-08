@@ -1,28 +1,29 @@
 /**
- * 用户组件
+ * 用户首页
  *
- * @author majian <br/>
- *         date:2015-6-18
+ * @author
  * @version 1.0.0
  */
 Ext.define('kalix.admin.user.Main', {
-    extend: 'Ext.container.Container',
+    extend: 'kalix.container.BaseContainer',
     requires: [
-        'kalix.admin.user.store.UserStore',  //用户模型集合
         'kalix.admin.user.view.UserGrid',
-        'kalix.admin.user.view.UserSearchForm'
+        'kalix.admin.user.view.UserSearchForm',
+        'kalix.admin.user.viewModel.UserViewModel'
     ],
+    storeId: 'userStore',
+    viewModel: 'userViewModel',
     items: [
         {
-            xtype:'userSearchForm'
-        },{
+            title: '用户查询',
+            iconCls: 'x-fa fa-search',
+            xtype: 'userSearchForm'
+        }, {
             xtype: 'userGridPanel',
             id: 'userGridPanel',
             title: '用户列表',
-            margin: 10,
-            store: {
-                type: 'userStore'
-            }
+            iconCls: 'x-fa fa-user',
+            margin: 10
         }
     ]
 });
