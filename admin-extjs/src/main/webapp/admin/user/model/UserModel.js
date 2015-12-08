@@ -10,16 +10,7 @@
 Ext.define('kalix.admin.user.model.UserModel', {
     extend: 'kalix.model.BaseModel',
 
-    //ext 在创建模型时，会自动生成 id， 而且此行为不能取消
-    //未找到相关设置
-    //因为 id 应该是由服务端生成的，所以指定 idProperty 为一个无效的键 _id 来解决此问题
-    //todo 检测此项设置是会否对关联 store 有影响
-    idProperty: '_id',
-
     fields: [{
-        name: 'id',
-        type: 'string'
-    }, {
         name: 'loginName',
         type: 'string'
     }, {
@@ -82,7 +73,7 @@ Ext.define('kalix.admin.user.model.UserModel', {
             type: 'presence',
             message: '姓名不能为空!'
         }
-        ],
+        ]/*,
         password: [{
             type: 'presence',
             message: '密码不能为空!'
@@ -92,7 +83,7 @@ Ext.define('kalix.admin.user.model.UserModel', {
             type: 'presence',
             message: '确认密码不能为空!'
         }
-        ],
+        ]*/,
         email: [{
             type: 'presence',
             message: '邮箱不能为空!'
@@ -117,23 +108,22 @@ Ext.define('kalix.admin.user.model.UserModel', {
             message: '手机号码格式不正确!'
         }
         ]
-    },
-
-    //需要提交给服务端的模型 key
-    serverKeys: [
-        'id',
-        'available',
-        'email',
-        'loginName',
-        'mobile',
-        'name',
-        'password',
-        'phone',
-        'version'
-    ],
-
-    //需要提交给服务端的 JSON 数据
-    toServerJSON: function () {
-        return Ext.JSON.encode(_.pick(this.getData(), this.serverKeys));
     }
+});
+
+//custom validation field that depends on another fields
+Ext.apply(Ext.form.field.VTypes, {
+    password: function(val, field) {
+        var parentForm = field.up('form'); // get parent form
+
+        // get the form's values
+        var formValues = parentForm.getValues();
+
+        // get the value from the configured 'First Password' field
+        var firstPasswordValue = formValues[field.firstPasswordFieldName];
+
+        // return true if they match
+        return val === firstPasswordValue;
+    },
+    passwordText: '两次输入的密码不一致!'
 });

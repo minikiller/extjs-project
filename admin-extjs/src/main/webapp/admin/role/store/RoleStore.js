@@ -11,15 +11,5 @@ Ext.define('kalix.admin.role.store.RoleStore', {
     alias: 'store.roleStore',
     xtype: 'roleStore',
     storeId: "roleStore",
-    autoLoad: true,
-    pageSize: 10,
-    proxy: {
-        type: "ajax",
-        url: '/kalix/camel/rest/roles',
-        reader: {
-            type: "json",
-            rootProperty: "data",
-            totalProperty: 'totalCount'
-        }
-    }
+    proxyUrl: '/kalix/camel/rest/roles'
 });

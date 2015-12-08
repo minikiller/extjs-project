@@ -5,87 +5,89 @@
  * @version 1.0.0
  */
 Ext.define('kalix.admin.role.view.RoleGrid', {
-    extend: 'Ext.grid.Panel',
+    extend: 'kalix.view.components.common.BaseGrid',
     requires: [
-        'kalix.admin.role.viewModel.RoleViewModel',
-        'kalix.admin.role.controller.RoleGridController'
+        'kalix.admin.role.controller.RoleGridController',
+        'kalix.admin.role.store.RoleStore',
     ],
     alias: 'widget.roleGrid',
     xtype: 'roleGridPanel',
-    controller: 'roleGridController',
-    viewModel: {
-        type: 'roleViewModel'
+    controller: {
+        type: 'roleGridController',
+        storeId: 'roleStore',
+        cfgForm: 'kalix.admin.role.view.RoleWindow',
+        cfgViewForm: 'kalix.admin.role.view.RoleViewWindow',
+        cfgModel: 'kalix.admin.role.model.RoleModel'
     },
-    autoLoad: true,
-    stripeRows: true,
-    manageHeight: true,
-    //selModel: {selType: 'checkboxmodel', mode: "SIMPLE"},
-    //bind: {
-    //    store: '{roleStore}'
-    //},
-    //bbar: [{
-    //    xtype: 'pagingToolBarComponent',
-    //    bind: {
-    //        store: '{roleStore}'
-    //    }
-    //}],
-    columns: [
-        {
-            xtype: "rownumberer",
-            text: "行号",
-            width: 50,
-            align: 'center'
-        },
-        {text: '编号', dataIndex: 'id', hidden: true},
-        {text: '所属应用', dataIndex: 'app', flex: 0.5},
-        {text: '名称', dataIndex: 'name', flex: 1},
-        {text: '备注', dataIndex: 'remark', flex: 1},
-        {text: '创建人', dataIndex: 'createBy', flex: 0.5},
-        /*{
-            text: '创建日期', dataIndex: 'creationDate', flex: 2, renderer: function (value) {
-            var createDate = new Date(value);
-            return createDate.format("yyyy-MM-dd hh:mm:ss");
-        }
-        },*/
-        {text: '更新人', dataIndex: 'updateBy', flex: 0.5},
-        /*{
-            text: '更新日期', dataIndex: 'updateDate', flex: 2,
-            renderer: function (value) {
-            var updateDate = new Date(value);
-            return updateDate.format("yyyy-MM-dd hh:mm:ss");
-        }
-        },*/
-        {
-            header: '操作',
-            flex: 0.5,
-            xtype: "actioncolumn",
-            items: [{
-                icon: "admin/resources/images/pencil.png",
-                tooltip: '编辑',
-                handler: 'onEdit'
-            }, {
-                icon: "admin/resources/images/cancel.png",
-                tooltip: '删除',
-                handler: 'onDelete'
-            }, {
-                icon: "admin/resources/images/group_add.png",
-                tooltip: '添加用户',
-                handler: 'onAddUser'
+    store: {
+        type: 'roleStore'
+    },
+    columns: {
+        defaults: {flex: 1, renderer: 'addTooltip'},
+        items: [
+            {
+                xtype: "rownumberer",
+                text: "行号",
+                width: 50,
+                align: 'center',
+                flex:0,
+                renderer: this.update
+            },
+            {text: '编号', dataIndex: 'id', hidden: true},
+            {text: '所属应用', dataIndex: 'app',flex:0.5},
+            {text: '名称', dataIndex: 'name'},
+            {text: '备注', dataIndex: 'remark'},
+            {text: '创建人', dataIndex: 'createBy'},
+            {
+                text: '创建日期', dataIndex: 'creationDate', renderer: function (value) {
+                var createDate = new Date(value);
+                return createDate.format("yyyy-MM-dd hh:mm:ss");
+            }
+            },
 
-            }, {
-                icon: "admin/resources/images/application_add.png",
-                tooltip: '权限分配',
-                handler: 'onAuthorization'
+            {
+                xtype: 'securityGridColumnCommon',
+                items: [
+                    {
+                        icon: "resources/images/read.png",
+                        permission: 'admin:permissionModule:roleMenu:view',
+                        tooltip: '查看',
+                        handler: 'onView'
+                    },
+                    {
+                        icon: "resources/images/edit.png",
+                        permission: 'admin:permissionModule:roleMenu:edit',
+                        tooltip: '编辑',
+                        handler: 'onEdit'
+                    }, {
+                        icon: "resources/images/delete.png",
+                        permission: 'admin:permissionModule:roleMenu:delete',
+                        tooltip: '删除',
+                        handler: 'onDelete'
+                    }, {
+                        icon: "admin/resources/images/group_add.png",
+                        permission: 'admin:permissionModule:roleMenu:addUser',
+                        tooltip: '添加用户',
+                        handler: 'onAddUser',
+                    }, {
+                        icon: "admin/resources/images/application_add.png",
+                        permission: 'admin:permissionModule:roleMenu:auth',
+                        tooltip: '权限分配',
+                        handler: 'onAuthorization'
+                    }]
             }]
-        }
-    ],
-    tbar: [
-        {
-            text: '添加', icon: 'admin/resources/images/user_add.png', handler: 'onAdd'
-        }, "-",
-        {
-            text: '批量删除', icon: 'admin/resources/images/user_delete.png', handler: 'onDeleteAll'
-        }, "-"
-    ]
+    },
+    tbar: {
+        xtype: 'securityToolbar',
+        verifyItems: [
+            {
+                text: '添加',
+                xtype: 'button',
+                permission: 'admin:permissionModule:roleMenu:add',
+                bind: {icon: '{add_image_path}'},
+                handler: 'onAdd'
+            }
+        ]
+    }
 
 });

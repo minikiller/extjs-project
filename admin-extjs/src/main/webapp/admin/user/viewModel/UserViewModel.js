@@ -1,26 +1,26 @@
 /**
- * 角色视图模型
+ * 用户模型
  *
- * @author majian <br/>
- *         date:2015-7-10
+ * @author
  * @version 1.0.0
  */
-Ext.define('kalix.admin.role.viewModel.RoleViewModel', {
+
+Ext.define('kalix.admin.user.viewModel.UserViewModel', {
     extend: 'Ext.app.ViewModel',
-    alias: 'viewmodel.roleViewModel',
+    alias: 'viewmodel.userViewModel',
     data: {
         rec: null,
         validation: {},  //验证错误信息
         icon: '',
         title: '',
         view_operation: false,
-        view_title: '查看角色',
-        add_title: '添加角色',
-        edit_title: '修改角色',
+        view_title: '查看用户',
+        add_title: '添加用户',
+        edit_title: '修改用户',
+        key_title: '重置密码',
         add_image_path: '/kalix/admin/resources/images/user_add.png',
         view_image_path: '/kalix/admin/resources/images/user_view.png',
         edit_image_path: '/kalix/admin/resources/images/user_edit.png',
-        url: '/kalix/camel/rest/roles',
-        authorizationUrl: '/kalix/camel/rest/roles/authorizations'
+        key_image_path: '/kalix/admin/resources/images/user_key.png'
     }
 });

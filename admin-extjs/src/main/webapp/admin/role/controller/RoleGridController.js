@@ -6,87 +6,10 @@
  * @version 1.0.0
  */
 Ext.define('kalix.admin.role.controller.RoleGridController', {
-    extend: 'Ext.app.ViewController',
+    extend: 'kalix.controller.BaseGridController',
+    requires: 'kalix.admin.user.view.UserAddItemSelector',
     alias: 'controller.roleGridController',
-    requires: [
-        'kalix.admin.user.view.UserAddItemSelector'
-    ],
-    /**
-     * 打开新增操作.
-     * @returns {Ext.panel.Panel}
-     */
-    onAdd: function () {
-        var addFormPanel = Ext.create('kalix.admin.role.view.RoleAddForm', {
-            url: this.getView().getViewModel().get("url")
-        });
-        var win = Ext.create('Ext.Window', {
-            width: 400,
-            //height: 195,
-            border: false,
-            modal: true,
-            //resizable:false,
-            icon: 'admin/resources/images/book_add.png',
-            title: this.getView().getViewModel().get("addTitle"),
-            items: [addFormPanel]
-        });
 
-        win.show();
-    },
-    /**
-     * 打开编辑操作.
-     * @param grid
-     * @param rowIndex
-     * @param colIndex
-     */
-    onEdit: function (grid, rowIndex, colIndex) {
-        var rec = grid.getStore().getAt(rowIndex);
-        var editFormPanel = Ext.create('kalix.admin.role.view.RoleEditForm', {
-            url: this.getView().getViewModel().get("url")
-        });
-        editFormPanel.loadRecord(rec);
-
-        var win = Ext.create('Ext.Window', {
-            width: 400,
-            //height: 195,
-            border: false,
-            modal: true,
-            //resizable:false,
-            icon: 'admin/resources/images/book_edit.png',
-            title: this.getView().getViewModel().get("editTitle"),
-            items: [editFormPanel]
-        });
-
-        win.show();
-    },
-    /**
-     * 保存添加信息
-     */
-    onSaveAddUser: function (roleUserUrl, userAddForm, rec) {
-        if (userAddForm != null && userAddForm.isValid()) {
-            var userIds = userAddForm.down("#userAddItemSelector").getValue();
-            var roleId = rec.data.id;
-            Ext.Ajax.request({
-                url: roleUserUrl,
-                paramsAsJson: true,
-                params: {
-                    "roleId": roleId,
-                    "userIds": userIds.join(',')
-                },
-                method: "GET",
-                callback: function (options, success, response) {
-                    var resp = Ext.JSON.decode(response.responseText);
-                    if (resp != null && resp.success) {
-                        Ext.MessageBox.alert(CONFIG.ALTER_TITLE_INFO, resp.msg);
-                    } else {
-                        Ext.MessageBox.alert(CONFIG.ALTER_TITLE_FAILURE, resp.msg);
-                    }
-                }
-            });
-        }
-    },
-    /**
-     * 添加用户.
-     */
     onAddUser: function (grid, rowIndex, colIndex) {
         var rec = grid.getStore().getAt(rowIndex);
         if (rec == null) {
@@ -96,7 +19,6 @@ Ext.define('kalix.admin.role.controller.RoleGridController', {
 
         var win = Ext.create('Ext.Window', {
             width: 710,
-            //height: 460,
             border: false,
             modal: true,
             //resizable:false,
@@ -117,7 +39,7 @@ Ext.define('kalix.admin.role.controller.RoleGridController', {
             target: win
         });
         loadMask.show();
-        var roleUserUrl = this.getView().getViewModel().get("url") + "/roleUsers";
+        var roleUserUrl = "/kalix/camel/rest/roles/roleUsers";
         var me = this;
         //获得已选用户
         Ext.Ajax.request({
@@ -161,81 +83,28 @@ Ext.define('kalix.admin.role.controller.RoleGridController', {
             }
         });
     },
-    /**
-     * 批量删除操作.
-     */
-    onDeleteAll: function () {
-        var selModel = Ext.getCmp("roleDataGrid").getSelectionModel();
-        if (selModel.hasSelection()) {
-            Ext.Msg.confirm("警告", "确定要删除吗？", function (button) {
-                if (button == "yes") {
-                    var rows = selModel.getSelection();
-                    var ids = "";
-                    for (var i = 0; i < rows.length; i++) {
-                        if (rows[i] != null && rows[i].id != null) {
-                            ids += rows[i].id;
-                            if (i + 1 != rows.length) {
-                                ids += "_";
-                            }
-                        }
+    onSaveAddUser: function (roleUserUrl, userAddForm, rec) {
+        if (userAddForm != null && userAddForm.isValid()) {
+            var userIds = userAddForm.down("#userAddItemSelector").getValue();
+            var roleId = rec.data.id;
+            Ext.Ajax.request({
+                url: roleUserUrl,
+                paramsAsJson: true,
+                params: {
+                    "roleId": roleId,
+                    "userIds": userIds.join(',')
+                },
+                method: "GET",
+                callback: function (options, success, response) {
+                    var resp = Ext.JSON.decode(response.responseText);
+                    if (resp != null && resp.success) {
+                        Ext.MessageBox.alert(CONFIG.ALTER_TITLE_INFO, resp.msg);
+                    } else {
+                        Ext.MessageBox.alert(CONFIG.ALTER_TITLE_FAILURE, resp.msg);
                     }
-                    Ext.Ajax.request({
-                        url: "/userDeleteAllServlet?ids=" + ids,
-                        method: "GET",
-                        callback: function (options, success, response) {
-                            var resp = Ext.JSON.decode(response.responseText);
-                            Ext.MessageBox.alert(CONFIG.ALTER_TITLE_INFO, resp.msg);
-                            if (resp.success) {
-                                //var username = Ext.getCmp("username").getValue();
-                                //var name = Ext.getCmp("name").getValue();
-                                //var sex = Ext.getCmp("sex").getValue();
-                                //var status = Ext.getCmp("status").getValue();
-                                //var grid = Ext.getCmp("userDataGrid");
-                                //var store = grid.getStore();
-                                //store.reload({
-                                //    params: {
-                                //        start: 0,
-                                //        limit: pageSize,
-                                //        username: username,
-                                //        name: name,
-                                //        sex: sex,
-                                //        status: status
-                                //    }
-                                //});
-                            }
-                        }
-                    });
                 }
             });
-        } else {
-            Ext.Msg.alert(CONFIG.ALTER_TITLE_ERROR, "请选择要删除的记录！");
         }
-    },
-    /**
-     * 删除单个操作.
-     * @param grid
-     * @param rowIndex
-     * @param colIndex
-     */
-    onDelete: function (grid, rowIndex, colIndex) {
-        var rec = grid.getStore().getAt(rowIndex);
-        var deleteUrl = this.getView().getViewModel().get("url");
-        Ext.Msg.confirm("警告", "确定要删除吗？", function (button) {
-            if (button == "yes") {
-                Ext.Ajax.request({
-                    url: deleteUrl + "?id=" + rec.id,
-                    method: 'DELETE',
-                    callback: function (options, success, response) {
-                        var resp = Ext.JSON.decode(response.responseText);
-                        Ext.MessageBox.alert(CONFIG.ALTER_TITLE_INFO, resp.msg);
-                        if (resp.success) {
-                            var store = grid.getStore();
-                            store.reload();
-                        }
-                    }
-                });
-            }
-        });
     },
     /**
      * 授权
@@ -244,11 +113,10 @@ Ext.define('kalix.admin.role.controller.RoleGridController', {
      * @param colIndex
      */
     onAuthorization: function (grid, rowIndex, colIndex) {
-        var authorizationWindow = Ext.create('kalix.app.components.AuthorizationWindow'
-            );
+        var authorizationWindow = Ext.create('kalix.app.components.AuthorizationWindow');
         var rec = grid.getStore().getAt(rowIndex);
         authorizationWindow.roleId = rec.data.id;
-        authorizationWindow.authorizationUrl = this.getView().getViewModel().get("authorizationUrl");
+        authorizationWindow.authorizationUrl = this.getView().lookupViewModel().get("authorizationUrl");
         authorizationWindow.show();
         var store = authorizationWindow.down("#authorizationTree").getStore();
         store.setProxy({
@@ -257,4 +125,7 @@ Ext.define('kalix.admin.role.controller.RoleGridController', {
         });
         store.reload();
     }
+
 });
+
+

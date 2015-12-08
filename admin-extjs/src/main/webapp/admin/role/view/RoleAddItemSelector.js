@@ -9,7 +9,6 @@ Ext.define('kalix.admin.role.view.RoleAddItemSelector', {
     extend: 'Ext.ux.form.ItemSelector',
     xtype: 'roleAddItemSelector',
     anchor: '100%',
-    //imagePath: '/core-web/ext-5.1.0/ux/css/images/',
     displayField: 'name',
     valueField: 'id',
     //allowBlank: false,

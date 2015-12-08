@@ -3,19 +3,10 @@
  */
 
 Ext.define('kalix.admin.user.view.UserSearchForm', {
-    extend: 'Ext.form.Panel',
-    requires: [
-        'kalix.admin.user.controller.UserController'
-    ],
+    extend: 'kalix.view.components.common.BaseSearchForm',
     alias: 'widget.userSearchForm',
     xtype: 'userSearchForm',
-    controller: 'userController',
-    title: '用户查询',
-    bodyPadding: 10,
-    layout: 'column',
-    margin: 10,
-    method: "POST",
-    url: 'login',
+    storeId: 'userStore',
     items: [
         {
                 xtype: 'textfield',
@@ -31,7 +22,7 @@ Ext.define('kalix.admin.user.view.UserSearchForm', {
                 labelWidth: 40,
                 width: 200,
                 name: 'name'
-            }, {
+            } /*,{
                 xtype: 'combobox',
                 fieldLabel: '状态',
                 labelAlign: 'right',
@@ -44,12 +35,6 @@ Ext.define('kalix.admin.user.view.UserSearchForm', {
                     ['1', '启用'],
                     ['0', '停用']
                 ]
-            }, {
-                xtype: 'button',
-                text: '查询',
-                margin: '0 0 0 10',
-                handler: 'onSearch',
-                glyph: 'xf002@FontAwesome',
-            }
+            }*/
             ]
 });

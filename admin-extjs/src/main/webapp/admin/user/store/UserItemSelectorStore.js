@@ -10,6 +10,7 @@ Ext.define('kalix.admin.user.store.UserItemSelectorStore', {
     model: 'kalix.admin.user.model.UserModel',
     alias: 'store.userItemSelectorStore',
     xtype: 'userItemSelectorStore',
+    pageSize: 0,
     autoLoad: true,
     fields: ['id', 'name'],
     proxy: {
