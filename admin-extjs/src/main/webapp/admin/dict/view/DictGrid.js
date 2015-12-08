@@ -5,71 +5,68 @@
  * @version 1.0.0
  */
 Ext.define('kalix.admin.dict.view.DictGrid', {
-    extend: 'Ext.grid.Panel',
+    extend: 'kalix.view.components.common.BaseGrid',
     requires: [
-        'kalix.admin.dict.viewModel.DictViewModel',
-        'kalix.admin.dict.controller.DictGridController'
+        'kalix.admin.dict.controller.DictGridController',
+        'kalix.admin.dict.store.DictStore',
     ],
     alias: 'widget.dictGrid',
     xtype: 'dictGridPanel',
-    controller: 'dictGridController',
-    viewModel: {
-        type: 'dictViewModel'
+    controller: {
+        type: 'dictGridController',
+        storeId: 'dictStore',
+        cfgForm: 'kalix.admin.dict.view.DictWindow',
+        cfgViewForm: 'kalix.admin.dict.view.DictViewWindow',
+        cfgModel: 'kalix.admin.dict.model.DictModel'
     },
-    autoLoad: true,
-    stripeRows: true,
-    manageHeight: true,
-    //selModel: {selType: 'checkboxmodel', mode: "SIMPLE"},
-    columns: [
-        {
-            xtype: "rownumberer",
-            text: "行号",
-            width: 50,
-            align:'center'
-        },
-        {text: '编号', dataIndex: 'id',hidden:true},
-        {text: '标签名', dataIndex: 'label', flex: 1},
-        {text: '数据值', dataIndex: 'value', flex: 1},
-        {text: '类型', dataIndex: 'type', flex: 1},
-        {text: '排序', dataIndex: 'sort', flex: 1},
-        {text: '创建人', dataIndex: 'createBy', flex: 1},
-        {
-            text: '创建日期', dataIndex: 'creationDate', flex: 1,
-            renderer: function (value) {
-                var createDate = new Date(value);
-                return createDate.format("yyyy-MM-dd hh:mm:ss");
-            }
-        },
-        {text: '更新人', dataIndex: 'updateBy', flex: 1},
-        {
-            text: '更新日期', dataIndex: 'updateDate', flex: 1,
-            renderer: function (value) {
-                var updateDate = new Date(value);
-                return updateDate.format("yyyy-MM-dd hh:mm:ss");
-            }
-        },
-        {
-            header: '操作',
-            flex: 1,
-            xtype: "actioncolumn",
-            items: [{
-                icon: "admin/resources/images/pencil.png",
-                tooltip: '编辑',
-                handler: 'onEdit'
-            }, {
-                icon: "admin/resources/images/cancel.png",
-                tooltip: '删除',
-                handler: 'onDelete'
-
+    store: {
+        type: 'dictStore'
+    },
+    columns: {
+        defaults: {flex: 1, renderer: 'addTooltip'},
+        items: [
+            {
+                xtype: "rownumberer",
+                text: "行号",
+                width: 50,
+                flex: 0,
+                align: 'center',
+                renderer: this.update
+            },
+            {text: '编号', dataIndex: 'id', hidden: true},
+            {text: '标签名', dataIndex: 'label'},
+            {text: '数据值', dataIndex: 'value'},
+            {text: '类型', dataIndex: 'type'},
+            {text: '排序', dataIndex: 'sort'},
+            {text: '创建人', dataIndex: 'createBy', flex: 1},
+            {
+                text: '创建日期', dataIndex: 'creationDate', flex: 1,
+                renderer: function (value) {
+                    var createDate = new Date(value);
+                    return createDate.format("yyyy-MM-dd hh:mm:ss");
+                }
+            },
+            {
+                xtype: 'securityGridColumnRUD',
+                permissions: [
+                    'admin:sysModule:dictMenu:view',
+                    'admin:sysModule:dictMenu:edit',
+                    'admin:sysModule:dictMenu:delete'
+                ]
             }]
-        }
-    ],
-    tbar: [
-        {
-            text: '添加', icon: 'admin/resources/images/dict_add.png', handler: 'onAdd'
-        }, "-",
-        {
-            text: '批量删除', icon: 'admin/resources/images/dict_delete.png', handler: 'onDeleteAll'
-        }, "-"]
+    },
+    tbar: {
+        xtype: 'securityToolbar',
+        verifyItems: [
+            {
+                text: '添加',
+                tooltip: '添加字典',
+                xtype: 'button',
+                permission: 'admin:sysModule:dictMenu:add',
+                bind: {icon: '{add_image_path}'},
+                handler: 'onAdd'
+            }
+        ]
+    }
 
 });

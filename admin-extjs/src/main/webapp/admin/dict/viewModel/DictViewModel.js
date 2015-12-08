@@ -7,13 +7,18 @@
  */
 Ext.define('kalix.admin.dict.viewModel.DictViewModel', {
     extend: 'Ext.app.ViewModel',
-    requires: [
-        'kalix.admin.dict.store.DictStore'
-    ],
     alias: 'viewmodel.dictViewModel',
     data: {
-        addTitle: '新增字典',
-        editTitle: '编辑字典',
-        url: '/kalix/camel/rest/dicts'
+        rec: null,
+        validation: {},  //验证错误信息
+        icon: '',
+        title: '',
+        view_operation: false,
+        view_title: '查看字典',
+        add_title: '添加字典',
+        edit_title: '修改字典',
+        add_image_path: '/kalix/admin/resources/images/dict_add.png',
+        view_image_path: '/kalix/admin/resources/images/dict_view.png',
+        edit_image_path: '/kalix/admin/resources/images/dict_edit.png',
     }
 });
