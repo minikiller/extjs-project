@@ -18,7 +18,6 @@ Ext.define('kalix.app.application.store.ApplicationStore', {
         url: '/kalix/camel/rest/applications',
         reader: {
             type: "json",
-            rootProperty: "data",
             totalProperty: 'totalCount'
         }
     }

@@ -8,18 +8,8 @@
 Ext.define('kalix.admin.workgroup.store.WorkGroupStore', {
     extend: 'kalix.store.BaseStore',
     model: 'kalix.admin.workgroup.model.WorkGroupModel',
-    alias: 'store.workGroupStore',
-    xtype: 'workGroupStore',
-    storeId: "workGroupStore",
-    autoLoad: true,
-    pageSize: 10,
-    proxy: {
-        type: "ajax",
-        url: '/kalix/camel/rest/workGroups',
-        reader: {
-            type: "json",
-            rootProperty: "data",
-            totalProperty: 'totalCount'
-        }
-    }
+    alias: 'store.workgroupStore',
+    xtype: 'workgroupStore',
+    storeId: "workgroupStore",
+    proxyUrl: '/kalix/camel/rest/workgroups'
 });

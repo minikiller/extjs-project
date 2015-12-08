@@ -18,6 +18,7 @@ Ext.define('kalix.app.components.AuthorizationWindow', {
     },
     title: "权限分配",
     layout: 'form',
+    buttonAlign: 'center',
     items: [{
         itemId: 'authorizationTree',
         xtype: 'treepanel',
@@ -84,10 +85,11 @@ Ext.define('kalix.app.components.AuthorizationWindow', {
                     callback: function (options, success, response) {
                         var resp = Ext.JSON.decode(response.responseText);
                         if (resp != null && resp.success) {
-                            Ext.MessageBox.alert(CONFIG.ALTER_TITLE_INFO, resp.msg);
+                            kalix.core.Notify.success(resp.msg, CONFIG.ALTER_TITLE_SUCCESS);
                         } else {
-                            Ext.MessageBox.alert(CONFIG.ALTER_TITLE_FAILURE, resp.msg);
+                            Ext.Msg.alert(CONFIG.ALTER_TITLE_FAILURE, resp.msg);
                         }
+                        Ext.ComponentQuery.query('authorizationWindow')[0].close();
                     }
                 });
             }

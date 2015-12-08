@@ -82,6 +82,7 @@ Ext.define('kalix.admin.role.view.RoleGrid', {
         verifyItems: [
             {
                 text: '添加',
+                tooltip: '添加角色',
                 xtype: 'button',
                 permission: 'admin:permissionModule:roleMenu:add',
                 bind: {icon: '{add_image_path}'},
