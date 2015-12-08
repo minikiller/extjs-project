@@ -64,9 +64,28 @@ Ext.define('kalix.controller.BaseWindowController', {
                 }
             );
         } else {
-            viewModel.set('validation', _.pick(model.getValidation().data, function (value, key, object) {
+            //viewModel.set('validation', _.pick(model.getValidation().data, function (value, key, object) {
+            //    return value !== true;
+            //}));
+            var validation = _.pick(model.getValidation().data, function (value, key, object) {
                 return value !== true;
-            }));
+            });
+
+            var formItems = arguments[0].findParentByType('window').items;
+
+            for (var formIndex = 0; formIndex < formItems.length; ++formIndex) {
+                var fieldItems = formItems.getAt(formIndex).items;
+
+                for (var fieldIndex = 0; fieldIndex < fieldItems.length; ++fieldIndex) {
+                    var fieldItem = fieldItems.getAt(fieldIndex);
+                    var bindPath = fieldItem.bind.value.stub.path;
+                    var msg = validation[fieldItem.bind.value.stub.path.split('.')[1]];
+
+                    if (msg != undefined) {
+                        fieldItem.setActiveError(msg);
+                    }
+                }
+            }
         }
     },
     onClose: function (panel, eOpts) {
@@ -107,15 +126,34 @@ Ext.define('kalix.controller.BaseWindowController', {
                             }
                         );
                     } else {
-                        viewModel.set('validation', _.pick(model.getValidation().data, function (value, key, object) {
-                            return value !== true;
-                        }));
+                        //viewModel.set('validation', _.pick(model.getValidation().data, function (value, key, object) {
+                        //    return value !== true;
+                        //}));
+                        Ext.Msg.alert(CONFIG.ALTER_TITLE_FAILURE, "表单验证失败！");
+                        model.set(model.modified);
                     }
                 }
                 else {
                     model.set(model.modified);
                 }
             });
+        }
+    },
+    onBeforerender: function (target, eOpts) {
+        var formItems = target.items;
+        var model = target.lookupViewModel().get('rec');
+
+        for (var formIndex = 0; formIndex < formItems.length; ++formIndex) {
+            var fieldItems = formItems.getAt(formIndex).items;
+
+            for (var fieldIndex = 0; fieldIndex < fieldItems.length; ++fieldIndex) {
+                var fieldItem = fieldItems.getAt(fieldIndex);
+                var instanceValidators = model.getField(fieldItem.config.bind.value.replace('}', '').split('.')[1]).instanceValidators;
+
+                if (instanceValidators != undefined && instanceValidators[0].type == 'presence') {
+                    fieldItems.getAt(fieldIndex).beforeLabelTextTpl = '<span class="field-required" data-qtip="必填选项">*</span>'
+                }
+            }
         }
     }
 });
