@@ -1,25 +1,29 @@
 /**
- * 用户组件
+ * 应用首页
  *
- * @author majian <br/>
- *         date:2015-6-18
+ * @author
  * @version 1.0.0
  */
 Ext.define('kalix.app.application.Main', {
-    extend: 'Ext.panel.Panel',
+    extend: 'kalix.container.BaseContainer',
     requires: [
-        'kalix.app.application.viewModel.ApplicationViewModel',
-        'kalix.app.application.controller.ApplicationController'
+        'kalix.app.application.view.ApplicationGrid',
+        'kalix.app.application.view.ApplicationSearchForm',
+        'kalix.app.application.viewModel.ApplicationViewModel'
     ],
-    controller: 'applicationController',
-    viewModel: {
-        type: 'applicationViewModel'
-    },
-    items: [],
-    initComponent: function () {
-        var applicationController = this.getController("applicationController");
-        this.items[0] = applicationController.onInitPanel();
-
-        this.callParent(arguments);
-    }
+    storeId: 'applicationStore',
+    viewModel: 'applicationViewModel',
+    items: [
+        {
+            title: '应用查询',
+            iconCls: 'x-fa fa-search',
+            xtype: 'applicationSearchForm'
+        }, {
+            xtype: 'applicationGridPanel',
+            id: 'applicationGridPanel',
+            title: '应用列表',
+            iconCls: 'x-fa fa-cubes',
+            margin: 10
+        }
+    ]
 });

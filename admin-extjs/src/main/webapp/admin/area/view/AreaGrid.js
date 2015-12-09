@@ -12,7 +12,7 @@ Ext.define('kalix.admin.area.view.AreaGrid', {
     ],
     alias: 'widget.areaGrid',
     xtype: 'areaGridPanel',
-
+    iconCls: 'x-fa fa-home',
     autoLoad: true,
     stripeRows: true,
 

@@ -1,8 +1,7 @@
 /**
  * 应用数据仓库
  *
- * @author majian <br/>
- *         date:2015-7-3
+ * @author
  * @version 1.0.0
  */
 Ext.define('kalix.app.application.store.ApplicationStore', {
@@ -11,14 +10,5 @@ Ext.define('kalix.app.application.store.ApplicationStore', {
     alias: 'store.applicationStore',
     xtype: 'applicationStore',
     storeId: "applicationStore",
-    autoLoad: false,
-    pageSize: 10,
-    proxy: {
-        type: "ajax",
-        url: '/kalix/camel/rest/applications',
-        reader: {
-            type: "json",
-            totalProperty: 'totalCount'
-        }
-    }
+    proxyUrl: '/kalix/camel/rest/applications'
 });

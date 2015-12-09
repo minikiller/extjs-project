@@ -1,46 +1,24 @@
 /**
- * 用户视图模型
+ * 审计模型
  *
- * @author majian
- *         date:2015-7-6
+ * @author
  * @version 1.0.0
  */
+
 Ext.define('kalix.admin.audit.viewModel.AuditViewModel', {
     extend: 'Ext.app.ViewModel',
-    requires: [
-        'kalix.admin.audit.store.AuditStore',
-        'kalix.admin.audit.model.AuditModel'
-    ],
     alias: 'viewmodel.auditViewModel',
     data: {
-        addTitle: '新增公告',
-        editTitle: '编辑公告',
-        url: '/kalix/camel/rest/audits',
-    },
-    /*formulas: {
-     dirty: {
-     bind: {
-     bindTo: "{currentAudit}",
-     deep: true
-     },
-     get: function(data) {
-     console.log(data);
-     return data ? data.dirty : false;
-     }
-     },
-     storeDirty: {
-     bind: {
-     bindTo: "{currentAudit}",
-     deep: true
-     },
-     get: function() {
-     return this.getStore("audits").isDirty();
-     }
-     }
-     },*/
-    /*stores: {
-     audits: {
-     type: 'auditStore'
-     }
-     }*/
+        rec: null,
+        validation: {},  //验证错误信息
+        icon: '',
+        title: '',
+        view_operation: false,
+        view_title: '查看审计',
+        add_title: '添加审计',
+        edit_title: '修改审计',
+        add_image_path: '/kalix/roffice/audit/resources/images/audit_add.png',
+        view_image_path: '/kalix/roffice/audit/resources/images/audit_view.png',
+        edit_image_path: '/kalix/roffice/audit/resources/images/audit_edit.png',
+    }
 });
