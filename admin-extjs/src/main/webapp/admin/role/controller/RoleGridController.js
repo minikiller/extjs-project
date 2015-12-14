@@ -19,6 +19,7 @@ Ext.define('kalix.admin.role.controller.RoleGridController', {
 
         var win = Ext.create('Ext.Window', {
             width: 710,
+            height: 470,
             border: false,
             modal: true,
             //resizable:false,
@@ -52,14 +53,15 @@ Ext.define('kalix.admin.role.controller.RoleGridController', {
                     width: 700,
                     itemId: "addUserForm",
                     bodyPadding: 10,
-                    height: 400,
                     layout: 'fit',
+                    buttonAlign: 'center',
                     items: [
                         {
                             itemId: 'userAddItemSelector',
                             xtype: 'userAddItemSelector',
                             value: users,
-                            store: dataSotre
+                            store: dataSotre,
+                            height: 300
                         }
                     ],
                     buttons: [
@@ -98,10 +100,11 @@ Ext.define('kalix.admin.role.controller.RoleGridController', {
                 callback: function (options, success, response) {
                     var resp = Ext.JSON.decode(response.responseText);
                     if (resp != null && resp.success) {
-                        Ext.MessageBox.alert(CONFIG.ALTER_TITLE_INFO, resp.msg);
+                        kalix.core.Notify.success(resp.msg, CONFIG.ALTER_TITLE_SUCCESS);
                     } else {
-                        Ext.MessageBox.alert(CONFIG.ALTER_TITLE_FAILURE, resp.msg);
+                        Ext.Msg.alert(CONFIG.ALTER_TITLE_FAILURE, resp.msg);
                     }
+                    userAddForm.up('window').close();
                 }
             });
         }

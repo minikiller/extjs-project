@@ -6,21 +6,25 @@
  * @version 1.0.0
  */
 Ext.define('kalix.admin.dict.Main', {
-    extend: 'Ext.panel.Panel',
+    extend: 'kalix.container.BaseContainer',
     requires: [
-        'kalix.admin.dict.viewModel.DictViewModel',
-        'kalix.admin.dict.controller.DictController'
+        'kalix.admin.dict.view.DictGrid',
+        'kalix.admin.dict.view.DictSearchForm',
+        'kalix.admin.dict.viewModel.DictViewModel'
     ],
-    controller: 'dictController',
-    viewModel: {
-        type: 'dictViewModel'
-    },
-    items: [],
-    initComponent: function () {
-        var dictController = this.getController("dictController");
-
-        this.items[0] = dictController.onInitPanel();
-
-        this.callParent(arguments);
-    }
+    storeId: 'dictStore',
+    viewModel: 'dictViewModel',
+    items: [
+        {
+            title: '字典查询',
+            iconCls: 'x-fa fa-search',
+            xtype: 'dictSearchForm'
+        }, {
+            xtype: 'dictGridPanel',
+            id: 'dictGridPanel',
+            title: '字典列表',
+            iconCls: 'x-fa fa-table',
+            margin: 10
+        }
+    ]
 });

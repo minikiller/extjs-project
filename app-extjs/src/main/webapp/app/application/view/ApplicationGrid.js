@@ -5,21 +5,95 @@
  * @version 1.0.0
  */
 Ext.define('kalix.app.application.view.ApplicationGrid', {
-    extend: 'Ext.grid.Panel',
+    extend: 'kalix.view.components.common.BaseGrid',
     requires: [
-        'kalix.app.application.viewModel.ApplicationViewModel',
-        'kalix.app.application.controller.ApplicationGridController'
+        'kalix.app.application.controller.ApplicationGridController',
+        'kalix.app.application.store.ApplicationStore',
     ],
     alias: 'widget.applicationGrid',
     xtype: 'applicationGridPanel',
-    controller: 'applicationGridController',
-    viewModel: {
-        type: 'applicationViewModel'
+    controller: {
+        type: 'applicationGridController',
+        storeId: 'applicationStore',
+        cfgForm: 'kalix.app.application.view.ApplicationWindow',
+        cfgViewForm: 'kalix.app.application.view.ApplicationViewWindow',
+        cfgModel: 'kalix.app.application.model.ApplicationModel'
     },
-    autoLoad: false,
-    stripeRows: true,
-    manageHeight: true,
-    selModel: {selType: 'checkboxmodel', mode: "SIMPLE"},
+    store: {
+        type: 'applicationStore'
+    },
+    columns: {
+        defaults: {flex: 1,renderer: 'addTooltip'},
+        items: [
+        {
+            xtype: "rownumberer",
+            text: "行号",
+            width: 50,
+            flex:0,
+            align: 'center',
+            renderer:this.update
+        },
+        {text: '编号', dataIndex: 'id', hidden: true},
+        {text: '名称', dataIndex: 'name'},
+        {text: '应用代码', dataIndex: 'code'},
+        {text: '创建人', dataIndex: 'createBy'},
+        {
+            text: '创建日期', dataIndex: 'creationDate', renderer: function (value) {
+            var createDate = new Date(value);
+            return createDate.format("yyyy-MM-dd hh:mm:ss");
+        }
+        },
+            {
+                xtype: 'securityGridColumnCommon',
+                items: [
+                    {
+                        getClass: function (v, meta, record) {
+                            if (record.data.status) {
+                                return "kalix_stop";
+                            }
+                            return "kalix_start";
+                        },
+                        getTip: function (value, metadata, record, row, col, store) {
+                            if (record.data.status) {
+                                return "停止";
+                            }
+                            return '启动';
+                        },
+                        permission: 'admin:appModule:applicationMenu:control',
+                        handler: 'onAppStartStop'
+                    },
+                    {
+                        icon: "resources/images/read.png",
+                        permission: 'admin:appModule:applicationMenu:view',
+                        tooltip: '查看',
+                        handler: 'onView'
+                    },
+                    {
+                        icon: "resources/images/edit.png",
+                        permission: 'admin:appModule:applicationMenu:edit',
+                        tooltip: '编辑',
+                        handler: 'onEdit'
+                    }, {
+                        icon: "resources/images/delete.png",
+                        permission: 'admin:appModule:applicationMenu:delete',
+                        tooltip: '删除',
+                        handler: 'onDelete'
+                    }
+                ]
+            }
+    ]},
+    tbar: {
+        xtype: 'securityToolbar',
+        verifyItems: [
+            {
+                text: '添加',
+                xtype: 'button',
+                permission: 'admin:appModule:applicationMenu:add',
+                bind: {icon: '{add_image_path}'},
+                handler: 'onAdd'
+            }
+        ]
+    },
     constructor: function () {
         var scope = this;
 
@@ -43,6 +117,7 @@ Ext.define('kalix.app.application.view.ApplicationGrid', {
                         else {
                             record.set('status', false);
                         }
+                        record.dirty=false;
                     });
                 },
                 failure: function (response, opts) {
@@ -51,72 +126,5 @@ Ext.define('kalix.app.application.view.ApplicationGrid', {
             });
         }, scope);
         this.store.load();
-    },
-    columns: [
-        {
-            xtype: "rownumberer",
-            text: "行号",
-            width: 50,
-            align: 'center'
-        },
-        {text: '编号', dataIndex: 'id', hidden: true},
-        {text: '名称', dataIndex: 'name', flex: 1},
-        {text: '应用代码', dataIndex: 'code', flex: 1},
-        {text: '路径', dataIndex: 'location', flex: 1},
-        {text: '创建人', dataIndex: 'createBy', flex: 1},
-        {
-            text: '创建日期', dataIndex: 'creationDate', width: 120, renderer: function (value) {
-            var createDate = new Date(value);
-            return createDate.format("yyyy-MM-dd hh:mm:ss");
-        }
-        },
-        {text: '更新人', dataIndex: 'updateBy', flex: 1},
-        {
-            text: '更新日期', dataIndex: 'updateDate', width: 120,
-            renderer: function (value) {
-                var updateDate = new Date(value);
-
-                return updateDate.format("yyyy-MM-dd hh:mm:ss");
-            }
-        },
-        {
-            header: '操作',
-            xtype: "actioncolumn",
-            width: 100,
-            items: [
-                {
-                    getClass: function (v, meta, record) {
-                        if (record.data.status) {
-                            return "kalix_stop";
-                        }
-                        return "kalix_start";
-                    },
-                    getTip: function (value, metadata, record, row, col, store) {
-                        if (record.data.status) {
-                            return "停止";
-                        }
-                        return '启动';
-                    },
-                    handler: 'onAppStartStop'
-                },
-                {
-                    icon: "admin/resources/images/pencil.png",
-                    tooltip: '编辑',
-                    handler: 'onEdit'
-                }, {
-                    icon: "admin/resources/images/cancel.png",
-                    tooltip: '删除',
-                    handler: 'onDelete'
-
-                }]
-        }
-    ],
-    tbar: [
-        {
-            text: '添加', icon: 'app/resources/images/application_add.png', handler: 'onAdd'
-        }, "-",
-        {
-            text: '批量删除', icon: 'app/resources/images/application_delete.png', handler: 'onDeleteAll'
-        }, "-"
-    ]
+    }
 });

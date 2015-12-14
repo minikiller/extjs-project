@@ -76,6 +76,7 @@ Ext.define('kalix.app.function.controller.FunctionController', {
             region: "west",
             itemId: "applicationList",
             title: '应用列表',
+            iconCls: 'x-fa fa-cubes',
             listeners: {
                 itemClick: this.onApplicationClick
             },

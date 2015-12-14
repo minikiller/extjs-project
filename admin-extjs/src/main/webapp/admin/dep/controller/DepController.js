@@ -114,6 +114,7 @@ Ext.define('kalix.admin.dep.controller.DepController', {
             region: "west",
             itemId: "depAreaTreeList",
             title: '区域列表',
+            iconCls: 'x-fa fa-home',
             listeners: {
                 itemClick: this.onAreaClick
             },
@@ -143,6 +144,7 @@ Ext.define('kalix.admin.dep.controller.DepController', {
             itemId: "depOrgTreeList",
             region: "west",
             title: '机构列表',
+            iconCls: 'x-fa fa-building',
             listeners: {
                 itemClick: this.onOrgClick
             },

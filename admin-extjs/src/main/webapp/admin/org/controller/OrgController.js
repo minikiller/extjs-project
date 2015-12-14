@@ -76,6 +76,7 @@ Ext.define('kalix.admin.org.controller.OrgController', {
             region: "west",
             itemId: "orgAreaTreeList",
             title: '区域列表',
+            iconCls: 'x-fa fa-home',
             listeners: {
                 itemClick: this.onAreaClick
             },

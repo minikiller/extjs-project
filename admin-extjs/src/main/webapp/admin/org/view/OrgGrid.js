@@ -31,6 +31,7 @@ Ext.define('kalix.admin.org.view.OrgGrid', {
     rootVisible : false,
     region: "center",
     title: '机构列表',
+    iconCls: 'x-fa fa-building',
     defaults:{
         flex:1
     },

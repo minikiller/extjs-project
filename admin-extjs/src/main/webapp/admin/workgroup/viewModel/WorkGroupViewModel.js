@@ -7,13 +7,19 @@
  */
 Ext.define('kalix.admin.workgroup.viewModel.WorkGroupViewModel', {
     extend: 'Ext.app.ViewModel',
-    requires: [
-        'kalix.admin.workgroup.store.WorkGroupStore'
-    ],
-    alias: 'viewmodel.workGroupViewModel',
+    alias: 'viewmodel.workgroupViewModel',
     data: {
-        addTitle: '新增工作组',
-        editTitle: '编辑工作组',
+        rec: null,
+        validation: {},  //验证错误信息
+        icon: '',
+        title: '',
+        view_operation: false,
+        view_title: '查看工作组',
+        add_title: '添加工作组',
+        edit_title: '修改工作组',
+        add_image_path: '/kalix/admin/resources/images/cup_add.png',
+        view_image_path: '/kalix/admin/resources/images/cup.png',
+        edit_image_path: '/kalix/admin/resources/images/cup_edit.png',
         url: '/kalix/camel/rest/workGroups'
     }
 });

@@ -25,7 +25,6 @@ Ext.define('Kalix.admin.user.store.UserStore', {
         },
         reader: {
             type: "json",
-            rootProperty: "data",
             totalProperty: 'totalCount'
         }
     }

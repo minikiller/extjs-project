@@ -32,6 +32,7 @@ Ext.define('kalix.app.function.view.FunctionGrid', {
     rootVisible: false,
     region: "center",
     title: '功能列表',
+    iconCls: 'x-fa fa-cube',
     defaults: {
         flex:1
     },

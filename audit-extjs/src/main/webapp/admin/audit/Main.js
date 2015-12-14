@@ -1,29 +1,29 @@
 /**
- * 用户组件
+ * 审计首页
  *
- * @author majian <br/>
- *         date:2015-6-18
+ * @author
  * @version 1.0.0
  */
 Ext.define('kalix.admin.audit.Main', {
-    extend: 'Ext.panel.Panel',
+    extend: 'kalix.container.BaseContainer',
     requires: [
-        'kalix.admin.audit.viewModel.AuditViewModel',
-        'kalix.admin.audit.controller.AuditController'
+        'kalix.admin.audit.view.AuditGrid',
+        'kalix.admin.audit.view.AuditSearchForm',
+        'kalix.admin.audit.viewModel.AuditViewModel'
     ],
-    controller: 'auditController',
-    viewModel: {
-        type: 'auditViewModel'
-    },
-    items: [],
-    initComponent: function () {
-        var auditController = this.getController("auditController");
-
-        this.items[0] = auditController.onInitPanel();
-        /*var grid = Ext.getCmp("auditDataGrid");
-         var store = grid.getStore();
-         store.load({params:{start:0, limit:10}});
-         grid.getView().refresh();*/
-        this.callParent(arguments);
-    }
+    storeId: 'auditStore',
+    viewModel: 'auditViewModel',
+    items: [
+        {
+            title: '审计查询',
+            iconCls: 'x-fa fa-search',
+            xtype: 'auditSearchForm'
+        }, {
+            xtype: 'auditGridPanel',
+            id: 'auditGridPanel',
+            title: '审计列表',
+            iconCls: 'x-fa fa-file-o',
+            margin: 10
+        }
+    ]
 });

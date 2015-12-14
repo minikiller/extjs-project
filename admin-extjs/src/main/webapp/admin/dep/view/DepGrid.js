@@ -23,6 +23,7 @@ Ext.define('kalix.admin.dep.view.DepGrid', {
     },
     region: "center",
     title: '部门列表',
+    iconCls: 'x-fa fa-university',
     columnLines: true,
     stripeRows: true,
     /*rootProperty:{

@@ -6,17 +6,12 @@
  * @version 1.0.0
  */
 Ext.define('kalix.app.application.model.ApplicationModel', {
-    extend: 'Ext.data.Model',
+    extend: 'kalix.model.BaseModel',
     fields: [
-        {name: 'id', type: 'string'},
         {name: 'name', type: 'string'},
         {name: 'remark', type: 'string'},
         {name: 'code', type: 'string'},
-        {name: 'location', type: 'string'},
-        {name: 'createBy', type: 'string'},
-        {name: 'creationDate', type: 'int'},
-        {name: 'updateBy', type: 'string'},
-        {name: 'updateDate', type: 'int'},
+        //{name: 'location', type: 'string'},
         {name: 'status', defaultValue: false}
     ]
 });

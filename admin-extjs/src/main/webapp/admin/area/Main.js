@@ -8,22 +8,23 @@
 Ext.define('kalix.admin.area.Main', {
     extend: 'Ext.container.Container',
     requires: [
-      //'kalix.admin.area.view.AreaViewModel',
-      //'kalix.admin.area.controller.AreaController'
-      'kalix.admin.area.view.AreaGrid',
-      'kalix.admin.area.store.AreaStore'
+        //'kalix.admin.area.view.AreaViewModel',
+        //'kalix.admin.area.controller.AreaController'
+        'kalix.admin.area.view.AreaGrid',
+        'kalix.admin.area.store.AreaStore'
     ],
     //controller: 'areaController',
     //viewModel: 'areaViewModel',
     items: [{
-      xtype : 'areaGridPanel',
-      columnLines: true,
-      
-      title : '区域列表',
-      margin : 10,
-      
-      manageHeight: true,
-      rootVisible: false,
-      store : Ext.create('kalix.admin.area.store.AreaStore')
+        xtype: 'areaGridPanel',
+        columnLines: true,
+
+        title: '区域列表',
+        iconCls: 'x-fa fa-home',
+        margin: 10,
+
+        manageHeight: true,
+        rootVisible: false,
+        store: Ext.create('kalix.admin.area.store.AreaStore')
     }]
 });

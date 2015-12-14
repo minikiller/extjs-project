@@ -21,6 +21,7 @@ Ext.define('kalix.admin.area.controller.AreaController', {
             border: false,
             autoScroll: true,
             title: "区域列表",
+            iconCls: 'x-fa fa-home',
             height: document.body.clientHeight,
             items: [this.onInitDataGrid()]
         })

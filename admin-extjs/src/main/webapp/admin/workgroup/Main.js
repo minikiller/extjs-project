@@ -6,22 +6,26 @@
  * @version 1.0.0
  */
 Ext.define('kalix.admin.workgroup.Main', {
-    extend: 'Ext.panel.Panel',
+    extend: 'kalix.container.BaseContainer',
     requires: [
-        'kalix.admin.workgroup.viewModel.WorkGroupViewModel',
-        'kalix.admin.workgroup.controller.WorkGroupController'
+        'kalix.admin.workgroup.view.WorkGroupGrid',
+        'kalix.admin.workgroup.view.WorkGroupSearchForm',
+        'kalix.admin.workgroup.viewModel.WorkGroupViewModel'
     ],
-    xtype: 'workGroupPanel',
-    controller: 'workGroupController',
-    viewModel: {
-        type: 'workGroupViewModel'
-    },
-    items: [],
-    initComponent: function () {
-        var workGroupController = this.getController("workGroupController");
-
-        this.items[0] = workGroupController.onInitPanel();
-
-        this.callParent(arguments);
-    }
+    storeId: 'workgroupStore',
+    viewModel: 'workgroupViewModel',
+    items: [
+        {
+            title: '工作组查询',
+            iconCls: 'x-fa fa-search',
+            xtype: 'workgroupSearchForm'
+        }, {
+            xtype: 'workgroupGridPanel',
+            id: 'workgroupGridPanel',
+            title: '工作组列表',
+            iconCls: 'x-fa fa-user-plus',
+            margin: 10
+        }
+    ]
 });
+
