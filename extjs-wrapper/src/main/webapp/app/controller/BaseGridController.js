@@ -105,7 +105,32 @@ Ext.define('kalix.controller.BaseGridController', {
             }
         });
     },
+    //excel upload
+    onChange: function (target, event, domValue) {
+        var form = target.findParentByType('form');
+        var store = this.getView().getStore();
+        //var store = target.findParentByType('window').items.getAt(0).store;
+        //var mainId = target.findParentByType('window').viewModel.get('rec').id
 
+        scope = {store: store};
+
+        form.submit({
+            url: '/kalix/camel/rest/excel/upload?' +
+            'ConfigId=' + form.ConfigId +
+            '&EntityName=' + form.EntityName +
+            '&ServiceInterface=' + form.ServiceInterface,
+            waitMsg: '正在上传...',
+            scope: scope,
+            success: function (fp, o) {
+                store.currentPage = 1;
+                store.load();
+                kalix.core.Notify.success(o.result.msg, CONFIG.ALTER_TITLE_SUCCESS);
+            },
+            failure: function (fp, o) {
+                Ext.Msg.alert(CONFIG.ALTER_TITLE_FAILURE, o.result.msg);
+            }
+        });
+    },
     addTooltip: function (value, metadata, record, rowIndex, colIndex, store) {
         metadata.tdAttr = 'data-qtip="' + value + '"';
         return value;

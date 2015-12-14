@@ -193,7 +193,8 @@ Ext.define('kalix.attachment.view.AttachmentFileField', {
                         target.btnWrap.getParent().dom.style.borderColor='#ffffff';
                         target.btnWrap.getParent().dom.style.padding=0;
                         target.btnWrap.getParent().dom.style.borderWidth=0;
-                        target.btnInnerEl.dom.style.color='black';
+                        target.btnWrap.getParent().dom.style.top = '2px';
+                        target.btnInnerEl.dom.style.color = '#606060';
                     }
                 }
             }, me.buttonConfig);
