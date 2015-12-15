@@ -30,6 +30,8 @@
     <description>Parent of Project</description>
 
     <properties>
+        <globle.version>1.0.0-SNAPSHOT</globle.version>
+
         <bundle.symbolicName>cn.com.rexen.core.web</bundle.symbolicName>
         <bundle.namespace>${bundle.symbolicName}</bundle.namespace>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

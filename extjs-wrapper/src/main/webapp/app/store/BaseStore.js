@@ -25,6 +25,10 @@ Ext.define('kalix.store.BaseStore', {
           'login'==rtnJson.message){
         location.reload();
       }
+
+      if (rtnJson.success != undefined && false == rtnJson.success) {
+        Ext.Msg.alert(CONFIG.ALTER_TITLE_FAILURE, rtnJson.msg);
+      }
     }
   },
   proxy: {
