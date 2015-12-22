@@ -16,7 +16,6 @@ Ext.define('kalix.app.application.view.ApplicationTreeList', {
     viewModel: {
         type: 'applicationViewModel'
     },
-    width: 200,
     collapsible: true,
     autoScroll: true,
     border: true,

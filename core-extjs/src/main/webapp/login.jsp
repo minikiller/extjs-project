@@ -1,5 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="org.apache.shiro.SecurityUtils,org.apache.shiro.subject.Subject" %>
+<%--<%--%>
+    <%--Subject subject=SecurityUtils.getSubject();--%>
+    <%--Session shiro = subject.getSession();--%>
+    <%--if(shiro.getAttribute("currentUsername")!=null)--%>
+        <%--response.sendRedirect("index.jsp");--%>
+<%--%>--%>
 <!DOCTYPE HTML>
 <html manifest="">
 <head>
@@ -20,10 +25,11 @@
     <link type="text/css" rel="stylesheet" href="resources/css/index.css"/>--%>
 </head>
 <body>
-<%
-    Subject subject=SecurityUtils.getSubject();
-    if(subject!=null)
-        subject.logout();
-%>
+
+
+<%--<%response.setHeader("Refresh","5;URL=index.jsp");%>--%>
+
+
+
 </body>
 </html>

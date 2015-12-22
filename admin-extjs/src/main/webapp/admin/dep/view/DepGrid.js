@@ -21,10 +21,8 @@ Ext.define('kalix.admin.dep.view.DepGrid', {
         orgName: null,
         areaName: null
     },
-    region: "center",
     title: '部门列表',
     iconCls: 'x-fa fa-university',
-    columnLines: true,
     stripeRows: true,
     /*rootProperty:{
      id:'-1',
@@ -35,7 +33,9 @@ Ext.define('kalix.admin.dep.view.DepGrid', {
     defaults: {
         flex: 1
     },
-    columns: [
+    columns: {
+        defaults: {flex: 1},
+        items:[
         {text: '编号', dataIndex: 'id', hidden: true},
         {text: '上级部门', dataIndex: 'parentName', hidden: true},
         {xtype: 'treecolumn', text: '名称', dataIndex: 'name'},
@@ -47,14 +47,14 @@ Ext.define('kalix.admin.dep.view.DepGrid', {
             var createDate = new Date(value);
             return createDate.format("yyyy-MM-dd hh:mm:ss");
         }
-        },
+        }/*,
         {text: '更新人', dataIndex: 'updateBy'},
         {
             text: '更新日期', dataIndex: 'updateDate', renderer: function (value) {
             var updateDate = new Date(value);
             return updateDate.format("yyyy-MM-dd hh:mm:ss");
         }
-        },
+        }*/,
         {
             header: '操作',
             xtype: "actioncolumn",
@@ -79,7 +79,7 @@ Ext.define('kalix.admin.dep.view.DepGrid', {
                 handler: 'onAddUser'
             }]
         }
-    ],
+    ]},
     tbar: [
         {
             text: '添加', icon: 'admin/resources/images/building_add.png', handler: 'onAdd'

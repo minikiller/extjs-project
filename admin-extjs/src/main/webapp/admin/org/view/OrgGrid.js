@@ -20,8 +20,6 @@ Ext.define('kalix.admin.org.view.OrgGrid', {
         areaId: null,
         areaName: null
     },
-    border:false,
-    columnLines : true,
     stripeRows: true,
     /*rootProperty:{
         id:'-1',
@@ -29,14 +27,12 @@ Ext.define('kalix.admin.org.view.OrgGrid', {
     },*/
     manageHeight: true,
     rootVisible : false,
-    region: "center",
     title: '机构列表',
     iconCls: 'x-fa fa-building',
-    defaults:{
-        flex:1
-    },
-    columns: [
-        {text: '编号', dataIndex: 'id',hidden:true },
+    columns: {
+        defaults: {flex: 1},
+        items:
+        [{text: '编号', dataIndex: 'id',hidden:true },
         {text: '上级机构', dataIndex: 'parentName',hidden:true },
         {xtype : 'treecolumn', text: '名称',dataIndex: 'name'},
         {text: '机构代码', dataIndex: 'code'},
@@ -48,13 +44,13 @@ Ext.define('kalix.admin.org.view.OrgGrid', {
             return createDate.format("yyyy-MM-dd hh:mm:ss");
         }
         },
-        {text: '更新人', dataIndex: 'updateBy'},
+        /*{text: '更新人', dataIndex: 'updateBy'},
         {
-            text: '更新日期', dataIndex: 'updateDate', width: 160, renderer: function (value) {
+            text: '更新日期', dataIndex: 'updateDate', renderer: function (value) {
             var updateDate = new Date(value);
             return updateDate.format("yyyy-MM-dd hh:mm:ss");
         }
-        },
+        }*/
         {
             header: '操作',
             //width: 60,
@@ -76,7 +72,7 @@ Ext.define('kalix.admin.org.view.OrgGrid', {
 
             }]
         }
-    ],
+    ]},
     tbar: [
         {
             text: '添加', icon: 'admin/resources/images/script_add.png', handler: 'onAdd'

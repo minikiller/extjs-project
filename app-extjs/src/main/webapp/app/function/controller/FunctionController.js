@@ -19,11 +19,12 @@ Ext.define('kalix.app.function.controller.FunctionController', {
     onInitPanel: function () {
         var panel = Ext.create("Ext.panel.Panel", {
             border: false,
-            layout: "border",
+            layout: "hbox",
             autoScroll: true,
             itemId: "mainPanel",
-            height: 630,
-            items: [this.onInitApplicationList(), this.onInitDataGrid()]
+            items: [
+                {xtype:'container', padding:10, flex: 1, items:[this.onInitApplicationList()]},
+                {xtype:'container', padding:'10 10 10 0', flex:3, items:[this.onInitDataGrid()]}]
         })
 
         return panel;

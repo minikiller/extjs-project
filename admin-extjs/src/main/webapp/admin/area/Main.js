@@ -17,7 +17,6 @@ Ext.define('kalix.admin.area.Main', {
     //viewModel: 'areaViewModel',
     items: [{
         xtype: 'areaGridPanel',
-        columnLines: true,
 
         title: '区域列表',
         iconCls: 'x-fa fa-home',

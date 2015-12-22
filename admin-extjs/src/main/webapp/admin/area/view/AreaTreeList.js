@@ -16,10 +16,8 @@ Ext.define('kalix.admin.area.view.AreaTreeList', {
     viewModel: {
         type: 'orgViewModel'
     },
-    width: 200,
     collapsible: true,
     autoScroll: true,
-    border: true,
     /*rootProperty:{
      id:'-1',
      name:'根机构'
