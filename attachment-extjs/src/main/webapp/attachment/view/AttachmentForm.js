@@ -12,16 +12,13 @@ Ext.define('kalix.attachment.view.AttachmentForm', {
     items: [
         {
             xtype: 'attachmentFileField',
-            //xtype: 'filefield',
             width:50,
             buttonOnly:true,
-           // hideLabel:true,
-            //icon:'/kalix/attachment/resources/images/attachment_add.png',
             buttonText: '上传',
             name: 'attachment',
             listeners:{
                 change:function(target,value, eOpts){
-                    target.findParentByType('window').items.getAt(0).getController().onChange(target,value, eOpts);
+                    target.findParentByType('grid').getController().onChange(target, value, eOpts);
                 }
             }
         }
@@ -29,6 +26,9 @@ Ext.define('kalix.attachment.view.AttachmentForm', {
     listeners:{
         afterrender: function (target) {
            target.ariaEl.dom.style.border='none';
+        },
+        beforerender: function (target) {
+            this.items.getAt(0).triggers.filebutton.component.icon = this.filebutonIcon;
         }
     }
 });

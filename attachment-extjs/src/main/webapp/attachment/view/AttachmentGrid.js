@@ -6,8 +6,7 @@ Ext.define('kalix.attachment.view.AttachmentGrid', {
     requires: [
         'kalix.attachment.controller.AttachmentGridController',
         'kalix.attachment.store.AttachmentStore',
-        'kalix.attachment.view.AttachmentForm',
-        'kalix.attachment.view.AttachmentFileField'
+        'kalix.attachment.view.AttachmentForm'
     ],
     alias: 'widget.attachmentGrid',
     xtype: 'attachmentGrid',
@@ -86,6 +85,7 @@ Ext.define('kalix.attachment.view.AttachmentGrid', {
         verifyItems: [
             {
                 xtype: 'attachmentForm',
+                filebutonIcon: "/kalix/attachment/resources/images/attachment_add.png",
                 permission: ''
             }
         ]
