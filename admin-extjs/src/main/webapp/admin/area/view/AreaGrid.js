@@ -8,7 +8,9 @@ Ext.define('kalix.admin.area.view.AreaGrid', {
     extend: 'Ext.tree.Panel',
     requires: [
         //'kalix.admin.area.view.AreaViewModel',
-        'kalix.admin.area.controller.AreaGridController'
+        'kalix.admin.area.controller.AreaGridController',
+        'kalix.view.components.common.SecurityToolbar',
+        'kalix.view.components.common.SecurityGridColumnCommon'
     ],
     alias: 'widget.areaGrid',
     xtype: 'areaGridPanel',
@@ -68,7 +70,7 @@ Ext.define('kalix.admin.area.view.AreaGrid', {
             var createDate = new Date(value);
             return createDate.format("yyyy-MM-dd hh:mm:ss");
         }
-    }, {
+    }, /*{
         text: '更新人',
         dataIndex: 'updateBy',
         flex:1,
@@ -82,15 +84,15 @@ Ext.define('kalix.admin.area.view.AreaGrid', {
             var updateDate = new Date(value);
             return updateDate.format("yyyy-MM-dd hh:mm:ss");
         }
-    }, {
+    }, */{
         header: '操作',
         width: 60,
-        xtype: "actioncolumn",
+        xtype: "securityGridColumnCommon",
         items: [{
             icon: "admin/resources/images/pencil.png",
             tooltip: '编辑',
             handler: 'onEdit',
-            flex:1,
+            permission: 'admin:constructModule:areaMenu:edit',
             isDisabled: function (view, rowIdx, colIdx, item, record) {
                 return record.data.name == "根机构" ? true : false;
             }
@@ -98,7 +100,7 @@ Ext.define('kalix.admin.area.view.AreaGrid', {
             icon: "admin/resources/images/cancel.png",
             tooltip: '删除',
             handler: 'onDelete',
-            flex:1,
+            permission: 'admin:constructModule:areaMenu:delete',
             isDisabled: function (view, rowIdx, colIdx, item, record) {
                 return record.data.name == "根机构" ? true : false;
             }
@@ -108,10 +110,16 @@ Ext.define('kalix.admin.area.view.AreaGrid', {
     }
     ],
     tbar: [{
-        text: '添加',
-        icon: 'admin/resources/images/shape_square_add.png',
-        handler: 'onAdd'
-    }, {
+        xtype: 'securityToolbar',
+        verifyItems: [
+            {
+                text: '添加',
+                xtype: 'button',
+                permission: 'admin:constructModule:areaMenu:add',
+                icon: 'admin/resources/images/shape_square_add.png',
+                handler: 'onAdd'
+            }]
+    },{
         text: '刷新',
         icon: 'admin/resources/images/arrow_refresh.png',
         handler: 'onRefersh'

@@ -20,11 +20,12 @@ Ext.define('kalix.admin.org.controller.OrgController', {
     onInitPanel: function () {
         var panel = Ext.create("Ext.panel.Panel", {
             border: false,
-            layout: "border",
+            layout: "hbox",
             autoScroll: true,
             itemId: "mainPanel",
-            height: 630,
-            items: [this.onInitAreaTreeList(), this.onInitDataGrid()]
+            items: [
+                {xtype:'container', padding:10, flex: 1, items:[this.onInitAreaTreeList()]},
+                {xtype:'container', flex: 3, padding:'10 10 10 0',items:[this.onInitDataGrid()]}]
         })
 
         return panel;
@@ -73,7 +74,6 @@ Ext.define('kalix.admin.org.controller.OrgController', {
     onInitAreaTreeList: function () {
         var areaListPanel = Ext.create("kalix.admin.area.view.AreaTreeList", {
             store: Ext.create("kalix.admin.area.store.AreaStore"),
-            region: "west",
             itemId: "orgAreaTreeList",
             title: '区域列表',
             iconCls: 'x-fa fa-home',

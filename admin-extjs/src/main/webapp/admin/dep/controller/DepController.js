@@ -20,12 +20,14 @@ Ext.define('kalix.admin.dep.controller.DepController', {
     onInitPanel: function () {
 
         var panel = Ext.create("Ext.panel.Panel", {
-            border: false,
-            layout: "border",
+            layout: "hbox",
             itemId: 'mainPanel',
             autoScroll: true,
-            height: 630,
-            items: [this.onInitAreaTreeList(), this.onInitOrgTreeList(), this.onInitDataGrid()]
+            items: [
+                {xtype: 'container', padding: 10, flex: 1, items: [this.onInitAreaTreeList()]},
+                {xtype: 'container', padding:'10 10 10 0', flex: 1, items: [this.onInitOrgTreeList()]},
+                {xtype: 'container', padding:'10 10 10 0',flex: 3, items: [this.onInitDataGrid()]}
+            ]
         })
 
         return panel;
@@ -74,7 +76,10 @@ Ext.define('kalix.admin.dep.controller.DepController', {
      * 区域单击
      */
     onAreaClick: function (view, record, item, index, e) {
-        var OrgTreeList = Ext.ComponentQuery.query('depPanel')[0].down("#mainPanel>#depOrgTreeList");
+        //var OrgTreeList = Ext.ComponentQuery.query('depPanel')[0].down("#mainPanel>#depOrgTreeList");
+
+        var OrgTreeList=view.findParentByType('panel').findParentByType('panel').items.getAt(1).items.getAt(0);
+
         var store = OrgTreeList.getStore();
         store.setProxy({
             type: "ajax",
@@ -170,8 +175,8 @@ Ext.define('kalix.admin.dep.controller.DepController', {
      */
     onInitDataGrid: function () {
         //Ext.QuickTips.init();
-        var dataGird = Ext.create("kalix.admin.dep.view.DepGrid",{
-            store:Ext.create("kalix.admin.dep.store.DepStore")
+        var dataGird = Ext.create("kalix.admin.dep.view.DepGrid", {
+            store: Ext.create("kalix.admin.dep.store.DepStore")
         });
         return dataGird;
     }

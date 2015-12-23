@@ -21,8 +21,7 @@ Ext.define('kalix.app.function.view.FunctionGrid', {
         applicationName: null,
         applicationCode: null
     },
-    border: false,
-    columnLines: true,
+    border: true,
     stripeRows: true,
     /*rootProperty:{
      id:'-1',
@@ -30,17 +29,15 @@ Ext.define('kalix.app.function.view.FunctionGrid', {
      },*/
     manageHeight: true,
     rootVisible: false,
-    region: "center",
     title: '功能列表',
     iconCls: 'x-fa fa-cube',
-    defaults: {
-        flex:1
-    },
-    columns: [
+    columns: {
+        defaults: {flex: 1},
+        items:[
         {text: '编号', dataIndex: 'id', hidden: true},
         {text: '上级功能', dataIndex: 'parentName', hidden: true},
         {text: '权限代码', dataIndex: 'permission', hidden: true},
-        {xtype: 'treecolumn', text: '名称', dataIndex: 'name',flex:2},
+        {xtype: 'treecolumn', text: '名称', dataIndex: 'name'},
         {text: '功能代码', dataIndex: 'code'},
         {text: '创建人', dataIndex: 'createBy'},
         {
@@ -49,16 +46,16 @@ Ext.define('kalix.app.function.view.FunctionGrid', {
             return createDate.format("yyyy-MM-dd hh:mm:ss");
         }
         },
-        {text: '更新人', dataIndex: 'updateBy'},
+        /*{text: '更新人', dataIndex: 'updateBy'},
         {
             text: '更新日期', dataIndex: 'updateDate', renderer: function (value) {
             var updateDate = new Date(value);
             return updateDate.format("yyyy-MM-dd hh:mm:ss");
         }
-        },
+        },*/
         {
             header: '操作',
-            flex:1,
+            flex:0.5,
             xtype: "actioncolumn",
             items: [{
                 icon: "admin/resources/images/pencil.png",
@@ -77,7 +74,7 @@ Ext.define('kalix.app.function.view.FunctionGrid', {
 
             }]
         }
-    ],
+    ]},
     tbar: [
         {
             text: '添加', icon: 'app/resources/images/note_add.png', handler: 'onAdd'

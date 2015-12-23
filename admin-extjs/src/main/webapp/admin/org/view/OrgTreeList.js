@@ -16,10 +16,18 @@ Ext.define('kalix.admin.org.view.OrgTreeList', {
     viewModel: {
         type: 'orgViewModel'
     },
-    width: 200,
+    constructor:function(){
+        this.callParent(arguments);
+        this.store.on('load',function(target,records, successful, operation, eOpts){
+            var grid=this.findParentByType('panel').items.getAt(2).items.getAt(0);
+            if(grid){
+                grid.store.proxy.url='/kalix/camel/rest/deps/org/-1';
+                grid.store.load();
+            }
+        },this);
+    },
     collapsible: true,
     autoScroll: true,
-    border: false,
     /*rootProperty:{
      id:'-1',
      name:'根机构'
