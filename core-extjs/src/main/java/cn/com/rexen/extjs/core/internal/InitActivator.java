@@ -1,6 +1,8 @@
 package cn.com.rexen.extjs.core.internal;
 
 import cn.com.rexen.core.util.SystemUtil;
+import org.apache.camel.component.servlet.DefaultHttpRegistry;
+import org.apache.camel.component.servlet.HttpRegistry;
 import org.apache.log4j.Logger;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
@@ -23,7 +25,7 @@ public class InitActivator implements BundleActivator {
         SystemUtil.succeedPrintln(String.format("Start-up %s bundle!!", BUNDLE_NAME));
         context = bundleContext;
         reference = bundleContext.getServiceReference(HttpService.class.getName());
-        httpService = (HttpService) bundleContext.getService(reference);
+        //httpService = (HttpService) bundleContext.getService(reference);
 //        WebContainer webContainer;
 //        webContainer.unregisterConstraintMapping();
 //        httpService.registerResources("/kalix/view", "/view", null);
@@ -35,6 +37,13 @@ public class InitActivator implements BundleActivator {
         /*if(httpService!=null){
             httpService.unregister("CamelServlet");
         }*/
+        HttpRegistry httpRegistry = DefaultHttpRegistry.getHttpRegistry("CamelServlet");
+        DefaultHttpRegistry.removeHttpRegistry("CamelServlet");
+        if (httpRegistry != null) {
+            httpRegistry.unregister(httpRegistry.getCamelServlet("CamelServlet"));
+            //httpRegistry = null;
+        }
+
         if (reference != null){
             bundleContext.ungetService(reference);
         }

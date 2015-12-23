@@ -1,13 +1,12 @@
 Bundle-Activator: ${bundle.namespace}.internal.InitActivator
-Import-Package: cn.com.rexen.core.security,  \
-                cn.com.rexen.core.security.filter, \
+Import-Package: cn.com.rexen.security.core.filter, \
+                cn.com.rexen.security.impl.filter, \
                 org.apache.camel.component.servlet, \
                 org.apache.shiro,org.apache.shiro.web.env, \
-                org.apache.shiro.web.servlet,org.apache.shiro.subject, \
-                org.apache.shiro.web.tags,javax.servlet.jsp,org.apache.shiro.session, \
-                cn.com.rexen.ext.shiro.web.filter.authc,  \
-                cn.com.rexen.ext.shiro.realm.x509, \
-                org.apache.shiro.web.filter.authz,*
+                org.apache.shiro.web.servlet, \
+                org.apache.shiro.subject, \
+                org.apache.shiro.web.tags, \
+                javax.servlet.jsp,org.apache.shiro.session,*
 Include-Resource: src/main/webapp,src/main/resources
 Web-ContextPath:kalix
 Bundle-Category: Rexen Extjs Core
