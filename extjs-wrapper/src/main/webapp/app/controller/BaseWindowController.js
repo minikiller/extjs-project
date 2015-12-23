@@ -150,11 +150,11 @@ Ext.define('kalix.controller.BaseWindowController', {
                 var fieldItem = fieldItems.getAt(fieldIndex);
 
                 if (fieldItem.config.bind != null) {
-                    var instanceValidators = model.getField(fieldItem.config.bind.value.replace('}', '').split('.')[1]).instanceValidators;
+                        var instanceValidators = model.getField(fieldItem.config.bind.value.replace('}', '').split('.')[1]).instanceValidators;
 
-                    if (instanceValidators != undefined && instanceValidators[0].type == 'presence') {
-                        fieldItems.getAt(fieldIndex).beforeLabelTextTpl = '<span class="field-required" data-qtip="必填选项">*</span>'
-                    }
+                        if (instanceValidators != undefined && instanceValidators[0].type == 'presence') {
+                            fieldItems.getAt(fieldIndex).beforeLabelTextTpl = '<span class="field-required" data-qtip="必填选项">*</span>'
+                        }
                 }
             }
         }
