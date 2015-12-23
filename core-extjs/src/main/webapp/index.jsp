@@ -1,6 +1,4 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="org.apache.shiro.SecurityUtils,org.apache.shiro.session.Session" %>
-<%@ page import="org.apache.shiro.subject.Subject" %>
 <!DOCTYPE HTML>
 <html manifest="">
 <head>
@@ -28,18 +26,18 @@
 
 </head>
 <body>
-<%
-    Subject subject = SecurityUtils.getSubject();
-    Session shiro = subject.getSession();
-    String userName = (String) shiro.getAttribute("currentUsername");
-//    shiro把属性设置到httpSession中，因此下面代码也可以取得属性。
-//    session.getAttribute("currentUsername");
-    if (userName == null) {
-        response.sendRedirect("login.jsp");
-    } else {
-        System.out.println("user has already login as " + userName);
-    }
+<%--<%--%>
+<%--Subject subject = SecurityUtils.getSubject();--%>
+<%--Session shiro = subject.getSession();--%>
+<%--String userName = (String) shiro.getAttribute("currentUsername");--%>
+<%--//    shiro把属性设置到httpSession中，因此下面代码也可以取得属性。--%>
+<%--//    session.getAttribute("currentUsername");--%>
+<%--if (userName == null) {--%>
+<%--response.sendRedirect("login.jsp");--%>
+<%--} else {--%>
+<%--System.out.println("user has already login as " + userName);--%>
+<%--}--%>
 
-%>
+<%--%>--%>
 </body>
 </html>
