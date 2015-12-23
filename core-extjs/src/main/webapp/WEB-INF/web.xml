@@ -22,7 +22,7 @@
 
     <display-name>My Camel Rest Application</display-name>
     <!--org.apache.camel.component.servlet.CamelHttpTransportServlet-->
-    <servlet>
+    <!--<servlet>
         <servlet-name>CamelServlet</servlet-name>
         <servlet-class>
             cn.com.rexen.extjs.core.KalixCamelHttpTransportServlet
@@ -37,7 +37,7 @@
     <servlet-mapping>
         <servlet-name>CamelServlet</servlet-name>
         <url-pattern>/camel/rest/*</url-pattern>
-    </servlet-mapping>
+    </servlet-mapping>-->
 
     <listener>
         <listener-class>org.apache.shiro.web.env.EnvironmentLoaderListener</listener-class>

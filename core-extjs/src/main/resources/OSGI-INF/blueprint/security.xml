@@ -2,10 +2,21 @@
 <blueprint
         xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
 
-    <!--<cm:property-placeholder persistent-id="rexen.project.urgent" update-strategy="reload" >
-        <cm:default-properties>
-            <cm:property name="filter" value="(security=cas)"/>
-            &lt;!&ndash;<cm:property name="urgent.realm" value="(&amp;(key=urgent)(security=cas))"/>&ndash;&gt;
-        </cm:default-properties>
-    </cm:property-placeholder>-->
+    <reference id="httpService" interface="org.osgi.service.http.HttpService"/>
+
+    <bean id="osgiServletRegisterer" class="org.apache.camel.component.servlet.osgi.OsgiServletRegisterer"
+          init-method="register"
+          destroy-method="unregister">
+        <property name="alias" value="/kalix/camel/rest"/>
+        <property name="httpService" ref="httpService"/>
+        <property name="servlet" ref="camelServlet"/>
+        <!--<property name="bundleContext" ref="blueprintBundleContext"/>-->
+
+        <!--<property name="servletName" value="dictServlet"/>-->
+    </bean>
+    <bean id="camelServlet" class="cn.com.rexen.extjs.core.KalixCamelHttpTransportServlet"/>
+
+    <!-- use camel-metrics route policy to gather metrics for all routes -->
+    <!--<bean id="metricsRoutePolicyFactory"
+          class="org.apache.camel.component.metrics.routepolicy.MetricsRoutePolicyFactory"/>-->
 </blueprint>
