@@ -25,10 +25,14 @@
     <!--<servlet>
         <servlet-name>CamelServlet</servlet-name>
         <servlet-class>
-            cn.com.rexen.extjs.core.KalixCamelHttpTransportServlet
+            cn.com.rexen.core.impl.web.KalixCamelHttpTransportServlet
         </servlet-class>
         <init-param>
             <param-name>matchOnUriPrefix</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <init-param>
+            <param-name>ignoreDuplicateServletName</param-name>
             <param-value>true</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
@@ -40,7 +44,7 @@
     </servlet-mapping>-->
 
     <listener>
-        <listener-class>org.apache.shiro.web.env.EnvironmentLoaderListener</listener-class>
+        <listener-class>cn.com.rexen.security.core.web.evn.KalixEnvironmentLoaderListener</listener-class>
     </listener>
 
     <filter>
