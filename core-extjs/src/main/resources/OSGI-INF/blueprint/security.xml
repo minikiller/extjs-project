@@ -2,7 +2,7 @@
 <blueprint
         xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
 
-    <reference id="httpService" interface="org.osgi.service.http.HttpService"/>
+    <!--<reference id="httpService" interface="org.osgi.service.http.HttpService"/>
 
     <bean id="osgiServletRegisterer" class="org.apache.camel.component.servlet.osgi.OsgiServletRegisterer"
           init-method="register"
@@ -10,11 +10,11 @@
         <property name="alias" value="/kalix/camel/rest"/>
         <property name="httpService" ref="httpService"/>
         <property name="servlet" ref="camelServlet"/>
-        <!--<property name="bundleContext" ref="blueprintBundleContext"/>-->
+        &lt;!&ndash;<property name="bundleContext" ref="blueprintBundleContext"/>&ndash;&gt;
 
-        <!--<property name="servletName" value="dictServlet"/>-->
+        &lt;!&ndash;<property name="servletName" value="dictServlet"/>&ndash;&gt;
     </bean>
-    <bean id="camelServlet" class="cn.com.rexen.extjs.core.KalixCamelHttpTransportServlet"/>
+    <bean id="camelServlet" class="cn.com.rexen.extjs.core.KalixCamelHttpTransportServlet"/>-->
 
     <!-- use camel-metrics route policy to gather metrics for all routes -->
     <!--<bean id="metricsRoutePolicyFactory"

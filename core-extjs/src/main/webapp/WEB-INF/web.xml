@@ -22,11 +22,9 @@
 
     <display-name>My Camel Rest Application</display-name>
     <!--org.apache.camel.component.servlet.CamelHttpTransportServlet-->
-    <!--<servlet>
+    <servlet>
         <servlet-name>CamelServlet</servlet-name>
-        <servlet-class>
-            cn.com.rexen.core.impl.web.KalixCamelHttpTransportServlet
-        </servlet-class>
+        <servlet-class>cn.com.rexen.core.impl.web.KalixCamelHttpTransportServlet</servlet-class>
         <init-param>
             <param-name>matchOnUriPrefix</param-name>
             <param-value>true</param-value>
@@ -41,7 +39,7 @@
     <servlet-mapping>
         <servlet-name>CamelServlet</servlet-name>
         <url-pattern>/camel/rest/*</url-pattern>
-    </servlet-mapping>-->
+    </servlet-mapping>
 
     <listener>
         <listener-class>cn.com.rexen.security.core.web.evn.KalixEnvironmentLoaderListener</listener-class>
