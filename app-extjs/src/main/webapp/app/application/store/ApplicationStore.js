@@ -10,5 +10,5 @@ Ext.define('kalix.app.application.store.ApplicationStore', {
     alias: 'store.applicationStore',
     xtype: 'applicationStore',
     storeId: "applicationStore",
-    proxyUrl: '/kalix/camel/rest/applications'
+    proxyUrl: CONFIG.restRoot + '/camel/rest/applications'
 });

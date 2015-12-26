@@ -1,8 +1,7 @@
 package cn.com.rexen.extjs.admin.internal;
 
+import cn.com.rexen.core.api.osgi.KalixBundleActivator;
 import cn.com.rexen.core.util.SystemUtil;
-import org.apache.log4j.Logger;
-import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
 import org.osgi.service.http.HttpService;
@@ -10,24 +9,21 @@ import org.osgi.service.http.HttpService;
 /**
  * Created by sunlf on 14-3-23.
  */
-public class InitActivator implements BundleActivator {
-
+//public class InitActivator implements BundleActivator {
+public class InitActivator extends KalixBundleActivator {
     private static final String BUNDLE_NAME = " Extjs Admin Web ";
-    private static BundleContext context;
-    private static Logger logger = Logger.getLogger(InitActivator.class);
     private ServiceReference reference;
     private HttpService httpService;
+
 
     @Override
     public void start(BundleContext bundleContext) throws Exception {
         SystemUtil.succeedPrintln(String.format("Start-up %s bundle!!"+bundleContext.getBundle(), BUNDLE_NAME));
-        context = bundleContext;
 
         reference = bundleContext.getServiceReference(HttpService.class.getName());
         httpService = (HttpService) bundleContext.getService(reference);
-        httpService.registerResources("/kalix/app/admin", "/admin", null);
-//        httpService.registerResources("/kalix/app/admin", "/admin", null);
-        httpService.registerResources("/kalix/admin/resources/images", "/resources/images", null);
+        httpService.registerResources(contextPath + "/app/admin", "/admin", null);
+        httpService.registerResources(contextPath + "/admin/resources/images", "/resources/images", null);
     }
 
     @Override
@@ -36,10 +32,9 @@ public class InitActivator implements BundleActivator {
 
         if (reference != null)
             bundleContext.ungetService(reference);
-        context = null;
         if (httpService != null) {
-            httpService.unregister("/kalix/app/admin");
-            httpService.unregister("/kalix/admin/resources/images");
+            httpService.unregister(contextPath + "/app/admin");
+            httpService.unregister(contextPath + "/admin/resources/images");
         }
     }
 }

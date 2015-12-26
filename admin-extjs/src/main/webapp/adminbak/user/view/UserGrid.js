@@ -4,11 +4,11 @@
  *         date:2015-7-3
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.user.view.UserGrid', {
+Ext.define('kalix.admin.user.view.UserGrid', {
     extend: 'Ext.grid.Panel',
     requires: [
-        'Kalix.admin.user.viewModel.UserViewModel',
-        'Kalix.admin.user.controller.UserGridController'
+        'kalix.admin.user.viewModel.UserViewModel',
+        'kalix.admin.user.controller.UserGridController'
     ],
     alias: 'widget.userGrid',
     xtype: 'userGridPanel',

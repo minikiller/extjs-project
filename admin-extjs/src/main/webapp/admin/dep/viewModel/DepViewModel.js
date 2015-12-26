@@ -14,6 +14,6 @@ Ext.define('kalix.admin.dep.viewModel.DepViewModel', {
     data: {
         addTitle: '新增部门',
         editTitle: '编辑部门',
-        url: '/kalix/camel/rest/deps'
+        url: CONFIG.restRoot + '/camel/rest/deps'
     }
 });

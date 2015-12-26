@@ -13,7 +13,7 @@ Ext.define('kalix.attachment.controller.AttachmentGridController', {
         scope={mainId:mainId,store:store};
 
         form.submit({
-            url: '/kalix/camel/rest/upload',
+            url: CONFIG.restRoot + '/camel/rest/upload',
             waitMsg: '正在上传...',
             scope: scope,
             success: function (fp, o) {
@@ -62,12 +62,12 @@ Ext.define('kalix.attachment.controller.AttachmentGridController', {
     },
     onDelete: function (grid, rowIndex, colIndex) {
         var model = grid.getStore().getData().items[rowIndex];
-        var store = kalix.getApplication().getStore(this.storeId);
+        var store = Ext.app.Application.instance.getApplication().getStore(this.storeId);
 
         Ext.Msg.confirm("警告", "确定要删除吗？", function (button) {
             if (button == "yes") {
                 Ext.Ajax.request({
-                    url: '/kalix/camel/rest/couchdb?id='+model.get('attachmentId')+'&rev='+model.get('attachmentRev'),
+                    url: CONFIG.restRoot + '/camel/rest/couchdb?id=' + model.get('attachmentId') + '&rev=' + model.get('attachmentRev'),
                     method:'DELETE',
                     async:false,
                     //extraParams :{id:model.get('attachmentId'),rev:model.get('attachmentRev')},

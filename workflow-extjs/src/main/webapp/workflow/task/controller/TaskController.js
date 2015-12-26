@@ -19,7 +19,7 @@ Ext.define('kalix.workflow.task.controller.TaskController', {
      */
     onInitPanel: function () {
 
-        var panel = Ext.create("Ext.panel.Panel", {
+        var panel = Ext.create('Ext.panel.Panel', {
             border: false,
             autoScroll: true,
             height: 640,
@@ -42,7 +42,7 @@ Ext.define('kalix.workflow.task.controller.TaskController', {
                 items: [{
                     xtype: 'textfield',
                     fieldLabel: '标题',
-                    itemId: "notice_title",
+                    itemId: 'notice_title',
                     name: 'title'
                 }]
             }]
@@ -93,7 +93,7 @@ Ext.define('kalix.workflow.task.controller.TaskController', {
         });
 
 
-        var searchPanel = Ext.create("Ext.panel.Panel", {
+        var searchPanel = Ext.create('Ext.panel.Panel', {
             title: '条件查询',
             border: false,
             items: [formPanel]
@@ -107,7 +107,7 @@ Ext.define('kalix.workflow.task.controller.TaskController', {
      */
     onInitDataGrid: function () {
         var taskStore = Ext.create('kalix.workflow.task.store.TaskStore');
-        var dataGird = Ext.create("kalix.workflow.task.view.TaskGrid",
+        var dataGird = Ext.create('kalix.workflow.task.view.TaskGrid',
             {
                 store: taskStore,
                 bbar: [{

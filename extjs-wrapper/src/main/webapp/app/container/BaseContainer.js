@@ -6,7 +6,7 @@ Ext.define('kalix.container.BaseContainer', {
     storeId: '',
     listeners: {
         render: function (target, eOpts) {
-            var store = kalix.getApplication().getStore(this.storeId);
+            var store = Ext.app.Application.instance.getApplication().getStore(this.storeId);
 
             store.on('beforeload', function (store, opts, target) {
                 var jsonStr = Ext.JSON.encode(target.items.getAt(0).getForm().getFieldValues());

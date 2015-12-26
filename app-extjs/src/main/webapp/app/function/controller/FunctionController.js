@@ -9,7 +9,7 @@ Ext.define('kalix.app.function.controller.FunctionController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.functionController',
     requires: [
-        "kalix.app.application.view.ApplicationTreeList",
+        'kalix.app.application.view.ApplicationTreeList',
         'kalix.app.function.view.FunctionGrid'
     ],
     /**
@@ -17,11 +17,11 @@ Ext.define('kalix.app.function.controller.FunctionController', {
      * @returns {Ext.panel.Panel}
      */
     onInitPanel: function () {
-        var panel = Ext.create("Ext.panel.Panel", {
+        var panel = Ext.create('Ext.panel.Panel', {
             border: false,
-            layout: "hbox",
+            layout: 'hbox',
             autoScroll: true,
-            itemId: "mainPanel",
+            itemId: 'mainPanel',
             items: [
                 {xtype:'container', padding:10, flex: 1, items:[this.onInitApplicationList()]},
                 {xtype:'container', padding:'10 10 10 0', flex:3, items:[this.onInitDataGrid()]}]
@@ -40,8 +40,8 @@ Ext.define('kalix.app.function.controller.FunctionController', {
         grid.applicationName = record.data.name;
         var store = grid.getStore();
         store.setProxy({
-            type: "ajax",
-            url: '/kalix/camel/rest/functions/application/' + record.data.id
+            type: 'ajax',
+            url: CONFIG.restRoot + '/camel/rest/functions/application/' + record.data.id
         });
         store.reload();
     },
@@ -49,14 +49,14 @@ Ext.define('kalix.app.function.controller.FunctionController', {
      * 应用刷新
      */
     onApplicationRefersh: function () {
-        Ext.ComponentQuery.query('functionPanel')[0].down("#mainPanel>#applicationList").getStore().reload();
+        Ext.ComponentQuery.query('functionPanel')[0].down('#mainPanel>#applicationList').getStore().reload();
     },
     /**
      * 应用展开
      * @constructor
      */
     onApplicationAxpandAll: function () {
-        Ext.ComponentQuery.query('functionPanel')[0].down("#mainPanel>#applicationList").expandAll(function () {
+        Ext.ComponentQuery.query('functionPanel')[0].down('#mainPanel>#applicationList').expandAll(function () {
         });
     },
     /**
@@ -64,7 +64,7 @@ Ext.define('kalix.app.function.controller.FunctionController', {
      * @constructor
      */
     onApplicationCollapseAll: function () {
-        Ext.ComponentQuery.query('functionPanel')[0].down("#mainPanel>#applicationList").collapseAll(function () {
+        Ext.ComponentQuery.query('functionPanel')[0].down('#mainPanel>#applicationList').collapseAll(function () {
         });
     },
     /**
@@ -72,10 +72,10 @@ Ext.define('kalix.app.function.controller.FunctionController', {
      * @returns {Ext.panel.Panel}
      */
     onInitApplicationList: function () {
-        var applicationListPanel = Ext.create("kalix.app.application.view.ApplicationTreeList", {
-            store: Ext.create("kalix.app.application.store.ApplicationTreeListStore"),
-            region: "west",
-            itemId: "applicationList",
+        var applicationListPanel = Ext.create('kalix.app.application.view.ApplicationTreeList', {
+            store: Ext.create('kalix.app.application.store.ApplicationTreeListStore'),
+            region: 'west',
+            itemId: 'applicationList',
             title: '应用列表',
             iconCls: 'x-fa fa-cubes',
             listeners: {
@@ -94,8 +94,8 @@ Ext.define('kalix.app.function.controller.FunctionController', {
      * @returns {Ext.panel.Panel}
      */
     onInitDataGrid: function () {
-        var dataGird = Ext.create("kalix.app.function.view.FunctionGrid", {
-            store: Ext.create("kalix.app.function.store.FunctionStore")
+        var dataGird = Ext.create('kalix.app.function.view.FunctionGrid', {
+            store: Ext.create('kalix.app.function.store.FunctionStore')
         });
         return dataGird;
     }

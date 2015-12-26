@@ -13,7 +13,7 @@ Ext.define('kalix.attachment.viewModel.AttachmentViewModel', {
         view_title: '',
         add_title: '',
         edit_title: '',
-        add_image_path: '/kalix/attachment/resources/images/attachment_add.png',
+        add_image_path: CONFIG.restRoot + '/attachment/resources/images/attachment_add.png',
         view_image_path: '',
         edit_image_path: ''
     }

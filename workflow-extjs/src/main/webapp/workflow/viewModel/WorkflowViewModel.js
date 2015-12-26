@@ -15,11 +15,11 @@ Ext.define('kalix.workflow.viewModel.WorkflowViewModel', {
     data: {
         addTitle: '新增公告',
         editTitle: '编辑公告',
-        url: '/kalix/camel/rest/notices',
-        processUrl: '/kalix/camel/rest/workflow',
+        url: CONFIG.restRoot + '/camel/rest/notices',
+        processUrl: CONFIG.restRoot + '/camel/rest/workflow',
         processShowTitile: '流程定义查看',
         processShowUrl: '/image',
-        historyActivityUrl: '/kalix/camel/rest/workflow/activities'
+        historyActivityUrl: CONFIG.restRoot + '/camel/rest/workflow/activities'
 
     }
     /*formulas: {

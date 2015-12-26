@@ -5,9 +5,9 @@
  *         date:2015-7-3
  * @version 1.0.0
  */
-Ext.define('Kalix.notice.store.NoticeStore', {
+Ext.define('kalix.notice.store.NoticeStore', {
     extend: 'Ext.data.Store',
-    model: 'Kalix.notice.model.NoticeModel',
+    model: 'kalix.notice.model.NoticeModel',
     alias: 'store.noticeStore',
     xtype: 'noticeStore',
     storeId: "noticeStore",
@@ -15,7 +15,7 @@ Ext.define('Kalix.notice.store.NoticeStore', {
     pageSize: 10,
     proxy: {
         type: "ajax",
-        url: '/kalix/camel/rest/notices',
+        url: CONFIG.restRoot + '/camel/rest/notices',
         reader: {
             type: "json",
             rootProperty: "data",

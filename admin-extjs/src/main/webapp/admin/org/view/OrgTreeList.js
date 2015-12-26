@@ -21,7 +21,7 @@ Ext.define('kalix.admin.org.view.OrgTreeList', {
         this.store.on('load',function(target,records, successful, operation, eOpts){
             var grid=this.findParentByType('panel').items.getAt(2).items.getAt(0);
             if(grid){
-                grid.store.proxy.url='/kalix/camel/rest/deps/org/-1';
+                grid.store.proxy.url = CONFIG.restRoot + '/camel/rest/deps/org/-1';
                 grid.store.load();
             }
         },this);

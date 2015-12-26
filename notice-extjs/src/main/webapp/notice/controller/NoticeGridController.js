@@ -5,7 +5,7 @@
  *         date:2015-6-18
  * @version 1.0.0
  */
-Ext.define('Kalix.notice.controller.NoticeGridController', {
+Ext.define('kalix.notice.controller.NoticeGridController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.noticeGridController',
 
@@ -18,7 +18,7 @@ Ext.define('Kalix.notice.controller.NoticeGridController', {
      * @returns {Ext.panel.Panel}
      */
     onAdd: function () {
-        var addFormPanel = Ext.create('Kalix.notice.view.NoticeAddForm', {
+        var addFormPanel = Ext.create('kalix.notice.view.NoticeAddForm', {
             url: this.getView().getViewModel().get("url")
         });
         var win = Ext.create('Ext.Window', {
@@ -53,7 +53,7 @@ Ext.define('Kalix.notice.controller.NoticeGridController', {
         console.log('fdfdfdf' + rec);
 
         /*var rec = grid.getStore().getAt(rowIndex);
-         var editFormPanel = Ext.create('Kalix.notice.view.NoticeEditForm', {
+         var editFormPanel = Ext.create('kalix.notice.view.NoticeEditForm', {
          url: this.getView().getViewModel().get("url")
          });
          var noticeModel = Ext.create("Kalix.notice.model.NoticeModel", {
@@ -64,7 +64,7 @@ Ext.define('Kalix.notice.controller.NoticeGridController', {
         //var grid = this.lookupReference('fooGrid');
         //this.setCurrentNotice(record);
 
-        var editFormPanel = Ext.create('Kalix.notice.view.NoticeEditForm', {
+        var editFormPanel = Ext.create('kalix.notice.view.NoticeEditForm', {
             url: this.getView().getViewModel().get("url"),
             //noticeRef:this.lookupReference('noticeRef'),
         });

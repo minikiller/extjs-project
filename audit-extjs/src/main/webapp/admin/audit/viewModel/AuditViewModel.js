@@ -17,8 +17,8 @@ Ext.define('kalix.admin.audit.viewModel.AuditViewModel', {
         view_title: '查看审计',
         add_title: '添加审计',
         edit_title: '修改审计',
-        add_image_path: '/kalix/roffice/audit/resources/images/audit_add.png',
-        view_image_path: '/kalix/roffice/audit/resources/images/audit_view.png',
-        edit_image_path: '/kalix/roffice/audit/resources/images/audit_edit.png',
+        add_image_path: CONFIG.restRoot + '/roffice/audit/resources/images/audit_add.png',
+        view_image_path: CONFIG.restRoot + '/roffice/audit/resources/images/audit_view.png',
+        edit_image_path: CONFIG.restRoot + '/roffice/audit/resources/images/audit_edit.png',
     }
 });

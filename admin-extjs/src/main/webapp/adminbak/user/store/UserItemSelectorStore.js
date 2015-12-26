@@ -5,9 +5,9 @@
  *         date:2015-7-3
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.user.store.UserItemSelectorStore', {
+Ext.define('kalix.admin.user.store.UserItemSelectorStore', {
     extend: 'kalix.store.BaseStore',
-    model: 'Kalix.admin.user.model.UserModel',
+    model: 'kalix.admin.user.model.UserModel',
     alias: 'store.userItemSelectorStore',
     xtype: 'userItemSelectorStore',
     autoLoad: true,
@@ -15,7 +15,7 @@ Ext.define('Kalix.admin.user.store.UserItemSelectorStore', {
     proxy: {
         type: 'ajax',
         limitParam: null,
-        url: '/kalix/camel/rest/users/all',
+        url: CONFIG.restRoot + '/camel/rest/users/all',
         reader: {
             type: "json",
             root: "data",

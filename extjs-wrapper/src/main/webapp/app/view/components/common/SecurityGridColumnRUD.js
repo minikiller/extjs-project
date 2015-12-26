@@ -46,7 +46,7 @@ Ext.define('kalix.view.components.common.SecurityGridColumnRUD', {
             if (this.permissions.length > 0) {
                 var params = this.permissions.join('_');
                 Ext.Ajax.request({
-                    url: "/kalix/camel/rest/system/applications/modules/children/buttons/" + params,
+                    url: CONFIG.restRoot + '/camel/rest/system/applications/modules/children/buttons/' + params,
                     method: "GET",
                     async: false,
                     callback: function (options, success, response) {

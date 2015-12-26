@@ -5,7 +5,7 @@
  */
 Ext.application({
     name: 'kalix',
-
+    //paths:{'kalix':'app'},
     extend: 'kalix.core.Application',
 
     requires: [

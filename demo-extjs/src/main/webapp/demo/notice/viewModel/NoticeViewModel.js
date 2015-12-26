@@ -15,8 +15,8 @@ Ext.define('kalix.demo.notice.viewModel.NoticeViewModel', {
     data: {
         addTitle: '新增公告',
         editTitle: '编辑公告',
-        url: '/kalix/camel/rest/demos',
-        processUrl: '/kalix/camel/rest/demos',
+        url: CONFIG.restRoot + '/camel/rest/demos',
+        processUrl: CONFIG.restRoot + '/camel/rest/demos',
         processShowTitile: '当前流程查看',
         processShowUrl: '/image'
     }

@@ -15,16 +15,16 @@ Ext.define('kalix.admin.workgroup.controller.WorkGroupGridController', {
      */
     onSaveAddUser: function (workGroupUserUrl, userAddForm, rec) {
         if (userAddForm != null && userAddForm.isValid()) {
-            var userIds = userAddForm.down("#userAddItemSelector").getValue();
+            var userIds = userAddForm.down('#userAddItemSelector').getValue();
             var groupId = rec.data.id;
             Ext.Ajax.request({
                 url: workGroupUserUrl,
                 paramsAsJson: true,
                 params: {
-                    "groupId": groupId,
-                    "userIds": userIds.join(',')
+                    'groupId': groupId,
+                    'userIds': userIds.join(',')
                 },
-                method: "GET",
+                method: 'GET',
                 callback: function (options, success, response) {
                     var resp = Ext.JSON.decode(response.responseText);
                     if (resp != null && resp.success) {
@@ -42,16 +42,16 @@ Ext.define('kalix.admin.workgroup.controller.WorkGroupGridController', {
      */
     onSaveAddRole: function (workGroupRoleUrl, roleAddForm, rec) {
         if (roleAddForm != null && roleAddForm.isValid()) {
-            var roleIds = roleAddForm.down("#roleAddItemSelector").getValue();
+            var roleIds = roleAddForm.down('#roleAddItemSelector').getValue();
             var groupId = rec.data.id;
             Ext.Ajax.request({
                 url: workGroupRoleUrl,
                 paramsAsJson: true,
                 params: {
-                    "groupId": groupId,
-                    "roleIds": roleIds.join(',')
+                    'groupId': groupId,
+                    'roleIds': roleIds.join(',')
                 },
-                method: "GET",
+                method: 'GET',
                 callback: function (options, success, response) {
                     var resp = Ext.JSON.decode(response.responseText);
                     if (resp != null && resp.success) {
@@ -70,7 +70,7 @@ Ext.define('kalix.admin.workgroup.controller.WorkGroupGridController', {
     onAddUser: function (grid, rowIndex, colIndex) {
         var rec = grid.getStore().getAt(rowIndex);
         if (rec == null) {
-            Ext.MessageBox.alert(CONFIG.ALTER_TITLE_INFO, "请选择要添加用户的工作组!");
+            Ext.MessageBox.alert(CONFIG.ALTER_TITLE_INFO, '请选择要添加用户的工作组!');
             return;
         }
 
@@ -81,7 +81,7 @@ Ext.define('kalix.admin.workgroup.controller.WorkGroupGridController', {
             modal: true,
             //resizable:false,
             icon: 'admin/resources/images/group_add.png',
-            title: "添加用户",
+            title: '添加用户',
             items: [
                 {
                     xtype: 'displayfield',
@@ -97,18 +97,18 @@ Ext.define('kalix.admin.workgroup.controller.WorkGroupGridController', {
             target: win
         });
         loadMask.show();
-        var workGroupUserUrl = this.getView().lookupViewModel().get("url") + "/workGroupUsers";
+        var workGroupUserUrl = this.getView().lookupViewModel().get('url') + '/workGroupUsers';
         var me = this;
         //获得已选用户
         Ext.Ajax.request({
-            url: workGroupUserUrl + "/users/" + rec.data.id,
-            method: "GET",
+            url: workGroupUserUrl + '/users/' + rec.data.id,
+            method: 'GET',
             callback: function (options, success, response) {
                 var users = Ext.JSON.decode(response.responseText);
-                var dataSotre = Ext.create("kalix.admin.user.store.UserItemSelectorStore");
+                var dataSotre = Ext.create('kalix.admin.user.store.UserItemSelectorStore');
                 var addUserForm = Ext.create('Ext.form.Panel', {
                     width: 700,
-                    itemId: "addUserForm",
+                    itemId: 'addUserForm',
                     bodyPadding: 10,
                     //height: 400,
                     layout: 'fit',
@@ -130,7 +130,7 @@ Ext.define('kalix.admin.workgroup.controller.WorkGroupGridController', {
                         },
                         {
                             text: '重置', glyph: 'xf0e2@FontAwesome', handler: function () {
-                            var field = this.up('#addUserForm').down("#userAddItemSelector");
+                            var field = this.up('#addUserForm').down('#userAddItemSelector');
                             if (!field.disabled) {
                                 field.clearValue();
                             }
@@ -151,7 +151,7 @@ Ext.define('kalix.admin.workgroup.controller.WorkGroupGridController', {
     onAddRole: function (grid, rowIndex, colIndex) {
         var rec = grid.getStore().getAt(rowIndex);
         if (rec == null) {
-            Ext.MessageBox.alert(CONFIG.ALTER_TITLE_INFO, "请选择要添加角色的工作组!");
+            Ext.MessageBox.alert(CONFIG.ALTER_TITLE_INFO, '请选择要添加角色的工作组!');
             return;
         }
 
@@ -162,7 +162,7 @@ Ext.define('kalix.admin.workgroup.controller.WorkGroupGridController', {
             modal: true,
             //resizable:false,
             icon: 'admin/resources/images/user_add.png',
-            title: "添加角色",
+            title: '添加角色',
             items: [
                 {
                     xtype: 'displayfield',
@@ -178,18 +178,18 @@ Ext.define('kalix.admin.workgroup.controller.WorkGroupGridController', {
             target: win
         });
         loadMask.show();
-        var workGroupRoleUrl = this.getView().lookupViewModel().get("url") + "/workGroupRoles";
+        var workGroupRoleUrl = this.getView().lookupViewModel().get('url') + '/workGroupRoles';
         var me = this;
         //获得已选角色
         Ext.Ajax.request({
-            url: workGroupRoleUrl + "/roles/" + rec.data.id,
-            method: "GET",
+            url: workGroupRoleUrl + '/roles/' + rec.data.id,
+            method: 'GET',
             callback: function (options, success, response) {
                 var roles = Ext.JSON.decode(response.responseText);
-                var dataSotre = Ext.create("kalix.admin.role.store.RoleItemSelectorStore");
+                var dataSotre = Ext.create('kalix.admin.role.store.RoleItemSelectorStore');
                 var addRoleForm = Ext.create('Ext.form.Panel', {
                     width: 700,
-                    itemId: "addRoleForm",
+                    itemId: 'addRoleForm',
                     bodyPadding: 10,
                     //height: 400,
                     layout: 'fit',
@@ -211,7 +211,7 @@ Ext.define('kalix.admin.workgroup.controller.WorkGroupGridController', {
                         },
                         {
                             text: '重置', glyph: 'xf0e2@FontAwesome', handler: function () {
-                            var field = this.up('#addRoleForm').down("#roleAddItemSelector");
+                            var field = this.up('#addRoleForm').down('#roleAddItemSelector');
                             if (!field.disabled) {
                                 field.clearValue();
                             }

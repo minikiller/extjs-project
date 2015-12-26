@@ -8,7 +8,7 @@ Ext.define('kalix.core.view.ProfilebarModel', {
   data : {
     user : {
       name : Ext.util.Cookies.get('currentUserName') || '系统管理员',
-      quit : "/kalix/logout"
+      quit: CONFIG.restRoot + '/logout'
     }
   }
 });

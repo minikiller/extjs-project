@@ -13,10 +13,10 @@ Ext.define('kalix.app.application.controller.ApplicationGridController', {
         var url = '';
 
         if (model.get('status')) {
-            url = '/kalix/camel/rest/osgi/bundle/stop?id=' + model.get('code');
+            url = CONFIG.restRoot + '/camel/rest/osgi/bundle/stop?id=' + model.get('code');
         }
         else {
-            url = '/kalix/camel/rest/osgi/bundle/start?id=' + model.get('code');
+            url = CONFIG.restRoot + '/camel/rest/osgi/bundle/start?id=' + model.get('code');
         }
 
         Ext.Ajax.request({

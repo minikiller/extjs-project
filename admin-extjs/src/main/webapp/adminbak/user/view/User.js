@@ -5,11 +5,11 @@
  *         date:2015-6-18
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.user.view.User', {
+Ext.define('kalix.admin.user.view.User', {
     extend: 'Ext.panel.Panel',
     requires: [
-        'Kalix.admin.user.viewModel.UserViewModel',
-        'Kalix.admin.user.controller.UserController'
+        'kalix.admin.user.viewModel.UserViewModel',
+        'kalix.admin.user.controller.UserController'
     ],
     controller: 'userController',
     viewModel: {

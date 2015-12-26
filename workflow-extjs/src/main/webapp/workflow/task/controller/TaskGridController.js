@@ -15,7 +15,7 @@ Ext.define('kalix.workflow.task.controller.TaskGridController', {
          */
         onAdd: function () {
             var addFormPanel = Ext.create('kalix.notice.view.NoticeAddForm', {
-                url: this.getView().getViewModel().get("url")
+                url: this.getView().getViewModel().get('url')
             });
             var win = Ext.create('Ext.Window', {
                 width: 400,
@@ -50,9 +50,9 @@ Ext.define('kalix.workflow.task.controller.TaskGridController', {
 
             /*var rec = grid.getStore().getAt(rowIndex);
              var editFormPanel = Ext.create('kalix.notice.view.NoticeEditForm', {
-             url: this.getView().getViewModel().get("url")
+             url: this.getView().getViewModel().get('url')
              });
-             var noticeModel = Ext.create("kalix.notice.model.NoticeModel", {
+             var noticeModel = Ext.create('kalix.notice.model.NoticeModel', {
              id: rec.data.id,
              title: rec.data.title,
              content: rec.data.content,
@@ -61,7 +61,7 @@ Ext.define('kalix.workflow.task.controller.TaskGridController', {
             //this.setCurrentNotice(record);
 
             var editFormPanel = Ext.create('kalix.notice.view.NoticeEditForm', {
-                url: this.getView().getViewModel().get("url")
+                url: this.getView().getViewModel().get('url')
                 //noticeRef:this.lookupReference('noticeRef'),
             });
             //editFormPanel.setCurrentNotice(rec.data);
@@ -92,32 +92,32 @@ Ext.define('kalix.workflow.task.controller.TaskGridController', {
          * 批量删除操作.
          */
         onDeleteAll: function () {
-            var selModel = Ext.getCmp("noticeDataGrid").getSelectionModel();
+            var selModel = Ext.getCmp('noticeDataGrid').getSelectionModel();
             if (selModel.hasSelection()) {
-                Ext.Msg.confirm("警告", "确定要删除吗？", function (button) {
-                    if (button == "yes") {
+                Ext.Msg.confirm('警告', '确定要删除吗？', function (button) {
+                    if (button == 'yes') {
                         var rows = selModel.getSelection();
-                        var ids = "";
+                        var ids = '';
                         for (var i = 0; i < rows.length; i++) {
                             if (rows[i] != null && rows[i].id != null) {
                                 ids += rows[i].id;
                                 if (i + 1 != rows.length) {
-                                    ids += "_";
+                                    ids += '_';
                                 }
                             }
                         }
                         Ext.Ajax.request({
-                            url: "/noticeDeleteAllServlet?ids=" + ids,
-                            method: "GET",
+                            url: '/noticeDeleteAllServlet?ids=' + ids,
+                            method: 'GET',
                             callback: function (options, success, response) {
                                 var resp = Ext.JSON.decode(response.responseText);
                                 Ext.MessageBox.alert(CONFIG.ALTER_TITLE_INFO, resp.msg);
                                 if (resp.success) {
-                                    var noticename = Ext.getCmp("noticename").getValue();
-                                    var name = Ext.getCmp("name").getValue();
-                                    var sex = Ext.getCmp("sex").getValue();
-                                    var status = Ext.getCmp("status").getValue();
-                                    var grid = Ext.getCmp("noticeDataGrid");
+                                    var noticename = Ext.getCmp('noticename').getValue();
+                                    var name = Ext.getCmp('name').getValue();
+                                    var sex = Ext.getCmp('sex').getValue();
+                                    var status = Ext.getCmp('status').getValue();
+                                    var grid = Ext.getCmp('noticeDataGrid');
                                     var store = grid.getStore();
                                     store.reload({
                                         params: {
@@ -135,7 +135,7 @@ Ext.define('kalix.workflow.task.controller.TaskGridController', {
                     }
                 });
             } else {
-                Ext.Msg.alert(CONFIG.ALTER_TITLE_ERROR, "请选择要删除的记录！");
+                Ext.Msg.alert(CONFIG.ALTER_TITLE_ERROR, '请选择要删除的记录！');
             }
         },
         /**
@@ -146,17 +146,17 @@ Ext.define('kalix.workflow.task.controller.TaskGridController', {
          */
         onDelete: function (grid, rowIndex, colIndex) {
             var rec = grid.getStore().getAt(rowIndex);
-            var deleteUrl = this.getView().getViewModel().get("url");
-            Ext.Msg.confirm("警告", "确定要删除吗？", function (button) {
-                if (button == "yes") {
+            var deleteUrl = this.getView().getViewModel().get('url');
+            Ext.Msg.confirm('警告', '确定要删除吗？', function (button) {
+                if (button == 'yes') {
                     Ext.Ajax.request({
-                        url: deleteUrl + "?id=" + rec.id,
+                        url: deleteUrl + '?id=' + rec.id,
                         method: 'DELETE',
                         callback: function (options, success, response) {
                             var resp = Ext.JSON.decode(response.responseText);
                             Ext.MessageBox.alert(CONFIG.ALTER_TITLE_INFO, resp.msg);
                             if (resp.success) {
-                                var grid = Ext.getCmp("noticeDataGrid");
+                                var grid = Ext.getCmp('noticeDataGrid');
                                 var store = grid.getStore();
                                 store.reload();
                             }
@@ -173,7 +173,7 @@ Ext.define('kalix.workflow.task.controller.TaskGridController', {
          */
         onOpenCurrentProcess: function (grid, rowIndex, colIndex) {
             var rec = grid.getStore().getAt(rowIndex);
-            var imgUrl = this.getView().getViewModel().get("processShowUrl") + "?taskId=" + rec.data.id;
+            var imgUrl = this.getView().getViewModel().get('processShowUrl') + '?taskId=' + rec.data.id;
             var win = Ext.create('kalix.workflow.components.ActivitiProcessImageWindow', {
                 html: "<iframe  width='100%' height='100%' frameborder='0' src='" + imgUrl + "'></iframe>",
                 title: this.getView().getViewModel().get("processShowTitile") + "-" + rec.data.name
@@ -189,7 +189,7 @@ Ext.define('kalix.workflow.task.controller.TaskGridController', {
         onCompleteTask: function (grid, rowIndex, colIndex) {
             var rec = grid.getStore().getAt(rowIndex);
             Ext.Ajax.request({
-                url: "/kalix/camel/rest/demos/" + rec.data.entityId,
+                url: CONFIG.restRoot + '/camel/rest/demos/' + rec.data.entityId,
                 method: "GET",
                 callback: function (options, success, response) {
                     var entity = Ext.JSON.decode(response.responseText);
@@ -198,7 +198,7 @@ Ext.define('kalix.workflow.task.controller.TaskGridController', {
                         return;
                     }
                     Ext.Ajax.request({
-                        url: "/kalix/camel/rest/workflow/form?taskId=" + rec.data.id,
+                        url: CONFIG.restRoot + '/camel/rest/workflow/form?taskId=' + rec.data.id,
                         method: "GET",
                         callback: function (options, success, response) {
                             var component = Ext.JSON.decode(response.responseText);
@@ -211,10 +211,10 @@ Ext.define('kalix.workflow.task.controller.TaskGridController', {
                             approvalWindow.down("#content").setValue(entity.content);
                             var activityHistoryStore = Ext.create('kalix.workflow.store.ActivityHistoryStore', {
                                 proxy: {
-                                    url: '/kalix/camel/rest/workflow/activities?historyProcessId=' + rec.data.processInstanceId
+                                    url: CONFIG.restRoot + '/camel/rest/workflow/activities?historyProcessId=' + rec.data.processInstanceId
                                 }
                             });
-                            var dataGird = Ext.create("kalix.workflow.view.ActivityHistoryGrid", {
+                            var dataGird = Ext.create('kalix.workflow.view.ActivityHistoryGrid', {
                                 store: activityHistoryStore,
                                 width: 460,
                             });

@@ -18,9 +18,9 @@ Ext.define('kalix.admin.user.viewModel.UserViewModel', {
         add_title: '添加用户',
         edit_title: '修改用户',
         key_title: '重置密码',
-        add_image_path: '/kalix/admin/resources/images/user_add.png',
-        view_image_path: '/kalix/admin/resources/images/user_view.png',
-        edit_image_path: '/kalix/admin/resources/images/user_edit.png',
-        key_image_path: '/kalix/admin/resources/images/user_key.png'
+        add_image_path: CONFIG.restRoot + '/admin/resources/images/user_add.png',
+        view_image_path: CONFIG.restRoot + '/admin/resources/images/user_view.png',
+        edit_image_path: CONFIG.restRoot + '/admin/resources/images/user_edit.png',
+        key_image_path: CONFIG.restRoot + '/admin/resources/images/user_key.png'
     }
 });

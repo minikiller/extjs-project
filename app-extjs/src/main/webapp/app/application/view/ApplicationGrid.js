@@ -105,7 +105,7 @@ Ext.define('kalix.app.application.view.ApplicationGrid', {
             var appIds = appIdArray.join('_');
 
             Ext.Ajax.request({
-                url: '/kalix/camel/rest/osgi/bundle/status?appIds=' + appIds,
+                url: CONFIG.restRoot + '/camel/rest/osgi/bundle/status?appIds=' + appIds,
                 scope: {view: this, appIdArray: appIdArray, records: records},
                 success: function (response, opts) {
                     var obj = Ext.decode(response.responseText);

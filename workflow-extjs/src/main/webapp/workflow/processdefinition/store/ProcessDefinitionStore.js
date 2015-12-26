@@ -15,7 +15,7 @@ Ext.define('kalix.workflow.processdefinition.store.ProcessDefinitionStore', {
     pageSize: 10,
     proxy: {
         type: "ajax",
-        url: '/kalix/camel/rest/workflow',
+        url: CONFIG.restRoot + '/camel/rest/workflow',
         reader: {
             type: "json",
             rootProperty: "data",

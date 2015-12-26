@@ -4,11 +4,11 @@
     cursor: pointer;
 }
 .kalix_start {
-    background-image: url(/kalix/admin/resources/images/control_play_blue.png) !important;
+    background-image: url(../../admin/resources/images/control_play_blue.png) !important;
 }
 
 .kalix_stop {
-    background-image: url(/kalix/admin/resources/images/control_pause_blue.png) !important;
+    background-image: url(../../admin/resources/images/control_pause_blue.png) !important;
 }
 
 img.x-action-col-icon.x-action-col-0.x-hide-grid-column {

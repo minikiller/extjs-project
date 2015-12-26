@@ -14,6 +14,6 @@ Ext.define('kalix.admin.area.viewModel.AreaViewModel', {
     data: {
         addTitle: '新增区域',
         editTitle: '编辑区域',
-        url: '/kalix/camel/rest/areas'
+        url: CONFIG.restRoot + '/camel/rest/areas'
     }
 });

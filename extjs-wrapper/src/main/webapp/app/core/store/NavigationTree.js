@@ -15,7 +15,7 @@ Ext.define('kalix.core.store.NavigationTree', {
     hashToken : null
   },
 
-  baseUrl : '/kalix/camel/rest/system/applications/',
+  baseUrl: CONFIG.restRoot + '/camel/rest/system/applications/',
   treeSelInfo:{
     tree:null,
     selected:false,

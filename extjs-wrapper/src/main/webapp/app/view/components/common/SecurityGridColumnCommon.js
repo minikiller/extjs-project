@@ -19,7 +19,7 @@ Ext.define('kalix.view.components.common.SecurityGridColumnCommon', {
             params = params.join('_');
             //查询授权
             Ext.Ajax.request({
-                url: "/kalix/camel/rest/system/applications/modules/children/buttons/" + params,
+                url: CONFIG.restRoot + '/camel/rest/system/applications/modules/children/buttons/' + params,
                 method: "GET",
                 async:false,
                 callback: function (options, success, response) {

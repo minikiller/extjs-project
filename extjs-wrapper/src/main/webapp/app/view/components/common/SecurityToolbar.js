@@ -45,7 +45,7 @@ Ext.define('kalix.view.components.common.SecurityToolbar', {
 
         //查询授权
         Ext.Ajax.request({
-            url: "/kalix/camel/rest/system/applications/modules/children/buttons/" + params,
+            url: CONFIG.restRoot + '/camel/rest/system/applications/modules/children/buttons/' + params,
             method: "GET",
             callback: function (options, success, response) {
                 var resp = Ext.JSON.decode(response.responseText);

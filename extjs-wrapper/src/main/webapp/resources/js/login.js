@@ -5,5 +5,6 @@
  */
 Ext.application({
     name: 'kalix',
+    //paths:{'kalix':'app'},
     autoCreateViewport: 'kalix.view.login.Login'
 });

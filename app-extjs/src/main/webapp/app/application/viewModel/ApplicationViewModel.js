@@ -17,8 +17,8 @@ Ext.define('kalix.app.application.viewModel.ApplicationViewModel', {
         view_title: '查看应用',
         add_title: '添加应用',
         edit_title: '修改应用',
-        add_image_path: '/kalix/app/resources/images/application_add.png',
-        view_image_path: '/kalix/app/resources/images/application.png',
-        edit_image_path: '/kalix/app/resources/images/application_edit.png',
+        add_image_path: CONFIG.restRoot + '/app/resources/images/application_add.png',
+        view_image_path: CONFIG.restRoot + '/app/resources/images/application.png',
+        edit_image_path: CONFIG.restRoot + '/app/resources/images/application_edit.png',
     }
 });

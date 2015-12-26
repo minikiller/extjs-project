@@ -19,7 +19,7 @@ Ext.define('kalix.workflow.processdefinition.controller.ProcessDefinitionControl
      */
     onInitPanel: function () {
 
-        var panel = Ext.create("Ext.panel.Panel", {
+        var panel = Ext.create('Ext.panel.Panel', {
             border: false,
             autoScroll: true,
             height: 640,
@@ -42,7 +42,7 @@ Ext.define('kalix.workflow.processdefinition.controller.ProcessDefinitionControl
                 items: [{
                     xtype: 'textfield',
                     fieldLabel: '标题',
-                    itemId: "notice_title",
+                    itemId: 'notice_title',
                     name: 'title'
                 }]
             }]
@@ -93,7 +93,7 @@ Ext.define('kalix.workflow.processdefinition.controller.ProcessDefinitionControl
         });
 
 
-        var searchPanel = Ext.create("Ext.panel.Panel", {
+        var searchPanel = Ext.create('Ext.panel.Panel', {
             title: '条件查询',
             border: false,
             items: [formPanel]
@@ -107,7 +107,7 @@ Ext.define('kalix.workflow.processdefinition.controller.ProcessDefinitionControl
      */
     onInitDataGrid: function () {
         var processDefinitionStore = Ext.create('kalix.workflow.processdefinition.store.ProcessDefinitionStore');
-        var dataGird = Ext.create("kalix.workflow.processdefinition.view.ProcessDefinitionGrid",
+        var dataGird = Ext.create('kalix.workflow.processdefinition.view.ProcessDefinitionGrid',
             {
                 store: processDefinitionStore,
                 bbar: [{

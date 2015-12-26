@@ -74,7 +74,7 @@ Ext.define('kalix.demo.notice.view.AuditWindow', {
                 var activityHistoryStore = Ext.ComponentQuery.query('auditWindow')[0].activityHistoryStore;
                 var hookFunction = Ext.ComponentQuery.query('auditWindow')[0].hookFunction;
                 Ext.Ajax.request({
-                    url: "/kalix/camel/rest/demos/completeTask?taskId=" + Ext.ComponentQuery.query('auditWindow')[0].taskId + "&accepted=" + status + "&comment=" + content,
+                    url: CONFIG.restRoot + '/camel/rest/demos/completeTask?taskId=' + Ext.ComponentQuery.query('auditWindow')[0].taskId + "&accepted=" + status + "&comment=" + content,
                     method: "GET",
                     callback: function (options, success, response) {
                         var jsonStatus = Ext.JSON.decode(response.responseText);

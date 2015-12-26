@@ -5,7 +5,7 @@
  *         date:2015-6-18
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.user.controller.UserFormController', {
+Ext.define('kalix.admin.user.controller.UserFormController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.userFormController',
 

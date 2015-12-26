@@ -27,7 +27,7 @@ Ext.define('kalix.admin.area.controller.AreaGridController', {
     onAdd: function () {
         var rows = this.getView().getSelectionModel().getSelection();
         var addFormPanel = Ext.create('kalix.admin.area.view.AreaAddForm', {
-            url: '/kalix/camel/rest/areas'
+            url: CONFIG.restRoot + '/camel/rest/areas'
         });
         if (rows != null && rows.length > 0) {
             if (rows[0] != null) {
@@ -60,7 +60,7 @@ Ext.define('kalix.admin.area.controller.AreaGridController', {
     onEdit: function (grid, rowIndex, colIndex) {
         var rec = grid.getStore().getAt(rowIndex);
         var editFormPanel = Ext.create('kalix.admin.area.view.AreaEditForm', {
-            url: '/kalix/camel/rest/areas'
+            url: CONFIG.restRoot + '/camel/rest/areas'
         });
         editFormPanel.down("#parentName").setValue(rec.data.parentName);
         editFormPanel.loadRecord(rec);

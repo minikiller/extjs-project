@@ -11,7 +11,7 @@ Ext.define('kalix.admin.area.store.AreaStore', {
     xtype: 'areaStore',
     storeId: "areaStore",
     autoLoad: true,
-    model: "kalix.admin.area.model.AreaModel",
+    model: 'kalix.admin.area.model.AreaModel',
     
     root: {
         expanded: true,
@@ -27,6 +27,6 @@ Ext.define('kalix.admin.area.store.AreaStore', {
     
     proxy: {
         type: "ajax",
-        url: '/kalix/camel/rest/areas'
+        url: CONFIG.restRoot + '/camel/rest/areas'
     }
 });

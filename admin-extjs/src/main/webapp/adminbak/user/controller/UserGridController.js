@@ -5,7 +5,7 @@
  *         date:2015-6-18
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.user.controller.UserGridController', {
+Ext.define('kalix.admin.user.controller.UserGridController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.userGridController',
     /**
@@ -14,7 +14,7 @@ Ext.define('Kalix.admin.user.controller.UserGridController', {
      */
     onAdd: function () {
 
-        var addFormPanel = Ext.create('Kalix.admin.user.view.UserAddForm', {
+        var addFormPanel = Ext.create('kalix.admin.user.view.UserAddForm', {
             url: this.getView().getViewModel().get("url")
         });
         var win = Ext.create('Ext.Window', {
@@ -47,7 +47,7 @@ Ext.define('Kalix.admin.user.controller.UserGridController', {
             }
             var rec = rows[0];
 
-            var editFormPanel = Ext.create('Kalix.admin.user.view.UserEditForm', {
+            var editFormPanel = Ext.create('kalix.admin.user.view.UserEditForm', {
                 url: this.getView().getViewModel().get("url")
             });
             editFormPanel.down("#confirmPasswordId").setValue(rec.data.password);

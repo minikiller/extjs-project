@@ -11,5 +11,5 @@ Ext.define('kalix.admin.role.store.RoleStore', {
     alias: 'store.roleStore',
     xtype: 'roleStore',
     storeId: "roleStore",
-    proxyUrl: '/kalix/camel/rest/roles'
+    proxyUrl: CONFIG.restRoot + '/camel/rest/roles'
 });

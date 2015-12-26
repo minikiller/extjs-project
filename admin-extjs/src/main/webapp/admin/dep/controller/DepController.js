@@ -9,8 +9,8 @@ Ext.define('kalix.admin.dep.controller.DepController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.depController',
     requires: [
-        "kalix.admin.area.view.AreaTreeList",
-        "kalix.admin.org.view.OrgTreeList",
+        'kalix.admin.area.view.AreaTreeList',
+        'kalix.admin.org.view.OrgTreeList',
         'kalix.admin.dep.view.DepGrid'
     ],
     /**
@@ -19,8 +19,8 @@ Ext.define('kalix.admin.dep.controller.DepController', {
      */
     onInitPanel: function () {
 
-        var panel = Ext.create("Ext.panel.Panel", {
-            layout: "hbox",
+        var panel = Ext.create('Ext.panel.Panel', {
+            layout: 'hbox',
             itemId: 'mainPanel',
             autoScroll: true,
             items: [
@@ -47,8 +47,8 @@ Ext.define('kalix.admin.dep.controller.DepController', {
         grid.orgName = record.data.name;
         var store = grid.getStore();
         store.setProxy({
-            type: "ajax",
-            url: '/kalix/camel/rest/deps/org/' + record.data.id
+            type: 'ajax',
+            url: CONFIG.restRoot + '/camel/rest/deps/org/' + record.data.id
         });
         store.reload();
     },
@@ -56,34 +56,34 @@ Ext.define('kalix.admin.dep.controller.DepController', {
      * 机构刷新
      */
     onOrgRefersh: function () {
-        Ext.ComponentQuery.query('depPanel')[0].down("#mainPanel>#depOrgTreeList").getStore().reload();
+        Ext.ComponentQuery.query('depPanel')[0].down('#mainPanel>#depOrgTreeList').getStore().reload();
     },
     /**
      * 机构展开
      */
     onOrgExpandAll: function () {
-        Ext.ComponentQuery.query('depPanel')[0].down("#mainPanel>#depOrgTreeList").expandAll(function () {
+        Ext.ComponentQuery.query('depPanel')[0].down('#mainPanel>#depOrgTreeList').expandAll(function () {
         });
     },
     /**
      * 机构收起
      */
     onOrgCollapseAll: function () {
-        Ext.ComponentQuery.query('depPanel')[0].down("#mainPanel>#depOrgTreeList").collapseAll(function () {
+        Ext.ComponentQuery.query('depPanel')[0].down('#mainPanel>#depOrgTreeList').collapseAll(function () {
         });
     },
     /**
      * 区域单击
      */
     onAreaClick: function (view, record, item, index, e) {
-        //var OrgTreeList = Ext.ComponentQuery.query('depPanel')[0].down("#mainPanel>#depOrgTreeList");
+        //var OrgTreeList = Ext.ComponentQuery.query('depPanel')[0].down('#mainPanel>#depOrgTreeList');
 
         var OrgTreeList=view.findParentByType('panel').findParentByType('panel').items.getAt(1).items.getAt(0);
 
         var store = OrgTreeList.getStore();
         store.setProxy({
-            type: "ajax",
-            url: '/kalix/camel/rest/orgs/area/' + record.data.id
+            type: 'ajax',
+            url: CONFIG.restRoot + '/camel/rest/orgs/area/' + record.data.id
         });
         store.reload();
     },
@@ -91,14 +91,14 @@ Ext.define('kalix.admin.dep.controller.DepController', {
      * 区域刷新
      */
     onAreaRefersh: function () {
-        Ext.ComponentQuery.query('depPanel')[0].down("#mainPanel>#depAreaTreeList").getStore().reload();
+        Ext.ComponentQuery.query('depPanel')[0].down('#mainPanel>#depAreaTreeList').getStore().reload();
     },
     /**
      * 区域展开
      * @constructor
      */
     onAreaExpandAll: function () {
-        Ext.ComponentQuery.query('depPanel')[0].down("#mainPanel>#depAreaTreeList").expandAll(function () {
+        Ext.ComponentQuery.query('depPanel')[0].down('#mainPanel>#depAreaTreeList').expandAll(function () {
         });
     },
     /**
@@ -106,7 +106,7 @@ Ext.define('kalix.admin.dep.controller.DepController', {
      * @constructor
      */
     onAreaCollapseAll: function () {
-        Ext.ComponentQuery.query('depPanel')[0].down("#mainPanel>#depAreaTreeList").collapseAll(function () {
+        Ext.ComponentQuery.query('depPanel')[0].down('#mainPanel>#depAreaTreeList').collapseAll(function () {
         });
     },
     /**
@@ -114,10 +114,10 @@ Ext.define('kalix.admin.dep.controller.DepController', {
      * @returns {Ext.panel.Panel}
      */
     onInitAreaTreeList: function () {
-        var areaTreeListPanel = Ext.create("kalix.admin.area.view.AreaTreeList", {
-            store: Ext.create("kalix.admin.area.store.AreaStore"),
-            region: "west",
-            itemId: "depAreaTreeList",
+        var areaTreeListPanel = Ext.create('kalix.admin.area.view.AreaTreeList', {
+            store: Ext.create('kalix.admin.area.store.AreaStore'),
+            region: 'west',
+            itemId: 'depAreaTreeList',
             title: '区域列表',
             iconCls: 'x-fa fa-home',
             listeners: {
@@ -144,10 +144,10 @@ Ext.define('kalix.admin.dep.controller.DepController', {
      * @returns {Ext.panel.Panel}
      */
     onInitOrgTreeList: function () {
-        var orgTreeListPanel = Ext.create("kalix.admin.org.view.OrgTreeList", {
-            store: Ext.create("kalix.admin.org.store.OrgStore"),
-            itemId: "depOrgTreeList",
-            region: "west",
+        var orgTreeListPanel = Ext.create('kalix.admin.org.view.OrgTreeList', {
+            store: Ext.create('kalix.admin.org.store.OrgStore'),
+            itemId: 'depOrgTreeList',
+            region: 'west',
             title: '机构列表',
             iconCls: 'x-fa fa-building',
             listeners: {
@@ -175,8 +175,8 @@ Ext.define('kalix.admin.dep.controller.DepController', {
      */
     onInitDataGrid: function () {
         //Ext.QuickTips.init();
-        var dataGird = Ext.create("kalix.admin.dep.view.DepGrid", {
-            store: Ext.create("kalix.admin.dep.store.DepStore")
+        var dataGird = Ext.create('kalix.admin.dep.view.DepGrid', {
+            store: Ext.create('kalix.admin.dep.store.DepStore')
         });
         return dataGird;
     }

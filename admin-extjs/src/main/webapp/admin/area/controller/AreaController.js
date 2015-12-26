@@ -33,8 +33,8 @@ Ext.define('kalix.admin.area.controller.AreaController', {
      * @returns {Ext.panel.Panel}
      */
     onInitDataGrid: function () {
-        var dataGird = Ext.create("kalix.admin.area.view.AreaGrid", {
-            store: Ext.create("kalix.admin.area.store.AreaStore")
+        var dataGird = Ext.create('kalix.admin.area.view.AreaGrid', {
+            store: Ext.create('kalix.admin.area.store.AreaStore')
         });
         return dataGird;
     }

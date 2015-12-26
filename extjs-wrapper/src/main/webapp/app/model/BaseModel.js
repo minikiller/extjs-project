@@ -3,8 +3,8 @@
  *  @author chenyanxu
  *
  */
-Ext.define("kalix.model.BaseModel", {
-    extend: "Ext.data.Model",
+Ext.define('kalix.model.BaseModel', {
+    extend: 'Ext.data.Model',
     constructor: function () {
         this.callParent(arguments);
 

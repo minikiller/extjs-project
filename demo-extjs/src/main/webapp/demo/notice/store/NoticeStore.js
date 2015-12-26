@@ -15,7 +15,7 @@ Ext.define('kalix.demo.notice.store.NoticeStore', {
     pageSize: 10,
     proxy: {
         type: "ajax",
-        url: '/kalix/camel/rest/demos',
+        url: CONFIG.restRoot + '/camel/rest/demos',
         reader: {
             type: "json",
             rootProperty: "data",

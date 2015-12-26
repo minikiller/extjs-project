@@ -13,5 +13,5 @@ Ext.define('kalix.admin.dict.store.DictNoPageStore', {
     storeId: "dictNoPageStore",
     pageSize:0,
     singleton: true,
-    proxyUrl: '/kalix/camel/rest/dicts/list'
+    proxyUrl: CONFIG.restRoot + '/camel/rest/dicts/list'
 });

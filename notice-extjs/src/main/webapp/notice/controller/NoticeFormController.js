@@ -5,7 +5,7 @@
  *         date:2015-6-18
  * @version 1.0.0
  */
-Ext.define('Kalix.notice.controller.NoticeFormController', {
+Ext.define('kalix.notice.controller.NoticeFormController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.noticeFormController',
 

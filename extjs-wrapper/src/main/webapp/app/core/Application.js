@@ -6,11 +6,6 @@
 
 Ext.define('kalix.core.Application', {
     extend: 'Ext.app.Application',
-
-    //requires:'Ext.ux.ActivityMonitor',
-
-    name: 'kalix',
-
     stores: [
         'kalix.core.store.NavigationTree',
         'kalix.core.store.MainToolbar'

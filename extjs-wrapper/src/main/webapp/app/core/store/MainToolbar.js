@@ -16,7 +16,7 @@ Ext.define('kalix.core.store.MainToolbar', {
 
     proxy: {
         type: 'ajax',
-        url: '/kalix/camel/rest/system/applications',
+        url: CONFIG.restRoot + '/camel/rest/system/applications',
         reader: {
             type: 'json',
             rootProperty: ''

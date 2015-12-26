@@ -121,7 +121,7 @@ Ext.define('kalix.admin.user.view.UserGrid', {
                         tooltip: '删除',
                         handler: 'onDelete'
                     },{
-                        icon: "/kalix/admin/resources/images/user_key.png",
+                        icon: CONFIG.restRoot + '/admin/resources/images/user_key.png',
                         permission: 'admin:permissionModule:userMenu:key',
                         tooltip: '重置密码',
                         handler: 'onKey',

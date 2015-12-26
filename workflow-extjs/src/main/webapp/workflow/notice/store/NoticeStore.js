@@ -15,7 +15,7 @@ Ext.define('kalix.workflow.notice.store.NoticeStore', {
     pageSize: 10,
     proxy: {
         type: "ajax",
-        url: '/kalix/camel/rest/notices',
+        url: CONFIG.restRoot + '/camel/rest/notices',
         reader: {
             type: "json",
             rootProperty: "data",

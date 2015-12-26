@@ -19,7 +19,7 @@ Ext.define('kalix.workflow.processhistory.controller.ProcessHistoryController', 
      */
     onInitPanel: function () {
 
-        var panel = Ext.create("Ext.panel.Panel", {
+        var panel = Ext.create('Ext.panel.Panel', {
             border: false,
             autoScroll: true,
             height: 640,
@@ -42,7 +42,7 @@ Ext.define('kalix.workflow.processhistory.controller.ProcessHistoryController', 
                 items: [{
                     xtype: 'textfield',
                     fieldLabel: '标题',
-                    itemId: "notice_title",
+                    itemId: 'notice_title',
                     name: 'title'
                 }]
             }]
@@ -93,7 +93,7 @@ Ext.define('kalix.workflow.processhistory.controller.ProcessHistoryController', 
         });
 
 
-        var searchPanel = Ext.create("Ext.panel.Panel", {
+        var searchPanel = Ext.create('Ext.panel.Panel', {
             title: '条件查询',
             border: false,
             items: [formPanel]
@@ -107,7 +107,7 @@ Ext.define('kalix.workflow.processhistory.controller.ProcessHistoryController', 
      */
     onInitDataGrid: function () {
         var processHistoryStore = Ext.create('kalix.workflow.processhistory.store.ProcessHistoryStore');
-        var dataGird = Ext.create("kalix.workflow.processhistory.view.ProcessHistoryGrid",
+        var dataGird = Ext.create('kalix.workflow.processhistory.view.ProcessHistoryGrid',
             {
                 store: processHistoryStore,
                 bbar: [{

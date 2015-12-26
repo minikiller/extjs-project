@@ -8,5 +8,5 @@ Ext.define('kalix.attachment.store.AttachmentStore', {
     model: 'kalix.attachment.model.AttachmentModel',
     autoLoad: false,
     storeId: "attachmentStore",
-    proxyUrl: '/kalix/camel/rest/attachments'
+    proxyUrl: CONFIG.restRoot + '/camel/rest/attachments'
 });

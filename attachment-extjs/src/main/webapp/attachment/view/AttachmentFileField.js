@@ -179,7 +179,7 @@ Ext.define('kalix.attachment.view.AttachmentFileField', {
                 xtype: 'filebutton',
                 ownerCt: me,
                 id: me.id + '-button',
-                icon:'/kalix/attachment/resources/images/attachment_add.png',
+                icon: CONFIG.restRoot + '/attachment/resources/images/attachment_add.png',
                 ui: me.ui,
                 disabled: false,
                 text: me.buttonText,

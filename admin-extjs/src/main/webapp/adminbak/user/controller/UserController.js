@@ -5,20 +5,20 @@
  *         date:2015-6-18
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.user.controller.UserController', {
+Ext.define('kalix.admin.user.controller.UserController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.userController',
     requires: [
-        'Kalix.view.components.common.PagingToolBar',
-        'Kalix.admin.user.view.UserGrid',
-        'Kalix.view.components.common.SecurityToolbar'
+        'kalix.view.components.common.PagingToolBar',
+        'kalix.admin.user.view.UserGrid',
+        'kalix.view.components.common.SecurityToolbar'
     ],
     /**
      * 初始化面板.
      * @returns {Ext.panel.Panel}
      */
     onInitPanel: function () {
-        var panel = Ext.create("Ext.panel.Panel", {
+        var panel = Ext.create('Ext.panel.Panel', {
             border: false,
             autoScroll: true,
             height: document.body.clientHeight - 110, //客户端屏幕高度-底部-工具条以及选项卡
@@ -80,9 +80,9 @@ Ext.define('Kalix.admin.user.controller.UserController', {
                         text: '查询',
                         handler: function () {
                             var queryPanel = this.up().up();
-                            var loginNameValue = queryPanel.down("#loginName").getValue();
-                            var nameValue = queryPanel.down("#name").getValue();
-                            var availableValue = queryPanel.down("#available").getValue();
+                            var loginNameValue = queryPanel.down('#loginName').getValue();
+                            var nameValue = queryPanel.down('#name').getValue();
+                            var availableValue = queryPanel.down('#available').getValue();
                             var grid = Ext.ComponentQuery.query('userGridPanel')[0];
                             var store = grid.getStore();
                             store.on('beforeload', function (store, options) {
@@ -108,7 +108,7 @@ Ext.define('Kalix.admin.user.controller.UserController', {
         });
 
 
-        var searchPanel = Ext.create("Ext.panel.Panel", {
+        var searchPanel = Ext.create('Ext.panel.Panel', {
             title: '条件查询',
             border: false,
             items: [formPanel]
@@ -121,7 +121,7 @@ Ext.define('Kalix.admin.user.controller.UserController', {
      * @returns {Ext.panel.Panel}
      */
     onInitDataGrid: function () {
-        var securityToolbar = Ext.create("Kalix.view.components.common.SecurityToolbar");
+        var securityToolbar = Ext.create('kalix.view.components.common.SecurityToolbar');
         securityToolbar.verifyButton([
             {
                 text: '添加',
@@ -133,13 +133,13 @@ Ext.define('Kalix.admin.user.controller.UserController', {
                 text: '编辑',
                 xtype: 'button',
                 permission: 'admin:sysModule:permissionControl:userMenu:update',
-                icon: "resources/images/pencil.png",
+                icon: 'resources/images/pencil.png',
                 handler: 'onEdit'
             }, {
                 text: '删除',
                 xtype: 'button',
                 permission: 'admin:sysModule:permissionControl:userMenu:delete',
-                icon: "resources/images/cancel.png",
+                icon: 'resources/images/cancel.png',
                 handler: 'onDelete'
 
             }
@@ -147,8 +147,8 @@ Ext.define('Kalix.admin.user.controller.UserController', {
         //securityToolbar.add({
         //    text: '添加',xtype:'button',permission:'admin:sysModule:permissionControl:userMenu:add', icon: 'admin/resources/images/group_add.png', handler: 'onAdd'
         //});
-        var dataStore = Ext.create("Kalix.admin.user.store.UserStore");
-        var dataGird = Ext.create("Kalix.admin.user.view.UserGrid", {
+        var dataStore = Ext.create('kalix.admin.user.store.UserStore');
+        var dataGird = Ext.create('kalix.admin.user.view.UserGrid', {
             store: dataStore,
             height: document.body.clientHeight - 210,
             tbar: securityToolbar,

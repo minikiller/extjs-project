@@ -32,7 +32,7 @@ Ext.define('kalix.admin.workgroup.view.AddUserMultiSelectForm', {
                 proxy: {
                     type: 'ajax',
                     limitParam: null,
-                    url: '/kalix/camel/rest/users/all',
+                    url: CONFIG.restRoot + '/camel/rest/users/all',
                     reader: {
                         type: "json",
                         root: "data",

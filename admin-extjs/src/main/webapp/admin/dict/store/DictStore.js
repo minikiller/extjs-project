@@ -11,5 +11,5 @@ Ext.define('kalix.admin.dict.store.DictStore', {
     alias: 'store.dictStore',
     xtype: 'dictStore',
     storeId: "dictStore",
-    proxyUrl: '/kalix/camel/rest/dicts'
+    proxyUrl: CONFIG.restRoot + '/camel/rest/dicts'
 });

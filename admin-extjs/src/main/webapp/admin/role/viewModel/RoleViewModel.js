@@ -17,10 +17,10 @@ Ext.define('kalix.admin.role.viewModel.RoleViewModel', {
         view_title: '查看角色',
         add_title: '添加角色',
         edit_title: '修改角色',
-        add_image_path: '/kalix/admin/resources/images/user_add.png',
-        view_image_path: '/kalix/admin/resources/images/user_view.png',
-        edit_image_path: '/kalix/admin/resources/images/user_edit.png',
-        url: '/kalix/camel/rest/roles',
-        authorizationUrl: '/kalix/camel/rest/roles/authorizations'
+        add_image_path: CONFIG.restRoot + '/admin/resources/images/user_add.png',
+        view_image_path: CONFIG.restRoot + '/admin/resources/images/user_view.png',
+        edit_image_path: CONFIG.restRoot + '/admin/resources/images/user_edit.png',
+        url: CONFIG.restRoot + '/camel/rest/roles',
+        authorizationUrl: CONFIG.restRoot + '/camel/rest/roles/authorizations'
     }
 });

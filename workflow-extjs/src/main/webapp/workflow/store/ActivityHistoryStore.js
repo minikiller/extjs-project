@@ -15,7 +15,7 @@ Ext.define('kalix.workflow.store.ActivityHistoryStore', {
     pageSize: 10,
     proxy: {
         type: "ajax",
-        url: '/kalix/camel/rest/workflow/activities',
+        url: CONFIG.restRoot + '/camel/rest/workflow/activities',
         reader: {
             type: "json",
             rootProperty: "data",

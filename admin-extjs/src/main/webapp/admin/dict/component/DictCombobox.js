@@ -12,7 +12,7 @@ Ext.define('kalix.admin.dict.component.DictCombobox', {
     //selectOnFocus:true,
     listeners:{
         beforerender:function(){
-            var store=kalix.getApplication().getStore('dictNoPageStore');
+            var store = Ext.app.Application.instance.getApplication().getStore('dictNoPageStore');
             var tempStore = Ext.create('Ext.data.Store');
 
             store.filter('type',this.dictType);

@@ -5,13 +5,13 @@
  *         date:2015-6-18
  * @version 1.0.0
  */
-Ext.define('Kalix.notice.controller.NoticeController', {
+Ext.define('kalix.notice.controller.NoticeController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.noticeController',
     requires: [
-        'Kalix.view.components.common.PagingToolBar',
-        'Kalix.notice.view.NoticeGrid',
-        'Kalix.notice.store.NoticeStore'
+        'kalix.view.components.common.PagingToolBar',
+        'kalix.notice.view.NoticeGrid',
+        'kalix.notice.store.NoticeStore'
     ],
     /**
      * 初始化面板.
@@ -19,7 +19,7 @@ Ext.define('Kalix.notice.controller.NoticeController', {
      */
     onInitPanel: function () {
 
-        var panel = Ext.create("Ext.panel.Panel", {
+        var panel = Ext.create('Ext.panel.Panel', {
             border: false,
             autoScroll: true,
             height: 640,
@@ -42,7 +42,7 @@ Ext.define('Kalix.notice.controller.NoticeController', {
                 items: [{
                     xtype: 'textfield',
                     fieldLabel: '标题',
-                    itemId: "notice_title",
+                    itemId: 'notice_title',
                     name: 'title'
                 }]
             }]
@@ -93,7 +93,7 @@ Ext.define('Kalix.notice.controller.NoticeController', {
         });
 
 
-        var searchPanel = Ext.create("Ext.panel.Panel", {
+        var searchPanel = Ext.create('Ext.panel.Panel', {
             title: '条件查询',
             border: false,
             items: [formPanel]
@@ -106,8 +106,8 @@ Ext.define('Kalix.notice.controller.NoticeController', {
      * @returns {Ext.panel.Panel}
      */
     onInitDataGrid: function () {
-        var noticeStore = Ext.create('Kalix.notice.store.NoticeStore');
-        var dataGird = Ext.create("Kalix.notice.view.NoticeGrid",
+        var noticeStore = Ext.create('kalix.notice.store.NoticeStore');
+        var dataGird = Ext.create('kalix.notice.view.NoticeGrid',
             {
                 store: noticeStore,
                 bbar: [{

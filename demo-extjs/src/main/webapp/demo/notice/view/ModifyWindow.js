@@ -18,7 +18,7 @@ Ext.define('kalix.demo.notice.view.ModifyWindow', {
     items: [{
         xtype: 'form',
         itemId: 'approvalForm',
-        url: '/kalix/camel/rest/demos',
+        url: CONFIG.restRoot + '/camel/rest/demos',
         labelAlign: 'center',
         labelWidth: 75,
         autoWidth: true,
@@ -54,7 +54,7 @@ Ext.define('kalix.demo.notice.view.ModifyWindow', {
                             return;
                         }
                         Ext.Ajax.request({
-                            url: "/kalix/camel/rest/demos/modifyTask?taskId=" + Ext.ComponentQuery.query('modifyWindow')[0].taskId,
+                            url: CONFIG.restRoot + '/camel/rest/demos/modifyTask?taskId=' + Ext.ComponentQuery.query('modifyWindow')[0].taskId,
                             method: "GET",
                             callback: function (options, success, response) {
                                 var jsonStatus = Ext.JSON.decode(response.responseText);

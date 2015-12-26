@@ -13,7 +13,7 @@ Ext.define('kalix.admin.role.controller.RoleGridController', {
     onAddUser: function (grid, rowIndex, colIndex) {
         var rec = grid.getStore().getAt(rowIndex);
         if (rec == null) {
-            Ext.MessageBox.alert(CONFIG.ALTER_TITLE_INFO, "请选择要添加用户的角色!");
+            Ext.MessageBox.alert(CONFIG.ALTER_TITLE_INFO, '请选择要添加用户的角色!');
             return;
         }
 
@@ -24,7 +24,7 @@ Ext.define('kalix.admin.role.controller.RoleGridController', {
             modal: true,
             //resizable:false,
             icon: 'admin/resources/images/group_add.png',
-            title: "添加用户",
+            title: '添加用户',
             items: [
                 {
                     xtype: 'displayfield',
@@ -40,18 +40,18 @@ Ext.define('kalix.admin.role.controller.RoleGridController', {
             target: win
         });
         loadMask.show();
-        var roleUserUrl = "/kalix/camel/rest/roles/roleUsers";
+        var roleUserUrl = CONFIG.restRoot + '/camel/rest/roles/roleUsers';
         var me = this;
         //获得已选用户
         Ext.Ajax.request({
-            url: roleUserUrl + "/users/" + rec.data.id,
-            method: "GET",
+            url: roleUserUrl + '/users/' + rec.data.id,
+            method: 'GET',
             callback: function (options, success, response) {
                 var users = Ext.JSON.decode(response.responseText);
-                var dataSotre = Ext.create("kalix.admin.user.store.UserItemSelectorStore");
+                var dataSotre = Ext.create('kalix.admin.user.store.UserItemSelectorStore');
                 var addUserForm = Ext.create('Ext.form.Panel', {
                     width: 700,
-                    itemId: "addUserForm",
+                    itemId: 'addUserForm',
                     bodyPadding: 10,
                     layout: 'fit',
                     buttonAlign: 'center',
@@ -72,7 +72,7 @@ Ext.define('kalix.admin.role.controller.RoleGridController', {
                         },
                         {
                             text: '重置', glyph: 'xf0e2@FontAwesome', handler: function () {
-                            var field = this.up('#addUserForm').down("#userAddItemSelector");
+                            var field = this.up('#addUserForm').down('#userAddItemSelector');
                             if (!field.disabled) {
                                 field.clearValue();
                             }
@@ -87,16 +87,16 @@ Ext.define('kalix.admin.role.controller.RoleGridController', {
     },
     onSaveAddUser: function (roleUserUrl, userAddForm, rec) {
         if (userAddForm != null && userAddForm.isValid()) {
-            var userIds = userAddForm.down("#userAddItemSelector").getValue();
+            var userIds = userAddForm.down('#userAddItemSelector').getValue();
             var roleId = rec.data.id;
             Ext.Ajax.request({
                 url: roleUserUrl,
                 paramsAsJson: true,
                 params: {
-                    "roleId": roleId,
-                    "userIds": userIds.join(',')
+                    'roleId': roleId,
+                    'userIds': userIds.join(',')
                 },
-                method: "GET",
+                method: 'GET',
                 callback: function (options, success, response) {
                     var resp = Ext.JSON.decode(response.responseText);
                     if (resp != null && resp.success) {
@@ -119,12 +119,12 @@ Ext.define('kalix.admin.role.controller.RoleGridController', {
         var authorizationWindow = Ext.create('kalix.app.components.AuthorizationWindow');
         var rec = grid.getStore().getAt(rowIndex);
         authorizationWindow.roleId = rec.data.id;
-        authorizationWindow.authorizationUrl = this.getView().lookupViewModel().get("authorizationUrl");
+        authorizationWindow.authorizationUrl = this.getView().lookupViewModel().get('authorizationUrl');
         authorizationWindow.show();
-        var store = authorizationWindow.down("#authorizationTree").getStore();
+        var store = authorizationWindow.down('#authorizationTree').getStore();
         store.setProxy({
-            type: "ajax",
-            url: '/kalix/camel/rest/roles/' + rec.data.id + "/authorizations"
+            type: 'ajax',
+            url: CONFIG.restRoot + '/camel/rest/roles/' + rec.data.id + '/authorizations'
         });
         store.reload();
     }

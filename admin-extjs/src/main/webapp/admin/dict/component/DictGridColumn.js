@@ -8,7 +8,7 @@ Ext.define('kalix.admin.dict.component.DictGridColumn', {
     xtype:'dictGridColumn',
     listeners:{
         beforerender:function(){
-            var store=kalix.getApplication().getStore('dictNoPageStore');
+            var store = Ext.app.Application.instance.getApplication().getStore('dictNoPageStore');
 
             store.filter('type',this.dictType);
 

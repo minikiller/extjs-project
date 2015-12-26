@@ -16,7 +16,7 @@ Ext.define('kalix.workflow.processhistory.controller.ProcessHistoryGridControlle
      */
     onAdd: function () {
         var addFormPanel = Ext.create('kalix.notice.view.NoticeAddForm', {
-            url: this.getView().getViewModel().get("url")
+            url: this.getView().getViewModel().get('url')
         });
         var win = Ext.create('Ext.Window', {
             width: 400,
@@ -51,9 +51,9 @@ Ext.define('kalix.workflow.processhistory.controller.ProcessHistoryGridControlle
 
         /*var rec = grid.getStore().getAt(rowIndex);
          var editFormPanel = Ext.create('kalix.notice.view.NoticeEditForm', {
-         url: this.getView().getViewModel().get("url")
+         url: this.getView().getViewModel().get('url')
          });
-         var noticeModel = Ext.create("kalix.notice.model.NoticeModel", {
+         var noticeModel = Ext.create('kalix.notice.model.NoticeModel', {
          id: rec.data.id,
          title: rec.data.title,
          content: rec.data.content,
@@ -62,7 +62,7 @@ Ext.define('kalix.workflow.processhistory.controller.ProcessHistoryGridControlle
         //this.setCurrentNotice(record);
 
         var editFormPanel = Ext.create('kalix.notice.view.NoticeEditForm', {
-            url: this.getView().getViewModel().get("url"),
+            url: this.getView().getViewModel().get('url'),
             //noticeRef:this.lookupReference('noticeRef'),
         });
         //editFormPanel.setCurrentNotice(rec.data);
@@ -93,32 +93,32 @@ Ext.define('kalix.workflow.processhistory.controller.ProcessHistoryGridControlle
      * 批量删除操作.
      */
     onDeleteAll: function () {
-        var selModel = Ext.getCmp("noticeDataGrid").getSelectionModel();
+        var selModel = Ext.getCmp('noticeDataGrid').getSelectionModel();
         if (selModel.hasSelection()) {
-            Ext.Msg.confirm("警告", "确定要删除吗？", function (button) {
-                if (button == "yes") {
+            Ext.Msg.confirm('警告', '确定要删除吗？', function (button) {
+                if (button == 'yes') {
                     var rows = selModel.getSelection();
-                    var ids = "";
+                    var ids = '';
                     for (var i = 0; i < rows.length; i++) {
                         if (rows[i] != null && rows[i].id != null) {
                             ids += rows[i].id;
                             if (i + 1 != rows.length) {
-                                ids += "_";
+                                ids += '_';
                             }
                         }
                     }
                     Ext.Ajax.request({
-                        url: "/noticeDeleteAllServlet?ids=" + ids,
-                        method: "GET",
+                        url: '/noticeDeleteAllServlet?ids=' + ids,
+                        method: 'GET',
                         callback: function (options, success, response) {
                             var resp = Ext.JSON.decode(response.responseText);
                             Ext.MessageBox.alert(CONFIG.ALTER_TITLE_INFO, resp.msg);
                             if (resp.success) {
-                                var noticename = Ext.getCmp("noticename").getValue();
-                                var name = Ext.getCmp("name").getValue();
-                                var sex = Ext.getCmp("sex").getValue();
-                                var status = Ext.getCmp("status").getValue();
-                                var grid = Ext.getCmp("noticeDataGrid");
+                                var noticename = Ext.getCmp('noticename').getValue();
+                                var name = Ext.getCmp('name').getValue();
+                                var sex = Ext.getCmp('sex').getValue();
+                                var status = Ext.getCmp('status').getValue();
+                                var grid = Ext.getCmp('noticeDataGrid');
                                 var store = grid.getStore();
                                 store.reload({
                                     params: {
@@ -136,7 +136,7 @@ Ext.define('kalix.workflow.processhistory.controller.ProcessHistoryGridControlle
                 }
             });
         } else {
-            Ext.Msg.alert(CONFIG.ALTER_TITLE_ERROR, "请选择要删除的记录！");
+            Ext.Msg.alert(CONFIG.ALTER_TITLE_ERROR, '请选择要删除的记录！');
         }
     },
     /**
@@ -147,17 +147,17 @@ Ext.define('kalix.workflow.processhistory.controller.ProcessHistoryGridControlle
      */
     onDelete: function (grid, rowIndex, colIndex) {
         var rec = grid.getStore().getAt(rowIndex);
-        var deleteUrl = this.getView().getViewModel().get("url");
-        Ext.Msg.confirm("警告", "确定要删除吗？", function (button) {
-            if (button == "yes") {
+        var deleteUrl = this.getView().getViewModel().get('url');
+        Ext.Msg.confirm('警告', '确定要删除吗？', function (button) {
+            if (button == 'yes') {
                 Ext.Ajax.request({
-                    url: deleteUrl + "?id=" + rec.id,
+                    url: deleteUrl + '?id=' + rec.id,
                     method: 'DELETE',
                     callback: function (options, success, response) {
                         var resp = Ext.JSON.decode(response.responseText);
                         Ext.MessageBox.alert(CONFIG.ALTER_TITLE_INFO, resp.msg);
                         if (resp.success) {
-                            var grid = Ext.getCmp("noticeDataGrid");
+                            var grid = Ext.getCmp('noticeDataGrid');
                             var store = grid.getStore();
                             store.reload();
                         }
@@ -170,42 +170,42 @@ Ext.define('kalix.workflow.processhistory.controller.ProcessHistoryGridControlle
     onOpenHistoryActivity: function (grid, rowIndex, colIndex) {
         var rec = grid.getStore().getAt(rowIndex);
         Ext.Ajax.request({
-            url: "/kalix/camel/rest/demos/" + rec.data.entityId,
-            method: "GET",
+            url: CONFIG.restRoot + '/camel/rest/demos/' + rec.data.entityId,
+            method: 'GET',
             callback: function (options, success, response) {
                 var entity = Ext.JSON.decode(response.responseText);
                 if (entity == null) {
-                    Ext.Msg.alert(CONFIG.ALTER_TITLE_FAILURE, "实体不能为空.");
+                    Ext.Msg.alert(CONFIG.ALTER_TITLE_FAILURE, '实体不能为空.');
                     return;
                 }
                 Ext.Ajax.request({
-                    url: "/kalix/camel/rest/workflow/bizData?processDefinitionId=" + rec.data.processDefinitionId,
-                    method: "GET",
+                    url: CONFIG.restRoot + '/camel/rest/workflow/bizData?processDefinitionId=' + rec.data.processDefinitionId,
+                    method: 'GET',
                     callback: function (options, success, response) {
                         var component = Ext.JSON.decode(response.responseText);
                         var activityHistoryStore = Ext.create('kalix.workflow.store.ActivityHistoryStore', {
                             proxy: {
-                                url: '/kalix/camel/rest/workflow/activities?historyProcessId=' + rec.data.id
+                                url: CONFIG.restRoot + '/camel/rest/workflow/activities?historyProcessId=' + rec.data.id
                             }
                         });
-                        var dataGird = Ext.create("kalix.workflow.view.ActivityHistoryGrid", {
+                        var dataGird = Ext.create('kalix.workflow.view.ActivityHistoryGrid', {
                             store: activityHistoryStore,
                             width: 605,
                             //height: 280
                         });
-                        var dataGridFieldSet = Ext.create("Ext.form.FieldSet", {
-                            title: "流程历史列表"
+                        var dataGridFieldSet = Ext.create('Ext.form.FieldSet', {
+                            title: '流程历史列表'
                         });
                         dataGridFieldSet.add(dataGird);
                         var showFormPanel = Ext.create(component.componentClass);
-                        showFormPanel.down("#title").setValue(entity.title);
-                        showFormPanel.down("#content").setValue(entity.content);
+                        showFormPanel.down('#title').setValue(entity.title);
+                        showFormPanel.down('#content').setValue(entity.content);
                         var win = Ext.create('Ext.Window', {
                             border: false,
                             modal: true,
                             width: 605,
                             //height: 480,
-                            title: "流程历史查看",
+                            title: '流程历史查看',
                             //resizable:false,
                             icon: 'admin/resources/images/group_edit.png',
                             items: [showFormPanel, dataGridFieldSet]

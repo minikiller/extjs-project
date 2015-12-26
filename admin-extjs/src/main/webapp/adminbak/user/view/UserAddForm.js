@@ -5,11 +5,11 @@
  *         date:2015-6-18
  * @version 1.0.0
  */
-Ext.define('Kalix.admin.user.view.UserAddForm', {
+Ext.define('kalix.admin.user.view.UserAddForm', {
     extend: 'Ext.FormPanel',
     requires: [
-        'Kalix.admin.user.viewModel.UserViewModel',
-        'Kalix.admin.user.controller.UserFormController'
+        'kalix.admin.user.viewModel.UserViewModel',
+        'kalix.admin.user.controller.UserFormController'
     ],
     alias: 'widget.userAddForm',
     viewModel: {

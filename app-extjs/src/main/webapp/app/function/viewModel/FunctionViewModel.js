@@ -14,6 +14,6 @@ Ext.define('kalix.app.function.viewModel.FunctionViewModel', {
     data: {
         addTitle: '新增功能',
         editTitle: '编辑功能',
-        url: '/kalix/camel/rest/functions'
+        url: CONFIG.restRoot + '/camel/rest/functions'
     }
 });

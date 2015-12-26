@@ -11,5 +11,5 @@ Ext.define('kalix.admin.workgroup.store.WorkGroupStore', {
     alias: 'store.workgroupStore',
     xtype: 'workgroupStore',
     storeId: "workgroupStore",
-    proxyUrl: '/kalix/camel/rest/workgroups'
+    proxyUrl: CONFIG.restRoot + '/camel/rest/workgroups'
 });

@@ -9,8 +9,8 @@ Ext.define('kalix.admin.org.controller.OrgController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.orgController',
     requires: [
-        "kalix.admin.area.view.AreaTreeList",
-        "kalix.admin.org.view.OrgTreeList",
+        'kalix.admin.area.view.AreaTreeList',
+        'kalix.admin.org.view.OrgTreeList',
         'kalix.admin.org.view.OrgGrid'
     ],
     /**
@@ -18,11 +18,11 @@ Ext.define('kalix.admin.org.controller.OrgController', {
      * @returns {Ext.panel.Panel}
      */
     onInitPanel: function () {
-        var panel = Ext.create("Ext.panel.Panel", {
+        var panel = Ext.create('Ext.panel.Panel', {
             border: false,
-            layout: "hbox",
+            layout: 'hbox',
             autoScroll: true,
-            itemId: "mainPanel",
+            itemId: 'mainPanel',
             items: [
                 {xtype:'container', padding:10, flex: 1, items:[this.onInitAreaTreeList()]},
                 {xtype:'container', flex: 3, padding:'10 10 10 0',items:[this.onInitDataGrid()]}]
@@ -40,8 +40,8 @@ Ext.define('kalix.admin.org.controller.OrgController', {
         grid.areaName = record.data.name;
         var store = grid.getStore();
         store.setProxy({
-            type: "ajax",
-            url: '/kalix/camel/rest/orgs/area/' + record.data.id
+            type: 'ajax',
+            url: CONFIG.restRoot + '/camel/rest/orgs/area/' + record.data.id
         });
         store.reload();
     },
@@ -49,14 +49,14 @@ Ext.define('kalix.admin.org.controller.OrgController', {
      * 区域刷新
      */
     onAreaRefersh: function () {
-        Ext.ComponentQuery.query('orgPanel')[0].down("#mainPanel>#orgAreaTreeList").getStore().reload();
+        Ext.ComponentQuery.query('orgPanel')[0].down('#mainPanel>#orgAreaTreeList').getStore().reload();
     },
     /**
      * 区域展开
      * @constructor
      */
     onAreaAxpandAll: function () {
-        Ext.ComponentQuery.query('orgPanel')[0].down("#mainPanel>#orgAreaTreeList").expandAll(function () {
+        Ext.ComponentQuery.query('orgPanel')[0].down('#mainPanel>#orgAreaTreeList').expandAll(function () {
         });
     },
     /**
@@ -64,7 +64,7 @@ Ext.define('kalix.admin.org.controller.OrgController', {
      * @constructor
      */
     onAreaCollapseAll: function () {
-        Ext.ComponentQuery.query('orgPanel')[0].down("#mainPanel>#orgAreaTreeList").collapseAll(function () {
+        Ext.ComponentQuery.query('orgPanel')[0].down('#mainPanel>#orgAreaTreeList').collapseAll(function () {
         });
     },
     /**
@@ -72,9 +72,9 @@ Ext.define('kalix.admin.org.controller.OrgController', {
      * @returns {Ext.panel.Panel}
      */
     onInitAreaTreeList: function () {
-        var areaListPanel = Ext.create("kalix.admin.area.view.AreaTreeList", {
-            store: Ext.create("kalix.admin.area.store.AreaStore"),
-            itemId: "orgAreaTreeList",
+        var areaListPanel = Ext.create('kalix.admin.area.view.AreaTreeList', {
+            store: Ext.create('kalix.admin.area.store.AreaStore'),
+            itemId: 'orgAreaTreeList',
             title: '区域列表',
             iconCls: 'x-fa fa-home',
             listeners: {
@@ -101,8 +101,8 @@ Ext.define('kalix.admin.org.controller.OrgController', {
      * @returns {Ext.panel.Panel}
      */
     onInitDataGrid: function () {
-        var dataGird = Ext.create("kalix.admin.org.view.OrgGrid",{
-            store:Ext.create("kalix.admin.org.store.OrgStore")
+        var dataGird = Ext.create('kalix.admin.org.view.OrgGrid', {
+            store: Ext.create('kalix.admin.org.store.OrgStore')
         });
         return dataGird;
     }

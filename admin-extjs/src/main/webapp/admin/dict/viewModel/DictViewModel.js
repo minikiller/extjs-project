@@ -17,8 +17,8 @@ Ext.define('kalix.admin.dict.viewModel.DictViewModel', {
         view_title: '查看字典',
         add_title: '添加字典',
         edit_title: '修改字典',
-        add_image_path: '/kalix/admin/resources/images/dict_add.png',
-        view_image_path: '/kalix/admin/resources/images/dict_view.png',
-        edit_image_path: '/kalix/admin/resources/images/dict_edit.png',
+        add_image_path: CONFIG.restRoot + '/admin/resources/images/dict_add.png',
+        view_image_path: CONFIG.restRoot + '/admin/resources/images/dict_view.png',
+        edit_image_path: CONFIG.restRoot + '/admin/resources/images/dict_edit.png',
     }
 });

@@ -85,7 +85,7 @@ Ext.define('kalix.attachment.view.AttachmentGrid', {
         verifyItems: [
             {
                 xtype: 'attachmentForm',
-                filebutonIcon: "/kalix/attachment/resources/images/attachment_add.png",
+                filebutonIcon: CONFIG.restRoot + '/attachment/resources/images/attachment_add.png',
                 permission: ''
             }
         ]
