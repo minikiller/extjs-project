@@ -11,5 +11,5 @@ Import-Package: cn.com.rexen.ext.shiro.web.filter.authc, \
                 org.apache.shiro.web.tags, \
                 javax.servlet.jsp,org.apache.shiro.session,*
 Include-Resource: src/main/webapp,src/main/resources
-Web-ContextPath:/
+Web-ContextPath:/kalix
 Bundle-Category: Rexen Extjs Core
