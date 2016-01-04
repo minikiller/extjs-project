@@ -34,9 +34,6 @@ Ext.define('kalix.view.components.common.SecurityToolbar', {
                     params=params+'_'+item.permission;
                 }
             }
-            else{
-                securityToolbar.add(item);
-            }
         });
 
         if(params==''){
@@ -47,6 +44,7 @@ Ext.define('kalix.view.components.common.SecurityToolbar', {
         Ext.Ajax.request({
             url: CONFIG.restRoot + '/camel/rest/system/applications/modules/children/buttons/' + params,
             method: "GET",
+            async: false,
             callback: function (options, success, response) {
                 var resp = Ext.JSON.decode(response.responseText);
                 var respButtons = resp.buttons;
@@ -63,6 +61,12 @@ Ext.define('kalix.view.components.common.SecurityToolbar', {
             },
             failure: function (xhr, params) {
                 console.log('Permission call failure!');
+            }
+        });
+
+        verifyItems.forEach(function (item) {
+            if (item.permission == '') {
+                securityToolbar.add(item);
             }
         });
     }

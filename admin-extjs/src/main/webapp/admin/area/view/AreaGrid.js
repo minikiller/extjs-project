@@ -23,68 +23,68 @@ Ext.define('kalix.admin.area.view.AreaGrid', {
     columns: [{
         text: '编号',
         dataIndex: 'id',
-        flex:1,
-        hidden:true
+        flex: 1,
+        hidden: true
     }, {
         text: '上级区域',
         dataIndex: 'parentName',
-        flex:1,
-        hidden:true
+        flex: 1,
+        hidden: true
     }, {
         xtype: 'treecolumn',
         text: '名称',
         dataIndex: 'name',
-        flex:3,
+        flex: 3,
         //width: 255
     }, {
         text: '区域代码',
         dataIndex: 'code',
-        flex:1,
+        flex: 1,
         //width: 60
     }, {
         text: '中心代码',
         dataIndex: 'centerCode',
-        flex:1,
+        flex: 1,
         //width: 60
     }, {
         text: '经度',
         dataIndex: 'jd',
-        flex:1,
+        flex: 1,
         //width: 60
     }, {
         text: '纬度',
         dataIndex: 'wd',
-        flex:1,
+        flex: 1,
         //width: 60
     }, {
         text: '创建人',
         dataIndex: 'createBy',
-        flex:1,
+        flex: 1,
         //width: 60
     }, {
         text: '创建日期',
         dataIndex: 'creationDate',
-        flex:2,
+        flex: 2,
         //width: 160,
         renderer: function (value) {
             var createDate = new Date(value);
             return createDate.format("yyyy-MM-dd hh:mm:ss");
         }
     }, /*{
-        text: '更新人',
-        dataIndex: 'updateBy',
-        flex:1,
-        //width: 60
-    }, {
-        text: '更新日期',
-        dataIndex: 'updateDate',
-        flex:2,
-        //width: 160,
-        renderer: function (value) {
-            var updateDate = new Date(value);
-            return updateDate.format("yyyy-MM-dd hh:mm:ss");
-        }
-    }, */{
+     text: '更新人',
+     dataIndex: 'updateBy',
+     flex:1,
+     //width: 60
+     }, {
+     text: '更新日期',
+     dataIndex: 'updateDate',
+     flex:2,
+     //width: 160,
+     renderer: function (value) {
+     var updateDate = new Date(value);
+     return updateDate.format("yyyy-MM-dd hh:mm:ss");
+     }
+     }, */{
         header: '操作',
         width: 60,
         xtype: "securityGridColumnCommon",
@@ -109,20 +109,22 @@ Ext.define('kalix.admin.area.view.AreaGrid', {
         ]
     }
     ],
-    tbar: [{
+    tbar: {
         xtype: 'securityToolbar',
         verifyItems: [
             {
                 text: '添加',
-                xtype: 'button',
+                //xtype: 'button',
                 permission: 'admin:constructModule:areaMenu:add',
                 icon: 'admin/resources/images/shape_square_add.png',
                 handler: 'onAdd'
+            },
+            {
+                text: '刷新',
+                permission: '',
+                icon: 'admin/resources/images/arrow_refresh.png',
+                handler: 'onRefersh'
             }]
-    },{
-        text: '刷新',
-        icon: 'admin/resources/images/arrow_refresh.png',
-        handler: 'onRefersh'
     }
-    ]
-});
+})
+;
