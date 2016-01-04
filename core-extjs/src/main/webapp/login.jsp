@@ -9,7 +9,7 @@
 
     <title>kalix</title>
     <link href="<%=path %>/resources/ext/kalix-all.css" rel="stylesheet"/>
-    <script type="text/javascript" src="<%=path %>/js/Config.js"></script>
+    <script type="text/javascript" src="<%=path %>/resources/js/Config.js"></script>
     <script type="text/javascript">CONFIG.restRoot = '<%=path %>';</script>
     <script type="text/javascript" src="<%=path %>/resources/js/ext-all-debug.js"></script>
     <script type="text/javascript" src="<%=path %>/resources/js/locale-zh_CN.js"></script>
