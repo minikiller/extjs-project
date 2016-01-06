@@ -36,34 +36,31 @@ Ext.define('kalix.view.components.common.SecurityToolbar', {
             }
         });
 
-        if(params==''){
-            return;
+        if (params != '') {
+            //查询授权
+            Ext.Ajax.request({
+                url: CONFIG.restRoot + '/camel/rest/system/applications/modules/children/buttons/' + params,
+                method: "GET",
+                async: false,
+                callback: function (options, success, response) {
+                    var resp = Ext.JSON.decode(response.responseText);
+                    var respButtons = resp.buttons;
+
+                    respButtons.forEach(function (btn) {
+                        if (btn.status) {
+                            verifyItems.forEach(function (item) {
+                                if (btn.permission == item.permission) {
+                                    securityToolbar.add(item);
+                                }
+                            });
+                        }
+                    });
+                },
+                failure: function (xhr, params) {
+                    console.log('Permission call failure!');
+                }
+            });
         }
-
-        //查询授权
-        Ext.Ajax.request({
-            url: CONFIG.restRoot + '/camel/rest/system/applications/modules/children/buttons/' + params,
-            method: "GET",
-            async: false,
-            callback: function (options, success, response) {
-                var resp = Ext.JSON.decode(response.responseText);
-                var respButtons = resp.buttons;
-
-                respButtons.forEach(function(btn){
-                    if(btn.status){
-                        verifyItems.forEach(function(item){
-                            if(btn.permission==item.permission){
-                                securityToolbar.add(item);
-                            }
-                        });
-                    }
-                });
-            },
-            failure: function (xhr, params) {
-                console.log('Permission call failure!');
-            }
-        });
-
         verifyItems.forEach(function (item) {
             if (item.permission == '') {
                 securityToolbar.add(item);
