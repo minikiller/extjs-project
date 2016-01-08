@@ -11,10 +11,10 @@ Ext.define('kalix.admin.dict.view.DictSearchForm', {
     items: [
         {
             xtype: 'textfield',
-            fieldLabel: '标签名',
+            fieldLabel: '类型',
             labelAlign: 'right',
             labelWidth: 60,
             width: 200,
-            name: 'label'
+            name: 'type'
         }]
 });
