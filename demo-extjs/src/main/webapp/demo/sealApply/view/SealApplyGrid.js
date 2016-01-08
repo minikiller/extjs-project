@@ -72,14 +72,57 @@ Ext.define('kalix.demo.sealApply.view.SealApplyGrid', {
             }
             ,
             {
+                text: '工作流状态',
+                xtype: 'dictGridColumn',
+                dictType: 'workflowStatus',
+                dataIndex: 'status',
+                flex: 0.5,
+                renderer: null
+            }
+            ,
+            {
+                text: '当前环节',
+                dataIndex: 'currentNode',
+                flex: 0.5,
+            }
+            ,
+            {
                 flex: 0.5,
                 xtype: 'securityGridColumnCommon',
                 items: [
                     {
                         icon: "resources/images/read.png",
-                        permission: 'roffice:cmModule:contractMenu:view',
+                        permission: '',
                         tooltip: '查看',
                         handler: 'onView'
+                    },
+                    {
+                        icon: "resources/images/delete.png",
+                        permission: '',
+                        tooltip: '删除',
+                        handler: 'onDelete'
+                    },
+                    {
+                        getClass: function (v, meta, record) {
+                            if (record.data.status) {
+                                return "kalix_stop";
+                            }
+                            return "kalix_start";
+                        },
+                        getTip: function (value, metadata, record, row, col, store) {
+                            if (record.data.status) {
+                                return "停止";
+                            }
+                            return '启动';
+                        },
+                        permission: '',
+                        handler: 'onWorkFlowStart'
+                    },
+                    {
+                        icon: "attachment/resources/images/attachment_manage.png",
+                        permission: '',
+                        tooltip: '附件管理',
+                        handler: 'onAttachmentManage'
                     }
                 ]
             }

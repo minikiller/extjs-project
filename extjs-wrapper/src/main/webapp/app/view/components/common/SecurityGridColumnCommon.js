@@ -12,38 +12,48 @@ Ext.define('kalix.view.components.common.SecurityGridColumnCommon', {
     listeners:{
         beforerender:function(){
             var scope=this;
-            var params = _.map(scope.items, function(item){
-                return item.permission;
-            });
+            var params = '';
 
-            params = params.join('_');
-            //查询授权
-            Ext.Ajax.request({
-                url: CONFIG.restRoot + '/camel/rest/system/applications/modules/children/buttons/' + params,
-                method: "GET",
-                async:false,
-                callback: function (options, success, response) {
-                    var resp = Ext.JSON.decode(response.responseText);
-                    var respButtons = resp.buttons;
-
-                    _.forEach(scope.items, function(item){
-                        var findObj=_.find(respButtons, function(button){
-                            return button.permission == item.permission;
-                        });
-
-                        if (findObj.status) {
-                            item.hasPermission = true;
-                        }
-                        else {
-                            item.getClass = scope.hideColumnFun;
-                            item.hasPermission = false;
-                        }
-                    });
-                },
-                failure: function(xhr, params) {
-                    console.log('Permission call failure!');
+            scope.items.forEach(function (item) {
+                if (item.permission != '') {
+                    if (params == '') {
+                        params = item.permission;
+                    }
+                    else {
+                        params = params + '_' + item.permission;
+                    }
                 }
             });
+
+            if (params != '') {
+                //查询授权
+                Ext.Ajax.request({
+                    url: CONFIG.restRoot + '/camel/rest/system/applications/modules/children/buttons/' + params,
+                    method: "GET",
+                    async: false,
+                    callback: function (options, success, response) {
+                        var resp = Ext.JSON.decode(response.responseText);
+                        var respButtons = resp.buttons;
+
+                        _.forEach(scope.items, function (item) {
+                            var findObj = _.find(respButtons, function (button) {
+                                return button.permission == item.permission;
+                            });
+
+                            if (findObj.status) {
+                                item.hasPermission = true;
+                            }
+                            else {
+                                item.getClass = scope.hideColumnFun;
+                                item.hasPermission = false;
+                            }
+                        });
+                    },
+                    failure: function (xhr, params) {
+                        console.log('Permission call failure!');
+                    }
+                });
+            }
         }
     }
 });

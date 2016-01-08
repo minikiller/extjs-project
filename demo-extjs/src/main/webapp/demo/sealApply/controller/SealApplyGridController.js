@@ -3,5 +3,8 @@
  */
 Ext.define('kalix.demo.sealApply.controller.SealApplyGridController', {
     extend: 'kalix.controller.BaseGridController',
-    alias: 'controller.sealApplyGridController'
+    alias: 'controller.sealApplyGridController',
+    onWorkFlowStart: function () {
+        alert(1);
+    }
 });

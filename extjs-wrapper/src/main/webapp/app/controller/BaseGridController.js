@@ -146,5 +146,14 @@ Ext.define('kalix.controller.BaseGridController', {
     renderPercent: function (val, metadata, record, rowIndex, colIndex, store) {
         var percentage = (val * 100).toFixed(2)+'%';
         return percentage;
+    },
+    onAttachmentManage: function (grid, rowIndex, colIndex) {
+        var view = Ext.create('kalix.attachment.view.AttachmentWindow');
+        var selModel = grid.getStore().getData().items[rowIndex];
+        var vm = view.lookupViewModel();
+
+        vm.set('rec', selModel);
+        view.show();
+        grid.setSelection(selModel);
     }
 });

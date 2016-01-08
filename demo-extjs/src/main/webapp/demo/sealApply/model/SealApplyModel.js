@@ -7,9 +7,11 @@ Ext.define('kalix.demo.sealApply.model.SealApplyModel', {
     fields: [
         {name: 'department'},
         {name: 'usageCount'},
-        {name: 'sealType'},
+        {name: 'sealType', defaultValue: '0', type: 'string'},
         {name: 'operator'},
         {name: 'applyDate', type: 'date', dateFormat: 'Y-m-d H:i:s'},
-        {name: 'remark'}
+        {name: 'remark'},
+        {name: 'status'},
+        {name: 'currentNode'}
     ]
 });

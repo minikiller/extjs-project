@@ -13,9 +13,9 @@ Ext.define('kalix.demo.sealApply.viewModel.SealApplyViewModel', {
         view_title: '查看申请',
         add_title: '添加申请',
         edit_title: '修改申请',
-        add_image_path: CONFIG.restRoot + '/roffice/cm/resources/images/contractDetail_add.png',
-        view_image_path: CONFIG.restRoot + '/roffice/cm/resources/images/contractDetail_view.png',
-        delete_image_path: CONFIG.restRoot + '/roffice/cm/resources/images/contractDetail_delete.png',
-        edit_image_path: CONFIG.restRoot + '/roffice/cm/resources/images/contractDetail_edit.png'
+        add_image_path: CONFIG.restRoot + '/demo/resources/images/seal_apply_add.png',
+        view_image_path: CONFIG.restRoot + '/demo/resources/images/seal_apply_view.png',
+        delete_image_path: CONFIG.restRoot + '/demo/resources/images/seal_apply_delete.png',
+        edit_image_path: CONFIG.restRoot + '/demo/resources/images/seal_apply_edit.png'
     }
 });
