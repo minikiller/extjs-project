@@ -57,8 +57,13 @@ Ext.define('kalix.attachment.controller.AttachmentGridController', {
     },
     onDownload:function(grid, rowIndex, colIndex){
         var selModel = grid.getStore().getData().items[rowIndex];
+        var a = document.createElement("a");
 
-        self.location.href=selModel.get('attachmentPath');
+        a.setAttribute("href", selModel.get('attachmentPath'));
+        a.setAttribute("target", "_blank");
+        a.setAttribute("id", "camnpr");
+        document.body.appendChild(a);
+        a.click();
     },
     onDelete: function (grid, rowIndex, colIndex) {
         var model = grid.getStore().getData().items[rowIndex];
