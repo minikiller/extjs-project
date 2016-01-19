@@ -17,7 +17,7 @@ Ext.define('kalix.workflow.viewModel.WorkflowViewModel', {
         editTitle: '编辑公告',
         url: CONFIG.restRoot + '/camel/rest/notices',
         processUrl: CONFIG.restRoot + '/camel/rest/workflow',
-        processShowTitile: '流程定义查看',
+        processShowTitile: '流程查看',
         processShowUrl: '/image',
         historyActivityUrl: CONFIG.restRoot + '/camel/rest/workflow/activities'
 

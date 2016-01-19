@@ -204,7 +204,8 @@ Ext.define('kalix.workflow.processdefinition.controller.ProcessDefinitionGridCon
         var imgUrl = this.getView().getViewModel().get("processShowUrl") + "?processDefinitionId=" + rec.data.id;
         var win = Ext.create('kalix.workflow.components.ActivitiProcessImageWindow', {
             html: "<iframe  width='100%' height='100%' frameborder='0' src='" + imgUrl + "'></iframe>",
-            title: this.getView().getViewModel().get("processShowTitile") + "-" + rec.data.name
+            title: '流程定义查看 - ' + rec.data.name,
+            width: 1050
         });
         win.show();
     }

@@ -93,8 +93,8 @@ Ext.define('kalix.demo.sealApply.view.SealApplyGrid', {
                     {
                         icon: "resources/images/read.png",
                         permission: '',
-                        tooltip: '查看',
-                        handler: 'onView'
+                        tooltip: '查看当前流程',
+                        handler: 'onViewCurrentProcess'
                     },
                     {
                         icon: "resources/images/delete.png",
