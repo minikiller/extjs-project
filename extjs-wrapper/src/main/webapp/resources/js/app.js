@@ -5,14 +5,11 @@
  */
 Ext.application({
     name: 'kalix',
-    //paths:{'kalix':'app'},
     extend: 'kalix.core.Application',
 
     requires: [
         'kalix.core.view.Main'
     ],
 
-    mainView: 'kalix.core.view.Main',
-
-
+    mainView: 'kalix.core.view.Main'
 });
