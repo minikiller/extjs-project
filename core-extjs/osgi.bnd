@@ -1,6 +1,6 @@
 Bundle-Activator: ${bundle.namespace}.internal.InitActivator
-Import-Package: cn.com.rexen.ext.shiro.web.filter.authc, \
-                cn.com.rexen.security.core.web.evn, \
+#Import-Package: cn.com.rexen.ext.shiro.web.filter.authc, \
+Import-Package: cn.com.rexen.security.core.web.evn, \
                 cn.com.rexen.core.impl.web, \
                 cn.com.rexen.security.core.filter, \
                 cn.com.rexen.security.impl.filter, \

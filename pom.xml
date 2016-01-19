@@ -51,7 +51,7 @@
         <!--<karaf.path>d:/java-develop/tools/apache-karaf-3.0.5/deploy</karaf.path>-->
         <!--<karaf.bin.path>d:/java-develop/tools/apache-karaf-3.0.5/bin</karaf.bin.path>-->
         <!--<version.apache.karaf>3.0.5</version.apache.karaf>-->
-        <karaf.version>4.0.3</karaf.version>
+        <karaf.version>4.0.4</karaf.version>
         <karaf.etc.path>d:/java-develop/tools/apache-karaf-${karaf.version}/etc</karaf.etc.path>
         <karaf.path>d:/java-develop/tools/apache-karaf-${karaf.version}/deploy</karaf.path>
         <karaf.bin.path>d:/java-develop/tools/apache-karaf-${karaf.version}/bin</karaf.bin.path>
@@ -175,8 +175,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-compiler-plugin.version}</version>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                     <debug>true</debug>
                     <optimize>true</optimize>
                     <showDeprecation>true</showDeprecation>
