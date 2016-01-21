@@ -47,9 +47,8 @@ Ext.define('kalix.attachment.view.AttachmentGrid', {
             {
                 text: '大小(MB)',
                 xtype:'templatecolumn',
-                //xtype:'numbercolumn',
-                //dataIndex: 'attachmentSize',
                 tpl:'<tpl>{[(values.attachmentSize/1048576).toFixed(3)]}</tpl>',
+                renderer: null
             },
             {
                 text: '上传日期',
