@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
     <title>kalix</title>
+    <link rel="icon" href="resources/images/favicon.ico" type="image/x-icon"/>
     <link href="<%=path %>/resources/ext/kalix-all.css" rel="stylesheet"/>
     <script type="text/javascript" src="<%=path %>/resources/js/Config.js"></script>
     <script type="text/javascript">CONFIG.restRoot = '<%=path %>';</script>
