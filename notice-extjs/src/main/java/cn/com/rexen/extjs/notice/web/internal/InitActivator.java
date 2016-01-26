@@ -20,7 +20,7 @@ public class InitActivator implements BundleActivator {
 
     @Override
     public void start(BundleContext bundleContext) throws Exception {
-        SystemUtil.succeedPrintln(String.format("Start-up %s bundle!!", BUNDLE_NAME));
+        SystemUtil.succeedPrintln(String.format("Start-up %s bundle!!", BUNDLE_NAME) + bundleContext.getBundle());
         context = bundleContext;
 
         reference = bundleContext.getServiceReference(HttpService.class.getName());
@@ -31,7 +31,7 @@ public class InitActivator implements BundleActivator {
 
     @Override
     public void stop(BundleContext bundleContext) throws Exception {
-        SystemUtil.succeedPrintln(String.format("Stop %s bundle!!", BUNDLE_NAME));
+        SystemUtil.succeedPrintln(String.format("Stop %s bundle!!", BUNDLE_NAME) + bundleContext.getBundle());
 
         if(httpService!=null){
             httpService.unregister("/kalix/app/notice");
