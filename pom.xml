@@ -10,17 +10,6 @@
         <url>http://www.rexen.com.cn/</url>
     </organization>
 
-    <distributionManagement>
-        <repository>
-            <id>nexus-release</id>
-            <url>http://172.17.2.246:8081/nexus/content/repositories/releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>nexus-snapshots</id>
-            <url>http://172.17.2.246:8081/nexus/content/repositories/snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
-
     <groupId>cn.com.rexen.extjs</groupId>
     <artifactId>extjs-project</artifactId>
     <version>1.0-SNAPSHOT</version>
@@ -56,6 +45,32 @@
         <karaf.path>d:/java-develop/tools/apache-karaf-${karaf.version}/deploy</karaf.path>
         <karaf.bin.path>d:/java-develop/tools/apache-karaf-${karaf.version}/bin</karaf.bin.path>
     </properties>
+
+    <modules>
+        <module>extjs-wrapper</module>
+        <module>core-extjs</module>
+        <module>admin-extjs</module>
+        <!--<module>notice-web</module>-->
+        <module>app-extjs</module>
+        <module>workflow-extjs</module>
+        <module>demo-extjs</module>
+        <module>audit-extjs</module>
+        <module>attachment-extjs</module>
+    </modules>
+
+    <distributionManagement>
+        <repository>
+            <id>private-nexus-library-releases</id>
+            <name>private-nexus-library-releases</name>
+            <url>http://172.18.82.10:8081/nexus/content/repositories/releases/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>private-nexus-library-snapshots</id>
+            <name>private-nexus-library-snapshots</name>
+            <url>http://172.18.82.10:8081/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 
     <dependencyManagement>
         <dependencies>
@@ -253,15 +268,4 @@
     </build>
 
 
-    <modules>
-        <module>extjs-wrapper</module>
-        <module>core-extjs</module>
-        <module>admin-extjs</module>
-        <!--<module>notice-web</module>-->
-        <module>app-extjs</module>
-        <module>workflow-extjs</module>
-        <module>demo-extjs</module>
-        <module>audit-extjs</module>
-        <module>attachment-extjs</module>
-    </modules>
 </project>
