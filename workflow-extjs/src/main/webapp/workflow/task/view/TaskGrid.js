@@ -1,37 +1,72 @@
 /**
- * 流程定义表格
+ * 代办任务定义表格
  * @author majian <br/>
  *         date:2015-7-3
  * @version 1.0.0
  */
 Ext.define('kalix.workflow.task.view.TaskGrid', {
-    extend: 'Ext.grid.Panel',
+    extend: 'kalix.view.components.common.BaseGrid',
     requires: [
-        'kalix.workflow.viewModel.WorkflowViewModel',
-        'kalix.workflow.task.controller.TaskGridController'
+        'kalix.workflow.task.controller.TaskGridController',
+        'kalix.workflow.task.store.TaskStore'
     ],
     alias: 'widget.taskGrid',
     xtype: 'taskGrid',
-    controller: 'taskGridController',
-    viewModel: {
-        type: 'workflowViewModel'
+    controller: {
+        type:'taskGridController',
+        storeId:'taskStore',
+        /*cfgForm: 'kalix.roffice.chance.view.TaskWindow',
+        cfgViewForm: 'kalix.roffice.chance.view.TaskViewWindow',*/
+        cfgModel: 'kalix.workflow.task.model.TaskModel'
     },
-    autoLoad: true,
-    stripeRows: true,
-    manageHeight: true,
-    selModel: {selType: 'checkboxmodel', mode: "SIMPLE"},
-    columns: [
-        {text: '编号', dataIndex: 'id', width: 100},
-        {text: '名称', dataIndex: 'name', width: 120},
-
-        {text: '描述', dataIndex: 'description', width: 160},
-        {text: '执行人', dataIndex: 'assignee', width: 80},
+    viewModel: {
+        type: 'taskViewModel'
+    },
+    store:{
+        type:'taskStore'
+    },
+    columns: {
+         defaults: {
+             flex: 1,
+             renderer: 'addTooltip'
+         },
+         items: [
+         {
+             xtype: "rownumberer",
+             text: "行号",
+             width: 50,
+             flex: 0,
+             align: 'center',
+             renderer: null
+         },
         {
-            text: '创建时间', dataIndex: 'createTime', width: 60, renderer: function (value) {
-            var createDate = new Date(value);
-            return createDate.format("yyyy-MM-dd hh:mm:ss");
-        }
+            text: '编号',
+            dataIndex: 'id',
+            hidden: true
         },
+        {
+            text: '任务名称',
+            dataIndex: 'name'
+        },
+        {
+            text: '描述',
+            dataIndex: 'description'
+        },
+        {
+            text: '执行人',
+            dataIndex: 'assignee'
+        },
+        {
+            text: '创建时间',
+            dataIndex: 'createTime',
+            renderer: function (value) {
+                        if (value != null && value != "") {
+                            var createDate = new Date(value);
+                            return createDate.format("yyyy-MM-dd hh:mm:ss");
+                        } else {
+                            return "";
+                        }
+        }},
         {
             header: '操作',
             xtype: "actioncolumn",
@@ -46,14 +81,6 @@ Ext.define('kalix.workflow.task.view.TaskGrid', {
                     tooltip: '处理',
                     handler: 'onCompleteTask'
                 }]
+        }]
         }
-    ]
-    /*tbar: [
-     {
-     text: '添加', icon: 'admin/resources/images/group_add.png', handler: 'onAdd'
-     }, "-",
-     {
-     text: '批量删除', icon: 'admin/resources/images/group_delete.png', handler: 'onDeleteAll'
-     }, "-"],*/
-
 });

@@ -6,10 +6,8 @@ Ext.define('kalix.workflow.Main', {
     layout: 'vbox',
     padding: 10,
 
-    items: [
-      {
+    items: [{
         xtype: 'container',
         html : '工作流演示系统首页'
-      }
-    ]
+      }]
 });

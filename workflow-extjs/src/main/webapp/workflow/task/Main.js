@@ -1,29 +1,27 @@
 /**
- * 用户组件
+ * 代办任务首页
  *
- * @author majian <br/>
- *         date:2015-6-18
+ * @author majian
+ * date:2015-6-18
  * @version 1.0.0
  */
 Ext.define('kalix.workflow.task.Main', {
-    extend: 'Ext.panel.Panel',
+    extend: 'kalix.container.BaseContainer',
     requires: [
-        'kalix.workflow.viewModel.WorkflowViewModel',
-        'kalix.workflow.task.controller.TaskController'
+        'kalix.workflow.task.view.TaskSearchForm',
+        'kalix.workflow.task.view.TaskGrid',
+        'kalix.workflow.task.viewModel.TaskViewModel'
     ],
-    controller: 'taskController',
-    viewModel: {
-        type: 'workflowViewModel'
-    },
-    items: [],
-    initComponent: function () {
-        var taskController = this.getController("taskController");
-
-        this.items[0] = taskController.onInitPanel();
-        /*var grid = Ext.getCmp("noticeDataGrid");
-         var store = grid.getStore();
-         store.load({params:{start:0, limit:10}});
-         grid.getView().refresh();*/
-        this.callParent(arguments);
-    }
+    storeId:'taskStore',
+    viewModel:'taskViewModel',
+    items: [{
+        xtype: 'taskSearchForm',
+        title: '代办任务查询',
+        iconCls: 'x-fa fa-search'
+    }, {
+        xtype: 'taskGrid',
+        title: '代办任务列表',
+        iconCls: 'x-fa fa-cutlery',
+        margin: 10
+    }]
 });
