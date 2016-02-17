@@ -1,29 +1,29 @@
 /**
- * 用户组件
+ * 流程定义组件
  *
- * @author majian <br/>
- *         date:2015-6-18
+ * @author majian
+ * date:2015-6-18
  * @version 1.0.0
  */
 Ext.define('kalix.workflow.processdefinition.Main', {
-    extend: 'Ext.panel.Panel',
+    extend: 'kalix.container.BaseContainer',
     requires: [
-        'kalix.workflow.viewModel.WorkflowViewModel',
-        'kalix.workflow.processdefinition.controller.ProcessDefinitionController'
+        'kalix.workflow.processdefinition.viewModel.ProcessDefinitionViewModel',
+        'kalix.workflow.processdefinition.view.ProcessDefinitionGrid',
+        'kalix.workflow.processdefinition.view.ProcessDefinitionSearchForm'
     ],
-    controller: 'processDefinitionController',
-    viewModel: {
-        type: 'workflowViewModel'
+    storeId:'processDefinitionStore',
+    viewModel:'processDefinitionViewModel',
+    items: [
+    {
+        xtype: 'processDefinitionSearchForm',
+        title: '流程定义查询',
+        iconCls: 'x-fa fa-search'
     },
-    items: [],
-    initComponent: function () {
-        var processDefinitionController = this.getController("processDefinitionController");
-
-        this.items[0] = processDefinitionController.onInitPanel();
-        /*var grid = Ext.getCmp("noticeDataGrid");
-         var store = grid.getStore();
-         store.load({params:{start:0, limit:10}});
-         grid.getView().refresh();*/
-        this.callParent(arguments);
-    }
+    {
+        xtype: 'processDefinitionGrid',
+        title: '流程定义列表',
+        iconCls: 'x-fa fa-file-text',
+        margin: 10
+    }]
 });

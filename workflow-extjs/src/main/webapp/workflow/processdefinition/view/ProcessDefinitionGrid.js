@@ -5,42 +5,74 @@
  * @version 1.0.0
  */
 Ext.define('kalix.workflow.processdefinition.view.ProcessDefinitionGrid', {
-    extend: 'Ext.grid.Panel',
+    extend: 'kalix.view.components.common.BaseGrid',
     requires: [
-        'kalix.workflow.viewModel.WorkflowViewModel',
+        'kalix.workflow.processdefinition.store.ProcessDefinitionStore',
         'kalix.workflow.processdefinition.controller.ProcessDefinitionGridController'
     ],
     alias: 'widget.processDefinitionGrid',
     xtype: 'processDefinitionGrid',
-    controller: 'processDefinitionGridController',
-    viewModel: {
-        type: 'workflowViewModel'
+    controller: {
+        type:'processDefinitionGridController',
+        storeId:'processDefinitionStore',
+        /*cfgForm: 'kalix.roffice.chance.view.TaskWindow',
+        cfgViewForm: 'kalix.roffice.chance.view.TaskViewWindow',*/
+        cfgModel: 'kalix.workflow.processdefinition.model.ProcessDefinitionModel'
     },
-    autoLoad: true,
-    stripeRows: true,
-    manageHeight: true,
-    selModel: {selType: 'checkboxmodel', mode: "SIMPLE"},
-    columns: [
-        {text: '编号', dataIndex: 'id', width: 100},
-        {text: '名称', dataIndex: 'name', width: 120},
-        {text: '关键字', dataIndex: 'key', width: 80},
-        {text: '描述', dataIndex: 'description', width: 160},
-        {text: '版本', dataIndex: 'version', width: 60},
+    viewModel: {
+        type: 'processDefinitionViewModel'
+    },
+    store:{
+        type:'processDefinitionStore'
+    },
+    columns: {
+      defaults: {
+          flex: 1,
+          renderer: 'addTooltip'
+      },
+      items: [
+      {
+           xtype: "rownumberer",
+           text: "行号",
+           width: 50,
+           flex: 0,
+           align: 'center',
+           renderer: null
+       },
         {
-            text: '状态', dataIndex: 'suspensionState', width: 60, renderer: function (value) {
-            //Ext.ComponentQuery.query('processDefinitionGrid')[0]
-            //alert(Ext.ComponentQuery.query('processDefinitionGrid')[0].getComponent("operationColumn"));
+            text: '编号',
+            dataIndex: 'id',
+            hidden: true
+        },
+        {
+            text: '流程定义名称',
+            dataIndex: 'name'
+        },
+        {
+            text: '关键字',
+            dataIndex: 'key'
+        },
+        {
+            text: '描述',
+            dataIndex: 'description'
+        },
+        {
+            text: '版本',
+            dataIndex: 'version'
+        },
+        {
+            text: '状态', dataIndex: 'suspensionState',
+            renderer: function (value) {
             if (value == 1)
                 return "有效";
             else
                 return "无效";
-        }
+            }
         },
         {
             header: '操作',
             xtype: "actioncolumn",
             itemId: 'operationColumn',
-            width: 75,
             items: [{
                 icon: "resources/images/pencil.png",
                 tooltip: '编辑',
@@ -71,13 +103,5 @@ Ext.define('kalix.workflow.processdefinition.view.ProcessDefinitionGrid', {
                 handler: 'onOpenProcessDefinition'
             }]
         }
-    ]
-    /*tbar: [
-     {
-     text: '添加', icon: 'admin/resources/images/group_add.png', handler: 'onAdd'
-     }, "-",
-     {
-     text: '批量删除', icon: 'admin/resources/images/group_delete.png', handler: 'onDeleteAll'
-     }, "-"],*/
-
+      ]}
 });
