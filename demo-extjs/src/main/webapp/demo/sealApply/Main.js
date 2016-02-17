@@ -5,15 +5,21 @@ Ext.define('kalix.demo.sealApply.Main', {
     extend: 'kalix.container.BaseContainer',
     requires: [
         'kalix.demo.sealApply.view.SealApplyGrid',
-        'kalix.demo.sealApply.viewModel.SealApplyViewModel'
+        'kalix.demo.sealApply.viewModel.SealApplyViewModel',
+        'kalix.demo.sealApply.view.SealApplySearchForm'
     ],
     viewModel: 'sealApplyViewModel',
     storeId: 'sealApplyStore',
     items: [
+         {
+            title: '印章申请查询',
+            iconCls: 'x-fa fa-search',
+            xtype: 'sealApplySearchForm'
+        },
         {
             xtype: 'sealApplyGrid',
-            title: '印章使用申请列表',
-            //iconCls: 'x-fa fa-calendar',
+            title: '印章申请列表',
+            iconCls: 'x-fa fa-calendar',
             margin: 10
         }
     ]

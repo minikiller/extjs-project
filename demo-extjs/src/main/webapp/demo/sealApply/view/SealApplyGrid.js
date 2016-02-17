@@ -43,6 +43,12 @@ Ext.define('kalix.demo.sealApply.view.SealApplyGrid', {
                 text: '申请部门',
                 dataIndex: 'department',
                 flex: 0.5
+            }
+            ,
+            {
+                text: '当前环节',
+                dataIndex: 'currentNode',
+                flex: 0.5,
             },
             {
                 text: '申请时间',
@@ -79,12 +85,7 @@ Ext.define('kalix.demo.sealApply.view.SealApplyGrid', {
                 flex: 0.5,
                 renderer: null
             }
-            ,
-            {
-                text: '当前环节',
-                dataIndex: 'currentNode',
-                flex: 0.5,
-            }
+
             ,
             {
                 flex: 0.5,
