@@ -30,16 +30,9 @@ Ext.define('kalix.demo.sealApply.controller.SealApplyGridController', {
         var rec = grid.getStore().getAt(rowIndex);
         var imgUrl = '/image' + "?processInstanceId=" + rec.data.processInstanceId;
         var win = Ext.create('kalix.workflow.components.ActivitiProcessImageWindow', {
-            html: "<iframe  width='100%' height='100%' frameborder='0' src='" + imgUrl + "'></iframe>",
             title: '当前流程',
-            width: 1050
-
+            imgUrl: imgUrl
         });
-
-        Ext.require('kalix.workflow.components.ActivitiProcessImageWindow', function () {
-            alert(1);
-        });
-
         win.show();
     }
 });

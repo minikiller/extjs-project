@@ -82,6 +82,10 @@ Ext.define('kalix.demo.sealApply.view.SealApplyGrid', {
                 xtype: 'dictGridColumn',
                 dictType: 'workflowStatus',
                 dataIndex: 'status',
+                colorConfig: {
+                    '结束': 'red',
+                    'default': 'blue'
+                },
                 flex: 0.5,
                 renderer: null
             }
