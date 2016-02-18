@@ -41,6 +41,7 @@ Ext.define('kalix.workflow.components.ActivitiProcessImageWindow', {
     buttons: [
         {
             text: '关闭',
+            glyph: 'xf00d@FontAwesome',
             handler: function () {
                 arguments[0].findParentByType('window').close();
             }

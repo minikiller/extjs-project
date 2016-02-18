@@ -30,7 +30,7 @@ Ext.define('kalix.demo.sealApply.controller.SealApplyGridController', {
         var rec = grid.getStore().getAt(rowIndex);
         var imgUrl = '/image' + "?processInstanceId=" + rec.data.processInstanceId;
         var win = Ext.create('kalix.workflow.components.ActivitiProcessImageWindow', {
-            title: '当前流程',
+            title: '当前流程 - ' + rec.data.id,
             imgUrl: imgUrl
         });
         win.show();
