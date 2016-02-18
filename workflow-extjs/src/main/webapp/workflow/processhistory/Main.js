@@ -1,29 +1,27 @@
 /**
- * 用户组件
+ * 流程历史组件
  *
  * @author majian <br/>
  *         date:2015-6-18
  * @version 1.0.0
  */
 Ext.define('kalix.workflow.processhistory.Main', {
-    extend: 'Ext.panel.Panel',
+    extend: 'kalix.container.BaseContainer',
     requires: [
-        'kalix.workflow.viewModel.WorkflowViewModel',
-        'kalix.workflow.processhistory.controller.ProcessHistoryController'
+        'kalix.workflow.processhistory.view.ProcessHistorySearchForm',
+        'kalix.workflow.processhistory.view.ProcessHistoryGrid',
+        'kalix.workflow.processhistory.viewModel.ProcessHistoryViewModel'
     ],
-    controller: 'processHistoryController',
-    viewModel: {
-        type: 'workflowViewModel'
-    },
-    items: [],
-    initComponent: function () {
-        var processHistoryController = this.getController("processHistoryController");
-
-        this.items[0] = processHistoryController.onInitPanel();
-        /*var grid = Ext.getCmp("noticeDataGrid");
-         var store = grid.getStore();
-         store.load({params:{start:0, limit:10}});
-         grid.getView().refresh();*/
-        this.callParent(arguments);
-    }
+    storeId: 'processHistoryStore',
+    viewModel: 'processHistoryViewModel',
+    items: [{
+        xtype: 'processHistorySearchForm',
+        title: '流程历史查询',
+        iconCls: 'x-fa fa-search'
+    }, {
+        xtype: 'processHistoryGrid',
+        title: '流程历史列表',
+        iconCls: 'x-fa fa-calendar',
+        margin: 10
+    }]
 });

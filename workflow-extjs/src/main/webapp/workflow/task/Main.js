@@ -21,7 +21,7 @@ Ext.define('kalix.workflow.task.Main', {
     }, {
         xtype: 'taskGrid',
         title: '代办任务列表',
-        iconCls: 'x-fa fa-cutlery',
+        iconCls: 'x-fa fa-ContractDetail',
         margin: 10
     }]
 });
