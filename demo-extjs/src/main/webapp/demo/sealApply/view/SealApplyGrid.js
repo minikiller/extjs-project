@@ -36,17 +36,16 @@ Ext.define('kalix.demo.sealApply.view.SealApplyGrid', {
             },
             {
                 text: '编号',
-                dataIndex: 'id',
-                hidden: true
+                dataIndex: 'id'
             },
             {
                 text: '申请部门',
-                dataIndex: 'department',
+                dataIndex: 'department'
             }
             ,
             {
                 text: '当前环节',
-                dataIndex: 'currentNode',
+                dataIndex: 'currentNode'
             },
             {
                 text: '申请时间',
@@ -57,7 +56,7 @@ Ext.define('kalix.demo.sealApply.view.SealApplyGrid', {
             },
             {
                 text: '用印数',
-                dataIndex: 'usageCount',
+                dataIndex: 'usageCount'
             },
             {
                 text: '印章类别',
@@ -68,7 +67,7 @@ Ext.define('kalix.demo.sealApply.view.SealApplyGrid', {
             },
             {
                 text: '经办人',
-                dataIndex: 'operator',
+                dataIndex: 'operator'
             }
             ,
             {
@@ -94,7 +93,7 @@ Ext.define('kalix.demo.sealApply.view.SealApplyGrid', {
                         tooltip: '查看当前流程',
                         handler: 'onViewCurrentProcess',
                         getClass: function (v, meta, record) {
-                            if (2 == record.data.status) {
+                            if (1!= record.data.status) {
                                 return "kalix_hidden";
                             }
                         }
