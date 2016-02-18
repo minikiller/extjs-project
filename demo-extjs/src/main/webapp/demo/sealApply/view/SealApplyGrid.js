@@ -42,39 +42,33 @@ Ext.define('kalix.demo.sealApply.view.SealApplyGrid', {
             {
                 text: '申请部门',
                 dataIndex: 'department',
-                flex: 0.5
             }
             ,
             {
                 text: '当前环节',
                 dataIndex: 'currentNode',
-                flex: 0.5,
             },
             {
                 text: '申请时间',
                 dataIndex: 'applyDate',
                 xtype: 'datecolumn',
-                flex: 0.5,
                 format: 'Y-m-d',
                 renderer: null
             },
             {
                 text: '用印数',
                 dataIndex: 'usageCount',
-                flex: 0.5
             },
             {
                 text: '印章类别',
                 xtype: 'dictGridColumn',
                 dictType: 'sealType',
                 dataIndex: 'sealType',
-                flex: 0.5,
                 renderer: null
             },
             {
                 text: '经办人',
                 dataIndex: 'operator',
-                flex: 0.5
             }
             ,
             {
@@ -86,7 +80,6 @@ Ext.define('kalix.demo.sealApply.view.SealApplyGrid', {
                     '结束': 'red',
                     'default': 'blue'
                 },
-                flex: 0.5,
                 renderer: null
             }
 
