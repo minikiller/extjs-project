@@ -11,6 +11,11 @@
     background-image: url(../../admin/resources/images/control_pause_blue.png) !important;
 }
 
+.kalix_hidden {
+    visibility: hidden;
+    width: 0;
+}
+
 img.x-action-col-icon.x-action-col-0.x-hide-grid-column {
     visibility: hidden;
 }

@@ -92,18 +92,28 @@ Ext.define('kalix.demo.sealApply.view.SealApplyGrid', {
                         icon: "resources/images/read.png",
                         permission: '',
                         tooltip: '查看当前流程',
-                        handler: 'onViewCurrentProcess'
+                        handler: 'onViewCurrentProcess',
+                        getClass: function (v, meta, record) {
+                            if (2 == record.data.status) {
+                                return "kalix_hidden";
+                            }
+                        }
                     },
                     {
                         icon: "resources/images/delete.png",
                         permission: '',
                         tooltip: '删除',
-                        handler: 'onDelete'
+                        handler: 'onDelete',
+                        getClass: function (v, meta, record) {
+                            if (0 != record.data.status) {
+                                return "kalix_hidden";
+                            }
+                        }
                     },
                     {
                         getClass: function (v, meta, record) {
                             if (record.data.status) {
-                                return "kalix_stop";
+                                return "kalix_hidden";
                             }
                             return "kalix_start";
                         },
