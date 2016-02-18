@@ -49,6 +49,10 @@ Ext.define('kalix.workflow.task.view.TaskGrid', {
             dataIndex: 'name'
         },
         {
+            text: '业务主键',
+            dataIndex: 'businessKey'
+        },
+        {
             text: '描述',
             dataIndex: 'description'
         },

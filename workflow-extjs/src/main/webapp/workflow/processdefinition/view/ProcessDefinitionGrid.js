@@ -40,9 +40,8 @@ Ext.define('kalix.workflow.processdefinition.view.ProcessDefinitionGrid', {
            renderer: null
        },
         {
-            text: '编号',
+            text: '流程定义编号',
             dataIndex: 'id',
-            hidden: true
         },
         {
             text: '流程定义名称',

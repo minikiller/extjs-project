@@ -12,7 +12,7 @@ Ext.define('kalix.workflow.processhistory.controller.ProcessHistoryGridControlle
     onOpenHistoryActivity: function (grid, rowIndex, colIndex) {
         var rec = grid.getStore().getAt(rowIndex);
         Ext.Ajax.request({
-            url: CONFIG.restRoot + '/camel/rest/demos/' + rec.data.entityId,
+            url: CONFIG.restRoot + '/camel/rest/sealapplys/' + rec.data.entityId,
             method: 'GET',
             callback: function (options, success, response) {
                 var entity = Ext.JSON.decode(response.responseText);

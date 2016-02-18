@@ -15,5 +15,6 @@ Ext.define('kalix.workflow.processhistory.model.ProcessHistoryModel', {
         {name: 'endTime', type: 'string'},//结束时间
         {name: 'businessKey', type: 'string'},//业务主键
         {name: 'status', type: 'string'},//当前状态
+
     ]
 });
