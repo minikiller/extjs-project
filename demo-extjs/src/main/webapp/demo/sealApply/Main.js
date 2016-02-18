@@ -19,7 +19,7 @@ Ext.define('kalix.demo.sealApply.Main', {
         {
             xtype: 'sealApplyGrid',
             title: '印章申请列表',
-            iconCls: 'x-fa fa-calendar',
+            iconCls: 'x-fa fa-credit-card',
             margin: 10
         }
     ]
