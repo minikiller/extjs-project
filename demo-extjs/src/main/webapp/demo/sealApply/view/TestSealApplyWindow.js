@@ -12,7 +12,6 @@ Ext.define('kalix.demo.sealApply.view.TestSealApplyWindow', {
     alias: 'widget.testSealApplyWindow',
     xtype: "testSealApplyWindow",
     viewModel: 'sealApplyViewModel',
-    width: 900,
     controller: {
         type: 'baseWindowController',
         storeId: 'sealApplyStore'
@@ -21,11 +20,11 @@ Ext.define('kalix.demo.sealApply.view.TestSealApplyWindow', {
         {
             xtype: 'form',
             padding: 1,
-            width: 900,
+            width: 800,
             bodyStyle: 'border-color:black;border-width:1px 1px 0px 1px',
             layout: {
                 type: 'table',
-                columns: 6
+                columns: 4
             },
             defaults: {
                 height: 60,
@@ -52,7 +51,7 @@ Ext.define('kalix.demo.sealApply.view.TestSealApplyWindow', {
             },
             items: [{
                 html: '吉林动画学院印章使用申请单',
-                colspan: 6,
+                colspan: 4,
                 bodyStyle: 'padding:15px 0px 15px 0px;font-size:24px;font-weight:bold;text-align:center;border-color:black;border-width:0px 1px 1px 0px'
             },
                 {
@@ -67,21 +66,6 @@ Ext.define('kalix.demo.sealApply.view.TestSealApplyWindow', {
                             bind: {
                                 value: '{test}'
                             }
-                        }
-                    ]
-                },
-                {
-                    html: '申请时间'
-                },
-                {
-                    bodyStyle: 'padding:10px 0 0 0;border-color:black;border-width:0px 1px 1px 0px',
-                    items: [
-                        {
-                            editable: false,
-                            xtype: 'datefield',
-                            format: 'Y年m月d日',
-                            hideLabel: true,
-                            fieldStyle: 'font-size:15px'
                         }
                     ]
                 },
@@ -104,7 +88,7 @@ Ext.define('kalix.demo.sealApply.view.TestSealApplyWindow', {
                     html: '印章类别'
                 },
                 {
-                    colspan: 5,
+                    colspan: 3,
                     bodyStyle: 'padding:0px 0px 0px 20px;font-size:15px;text-align:center;border-color:black;border-width:0px 1px 1px 0px',
                     items: [
                         {
@@ -130,7 +114,6 @@ Ext.define('kalix.demo.sealApply.view.TestSealApplyWindow', {
                     html: '经办人',
                 },
                 {
-                    colspan: 2,
                     items: [
                         {
                             xtype: 'field',
@@ -146,7 +129,6 @@ Ext.define('kalix.demo.sealApply.view.TestSealApplyWindow', {
                     html: '部门负责人'
                 },
                 {
-                    colspan: 2,
                     items: [
                         {
                             xtype: 'field',
@@ -162,7 +144,6 @@ Ext.define('kalix.demo.sealApply.view.TestSealApplyWindow', {
                     html: '分公司负责人'
                 },
                 {
-                    colspan: 2,
                     items: [
                         {
                             xtype: 'field',
@@ -178,7 +159,6 @@ Ext.define('kalix.demo.sealApply.view.TestSealApplyWindow', {
                     html: '法律顾问'
                 },
                 {
-                    colspan: 2,
                     items: [
                         {
                             xtype: 'field',
@@ -194,7 +174,6 @@ Ext.define('kalix.demo.sealApply.view.TestSealApplyWindow', {
                     html: '总经理'
                 },
                 {
-                    colspan: 2,
                     items: [
                         {
                             xtype: 'field',
@@ -210,7 +189,6 @@ Ext.define('kalix.demo.sealApply.view.TestSealApplyWindow', {
                     html: '印章专管员'
                 },
                 {
-                    colspan: 2,
                     items: [
                         {
                             xtype: 'field',
@@ -226,7 +204,7 @@ Ext.define('kalix.demo.sealApply.view.TestSealApplyWindow', {
                     html: '备注'
                 },
                 {
-                    colspan: 5,
+                    colspan: 3,
                     items: [
                         {
                             xtype: 'field',
