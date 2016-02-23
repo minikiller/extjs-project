@@ -21,7 +21,7 @@ Ext.define('kalix.workflow.myprocesshistory.Main', {
     }, {
         xtype: 'myProcessHistoryGrid',
         title: '我的流程列表',
-        iconCls: 'x-fa fa-calendar',
+        iconCls: 'x-fa fa-history',
         margin: 10
     }]
 });
