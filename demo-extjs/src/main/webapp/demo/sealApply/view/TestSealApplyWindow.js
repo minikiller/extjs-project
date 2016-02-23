@@ -18,10 +18,8 @@ Ext.define('kalix.demo.sealApply.view.TestSealApplyWindow', {
     },
     items: [
         {
-            xtype: 'form',
-            padding: 1,
+            xtype: 'baseTableForm',
             width: 800,
-            bodyStyle: 'border-color:black;border-width:1px 1px 0px 1px',
             layout: {
                 type: 'table',
                 columns: 4
@@ -31,31 +29,15 @@ Ext.define('kalix.demo.sealApply.view.TestSealApplyWindow', {
                 bodyStyle: 'padding:20px;font-size:18px;text-align:center;border-color:black;border-width:0px 1px 1px 0px',
                 layout: 'fit'
             },
-            listeners: {
-                afterrender: function () {
-                    for (var itemIndex = 0; itemIndex < this.items.getCount(); ++itemIndex) {
-                        var tmpItem = this.items.getAt(itemIndex);
-
-                        if (tmpItem.colspan) {
-                            tmpItem.setWidth(this.width * tmpItem.colspan / this.layout.columns);
-                        }
-                        else {
-                            tmpItem.setWidth(this.width / this.layout.columns);
-                        }
-
-                        if (tmpItem.config.html && tmpItem.config.html.indexOf('<br') > 0) {
-                            tmpItem.setBodyStyle('padding:10px;font-size:18px;text-align:center;border-color:black;border-width:0px 1px 1px 0px');
-                        }
-                    }
-                }
-            },
-            items: [{
-                html: '吉林动画学院印章使用申请单',
-                colspan: 4,
-                bodyStyle: 'padding:15px 0px 15px 0px;font-size:24px;font-weight:bold;text-align:center;border-color:black;border-width:0px 1px 1px 0px'
-            },
+            items: [
+                {
+                    html: '吉林动画学院印章使用申请单',
+                    colspan: 4,
+                    bodyStyle: 'padding:15px 0px 15px 0px;font-size:24px;font-weight:bold;text-align:center;border-color:black;border-width:0px 1px 1px 0px'
+                },
                 {
                     html: '申请部门'
+                    //bodyStyle: 'padding:20px;font-size:18px;text-align:center;border-color:black;border-width:0px 1px 1px 0px'
                 },
                 {
                     items: [

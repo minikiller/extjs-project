@@ -7,11 +7,7 @@ Ext.define('kalix.view.components.common.TableFormPanel', {
     extend: 'Ext.form.Panel',
     xtype: "baseTableForm",
     bodyStyle: 'border-color:black;border-width:1px 1px 0px 1px',
-    defaults: {
-        height: 60,
-        bodyStyle: 'padding:20px;font-size:18;text-align:center;border-color:black;border-width:0px 1px 1px 0px',
-        layout: 'fit'
-    },
+    padding: 1,
     listeners: {
         afterrender: function () {
             for (var itemIndex = 0; itemIndex < this.items.getCount(); ++itemIndex) {
@@ -25,7 +21,7 @@ Ext.define('kalix.view.components.common.TableFormPanel', {
                 }
 
                 if (tmpItem.config.html && tmpItem.config.html.indexOf('<br') > 0) {
-                    tmpItem.setBodyStyle('padding:10px;font-size:18;text-align:center;border-color:black;border-width:0px 1px 1px 0px');
+                    tmpItem.setBodyStyle('padding:10px;font-size:18px;text-align:center;border-color:black;border-width:0px 1px 1px 0px');
                 }
             }
         }
