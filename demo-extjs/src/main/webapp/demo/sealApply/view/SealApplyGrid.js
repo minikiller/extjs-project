@@ -13,7 +13,7 @@ Ext.define('kalix.demo.sealApply.view.SealApplyGrid', {
     controller: {
         type: 'sealApplyGridController',
         storeId: 'sealApplyStore',
-        cfgForm: 'kalix.demo.sealApply.view.SealApplyWindow',
+        cfgForm: 'kalix.demo.sealApply.view.TestSealApplyWindow',
         cfgViewForm: 'kalix.demo.sealApply.view.SealApplyViewWindow',
         cfgModel: 'kalix.demo.sealApply.model.SealApplyModel'
     },
@@ -49,7 +49,7 @@ Ext.define('kalix.demo.sealApply.view.SealApplyGrid', {
             },
             {
                 text: '申请时间',
-                dataIndex: 'applyDate',
+                dataIndex: 'creationDate',
                 xtype: 'datecolumn',
                 format: 'Y-m-d',
                 renderer: null

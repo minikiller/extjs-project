@@ -259,5 +259,21 @@ Ext.define('kalix.core.controller.MainController', {
 
             return previousValue;
         }, {});
+    },
+    afterrender:function(){
+        //var messageBar=Ext.getCmp('messagebarId');
+        //messageBar.lookupViewModel().getData().message.set('count',100);
+        //messageBar.lookupViewModel().getData().message.set('iconCls', 'x-fa fa-envelope-o');
+        var pollA = new Ext.direct.PollingProvider({
+            type:'polling',
+            url: 'data.json',
+            interval:3000
+        });
+
+        pollA.on('data',function( provider, e, eOpts ){
+            console.log(111);//e.data.
+        });
+
+        Ext.direct.Manager.addProvider(pollA);
     }
 });
