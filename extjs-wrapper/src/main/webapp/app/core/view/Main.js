@@ -10,6 +10,7 @@ Ext.define('kalix.core.view.Main', {
         'kalix.core.controller.MainController',
         'kalix.core.view.MainModel',
         'kalix.core.view.MainToolbar',
+        'kalix.core.view.Messagebar',
         'kalix.core.view.Profilebar',
         'kalix.core.view.MainContainerWrap',
         'kalix.core.view.MainTreelist',
@@ -26,7 +27,9 @@ Ext.define('kalix.core.view.Main', {
         type: 'vbox',
         align: 'stretch'
     },
-
+    listeners:{
+        afterrender:'afterrender'
+    },
     items: [{
         xtype: 'toolbar',
         cls: 'sencha-dash-dash-headerbar toolbar-btn-shadow',
@@ -49,6 +52,8 @@ Ext.define('kalix.core.view.Main', {
         }, {
             xtype: 'tbspacer',
             flex: 1
+        }, {
+            xtype: 'messagebar'
         }, {
             xtype: 'profilebar'
         }
