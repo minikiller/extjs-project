@@ -49,7 +49,7 @@ Ext.define('kalix.demo.sealApply.view.SealApplyGrid', {
             },
             {
                 text: '申请时间',
-                dataIndex: 'applyDate',
+                dataIndex: 'creationDate',
                 xtype: 'datecolumn',
                 format: 'Y-m-d',
                 renderer: null

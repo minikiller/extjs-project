@@ -16,13 +16,14 @@ Ext.define('kalix.demo.sealApply.view.TestSealApplyWindow', {
         type: 'baseWindowController',
         storeId: 'sealApplyStore'
     },
+    width: 900,
     items: [
         {
             xtype: 'baseTableForm',
-            width: 800,
+            width: 900,
             layout: {
                 type: 'table',
-                columns: 4
+                columns: 6
             },
             defaults: {
                 height: 60,
@@ -46,7 +47,7 @@ Ext.define('kalix.demo.sealApply.view.TestSealApplyWindow', {
                             hideLabel: true,
                             fieldStyle: 'font-size:15px',
                             bind: {
-                                value: '{test}'
+                                value: '{rec.department}'
                             }
                         }
                     ]
@@ -61,7 +62,7 @@ Ext.define('kalix.demo.sealApply.view.TestSealApplyWindow', {
                             hideLabel: true,
                             fieldStyle: 'font-size:15px',
                             bind: {
-                                value: '{test}'
+                                value: '{rec.usageCount}'
                             }
                         }
                     ]
@@ -79,16 +80,17 @@ Ext.define('kalix.demo.sealApply.view.TestSealApplyWindow', {
                             columns: 3,
                             vertical: false,
                             items: [
-                                {boxLabel: '公司公章', name: 'st', inputValue: 0},
-                                {boxLabel: '公司合同专用章', name: 'st', inputValue: 1},
-                                {boxLabel: '学院公章', name: 'st', inputValue: 2},
-                                {boxLabel: '学院合同专用章', name: 'st', inputValue: 3},
-                                {boxLabel: '法人印章', name: 'st', inputValue: 4}
+                                {boxLabel: '公司公章', name: 'sealType', inputValue: '0', checked: true},
+                                {boxLabel: '公司合同专用章', name: 'sealType', inputValue: '1'},
+                                {boxLabel: '学院公章', name: 'sealType', inputValue: '2'},
+                                {boxLabel: '学院合同专用章', name: 'sealType', inputValue: '3'},
+                                {boxLabel: '法人印章', name: 'sealType', inputValue: '4'}
                             ],
-                            bind: {
-                                value: '{sealType}'
+                            listeners: {
+                                change: function (target, newValue, oldValue, eOpts) {
+                                    this.lookupViewModel().getData().rec.set('sealType', newValue.sealType);
+                                }
                             }
-
                         }
                     ]
                 },
@@ -102,7 +104,7 @@ Ext.define('kalix.demo.sealApply.view.TestSealApplyWindow', {
                             hideLabel: true,
                             fieldStyle: 'font-size:15px',
                             bind: {
-                                value: '{test}'
+                                value: '{rec.operator}'
                             }
                         }
                     ]
@@ -116,9 +118,7 @@ Ext.define('kalix.demo.sealApply.view.TestSealApplyWindow', {
                             xtype: 'field',
                             hideLabel: true,
                             fieldStyle: 'font-size:15px',
-                            bind: {
-                                value: '{test}'
-                            }
+                            readOnly: true
                         }
                     ]
                 },
@@ -130,10 +130,7 @@ Ext.define('kalix.demo.sealApply.view.TestSealApplyWindow', {
                         {
                             xtype: 'field',
                             hideLabel: true,
-                            fieldStyle: 'font-size:15px',
-                            bind: {
-                                value: '{test}'
-                            }
+                            fieldStyle: 'font-size:15px'
                         }
                     ]
                 },
@@ -145,10 +142,7 @@ Ext.define('kalix.demo.sealApply.view.TestSealApplyWindow', {
                         {
                             xtype: 'field',
                             hideLabel: true,
-                            fieldStyle: 'font-size:15px',
-                            bind: {
-                                value: '{test}'
-                            }
+                            fieldStyle: 'font-size:15px'
                         }
                     ]
                 },
@@ -160,10 +154,7 @@ Ext.define('kalix.demo.sealApply.view.TestSealApplyWindow', {
                         {
                             xtype: 'field',
                             hideLabel: true,
-                            fieldStyle: 'font-size:15px',
-                            bind: {
-                                value: '{test}'
-                            }
+                            fieldStyle: 'font-size:15px'
                         }
                     ]
                 },
@@ -175,10 +166,7 @@ Ext.define('kalix.demo.sealApply.view.TestSealApplyWindow', {
                         {
                             xtype: 'field',
                             hideLabel: true,
-                            fieldStyle: 'font-size:15px',
-                            bind: {
-                                value: '{test}'
-                            }
+                            fieldStyle: 'font-size:15px'
                         }
                     ]
                 },
@@ -193,7 +181,7 @@ Ext.define('kalix.demo.sealApply.view.TestSealApplyWindow', {
                             hideLabel: true,
                             fieldStyle: 'font-size:15px',
                             bind: {
-                                value: '{test}'
+                                value: '{rec.remark}'
                             }
                         }
                     ]
