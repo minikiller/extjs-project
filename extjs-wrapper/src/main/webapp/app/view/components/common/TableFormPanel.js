@@ -5,24 +5,45 @@
  */
 Ext.define('kalix.view.components.common.TableFormPanel', {
     extend: 'Ext.form.Panel',
-    xtype: "baseTableForm",
+    xtype: 'baseTableForm',
     bodyStyle: 'border-color:black;border-width:1px 1px 0px 1px',
     padding: 1,
     listeners: {
-        afterrender: function () {
-            for (var itemIndex = 0; itemIndex < this.items.getCount(); ++itemIndex) {
-                var tmpItem = this.items.getAt(itemIndex);
+        beforerender: function () {
+            var parentWidth = this.findParentByType('container').width;
 
-                if (tmpItem.colspan) {
-                    tmpItem.setWidth(this.width * tmpItem.colspan / this.layout.columns);
+            for (var itemIndex = 0; itemIndex < this.items.getCount(); ++itemIndex) {
+                var tempItem = this.items.getAt(itemIndex);
+
+                if (tempItem.colspan) {
+                    tempItem.setWidth(parentWidth * tempItem.colspan / this.layout.columns);
                 }
                 else {
-                    tmpItem.setWidth(this.width / this.layout.columns);
+                    tempItem.setWidth(parentWidth / this.layout.columns);
                 }
 
-                if (tmpItem.config.html && tmpItem.config.html.indexOf('<br') > 0) {
-                    tmpItem.setBodyStyle('padding:10px;font-size:18px;text-align:center;border-color:black;border-width:0px 1px 1px 0px');
+                if (!tempItem.customStyle) {
+                    tempItem.setBodyStyle('padding:20px;font-size:18px;text-align:center;border-color:black;border-width:0px 1px 1px 0px');
                 }
+                else {
+                    tempItem.setBodyStyle(tempItem.bodyStyle + 'text-align:center;border-color:black;border-width:0px 1px 1px 0px');
+                }
+
+
+                if (tempItem.config.html && tempItem.config.html.indexOf('<br') > 0) {
+                    tempItem.setBodyStyle('padding:10px;font-size:18px;text-align:center;border-color:black;border-width:0px 1px 1px 0px');
+                }
+
+                if (tempItem.required) {
+                    tempItem.html = tempItem.html + '<span style="color:red">*</span>';
+                }
+
+                if (tempItem.readOnly) {
+                    tempItem.html = '<span style="color:#BFBFBF">' + tempItem.html + '</span>';
+                }
+
+                tempItem.setHeight(60);
+                tempItem.setLayout('fit');
             }
         }
     }
