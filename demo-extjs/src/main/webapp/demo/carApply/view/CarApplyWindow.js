@@ -7,7 +7,8 @@ Ext.define('kalix.demo.carApply.view.CarApplyWindow', {
     requires: [
         'kalix.controller.BaseWindowController',
         'kalix.demo.carApply.viewModel.CarApplyViewModel',
-        'kalix.admin.dict.component.DictCombobox'
+        'kalix.admin.dict.component.DictCombobox',
+        'Ext.ux.DateTimeField'
     ],
     alias: 'widget.carApplyWindow',
     xtype: "carApplyWindow",
@@ -25,44 +26,54 @@ Ext.define('kalix.demo.carApply.view.CarApplyWindow', {
                     value: '{rec.department}'
                 }
             },
+
             {
-                fieldLabel: '申请时间',
-                editable: false,
-                xtype: 'datefield',
-                format: 'Y-m-d',
+                fieldLabel: '用车事由',
+                xtype: 'textarea',
                 bind: {
-                    value: '{rec.applyDate}',
+                    value: '{rec.reason}'
                 }
-            }
-            ,
+            },
             {
-                fieldLabel: '用印数',
+                fieldLabel: '乘车人数',
+                xtype: 'numberfield',
+                anchor: '100%',
+                maxValue: 99,
+                minValue: 0,
                 bind: {
                     value: '{rec.usageCount}'
                 }
             },
             {
-                fieldLabel: '用车类别',
-                xtype: 'dictCombobox',
-                dictType: 'carType',
-                name: 'carType',
+                fieldLabel: '用车开始时间',
+                xtype: 'datetimefield',
                 bind: {
-                    value: '{rec.carType}'
+                    value: '{rec.beginDate}'
                 }
-            }
-            ,
+            },
             {
-                fieldLabel: '经办人',
+                fieldLabel: '用车结束时间',
+                xtype: 'datetimefield',
                 bind: {
-                    value: '{rec.operator}'
+                    value: '{rec.endDate}'
                 }
-            }
-            ,
+            },
             {
-                fieldLabel: '备注',
-                xtype: 'textarea',
+                fieldLabel: '用车起始地点',
                 bind: {
-                    value: '{rec.remark}'
+                    value: '{rec.address}'
+                }
+            },
+            {
+                fieldLabel: '是否市内用车',
+                bind: {
+                    value: '{rec.city}'
+                }
+            },
+            {
+                fieldLabel: '申请人联系电话',
+                bind: {
+                    value: '{rec.operatorPhone}'
                 }
             }
         ]
