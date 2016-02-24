@@ -39,35 +39,40 @@ Ext.define('kalix.demo.carApply.view.CarApplyGrid', {
                 dataIndex: 'id'
             },
             {
-                text: '申请部门',
-                dataIndex: 'department'
-            }
-            ,
-            {
                 text: '当前环节',
                 dataIndex: 'currentNode'
             },
             {
-                text: '申请时间',
-                dataIndex: 'applyDate',
-                xtype: 'datecolumn',
-                format: 'Y-m-d',
-                renderer: null
+                text: '申请部门',
+                dataIndex: 'department'
             },
             {
-                text: '用印数',
+                text: '申请时间',
+                dataIndex: 'creationDate'
+            },
+            {
+                text: '用车事由',
+                dataIndex: 'reason'
+            },
+            {
+                text: '乘车人数',
                 dataIndex: 'usageCount'
             },
             {
-                text: '用车类别',
-                xtype: 'dictGridColumn',
-                dictType: 'carType',
-                dataIndex: 'carType',
-                renderer: null
+                text: '用车起始地点',
+                dataIndex: 'address'
+            },
+            {
+                text: '是否市内用车',
+                dataIndex: 'city'
+            },
+            {
+                text: '申请人联系电话',
+                dataIndex: 'operatorPhone'
             },
             {
                 text: '经办人',
-                dataIndex: 'operator'
+                dataIndex: 'createBy'
             }
             ,
             {

@@ -22,6 +22,6 @@ Ext.define('kalix.demo.carApply.view.CarApplySearchForm', {
             labelAlign: 'right',
             labelWidth: 60,
             width: 200,
-            name: 'operator'
+            name: 'createBy'
              }]
 });
