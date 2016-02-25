@@ -14,6 +14,9 @@ Ext.define('kalix.model.WorkflowBaseModel', {
         },
         {
             name: 'processInstanceId' //流程实例id
+        },
+        {
+            name: 'auditResult' //审批最终结果
         }
     ]
 });

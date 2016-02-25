@@ -261,19 +261,47 @@ Ext.define('kalix.core.controller.MainController', {
         }, {});
     },
     afterrender:function(){
-        //var messageBar=Ext.getCmp('messagebarId');
-        //messageBar.lookupViewModel().getData().message.set('count',100);
-        //messageBar.lookupViewModel().getData().message.set('iconCls', 'x-fa fa-envelope-o');
-        var pollA = new Ext.direct.PollingProvider({
-            type:'polling',
-            url: 'data.json',
-            interval:3000
-        });
+        var scope=this;
 
-        pollA.on('data',function( provider, e, eOpts ){
-            console.log(111);//e.data.
-        });
+        Ext.Ajax.request({
+            url: 'camel/rest/system/pollings',
 
-        //Ext.direct.Manager.addProvider(pollA);
+            success: function(response, opts) {
+                var obj = Ext.decode(response.responseText);
+                if(obj != null && obj.length > 0){
+                    for(var i=0;i<obj.length;i++){
+                        Ext.direct.Manager.addProvider(Ext.create('Ext.direct.PollingProvider',
+                            {
+                                type:'polling',
+                                url: obj[i].url,
+                                interval:obj[i].interval,
+                                id:obj[i].id
+                            }
+                        ));
+
+                        var poll=Ext.direct.Manager.getProvider(obj[i].id);
+
+                        poll.on('data',scope[obj[i].callbackHandler]);
+
+                        if(obj[i].isStop){
+                            poll.disconnect();
+                        }
+                    }
+                }
+            },
+
+            failure: function(response, opts) {
+                console.log('server-side failure with status code ' + response.status);
+            }
+        });
+    },
+    onWorkflowMsg:function( provider, e, eOpts ){
+        var cnt = e.data.tag;
+        var messageBar=Ext.getCmp('messagebarId');
+        messageBar.lookupViewModel().getData().message.set('count', cnt);
+        if(cnt == 0)
+            messageBar.lookupViewModel().getData().message.set('iconCls', 'x-fa fa-envelope-o');
+        else
+            messageBar.lookupViewModel().getData().message.set('iconCls', 'x-fa fa-envelope');
     }
 });

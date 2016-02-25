@@ -73,7 +73,11 @@ Ext.define('kalix.demo.carApply.view.CarApplyGrid', {
             {
                 text: '经办人',
                 dataIndex: 'createBy'
-            }
+            },
+             {
+                 text: '审批结果',
+                 dataIndex: 'auditResult'
+             }
             ,
             {
                 text: '工作流状态',
