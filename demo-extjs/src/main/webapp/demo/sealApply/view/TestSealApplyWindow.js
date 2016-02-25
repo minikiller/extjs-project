@@ -26,10 +26,6 @@ Ext.define('kalix.demo.sealApply.view.TestSealApplyWindow', {
                 type: 'table',
                 columns: 6
             },
-            defaults: {
-                //bodyStyle: 'padding:20px;font-size:18px;text-align:center;border-color:black;border-width:0px 1px 1px 0px',
-                //layout: 'fit'
-            },
             items: [
                 {
                     html: '吉林动画学院印章使用申请单',
