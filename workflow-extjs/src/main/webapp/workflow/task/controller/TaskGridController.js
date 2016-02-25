@@ -31,8 +31,11 @@ Ext.define('kalix.workflow.task.controller.TaskGridController', {
          */
         onCompleteTask: function (grid, rowIndex, colIndex) {
             var rec = grid.getStore().getAt(rowIndex);
+            var businessKey=rec.data.businessKey;
+            var key=businessKey.split(':');
+            var bizUrl=key[0];//获得bizkey的头 例如：carapply
             Ext.Ajax.request({
-                url: CONFIG.restRoot + '/camel/rest/sealapplys/' + rec.data.entityId,
+                url: CONFIG.restRoot + '/camel/rest/'+bizUrl+'s/' + rec.data.entityId,
                 method: "GET",
                 callback: function (options, success, response) {
                     var entity = Ext.JSON.decode(response.responseText);
@@ -52,6 +55,7 @@ Ext.define('kalix.workflow.task.controller.TaskGridController', {
                             approvalWindow.down("#id").setValue(entity.id);
                             approvalWindow.down("#title").setValue(entity.title);
                             approvalWindow.down("#content").setValue(entity.content);
+                            approvalWindow.down("#businessKey").setValue(bizUrl);
                             var activityHistoryStore = Ext.create('kalix.workflow.store.ActivityHistoryStore', {
                                 proxy: {
                                     url: CONFIG.restRoot + '/camel/rest/workflow/activities?historyProcessId=' + rec.data.processInstanceId

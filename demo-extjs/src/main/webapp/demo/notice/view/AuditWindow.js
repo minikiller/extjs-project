@@ -55,14 +55,20 @@ Ext.define('kalix.demo.notice.view.AuditWindow', {
                 fieldLabel: '审批意见',
                 xtype: 'textarea',
                 itemId: 'approvalContent'
-            }
+            },{
+                xtype: 'textfield',
+                hidden: true,
+                hideLabel:true,
+                itemId: 'businessKey'
+              }
         ],
         buttons: [
             {
-                text: '保存', glyph: 0xf0c7, type: 'submit', handler: function () {
+                text: '保存', glyph: 'xf0c7@FontAwesome', type: 'submit', handler: function () {
                 var approvalForm = Ext.ComponentQuery.query('auditWindow')[0].down("#approvalForm");
                 var status = approvalForm.down("#approvalStatus").getValue();
                 var content = approvalForm.down("#approvalContent").getValue();
+                var bizUrl=approvalForm.down("#businessKey").getValue();
                 if (status == "1") {
                     status = "同意";
                 } else {
@@ -74,19 +80,21 @@ Ext.define('kalix.demo.notice.view.AuditWindow', {
                 var activityHistoryStore = Ext.ComponentQuery.query('auditWindow')[0].activityHistoryStore;
                 var hookFunction = Ext.ComponentQuery.query('auditWindow')[0].hookFunction;
                 Ext.Ajax.request({
-                    url: CONFIG.restRoot + '/camel/rest/sealapplys/workflow/completeTask?taskId=' + Ext.ComponentQuery.query('auditWindow')[0].taskId + "&accepted=" + status + "&comment=" + content,
+                    url: CONFIG.restRoot + '/camel/rest/'+bizUrl+'s/workflow/completeTask?taskId=' + Ext.ComponentQuery.query('auditWindow')[0].taskId + "&accepted=" + status + "&comment=" + content,
                     method: "GET",
                     callback: function (options, success, response) {
                         var jsonStatus = Ext.JSON.decode(response.responseText);
                         if (jsonStatus.success) {
-                            Ext.MessageBox.alert(CONFIG.ALTER_TITLE_SUCCESS, jsonStatus.msg);
-                            if (activityHistoryStore != null)
-                                activityHistoryStore.reload();
+                            kalix.core.Notify.success(jsonStatus.msg,CONFIG.ALTER_TITLE_SUCCESS);
+                            Ext.app.Application.instance.getApplication().getStore('taskStore').reload();
+                            /*if (activityHistoryStore != null)
+                                activityHistoryStore.reload();*/
+                            Ext.ComponentQuery.query('auditWindow')[0].close();
                             return;
                         }
                         Ext.MessageBox.alert(CONFIG.ALTER_TITLE_FAILURE, jsonStatus.msg);
-                        if (activityHistoryStore != null)
-                            activityHistoryStore.reload();
+                        /*if (activityHistoryStore != null)
+                            activityHistoryStore.reload();*/
                         return;
                     }
                 });
