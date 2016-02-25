@@ -15,6 +15,18 @@ Ext.define('kalix.controller.BaseWindowController', {
         var model = viewModel.get('rec');
 
         model.set(model.modified);
+
+        var xtype = this.getView().items.getAt(0).xtype;
+
+        if ('baseTableForm' == xtype) {
+            for (var itemIndex = 0; itemIndex < this.getView().items.getAt(0).items.length; ++itemIndex) {
+                if (this.getView().items.getAt(0).items.getAt(itemIndex).items.length == 1 &&
+                    this.getView().items.getAt(0).items.getAt(itemIndex).items.getAt(0).xtype == 'tableFormRadioGroup') {
+                    this.getView().items.getAt(0).items.getAt(itemIndex).items.getAt(0).fireEvent('afterrender');
+                }
+            }
+        }
+
     },
 
     /**

@@ -1,24 +1,24 @@
 /**
  * @author chenyanxu
  */
-Ext.define('kalix.demo.sealApply.view.SealApplyGrid', {
+Ext.define('kalix.demo.carApply.view.CarApplyGrid', {
     extend: 'kalix.view.components.common.BaseGrid',
     requires: [
-        'kalix.demo.sealApply.controller.SealApplyGridController',
-        'kalix.demo.sealApply.store.SealApplyStore',
+        'kalix.demo.carApply.controller.CarApplyGridController',
+        'kalix.demo.carApply.store.CarApplyStore',
         'kalix.admin.dict.component.DictGridColumn'
     ],
-    alias: 'widget.sealApplyGrid',
-    xtype: 'sealApplyGrid',
+    alias: 'widget.carApplyGrid',
+    xtype: 'carApplyGrid',
     controller: {
-        type: 'sealApplyGridController',
-        storeId: 'sealApplyStore',
-        cfgForm: 'kalix.demo.sealApply.view.TestSealApplyWindow',
-        cfgViewForm: 'kalix.demo.sealApply.view.SealApplyViewWindow',
-        cfgModel: 'kalix.demo.sealApply.model.SealApplyModel'
+        type: 'carApplyGridController',
+        storeId: 'carApplyStore',
+        cfgForm: 'kalix.demo.carApply.view.CarApplyWindow',
+        cfgViewForm: 'kalix.demo.carApply.view.CarApplyViewWindow',
+        cfgModel: 'kalix.demo.carApply.model.CarApplyModel'
     },
     store: {
-        type: 'sealApplyStore'
+        type: 'carApplyStore'
     },
     columns: {
         defaults: {
@@ -39,31 +39,36 @@ Ext.define('kalix.demo.sealApply.view.SealApplyGrid', {
                 dataIndex: 'id'
             },
             {
-                text: '申请部门',
-                dataIndex: 'department'
-            }
-            ,
-            {
                 text: '当前环节',
                 dataIndex: 'currentNode'
             },
             {
-                text: '申请时间',
-                dataIndex: 'creationDate',
-                xtype: 'datecolumn',
-                format: 'Y-m-d H:i:s',
-                renderer: null
+                text: '申请部门',
+                dataIndex: 'department'
             },
             {
-                text: '用印数',
+                text: '申请时间',
+                dataIndex: 'creationDate'
+            },
+            {
+                text: '用车事由',
+                dataIndex: 'reason'
+            },
+            {
+                text: '乘车人数',
                 dataIndex: 'usageCount'
             },
             {
-                text: '印章类别',
-                xtype: 'dictGridColumn',
-                dictType: 'sealType',
-                dataIndex: 'sealType',
-                renderer: null
+                text: '用车起始地点',
+                dataIndex: 'address'
+            },
+            {
+                text: '是否市内用车',
+                dataIndex: 'city'
+            },
+            {
+                text: '申请人联系电话',
+                dataIndex: 'operatorPhone'
             },
             {
                 text: '经办人',
