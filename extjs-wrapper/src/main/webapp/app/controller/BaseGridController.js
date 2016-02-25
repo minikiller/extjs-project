@@ -33,7 +33,7 @@ Ext.define('kalix.controller.BaseGridController', {
                 var item = items[idx];
 
                 if (item.handler == 'onView') {
-                    if (item.hasPermission) {
+                    if (item.hasPermission || item.permission == '') {
                         this.onView(grid, index, 0);
                     }
                     else {

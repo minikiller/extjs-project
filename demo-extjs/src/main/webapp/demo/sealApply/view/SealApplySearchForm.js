@@ -22,6 +22,6 @@ Ext.define('kalix.demo.sealApply.view.SealApplySearchForm', {
             labelAlign: 'right',
             labelWidth: 60,
             width: 200,
-            name: 'operator'
+            name: 'createBy'
              }]
 });
