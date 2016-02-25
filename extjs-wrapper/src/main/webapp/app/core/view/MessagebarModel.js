@@ -7,7 +7,7 @@ Ext.define('kalix.core.view.MessagebarModel', {
 
   data : {
     message : Ext.create('Ext.data.Model',{
-      count:10,
-      iconCls:'x-fa fa-envelope'})
+      count:0,
+      iconCls:'x-fa fa-envelope-o'})
   }
 });
