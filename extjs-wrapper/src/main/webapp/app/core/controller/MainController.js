@@ -274,6 +274,6 @@ Ext.define('kalix.core.controller.MainController', {
             console.log(111);//e.data.
         });
 
-        Ext.direct.Manager.addProvider(pollA);
+        //Ext.direct.Manager.addProvider(pollA);
     }
 });

@@ -51,7 +51,7 @@ Ext.define('kalix.demo.sealApply.view.SealApplyGrid', {
                 text: '申请时间',
                 dataIndex: 'creationDate',
                 xtype: 'datecolumn',
-                format: 'Y-m-d',
+                format: 'Y-m-d H:i:s',
                 renderer: null
             },
             {
@@ -67,7 +67,7 @@ Ext.define('kalix.demo.sealApply.view.SealApplyGrid', {
             },
             {
                 text: '经办人',
-                dataIndex: 'operator'
+                dataIndex: 'createBy'
             }
             ,
             {
