@@ -90,11 +90,11 @@ Ext.define('kalix.demo.sealApply.view.SealApplyWindow', {
                             columns: 3,
                             fieldName: 'sealType',
                             items: [
-                                {boxLabel: '公司公章', name: 'rn', inputValue: '0'},
-                                {boxLabel: '公司合同专用章', name: 'rn', inputValue: '1'},
-                                {boxLabel: '学院公章', name: 'rn', inputValue: '2'},
-                                {boxLabel: '学院合同专用章', name: 'rn', inputValue: '3'},
-                                {boxLabel: '法人印章', name: 'rn', inputValue: '4'}
+                                {boxLabel: '公司公章', inputValue: '0'},
+                                {boxLabel: '公司合同专用章', inputValue: '1'},
+                                {boxLabel: '学院公章', inputValue: '2'},
+                                {boxLabel: '学院合同专用章', inputValue: '3'},
+                                {boxLabel: '法人印章', inputValue: '4'}
                             ]
                         }
                     ]
