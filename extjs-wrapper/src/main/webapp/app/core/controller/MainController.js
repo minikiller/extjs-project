@@ -261,50 +261,59 @@ Ext.define('kalix.core.controller.MainController', {
             return previousValue;
         }, {});
     },
-    afterrender:function(){
-        var scope=this;
+    afterrender: function () {
+        var scope = this;
 
         Ext.Ajax.request({
             url: 'camel/rest/system/pollings',
 
-            success: function(response, opts) {
+            success: function (response, opts) {
                 var obj = Ext.decode(response.responseText);
-                if(obj != null && obj.length > 0){
-                    for(var i=0;i<obj.length;i++){
+                if (obj != null && obj.length > 0) {
+                    for (var i = 0; i < obj.length; i++) {
                         Ext.direct.Manager.addProvider(Ext.create('Ext.direct.PollingProvider',
                             {
-                                type:'polling',
+                                type: obj[i].type,
                                 url: obj[i].url,
-                                interval:obj[i].interval,
-                                id:obj[i].id
+                                interval: obj[i].interval,
+                                id: obj[i].id
                             }
                         ));
 
-                        var poll=Ext.direct.Manager.getProvider(obj[i].id);
+                        var poll = Ext.direct.Manager.getProvider(obj[i].id);
 
-                        poll.on('data',scope[obj[i].callbackHandler]);
+                        poll.on('data', scope[obj[i].callbackHandler]);
 
-                        if(obj[i].isStop){
+                        if (obj[i].isStop) {
                             poll.disconnect();
                         }
                     }
                 }
             },
 
-            failure: function(response, opts) {
+            failure: function (response, opts) {
                 console.log('server-side failure with status code ' + response.status);
             }
         });
     },
-    onWorkflowMsg:function( provider, e, eOpts ){
+    onWorkflowMsg: function (provider, e, eOpts) {
+        var tag = e.data.tag;
+        if (tag != null && tag.length > 0) {
+            var obj = Ext.decode(tag);
+            var content = obj.content;
+            var title = obj.title;
+            kalix.core.Notify.success(content, title);
+        }
+    },
+
+    onWorkflowMsgCount: function (provider, e, eOpts) {
         var cnt = e.data.tag;
-        var messageBar=Ext.getCmp('messagebarId');
+        var messageBar = Ext.getCmp('messagebarId');
         messageBar.lookupViewModel().getData().message.set('count', cnt);
-        if(cnt == 0)
+        if (cnt == 0)
             messageBar.lookupViewModel().getData().message.set('iconCls', 'x-fa fa-envelope-o');
         else
             messageBar.lookupViewModel().getData().message.set('iconCls', 'x-fa fa-envelope');
 
-        kalix.core.Notify.success("您有一个新消息", CONFIG.ALTER_TITLE_SUCCESS);
     }
 });
