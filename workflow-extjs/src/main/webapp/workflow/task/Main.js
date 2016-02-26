@@ -1,5 +1,5 @@
 /**
- * 代办任务首页
+ * 待办任务首页
  *
  * @author majian
  * date:2015-6-18
@@ -16,11 +16,11 @@ Ext.define('kalix.workflow.task.Main', {
     viewModel:'taskViewModel',
     items: [{
         xtype: 'taskSearchForm',
-        title: '代办任务查询',
+        title: '待办任务查询',
         iconCls: 'x-fa fa-search'
     }, {
         xtype: 'taskGrid',
-        title: '代办任务列表',
+        title: '待办任务列表',
         iconCls: 'x-fa fa-cutlery',
         margin: 10
     }]
