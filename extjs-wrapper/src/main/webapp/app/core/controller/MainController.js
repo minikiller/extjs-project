@@ -303,5 +303,7 @@ Ext.define('kalix.core.controller.MainController', {
             messageBar.lookupViewModel().getData().message.set('iconCls', 'x-fa fa-envelope-o');
         else
             messageBar.lookupViewModel().getData().message.set('iconCls', 'x-fa fa-envelope');
+
+        kalix.core.Notify.success("您有一个新消息", CONFIG.ALTER_TITLE_SUCCESS);
     }
 });
