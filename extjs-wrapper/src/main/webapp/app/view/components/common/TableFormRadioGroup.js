@@ -8,6 +8,9 @@ Ext.define('kalix.view.components.common.TableFormRadioGroup', {
     xtype: 'tableFormRadioGroup',
     hideLabel: true,
     vertical: false,
+    defaults: {
+        name: 'rn'
+    },
     listeners: {
         change: function (target, newValue, oldValue, eOpts) {
             this.lookupViewModel().getData().rec.set(this.fieldName, newValue.rn);

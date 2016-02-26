@@ -61,6 +61,7 @@ Ext.define('kalix.core.controller.MainController', {
                     mainLayout.setActiveItem(existingItem);
                 }
                 newView = existingItem;
+                newView.items.getAt(existingItem.items.length - 1).getStore().reload();
             } else {
                 // newView is set (did not exist already), so add it and make it the
                 // activeItem.

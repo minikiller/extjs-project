@@ -13,7 +13,7 @@ Ext.define('kalix.demo.sealApply.view.SealApplyGrid', {
     controller: {
         type: 'sealApplyGridController',
         storeId: 'sealApplyStore',
-        cfgForm: 'kalix.demo.sealApply.view.TestSealApplyWindow',
+        cfgForm: 'kalix.demo.sealApply.view.SealApplyWindow',
         cfgViewForm: 'kalix.demo.sealApply.view.SealApplyViewWindow',
         cfgModel: 'kalix.demo.sealApply.model.SealApplyModel'
     },
@@ -97,6 +97,12 @@ Ext.define('kalix.demo.sealApply.view.SealApplyGrid', {
                                 return "kalix_hidden";
                             }
                         }
+                    },
+                    {
+                        icon: "resources/images/read.png",
+                        permission: '',
+                        tooltip: '查看',
+                        handler: 'onView'
                     },
                     {
                         icon: "resources/images/delete.png",

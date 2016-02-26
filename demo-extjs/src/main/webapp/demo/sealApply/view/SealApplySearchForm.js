@@ -16,12 +16,23 @@ Ext.define('kalix.demo.sealApply.view.SealApplySearchForm', {
             labelWidth: 60,
             width: 200,
             name: 'department'
-        },{
+        },
+        {
             xtype: 'textfield',
             fieldLabel: '经办人',
             labelAlign: 'right',
             labelWidth: 60,
             width: 200,
-            name: 'operator'
-             }]
+            name: 'createBy'
+        },
+        {
+            xtype: 'datefield',
+            format: 'Y-m-d',
+            fieldLabel: '申请时间',
+            labelAlign: 'right',
+            labelWidth: 60,
+            width: 200,
+            name: 'creationDate:begin:gt'
+        }
+    ]
 });
