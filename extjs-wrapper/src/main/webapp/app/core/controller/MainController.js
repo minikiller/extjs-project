@@ -264,37 +264,37 @@ Ext.define('kalix.core.controller.MainController', {
     afterrender: function () {
         var scope = this;
 
-        Ext.Ajax.request({
-            url: 'camel/rest/system/pollings',
-
-            success: function (response, opts) {
-                var obj = Ext.decode(response.responseText);
-                if (obj != null && obj.length > 0) {
-                    for (var i = 0; i < obj.length; i++) {
-                        Ext.direct.Manager.addProvider(Ext.create('Ext.direct.PollingProvider',
-                            {
-                                type: obj[i].type,
-                                url: obj[i].url,
-                                interval: obj[i].interval,
-                                id: obj[i].id
-                            }
-                        ));
-
-                        var poll = Ext.direct.Manager.getProvider(obj[i].id);
-
-                        poll.on('data', scope[obj[i].callbackHandler]);
-
-                        if (obj[i].isStop) {
-                            poll.disconnect();
-                        }
-                    }
-                }
-            },
-
-            failure: function (response, opts) {
-                console.log('server-side failure with status code ' + response.status);
-            }
-        });
+        //Ext.Ajax.request({
+        //    url: 'camel/rest/system/pollings',
+        //
+        //    success: function (response, opts) {
+        //        var obj = Ext.decode(response.responseText);
+        //        if (obj != null && obj.length > 0) {
+        //            for (var i = 0; i < obj.length; i++) {
+        //                Ext.direct.Manager.addProvider(Ext.create('Ext.direct.PollingProvider',
+        //                    {
+        //                        type: obj[i].type,
+        //                        url: obj[i].url,
+        //                        interval: obj[i].interval,
+        //                        id: obj[i].id
+        //                    }
+        //                ));
+        //
+        //                var poll = Ext.direct.Manager.getProvider(obj[i].id);
+        //
+        //                poll.on('data', scope[obj[i].callbackHandler]);
+        //
+        //                if (obj[i].isStop) {
+        //                    poll.disconnect();
+        //                }
+        //            }
+        //        }
+        //    },
+        //
+        //    failure: function (response, opts) {
+        //        console.log('server-side failure with status code ' + response.status);
+        //    }
+        //});
     },
     onWorkflowMsg: function (provider, e, eOpts) {
         var tag = e.data.tag;

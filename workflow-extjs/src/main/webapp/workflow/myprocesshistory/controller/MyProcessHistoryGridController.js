@@ -35,28 +35,32 @@ Ext.define('kalix.workflow.myprocesshistory.controller.MyProcessHistoryGridContr
                         });
                         var dataGird = Ext.create('kalix.workflow.view.ActivityHistoryGrid', {
                             store: activityHistoryStore,
-                            width: 605,
-                            //height: 280
+                            //width: 605,
+                            height: 150
                         });
                         var dataGridFieldSet = Ext.create('Ext.form.FieldSet', {
                             title: '流程历史列表'
                         });
                         dataGridFieldSet.add(dataGird);
-                        var showFormPanel = Ext.create(component.componentClass);
-                        showFormPanel.down('#title').setValue(entity.title);
-                        showFormPanel.down('#content').setValue(entity.content);
-                        var win = Ext.create('Ext.Window', {
-                            border: false,
-                            modal: true,
-                            width: 605,
-                            //height: 480,
-                            title: '流程历史查看',
-                            //resizable:false,
-                            icon: 'admin/resources/images/group_edit.png',
-                            items: [showFormPanel, dataGridFieldSet]
-                        });
+                        var showFormPanel = Ext.create(component.componentClass, {title: '流程历史查看'});
+                        //showFormPanel.down('#title').setValue(entity.title);
+                        //showFormPanel.down('#content').setValue(entity.content);
+                        //var win = Ext.create('Ext.Window', {
+                        //    border: false,
+                        //    modal: true,
+                        //    width: 605,
+                        //    //height: 480,
+                        //    title: '流程历史查看',
+                        //    //resizable:false,
+                        //    icon: 'admin/resources/images/group_edit.png',
+                        //    items: [showFormPanel, dataGridFieldSet]
+                        //});
+                        var vm = Ext.create('Ext.app.ViewModel', {data: {rec: entity}});
+
+                        showFormPanel.setViewModel(vm);
+                        showFormPanel.add(dataGridFieldSet);
                         //this.getView().getViewModel.set('rec',record);
-                        win.show();
+                        showFormPanel.show();
                     }
                 });
             }

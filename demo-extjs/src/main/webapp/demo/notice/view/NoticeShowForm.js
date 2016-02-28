@@ -1,55 +1,33 @@
-/**
- * 查看表单
- *
- * @author majian <br/>
- *         date:2015-6-18
- * @version 1.0.0
- */
 Ext.define('kalix.demo.notice.view.NoticeShowForm', {
-    extend: 'Ext.FormPanel',
+    extend: 'Ext.Window',
     requires: [
-        'kalix.demo.notice.viewModel.NoticeViewModel',
-        'kalix.demo.notice.controller.NoticeFormController'
+        'kalix.demo.carApply.view.CarApplyViewForm'
     ],
-    alias: 'widget.noticeShowForm',
-    viewModel: {
-        type: 'noticeViewModel'
+    xtype: 'noticeShowForm',
+    width: 840,
+    data: {
+        taskId: null,
+        activityHistoryStore: null
     },
-
-    controller: 'noticeFormController',
-    itemId: "noticeShowForm",
-    xtype: "noticeShowForm",
-    labelAlign: 'center',
-    labelWidth: 75,
-    autoWidth: true,
-    autoHeight: true,
-    jsonSubmit: true,
-    bodyStyle: "padding:15px",
-    frame: true,
     buttonAlign: "center",
-    defaultType: 'textfield',
+    border: false,
+    modal: true,
+    title: "",
     items: [
         {
-            fieldLabel: '标题',
-            itemId: 'title',
-            allowBlank: false,
-            blankText: '标题不能为空!',
-            disabled: true,
-            beforeLabelTpl: [
-                '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
-            ]
-        },
+            xtype: 'carApplyViewForm',
+            layout: {
+                type: 'table',
+                columns: 6
+            }
+        }
+    ],
+    buttons: [
         {
-            fieldLabel: '内容',
-            itemId: 'content',
-            xtype: 'textarea',
-            allowBlank: false,
-            blankText: '内容不能为空!',
-            disabled: true,
-            beforeLabelTpl: [
-                '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
-            ]
-        },
-
+            text: '关闭', glyph: 'xf0e2@FontAwesome',
+            handler: function () {
+                Ext.ComponentQuery.query('noticeShowForm')[0].close();
+            }
+        }
     ]
 });

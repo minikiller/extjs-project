@@ -51,26 +51,29 @@ Ext.define('kalix.workflow.task.controller.TaskGridController', {
                             var approvalWindow = Ext.create(component.componentClass, {
                                 title: rec.data.name
                             });
+                            var vm = Ext.create('Ext.app.ViewModel', {data: {rec: entity}});
+
+                            approvalWindow.setViewModel(vm);
                             approvalWindow.taskId = rec.data.id;
-                            approvalWindow.down("#id").setValue(entity.id);
-                            approvalWindow.down("#title").setValue(entity.title);
-                            approvalWindow.down("#content").setValue(entity.content);
+                            //approvalWindow.down("#id").setValue(entity.id);
+                            //approvalWindow.down("#title").setValue(entity.title);
+                            //approvalWindow.down("#content").setValue(entity.content);
                             approvalWindow.down("#businessKey").setValue(bizUrl);
-                            var activityHistoryStore = Ext.create('kalix.workflow.store.ActivityHistoryStore', {
-                                proxy: {
-                                    url: CONFIG.restRoot + '/camel/rest/workflow/activities?historyProcessId=' + rec.data.processInstanceId
-                                }
-                            });
-                            var dataGird = Ext.create('kalix.workflow.view.ActivityHistoryGrid', {
-                                store: activityHistoryStore,
-                                width: 460,
-                            });
-                            approvalWindow.activityHistoryStore = activityHistoryStore;
-                            var dataGridFieldSet = Ext.create("Ext.form.FieldSet", {
-                                title: "流程历史记录"
-                            });
-                            dataGridFieldSet.add(dataGird);
-                            approvalWindow.add(dataGridFieldSet);
+                            //var activityHistoryStore = Ext.create('kalix.workflow.store.ActivityHistoryStore', {
+                            //    proxy: {
+                            //        url: CONFIG.restRoot + '/camel/rest/workflow/activities?historyProcessId=' + rec.data.processInstanceId
+                            //    }
+                            //});
+                            //var dataGird = Ext.create('kalix.workflow.view.ActivityHistoryGrid', {
+                            //    store: activityHistoryStore,
+                            //    width: 460,
+                            //});
+                            //approvalWindow.activityHistoryStore = activityHistoryStore;
+                            //var dataGridFieldSet = Ext.create("Ext.form.FieldSet", {
+                            //    title: "流程历史记录"
+                            //});
+                            //dataGridFieldSet.add(dataGird);
+                            //approvalWindow.add(dataGridFieldSet);
                             approvalWindow.show();
                         }
                     });

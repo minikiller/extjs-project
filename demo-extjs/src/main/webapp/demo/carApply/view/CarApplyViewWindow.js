@@ -6,9 +6,7 @@ Ext.define('kalix.demo.carApply.view.CarApplyViewWindow', {
     extend: 'kalix.view.components.common.BaseWindow',
     requires: [
         'kalix.demo.carApply.view.CarApplyViewForm',
-        'kalix.view.components.common.TableFormField',
-        'kalix.demo.carApply.viewModel.CarApplyViewModel',
-        'Ext.ux.DateTimeField'
+        'kalix.demo.carApply.viewModel.CarApplyViewModel'
     ],
     alias: 'widget.carApplyViewWindow',
     xtype: "carApplyViewWindow",

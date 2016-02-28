@@ -76,7 +76,7 @@ Ext.define('kalix.workflow.task.view.TaskGrid', {
             xtype: "actioncolumn",
             width: 80,
             items: [{
-                icon: "admin/resources/images/magnifier.png",
+                icon: "resources/images/workflow.png",
                 tooltip: '查看',
                 handler: 'onOpenCurrentProcess'
             },
