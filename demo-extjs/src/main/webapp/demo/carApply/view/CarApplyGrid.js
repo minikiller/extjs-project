@@ -13,7 +13,7 @@ Ext.define('kalix.demo.carApply.view.CarApplyGrid', {
     controller: {
         type: 'carApplyGridController',
         storeId: 'carApplyStore',
-        cfgForm: 'kalix.demo.carApply.view.CarApplyWindow',
+        cfgForm: 'kalix.demo.carApply.view.TestCarApplyWindow',
         cfgViewForm: 'kalix.demo.carApply.view.CarApplyViewWindow',
         cfgModel: 'kalix.demo.carApply.model.CarApplyModel'
     },
@@ -63,8 +63,12 @@ Ext.define('kalix.demo.carApply.view.CarApplyGrid', {
                 dataIndex: 'address'
             },
             {
-                text: '是否市内用车',
-                dataIndex: 'city'
+                text: '市内用车',
+                trueText: '是',
+                falseText: '否',
+                xtype: 'booleancolumn',
+                dataIndex: 'city',
+                renderer: null
             },
             {
                 text: '申请人联系电话',
@@ -89,15 +93,20 @@ Ext.define('kalix.demo.carApply.view.CarApplyGrid', {
                     'default': 'blue'
                 },
                 renderer: null
-            }
-
-            ,
+            },
             {
-                flex: 0.5,
+                flex: 0,
+                width: 70,
                 xtype: 'securityGridColumnCommon',
                 items: [
                     {
                         icon: "resources/images/read.png",
+                        permission: '',
+                        tooltip: '查看',
+                        handler: 'onView'
+                    },
+                    {
+                        icon: "resources/images/workflow.png",
                         permission: '',
                         tooltip: '查看当前流程',
                         handler: 'onViewCurrentProcess',

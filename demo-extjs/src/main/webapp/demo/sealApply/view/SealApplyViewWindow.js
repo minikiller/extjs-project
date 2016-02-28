@@ -8,17 +8,12 @@ Ext.define('kalix.demo.sealApply.view.SealApplyViewWindow', {
         'kalix.view.components.common.TableFormPanel',
         'kalix.view.components.common.TableFormRadioGroup',
         'kalix.view.components.common.TableFormField',
-        'kalix.controller.BaseWindowController',
         'kalix.admin.dict.component.DictCombobox',
         'kalix.demo.sealApply.viewModel.SealApplyViewModel'
     ],
     alias: 'widget.sealApplyViewWindow',
     xtype: "sealApplyViewWindow",
     viewModel: 'sealApplyViewModel',
-    controller: {
-        type: 'baseWindowController',
-        storeId: 'sealApplyStore'
-    },
     width: 840,
     items: [
         {

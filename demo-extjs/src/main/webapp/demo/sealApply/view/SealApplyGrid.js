@@ -84,11 +84,18 @@ Ext.define('kalix.demo.sealApply.view.SealApplyGrid', {
 
             ,
             {
-                flex: 0.5,
+                flex: 0,
+                width: 70,
                 xtype: 'securityGridColumnCommon',
                 items: [
                     {
                         icon: "resources/images/read.png",
+                        permission: '',
+                        tooltip: '查看',
+                        handler: 'onView'
+                    },
+                    {
+                        icon: "resources/images/workflow.png",
                         permission: '',
                         tooltip: '查看当前流程',
                         handler: 'onViewCurrentProcess',
@@ -97,12 +104,6 @@ Ext.define('kalix.demo.sealApply.view.SealApplyGrid', {
                                 return "kalix_hidden";
                             }
                         }
-                    },
-                    {
-                        icon: "resources/images/read.png",
-                        permission: '',
-                        tooltip: '查看',
-                        handler: 'onView'
                     },
                     {
                         icon: "resources/images/delete.png",

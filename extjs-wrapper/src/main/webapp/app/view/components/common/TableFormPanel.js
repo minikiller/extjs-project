@@ -22,11 +22,16 @@ Ext.define('kalix.view.components.common.TableFormPanel', {
                     tempItem.setWidth(parentWidth / this.layout.columns);
                 }
 
-                if (!tempItem.customStyle) {
-                    tempItem.setBodyStyle('padding:20px;font-size:18px;text-align:center;border-color:black;border-width:0px 1px 1px 0px');
+                if (tempItem.customStyle) {
+                    tempItem.setBodyStyle(tempItem.bodyStyle + 'text-align:center;border-color:black;border-width:0px 1px 1px 0px');
                 }
                 else {
-                    tempItem.setBodyStyle(tempItem.bodyStyle + 'text-align:center;border-color:black;border-width:0px 1px 1px 0px');
+                    if (tempItem.config.html) {
+                        tempItem.setBodyStyle('padding:15px;font-size:18px;font-weight:bold;text-align:center;border-color:black;border-width:0px 1px 1px 0px');
+                    }
+                    else {
+                        tempItem.setBodyStyle('padding:10px;font-size:18px;text-align:center;border-color:black;border-width:0px 1px 1px 0px');
+                    }
                 }
 
 
@@ -42,8 +47,11 @@ Ext.define('kalix.view.components.common.TableFormPanel', {
                     tempItem.html = '<span style="color:#BFBFBF">' + tempItem.html + '</span>';
                 }
 
-                tempItem.setHeight(60);
-                tempItem.setLayout('fit');
+                tempItem.setHeight(50);
+
+                if (tempItem.items.length == 1) {
+                    tempItem.setLayout('fit');
+                }
             }
         }
     }
