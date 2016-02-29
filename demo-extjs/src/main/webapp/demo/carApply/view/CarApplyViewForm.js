@@ -190,19 +190,25 @@ Ext.define('kalix.demo.carApply.view.CarApplyViewForm', {
             items: [
                 {
                     xtype: 'tableFormField',
-                    readOnly: true
+                    readOnly: true,
+                    bind: {
+                        value: '{rec.depUser}'
+                    }
                 }
             ]
         },
         {
-            html: '申请部门<br/>主管领导'
+            html: '副校级领导审核'
         },
         {
             colspan: 2,
             items: [
                 {
                     xtype: 'tableFormField',
-                    readOnly: true
+                    readOnly: true,
+                    bind: {
+                        value: '{rec.managerUser}'
+                    }
                 }
             ]
         },
@@ -214,7 +220,10 @@ Ext.define('kalix.demo.carApply.view.CarApplyViewForm', {
             items: [
                 {
                     xtype: 'tableFormField',
-                    readOnly: true
+                    readOnly: true,
+                    bind: {
+                        value: '{rec.schoolUser}'
+                    }
                 }
             ]
         },
@@ -226,7 +235,10 @@ Ext.define('kalix.demo.carApply.view.CarApplyViewForm', {
             items: [
                 {
                     xtype: 'tableFormField',
-                    readOnly: true
+                    readOnly: true,
+                    bind: {
+                        value: '{rec.schoolManagerUser}'
+                    }
                 }
             ]
         }

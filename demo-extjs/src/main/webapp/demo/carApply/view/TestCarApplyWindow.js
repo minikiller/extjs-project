@@ -212,7 +212,7 @@ Ext.define('kalix.demo.carApply.view.TestCarApplyWindow', {
                     ]
                 },
                 {
-                    html: '申请部门<br/>主管领导',
+                    html: '副校级领导审核',
                     readOnly: true
                 },
                 {

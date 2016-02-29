@@ -12,6 +12,10 @@ Ext.define('kalix.demo.carApply.model.CarApplyModel', {
         {name: 'endDate', type: 'date', dateFormat: 'Y-m-d H:i:s', defaultValue: new Date()}, //用车时段，结束时间
         {name: 'address'}, //用车起始地点
         {name: 'city', type: 'boolean', defaultValue: true},//是否市内用车
-        {name: 'operatorPhone'}//申请人联系电话
+        {name: 'operatorPhone'},//申请人联系电话
+        {name: 'depUser'}, //申请部门负责人签字
+        {name: 'managerUser'}, //副校级领导审核
+        {name: 'schoolUser'}, //校务部签字
+        {name: 'schoolManagerUser'}//校务部主管领导审批（市外）
     ]
 });
