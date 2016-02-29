@@ -106,9 +106,20 @@ Ext.define('kalix.demo.carApply.view.CarApplyGrid', {
                         handler: 'onView'
                     },
                     {
-                        icon: "resources/images/workflow.png",
+                        icon: "resources/images/edit.png",
                         permission: '',
-                        tooltip: '查看当前流程',
+                        tooltip: '编辑',
+                        handler: 'onEdit',
+                        getClass: function (v, meta, record) {
+                            if (0 != record.data.status) {
+                                return "kalix_hidden";
+                            }
+                        }
+                    },
+                    {
+                        icon: "resources/images/magnifier.png",
+                        permission: '',
+                        tooltip: '查看进度',
                         handler: 'onViewCurrentProcess',
                         getClass: function (v, meta, record) {
                             if (1!= record.data.status) {
