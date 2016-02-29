@@ -17,42 +17,44 @@ Ext.define('kalix.workflow.view.ActivityHistoryGrid', {
     autoLoad: true,
     stripeRows: true,
     manageHeight: true,
-    selModel: {selType: 'checkboxmodel', mode: "SIMPLE"},
-    columns: [
-        {text: '编号', dataIndex: 'id', width: 100},
-        {text: '节点名称', dataIndex: 'activityName', width: 120},
-        {text: '执行人', dataIndex: 'assignee', width: 120},
-
-        {
-            text: '开始时间', dataIndex: 'startTime', width: 160, renderer: function (value) {
-            var createDate = new Date(value);
-            return createDate.format("yyyy-MM-dd hh:mm:ss");
-        }
+    columns: {
+        defaults: {
+            flex: 1
         },
-        {
-            text: '结束时间', dataIndex: 'endTime', width: 60, renderer: function (value) {
-            if (value != null) {
+        items: [
+            {
+                xtype: "rownumberer",
+                text: "行号",
+                width: 50,
+                flex: 0,
+                align: 'center',
+                renderer: null
+            },
+            {text: '编号', dataIndex: 'id', flex: 1},
+            {text: '节点名称', dataIndex: 'activityName'},
+            {text: '执行人', dataIndex: 'assignee'},
+
+            {
+                text: '开始时间', dataIndex: 'startTime', renderer: function (value) {
                 var createDate = new Date(value);
-                return createDate.format("yyyy-MM-dd hh:mm:ss");
+                return createDate.format("yyyy-MM-dd hh:mm");
             }
-            else {
-                return "";
+            },
+            {
+                text: '结束时间', dataIndex: 'endTime', renderer: function (value) {
+                if (value && value != '') {
+                    var createDate = new Date(value);
+                    return createDate.format("yyyy-MM-dd hh:mm");
+                }
+                else {
+                    return "";
+                }
             }
-        }
-        },
-        {
-            text: '审批意见', dataIndex: 'comment', width: 60
-        },
-        {text: '任务编号', dataIndex: 'taskId', width: 80},
-
-
-    ],
-    /*tbar: [
-     {
-     text: '添加', icon: 'admin/resources/images/group_add.png', handler: 'onAdd'
-     }, "-",
-     {
-     text: '批量删除', icon: 'admin/resources/images/group_delete.png', handler: 'onDeleteAll'
-     }, "-"],*/
-
+            },
+            {
+                text: '审批意见', dataIndex: 'comment',
+            },
+            {text: '任务编号', dataIndex: 'taskId'}
+        ]
+    }
 });
