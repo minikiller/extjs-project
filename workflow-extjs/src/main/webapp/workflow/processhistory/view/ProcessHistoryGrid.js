@@ -59,10 +59,13 @@ Ext.define('kalix.workflow.processhistory.view.ProcessHistoryGrid', {
             {
                 text: '开始时间',
                 dataIndex: 'startTime',
-                renderer: function (value) {
+                xtype: 'datecolumn',
+                format: 'Y-m-d H:i:s',
+                renderer: null
+                /*renderer: function (value) {
                     var createDate = new Date(value);
                     return createDate.format("yyyy-MM-dd hh:mm:ss");
-                }
+                 }*/
             },
             {
                 text: '结束时间',

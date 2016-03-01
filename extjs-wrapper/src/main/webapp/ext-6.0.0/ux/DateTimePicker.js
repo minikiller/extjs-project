@@ -240,7 +240,7 @@ Ext.define('Ext.ux.DateTimePicker', {
     },
 
     setValue: function (value) {
-        //value.setSeconds(0);
+        value.setSeconds(0);
         this.value = new Date(value);
         return this.update(this.value);
     },
