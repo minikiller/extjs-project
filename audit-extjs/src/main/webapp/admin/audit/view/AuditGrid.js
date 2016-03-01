@@ -40,11 +40,7 @@ Ext.define('kalix.admin.audit.view.AuditGrid', {
             {text: '操作内容', dataIndex: 'content', flex: 2},
             {
                 text: '创建日期',
-                dataIndex: 'creationDate',
-                renderer: function (value) {
-                    var createDate = new Date(value);
-                    return createDate.format("yyyy-MM-dd hh:mm:ss");
-                }
+                dataIndex: 'creationDate'
             },
             {
                 xtype: 'securityGridColumnCommon',

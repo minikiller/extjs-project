@@ -11,8 +11,8 @@ Ext.define('kalix.workflow.processhistory.model.ProcessHistoryModel', {
         {name: 'id', type: 'string'},
         {name: 'processDefinitionId', type: 'string'},//流程id
         {name: 'startUserId', type: 'string'},//启动用户id
-        {name: 'startTime', type: 'date', dateFormat: 'Y-m-d H:i:s'},//开始时间
-        {name: 'endTime', type: 'date', dateFormat: 'Y-m-d H:i:s'},//结束时间
+        {name: 'startTime'},//开始时间
+        {name: 'endTime'},//结束时间
         {name: 'businessKey', type: 'string'},//业务主键
         {name: 'status', type: 'string'},//当前状态
 

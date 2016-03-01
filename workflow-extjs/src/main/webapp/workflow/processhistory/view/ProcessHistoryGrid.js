@@ -59,9 +59,9 @@ Ext.define('kalix.workflow.processhistory.view.ProcessHistoryGrid', {
             {
                 text: '开始时间',
                 dataIndex: 'startTime',
-                xtype: 'datecolumn',
+                /*xtype: 'datecolumn',
                 format: 'Y-m-d H:i:s',
-                renderer: null
+                 renderer: null*/
                 /*renderer: function (value) {
                     var createDate = new Date(value);
                     return createDate.format("yyyy-MM-dd hh:mm:ss");
@@ -70,14 +70,14 @@ Ext.define('kalix.workflow.processhistory.view.ProcessHistoryGrid', {
             {
                 text: '结束时间',
                 dataIndex: 'endTime',
-                renderer: function (value) {
+                /*renderer: function (value) {
                     if (value != null && value != "") {
                         var createDate = new Date(value);
                         return createDate.format("yyyy-MM-dd hh:mm:ss");
                     } else {
                         return "";
                     }
-                }
+                 }*/
             },
             {
                 text: '状态',

@@ -39,11 +39,7 @@ Ext.define('kalix.admin.workgroup.view.WorkGroupGrid', {
             {text: '备注', dataIndex: 'remark'},
             {text: '创建人', dataIndex: 'createBy'},
             {
-                text: '创建日期', dataIndex: 'creationDate',
-                renderer: function (value) {
-                    var createDate = new Date(value);
-                    return createDate.format("yyyy-MM-dd hh:mm:ss");
-                }
+                text: '创建日期', dataIndex: 'creationDate'
             },
             {
                 xtype: 'securityGridColumnCommon',

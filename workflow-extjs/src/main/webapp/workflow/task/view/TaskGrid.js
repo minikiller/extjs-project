@@ -62,15 +62,7 @@ Ext.define('kalix.workflow.task.view.TaskGrid', {
              },*/
             {
                 text: '创建时间',
-                dataIndex: 'createTime',
-                renderer: function (value) {
-                    if (value != null && value != "") {
-                        var createDate = new Date(value);
-                        return createDate.format("yyyy-MM-dd hh:mm:ss");
-                    } else {
-                        return "";
-                    }
-                }
+                dataIndex: 'createTime'
             },
             {
                 header: '操作',

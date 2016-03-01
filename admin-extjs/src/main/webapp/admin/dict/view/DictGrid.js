@@ -40,11 +40,7 @@ Ext.define('kalix.admin.dict.view.DictGrid', {
             {text: '排序', dataIndex: 'sort'},
             {text: '创建人', dataIndex: 'createBy', flex: 1},
             {
-                text: '创建日期', dataIndex: 'creationDate', flex: 1,
-                renderer: function (value) {
-                    var createDate = new Date(value);
-                    return createDate.format("yyyy-MM-dd hh:mm:ss");
-                }
+                text: '创建日期', dataIndex: 'creationDate', flex: 1
             },
             {
                 xtype: 'securityGridColumnRUD',

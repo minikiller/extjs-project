@@ -47,10 +47,10 @@ Ext.define('kalix.admin.user.view.UserGrid', {
         }, {
             text: '邮箱',
             dataIndex: 'email',
-        }, {
+            }, /*{
             text: '电话',
             dataIndex: 'phone',
-        }, {
+             }, */{
             text: '手机',
             dataIndex: 'mobile',
         }, {
@@ -59,11 +59,7 @@ Ext.define('kalix.admin.user.view.UserGrid', {
         }, {
             text: '创建日期',
             dataIndex: 'creationDate',
-            flex: 2,
-            renderer: function (value) {
-                var createDate = new Date(value);
-                return createDate.format("yyyy-MM-dd hh:mm:ss");
-            }
+                flex: 2
         }/*, {
             text: '更新人',
             dataIndex: 'updateBy',
