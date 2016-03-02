@@ -48,17 +48,18 @@ Ext.define('kalix.demo.sealApply.view.SealApplyWindow', {
                     ]
                 },
                 {
-                    html: '申请时间',
-                    readOnly: true
+                    html: '申请时间'
                 },
                 {
+                    customStyle: true,
+                    bodyStyle: 'padding:0px 0px 0px 0px;',
                     items: [
                         {
-                            xtype: 'tableFormField',
+                            xtype: 'datefield',
                             readOnly: true,
-                            bind: {
-                                value: '{rec.creationDate}'
-                            }
+                            value: new Date(),
+                            fieldStyle: 'font-size:15px;text-align:center;',
+                            format: 'Y年m月d日'
                         }
                     ]
                 },
@@ -83,11 +84,11 @@ Ext.define('kalix.demo.sealApply.view.SealApplyWindow', {
                 {
                     colspan: 5,
                     customStyle: true,
-                    bodyStyle: 'padding:0px 0px 0px 20px;font-size:15px;',
+                    bodyStyle: 'padding:10px 0px 0px 20px;font-size:15px;',
                     items: [
                         {
                             xtype: 'tableFormRadioGroup',
-                            columns: 3,
+                            columns: 5,
                             fieldName: 'sealType',
                             items: [
                                 {boxLabel: '公司公章', inputValue: '0'},

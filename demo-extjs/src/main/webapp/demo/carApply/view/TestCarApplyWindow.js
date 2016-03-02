@@ -49,18 +49,19 @@ Ext.define('kalix.demo.carApply.view.TestCarApplyWindow', {
                     ]
                 },
                 {
-                    html: '申请时间',
-                    readOnly: true
+                    html: '申请时间'
                 },
                 {
                     colspan: 2,
+                    customStyle: true,
+                    bodyStyle: 'padding:0px 0px 0px 0px;',
                     items: [
                         {
-                            xtype: 'tableFormField',
+                            xtype: 'datefield',
                             readOnly: true,
-                            bind: {
-                                value: '{rec.creationDate}'
-                            }
+                            value: new Date(),
+                            fieldStyle: 'font-size:15px;text-align:center;',
+                            format: 'Y年m月d日 H时i分'
                         }
                     ]
                 },
