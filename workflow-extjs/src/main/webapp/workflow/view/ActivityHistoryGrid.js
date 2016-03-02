@@ -30,7 +30,7 @@ Ext.define('kalix.workflow.view.ActivityHistoryGrid', {
                 align: 'center',
                 renderer: null
             },
-            {text: '编号', dataIndex: 'id', flex: 1},
+            {text: '编号', dataIndex: 'id', flex: 1, hidden: true},
             {text: '节点名称', dataIndex: 'activityName'},
             {text: '执行人', dataIndex: 'assignee'},
 
@@ -51,10 +51,10 @@ Ext.define('kalix.workflow.view.ActivityHistoryGrid', {
                 }
             }
             },
+             {text: '持续时长', dataIndex: 'durationInMillis'},
             {
                 text: '审批意见', dataIndex: 'comment',
-            },
-            {text: '任务编号', dataIndex: 'taskId'}
+            }
         ]
     }
 });

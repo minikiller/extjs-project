@@ -76,6 +76,10 @@ Ext.define('kalix.workflow.myprocesshistory.view.MyProcessHistoryGrid', {
                     }
                 }
             },
+             {
+                 text: '持续时长',
+                 dataIndex: 'durationInMillis'
+             },
             {
                 text: '状态',
                 dataIndex: 'status'
