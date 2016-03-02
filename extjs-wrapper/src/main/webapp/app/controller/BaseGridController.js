@@ -105,6 +105,47 @@ Ext.define('kalix.controller.BaseGridController', {
             }
         });
     },
+    onRemoveBatch:function(){
+        var selModel = this.getView().getSelectionModel();
+        var deleteUrl = this.getViewModel().get("url");
+        if (selModel.hasSelection()) {
+            Ext.Msg.confirm("警告", "确定要删除吗？", function (button) {
+                if (button == "yes") {
+                    var rows = selModel.getSelected();
+                    var ids = "";
+                    for (var i = 0; i < rows.length; i++) {
+                        var row = rows.getAt(i);
+                        if (row != null && row.id != null) {
+                            ids += row.id;
+                            if (i + 1 != rows.length) {
+                                ids += ":";
+                            }
+                        }
+                    }
+                    Ext.Ajax.request({
+                        url: deleteUrl + "?ids=" + ids,
+                        method: 'DELETE',
+                        callback: function (options, success, response) {
+                            var resp = Ext.JSON.decode(response.responseText);
+                            if (resp.success) {
+                                kalix.core.Notify.success("操作成功", "提示", {timeOut: 1500});
+                                var store = grid.getStore();
+                                store.reload();
+                            }
+                        }
+                    });
+                }
+            });
+        } else {
+            Ext.Msg.show({
+                title: '提示',
+                message: '至少应该选择一条记录进行操作',
+                buttons: Ext.Msg.OK,
+                icon: Ext.Msg.WARNING,
+                fn: null
+            });
+        }
+    },
     //excel upload
     onChange: function (target, event, domValue) {
         var form = target.findParentByType('form');
