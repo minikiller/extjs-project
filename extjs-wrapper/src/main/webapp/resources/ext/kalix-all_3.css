@@ -215,10 +215,10 @@
 .x-btn-focus.x-btn-soft-purple-toolbar-small {
     background-image: none;
     background-color: #925e8b;
-    -webkit-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
-    -moz-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
-    -ms-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
-    box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
+    -webkit-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    -moz-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    -ms-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
 }
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:762 */
@@ -239,7 +239,7 @@
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:778 */
 .x-btn-soft-purple-toolbar-small.x-arrow-focus .x-btn-arrow-el {
-    border: 1px solid #35baf6;
+    border: 1px solid #bda778;
 }
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:785 */
@@ -251,10 +251,10 @@
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:812 */
 .x-btn-focus.x-btn-over.x-btn-soft-purple-toolbar-small {
-    -webkit-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
-    -moz-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
-    -ms-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
-    box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
+    -webkit-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    -moz-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    -ms-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
 }
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:840 */
@@ -268,10 +268,10 @@
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:868 */
 .x-btn-focus.x-btn-menu-active.x-btn-soft-purple-toolbar-small,
 .x-btn-focus.x-btn-pressed.x-btn-soft-purple-toolbar-small {
-    -webkit-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
-    -moz-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
-    -ms-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
-    box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
+    -webkit-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    -moz-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    -ms-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
 }
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:897 */
@@ -534,20 +534,20 @@
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:1190 */
 .x-nbr .x-segmented-button-item.x-btn-focus.x-btn-soft-purple-toolbar-small:after {
     border-width: 1px;
-    border-color: #35baf6;
+    border-color: #bda778;
 }
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:1204 */
 .x-nbr .x-segmented-button-item.x-btn-focus.x-btn-over.x-btn-soft-purple-toolbar-small:after {
     border-width: 1px;
-    border-color: #35baf6;
+    border-color: #bda778;
 }
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:1219 */
 .x-nbr .x-segmented-button-item.x-btn-focus.x-btn-menu-active.x-btn-soft-purple-toolbar-small:after,
 .x-nbr .x-segmented-button-item.x-btn-focus.x-btn-pressed.x-btn-soft-purple-toolbar-small:after {
     border-width: 1px;
-    border-color: #35baf6;
+    border-color: #bda778;
 }
 
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
@@ -2306,10 +2306,10 @@
 .x-btn-focus.x-btn-gray-toolbar-small {
     background-image: none;
     background-color: #949495;
-    -webkit-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
-    -moz-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
-    -ms-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
-    box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
+    -webkit-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    -moz-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    -ms-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
 }
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:762 */
@@ -2330,7 +2330,7 @@
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:778 */
 .x-btn-gray-toolbar-small.x-arrow-focus .x-btn-arrow-el {
-    border: 1px solid #35baf6;
+    border: 1px solid #bda778;
 }
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:785 */
@@ -2342,10 +2342,10 @@
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:812 */
 .x-btn-focus.x-btn-over.x-btn-gray-toolbar-small {
-    -webkit-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
-    -moz-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
-    -ms-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
-    box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
+    -webkit-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    -moz-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    -ms-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
 }
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:840 */
@@ -2359,10 +2359,10 @@
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:868 */
 .x-btn-focus.x-btn-menu-active.x-btn-gray-toolbar-small,
 .x-btn-focus.x-btn-pressed.x-btn-gray-toolbar-small {
-    -webkit-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
-    -moz-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
-    -ms-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
-    box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
+    -webkit-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    -moz-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    -ms-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
 }
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:897 */
@@ -2625,20 +2625,20 @@
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:1190 */
 .x-nbr .x-segmented-button-item.x-btn-focus.x-btn-gray-toolbar-small:after {
     border-width: 1px;
-    border-color: #35baf6;
+    border-color: #bda778;
 }
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:1204 */
 .x-nbr .x-segmented-button-item.x-btn-focus.x-btn-over.x-btn-gray-toolbar-small:after {
     border-width: 1px;
-    border-color: #35baf6;
+    border-color: #bda778;
 }
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:1219 */
 .x-nbr .x-segmented-button-item.x-btn-focus.x-btn-menu-active.x-btn-gray-toolbar-small:after,
 .x-nbr .x-segmented-button-item.x-btn-focus.x-btn-pressed.x-btn-gray-toolbar-small:after {
     border-width: 1px;
-    border-color: #35baf6;
+    border-color: #bda778;
 }
 
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
@@ -3700,10 +3700,10 @@
 .x-btn-focus.x-btn-green-toolbar-small {
     background-image: none;
     background-color: #16b603;
-    -webkit-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
-    -moz-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
-    -ms-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
-    box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
+    -webkit-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    -moz-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    -ms-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
 }
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:762 */
@@ -3724,7 +3724,7 @@
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:778 */
 .x-btn-green-toolbar-small.x-arrow-focus .x-btn-arrow-el {
-    border: 1px solid #35baf6;
+    border: 1px solid #bda778;
 }
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:785 */
@@ -3736,10 +3736,10 @@
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:812 */
 .x-btn-focus.x-btn-over.x-btn-green-toolbar-small {
-    -webkit-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
-    -moz-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
-    -ms-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
-    box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
+    -webkit-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    -moz-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    -ms-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
 }
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:840 */
@@ -3753,10 +3753,10 @@
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:868 */
 .x-btn-focus.x-btn-menu-active.x-btn-green-toolbar-small,
 .x-btn-focus.x-btn-pressed.x-btn-green-toolbar-small {
-    -webkit-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
-    -moz-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
-    -ms-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
-    box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
+    -webkit-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    -moz-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    -ms-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
 }
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:897 */
@@ -4019,20 +4019,20 @@
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:1190 */
 .x-nbr .x-segmented-button-item.x-btn-focus.x-btn-green-toolbar-small:after {
     border-width: 1px;
-    border-color: #35baf6;
+    border-color: #bda778;
 }
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:1204 */
 .x-nbr .x-segmented-button-item.x-btn-focus.x-btn-over.x-btn-green-toolbar-small:after {
     border-width: 1px;
-    border-color: #35baf6;
+    border-color: #bda778;
 }
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:1219 */
 .x-nbr .x-segmented-button-item.x-btn-focus.x-btn-menu-active.x-btn-green-toolbar-small:after,
 .x-nbr .x-segmented-button-item.x-btn-focus.x-btn-pressed.x-btn-green-toolbar-small:after {
     border-width: 1px;
-    border-color: #35baf6;
+    border-color: #bda778;
 }
 
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
@@ -5094,10 +5094,10 @@
 .x-btn-focus.x-btn-blue-toolbar-small {
     background-image: none;
     background-color: #167abc;
-    -webkit-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
-    -moz-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
-    -ms-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
-    box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
+    -webkit-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    -moz-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    -ms-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
 }
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:762 */
@@ -5118,7 +5118,7 @@
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:778 */
 .x-btn-blue-toolbar-small.x-arrow-focus .x-btn-arrow-el {
-    border: 1px solid #35baf6;
+    border: 1px solid #bda778;
 }
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:785 */
@@ -5130,10 +5130,10 @@
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:812 */
 .x-btn-focus.x-btn-over.x-btn-blue-toolbar-small {
-    -webkit-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
-    -moz-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
-    -ms-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
-    box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
+    -webkit-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    -moz-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    -ms-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
 }
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:840 */
@@ -5147,10 +5147,10 @@
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:868 */
 .x-btn-focus.x-btn-menu-active.x-btn-blue-toolbar-small,
 .x-btn-focus.x-btn-pressed.x-btn-blue-toolbar-small {
-    -webkit-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
-    -moz-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
-    -ms-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
-    box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
+    -webkit-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    -moz-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    -ms-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
 }
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:897 */
@@ -5413,20 +5413,20 @@
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:1190 */
 .x-nbr .x-segmented-button-item.x-btn-focus.x-btn-blue-toolbar-small:after {
     border-width: 1px;
-    border-color: #35baf6;
+    border-color: #bda778;
 }
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:1204 */
 .x-nbr .x-segmented-button-item.x-btn-focus.x-btn-over.x-btn-blue-toolbar-small:after {
     border-width: 1px;
-    border-color: #35baf6;
+    border-color: #bda778;
 }
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:1219 */
 .x-nbr .x-segmented-button-item.x-btn-focus.x-btn-menu-active.x-btn-blue-toolbar-small:after,
 .x-nbr .x-segmented-button-item.x-btn-focus.x-btn-pressed.x-btn-blue-toolbar-small:after {
     border-width: 1px;
-    border-color: #35baf6;
+    border-color: #bda778;
 }
 
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */

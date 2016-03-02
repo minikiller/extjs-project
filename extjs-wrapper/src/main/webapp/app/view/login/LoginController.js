@@ -20,44 +20,65 @@
 
  */
 Ext.define('kalix.view.login.LoginController', {
-        extend: 'Ext.app.ViewController',
-        alias: 'controller.login',
+    extend: 'Ext.app.ViewController',
+    alias: 'controller.login',
     //处理回车键提交
-    onKeyup : function(event, el){
-        if (event.getKey() == event.ENTER){
+    onKeyup: function (event, el) {
+        if (event.getKey() == event.ENTER) {
             el.blur();
             this.onLogin();
         }
     },
 
-    onLogin:function () {
-    var form = this.getView().getForm();
-    if (form.isValid()) {
-        form.submit({
-            success: function (form, action) {
-                var resp = action.result;
-                if (resp.location) {
-                    //Ext.util.Cookies.set('currentUserName', resp.user.name);
-                    window.location.href = resp.location;
-                }
-            },
-            failure: function (form, action) {
-                if (action.response.status == 200) {
-                    Ext.MessageBox.alert(CONFIG.ALTER_TITLE_FAILURE, action.result.message);
-                } else {
-                    Ext.MessageBox.alert(CONFIG.ALTER_TITLE_FAILURE, '您的请求太复杂了，我们正在寻找解决方案...');
-                }
-                Ext.MessageBox.focus();
-            }
-        });
-    } else {
-        console.log('show tip');
-    }
-}
-,
+    onLogin: function () {
+        //var form = this.getView().getForm();
+        //if (form.isValid()) {
+        //    form.submit({
+        //        success: function (form, action) {
+        //            var resp = action.result;
+        //            if (resp.location) {
+        //                //Ext.util.Cookies.set('currentUserName', resp.user.name);
+        //                window.location.href = resp.location;
+        //            }
+        //        },
+        //        failure: function (form, action) {
+        //            if (action.response.status == 200) {
+        //                Ext.MessageBox.alert(CONFIG.ALTER_TITLE_FAILURE, action.result.message);
+        //            } else {
+        //                Ext.MessageBox.alert(CONFIG.ALTER_TITLE_FAILURE, '您的请求太复杂了，我们正在寻找解决方案...');
+        //            }
+        //            Ext.MessageBox.focus();
+        //        }
+        //    });
+        //} else {
+        //    console.log('show tip');
+        //}
+        var form = Ext.getCmp('loginForm').getForm();
 
-onReset : function () {
-    this.getView().getForm().reset();
-}
+        if (form.isValid()) {
+            form.submit({
+                success: function (form, action) {
+                    var resp = action.result;
+                    if (resp.location) {
+                        //Ext.util.Cookies.set('currentUserName', resp.user.name);
+                        window.location.href = resp.location;
+                    }
+                },
+                failure: function (form, action) {
+                    if (action.response.status == 200) {
+                        Ext.MessageBox.alert(CONFIG.ALTER_TITLE_FAILURE, action.result.message);
+                    } else {
+                        Ext.MessageBox.alert(CONFIG.ALTER_TITLE_FAILURE, '您的请求太复杂了，我们正在寻找解决方案...');
+                    }
+                    Ext.MessageBox.focus();
+                }
+            });
+        } else {
+            console.log('show tip');
+        }
+    },
+    onReset: function () {
+        this.getView().getForm().reset();
+    }
 })
 ;

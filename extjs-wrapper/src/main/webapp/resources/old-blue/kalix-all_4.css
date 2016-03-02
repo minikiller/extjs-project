@@ -61,10 +61,10 @@
 .x-btn-focus.x-btn-gray-toolbar-small {
     background-image: none;
     background-color: #949495;
-    -webkit-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
-    -moz-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
-    -ms-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
-    box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    -webkit-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
+    -moz-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
+    -ms-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
+    box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
 }
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:762 */
@@ -85,7 +85,7 @@
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:778 */
 .x-btn-gray-toolbar-small.x-arrow-focus .x-btn-arrow-el {
-    border: 1px solid #bda778;
+    border: 1px solid #35baf6;
 }
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:785 */
@@ -97,10 +97,10 @@
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:812 */
 .x-btn-focus.x-btn-over.x-btn-gray-toolbar-small {
-    -webkit-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
-    -moz-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
-    -ms-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
-    box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    -webkit-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
+    -moz-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
+    -ms-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
+    box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
 }
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:840 */
@@ -114,10 +114,10 @@
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:868 */
 .x-btn-focus.x-btn-menu-active.x-btn-gray-toolbar-small,
 .x-btn-focus.x-btn-pressed.x-btn-gray-toolbar-small {
-    -webkit-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
-    -moz-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
-    -ms-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
-    box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    -webkit-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
+    -moz-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
+    -ms-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
+    box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
 }
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:897 */
@@ -380,20 +380,20 @@
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:1190 */
 .x-nbr .x-segmented-button-item.x-btn-focus.x-btn-gray-toolbar-small:after {
     border-width: 1px;
-    border-color: #bda778;
+    border-color: #35baf6;
 }
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:1204 */
 .x-nbr .x-segmented-button-item.x-btn-focus.x-btn-over.x-btn-gray-toolbar-small:after {
     border-width: 1px;
-    border-color: #bda778;
+    border-color: #35baf6;
 }
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:1219 */
 .x-nbr .x-segmented-button-item.x-btn-focus.x-btn-menu-active.x-btn-gray-toolbar-small:after,
 .x-nbr .x-segmented-button-item.x-btn-focus.x-btn-pressed.x-btn-gray-toolbar-small:after {
     border-width: 1px;
-    border-color: #bda778;
+    border-color: #35baf6;
 }
 
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
@@ -1455,10 +1455,10 @@
 .x-btn-focus.x-btn-green-toolbar-small {
     background-image: none;
     background-color: #16b603;
-    -webkit-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
-    -moz-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
-    -ms-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
-    box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    -webkit-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
+    -moz-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
+    -ms-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
+    box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
 }
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:762 */
@@ -1479,7 +1479,7 @@
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:778 */
 .x-btn-green-toolbar-small.x-arrow-focus .x-btn-arrow-el {
-    border: 1px solid #bda778;
+    border: 1px solid #35baf6;
 }
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:785 */
@@ -1491,10 +1491,10 @@
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:812 */
 .x-btn-focus.x-btn-over.x-btn-green-toolbar-small {
-    -webkit-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
-    -moz-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
-    -ms-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
-    box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    -webkit-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
+    -moz-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
+    -ms-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
+    box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
 }
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:840 */
@@ -1508,10 +1508,10 @@
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:868 */
 .x-btn-focus.x-btn-menu-active.x-btn-green-toolbar-small,
 .x-btn-focus.x-btn-pressed.x-btn-green-toolbar-small {
-    -webkit-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
-    -moz-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
-    -ms-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
-    box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    -webkit-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
+    -moz-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
+    -ms-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
+    box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
 }
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:897 */
@@ -1774,20 +1774,20 @@
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:1190 */
 .x-nbr .x-segmented-button-item.x-btn-focus.x-btn-green-toolbar-small:after {
     border-width: 1px;
-    border-color: #bda778;
+    border-color: #35baf6;
 }
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:1204 */
 .x-nbr .x-segmented-button-item.x-btn-focus.x-btn-over.x-btn-green-toolbar-small:after {
     border-width: 1px;
-    border-color: #bda778;
+    border-color: #35baf6;
 }
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:1219 */
 .x-nbr .x-segmented-button-item.x-btn-focus.x-btn-menu-active.x-btn-green-toolbar-small:after,
 .x-nbr .x-segmented-button-item.x-btn-focus.x-btn-pressed.x-btn-green-toolbar-small:after {
     border-width: 1px;
-    border-color: #bda778;
+    border-color: #35baf6;
 }
 
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
@@ -2849,10 +2849,10 @@
 .x-btn-focus.x-btn-blue-toolbar-small {
     background-image: none;
     background-color: #167abc;
-    -webkit-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
-    -moz-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
-    -ms-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
-    box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    -webkit-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
+    -moz-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
+    -ms-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
+    box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
 }
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:762 */
@@ -2873,7 +2873,7 @@
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:778 */
 .x-btn-blue-toolbar-small.x-arrow-focus .x-btn-arrow-el {
-    border: 1px solid #bda778;
+    border: 1px solid #35baf6;
 }
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:785 */
@@ -2885,10 +2885,10 @@
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:812 */
 .x-btn-focus.x-btn-over.x-btn-blue-toolbar-small {
-    -webkit-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
-    -moz-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
-    -ms-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
-    box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    -webkit-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
+    -moz-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
+    -ms-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
+    box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
 }
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:840 */
@@ -2902,10 +2902,10 @@
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:868 */
 .x-btn-focus.x-btn-menu-active.x-btn-blue-toolbar-small,
 .x-btn-focus.x-btn-pressed.x-btn-blue-toolbar-small {
-    -webkit-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
-    -moz-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
-    -ms-box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
-    box-shadow: #bda778 0 1px 0px 0 inset #bda778 0 -1px 0px 0 inset #bda778 -1px 0 0px 0 inset #bda778 1px 0 0px 0 inset;
+    -webkit-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
+    -moz-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
+    -ms-box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
+    box-shadow: #35baf6 0 1px 0px 0 inset #35baf6 0 -1px 0px 0 inset #35baf6 -1px 0 0px 0 inset #35baf6 1px 0 0px 0 inset;
 }
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:897 */
@@ -3168,20 +3168,20 @@
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:1190 */
 .x-nbr .x-segmented-button-item.x-btn-focus.x-btn-blue-toolbar-small:after {
     border-width: 1px;
-    border-color: #bda778;
+    border-color: #35baf6;
 }
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:1204 */
 .x-nbr .x-segmented-button-item.x-btn-focus.x-btn-over.x-btn-blue-toolbar-small:after {
     border-width: 1px;
-    border-color: #bda778;
+    border-color: #35baf6;
 }
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:1219 */
 .x-nbr .x-segmented-button-item.x-btn-focus.x-btn-menu-active.x-btn-blue-toolbar-small:after,
 .x-nbr .x-segmented-button-item.x-btn-focus.x-btn-pressed.x-btn-blue-toolbar-small:after {
     border-width: 1px;
-    border-color: #bda778;
+    border-color: #35baf6;
 }
 
 /* http://localhost:1841/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
@@ -3231,31 +3231,34 @@
     vertical-align: top;
 }
 
-.field-required{
-  color:red;
-  font-weight:bold;
+.field-required {
+    color: red;
+    font-weight: bold;
 }
 
-.x-treelist{
+.x-treelist {
     position: relative;
     z-index: 9999;
 }
 
 /* http://localhost:1841/templates/admin-dashboard/classic/sass/src/view/authentication/Dialog.scss:4 */
 .auth-dialog .auth-profile-wrap {
-    background: #bda778;
+    background: #35baf6;
     color: #fff;
     line-height: 24px;
 }
+
 /* http://localhost:1841/templates/admin-dashboard/classic/sass/src/view/authentication/Dialog.scss:8 */
 .auth-dialog .auth-profile-wrap .user-name-text {
     font-size: 18px;
     font-weight: bold;
 }
+
 /* http://localhost:1841/templates/admin-dashboard/classic/sass/src/view/authentication/Dialog.scss:12 */
 .auth-dialog .auth-profile-wrap .user-post-text {
     font-size: 14px;
 }
+
 /* http://localhost:1841/templates/admin-dashboard/classic/sass/src/view/authentication/Dialog.scss:15 */
 .auth-dialog .auth-profile-wrap .auth-profile-img {
     -webkit-border-radius: 50%;
@@ -3263,10 +3266,12 @@
     -ms-border-radius: 50%;
     border-radius: 50%;
 }
+
 /* http://localhost:1841/templates/admin-dashboard/classic/sass/src/view/authentication/Dialog.scss:19 */
 .auth-dialog .x-form-text-default {
     padding: 15px;
 }
+
 /* http://localhost:1841/templates/admin-dashboard/classic/sass/src/view/authentication/Dialog.scss:24 */
 .auth-dialog .register-page-back-button,
 .auth-dialog .register-page-back-button .x-frame-mc {
@@ -3274,32 +3279,38 @@
     border: none;
     padding: 5px 0 0 0;
 }
+
 /* http://localhost:1841/templates/admin-dashboard/classic/sass/src/view/authentication/Dialog.scss:29 */
 .auth-dialog .register-page-back-button .x-btn-inner-default-small,
 .auth-dialog .register-page-back-button .x-frame-mc .x-btn-inner-default-small {
     padding: 0;
     height: 20px;
-    color: #bda778;
+    color: #35baf6;
 }
+
 /* http://localhost:1841/templates/admin-dashboard/classic/sass/src/view/authentication/Dialog.scss:33 */
 .auth-dialog .register-page-back-button .x-btn-inner-default-small:hover,
 .auth-dialog .register-page-back-button .x-frame-mc .x-btn-inner-default-small:hover {
     text-decoration: underline;
 }
+
 /* http://localhost:1841/templates/admin-dashboard/classic/sass/src/view/authentication/Dialog.scss:37 */
 .auth-dialog .register-page-back-button.x-btn-pressed.x-btn-default-small,
 .auth-dialog .register-page-back-button .x-frame-mc.x-btn-pressed.x-btn-default-small {
     background-color: transparent;
 }
+
 /* http://localhost:1841/templates/admin-dashboard/classic/sass/src/view/authentication/Dialog.scss:41 */
 .auth-dialog .trigger-glyph-noop {
     cursor: default;
 }
+
 /* http://localhost:1841/templates/admin-dashboard/classic/sass/src/view/authentication/Dialog.scss:44 */
 .auth-dialog .x-form-trigger {
     text-align: right;
     width: 50px;
 }
+
 /* http://localhost:1841/templates/admin-dashboard/classic/sass/src/view/authentication/Dialog.scss:52 */
 .auth-dialog .password-trigger:before,
 .auth-dialog .auth-email-trigger:before,
@@ -3311,6 +3322,7 @@
     color: #e5e5e5;
     font-size: 30px;
 }
+
 /* http://localhost:1841/templates/admin-dashboard/classic/sass/src/view/authentication/Dialog.scss:60 */
 .auth-dialog .password-trigger.password-trigger:before,
 .auth-dialog .password-trigger.auth-password-trigger:before,
@@ -3322,6 +3334,7 @@
 .auth-dialog .auth-envelope-trigger.auth-password-trigger:before {
     content: "\f023";
 }
+
 /* http://localhost:1841/templates/admin-dashboard/classic/sass/src/view/authentication/Dialog.scss:64 */
 .auth-dialog .password-trigger.auth-email-trigger:before,
 .auth-dialog .auth-email-trigger.auth-email-trigger:before,
@@ -3329,6 +3342,7 @@
 .auth-dialog .auth-envelope-trigger.auth-email-trigger:before {
     content: "\f007";
 }
+
 /* http://localhost:1841/templates/admin-dashboard/classic/sass/src/view/authentication/Dialog.scss:67 */
 .auth-dialog .password-trigger.auth-envelope-trigger:before,
 .auth-dialog .auth-email-trigger.auth-envelope-trigger:before,
@@ -3336,6 +3350,7 @@
 .auth-dialog .auth-envelope-trigger.auth-envelope-trigger:before {
     content: "\f0e0";
 }
+
 /* http://localhost:1841/templates/admin-dashboard/classic/sass/src/view/authentication/Dialog.scss:71 */
 .auth-dialog .seperator {
     text-align: center;
@@ -3347,23 +3362,27 @@
     z-index: 1;
     padding: 0 8px;
 }
+
 /* http://localhost:1841/templates/admin-dashboard/classic/sass/src/view/authentication/Dialog.scss:81 */
 .auth-dialog .link-forgot-password {
     line-height: 32px;
-    color: #bda778;
+    color: #35baf6;
     text-decoration: none;
     margin-left: 5px;
 }
+
 /* http://localhost:1841/templates/admin-dashboard/classic/sass/src/view/authentication/Dialog.scss:86 */
 .auth-dialog .link-forgot-password:hover {
     text-decoration: underline;
 }
+
 /* http://localhost:1841/templates/admin-dashboard/classic/sass/src/view/authentication/Dialog.scss:93 */
 .auth-dialog .x-btn .x-btn-icon-el:before {
     right: 10px;
     font-size: 24px;
     position: absolute;
 }
+
 /* http://localhost:1841/templates/admin-dashboard/classic/sass/src/view/authentication/Dialog.scss:101 */
 .auth-dialog .auth-facebook-button .x-fa {
     color: #fff;
@@ -3371,6 +3390,7 @@
     top: 10px;
     right: 13px;
 }
+
 /* http://localhost:1841/templates/admin-dashboard/classic/sass/src/view/authentication/Dialog.scss:108 */
 .auth-dialog .auth-login-button .x-fa,
 .auth-dialog .auth-resetpassword-button .x-fa {
@@ -3379,17 +3399,20 @@
     top: 10px;
     line-height: 16px;
 }
+
 /* http://localhost:1841/templates/admin-dashboard/classic/sass/src/view/authentication/Dialog.scss:115 */
 .auth-dialog .auth-create-account-button .x-fa {
     color: #fff;
     right: 24px;
     top: 10px;
 }
+
 /* http://localhost:1841/templates/admin-dashboard/classic/sass/src/view/authentication/Dialog.scss:121 */
 .auth-dialog .outer-div {
     width: 100%;
     text-align: center;
 }
+
 /* http://localhost:1841/templates/admin-dashboard/classic/sass/src/view/authentication/Dialog.scss:124 */
 .auth-dialog .outer-div:after {
     content: " ";

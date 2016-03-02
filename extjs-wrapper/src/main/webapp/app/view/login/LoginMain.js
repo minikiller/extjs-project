@@ -15,8 +15,6 @@ Ext.define('kalix.view.login.LoginMain', {
     requires: [
         'kalix.view.login.LoginController'
     ],
-    //layout:'form',
-
     xtype: 'login',
     controller: 'login',
     icon: 'resources/images/lock.png',
@@ -31,12 +29,7 @@ Ext.define('kalix.view.login.LoginMain', {
     bodyPadding: 20,
     border: false,
     buttonAlign: 'center',
-    /*defaults: {
-        //labelWidth: 60,
-        margin : '5 0'
-    },*/
     width: 300,
-    //header: false,
     layout: {
         type: 'vbox',
         align: 'stretch'
@@ -44,8 +37,6 @@ Ext.define('kalix.view.login.LoginMain', {
 
     items: [{
         inputType: 'textfield',
-        //glyph : 'xf0e2@FontAwesome',
-        //icon: 'resources/images/lock.png',
         fieldLabel: '账号',
         name: 'username',
         cls: 'auth-textbox',
@@ -58,11 +49,12 @@ Ext.define('kalix.view.login.LoginMain', {
             glyphed: {
                 cls: 'trigger-glyph-noop auth-email-trigger'
             }
+        },
+        bind: {
+            value: '{username}'
         }
-        //beforeLabelTpl: '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
     }, {
         inputType: 'password',
-        //glyph : 'xf0e2@FontAwesome',
         fieldLabel: '密码',
         name: 'password',
         cls: 'auth-textbox',
@@ -76,42 +68,32 @@ Ext.define('kalix.view.login.LoginMain', {
                 cls: 'trigger-glyph-noop auth-password-trigger'
             }
         },
-
-
-        //beforeLabelTpl: '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>',
         listeners: {
             keyup: {
                 element: 'el',
                 fn: 'onKeyup'
             }
+        },
+        bind: {
+            value: '{password}'
         }
     }
     ],
-
     buttons: [{
         text: '登录',
         handler: 'onLogin',
-        //width:'250',
-        //scale: 'large',
-        //ui: 'soft-green',
         iconAlign: 'right',
         glyph: 'xf090@FontAwesome'
-        //iconCls: 'x-fa fa-sign-in'
     }, {
         text: '重置',
-        //scale: 'large',
         handler: 'onReset',
-        //ui: 'soft-green',
         iconAlign: 'right',
         glyph: 'xf0e2@FontAwesome',
-        //iconCls: 'x-fa fa-undo'
     }
     ],
     initComponent: function () {
         var me = this, listen;
-
         me.addCls('auth-dialog');
         me.callParent();
-
-    },
+    }
 });
