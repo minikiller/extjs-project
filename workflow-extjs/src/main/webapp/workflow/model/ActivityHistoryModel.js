@@ -13,7 +13,8 @@ Ext.define('kalix.workflow.model.ActivityHistoryModel', {
         {name: 'assignee', type: 'string'},//执行人
         {name: 'startTime', type: 'string'},//开始时间
         {name: 'endTime', type: 'string'},//结束时间
+        {name: 'durationInMillis', type: 'string'},//任务持续时长
         {name: 'comment', type: 'string'},//审批意见
-        {name: 'taskId', type: 'string'},//任务编号
+        //{name: 'taskId', type: 'string'},//任务编号
     ]
 });
