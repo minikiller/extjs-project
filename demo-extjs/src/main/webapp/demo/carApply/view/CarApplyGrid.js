@@ -70,10 +70,10 @@ Ext.define('kalix.demo.carApply.view.CarApplyGrid', {
                 dataIndex: 'city',
                 renderer: null
             },
-            {
+            /*{
                 text: '申请人联系电话',
                 dataIndex: 'operatorPhone'
-            },
+             },*/
             {
                 text: '经办人',
                 dataIndex: 'createBy'
@@ -95,8 +95,8 @@ Ext.define('kalix.demo.carApply.view.CarApplyGrid', {
                 renderer: null
             },
             {
-                flex: 0,
-                width: 70,
+                flex: 1.5,
+                //width: 80,
                 xtype: 'securityGridColumnCommon',
                 items: [
                     {
