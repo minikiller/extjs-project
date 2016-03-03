@@ -1,7 +1,7 @@
 /**
  * 用户选择下拉comboBox
  *
- * @author majian <br/>
+ * @author chenyanxu <br/>
  *         date:2015-6-18
  * @version 1.0.0
  */
@@ -16,14 +16,21 @@ Ext.define('kalix.admin.user.component.UserComboBox', {
     xtype: 'userCombobox',
     queryMode: 'remote',
     valueField: 'name',
-    //name: 'salerId',need to change
     displayField: 'name',
-    queryParam: 'name',
+    queryParam: 'jsonStr',
     minChars: 0,
-    //forceSelection: true,
-    //selectOnFocus:true,
     typeAhead:true,
     store: {
         type: 'userStore'
+    },
+    getParams: function (queryString) {
+        var params = {},
+            param = this.queryParam;
+
+        if (param) {
+            params[param] = '{' + this.valueField + ':"' + queryString + '"}';
+        }
+
+        return params;
     }
 })
