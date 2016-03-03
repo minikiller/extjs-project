@@ -143,11 +143,11 @@ Ext.define('kalix.workflow.task.controller.TaskGridController', {
          */
         onDelegate: function () {
             var grid=this.getView();
-            var selModel = grid.getSelectionModel()
+            var selModel = grid.getSelectionModel();
+            var viewModel=grid.getViewModel();
             if (selModel.hasSelection()) {
                 Ext.Msg.confirm("警告", "确定要委托吗？", function (button) {
                     if (button == "yes") {
-                        var delegateUrl = grid.getViewModel().get("delegateUrl");
                         var rows = selModel.getSelection();
                         var ids = "";
                         for (var i = 0; i < rows.length; i++) {
@@ -158,18 +158,14 @@ Ext.define('kalix.workflow.task.controller.TaskGridController', {
                                 }
                             }
                         }
-                        Ext.Ajax.request({
-                            url: delegateUrl + "?taskIds=" + ids,
-                            method: 'GET',
-                            callback: function (options, success, response) {
-                                var resp = Ext.JSON.decode(response.responseText);
-                                Ext.MessageBox.alert(CONFIG.ALTER_TITLE_INFO, resp.msg);
-                                if (resp.success) {
-                                    var store = grid.getStore();
-                                    store.reload();
-                                }
-                            }
+                       // viewModel.set('taskIds',ids);
+                        var view = Ext.create('kalix.workflow.task.view.TaskDelegateWindow',{
+                            bind: {icon: '{delegate_image_path}'}
                         });
+
+                        view.lookupViewModel().set('taskIds',ids);
+                        view.show();
+
                     }
                 });
             } else {

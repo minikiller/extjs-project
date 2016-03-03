@@ -5,21 +5,22 @@
  *         date:2015-6-18
  * @version 1.0.0
  */
-Ext.define('kalix.admin.user.component.UserComboBox', {
-    extend: 'Ext.form.field.ComboBox',
+Ext.define('kalix.admin.user.component.UserTagField', {
+    extend: 'Ext.form.field.Tag',
     requires: [
         'kalix.admin.user.store.UserStore'
     ],
-    alias: 'widget.userComboBox',
+    alias: 'widget.userTagField',
     allowBlank: false,
     labelAlign: 'right',
-    xtype: 'userCombobox',
+    xtype: 'userTagField',
     queryMode: 'remote',
     valueField: 'name',
     displayField: 'name',
     queryParam: 'jsonStr',
     minChars: 0,
-    typeAhead:true,
+    typeAhead: true,
+    filterPickList: true,
     store: {
         type: 'userStore'
     },
