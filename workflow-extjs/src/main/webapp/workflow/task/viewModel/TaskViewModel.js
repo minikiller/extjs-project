@@ -17,9 +17,11 @@ Ext.define('kalix.workflow.task.viewModel.TaskViewModel', {
         view_title:'查看项目机会',
         add_title:'添加项目机会',
         edit_title:'修改项目机会',
-        add_image_path: CONFIG.restRoot+'/roffice/chance/resources/images/chance_add.png',
-        view_image_path: CONFIG.restRoot+'/roffice/chance/resources/images/chance_view.png',
-        delete_image_path: CONFIG.restRoot+'/roffice/chance/resources/images/chance_delete.png',
-        edit_image_path: CONFIG.restRoot+'/roffice/chance/resources/images/chance_edit.png',
+        delegateUrl:'/camel/rest/workflow/tasks/delegate',
+        add_image_path: CONFIG.restRoot+'/workflow/resources/images_add.png',
+        view_image_path: CONFIG.restRoot+'/workflow/resources/images_view.png',
+        delete_image_path: CONFIG.restRoot+'/workflow/resources/images_delete.png',
+        edit_image_path: CONFIG.restRoot+'/workflow/resources/images_edit.png',
+        delegate_image_path: CONFIG.restRoot+'/workflow/resources/images/delegate.png'
     }
 });

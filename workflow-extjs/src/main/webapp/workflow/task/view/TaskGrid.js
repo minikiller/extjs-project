@@ -25,10 +25,14 @@ Ext.define('kalix.workflow.task.view.TaskGrid', {
     store: {
         type: 'taskStore'
     },
+    stripeRows: true,
+    manageHeight: true,
+    forceFit : true,
+    selModel: {selType: 'checkboxmodel', mode: 'simple'},
     columns: {
         defaults: {
             flex: 1,
-            renderer: 'addTooltip'
+            //renderer: 'addTooltip'
         },
         items: [
             {
@@ -37,24 +41,28 @@ Ext.define('kalix.workflow.task.view.TaskGrid', {
                 width: 50,
                 flex: 0,
                 align: 'center',
-                renderer: null
+                renderer: this.update
             },
             {
                 text: '编号',
                 dataIndex: 'id',
-                hidden: true
+                hidden: true,
+
             },
             {
                 text: '业务主键',
-                dataIndex: 'businessKey'
+                dataIndex: 'businessKey',
+                renderer: 'addTooltip',
             },
             {
                 text: '任务名称',
-                dataIndex: 'name'
+                dataIndex: 'name',
+                renderer: 'addTooltip',
             },
             {
                 text: '任务描述',
-                dataIndex: 'description'
+                dataIndex: 'description',
+                renderer: 'addTooltip',
             },
             /*{
              text: '执行人',
@@ -62,12 +70,13 @@ Ext.define('kalix.workflow.task.view.TaskGrid', {
              },*/
             {
                 text: '创建时间',
-                dataIndex: 'createTime'
+                dataIndex: 'createTime',
+                renderer: 'addTooltip',
             },
             {
                 header: '操作',
                 xtype: "actioncolumn",
-                width: 80,
+                flex:1,
                 items: [
                     {
                         icon: "resources/images/magnifier.png",
@@ -86,5 +95,17 @@ Ext.define('kalix.workflow.task.view.TaskGrid', {
                     }
                 ]
             }]
-    }
+    },
+         tbar: {
+             xtype: 'securityToolbar',
+             verifyItems: [
+                 {
+                     text: '委托',
+                     xtype: 'button',
+                     permission: '',
+                     bind: {icon: '{delegate_image_path}'},
+                     handler: 'onDelegate'
+                 }
+             ]
+         }
 });

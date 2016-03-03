@@ -50,9 +50,6 @@ Ext.define('kalix.demo.sealApply.view.SealApplyGrid', {
             {
                 text: '申请时间',
                 dataIndex: 'creationDate',
-                xtype: 'datecolumn',
-                format: 'Y-m-d H:i:s',
-                renderer: null
             },
             {
                 text: '用印数',

@@ -20,9 +20,10 @@ Ext.define('kalix.admin.audit.view.AuditGrid', {
     store: {
         type: 'auditStore'
     },
-
+    forceFit : true,
+    selModel: {selType: 'checkboxmodel', mode: 'simple'},
     columns: {
-        defaults: {flex: 1, renderer: 'addTooltip'},
+        defaults: {flex: 1},
         items: [
             {
                 xtype: "rownumberer",
@@ -33,10 +34,10 @@ Ext.define('kalix.admin.audit.view.AuditGrid', {
                 renderer: this.update
             },
             {text: '编号', dataIndex: 'id', hidden: true},
-            {text: '应用名称', dataIndex: 'appName'},
-            {text: '功能名称', dataIndex: 'funName'},
-            {text: '操作人', dataIndex: 'actor'},
-            {text: '操作', dataIndex: 'action'},
+            {text: '应用名称', dataIndex: 'appName', renderer: 'addTooltip'},
+            {text: '功能名称', dataIndex: 'funName', renderer: 'addTooltip'},
+            {text: '操作人', dataIndex: 'actor', renderer: 'addTooltip'},
+            {text: '操作', dataIndex: 'action', renderer: 'addTooltip'},
             {text: '操作内容', dataIndex: 'content', flex: 2},
             {
                 text: '创建日期',
@@ -57,5 +58,17 @@ Ext.define('kalix.admin.audit.view.AuditGrid', {
                         handler: 'onDelete'
                     }]
             }]
-    }
+    },
+              tbar: {
+                  xtype: 'securityToolbar',
+                  verifyItems: [
+                      {
+                          text: '批量删除',
+                          xtype: 'button',
+                          permission: '',
+                          iconCls: 'fa fa-trash',
+                          handler: 'onBatchDelete'
+                      }
+                  ]
+              }
 });

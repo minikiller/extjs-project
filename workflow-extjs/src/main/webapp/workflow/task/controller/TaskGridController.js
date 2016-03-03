@@ -136,6 +136,47 @@ Ext.define('kalix.workflow.task.controller.TaskGridController', {
                 });
             }
         });
+        },
+
+        /**
+         * 委托操作.
+         */
+        onDelegate: function () {
+            var grid=this.getView();
+            var selModel = grid.getSelectionModel()
+            if (selModel.hasSelection()) {
+                Ext.Msg.confirm("警告", "确定要委托吗？", function (button) {
+                    if (button == "yes") {
+                        var delegateUrl = grid.getViewModel().get("delegateUrl");
+                        var rows = selModel.getSelection();
+                        var ids = "";
+                        for (var i = 0; i < rows.length; i++) {
+                            if (rows[i] != null && rows[i].id != null) {
+                                ids += rows[i].id;
+                                if (i + 1 != rows.length) {
+                                    ids += ":";
+                                }
+                            }
+                        }
+                        Ext.Ajax.request({
+                            url: delegateUrl + "?taskIds=" + ids,
+                            method: 'GET',
+                            callback: function (options, success, response) {
+                                var resp = Ext.JSON.decode(response.responseText);
+                                Ext.MessageBox.alert(CONFIG.ALTER_TITLE_INFO, resp.msg);
+                                if (resp.success) {
+                                    var store = grid.getStore();
+                                    store.reload();
+                                }
+                            }
+                        });
+                    }
+                });
+            } else {
+                Ext.Msg.alert(CONFIG.ALTER_TITLE_ERROR, "请选择要操作的记录！");
+            }
         }
     }
+
+
 );
