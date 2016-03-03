@@ -28,7 +28,7 @@ Ext.define('kalix.admin.user.component.UserComboBox', {
             param = this.queryParam;
 
         if (param) {
-            params[param] = '{' + this.valueField + ':"' + queryString + '"}';
+            params[param] = '{' + this.displayField + ':"' + queryString + '"}';
         }
 
         return params;
