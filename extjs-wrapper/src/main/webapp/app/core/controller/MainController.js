@@ -304,7 +304,7 @@ Ext.define('kalix.core.controller.MainController', {
             var obj = Ext.decode(tag);
             var content = obj.content;
             var title = obj.title;
-            kalix.core.Notify.success(content, title,{timeOut:5000});
+            kalix.core.Notify.success(content, title);
         }
     },
 
@@ -316,6 +316,5 @@ Ext.define('kalix.core.controller.MainController', {
             messageBar.lookupViewModel().getData().message.set('iconCls', 'x-fa fa-envelope-o');
         else
             messageBar.lookupViewModel().getData().message.set('iconCls', 'x-fa fa-envelope');
-
     }
 });
