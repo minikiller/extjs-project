@@ -129,12 +129,12 @@ Ext.define('kalix.controller.BaseGridController', {
                         callback: function (options, success, response) {
                             var resp = Ext.JSON.decode(response.responseText);
                             if (resp.success) {
-                                kalix.core.Notify.success("操作成功", "提示", {timeOut: 1500});
+                                kalix.core.Notify.success(resp.msg, CONFIG.ALTER_TITLE_SUCCESS);
                                 var store = grid.getStore();
                                 store.reload();
                             }
                             else{
-                                kalix.core.Notify.success("操作失败", "提示", {timeOut: 1500});
+                                kalix.core.Notify.alert(CONFIG.ALTER_TITLE_FAILURE, resp.msg);
                             }
                         }
                     });
