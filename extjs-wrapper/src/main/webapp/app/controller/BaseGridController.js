@@ -105,9 +105,10 @@ Ext.define('kalix.controller.BaseGridController', {
             }
         });
     },
-    onRemoveBatch:function(){
-        var selModel = this.getView().getSelectionModel();
-        var deleteUrl = this.getViewModel().get("url");
+    onBatchDelete:function(){
+        var grid = this.getView();
+        var selModel = grid.getSelectionModel();
+        var batchDeleteUrl = this.getViewModel().get("batchDeleteUrl");
         if (selModel.hasSelection()) {
             Ext.Msg.confirm("警告", "确定要删除吗？", function (button) {
                 if (button == "yes") {
@@ -123,7 +124,7 @@ Ext.define('kalix.controller.BaseGridController', {
                         }
                     }
                     Ext.Ajax.request({
-                        url: deleteUrl + "?ids=" + ids,
+                        url: batchDeleteUrl + "?ids=" + ids,
                         method: 'DELETE',
                         callback: function (options, success, response) {
                             var resp = Ext.JSON.decode(response.responseText);
@@ -131,6 +132,9 @@ Ext.define('kalix.controller.BaseGridController', {
                                 kalix.core.Notify.success("操作成功", "提示", {timeOut: 1500});
                                 var store = grid.getStore();
                                 store.reload();
+                            }
+                            else{
+                                kalix.core.Notify.success("操作失败", "提示", {timeOut: 1500});
                             }
                         }
                     });
