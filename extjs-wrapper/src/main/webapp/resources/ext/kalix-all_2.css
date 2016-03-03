@@ -7793,7 +7793,7 @@ tr.x-grid-subtable-row {
 }
 /* http://localhost:1841/ext/packages/core/sass/src/list/TreeItem.scss:259 */
 .x-treelist-navigation .x-treelist-item-selected > .x-treelist-row:hover:before {
-    background-color: #57c6f8;
+    background-color: #b39964;
 }
 /* http://localhost:1841/ext/packages/core/sass/src/list/TreeItem.scss:263 */
 .x-treelist-navigation .x-treelist-item-selected > .x-treelist-row:before {
