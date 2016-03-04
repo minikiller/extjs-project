@@ -41,9 +41,9 @@
         <!--<karaf.bin.path>d:/java-develop/tools/apache-karaf-3.0.5/bin</karaf.bin.path>-->
         <!--<version.apache.karaf>3.0.5</version.apache.karaf>-->
         <karaf.version>4.0.4</karaf.version>
-        <karaf.etc.path>d:/java-develop/tools/apache-karaf-${karaf.version}/etc</karaf.etc.path>
-        <karaf.path>d:/java-develop/tools/apache-karaf-${karaf.version}/deploy</karaf.path>
-        <karaf.bin.path>d:/java-develop/tools/apache-karaf-${karaf.version}/bin</karaf.bin.path>
+        <karaf.etc.path>${karaf.path}/etc</karaf.etc.path>
+        <karaf.bin.path>${karaf.path}/bin</karaf.bin.path>
+        <karaf.deploy.path>${karaf.path}/deploy</karaf.deploy.path>
     </properties>
 
     <modules>
@@ -242,7 +242,7 @@
                                     <available file="target/${project.artifactId}-${project.version}.jar"/>
                                     <then>
                                         <copy file="target/${project.artifactId}-${project.version}.jar"
-                                              todir="${karaf.path}"/>
+                                              todir="${karaf.deploy.path}"/>
                                     </then>
 
                                     <else>
@@ -266,6 +266,20 @@
 
         </plugins>
     </build>
+    <profiles>
+        <profile>
+            <id>linux-env</id>
+            <properties>
+                <karaf.path>/home/kalix/java-develop/tools/apache-karaf-${karaf.version}</karaf.path>
+            </properties>
+        </profile>
+        <profile>
+            <id>windows-env</id>
+            <properties>
+                <karaf.path>d:/java-develop/tools/apache-karaf-${karaf.version}</karaf.path>
+            </properties>
+        </profile>
+    </profiles>
 
 
 </project>
