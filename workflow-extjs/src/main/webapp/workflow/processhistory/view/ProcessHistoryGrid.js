@@ -15,8 +15,6 @@ Ext.define('kalix.workflow.processhistory.view.ProcessHistoryGrid', {
     controller: {
         type: 'processHistoryGridController',
         storeId: 'processHistoryStore',
-        /*cfgForm: 'kalix.roffice.chance.view.TaskWindow',
-         cfgViewForm: 'kalix.roffice.chance.view.TaskViewWindow',*/
         cfgModel: 'kalix.workflow.processhistory.model.ProcessHistoryModel'
     },
     viewModel: {

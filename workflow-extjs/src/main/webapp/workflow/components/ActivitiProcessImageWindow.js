@@ -17,11 +17,17 @@ Ext.define('kalix.workflow.components.ActivitiProcessImageWindow', {
         this.callParent(arguments);
 
         var src = this.imgUrl;
+        var myMask = new Ext.LoadMask({
+            msg: '加 载 中 . . .',
+            target: this
+        });
 
         this.add(
             {xtype: 'image', src: src, alt: '图像无法显示'}
         );
         this.on('show', function () {
+            myMask.show();
+
             var runner = new Ext.util.TaskRunner();
             var scope = this;
             var task = Ext.TaskManager.start({
@@ -32,6 +38,7 @@ Ext.define('kalix.workflow.components.ActivitiProcessImageWindow', {
                         Ext.TaskManager.stop(task);
                         scope.setWidth(imgWidth + 30);
                         scope.setHeight(imgHeight + 100);
+                        myMask.hide();
                     }
                 },
                 interval: 10

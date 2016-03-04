@@ -8,7 +8,9 @@
 Ext.define('kalix.workflow.processhistory.controller.ProcessHistoryGridController', {
     extend: 'kalix.controller.BaseGridController',
     alias: 'controller.processHistoryGridController',
-
+    requires: [
+        'kalix.workflow.approve.view.ApproveWindow'
+    ],
     onOpenHistoryActivity: function (grid, rowIndex, colIndex) {
             var rec = grid.getStore().getAt(rowIndex);
             var businessKey=rec.data.businessKey;
@@ -28,39 +30,23 @@ Ext.define('kalix.workflow.processhistory.controller.ProcessHistoryGridControlle
                         method: 'GET',
                         callback: function (options, success, response) {
                             var component = Ext.JSON.decode(response.responseText);
-                            var activityHistoryStore = Ext.create('kalix.workflow.store.ActivityHistoryStore', {
-                                proxy: {
-                                    url: CONFIG.restRoot + '/camel/rest/workflow/activities?historyProcessId=' + rec.data.id
-                                }
-                            });
-                            var dataGird = Ext.create('kalix.workflow.view.ActivityHistoryGrid', {
-                                store: activityHistoryStore,
-                                //width: 605,
-                                height: 150
-                            });
-                            var dataGridFieldSet = Ext.create('Ext.form.FieldSet', {
-                                title: '流程历史列表'
-                            });
-                            dataGridFieldSet.add(dataGird);
-                            var showFormPanel = Ext.create(component.componentClass, {title: '流程历史查看'});
-                            //showFormPanel.down('#title').setValue(entity.title);
-                            //showFormPanel.down('#content').setValue(entity.content);
-                            //var win = Ext.create('Ext.Window', {
-                            //    border: false,
-                            //    modal: true,
-                            //    width: 605,
-                            //    //height: 480,
-                            //    title: '流程历史查看',
-                            //    //resizable:false,
-                            //    icon: 'admin/resources/images/group_edit.png',
-                            //    items: [showFormPanel, dataGridFieldSet]
-                            //});
-                            var vm = Ext.create('Ext.app.ViewModel', {data: {rec: entity}});
+                            var approvalWindow = Ext.create('kalix.workflow.approve.view.ApproveWindow');
+                            var vm = approvalWindow.lookupViewModel();
 
-                            showFormPanel.setViewModel(vm);
-                            showFormPanel.add(dataGridFieldSet);
-                            //this.getView().getViewModel.set('rec',record);
-                            showFormPanel.show();
+                            vm.set('title', '流程历史查看');
+                            vm.set('rec', entity);
+                            vm.set('view_operation', true);
+
+                            approvalWindow.insert(0, Ext.create(component.componentClass, {
+                                layout: {
+                                    type: 'table',
+                                    columns: 6
+                                }
+                            }));
+
+                            approvalWindow.show();
+                            approvalWindow.items.getAt(1).items.getAt(0).getStore().getProxy().extraParams = {historyProcessId: rec.data.processInstanceId};
+                            approvalWindow.items.getAt(1).items.getAt(0).getStore().load();
                         }
                     });
                 }

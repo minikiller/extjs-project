@@ -5,18 +5,23 @@
  * @version 1.0.0
  */
 Ext.define('kalix.workflow.view.ActivityHistoryGrid', {
-    extend: 'Ext.grid.Panel',
+    extend: 'kalix.view.components.common.BaseGrid',
     requires: [
-        'kalix.workflow.viewModel.WorkflowViewModel',
+        'kalix.workflow.store.ActivityHistoryStore',
+        'kalix.workflow.controller.ActivityHistoryGridController'
     ],
     alias: 'widget.activityHistoryGrid',
     xtype: 'activityHistoryGrid',
-    viewModel: {
-        type: 'workflowViewModel'
-    },
-    autoLoad: true,
+    autoLoad: false,
     stripeRows: true,
     manageHeight: true,
+    controller: {
+        type: 'activityHistoryGridController',
+        storeId: 'activityHistoryStore'
+    },
+    store: {
+        type: 'activityHistoryStore'
+    },
     columns: {
         defaults: {
             flex: 1

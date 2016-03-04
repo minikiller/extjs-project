@@ -83,11 +83,6 @@ Ext.define('kalix.workflow.task.view.TaskGrid', {
                         tooltip: '查看进度',
                         handler: 'onOpenCurrentProcess'
                     },
-                     {
-                         icon: "resources/images/workflow.png",
-                         tooltip: '查看流程历史',
-                         handler: 'onOpenHistoryActivity'
-                     },
                     {
                         icon: "admin/resources/images/control_play_blue.png",
                         tooltip: '流程审批',

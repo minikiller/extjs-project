@@ -20,7 +20,6 @@ Ext.define('kalix.workflow.viewModel.WorkflowViewModel', {
         processShowTitile: '流程查看',
         processShowUrl: '/image',
         historyActivityUrl: CONFIG.restRoot + '/camel/rest/workflow/activities'
-
     }
     /*formulas: {
      dirty: {

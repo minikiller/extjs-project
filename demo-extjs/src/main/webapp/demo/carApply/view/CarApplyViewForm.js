@@ -15,7 +15,7 @@ Ext.define('kalix.demo.carApply.view.CarApplyViewForm', {
             html: '吉林动画学院公务用车申请表',
             colspan: 6,
             customStyle: true,
-            bodyStyle: 'padding:15px 0px 15px 0px;font-size:30px;font-weight:bold;'
+            bodyStyle: 'padding:10px 0px 15px 0px;font-size:25px;font-weight:bold;'
         },
         {
             html: '申请部门'
@@ -87,31 +87,40 @@ Ext.define('kalix.demo.carApply.view.CarApplyViewForm', {
             customStyle: true,
             bodyStyle: 'padding:0px 0px 0px 0px;',
             defaults: {
-                width: 415,
+                width: 210,
                 fieldStyle: 'font-size:15px;text-align:center;',
                 readOnly: true,
+                height: 42,
+                border: false,
+                y: -1,
+                x: -1
             },
             items: [
                 {
                     xtype: 'datetimefield',
-                    y: -3,
-                    format: '开始: Y年m月d日 H时i分',
+                    format: 'Y年m月d日 H时i分',
                     bind: {
                         value: '{rec.beginDate}'
                     }
                 },
                 {
                     xtype: 'datetimefield',
-                    y: 25,
-                    format: '结束: Y年m月d日 H时i分',
+                    x: 232,
+                    format: 'Y年m月d日 H时i分',
                     bind: {
                         value: '{rec.endDate}'
                     }
+                },
+                {
+                    html: '至',
+                    width: 35,
+                    bodyStyle: 'font-size:15px;padding:10px;',
+                    x: 200
                 }
             ]
         },
         {
-            html: '用车起始<br/>地点'
+            html: '用车起始地点'
         },
         {
             colspan: 3,
@@ -168,7 +177,7 @@ Ext.define('kalix.demo.carApply.view.CarApplyViewForm', {
             ]
         },
         {
-            html: '申请人<br/>联系电话'
+            html: '联系电话'
         },
         {
             colspan: 2,
@@ -183,7 +192,7 @@ Ext.define('kalix.demo.carApply.view.CarApplyViewForm', {
             ]
         },
         {
-            html: '申请部门<br/>负责人'
+            html: '部门负责人'
         },
         {
             colspan: 2,
@@ -198,7 +207,7 @@ Ext.define('kalix.demo.carApply.view.CarApplyViewForm', {
             ]
         },
         {
-            html: '副校级领导审核'
+            html: '副校级领导'
         },
         {
             colspan: 2,
@@ -228,7 +237,7 @@ Ext.define('kalix.demo.carApply.view.CarApplyViewForm', {
             ]
         },
         {
-            html: '校务部主管<br/>领导(市外)'
+            html: '主管领导(市外)'
         },
         {
             colspan: 2,

@@ -11,7 +11,7 @@ Ext.define('kalix.view.login.Login', {
     controller: 'login',
     viewModel: 'loginViewModel',
     style: {
-        background: '#03558f url(resources/images/login_bg.jpg) right bottom no-repeat'
+        background: '#ffffff url(resources/images/login_bg.jpg) right bottom no-repeat'
     },
     items: [
         {
