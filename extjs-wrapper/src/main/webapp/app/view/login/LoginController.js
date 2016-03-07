@@ -21,7 +21,7 @@
  */
 Ext.define('kalix.view.login.LoginController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.login',
+    alias: 'controller.loginController',
     //处理回车键提交
     onKeyup: function (event, el) {
         if (event.getKey() == event.ENTER) {

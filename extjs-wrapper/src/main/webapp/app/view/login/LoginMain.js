@@ -15,8 +15,8 @@ Ext.define('kalix.view.login.LoginMain', {
     requires: [
         'kalix.view.login.LoginController'
     ],
-    xtype: 'login',
-    controller: 'login',
+    xtype: 'loginMain',
+    controller: 'loginController',
     icon: 'resources/images/lock.png',
     title: '系统登录',
     id: 'loginForm',
