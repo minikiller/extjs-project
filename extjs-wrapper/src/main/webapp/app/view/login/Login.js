@@ -18,7 +18,7 @@ Ext.define('kalix.view.login.Login', {
                 var rtn = Ext.JSON.decode(response.responseText);
 
                 if (rtn) {
-                    this.setStyle('background', rtn.color + ' url(resources/images/' + rtn.image + ') right bottom no-repeat');
+                    this.setStyle('background', rtn.color + ' url(resources/images/' + rtn.image + ') 100% 100% no-repeat');
                     var loginView = Ext.create(rtn.component);
 
                     this.add(loginView);
