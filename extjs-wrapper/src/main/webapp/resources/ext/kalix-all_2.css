@@ -7932,7 +7932,7 @@ tr.x-grid-subtable-row {
 }
 /* http://localhost:1841/classic/sass/src/view/main/Main.scss:93 */
 .sencha-logo {
-    background: #bda778 url(../images/logo_horizontal.png) 0px center no-repeat;
+    background: #bda778 url(../images/logo_horizontal.png) left top no-repeat;
     height: 68px;
     font-size: 16px;
     color: #fff;

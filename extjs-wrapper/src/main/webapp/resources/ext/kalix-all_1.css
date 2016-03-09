@@ -6789,9 +6789,9 @@ body > .x-mask {
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:840 */
 .x-btn.x-btn-menu-active.x-btn-default-small,
 .x-btn.x-btn-pressed.x-btn-default-small {
-    border-color: #2582ac;
+    border-color: #a38d61;
     background-image: none;
-    background-color: #288cb9;
+    background-color: #a69065;
 }
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/button/Button.scss:868 */

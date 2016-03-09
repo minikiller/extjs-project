@@ -40,7 +40,8 @@ Ext.define('kalix.core.view.Main', {
             reference: 'senchaLogo',
             cls: 'sencha-logo',
             html: '<div class="main-logo"></div>',
-            width: 250
+            width: 250,
+            height: 64
         }, {
             margin: '0 0 0 8',
             cls: 'delete-focus-bg',

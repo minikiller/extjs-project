@@ -2,14 +2,7 @@
 
 Ext.define('kalix.admin.Main', {
     extend: 'Ext.container.Container',
-
-    layout: 'vbox',
-    padding: 10,
-
-    items: [
-      {
-        xtype: 'container',
-        html : '系统首页'
-      }
-    ]
+    style: {
+        background: '#fff url(' + CONFIG.restRoot + '/admin/resources/images/main.png) 100% 100% no-repeat'
+    }
 });

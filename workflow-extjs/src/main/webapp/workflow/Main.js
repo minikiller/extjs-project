@@ -2,12 +2,7 @@
 
 Ext.define('kalix.workflow.Main', {
     extend: 'Ext.container.Container',
-
-    layout: 'vbox',
-    padding: 10,
-
-    items: [{
-        xtype: 'container',
-        html : '工作流演示系统首页'
-      }]
+    style: {
+        background: '#fff url(' + CONFIG.restRoot + '/workflow/resources/images/main.png) 100% 100% no-repeat'
+    }
 });
