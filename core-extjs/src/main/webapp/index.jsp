@@ -9,10 +9,10 @@
 
     <title>kalix</title>
     <link rel="icon" href="resources/images/favicon.ico" type="image/x-icon"/>
-    <link href="<%=path %>/resources/ext/kalix-all.css" rel="stylesheet"/>
+    <link href="<%=path %>/resources/ext/classic/theme-triton/theme-triton-all.css" rel="stylesheet"/>
     <script type="text/javascript" src="<%=path %>/resources/js/Config.js"></script>
     <script type="text/javascript">CONFIG.restRoot = '<%=path %>';</script>
-    <script type="text/javascript" src="<%=path %>/resources/js/ext-all-debug.js"></script>
+    <script type="text/javascript" src="<%=path %>/resources/ext/ext-all-debug.js"></script>
     <script type="text/javascript" src="<%=path %>/resources/js/underscore-min.js"></script>
     <script type="text/javascript" src="<%=path %>/resources/js/locale-zh_CN.js"></script>
     <script type="text/javascript" src="<%=path %>/resources/js/app.js"></script>
