@@ -53,20 +53,20 @@ Ext.define('kalix.admin.depNoArea.controller.DepNoAreaController', {
      * 机构刷新
      */
     onOrgRefersh: function () {
-        Ext.ComponentQuery.query('depNoAreaPanel')[0].down('#mainPanel>#depNoAreaOrgTreeList').getStore().reload();
+        Ext.ComponentQuery.query('depNoAreaPanel')[0].down('#depNoAreaOrgTreeList').getStore().reload();
     },
     /**
      * 机构展开
      */
     onOrgExpandAll: function () {
-        Ext.ComponentQuery.query('depNoAreaPanel')[0].down('#mainPanel>#depNoAreaOrgTreeList').expandAll(function () {
+        Ext.ComponentQuery.query('depNoAreaPanel')[0].down('#depNoAreaOrgTreeList').expandAll(function () {
         });
     },
     /**
      * 机构收起
      */
     onOrgCollapseAll: function () {
-        Ext.ComponentQuery.query('depNoAreaPanel')[0].down('#mainPanel>#depNoAreaOrgTreeList').collapseAll(function () {
+        Ext.ComponentQuery.query('depNoAreaPanel')[0].down('#depNoAreaOrgTreeList').collapseAll(function () {
         });
     },
     /**

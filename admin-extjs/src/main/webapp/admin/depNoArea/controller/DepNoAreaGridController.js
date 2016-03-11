@@ -92,7 +92,7 @@ Ext.define('kalix.admin.depNoArea.controller.DepNoAreaGridController', {
                 url: departmentUserUrl,
                 paramsAsJson: true,
                 params: {
-                    'depNoAreaId': depNoAreaId,
+                    'depId': depNoAreaId,
                     'userIds': userIds.join(',')
                 },
                 method: 'GET',

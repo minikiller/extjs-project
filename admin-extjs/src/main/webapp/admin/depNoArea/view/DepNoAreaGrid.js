@@ -33,9 +33,8 @@ Ext.define('kalix.admin.depNoArea.view.DepNoAreaGrid', {
         defaults: {flex: 1},
         items:[
         {text: '编号', dataIndex: 'id', hidden: true},
-        {text: '上级部门', dataIndex: 'parentName', hidden: true},
+        {text: '上级部门', dataIndex: 'parentName', hidden: true}, {xtype: 'treecolumn', text: '名称', dataIndex: 'name'},
         {text: '部门代码', dataIndex: 'code'},
-        {text: '中心代码', dataIndex: 'centerCode'},
         {text: '创建人', dataIndex: 'createBy'},
         {
             text: '创建日期', dataIndex: 'creationDate', renderer: function (value) {
