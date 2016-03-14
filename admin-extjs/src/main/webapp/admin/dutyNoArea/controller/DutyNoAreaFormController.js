@@ -5,9 +5,9 @@
  *         date:2016-3-10
  * @version 1.0.0
  */
-Ext.define('kalix.admin.depNoArea.controller.DepNoAreaFormController', {
+Ext.define('kalix.admin.dutyNoArea.controller.DutyNoAreaFormController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.depNoAreaFormController',
+    alias: 'controller.dutyNoAreaFormController',
 
     /**
      * 重置操作.
@@ -33,7 +33,7 @@ Ext.define('kalix.admin.depNoArea.controller.DepNoAreaFormController', {
             form.submit({
                 success: function (form, action) {
                     Ext.Msg.alert(CONFIG.ALTER_TITLE_SUCCESS, action.result.msg);
-                    var grid = Ext.ComponentQuery.query('depNoAreaGridPanel')[0];
+                    var grid = Ext.ComponentQuery.query('dutyNoAreaGridPanel')[0];
                     var store = grid.getStore();
                     store.reload();
                 },

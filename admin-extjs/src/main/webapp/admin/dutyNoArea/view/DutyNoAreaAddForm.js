@@ -5,18 +5,18 @@
  *         date:2016-3-10
  * @version 1.0.0
  */
-Ext.define('kalix.admin.depNoArea.view.DepNoAreaAddForm', {
+Ext.define('kalix.admin.dutyNoArea.view.DutyNoAreaAddForm', {
     extend: 'Ext.FormPanel',
     requires: [
-        'kalix.admin.depNoArea.viewModel.DepNoAreaViewModel',
-        'kalix.admin.depNoArea.controller.DepNoAreaFormController'
+        'kalix.admin.dutyNoArea.viewModel.DutyNoAreaViewModel',
+        'kalix.admin.dutyNoArea.controller.DutyNoAreaFormController'
     ],
-    alias: 'widget.depNoAreaAddForm',
+    alias: 'widget.dutyNoAreaAddForm',
     viewModel: {
-        type: 'depNoAreaViewModel'
+        type: 'dutyNoAreaViewModel'
     },
-    controller: 'depNoAreaFormController',
-    xtype: "depNoAreaAddForm",
+    controller: 'dutyNoAreaFormController',
+    xtype: "dutyNoAreaAddForm",
     labelAlign: 'center',
     labelWidth: 75,
     autoWidth: true,
@@ -27,12 +27,10 @@ Ext.define('kalix.admin.depNoArea.view.DepNoAreaAddForm', {
     buttonAlign: "center",
     defaultType: 'textfield',
     items: [
-        {xtype: 'hiddenfield', name: 'parentId', itemId: 'parentIdId', value: '-1'},
-        {xtype: 'hiddenfield', name: 'orgId', itemId: 'orgIdId', value: '-1'},
-        {xtype: 'hiddenfield', name: 'isLeaf',value:'1'},
+        {xtype: 'hiddenfield', name: 'depid'},
         {
-            fieldLabel: '所属机构',
-            itemId: "orgName",
+            fieldLabel: '所属部门',
+            itemId: "depName",
             isFormField: false,
             disabled:true,
             beforeLabelTpl: [
@@ -40,30 +38,10 @@ Ext.define('kalix.admin.depNoArea.view.DepNoAreaAddForm', {
             ]
         },
         {
-            fieldLabel: '上级部门',
-            itemId: "parentName",
-            isFormField: false,
-            disabled:true,
-            beforeLabelTpl: [
-                '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
-            ]
-        },
-        {
-            fieldLabel: '名称',
-            itemId: 'nameId',
+            fieldLabel: '职位名称',
             name: 'name',
             allowBlank: false,
             blankText: '名称不能为空!',
-            beforeLabelTpl: [
-                '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
-            ]
-        },
-        {
-            fieldLabel: '机构代码',
-            itemId: 'codeId',
-            name: 'code',
-            allowBlank: false,
-            blankText: '机构不能为空!',
             beforeLabelTpl: [
                 '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
             ]

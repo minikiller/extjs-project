@@ -21,11 +21,12 @@ Ext.define('kalix.admin.dutyNoArea.controller.DutyNoAreaController', {
         var panel = Ext.create('Ext.panel.Panel', {
             layout: 'hbox',
             itemId: 'mainPanel',
+            indexId: 0,
             autoScroll: true,
             items: [
-                {xtype: 'container', padding:'10 10 10 0', flex: 1, items: [this.onInitOrgTreeList()]}//,
-                //{xtype: 'container', padding:'10 10 10 0', flex: 1, items: [this.onInitDepTreeList()]}//,
-                //{xtype: 'container', padding:'10 10 10 0',flex: 3, items: [this.onInitDataGrid()]}
+                {xtype: 'container', padding:10, flex: 1, items: [this.onInitOrgTreeList()]},
+                {xtype: 'container', padding:'10 10 10 0', flex: 1, items: [this.onInitDepTreeList()]},
+                {xtype: 'container', padding:'10 10 10 0',flex: 3, items: [this.onInitDataGrid()]}
             ]
         });
 
@@ -40,11 +41,19 @@ Ext.define('kalix.admin.dutyNoArea.controller.DutyNoAreaController', {
      * @param e
      */
     onOrgClick: function (view, record, item, index, e) {
+        //var grid = Ext.ComponentQuery.query('depNoAreaTreeList')[0];
+        //grid.orgId = record.data.id;
+        //grid.orgName = record.data.name;
+        //var store = grid.getStore();
+        //store.setProxy({
+        //    type: 'ajax',
+        //    url: CONFIG.restRoot + '/camel/rest/deps/org/' + record.data.id
+        //});
+        //store.reload();
 
-        var grid = Ext.ComponentQuery.query('depNoAreaGridPanel')[0];
-        grid.orgId = record.data.id;
-        grid.orgName = record.data.name;
-        var store = grid.getStore();
+        var OrgTreeList=view.findParentByType('panel').findParentByType('panel').items.getAt(1).items.getAt(0);
+
+        var store = OrgTreeList.getStore();
         store.setProxy({
             type: 'ajax',
             url: CONFIG.restRoot + '/camel/rest/deps/org/' + record.data.id
@@ -60,13 +69,13 @@ Ext.define('kalix.admin.dutyNoArea.controller.DutyNoAreaController', {
      * @param e
      */
     onDepClick: function (view, record, item, index, e) {
-        var grid = Ext.ComponentQuery.query('depNoAreaGridPanel')[0];
-        grid.orgId = record.data.id;
-        grid.orgName = record.data.name;
+        var grid = Ext.ComponentQuery.query('dutyNoAreaGridPanel')[0];
+        grid.depId = record.data.id;
+        grid.depName = record.data.name;
         var store = grid.getStore();
         store.setProxy({
             type: 'ajax',
-            url: CONFIG.restRoot + '/camel/rest/deps/duty/' + record.data.id
+            url: CONFIG.restRoot + '/camel/rest/dutys/' + record.data.id
         });
         store.reload();
     },
@@ -96,7 +105,7 @@ Ext.define('kalix.admin.dutyNoArea.controller.DutyNoAreaController', {
      */
     onInitOrgTreeList: function () {
         var orgTreeListPanel = Ext.create('kalix.admin.orgNoArea.view.OrgNoAreaTreeList', {
-            store: Ext.create('kalix.admin.orgNoArea.store.OrgNoAreaStore'),
+            store: Ext.create('kalix.admin.orgNoArea.store.OrgNoAreaStore',{proxy:{url:CONFIG.restRoot + '/camel/rest/orgs/'}}),
             itemId: 'dutyNoAreaOrgTreeList',
             region: 'west',
             title: '机构列表',

@@ -7,8 +7,8 @@
 Ext.define('kalix.admin.dutyNoArea.view.DutyNoAreaGrid', {
     extend: 'Ext.tree.Panel',
     requires: [
-        'kalix.admin.depNoArea.viewModel.DepNoAreaViewModel',
-        'kalix.admin.depNoArea.controller.DepNoAreaGridController'
+        'kalix.admin.dutyNoArea.viewModel.DutyNoAreaViewModel',
+        'kalix.admin.dutyNoArea.controller.DutyNoAreaGridController'
     ],
     alias: 'widget.dutyNoAreaGrid',
     xtype: 'dutyNoAreaGridPanel',
@@ -18,10 +18,9 @@ Ext.define('kalix.admin.dutyNoArea.view.DutyNoAreaGrid', {
     },
     data: {
         orgId: null,
-        orgName: null,
-        areaName: null
+        orgName: null
     },
-    title: '部门列表',
+    title: '职位列表',
     iconCls: 'x-fa fa-university',
     stripeRows: true,
     manageHeight: true,
@@ -33,8 +32,8 @@ Ext.define('kalix.admin.dutyNoArea.view.DutyNoAreaGrid', {
         defaults: {flex: 1},
         items:[
         {text: '编号', dataIndex: 'id', hidden: true},
-        {text: '上级部门', dataIndex: 'parentName', hidden: true}, {xtype: 'treecolumn', text: '名称', dataIndex: 'name'},
-        {text: '部门代码', dataIndex: 'code'},
+        {text: '职务名称', dataIndex: 'name', hidden: true},
+        {text: '所属部门', dataIndex: 'depid'},
         {text: '创建人', dataIndex: 'createBy'},
         {
             text: '创建日期', dataIndex: 'creationDate', renderer: function (value) {

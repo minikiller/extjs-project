@@ -5,9 +5,9 @@
  *         date:2016-3-10
  * @version 1.0.0
  */
-Ext.define('kalix.admin.depNoArea.controller.DepNoAreaGridController', {
+Ext.define('kalix.admin.dutyNoArea.controller.DutyNoAreaGridController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.depNoAreaGridController',
+    alias: 'controller.dutyNoAreaGridController',
     requires: [
         'kalix.admin.user.view.UserAddItemSelector'
     ],
@@ -25,25 +25,16 @@ Ext.define('kalix.admin.depNoArea.controller.DepNoAreaGridController', {
      * @returns {Ext.panel.Panel}
      */
     onAdd: function () {
-        if(this.getView().orgId==null||this.getView().orgName==null){
-            Ext.Msg.alert(CONFIG.ALTER_TITLE_FAILURE, '请选择一个机构!');
+        if(this.getView().depId==null||this.getView().depName==null){
+            Ext.Msg.alert(CONFIG.ALTER_TITLE_FAILURE, '请选择一个部门!');
             return;
         }
         var rows = this.getView().getSelectionModel().getSelection();
-        var addFormPanel = Ext.create('kalix.admin.depNoArea.view.DepNoAreaAddForm', {
+        var addFormPanel = Ext.create('kalix.admin.dutyNoArea.view.DutyNoAreaAddForm', {
             url: this.getView().getViewModel().get('url')
         });
-        addFormPanel.down('#orgIdId').setValue(this.getView().orgId);
-        addFormPanel.down('#orgName').setValue(this.getView().orgName);
-        if(rows!=null&&rows.length>0){
-            if(rows[0]!=null){
-                addFormPanel.down('#parentName').setValue(rows[0].data.name);
-                addFormPanel.down('#parentIdId').setValue(rows[0].data.id);
-            }
-        }else{
-            addFormPanel.down('#parentName').setValue('根部门');
-            addFormPanel.down('#parentIdId').setValue(-1);
-        }
+        addFormPanel.down('#depName').setValue(this.getView().depName);
+
         var win = Ext.create('Ext.Window', {
             width: 400,
             border: false,

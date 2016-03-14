@@ -4,17 +4,17 @@
  *         date:2016-3-10
  * @version 1.0.0
  */
-Ext.define('kalix.admin.depNoArea.view.DepNoAreaTreeList', {
+Ext.define('kalix.admin.dutyNoArea.view.DutyNoAreaTreeList', {
     extend: 'Ext.tree.Panel',
     requires: [
-        'kalix.admin.depNoArea.viewModel.DepNoAreaViewModel',
-        'kalix.admin.depNoArea.controller.DepNoAreaGridController'
+        'kalix.admin.dutyNoArea.viewModel.DutyNoAreaViewModel',
+        'kalix.admin.dutyNoArea.controller.DutyNoAreaGridController'
     ],
-    alias: 'widget.depNoAreaTreeList',
-    xtype: 'depNoAreaTreeList',
-    controller: 'depNoAreaGridController',
+    alias: 'widget.dutyNoAreaTreeList',
+    xtype: 'dutyNoAreaTreeList',
+    controller: 'dutyNoAreaGridController',
     viewModel: {
-        type: 'depNoAreaViewModel'
+        type: 'dutyNoAreaViewModel'
     },
     constructor:function(){
         this.callParent(arguments);

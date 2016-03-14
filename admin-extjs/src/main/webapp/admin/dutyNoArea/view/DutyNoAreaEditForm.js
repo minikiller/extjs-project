@@ -5,18 +5,18 @@
  *         date:2016-3-10
  * @version 1.0.0
  */
-Ext.define('kalix.admin.depNoArea.view.DepNoAreaEditForm', {
+Ext.define('kalix.admin.dutyNoArea.view.DutyNoAreaEditForm', {
     extend: 'Ext.FormPanel',
     requires: [
-        'kalix.admin.depNoArea.viewModel.DepNoAreaViewModel',
-        'kalix.admin.depNoArea.controller.DepNoAreaFormController'
+        'kalix.admin.dutyNoArea.viewModel.DutyNoAreaViewModel',
+        'kalix.admin.dutyNoArea.controller.DutyNoAreaFormController'
     ],
-    alias: 'widget.depNoAreaEditForm',
+    alias: 'widget.dutyNoAreaEditForm',
     viewModel: {
-        type: 'depNoAreaViewModel'
+        type: 'dutyNoAreaViewModel'
     },
-    controller: 'depNoAreaFormController',
-    xtype: 'depNoAreaEditForm',
+    controller: 'dutyNoAreaFormController',
+    xtype: 'dutyNoAreaEditForm',
     labelAlign: 'center',
     labelWidth: 75,
     autoWidth: true,
