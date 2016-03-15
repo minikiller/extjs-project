@@ -53,7 +53,7 @@ Ext.define('kalix.admin.dutyNoArea.controller.DutyNoAreaFormController', {
             form.submit({
                 success: function (form, action) {
                     Ext.Msg.alert(CONFIG.ALTER_TITLE_SUCCESS, action.result.msg);
-                    var grid = Ext.ComponentQuery.query('depNoAreaGridPanel')[0];
+                    var grid = Ext.ComponentQuery.query('dutyNoAreaGridPanel')[0];
                     var store = grid.getStore();
                     store.reload();
                 },

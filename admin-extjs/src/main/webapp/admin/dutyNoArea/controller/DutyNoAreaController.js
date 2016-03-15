@@ -70,12 +70,12 @@ Ext.define('kalix.admin.dutyNoArea.controller.DutyNoAreaController', {
      */
     onDepClick: function (view, record, item, index, e) {
         var grid = Ext.ComponentQuery.query('dutyNoAreaGridPanel')[0];
-        grid.depId = record.data.id;
+        grid.depid = record.data.id;
         grid.depName = record.data.name;
         var store = grid.getStore();
         store.setProxy({
             type: 'ajax',
-            url: CONFIG.restRoot + '/camel/rest/dutys/' + record.data.id
+            url: CONFIG.restRoot + '/camel/rest/dutys/dep/' + record.data.id
         });
         store.reload();
     },

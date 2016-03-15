@@ -16,10 +16,6 @@ Ext.define('kalix.admin.dutyNoArea.view.DutyNoAreaGrid', {
     viewModel: {
         type: 'dutyNoAreaViewModel'
     },
-    data: {
-        orgId: null,
-        orgName: null
-    },
     title: '职位列表',
     iconCls: 'x-fa fa-university',
     stripeRows: true,
@@ -31,9 +27,10 @@ Ext.define('kalix.admin.dutyNoArea.view.DutyNoAreaGrid', {
     columns: {
         defaults: {flex: 1},
         items:[
-        {text: '编号', dataIndex: 'id', hidden: true},
-        {text: '职务名称', dataIndex: 'name', hidden: true},
+        {text: '编号', dataIndex: 'id'},
+        {text: '职位名称', dataIndex: 'name'},
         {text: '所属部门', dataIndex: 'depid'},
+        {text: '职位描述', dataIndex: 'comment'},
         {text: '创建人', dataIndex: 'createBy'},
         {
             text: '创建日期', dataIndex: 'creationDate', renderer: function (value) {
@@ -47,18 +44,11 @@ Ext.define('kalix.admin.dutyNoArea.view.DutyNoAreaGrid', {
             items: [{
                 icon: "admin/resources/images/pencil.png",
                 tooltip: '编辑',
-                handler: 'onEdit',
-                isDisabled: function (view, rowIdx, colIdx, item, record) {
-                    return record.data.name == "根部门" ? true : false;
-                }
+                handler: 'onEdit'
             }, {
                 icon: "admin/resources/images/cancel.png",
                 tooltip: '删除',
-                handler: 'onDelete',
-                isDisabled: function (view, rowIdx, colIdx, item, record) {
-                    return record.data.name == "根机构" ? true : false;
-                }
-
+                handler: 'onDelete'
             }, {
                 icon: "admin/resources/images/group_add.png",
                 tooltip: '添加用户',

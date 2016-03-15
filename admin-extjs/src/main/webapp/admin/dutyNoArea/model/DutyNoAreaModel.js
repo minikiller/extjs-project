@@ -10,6 +10,7 @@ Ext.define('kalix.admin.dutyNoArea.model.DutyNoAreaModel', {
     fields: [
         {name: 'id', type: 'string'},
         {name: 'name', type: 'string'},
-        {name: 'depId', type: 'int'}
+        {name: 'comment', type: 'string'},
+        {name: 'depid', type: 'long'}
     ]
 });
