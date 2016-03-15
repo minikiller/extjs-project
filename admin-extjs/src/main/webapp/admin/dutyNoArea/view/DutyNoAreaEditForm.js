@@ -29,12 +29,10 @@ Ext.define('kalix.admin.dutyNoArea.view.DutyNoAreaEditForm', {
     buttonAlign: "center",
     items: [
         {xtype: 'hiddenfield', name: 'id'},
-        //{xtype: 'hiddenfield', name: 'parentId', itemId: 'parentIdId', value: '-1'},
-        {xtype: 'hiddenfield', name: 'orgId', itemId: 'orgIdId', value: '-1'},
-        {xtype: 'hiddenfield', name: 'isLeaf',value:'1'},
+        {xtype: 'hiddenfield', name: 'depid', itemId: 'depidId', value: '-1'},
         {
             fieldLabel: '所属机构',
-            itemId: "orgName",
+            itemId: "depName",
             isFormField: false,
             disabled:true,
             beforeLabelTpl: [
@@ -42,16 +40,7 @@ Ext.define('kalix.admin.dutyNoArea.view.DutyNoAreaEditForm', {
             ]
         },
         {
-            fieldLabel: '上级部门',
-            itemId: "parentName",
-            isFormField: false,
-            disabled:true,
-            beforeLabelTpl: [
-                '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
-            ]
-        },
-        {
-            fieldLabel: '名称',
+            fieldLabel: '职位名称',
             itemId: 'nameId',
             name: 'name',
             allowBlank: false,
@@ -61,14 +50,9 @@ Ext.define('kalix.admin.dutyNoArea.view.DutyNoAreaEditForm', {
             ]
         },
         {
-            fieldLabel: '部门代码',
-            itemId: 'codeId',
-            name: 'code',
-            allowBlank: false,
-            blankText: '部门不能为空!',
-            beforeLabelTpl: [
-                '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
-            ]
+            fieldLabel: '职位描述',
+            itemId: 'commentId',
+            name: 'comment'
         }
     ],
     buttons: [

@@ -27,7 +27,17 @@ Ext.define('kalix.admin.dutyNoArea.view.DutyNoAreaAddForm', {
     buttonAlign: "center",
     defaultType: 'textfield',
     items: [
-        {xtype: 'hiddenfield', name: 'depid'},
+        //{xtype: 'hiddenfield', name: 'depid',isFormField: true},
+        {
+            fieldLabel: '部门编号',
+            itemId: "depid",
+            name: "depid",
+            isFormField: true,
+            editable:false,
+            beforeLabelTpl: [
+                '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
+            ]
+        },
         {
             fieldLabel: '所属部门',
             itemId: "depName",
@@ -45,6 +55,10 @@ Ext.define('kalix.admin.dutyNoArea.view.DutyNoAreaAddForm', {
             beforeLabelTpl: [
                 '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
             ]
+        },
+        {
+            fieldLabel: '职位描述',
+            name: 'comment'
         }
     ],
     buttons: [

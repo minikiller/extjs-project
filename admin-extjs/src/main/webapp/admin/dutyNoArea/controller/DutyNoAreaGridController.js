@@ -25,7 +25,7 @@ Ext.define('kalix.admin.dutyNoArea.controller.DutyNoAreaGridController', {
      * @returns {Ext.panel.Panel}
      */
     onAdd: function () {
-        if(this.getView().depId==null||this.getView().depName==null){
+        if(this.getView().depid==null||this.getView().depName==null){
             Ext.Msg.alert(CONFIG.ALTER_TITLE_FAILURE, '请选择一个部门!');
             return;
         }
@@ -33,6 +33,7 @@ Ext.define('kalix.admin.dutyNoArea.controller.DutyNoAreaGridController', {
         var addFormPanel = Ext.create('kalix.admin.dutyNoArea.view.DutyNoAreaAddForm', {
             url: this.getView().getViewModel().get('url')
         });
+        addFormPanel.down('#depid').setValue(this.getView().depid);
         addFormPanel.down('#depName').setValue(this.getView().depName);
 
         var win = Ext.create('Ext.Window', {
@@ -54,11 +55,11 @@ Ext.define('kalix.admin.dutyNoArea.controller.DutyNoAreaGridController', {
      */
     onEdit: function (grid, rowIndex, colIndex) {
         var rec = grid.getStore().getAt(rowIndex);
-        var editFormPanel = Ext.create('kalix.admin.depNoArea.view.DepNoAreaEditForm', {
+        var editFormPanel = Ext.create('kalix.admin.dutyNoArea.view.DutyNoAreaEditForm', {
             url: this.getView().getViewModel().get('url')
         });
-        editFormPanel.down('#parentName').setValue(rec.data.parentName);
-        editFormPanel.down('#orgName').setValue(this.getView().orgName);
+        editFormPanel.down('#depName').setValue(this.getView().depName);
+        editFormPanel.down('#nameId').setValue(this.getView().name);
         editFormPanel.loadRecord(rec);
 
         var win = Ext.create('Ext.Window', {
@@ -75,12 +76,12 @@ Ext.define('kalix.admin.dutyNoArea.controller.DutyNoAreaGridController', {
     /**
      * 保存添加信息
      */
-    onSaveAddUser: function (departmentUserUrl, userAddForm, rec) {
+    onSaveAddUser: function (dutyUserUrl, userAddForm, rec) {
         if (userAddForm != null && userAddForm.isValid()) {
             var userIds = userAddForm.down('#userAddItemSelector').getValue();
             var depNoAreaId = rec.data.id;
             Ext.Ajax.request({
-                url: departmentUserUrl,
+                url: dutyUserUrl,
                 paramsAsJson: true,
                 params: {
                     'depId': depNoAreaId,
@@ -104,7 +105,7 @@ Ext.define('kalix.admin.dutyNoArea.controller.DutyNoAreaGridController', {
     onAddUser: function (grid, rowIndex, colIndex) {
         var rec = grid.getStore().getAt(rowIndex);
         if (rec == null) {
-            Ext.MessageBox.alert(CONFIG.ALTER_TITLE_INFO, '请选择要添加用户的部门!');
+            Ext.MessageBox.alert(CONFIG.ALTER_TITLE_INFO, '请选择要添加用户的职位!');
             return;
         }
 
@@ -120,7 +121,7 @@ Ext.define('kalix.admin.dutyNoArea.controller.DutyNoAreaGridController', {
                 {
                     xtype: 'displayfield',
                     labelAlign: 'right',
-                    fieldLabel: '&nbsp;&nbsp;&nbsp;&nbsp;部门',
+                    fieldLabel: '&nbsp;&nbsp;&nbsp;&nbsp;职位',
                     labelWidth: 60,
                     value: rec.data.name
                 }]
@@ -131,11 +132,12 @@ Ext.define('kalix.admin.dutyNoArea.controller.DutyNoAreaGridController', {
             target: win
         });
         loadMask.show();
-        var departmentUserUrl = this.getView().getViewModel().get('url') + '/departmentUsers';
+        var dutyUserUrl = this.getView().getViewModel().get('url') + '/dutyUsers';
+        //var dutyUserUrl = '/kalix/camel/rest/deps/departmentUsers';
         var me = this;
         //获得已选用户
         Ext.Ajax.request({
-            url: departmentUserUrl + '/users/' + rec.data.id,
+            url: dutyUserUrl + '/users/' + rec.data.id,
             method: 'GET',
             callback: function (options, success, response) {
                 var users = Ext.JSON.decode(response.responseText);
@@ -143,7 +145,7 @@ Ext.define('kalix.admin.dutyNoArea.controller.DutyNoAreaGridController', {
                 dataSotre.setProxy({
                     type: 'ajax',
                     limitParam: null,
-                    url: departmentUserUrl + '/users/all/' + rec.data.id,
+                    url: dutyUserUrl + '/users/all/' + rec.data.id,
                     reader: {
                         type: 'json',
                         root: 'data',
@@ -168,7 +170,7 @@ Ext.define('kalix.admin.dutyNoArea.controller.DutyNoAreaGridController', {
                     buttons: [
                         {
                             text: '保存', glyph: 'xf0c7@FontAwesome', handler: function () {
-                            me.onSaveAddUser(departmentUserUrl, this.up('#addUserForm'), rec);
+                            me.onSaveAddUser(dutyUserUrl, this.up('#addUserForm'), rec);
                         }
                         },
                         {
@@ -198,7 +200,7 @@ Ext.define('kalix.admin.dutyNoArea.controller.DutyNoAreaGridController', {
         Ext.Msg.confirm('警告', '确定要删除吗？', function (button) {
             if (button == 'yes') {
                 Ext.Ajax.request({
-                    url: deleteUrl + '?id=' + rec.id,
+                    url: deleteUrl + '/' + rec.id,
                     method: 'DELETE',
                     callback: function (options, success, response) {
                         var resp = Ext.JSON.decode(response.responseText);
