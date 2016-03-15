@@ -27,37 +27,69 @@ Ext.define('kalix.core.view.Main', {
         type: 'vbox',
         align: 'stretch'
     },
-    listeners:{
-        afterrender:'afterrender'
+    listeners: {
+        afterrender: 'afterrender'
     },
     items: [{
         xtype: 'toolbar',
         cls: 'sencha-dash-dash-headerbar toolbar-btn-shadow',
         height: 64,
         itemId: 'headerBar',
-        items: [{
-            xtype: 'component',
-            reference: 'senchaLogo',
-            cls: 'sencha-logo',
-            html: '<div class="main-logo" style="background: url(resources/images/logo_horizontal.png) 0 no-repeat;width: 100%;height: 100%;"></div>',//<img style="margin-left:0px" src="resources/images/logo_horizontal.png"/>
-            width: 250
-        }, {
-            margin: '0 0 0 8',
-            xtype:'button',
-            //cls: 'delete-focus-bg',
-            iconCls: 'x-fa fa-navicon',
-            id: 'main-navigation-btn',
-            handler: 'onToggleNavigationSize'
-        }, {
-            xtype: 'maintoolbar'
-        }, {
-            xtype: 'tbspacer',
-            flex: 1
-        }, {
-            xtype: 'messagebar'
-        }, {
-            xtype: 'profilebar'
-        }
+        items: [
+            {
+                xtype: 'component',
+                reference: 'senchaLogo',
+                cls: 'sencha-logo',
+                html: '<div class="main-logo" style="background: url(resources/images/logo_horizontal.png) 0 no-repeat;width: 100%;height: 100%;"></div>',//<img style="margin-left:0px" src="resources/images/logo_horizontal.png"/>
+                width: 250
+            },
+            {
+                margin: '0 0 0 8',
+                xtype: 'button',
+                //cls: 'delete-focus-bg',
+                iconCls: 'x-fa fa-navicon',
+                id: 'main-navigation-btn',
+                handler: 'onToggleNavigationSize'
+            },
+            {
+                xtype: 'maintoolbar'
+            },
+            {
+                xtype: 'tbspacer',
+                flex: 1
+            },
+            {
+                xtype: 'messagebar'
+            },
+            {
+                xtype: 'profilebar'
+            },
+            {
+                xtype: 'combo',
+                displayField: 'alias',
+                valueField: 'name',
+                width: 75,
+                textAlign: 'center',
+                store: {
+                    data: [
+                        {
+                            name: 'theme-triton',
+                            alias: '蓝色'
+                        },
+                        {
+                            name: 'theme-aria',
+                            alias: '黑色'
+                        },
+                        {
+                            name: 'theme-classic',
+                            alias: '经典'
+                        }
+                    ]
+                },
+                bind: {
+                    value: '{theme}'
+                }
+            }
         ]
     }, {
         xtype: 'maincontainerwrap',
