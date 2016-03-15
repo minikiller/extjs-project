@@ -23,7 +23,7 @@ Ext.define('kalix.admin.orgNoArea.controller.OrgNoAreaController', {
             itemId: 'mainPanel',
             items: [
                 {xtype:'container', flex: 3, padding:'10 10 10 0',items:[this.onInitDataGrid()]}]
-        })
+        });
 
         return panel;
     },

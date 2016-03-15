@@ -25,7 +25,7 @@ Ext.define('kalix.admin.depNoArea.controller.DepNoAreaController', {
                 {xtype: 'container', padding:'10 10 10 0', flex: 1, items: [this.onInitOrgTreeList()]},
                 {xtype: 'container', padding:'10 10 10 0',flex: 3, items: [this.onInitDataGrid()]}
             ]
-        })
+        });
 
         return panel;
     },
