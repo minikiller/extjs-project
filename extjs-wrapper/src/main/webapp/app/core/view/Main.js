@@ -68,8 +68,9 @@ Ext.define('kalix.core.view.Main', {
                 xtype: 'combo',
                 displayField: 'alias',
                 valueField: 'name',
-                width: 75,
+                width: 85,
                 textAlign: 'center',
+                firstLoad: true,
                 store: {
                     data: [
                         {
@@ -88,6 +89,9 @@ Ext.define('kalix.core.view.Main', {
                 },
                 bind: {
                     value: '{theme}'
+                },
+                listeners: {
+                    change: 'onThemeChange'
                 }
             }
         ]

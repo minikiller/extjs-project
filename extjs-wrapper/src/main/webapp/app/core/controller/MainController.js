@@ -316,5 +316,26 @@ Ext.define('kalix.core.controller.MainController', {
             messageBar.lookupViewModel().getData().message.set('iconCls', 'x-fa fa-envelope-o');
         else
             messageBar.lookupViewModel().getData().message.set('iconCls', 'x-fa fa-envelope');
+    },
+    onThemeChange: function (target, newValue, oldValue, eOpts) {
+        if (target.firstLoad) {
+            target.firstLoad = false;
+        }
+        else {
+            Ext.Ajax.request({
+                url: 'camel/rest/system/preferences?key=theme&value=' + newValue,
+                method: 'PUT',
+                success: function (response, opts) {
+                    var obj = Ext.decode(response.responseText);
+
+                    location.reload();
+                },
+                failure: function (response, opts) {
+                    console.log('server-side failure with status code ' + response.status);
+                },
+                callback: function () {
+                }
+            });
+        }
     }
 });

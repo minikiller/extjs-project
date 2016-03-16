@@ -9,13 +9,11 @@
 
     <title>kalix</title>
     <link rel="icon" href="resources/images/favicon.ico" type="image/x-icon"/>
-    <link href="<%=path %>/resources/ext/classic/theme-triton/theme-triton-all.css" rel="stylesheet"/>
-    <script type="text/javascript" src="<%=path %>/resources/js/Config.js"></script>
+    <script type="text/javascript" src="<%=path %>/resources/js/Globle.js"></script>
     <script type="text/javascript">CONFIG.restRoot = '<%=path %>';</script>
     <script type="text/javascript" src="<%=path %>/resources/ext/ext-all-debug.js"></script>
     <script type="text/javascript" src="<%=path %>/resources/js/underscore-min.js"></script>
     <script type="text/javascript" src="<%=path %>/resources/js/locale-zh_CN.js"></script>
-    <script type="text/javascript" src="<%=path %>/resources/js/app.js"></script>
     <script type="text/javascript" src="<%=path %>/resources/js/Picker.js"></script>
     <script type="text/javascript" src="<%=path %>/resources/js/Exporter.js"></script>
     <script type="text/javascript" src="<%=path %>/resources/js/DateFormat.js"></script>
@@ -25,8 +23,33 @@
     <link type="text/css" rel="stylesheet" href="<%=path %>/resources/css/KitchenSink-all_2.css"/>
     <link type="text/css" rel="stylesheet" href="<%=path %>/resources/css/index.css"/>
     <link type="text/css" rel="stylesheet" href="<%=path %>/resources/css/notify.css"/>
+    <script type="text/javascript">
+        Ext.onReady(function () {
+            Ext.Ajax.request({
+                url: 'camel/rest/system/preferences',
+                success: function (response, opts) {
+                    var obj = Ext.decode(response.responseText);
+
+                    if (obj != null && obj.theme) {
+                        DynamicLoading.css(CONFIG.restRoot + '/resources/ext/classic/' + obj.theme + '/' + obj.theme + '-all.css');
+                        CONFIG.theme = obj.theme;
+                    }
+                    else {
+                        DynamicLoading.css(CONFIG.restRoot + '/resources/ext/classic/theme-triton/theme-triton-all.css');
+                    }
+                },
+                failure: function (response, opts) {
+                    console.log('server-side failure with status code ' + response.status);
+                    DynamicLoading.css(CONFIG.restRoot + '/resources/ext/classic/theme-triton/theme-triton-all.css');
+                },
+                callback: function () {
+                    DynamicLoading.js(CONFIG.restRoot + '/resources/js/app.js');
+                }
+            });
+        });
 
 
+    </script>
 </head>
 <body>
 </body>

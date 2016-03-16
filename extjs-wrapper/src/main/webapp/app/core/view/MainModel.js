@@ -7,6 +7,6 @@ Ext.define('kalix.core.view.MainModel', {
 
     data: {
         currentView: null,
-        theme: 'theme-triton'
+        theme: CONFIG.theme
     }
 });
