@@ -71,11 +71,12 @@ Ext.define('kalix.core.view.Main', {
                 width: 85,
                 textAlign: 'center',
                 firstLoad: true,
+                editable: false,
                 store: {
                     data: [
                         {
                             name: 'theme-triton',
-                            alias: '蓝色'
+                            alias: '浅蓝'
                         },
                         {
                             name: 'theme-aria',
@@ -88,6 +89,14 @@ Ext.define('kalix.core.view.Main', {
                         {
                             name: 'theme-gray',
                             alias: '灰色'
+                        },
+                        {
+                            name: 'theme-neptune',
+                            alias: '深蓝'
+                        },
+                        {
+                            name: 'theme-crisp',
+                            alias: '蓝灰'
                         }
                     ]
                 },
