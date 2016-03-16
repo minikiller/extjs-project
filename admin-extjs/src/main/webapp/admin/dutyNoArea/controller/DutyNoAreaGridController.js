@@ -79,12 +79,14 @@ Ext.define('kalix.admin.dutyNoArea.controller.DutyNoAreaGridController', {
     onSaveAddUser: function (dutyUserUrl, userAddForm, rec) {
         if (userAddForm != null && userAddForm.isValid()) {
             var userIds = userAddForm.down('#userAddItemSelector').getValue();
-            var depNoAreaId = rec.data.id;
+            var depNoAreaId = rec.data.depid;
+            var dutyNoAreaId = rec.data.id;
             Ext.Ajax.request({
                 url: dutyUserUrl,
                 paramsAsJson: true,
                 params: {
                     'depId': depNoAreaId,
+                    'dutyid':dutyNoAreaId,
                     'userIds': userIds.join(',')
                 },
                 method: 'GET',
@@ -137,7 +139,7 @@ Ext.define('kalix.admin.dutyNoArea.controller.DutyNoAreaGridController', {
         var me = this;
         //获得已选用户
         Ext.Ajax.request({
-            url: dutyUserUrl + '/users/' + rec.data.id,
+            url: dutyUserUrl + '/users/' + rec.data.depid +'/' + rec.data.id,
             method: 'GET',
             callback: function (options, success, response) {
                 var users = Ext.JSON.decode(response.responseText);
@@ -145,7 +147,7 @@ Ext.define('kalix.admin.dutyNoArea.controller.DutyNoAreaGridController', {
                 dataSotre.setProxy({
                     type: 'ajax',
                     limitParam: null,
-                    url: dutyUserUrl + '/users/all/' + rec.data.id,
+                    url: dutyUserUrl + '/users/all/'  + rec.data.depid +'/'+ rec.data.id,
                     reader: {
                         type: 'json',
                         root: 'data',
@@ -200,7 +202,7 @@ Ext.define('kalix.admin.dutyNoArea.controller.DutyNoAreaGridController', {
         Ext.Msg.confirm('警告', '确定要删除吗？', function (button) {
             if (button == 'yes') {
                 Ext.Ajax.request({
-                    url: deleteUrl + '/' + rec.id,
+                    url: deleteUrl + '/'+rec.data.depid + '/' + rec.id,
                     method: 'DELETE',
                     callback: function (options, success, response) {
                         var resp = Ext.JSON.decode(response.responseText);

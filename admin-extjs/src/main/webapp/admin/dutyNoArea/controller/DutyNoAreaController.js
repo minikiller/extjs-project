@@ -59,6 +59,14 @@ Ext.define('kalix.admin.dutyNoArea.controller.DutyNoAreaController', {
             url: CONFIG.restRoot + '/camel/rest/deps/org/' + record.data.id
         });
         store.reload();
+        var OrgTreeList=view.findParentByType('panel').findParentByType('panel').items.getAt(2).items.getAt(0);
+
+        var store2 = OrgTreeList.getStore();
+        store2.setProxy({
+            type: 'ajax',
+            url: CONFIG.restRoot + '/camel/rest/duty/dep/-2'
+        });
+        store2.reload();
     },
     /**
      * 部门单击
@@ -86,6 +94,12 @@ Ext.define('kalix.admin.dutyNoArea.controller.DutyNoAreaController', {
         Ext.ComponentQuery.query('dutyNoAreaPanel')[0].down('#dutyNoAreaOrgTreeList').getStore().reload();
     },
     /**
+     * 部门刷新
+     */
+    onDepRefersh: function () {
+        Ext.ComponentQuery.query('dutyNoAreaPanel')[0].down('#dutyNoAreaDepTreeList').getStore().reload();
+    },
+    /**
      * 机构展开
      */
     onOrgExpandAll: function () {
@@ -93,10 +107,24 @@ Ext.define('kalix.admin.dutyNoArea.controller.DutyNoAreaController', {
         });
     },
     /**
+     * 部门展开
+     */
+    onDepExpandAll: function () {
+        Ext.ComponentQuery.query('dutyNoAreaPanel')[0].down('#dutyNoAreaDepTreeList').expandAll(function () {
+        });
+    },
+    /**
      * 机构收起
      */
     onOrgCollapseAll: function () {
         Ext.ComponentQuery.query('dutyNoAreaPanel')[0].down('#dutyNoAreaOrgTreeList').collapseAll(function () {
+        });
+    },
+    /**
+     * 机构收起
+     */
+    onDepCollapseAll: function () {
+        Ext.ComponentQuery.query('dutyNoAreaPanel')[0].down('#dutyNoAreaDepTreeList').collapseAll(function () {
         });
     },
     /**

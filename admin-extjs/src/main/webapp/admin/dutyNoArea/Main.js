@@ -19,9 +19,7 @@ Ext.define('kalix.admin.dutyNoArea.Main', {
     items: [],
     initComponent: function () {
         var dutyNoAreaController = this.getController("dutyNoAreaController");
-
         this.items[0] = dutyNoAreaController.onInitPanel();
-
         this.callParent(arguments);
     }
 });
