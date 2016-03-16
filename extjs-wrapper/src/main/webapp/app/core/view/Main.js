@@ -84,6 +84,10 @@ Ext.define('kalix.core.view.Main', {
                         {
                             name: 'theme-classic',
                             alias: '经典'
+                        },
+                        {
+                            name: 'theme-gray',
+                            alias: '灰色'
                         }
                     ]
                 },
