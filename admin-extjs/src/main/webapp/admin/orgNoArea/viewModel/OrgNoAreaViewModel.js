@@ -7,10 +7,11 @@
  */
 Ext.define('kalix.admin.orgNoArea.viewModel.OrgNoAreaViewModel', {
     extend: 'Ext.app.ViewModel',
+    alias: 'viewmodel.orgNoAreaViewModel',
+    xtype:'orgNoAreaViewModel',
     requires: [
         'kalix.admin.orgNoArea.store.OrgNoAreaStore'
     ],
-    alias: 'viewmodel.orgNoAreaViewModel',
     data: {
         addTitle: '新增机构',
         editTitle: '编辑机构',

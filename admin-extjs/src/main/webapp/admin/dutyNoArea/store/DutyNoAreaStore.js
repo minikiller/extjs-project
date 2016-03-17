@@ -10,5 +10,9 @@ Ext.define('kalix.admin.dutyNoArea.store.DutyNoAreaStore', {
     alias: 'store.dutyNoAreaStore',
     xtype: 'dutyNoAreaStore',
     storeId: 'dutyNoAreaStore',
-    autoLoad: true
+    autoLoad: true,
+    proxy:{
+        type:'ajax',
+        url: CONFIG.restRoot + '/camel/rest/orgs/'
+    }
 });

@@ -21,15 +21,29 @@ Ext.define('kalix.admin.depNoArea.controller.DepNoAreaGridController', {
         store.reload();
     },
     /**
+     * 展开.
+     * @returns {Ext.panel.Panel}
+     */
+    onExpandAll: function () {
+        this.getView().expandAll();
+    },
+    /**
+     * 机构收起
+     */
+    onCollapseAll: function () {
+        this.getView().collapseAll();
+    },
+    /**
      * 打开新增操作.
      * @returns {Ext.panel.Panel}
      */
     onAdd: function () {
-        if(this.getView().orgId==null||this.getView().orgName==null){
+        var OrgTreeList = this.getView().findParentByType('panel').items.getAt(0).items.getAt(0);
+        var rows = OrgTreeList.getSelectionModel().getSelection();
+        if(rows.length<=0){
             Ext.Msg.alert(CONFIG.ALTER_TITLE_FAILURE, '请选择一个机构!');
             return;
         }
-        var rows = this.getView().getSelectionModel().getSelection();
         var addFormPanel = Ext.create('kalix.admin.depNoArea.view.DepNoAreaAddForm', {
             url: this.getView().getViewModel().get('url')
         });

@@ -8,7 +8,8 @@ Ext.define('kalix.admin.orgNoArea.view.OrgNoAreaTreeList', {
     extend: 'Ext.tree.Panel',
     requires: [
         'kalix.admin.orgNoArea.viewModel.OrgNoAreaViewModel',
-        'kalix.admin.orgNoArea.controller.OrgNoAreaGridController'
+        'kalix.admin.orgNoArea.controller.OrgNoAreaGridController',
+        'kalix.admin.orgNoArea.store.OrgNoAreaStore'
     ],
     alias: 'widget.orgNoAreaTreeList',
     xtype: 'orgNoAreaTreeList',
@@ -16,24 +17,31 @@ Ext.define('kalix.admin.orgNoArea.view.OrgNoAreaTreeList', {
     viewModel: {
         type: 'orgNoAreaViewModel'
     },
-    autoLoad:true,
-    constructor:function(){
-        this.callParent(arguments);
-        //this.store.on('load',function(target,records, successful, operation, eOpts){
-        //    var indexId = 1;
-        //    indexId = this.findParentByType('panel').indexId;
-        //    if(indexId!=undefined)
-        //        indexId = this.findParentByType('panel').indexId;
-        //    else
-        //        indexId = 1;
-        //    var grid=this.findParentByType('panel').items.getAt(indexId).items.getAt(0);
-        //    if(grid){
-        //        grid.store.proxy.url = CONFIG.restRoot + '/camel/rest/deps/org/-1';
-        //        grid.store.load();
-        //    }
-        //},this);
+    store: {
+        type: 'orgNoAreaStore',
+        proxy:{
+            type:'ajax',
+            url: CONFIG.restRoot + '/camel/rest/orgs/'
+        }
     },
+    //store:'orgNoAreaStore',
+    autoLoad:true,
     collapsible: true,
     autoScroll: true,
-    rootVisible: false
+    rootVisible: false,
+    title: '机构列表',
+    iconCls: 'x-fa fa-building',
+    tbar: [
+        {
+            tooltip: '刷新', icon: 'admin/resources/images/arrow_refresh.png',
+            handler: 'onRefersh'
+        },
+        {
+            tooltip: '展开', icon: 'admin/resources/images/arrow_down.png',
+            handler: 'onOrgExpandAll'
+        },
+        {
+            tooltip: '收起', icon: 'admin/resources/images/arrow_up.png',
+            handler: 'onOrgCollapseAll'
+        }]
 });

@@ -22,13 +22,26 @@ Ext.define('kalix.admin.orgNoArea.controller.OrgNoAreaGridController', {
         store.reload();
     },
     /**
+     * 展开.
+     * @returns {Ext.panel.Panel}
+     */
+    onOrgExpandAll: function () {
+        this.getView().expandAll();
+    },
+    /**
+     * 机构收起
+     */
+    onOrgCollapseAll: function () {
+        this.getView().collapseAll();
+    },
+    /**
      * 打开新增操作.
      * @returns {Ext.panel.Panel}
      */
     onAdd: function () {
         var rows = this.getView().getSelectionModel().getSelection();
         var addFormPanel = Ext.create('kalix.admin.orgNoArea.view.OrgNoAreaAddForm', {
-            url: this.getView().getViewModel().get("url")
+            url: this.getView().getViewModel().get("url"),
         });
         if(rows!=null&&rows.length>0){
             if(rows[0]!=null){
@@ -80,40 +93,6 @@ Ext.define('kalix.admin.orgNoArea.controller.OrgNoAreaGridController', {
         });
 
         win.show();
-    },
-    /**
-     * 批量删除操作.
-     */
-    onDeleteAll: function () {
-        var selModel = Ext.getCmp("userDataGrid").getSelectionModel();
-        if (selModel.hasSelection()) {
-            Ext.Msg.confirm("警告", "确定要删除吗？", function (button) {
-                if (button == "yes") {
-                    var rows = selModel.getSelection();
-                    var ids = "";
-                    for (var i = 0; i < rows.length; i++) {
-                        if (rows[i] != null && rows[i].id != null) {
-                            ids += rows[i].id;
-                            if (i + 1 != rows.length) {
-                                ids += "_";
-                            }
-                        }
-                    }
-                    Ext.Ajax.request({
-                        url: "/userDeleteAllServlet?ids=" + ids,
-                        method: "GET",
-                        callback: function (options, success, response) {
-                            var resp = Ext.JSON.decode(response.responseText);
-                            Ext.MessageBox.alert(CONFIG.ALTER_TITLE_INFO, resp.msg);
-                            if (resp.success) {
-                            }
-                        }
-                    });
-                }
-            });
-        } else {
-            Ext.Msg.alert(CONFIG.ALTER_TITLE_ERROR, "请选择要删除的记录！");
-        }
     },
     /**
      * 删除单个操作.

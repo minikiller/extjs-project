@@ -16,12 +16,21 @@ Ext.define('kalix.admin.depNoArea.Main', {
     viewModel: {
         type: 'depNoAreaViewModel'
     },
-    items: [],
-    initComponent: function () {
-        var depNoAreaController = this.getController("depNoAreaController");
-
-        this.items[0] = depNoAreaController.onInitPanel();
-
-        this.callParent(arguments);
-    }
+    layout: {
+        type: 'vbox',
+        align: 'stretch'
+    },
+    items: [{
+            xtype: 'orgNoAreaTreeList',
+            flex: 1,
+            listeners: {
+                itemClick: 'onOrgClick'
+            }
+        },
+        {
+            xtype: 'depNoAreaGridPanel',
+            flex: 2,
+            store: Ext.create('kalix.admin.depNoArea.store.DepNoAreaStore')
+        }
+    ]
 });

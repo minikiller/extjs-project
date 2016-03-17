@@ -1,5 +1,5 @@
 /**
- * 部门表格控制器
+ * 职位表格控制器
  *
  * @author zangyanming <br/>
  *         date:2016-3-10
