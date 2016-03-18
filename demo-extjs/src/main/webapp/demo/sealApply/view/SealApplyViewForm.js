@@ -16,7 +16,7 @@ Ext.define('kalix.demo.sealApply.view.SealApplyViewForm', {
             html: '吉林动画学院印章使用申请单',
             colspan: 6,
             customStyle: true,
-            bodyStyle: 'padding:20px 0px 15px 0px;font-size:24px;font-weight:bold;'
+            bodyStyle: 'padding:10px 0px 15px 0px;font-size:24px;font-weight:bold;'
         },
         {
             html: '申请部门'
@@ -47,7 +47,7 @@ Ext.define('kalix.demo.sealApply.view.SealApplyViewForm', {
             ]
         },
         {
-            html: '用印数<br/>(份数*次数)'
+            html: '用印数'
         },
         {
             items: [
@@ -74,22 +74,17 @@ Ext.define('kalix.demo.sealApply.view.SealApplyViewForm', {
                     readOnly: true,
                     dictType: 'sealType',
                     name: 'sealType',
-                    fieldStyle: 'font-size:15px',
+                    fieldStyle: 'font-size:15px;background:transparent;',
                     bind: {
                         value: '{rec.sealType}'
+                    },
+                    listeners: {
+                        render: function (target) {
+                            if (target.bodyEl) {
+                                target.bodyEl.dom.firstChild.style.border = '0px';
+                            }
+                        }
                     }
-
-                    //xtype: 'tableFormRadioGroup',
-                    //columns: 3,
-                    //fieldName: 'sealType',
-                    //defaults:{readOnly:true},
-                    //items: [
-                    //    {boxLabel: '公司公章', name: 'rn', inputValue: '0'},
-                    //    {boxLabel: '公司合同专用章', name: 'rn', inputValue: '1'},
-                    //    {boxLabel: '学院公章', name: 'rn', inputValue: '2'},
-                    //    {boxLabel: '学院合同专用章', name: 'rn', inputValue: '3'},
-                    //    {boxLabel: '法人印章', name: 'rn', inputValue: '4'}
-                    //]
                 }
             ]
         },

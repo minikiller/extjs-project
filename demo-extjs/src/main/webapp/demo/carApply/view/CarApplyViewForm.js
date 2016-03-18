@@ -6,7 +6,7 @@ Ext.define('kalix.demo.carApply.view.CarApplyViewForm', {
     extend: 'kalix.view.components.common.TableFormPanel',
     requires: [
         'kalix.view.components.common.TableFormField',
-        'Ext.ux.DateTimeField'
+        'kalix.view.components.common.TableFormDateTimeField'
     ],
     alias: 'widget.carApplyViewForm',
     xtype: "carApplyViewForm",
@@ -39,10 +39,10 @@ Ext.define('kalix.demo.carApply.view.CarApplyViewForm', {
             colspan: 2,
             items: [
                 {
-                    xtype: 'tableFormField',
+                    xtype: 'tableFormDateTimeField',
                     readOnly: true,
                     bind: {
-                        value: '{rec.creationDate}'
+                        value: '{rec.applyDate}'
                     }
                 }
             ]
@@ -82,40 +82,31 @@ Ext.define('kalix.demo.carApply.view.CarApplyViewForm', {
         {
             colspan: 3,
             layout: {
-                type: 'absolute'
+                type: 'hbox',
             },
             customStyle: true,
-            bodyStyle: 'padding:0px 0px 0px 0px;',
+            bodyStyle: 'padding:5px 0px 0px 0px;',
             defaults: {
-                width: 210,
-                fieldStyle: 'font-size:15px;text-align:center;',
-                readOnly: true,
-                height: 42,
-                border: false,
-                y: -1,
-                x: -1
+                width: 200,
+                readOnly: true
             },
             items: [
                 {
-                    xtype: 'datetimefield',
-                    format: 'Y年m月d日 H时i分',
+                    xtype: 'tableFormDateTimeField',
                     bind: {
                         value: '{rec.beginDate}'
                     }
                 },
                 {
-                    xtype: 'datetimefield',
-                    x: 232,
-                    format: 'Y年m月d日 H时i分',
+                    html: '至',
+                    width: 15,
+                    bodyStyle: 'font-size:15px;border:0px;padding:5px 0 0 0;',
+                },
+                {
+                    xtype: 'tableFormDateTimeField',
                     bind: {
                         value: '{rec.endDate}'
                     }
-                },
-                {
-                    html: '至',
-                    width: 35,
-                    bodyStyle: 'font-size:15px;padding:10px;',
-                    x: 200
                 }
             ]
         },
@@ -148,7 +139,7 @@ Ext.define('kalix.demo.carApply.view.CarApplyViewForm', {
                     editable: false,
                     valueField: 'key',
                     displayField: 'name',
-                    fieldStyle: 'font-size:15px;text-align:center;',
+                    fieldStyle: 'font-size:15px;text-align:center;background:transparent;',
                     store: {
                         data: [
                             {'name': '是', 'key': true},
@@ -157,6 +148,13 @@ Ext.define('kalix.demo.carApply.view.CarApplyViewForm', {
                     },
                     bind: {
                         value: '{rec.city}'
+                    },
+                    listeners: {
+                        render: function (target) {
+                            if (target.bodyEl) {
+                                target.bodyEl.dom.firstChild.style.border = '0px';
+                            }
+                        }
                     }
                 }
             ]

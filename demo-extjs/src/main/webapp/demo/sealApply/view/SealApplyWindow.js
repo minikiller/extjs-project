@@ -31,7 +31,7 @@ Ext.define('kalix.demo.sealApply.view.SealApplyWindow', {
                     html: '吉林动画学院印章使用申请单',
                     colspan: 6,
                     customStyle: true,
-                    bodyStyle: 'padding:20px 0px 15px 0px;font-size:24px;font-weight:bold;'
+                    bodyStyle: 'padding:10px 0px 15px 0px;font-size:24px;font-weight:bold;'
                 },
                 {
                     html: '申请部门',
@@ -58,13 +58,20 @@ Ext.define('kalix.demo.sealApply.view.SealApplyWindow', {
                             xtype: 'datefield',
                             readOnly: true,
                             value: new Date(),
-                            fieldStyle: 'font-size:15px;text-align:center;',
-                            format: 'Y年m月d日'
+                            fieldStyle: 'font-size:15px;text-align:center;background:transparent;',
+                            format: 'Y年m月d日',
+                            listeners: {
+                                render: function (target) {
+                                    if (target.bodyEl) {
+                                        target.bodyEl.dom.firstChild.style.border = '0px';
+                                    }
+                                }
+                            }
                         }
                     ]
                 },
                 {
-                    html: '用印数<br/>(份数*次数)',
+                    html: '用印数',
                     required: true
                 },
                 {
