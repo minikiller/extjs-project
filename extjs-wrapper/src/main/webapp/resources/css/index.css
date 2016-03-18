@@ -12,8 +12,7 @@
 }
 
 .kalix_hidden {
-    visibility: hidden;
-    width: 0;
+    width: 0px !important;
 }
 
 img.x-action-col-icon.x-action-col-0.x-hide-grid-column {
