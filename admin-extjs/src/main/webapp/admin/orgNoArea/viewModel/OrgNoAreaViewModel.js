@@ -15,6 +15,7 @@ Ext.define('kalix.admin.orgNoArea.viewModel.OrgNoAreaViewModel', {
     data: {
         addTitle: '新增机构',
         editTitle: '编辑机构',
-        url: CONFIG.restRoot + '/camel/rest/orgs'
+        url: CONFIG.restRoot + '/camel/rest/orgs',
+        rec:null
     }
 });

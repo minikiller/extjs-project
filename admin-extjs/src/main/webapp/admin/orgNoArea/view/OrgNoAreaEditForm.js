@@ -26,39 +26,45 @@ Ext.define('kalix.admin.orgNoArea.view.OrgNoAreaEditForm', {
     jsonSubmit: true,
     method: "PUT",
     defaultType: 'textfield',
+    url:CONFIG.restRoot + '/camel/rest/orgs/',
     buttonAlign: "center",
     items: [
-        {xtype: 'hiddenfield', name: 'id'},
-        {xtype: 'hiddenfield', name: 'parentId', itemId: 'parentIdId', value: '-1'},
+        {xtype: 'hiddenfield', name: 'id', bind:{value:'{rec.id}'}},
+        {xtype: 'hiddenfield', bind:{value:'{rec.parentId}'}},
         {xtype: 'hiddenfield', name: 'isLeaf',value:'1'},
         {
             fieldLabel: '上级机构',
-            itemId: "parentName",
-            isFormField: false,
-            disabled:true,
+            editable:false,
             beforeLabelTpl: [
                 '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
-            ]
+            ],
+            bind:{
+                value:'{rec.parentName}'
+            }
         },
         {
-            fieldLabel: '名称',
-            itemId: 'nameId',
+            fieldLabel: '机构名称',
             name: 'name',
             allowBlank: false,
-            blankText: '名称不能为空!',
+            blankText: '机构名称不能为空!',
             beforeLabelTpl: [
                 '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
-            ]
+            ],
+            bind:{
+                value:'{rec.name}'
+            }
         },
         {
             fieldLabel: '机构代码',
-            itemId: 'codeId',
             name: 'code',
             allowBlank: false,
             blankText: '机构不能为空!',
             beforeLabelTpl: [
                 '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
-            ]
+            ],
+            bind:{
+                value:'{rec.code}'
+            }
         }
     ],
     buttons: [
