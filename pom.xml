@@ -253,6 +253,19 @@
 
                         </configuration>
                     </execution>
+                    <!--<execution>-->
+                        <!--<id>delete-wrong-path</id>-->
+                        <!--<phase>clean</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>run</goal>-->
+                        <!--</goals>-->
+                        <!--<configuration>-->
+                            <!--<tasks>-->
+                                <!--<taskdef resource="net/sf/antcontrib/antcontrib.properties"/>-->
+                                <!--<delete dir="${karaf.path}"/>-->
+                            <!--</tasks>-->
+                        <!--</configuration>-->
+                    <!--</execution>-->
                 </executions>
                 <dependencies>
                     <dependency>
