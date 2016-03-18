@@ -9,7 +9,7 @@ Ext.define('kalix.demo.carApply.view.TestCarApplyWindow', {
         'kalix.view.components.common.TableFormField',
         'kalix.controller.BaseWindowController',
         'kalix.demo.carApply.viewModel.CarApplyViewModel',
-        'Ext.ux.DateTimeField'
+        'kalix.view.components.common.TableFormDateTimeField'
     ],
     alias: 'widget.carApplyWindow',
     xtype: "carApplyWindow",
@@ -18,7 +18,7 @@ Ext.define('kalix.demo.carApply.view.TestCarApplyWindow', {
         type: 'baseWindowController',
         storeId: 'carApplyStore'
     },
-    width: 840,
+    width: 900,
     items: [
         {
             xtype: 'baseTableForm',
@@ -31,7 +31,7 @@ Ext.define('kalix.demo.carApply.view.TestCarApplyWindow', {
                     html: '吉林动画学院公务用车申请表',
                     colspan: 6,
                     customStyle: true,
-                    bodyStyle: 'padding:15px 0px 15px 0px;font-size:30px;font-weight:bold;'
+                    bodyStyle: 'padding:10px 0px 15px 0px;font-size:25px;font-weight:bold;'
                 },
                 {
                     html: '申请部门',
@@ -54,14 +54,11 @@ Ext.define('kalix.demo.carApply.view.TestCarApplyWindow', {
                 {
                     colspan: 2,
                     customStyle: true,
-                    bodyStyle: 'padding:0px 0px 0px 0px;',
                     items: [
                         {
-                            xtype: 'datefield',
+                            xtype: 'tableFormDateTimeField',
                             readOnly: true,
-                            value: new Date(),
-                            fieldStyle: 'font-size:15px;text-align:center;',
-                            format: 'Y年m月d日 H时i分'
+                            bind: {value: '{rec.applyDate}'}
                         }
                     ]
                 },
@@ -101,28 +98,27 @@ Ext.define('kalix.demo.carApply.view.TestCarApplyWindow', {
                 {
                     colspan: 3,
                     layout: {
-                        type: 'absolute'
+                        type: 'hbox',
                     },
                     customStyle: true,
-                    bodyStyle: 'padding:0px 0px 0px 0px;',
+                    bodyStyle: 'padding:5px 0px 0px 0px;',
                     defaults: {
-                        width: 415,
-                        fieldStyle: 'font-size:15px;text-align:center;',
-                        editable: false
+                        width: 210,
                     },
                     items: [
                         {
-                            xtype: 'datetimefield',
-                            y: -2,
-                            format: '开始: Y年m月d日 H时i分',
+                            xtype: 'tableFormDateTimeField',
                             bind: {
                                 value: '{rec.beginDate}'
                             }
                         },
                         {
-                            xtype: 'datetimefield',
-                            y: 25,
-                            format: '结束: Y年m月d日 H时i分',
+                            html: '至',
+                            width: 15,
+                            bodyStyle: 'font-size:15px;border:0px;padding:5px 0 0 0;',
+                        },
+                        {
+                            xtype: 'tableFormDateTimeField',
                             bind: {
                                 value: '{rec.endDate}'
                             }
@@ -130,7 +126,7 @@ Ext.define('kalix.demo.carApply.view.TestCarApplyWindow', {
                     ]
                 },
                 {
-                    html: '用车起始<br/>地点',
+                    html: '用车起始地点',
                     required: true
                 },
                 {
@@ -150,7 +146,7 @@ Ext.define('kalix.demo.carApply.view.TestCarApplyWindow', {
                 },
                 {
                     customStyle: true,
-                    bodyStyle: 'padding:0px 0px 0px 0px;',
+                    bodyStyle: 'padding:0px 10px 0px 0px;',
                     items: [
                         {
                             allowBlank: false,
@@ -158,7 +154,7 @@ Ext.define('kalix.demo.carApply.view.TestCarApplyWindow', {
                             editable: false,
                             valueField: 'key',
                             displayField: 'name',
-                            fieldStyle: 'font-size:15px;text-align:center;',
+                            fieldStyle: 'font-size:15px;text-align:center;background:transparent;',
                             store: {
                                 data: [
                                     {'name': '是', 'key': true},
@@ -167,6 +163,11 @@ Ext.define('kalix.demo.carApply.view.TestCarApplyWindow', {
                             },
                             bind: {
                                 value: '{rec.city}'
+                            },
+                            listeners: {
+                                render: function (target) {
+                                    target.bodyEl.dom.firstChild.style.border = '0px';
+                                }
                             }
                         }
                     ]
@@ -185,7 +186,7 @@ Ext.define('kalix.demo.carApply.view.TestCarApplyWindow', {
                     ]
                 },
                 {
-                    html: '申请人<br/>联系电话',
+                    html: '联系电话',
                     required: true
                 },
                 {
@@ -200,7 +201,7 @@ Ext.define('kalix.demo.carApply.view.TestCarApplyWindow', {
                     ]
                 },
                 {
-                    html: '申请部门<br/>负责人',
+                    html: '部门负责人',
                     readOnly: true
                 },
                 {
@@ -213,7 +214,7 @@ Ext.define('kalix.demo.carApply.view.TestCarApplyWindow', {
                     ]
                 },
                 {
-                    html: '副校级领导审核',
+                    html: '副校级领导',
                     readOnly: true
                 },
                 {
@@ -239,7 +240,7 @@ Ext.define('kalix.demo.carApply.view.TestCarApplyWindow', {
                     ]
                 },
                 {
-                    html: '校务部主管<br/>领导(市外)',
+                    html: '主管领导(市外)',
                     readOnly: true
                 },
                 {
