@@ -22,23 +22,39 @@ Ext.define('kalix.admin.orgNoArea.controller.OrgNoAreaGridController', {
         store.reload();
     },
     /**
+     * 展开.
+     * @returns {Ext.panel.Panel}
+     */
+    onOrgExpandAll: function () {
+        this.getView().expandAll();
+    },
+    /**
+     * 机构收起
+     */
+    onOrgCollapseAll: function () {
+        this.getView().collapseAll();
+    },
+    /**
      * 打开新增操作.
      * @returns {Ext.panel.Panel}
      */
     onAdd: function () {
         var rows = this.getView().getSelectionModel().getSelection();
-        var addFormPanel = Ext.create('kalix.admin.orgNoArea.view.OrgNoAreaAddForm', {
-            url: this.getView().getViewModel().get("url")
-        });
+        var addFormPanel = Ext.create('kalix.admin.orgNoArea.view.OrgNoAreaAddForm');
+        var model=Ext.create('Ext.data.Model')
+        addFormPanel.lookupViewModel().set('rec',model);
+
         if(rows!=null&&rows.length>0){
             if(rows[0]!=null){
-                addFormPanel.down("#parentName").setValue(rows[0].data.name);
-                addFormPanel.down("#parentIdId").setValue(rows[0].data.id);
+                model.set('parentName',rows[0].data.name);
+                model.set('parentId',rows[0].data.id);
             }
         }else{
-            addFormPanel.down("#parentName").setValue("根机构");
-            addFormPanel.down("#parentIdId").setValue(-1);
+            model.set('parentName','根机构');
+            model.set('parentId',-1);
         }
+        model.modified = {};
+        model.dirty = false;
         var win = Ext.create('Ext.Window', {
             width: 400,
             border: false,
@@ -58,62 +74,25 @@ Ext.define('kalix.admin.orgNoArea.controller.OrgNoAreaGridController', {
      */
     onEdit: function (grid, rowIndex, colIndex) {
         var rec = grid.getStore().getAt(rowIndex);
-        var editFormPanel = Ext.create('kalix.admin.orgNoArea.view.OrgNoAreaEditForm', {
-            url: this.getView().getViewModel().get("url")
-        });
-        var OrgNoAreaModel = Ext.create("kalix.admin.orgNoArea.model.OrgNoAreaModel", {
-            id: rec.data.id,
-            name: rec.data.name,
-            code: rec.data.code
-        });
-        editFormPanel.getComponent("parentName").setValue(rec.data.parentName);
-        editFormPanel.loadRecord(OrgNoAreaModel);
-
+        var editFormPanel = Ext.create('kalix.admin.orgNoArea.view.OrgNoAreaEditForm');
+        var model=Ext.create('Ext.data.Model')
+        editFormPanel.lookupViewModel().set('rec',model);
+        model.set('id',rec.data.id);
+        model.set('name',rec.data.name);
+        model.set('code',rec.data.code);
+        model.set('parentId',rec.data.parentId);
+        model.set('parentName',rec.data.parentName);
+        model.modified = {};
+        model.dirty = false;
         var win = Ext.create('Ext.Window', {
             width: 400,
-            //height: 250,
             border: false,
             modal: true,
             icon: 'admin/resources/images/script_edit.png',
             title: this.getView().getViewModel().get("editTitle"),
             items: [editFormPanel]
         });
-
         win.show();
-    },
-    /**
-     * 批量删除操作.
-     */
-    onDeleteAll: function () {
-        var selModel = Ext.getCmp("userDataGrid").getSelectionModel();
-        if (selModel.hasSelection()) {
-            Ext.Msg.confirm("警告", "确定要删除吗？", function (button) {
-                if (button == "yes") {
-                    var rows = selModel.getSelection();
-                    var ids = "";
-                    for (var i = 0; i < rows.length; i++) {
-                        if (rows[i] != null && rows[i].id != null) {
-                            ids += rows[i].id;
-                            if (i + 1 != rows.length) {
-                                ids += "_";
-                            }
-                        }
-                    }
-                    Ext.Ajax.request({
-                        url: "/userDeleteAllServlet?ids=" + ids,
-                        method: "GET",
-                        callback: function (options, success, response) {
-                            var resp = Ext.JSON.decode(response.responseText);
-                            Ext.MessageBox.alert(CONFIG.ALTER_TITLE_INFO, resp.msg);
-                            if (resp.success) {
-                            }
-                        }
-                    });
-                }
-            });
-        } else {
-            Ext.Msg.alert(CONFIG.ALTER_TITLE_ERROR, "请选择要删除的记录！");
-        }
     },
     /**
      * 删除单个操作.

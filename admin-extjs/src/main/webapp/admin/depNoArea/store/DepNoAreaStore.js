@@ -10,6 +10,9 @@ Ext.define('kalix.admin.depNoArea.store.DepNoAreaStore', {
     alias: 'store.depNoAreaStore',
     xtype: 'depNoAreaStore',
     storeId: 'depNoAreaStore',
-    //model: 'kalix.admin.depNoAreaNoArea.model.DepNoAreaModel',
-    autoLoad: true
+    autoLoad: true,
+    proxy:{
+        type:'ajax',
+        url: CONFIG.restRoot + '/camel/rest/deps/org/'
+    }
 });

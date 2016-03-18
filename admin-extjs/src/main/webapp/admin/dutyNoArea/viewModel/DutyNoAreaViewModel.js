@@ -14,6 +14,7 @@ Ext.define('kalix.admin.dutyNoArea.viewModel.DutyNoAreaViewModel', {
     data: {
         addTitle: '新增职位',
         editTitle: '编辑职位',
-        url: CONFIG.restRoot + '/camel/rest/dutys'
+        url: CONFIG.restRoot + '/camel/rest/dutys',
+        rec:null
     }
 });

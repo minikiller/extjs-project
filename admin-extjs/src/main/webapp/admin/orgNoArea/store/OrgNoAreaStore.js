@@ -11,6 +11,7 @@ Ext.define('kalix.admin.orgNoArea.store.OrgNoAreaStore', {
     xtype: 'orgNoAreaStore',
     storeId: 'orgNoAreaStore',
     //model: 'kalix.admin.orgNoArea.model.OrgNoAreaModel',
+    autoLoad:true,
     proxy:{
         type:'ajax',
         url: CONFIG.restRoot + '/camel/rest/orgs/'

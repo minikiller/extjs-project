@@ -29,8 +29,8 @@ Ext.define('kalix.admin.dutyNoArea.view.DutyNoAreaGrid', {
         items:[
         {text: '编号', dataIndex: 'id'},
         {text: '职位名称', dataIndex: 'name'},
-        {text: '所属部门', dataIndex: 'depid'},
         {text: '职位描述', dataIndex: 'comment'},
+        {text: '所属部门', dataIndex: 'depid'},
         {text: '创建人', dataIndex: 'createBy'},
         {
             text: '创建日期', dataIndex: 'creationDate', renderer: function (value) {

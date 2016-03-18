@@ -16,12 +16,16 @@ Ext.define('kalix.admin.orgNoArea.Main', {
     viewModel: {
         type: 'orgNoAreaViewModel'
     },
-    items: [],
-    initComponent: function () {
-        var OrgNoAreaController = this.getController("orgNoAreaController");
-
-        this.items[0] = OrgNoAreaController.onInitPanel();
-
-        this.callParent(arguments);
-    }
+    layout: {
+        type: 'hbox',
+        align: 'stretch'
+    },
+    items: [
+        {
+            xtype: 'orgNoAreaGridPanel',
+            title: '机构列表',
+            flex: 2,
+            store: Ext.create('kalix.admin.orgNoArea.store.OrgNoAreaStore')
+        }
+    ]
 });

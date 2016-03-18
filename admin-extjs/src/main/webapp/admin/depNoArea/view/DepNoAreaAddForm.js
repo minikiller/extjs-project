@@ -26,47 +26,50 @@ Ext.define('kalix.admin.depNoArea.view.DepNoAreaAddForm', {
     frame: true,
     buttonAlign: "center",
     defaultType: 'textfield',
+    url:CONFIG.restRoot + '/camel/rest/deps',
     items: [
-        {xtype: 'hiddenfield', name: 'parentId', itemId: 'parentIdId', value: '-1'},
-        {xtype: 'hiddenfield', name: 'orgId', itemId: 'orgIdId', value: '-1'},
+        {xtype: 'hiddenfield', name: 'parentId', bind:{value:'{rec.parentId}'}},
+        {xtype: 'hiddenfield', name: 'orgId',bind:{value:'{rec.orgId}'}},
         {xtype: 'hiddenfield', name: 'isLeaf',value:'1'},
         {
             fieldLabel: '所属机构',
-            itemId: "orgName",
-            isFormField: false,
-            disabled:true,
+            editable:false,
             beforeLabelTpl: [
                 '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
-            ]
+            ],
+            bind:{
+                value:'{rec.orgName}'
+            }
         },
         {
             fieldLabel: '上级部门',
-            itemId: "parentName",
-            isFormField: false,
-            disabled:true,
+            editable:false,
             beforeLabelTpl: [
                 '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
-            ]
+            ],
+            bind:{
+                value:'{rec.parentName}'
+            }
         },
         {
-            fieldLabel: '名称',
-            itemId: 'nameId',
+            fieldLabel: '部门名称',
             name: 'name',
             allowBlank: false,
-            blankText: '名称不能为空!',
+            blankText: '部门名称不能为空!',
             beforeLabelTpl: [
                 '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
-            ]
+            ],
+            bind:{value:'{rec.name}'}
         },
         {
             fieldLabel: '机构代码',
-            itemId: 'codeId',
             name: 'code',
             allowBlank: false,
             blankText: '机构不能为空!',
             beforeLabelTpl: [
                 '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
-            ]
+            ],
+            bind:{value:'{rec.code}'}
         }
     ],
     buttons: [

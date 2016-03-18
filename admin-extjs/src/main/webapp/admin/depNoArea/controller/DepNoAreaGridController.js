@@ -21,29 +21,48 @@ Ext.define('kalix.admin.depNoArea.controller.DepNoAreaGridController', {
         store.reload();
     },
     /**
+     * 展开.
+     * @returns {Ext.panel.Panel}
+     */
+    onExpandAll: function () {
+        this.getView().expandAll();
+    },
+    /**
+     * 机构收起
+     */
+    onCollapseAll: function () {
+        this.getView().collapseAll();
+    },
+    /**
      * 打开新增操作.
      * @returns {Ext.panel.Panel}
      */
     onAdd: function () {
-        if(this.getView().orgId==null||this.getView().orgName==null){
+        var OrgTreeList = this.getView().findParentByType('panel').items.getAt(0).items.getAt(0);
+        var org_selected_row = OrgTreeList.getSelectionModel().getSelection();
+        if(org_selected_row.length<=0){
             Ext.Msg.alert(CONFIG.ALTER_TITLE_FAILURE, '请选择一个机构!');
             return;
         }
-        var rows = this.getView().getSelectionModel().getSelection();
-        var addFormPanel = Ext.create('kalix.admin.depNoArea.view.DepNoAreaAddForm', {
-            url: this.getView().getViewModel().get('url')
-        });
-        addFormPanel.down('#orgIdId').setValue(this.getView().orgId);
-        addFormPanel.down('#orgName').setValue(this.getView().orgName);
-        if(rows!=null&&rows.length>0){
-            if(rows[0]!=null){
-                addFormPanel.down('#parentName').setValue(rows[0].data.name);
-                addFormPanel.down('#parentIdId').setValue(rows[0].data.id);
+        var DepTreeList = this.getView().findParentByType('panel').items.getAt(1).items.getAt(0);
+        var dep_selected_row = DepTreeList.getSelectionModel().getSelection();
+
+        var addFormPanel = Ext.create('kalix.admin.depNoArea.view.DepNoAreaAddForm');
+        var model=Ext.create('Ext.data.Model')
+        addFormPanel.lookupViewModel().set('rec',model);
+        model.set('orgId',org_selected_row[0].data.id);
+        model.set('orgName',org_selected_row[0].data.name);
+        if(dep_selected_row!=null&&dep_selected_row.length>0){
+            if(dep_selected_row[0]!=null){
+                model.set('parentName',dep_selected_row[0].data.name);
+                model.set('parentId',dep_selected_row[0].data.id);
             }
         }else{
-            addFormPanel.down('#parentName').setValue('根部门');
-            addFormPanel.down('#parentIdId').setValue(-1);
+            model.set('parentName','根部门');
+            model.set('parentId',-1);
         }
+        model.modified = {};
+        model.dirty = false;
         var win = Ext.create('Ext.Window', {
             width: 400,
             border: false,
@@ -63,13 +82,19 @@ Ext.define('kalix.admin.depNoArea.controller.DepNoAreaGridController', {
      */
     onEdit: function (grid, rowIndex, colIndex) {
         var rec = grid.getStore().getAt(rowIndex);
-        var editFormPanel = Ext.create('kalix.admin.depNoArea.view.DepNoAreaEditForm', {
-            url: this.getView().getViewModel().get('url')
-        });
-        editFormPanel.down('#parentName').setValue(rec.data.parentName);
-        editFormPanel.down('#orgName').setValue(this.getView().orgName);
-        editFormPanel.loadRecord(rec);
-
+        var editFormPanel = Ext.create('kalix.admin.depNoArea.view.DepNoAreaEditForm');
+        var model=Ext.create('Ext.data.Model')
+        editFormPanel.lookupViewModel().set('rec',model);
+        model.set('id',rec.data.id);
+        model.set('orgId',rec.data.orgId);
+        model.set('parentName',rec.data.parentName);
+        var OrgTreeList = this.getView().findParentByType('panel').items.getAt(0).items.getAt(0);
+        var org_selected_row = OrgTreeList.getSelectionModel().getSelection();
+        model.set('orgName',org_selected_row[0].data.name);
+        model.set('name',rec.data.name);
+        model.set('code',rec.data.code);
+        model.modified = {};
+        model.dirty = false;
         var win = Ext.create('Ext.Window', {
             width: 400,
             border: false,
@@ -119,10 +144,8 @@ Ext.define('kalix.admin.depNoArea.controller.DepNoAreaGridController', {
 
         var win = Ext.create('Ext.Window', {
             width: 710,
-            //height: 460,
             border: false,
             modal: true,
-            //resizable:false,
             icon: 'admin/resources/images/group_add.png',
             title: '添加用户',
             items: [
@@ -163,7 +186,6 @@ Ext.define('kalix.admin.depNoArea.controller.DepNoAreaGridController', {
                     width: 700,
                     itemId: 'addUserForm',
                     bodyPadding: 10,
-                    //height: 400,
                     layout: 'fit',
                     items: [
                         {

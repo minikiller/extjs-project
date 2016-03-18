@@ -14,14 +14,16 @@ Ext.define('kalix.admin.orgNoArea.controller.OrgNoAreaFormController', {
      * @returns {Ext.panel.Panel}
      */
     onAddReset: function () {
-        this.getView().reset();
+        var model=this.getView().lookupViewModel().get('rec');
+        model.set(model.modified);
     },
     /**
      * 重置操作.
      * @returns {Ext.panel.Panel}
      */
     onEditReset: function () {
-        this.getView().reset();
+        var model=this.getView().lookupViewModel().get('rec');
+        model.set(model.modified);
     },
     /**
      * 保存操作.

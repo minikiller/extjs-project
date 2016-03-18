@@ -8,7 +8,7 @@ Ext.define('kalix.admin.depNoArea.view.DepNoAreaTreeList', {
     extend: 'Ext.tree.Panel',
     requires: [
         'kalix.admin.depNoArea.viewModel.DepNoAreaViewModel',
-        'kalix.admin.depNoArea.controller.DepNoAreaGridController',
+        'kalix.admin.depNoArea.controller.DepNoAreaGridController'
     ],
     alias: 'widget.depNoAreaTreeList',
     xtype: 'depNoAreaTreeList',
@@ -16,18 +16,25 @@ Ext.define('kalix.admin.depNoArea.view.DepNoAreaTreeList', {
     viewModel: {
         type: 'depNoAreaViewModel'
     },
-    //displayField:'name',
-    constructor:function(){
-        this.callParent(arguments);
-        //this.store.on('load',function(target,records, successful, operation, eOpts){
-        //    var grid=this.findParentByType('panel').items.getAt(1).items.getAt(0);
-        //    if(grid){
-        //        grid.store.proxy.url = CONFIG.restRoot + '/camel/rest/deps';
-        //        grid.store.load();
-        //    }
-        //},this);
-    },
+    autoLoad:false,
     collapsible: true,
     autoScroll: true,
-    rootVisible: false
+    rootVisible: false,
+
+    store: Ext.create('kalix.admin.depNoArea.store.DepNoAreaStore'),
+    title: '部门列表',
+    iconCls: 'x-fa fa-building',
+    tbar: [
+        {
+            tooltip: '刷新', icon: 'admin/resources/images/arrow_refresh.png',
+            handler: 'onRefersh'
+        },
+        {
+            tooltip: '展开', icon: 'admin/resources/images/arrow_down.png',
+            handler: 'onExpandAll'
+        },
+        {
+            tooltip: '收起', icon: 'admin/resources/images/arrow_up.png',
+            handler: 'onCollapseAll'
+        }]
 });

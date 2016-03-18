@@ -1,5 +1,5 @@
 /**
- * 部门表格控制器
+ * 职位表格控制器
  *
  * @author zangyanming <br/>
  *         date:2016-3-10
@@ -25,17 +25,19 @@ Ext.define('kalix.admin.dutyNoArea.controller.DutyNoAreaGridController', {
      * @returns {Ext.panel.Panel}
      */
     onAdd: function () {
-        if(this.getView().depid==null||this.getView().depName==null){
+        var DepTreeList = this.getView().findParentByType('panel').items.getAt(1).items.getAt(0);
+        var dep_selected_row = DepTreeList.getSelectionModel().getSelection();
+        if(dep_selected_row.length<=0){
             Ext.Msg.alert(CONFIG.ALTER_TITLE_FAILURE, '请选择一个部门!');
             return;
         }
-        var rows = this.getView().getSelectionModel().getSelection();
-        var addFormPanel = Ext.create('kalix.admin.dutyNoArea.view.DutyNoAreaAddForm', {
-            url: this.getView().getViewModel().get('url')
-        });
-        addFormPanel.down('#depid').setValue(this.getView().depid);
-        addFormPanel.down('#depName').setValue(this.getView().depName);
-
+        var addFormPanel = Ext.create('kalix.admin.dutyNoArea.view.DutyNoAreaAddForm');
+        var model=Ext.create('Ext.data.Model')
+        addFormPanel.lookupViewModel().set('rec',model);
+        model.set('depid',dep_selected_row[0].data.id);
+        model.set('depName',dep_selected_row[0].data.name);
+        model.modified = {};
+        model.dirty = false;
         var win = Ext.create('Ext.Window', {
             width: 400,
             border: false,
@@ -55,13 +57,18 @@ Ext.define('kalix.admin.dutyNoArea.controller.DutyNoAreaGridController', {
      */
     onEdit: function (grid, rowIndex, colIndex) {
         var rec = grid.getStore().getAt(rowIndex);
-        var editFormPanel = Ext.create('kalix.admin.dutyNoArea.view.DutyNoAreaEditForm', {
-            url: this.getView().getViewModel().get('url')
-        });
-        editFormPanel.down('#depName').setValue(this.getView().depName);
-        editFormPanel.down('#nameId').setValue(this.getView().name);
-        editFormPanel.loadRecord(rec);
-
+        var editFormPanel = Ext.create('kalix.admin.dutyNoArea.view.DutyNoAreaEditForm');
+        var model=Ext.create('Ext.data.Model')
+        editFormPanel.lookupViewModel().set('rec',model);
+        model.set('id',rec.data.id);
+        model.set('depid',rec.data.depid);
+        var DepTreeList = this.getView().findParentByType('panel').items.getAt(1).items.getAt(0);
+        var dep_selected_row = DepTreeList.getSelectionModel().getSelection();
+        model.set('depName',dep_selected_row[0].data.name);
+        model.set('name',rec.data.name);
+        model.set('comment',rec.data.comment);
+        model.modified = {};
+        model.dirty = false;
         var win = Ext.create('Ext.Window', {
             width: 400,
             border: false,
@@ -79,12 +86,14 @@ Ext.define('kalix.admin.dutyNoArea.controller.DutyNoAreaGridController', {
     onSaveAddUser: function (dutyUserUrl, userAddForm, rec) {
         if (userAddForm != null && userAddForm.isValid()) {
             var userIds = userAddForm.down('#userAddItemSelector').getValue();
-            var depNoAreaId = rec.data.id;
+            var depNoAreaId = rec.data.depid;
+            var dutyNoAreaId = rec.data.id;
             Ext.Ajax.request({
                 url: dutyUserUrl,
                 paramsAsJson: true,
                 params: {
                     'depId': depNoAreaId,
+                    'dutyid':dutyNoAreaId,
                     'userIds': userIds.join(',')
                 },
                 method: 'GET',
@@ -111,10 +120,8 @@ Ext.define('kalix.admin.dutyNoArea.controller.DutyNoAreaGridController', {
 
         var win = Ext.create('Ext.Window', {
             width: 710,
-            //height: 460,
             border: false,
             modal: true,
-            //resizable:false,
             icon: 'admin/resources/images/group_add.png',
             title: '添加用户',
             items: [
@@ -133,11 +140,10 @@ Ext.define('kalix.admin.dutyNoArea.controller.DutyNoAreaGridController', {
         });
         loadMask.show();
         var dutyUserUrl = this.getView().getViewModel().get('url') + '/dutyUsers';
-        //var dutyUserUrl = '/kalix/camel/rest/deps/departmentUsers';
         var me = this;
         //获得已选用户
         Ext.Ajax.request({
-            url: dutyUserUrl + '/users/' + rec.data.id,
+            url: dutyUserUrl + '/users/' + rec.data.depid +'/' + rec.data.id,
             method: 'GET',
             callback: function (options, success, response) {
                 var users = Ext.JSON.decode(response.responseText);
@@ -145,7 +151,7 @@ Ext.define('kalix.admin.dutyNoArea.controller.DutyNoAreaGridController', {
                 dataSotre.setProxy({
                     type: 'ajax',
                     limitParam: null,
-                    url: dutyUserUrl + '/users/all/' + rec.data.id,
+                    url: dutyUserUrl + '/users/all/'  + rec.data.depid +'/'+ rec.data.id,
                     reader: {
                         type: 'json',
                         root: 'data',
@@ -200,7 +206,7 @@ Ext.define('kalix.admin.dutyNoArea.controller.DutyNoAreaGridController', {
         Ext.Msg.confirm('警告', '确定要删除吗？', function (button) {
             if (button == 'yes') {
                 Ext.Ajax.request({
-                    url: deleteUrl + '/' + rec.id,
+                    url: deleteUrl + '/'+rec.data.depid + '/' + rec.id,
                     method: 'DELETE',
                     callback: function (options, success, response) {
                         var resp = Ext.JSON.decode(response.responseText);
