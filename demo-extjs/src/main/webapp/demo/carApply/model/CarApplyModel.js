@@ -10,6 +10,7 @@ Ext.define('kalix.demo.carApply.model.CarApplyModel', {
         {name: 'usageCount', type: 'int'}, //乘车人数
         {name: 'beginDate', type: 'date', dateFormat: 'Y-m-d H:i:s'}, //用车时段,开始时间
         {name: 'endDate', type: 'date', dateFormat: 'Y-m-d H:i:s'}, //用车时段，结束时间
+        {name: 'applyDate', type: 'date', dateFormat: 'Y-m-d H:i:s', defaultValue: new Date()},//用车申请时间
         {name: 'address'}, //用车起始地点
         {name: 'city', type: 'boolean', defaultValue: true},//是否市内用车
         {name: 'operatorPhone'},//申请人联系电话
