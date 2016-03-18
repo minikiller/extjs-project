@@ -25,17 +25,19 @@ Ext.define('kalix.admin.dutyNoArea.controller.DutyNoAreaGridController', {
      * @returns {Ext.panel.Panel}
      */
     onAdd: function () {
-        if(this.getView().depid==null||this.getView().depName==null){
+        var DepTreeList = this.getView().findParentByType('panel').items.getAt(1).items.getAt(0);
+        var dep_selected_row = DepTreeList.getSelectionModel().getSelection();
+        if(dep_selected_row.length<=0){
             Ext.Msg.alert(CONFIG.ALTER_TITLE_FAILURE, '请选择一个部门!');
             return;
         }
-        var rows = this.getView().getSelectionModel().getSelection();
-        var addFormPanel = Ext.create('kalix.admin.dutyNoArea.view.DutyNoAreaAddForm', {
-            url: this.getView().getViewModel().get('url')
-        });
-        addFormPanel.down('#depid').setValue(this.getView().depid);
-        addFormPanel.down('#depName').setValue(this.getView().depName);
-
+        var addFormPanel = Ext.create('kalix.admin.dutyNoArea.view.DutyNoAreaAddForm');
+        var model=Ext.create('Ext.data.Model')
+        addFormPanel.lookupViewModel().set('rec',model);
+        model.set('depid',dep_selected_row[0].data.id);
+        model.set('depName',dep_selected_row[0].data.name);
+        model.modified = {};
+        model.dirty = false;
         var win = Ext.create('Ext.Window', {
             width: 400,
             border: false,
@@ -55,13 +57,18 @@ Ext.define('kalix.admin.dutyNoArea.controller.DutyNoAreaGridController', {
      */
     onEdit: function (grid, rowIndex, colIndex) {
         var rec = grid.getStore().getAt(rowIndex);
-        var editFormPanel = Ext.create('kalix.admin.dutyNoArea.view.DutyNoAreaEditForm', {
-            url: this.getView().getViewModel().get('url')
-        });
-        editFormPanel.down('#depName').setValue(this.getView().depName);
-        editFormPanel.down('#nameId').setValue(this.getView().name);
-        editFormPanel.loadRecord(rec);
-
+        var editFormPanel = Ext.create('kalix.admin.dutyNoArea.view.DutyNoAreaEditForm');
+        var model=Ext.create('Ext.data.Model')
+        editFormPanel.lookupViewModel().set('rec',model);
+        model.set('id',rec.data.id);
+        model.set('depid',rec.data.depid);
+        var DepTreeList = this.getView().findParentByType('panel').items.getAt(1).items.getAt(0);
+        var dep_selected_row = DepTreeList.getSelectionModel().getSelection();
+        model.set('depName',dep_selected_row[0].data.name);
+        model.set('name',rec.data.name);
+        model.set('comment',rec.data.comment);
+        model.modified = {};
+        model.dirty = false;
         var win = Ext.create('Ext.Window', {
             width: 400,
             border: false,
@@ -113,10 +120,8 @@ Ext.define('kalix.admin.dutyNoArea.controller.DutyNoAreaGridController', {
 
         var win = Ext.create('Ext.Window', {
             width: 710,
-            //height: 460,
             border: false,
             modal: true,
-            //resizable:false,
             icon: 'admin/resources/images/group_add.png',
             title: '添加用户',
             items: [
@@ -135,7 +140,6 @@ Ext.define('kalix.admin.dutyNoArea.controller.DutyNoAreaGridController', {
         });
         loadMask.show();
         var dutyUserUrl = this.getView().getViewModel().get('url') + '/dutyUsers';
-        //var dutyUserUrl = '/kalix/camel/rest/deps/departmentUsers';
         var me = this;
         //获得已选用户
         Ext.Ajax.request({

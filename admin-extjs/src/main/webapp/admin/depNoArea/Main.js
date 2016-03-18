@@ -17,7 +17,7 @@ Ext.define('kalix.admin.depNoArea.Main', {
         type: 'depNoAreaViewModel'
     },
     layout: {
-        type: 'vbox',
+        type: 'hbox',
         align: 'stretch'
     },
     items: [{

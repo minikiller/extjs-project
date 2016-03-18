@@ -26,33 +26,39 @@ Ext.define('kalix.admin.dutyNoArea.view.DutyNoAreaEditForm', {
     jsonSubmit: true,
     method: "PUT",
     defaultType: 'textfield',
+    url: CONFIG.restRoot + '/camel/rest/dutys',
     buttonAlign: "center",
     items: [
-        {xtype: 'hiddenfield', name: 'id'},
-        {xtype: 'hiddenfield', name: 'depid', itemId: 'depidId', value: '-1'},
+        {xtype: 'hiddenfield', name: 'id',bind:'{rec.id}'},
+        {xtype: 'hiddenfield', name: 'depid',bind:'{rec.depid}'},
         {
-            fieldLabel: '所属机构',
-            itemId: "depName",
-            isFormField: false,
-            disabled:true,
+            fieldLabel: '所属部门',
+            editable:false,
             beforeLabelTpl: [
                 '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
-            ]
+            ],
+            bind:{
+                value:'{rec.depName}'
+            }
         },
         {
             fieldLabel: '职位名称',
-            itemId: 'nameId',
             name: 'name',
             allowBlank: false,
             blankText: '名称不能为空!',
             beforeLabelTpl: [
                 '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
-            ]
+            ],
+            bind:{
+                value:'{rec.name}'
+            }
         },
         {
             fieldLabel: '职位描述',
-            itemId: 'commentId',
-            name: 'comment'
+            name: 'comment',
+            bind:{
+                value:'{rec.comment}'
+            }
         }
     ],
     buttons: [
