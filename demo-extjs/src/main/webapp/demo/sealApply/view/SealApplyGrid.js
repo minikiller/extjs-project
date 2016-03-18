@@ -49,7 +49,7 @@ Ext.define('kalix.demo.sealApply.view.SealApplyGrid', {
             },
             {
                 text: '申请时间',
-                dataIndex: 'creationDate',
+                dataIndex: 'creationDate'
             },
             {
                 text: '用印数',
