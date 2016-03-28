@@ -100,7 +100,8 @@ Ext.define('kalix.admin.dutyNoArea.controller.DutyNoAreaGridController', {
                 callback: function (options, success, response) {
                     var resp = Ext.JSON.decode(response.responseText);
                     if (resp != null && resp.success) {
-                        Ext.MessageBox.alert(CONFIG.ALTER_TITLE_INFO, resp.msg);
+                        //Ext.MessageBox.alert(CONFIG.ALTER_TITLE_INFO, resp.msg);
+                        kalix.core.Notify.success(resp.msg, CONFIG.ALTER_TITLE_SUCCESS);
                     } else {
                         Ext.MessageBox.alert(CONFIG.ALTER_TITLE_FAILURE, resp.msg);
                     }
