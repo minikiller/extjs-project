@@ -40,7 +40,7 @@ Ext.define('kalix.core.view.Main', {
                 xtype: 'component',
                 reference: 'senchaLogo',
                 cls: 'sencha-logo',
-                html: '<div class="main-logo" style="background: url(resources/images/logo_horizontal.png) 0 no-repeat;width: 100%;height: 100%;"></div>',//<img style="margin-left:0px" src="resources/images/logo_horizontal.png"/>
+                html: '<div class="main-logo" style="background: url(resources/images/logo_'+Ext.util.Cookies.get('loginImageTag')+'_horizontal.png) 0 no-repeat;width: 100%;height: 100%;"></div>',//<img style="margin-left:0px" src="resources/images/logo_horizontal.png"/>
                 width: 250
             },
             {

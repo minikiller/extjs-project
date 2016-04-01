@@ -10,7 +10,7 @@
 
  */
 
-Ext.define('kalix.view.login.LoginJLDHXY', {
+Ext.define('kalix.view.login.LoginCustom', {
     extend: 'Ext.container.Container',
     requires: [
         'kalix.view.login.LoginMain'
@@ -19,13 +19,14 @@ Ext.define('kalix.view.login.LoginJLDHXY', {
     width: 380,
     defaults: {
         margin: '0 0 30 0',
-        width: 380
+        width: 380,
     },
+    align:'center',
     xtype: 'loginJLDHXY',
     items: [
         {
             xtype: 'image',
-            src: 'resources/images/login_top.png'
+            src: 'resources/images/login_'+Ext.util.Cookies.get('loginImageTag')+'_top.png'
         },
         {
             xtype: 'textfield',
@@ -61,7 +62,7 @@ Ext.define('kalix.view.login.LoginJLDHXY', {
         {
             xtype: 'button',
             style: {
-                background: 'url(resources/images/login_btn.png) right bottom no-repeat'
+                background: 'url(resources/images/login_'+Ext.util.Cookies.get('loginImageTag')+'_btn.png) right bottom no-repeat'
             },
             height: 50,
             border: false,
@@ -69,7 +70,7 @@ Ext.define('kalix.view.login.LoginJLDHXY', {
         },
         {
             xtype: 'image',
-            src: 'resources/images/login_bottom.png'
+            src: 'resources/images/login_'+Ext.util.Cookies.get('loginImageTag')+'_bottom.png'
         },
         {
             xtype: 'loginMain',
