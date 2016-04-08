@@ -72,7 +72,7 @@ Ext.define('kalix.workflow.approve.view.ApproveWindow', {
             text: '关闭',
             glyph: 'xf00d@FontAwesome',
             handler: function () {
-                this.up('.window').close();
+                this.up('window').close();
             },
             bind: {
                 hidden: '{!view_operation}'

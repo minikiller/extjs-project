@@ -21,6 +21,7 @@ public class InitActivator extends KalixBundleActivator {
         httpService.registerResources(contextPath + "/Ext", "/ext-6.0.0", null);
         httpService.registerResources(contextPath + "/resources", "/resources", null);
         httpService.registerResources(contextPath + "/app", "/app", null);
+        httpService.registerResources(contextPath + "/bpmn", "/bpmn", null);
     }
 
     @Override
@@ -33,6 +34,7 @@ public class InitActivator extends KalixBundleActivator {
             httpService.unregister(contextPath + "/Ext");
             httpService.unregister(contextPath + "/resources");
             httpService.unregister(contextPath + "/app");
+            httpService.unregister(contextPath + "/bpmn");
         }
 
     }

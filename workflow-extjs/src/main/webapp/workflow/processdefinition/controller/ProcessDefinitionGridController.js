@@ -50,5 +50,10 @@ Ext.define('kalix.workflow.processdefinition.controller.ProcessDefinitionGridCon
             imgUrl: imgUrl
         });
         win.show();
+    },
+    onAdd: function () {
+        var win = Ext.create('kalix.workflow.processdefinition.view.ProcessDefinitionWindow');
+
+        win.show();
     }
 });
