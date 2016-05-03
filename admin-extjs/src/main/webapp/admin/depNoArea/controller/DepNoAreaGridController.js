@@ -48,7 +48,7 @@ Ext.define('kalix.admin.depNoArea.controller.DepNoAreaGridController', {
         var dep_selected_row = DepTreeList.getSelectionModel().getSelection();
 
         var addFormPanel = Ext.create('kalix.admin.depNoArea.view.DepNoAreaAddForm');
-        var model=Ext.create('Ext.data.Model')
+        var model=Ext.create('Ext.data.Model');
         addFormPanel.lookupViewModel().set('rec',model);
         model.set('orgId',org_selected_row[0].data.id);
         model.set('orgName',org_selected_row[0].data.name);
