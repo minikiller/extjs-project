@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    <title>kalix</title>
+    <title>数字动画生产工艺流程可视化管理系统V2.0</title>
     <link rel="icon" href="resources/images/favicon.ico" type="image/x-icon"/>
     <script type="text/javascript" src="<%=path %>/resources/js/Globle.js"></script>
     <script type="text/javascript">CONFIG.restRoot = '<%=path %>';</script>

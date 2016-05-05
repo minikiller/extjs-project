@@ -34,4 +34,4 @@ Ext.define('kalix.admin.user.component.UserTagField', {
 
         return params;
     }
-})
+});
