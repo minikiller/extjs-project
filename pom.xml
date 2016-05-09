@@ -32,6 +32,8 @@
         <module>demo-extjs</module>
         <module>audit-extjs</module>
         <module>attachment-extjs</module>
+        <module>bpmn-extjs</module>
+        <module>orgchart-extjs</module>
     </modules>
 
     <dependencyManagement>
