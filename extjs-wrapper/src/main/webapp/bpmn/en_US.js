@@ -1,1 +1,0 @@
-var Activate_the_hand_tool='Activate the hand tool';
