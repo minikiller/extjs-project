@@ -7,7 +7,7 @@
 Ext.define('kalix.workflow.processdefinition.view.ProcessDefinitionWindow', {
     extend: 'Ext.window.Window',
     requires:[
-        'kalix.view.components.common.BPMNIFrame',
+        'kalix.bpmn.view.BPMNIFrame',
         'kalix.workflow.processdefinition.controller.ProcessDefinitionWindowController'
     ],
     alias: 'widget.processDefinitionWindow',
