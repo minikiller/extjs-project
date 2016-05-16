@@ -28,7 +28,7 @@ Ext.define('kalix.admin.dep.controller.DepController', {
                 {xtype: 'container', padding:'10 10 10 0', flex: 1, items: [this.onInitOrgTreeList()]},
                 {xtype: 'container', padding:'10 10 10 0',flex: 3, items: [this.onInitDataGrid()]}
             ]
-        })
+        });
 
         return panel;
     },
