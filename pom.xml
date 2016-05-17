@@ -26,7 +26,6 @@
         <module>extjs-wrapper</module>
         <module>core-extjs</module>
         <module>admin-extjs</module>
-        <!--<module>notice-web</module>-->
         <module>app-extjs</module>
         <module>workflow-extjs</module>
         <module>demo-extjs</module>
@@ -39,50 +38,21 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>cn.com.rexen.kalix.core</groupId>
-                <artifactId>core-impl</artifactId>
+                <groupId>cn.com.rexen.kalix.poms</groupId>
+                <artifactId>poms-dm</artifactId>
                 <version>${globle.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
 
     <dependencies>
         <dependency>
-            <groupId>org.osgi</groupId>
-            <artifactId>org.osgi.core</artifactId>
-            <version>${org.osgi.core.version}</version>
-            <!--<scope>provided</scope>-->
-        </dependency>
-        <dependency>
-            <groupId>org.osgi</groupId>
-            <artifactId>org.osgi.compendium</artifactId>
-            <version>${org.osgi.compendium.version}</version>
-            <!--<scope>provided</scope>-->
-        </dependency>
-        <!--<dependency>-->
-        <!--<groupId>org.osgi</groupId>-->
-        <!--<artifactId>org.osgi.enterprise</artifactId>-->
-        <!--<version>${org.osgi.enterprise.version}</version>-->
-        <!--<scope>provided</scope>-->
-        <!--</dependency>-->
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>${log4j.version}</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>cn.com.rexen.kalix.core</groupId>
-            <artifactId>core-util</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>cn.com.rexen.kalix.core</groupId>
-            <artifactId>core-api</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-            <scope>provided</scope>
+            <groupId>cn.com.rexen.kalix.poms</groupId>
+            <artifactId>poms-dm</artifactId>
+            <type>pom</type>
+            <version>${globle.version}</version>
         </dependency>
     </dependencies>
 </project>

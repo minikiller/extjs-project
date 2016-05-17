@@ -18,38 +18,6 @@
     <packaging>bundle</packaging>
 
     <properties>
-        <shiro.version>1.2.4</shiro.version>
         <bundle.symbolicName>cn.com.rexen.extjs.core</bundle.symbolicName>
     </properties>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>cn.com.rexen.kalix.poms</groupId>
-                <artifactId>poms-dm</artifactId>
-                <version>${globle.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.apache.shiro</groupId>
-            <artifactId>shiro-core</artifactId>
-            <version>${shiro.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.ops4j.pax.web</groupId>
-            <artifactId>pax-web-api</artifactId>
-            <version>4.2.2</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.com.rexen.kalix.core</groupId>
-            <artifactId>core-impl</artifactId>
-        </dependency>
-    </dependencies>
-
 </project>

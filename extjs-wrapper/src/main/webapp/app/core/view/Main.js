@@ -14,7 +14,8 @@ Ext.define('kalix.core.view.Main', {
         'kalix.core.view.Profilebar',
         'kalix.core.view.MainContainerWrap',
         'kalix.core.view.MainTreelist',
-        'kalix.admin.dict.store.DictNoPageStore'
+        'kalix.admin.dict.store.DictNoPageStore',
+        'kalix.view.components.common.ImageToolTip'
     ],
 
     controller: 'main',
