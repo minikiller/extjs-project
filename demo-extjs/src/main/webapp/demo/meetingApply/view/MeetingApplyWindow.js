@@ -90,8 +90,8 @@ Ext.define('kalix.demo.meetingApply.view.MeetingApplyWindow', {
                     items: [
                         {
                             xtype: 'tableFormRadioGroup',
-                            columns: 5,
-                            fieldName: 'requirement',
+                            columns: 3,
+                            fieldName: 'requireType',
                             items: [
                                 {boxLabel: '照像', inputValue: '0'},
                                 {boxLabel: '摄像', inputValue: '1'},
@@ -226,6 +226,35 @@ Ext.define('kalix.demo.meetingApply.view.MeetingApplyWindow', {
                             xtype: 'tableFormField',
                             bind: {
                                 value: '{rec.securityTel}'
+                            }
+                        }
+                    ]
+                },
+                {
+                    html: '申请人'
+                },
+                {
+                    colspan: 2,
+                    items: [
+                        {
+                            xtype: 'tableFormField',
+                            readOnly: true,
+                            bind: {
+                                value: '{rec.createBy}'
+                            }
+                        }
+                    ]
+                },
+                {
+                    html: '联系电话'
+                },
+                {
+                    colspan: 2,
+                    items: [
+                        {
+                            xtype: 'tableFormField',
+                            bind: {
+                                value: '{rec.operatorPhone}'
                             }
                         }
                     ]
