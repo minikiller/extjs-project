@@ -1,8 +1,11 @@
-﻿Ext.define('kalix.demo.mainWork.view.dashboard.DashBoardExtend', {
+﻿/**
+ *
+ */
+Ext.define('kalix.demo.mainWork.view.dashboard.DashBoardExtend', {
     extend: 'Ext.dashboard.Dashboard',
     xtype: 'dashboardextend',
     requires: [
-        'kalix.demo.mainWork.view.dashboard.parts.WorkflowCategory'
+        'kalix.demo.mainWork.view.dashboard.WorkflowCategory'
     ],
     maxColumns:2,
     columnWidths: [ 0.5, 0.496 ],
