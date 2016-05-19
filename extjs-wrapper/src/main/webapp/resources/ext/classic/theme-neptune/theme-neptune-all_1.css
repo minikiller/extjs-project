@@ -2750,17 +2750,17 @@
     font: 16px/1 FontAwesome;
 }
 /* http://localhost:1841/ext/packages/core/sass/src/list/TreeItem.scss:324 */
-&.x-treelist-highlight-path .x-treelist-item:hover > * > .x-treelist-item-icon {
+.x-treelist-highlight-path .x-treelist-item:hover > * > .x-treelist-item-icon {
     color: #b0b0b0;
     transition: color 0.5s;
 }
 /* http://localhost:1841/ext/packages/core/sass/src/list/TreeItem.scss:328 */
-&.x-treelist-highlight-path .x-treelist-item:hover > * > .x-treelist-item-text {
+.x-treelist-highlight-path .x-treelist-item:hover > * > .x-treelist-item-text {
     color: #000;
     transition: color 0.5s;
 }
 /* http://localhost:1841/ext/packages/core/sass/src/list/TreeItem.scss:332 */
-&.x-treelist-highlight-path .x-treelist-item:hover > * > .x-treelist-item-expander {
+.x-treelist-highlight-path .x-treelist-item:hover > * > .x-treelist-item-expander {
     color: #b0b0b0;
     transition: color 0.5s;
 }

@@ -15,11 +15,6 @@ Ext.define('kalix.core.controller.MainController', {
             }
         }
     },
-
-    //routes: {
-    //    ':node': 'onRouteChange2'
-    //},
-    //willdo
     setCurrentView: function (hashTag) {
         hashTag = hashTag || '';
 
