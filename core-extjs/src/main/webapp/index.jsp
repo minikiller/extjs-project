@@ -9,6 +9,7 @@
 
     <title>数字动画生产工艺流程可视化管理系统V2.0</title>
     <link rel="icon" href="resources/images/favicon.ico" type="image/x-icon"/>
+    <script type="text/javascript" src="<%=path %>/resources/js/dynamic-loader.js"></script>
     <script type="text/javascript" src="<%=path %>/resources/ext/ext-all.js"></script>
     <script type="text/javascript" src="<%=path %>/resources/js/globle-custom.js"></script>
     <script type="text/javascript">CONFIG.restRoot = '<%=path %>';</script>
