@@ -41,12 +41,8 @@ Ext.define('kalix.demo.sealApply.view.SealApplyGrid', {
             {
                 text: '申请部门',
                 dataIndex: 'department'
-            }
-            ,
-            {
-                text: '当前环节',
-                dataIndex: 'currentNode'
             },
+
             {
                 text: '申请时间',
                 dataIndex: 'creationDate'
@@ -65,8 +61,11 @@ Ext.define('kalix.demo.sealApply.view.SealApplyGrid', {
             {
                 text: '经办人',
                 dataIndex: 'createBy'
-            }
-            ,
+            },
+            {
+                text: '当前环节',
+                dataIndex: 'currentNode'
+            },
             {
                 text: '工作流状态',
                 xtype: 'dictGridColumn',
@@ -81,8 +80,7 @@ Ext.define('kalix.demo.sealApply.view.SealApplyGrid', {
 
             ,
             {
-                flex: 0,
-                width: 70,
+                flex: 1.5,
                 xtype: 'securityGridColumnCommon',
                 items: [
                     {

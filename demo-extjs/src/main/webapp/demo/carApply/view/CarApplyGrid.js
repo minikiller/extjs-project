@@ -38,10 +38,7 @@ Ext.define('kalix.demo.carApply.view.CarApplyGrid', {
                 text: '编号',
                 dataIndex: 'id'
             },
-            {
-                text: '当前环节',
-                dataIndex: 'currentNode'
-            },
+
             {
                 text: '申请部门',
                 dataIndex: 'department'
@@ -71,18 +68,21 @@ Ext.define('kalix.demo.carApply.view.CarApplyGrid', {
                 renderer: null
             },
             /*{
-                text: '申请人联系电话',
-                dataIndex: 'operatorPhone'
+             text: '申请人联系电话',
+             dataIndex: 'operatorPhone'
              },*/
             {
                 text: '经办人',
                 dataIndex: 'createBy'
             },
-             {
-                 text: '审批结果',
-                 dataIndex: 'auditResult'
-             }
-            ,
+            {
+                text: '审批结果',
+                dataIndex: 'auditResult'
+            },
+            {
+                text: '当前环节',
+                dataIndex: 'currentNode'
+            },
             {
                 text: '工作流状态',
                 xtype: 'dictGridColumn',
@@ -122,7 +122,7 @@ Ext.define('kalix.demo.carApply.view.CarApplyGrid', {
                         tooltip: '查看进度',
                         handler: 'onViewCurrentProcess',
                         getClass: function (v, meta, record) {
-                            if (1!= record.data.status) {
+                            if (1 != record.data.status) {
                                 return "kalix_hidden";
                             }
                         }
