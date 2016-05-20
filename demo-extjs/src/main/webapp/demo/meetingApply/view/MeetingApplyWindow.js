@@ -131,31 +131,57 @@ Ext.define('kalix.demo.meetingApply.view.MeetingApplyWindow', {
                     },
                     items: [
                         {
-                            xtype: 'tableFormDateTimeField',
+                            xtype: 'datefield',
                             format:'Y年m月d日',
+                            width:170,
                             bind: {
                                 value: '{rec.meetingDate}'
+                            },
+                            listener:{
+                                'afterrender':function(target, eOpts){
+                                    this.lookupViewModel().get('rec').set('weekOfDay',e.displayTplData[0].label.split(':')[0]);
+                                }
                             }
                         },
                         {
-                            xtype: 'tableFormDateTimeField',
+                            xtype: 'tableFormField',
+                            bind: {
+                                value: '{rec.weekOfDay}'
+                            }
+                        },
+                        {
+                            xtype: 'timefield',
+                            minValue: '08:00',
+                            maxValue: '18:00',
                             format:'H时i分',
-                            hiddenLabel:false,
-                            label:'时',
+                            increment: 30,
+                            width:120,
+                            //width:30,
                             bind: {
                                 value: '{rec.beginTime}'
                             }
                         },
                         {
                             html: '至',
-                            //width: 15,
                             bodyStyle: 'font-size:15px;border:0px;padding:5px 0 0 0;'
                         },
                         {
-                            xtype: 'tableFormDateTimeField',
+                            xtype: 'timefield',
+                            minValue: '08:00',
+                            maxValue: '18:00',
                             format:'H时i分',
+                            increment: 30,
+                            width:120,
+                            //width:30,
                             bind: {
                                 value: '{rec.endTime}'
+                            },
+                            listeners:{
+                                'change':function(e,t,options) {
+                                    alert(e);
+                                    //this.lookupViewModel().get('rec').set('beginTime',e.displayTplData[0].label.split(':')[0]);
+                                    //this.lookupViewModel().get('rec').set('endTime',e.displayTplData[0].label.split(':')[1]);
+                                }
                             }
                         }
                     ]

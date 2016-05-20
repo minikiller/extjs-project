@@ -7,7 +7,8 @@ Ext.define('kalix.demo.meetingApply.view.MeetingApplyViewForm', {
     requires: [
         'kalix.view.components.common.TableFormField',
         'kalix.view.components.common.TableFormRadioGroup',
-        'kalix.view.components.common.TableFormDateTimeField'
+        'kalix.view.components.common.TableFormDateTimeField',
+        'kalix.admin.dict.component.DictCombobox'
     ],
     alias: 'widget.meetingApplyViewForm',
     xtype: "meetingApplyViewForm",
