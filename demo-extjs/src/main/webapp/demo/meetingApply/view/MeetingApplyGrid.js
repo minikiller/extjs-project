@@ -57,15 +57,24 @@ Ext.define('kalix.demo.meetingApply.view.MeetingApplyGrid', {
             },
             {
                 text: '会议日期',
-                dataIndex: 'meetingDate'
+                dataIndex: 'meetingDate',
+                xtype: 'datecolumn',
+                format:'Y年m月d日',
+                renderer: null
             },
             {
-                text: '会议开始时间',
-                dataIndex: 'beginTime'
+                text: '开始时间',
+                dataIndex: 'beginTime',
+                xtype: 'datecolumn',
+                format:'H时i分',
+                renderer: null
             },
             {
-                text: '会议结束时间',
-                dataIndex: 'endTime'
+                text: '结束时间',
+                dataIndex: 'endTime',
+                xtype: 'datecolumn',
+                format:'H时i分',
+                renderer: null
             },
             {
                 text: '联系人',

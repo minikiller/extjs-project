@@ -133,13 +133,13 @@ Ext.define('kalix.demo.meetingApply.view.MeetingApplyWindow', {
                         {
                             xtype: 'datefield',
                             format:'Y年m月d日',
-                            width:170,
+                            width:150,
                             bind: {
                                 value: '{rec.meetingDate}'
                             },
                             listener:{
                                 'afterrender':function(target, eOpts){
-                                    this.lookupViewModel().get('rec').set('weekOfDay',e.displayTplData[0].label.split(':')[0]);
+                                    //this.lookupViewModel().get('rec').set('weekOfDay',e.displayTplData[0].label.split(':')[0]);
                                 }
                             }
                         },
@@ -155,7 +155,7 @@ Ext.define('kalix.demo.meetingApply.view.MeetingApplyWindow', {
                             maxValue: '18:00',
                             format:'H时i分',
                             increment: 30,
-                            width:120,
+                            width:100,
                             //width:30,
                             bind: {
                                 value: '{rec.beginTime}'
@@ -171,14 +171,14 @@ Ext.define('kalix.demo.meetingApply.view.MeetingApplyWindow', {
                             maxValue: '18:00',
                             format:'H时i分',
                             increment: 30,
-                            width:120,
+                            width:100,
                             //width:30,
                             bind: {
                                 value: '{rec.endTime}'
                             },
                             listeners:{
                                 'change':function(e,t,options) {
-                                    alert(e);
+                                    //alert(e);
                                     //this.lookupViewModel().get('rec').set('beginTime',e.displayTplData[0].label.split(':')[0]);
                                     //this.lookupViewModel().get('rec').set('endTime',e.displayTplData[0].label.split(':')[1]);
                                 }
