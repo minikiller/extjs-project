@@ -7,7 +7,8 @@ Ext.define('kalix.demo.meetingApply.view.MeetingApplyViewForm', {
     requires: [
         'kalix.view.components.common.TableFormField',
         'kalix.view.components.common.TableFormRadioGroup',
-        'kalix.view.components.common.TableFormDateTimeField'
+        'kalix.view.components.common.TableFormDateTimeField',
+        'kalix.admin.dict.component.DictCombobox'
     ],
     alias: 'widget.meetingApplyViewForm',
     xtype: "meetingApplyViewForm",
@@ -78,14 +79,21 @@ Ext.define('kalix.demo.meetingApply.view.MeetingApplyViewForm', {
                     bodyStyle: 'padding:10px 0px 0px 20px;font-size:15px;',
                     items: [
                         {
-                            xtype: 'tableFormRadioGroup',
-                            columns: 3,
-                            fieldName: 'requirement',
-                            items: [
-                                {boxLabel: '照像', inputValue: '0'},
-                                {boxLabel: '摄像', inputValue: '1'},
-                                {boxLabel: '记者', inputValue: '2'}
-                            ]
+                            xtype: 'dictCombobox',
+                            readOnly: true,
+                            dictType: 'requireType',
+                            name: 'requireType',
+                            fieldStyle: 'font-size:15px;background:transparent;',
+                            bind: {
+                                value: '{rec.requireType}'
+                            },
+                            listeners: {
+                                render: function (target) {
+                                    if (target.bodyEl) {
+                                        target.bodyEl.dom.firstChild.style.border = '0px';
+                                    }
+                                }
+                            }
                         }
                     ]
                 }
@@ -121,15 +129,17 @@ Ext.define('kalix.demo.meetingApply.view.MeetingApplyViewForm', {
             },
             items: [
                 {
-                    xtype: 'tableFormDateTimeField',
+                    xtype: 'datefield',
                     format:'Y年m月d日',
+                    width:150,
                     bind: {
                         value: '{rec.meetingDate}'
                     }
                 },
                 {
-                    xtype: 'tableFormDateTimeField',
+                    xtype: 'timefield',
                     format:'H时i分',
+                    width:100,
                     bind: {
                         value: '{rec.beginTime}'
                     }
@@ -140,8 +150,9 @@ Ext.define('kalix.demo.meetingApply.view.MeetingApplyViewForm', {
                     bodyStyle: 'font-size:15px;border:0px;padding:5px 0 0 0;'
                 },
                 {
-                    xtype: 'tableFormDateTimeField',
+                    xtype: 'timefield',
                     format:'H时i分',
+                    width:100,
                     bind: {
                         value: '{rec.endTime}'
                     }
@@ -254,7 +265,7 @@ Ext.define('kalix.demo.meetingApply.view.MeetingApplyViewForm', {
             ]
         },
         {
-            html: '部门负责人'
+            html: '校务部文秘综合干事'
         },
         {
             colspan: 2,
@@ -269,7 +280,7 @@ Ext.define('kalix.demo.meetingApply.view.MeetingApplyViewForm', {
             ]
         },
         {
-            html: '副校级领导'
+            html: '校务部行政事务办主管'
         },
         {
             colspan: 2,
@@ -278,13 +289,13 @@ Ext.define('kalix.demo.meetingApply.view.MeetingApplyViewForm', {
                     xtype: 'tableFormField',
                     readOnly: true,
                     bind: {
-                        value: '{rec.managerUser}'
+                        value: '{rec.schoolAdminUser}'
                     }
                 }
             ]
         },
         {
-            html: '校务部'
+            html: '校务部副部长'
         },
         {
             colspan: 2,
@@ -299,7 +310,7 @@ Ext.define('kalix.demo.meetingApply.view.MeetingApplyViewForm', {
             ]
         },
         {
-            html: '主管领导(市外)'
+            html: '发起部门会议纪要审批'
         },
         {
             colspan: 2,
@@ -308,7 +319,7 @@ Ext.define('kalix.demo.meetingApply.view.MeetingApplyViewForm', {
                     xtype: 'tableFormField',
                     readOnly: true,
                     bind: {
-                        value: '{rec.schoolManagerUser}'
+                        value: '{rec.launchManagerUser}'
                     }
                 }
             ]

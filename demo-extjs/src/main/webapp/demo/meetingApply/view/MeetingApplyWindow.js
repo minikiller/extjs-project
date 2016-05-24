@@ -90,8 +90,8 @@ Ext.define('kalix.demo.meetingApply.view.MeetingApplyWindow', {
                     items: [
                         {
                             xtype: 'tableFormRadioGroup',
-                            columns: 5,
-                            fieldName: 'requirement',
+                            columns: 3,
+                            fieldName: 'requireType',
                             items: [
                                 {boxLabel: '照像', inputValue: '0'},
                                 {boxLabel: '摄像', inputValue: '1'},
@@ -131,31 +131,57 @@ Ext.define('kalix.demo.meetingApply.view.MeetingApplyWindow', {
                     },
                     items: [
                         {
-                            xtype: 'tableFormDateTimeField',
+                            xtype: 'datefield',
                             format:'Y年m月d日',
+                            width:150,
                             bind: {
                                 value: '{rec.meetingDate}'
+                            },
+                            listener:{
+                                'afterrender':function(target, eOpts){
+                                    //this.lookupViewModel().get('rec').set('weekOfDay',e.displayTplData[0].label.split(':')[0]);
+                                }
                             }
                         },
                         {
-                            xtype: 'tableFormDateTimeField',
+                            xtype: 'tableFormField',
+                            bind: {
+                                value: '{rec.weekOfDay}'
+                            }
+                        },
+                        {
+                            xtype: 'timefield',
+                            minValue: '08:00',
+                            maxValue: '18:00',
                             format:'H时i分',
-                            hiddenLabel:false,
-                            label:'时',
+                            increment: 30,
+                            width:100,
+                            //width:30,
                             bind: {
                                 value: '{rec.beginTime}'
                             }
                         },
                         {
                             html: '至',
-                            //width: 15,
                             bodyStyle: 'font-size:15px;border:0px;padding:5px 0 0 0;'
                         },
                         {
-                            xtype: 'tableFormDateTimeField',
+                            xtype: 'timefield',
+                            minValue: '08:00',
+                            maxValue: '18:00',
                             format:'H时i分',
+                            increment: 30,
+                            width:100,
+                            //width:30,
                             bind: {
                                 value: '{rec.endTime}'
+                            },
+                            listeners:{
+                                'change':function(e,t,options) {
+                                    //alert(e);
+                                    //this.lookupViewModel().get('rec').set('beginTime',e.displayTplData[0].label.split(':')[0]);
+                                    //this.lookupViewModel().get('rec').set('endTime',e.displayTplData[0].label.split(':')[1]);
+                                }
                             }
                         }
                     ]
@@ -226,6 +252,35 @@ Ext.define('kalix.demo.meetingApply.view.MeetingApplyWindow', {
                             xtype: 'tableFormField',
                             bind: {
                                 value: '{rec.securityTel}'
+                            }
+                        }
+                    ]
+                },
+                {
+                    html: '申请人'
+                },
+                {
+                    colspan: 2,
+                    items: [
+                        {
+                            xtype: 'tableFormField',
+                            readOnly: true,
+                            bind: {
+                                value: '{rec.createBy}'
+                            }
+                        }
+                    ]
+                },
+                {
+                    html: '联系电话'
+                },
+                {
+                    colspan: 2,
+                    items: [
+                        {
+                            xtype: 'tableFormField',
+                            bind: {
+                                value: '{rec.operatorPhone}'
                             }
                         }
                     ]

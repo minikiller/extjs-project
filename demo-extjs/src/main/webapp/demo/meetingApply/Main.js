@@ -12,14 +12,14 @@ Ext.define('kalix.demo.meetingApply.Main', {
     storeId: 'meetingApplyStore',
     items: [
          {
-            title: '用车申请查询',
+            title: '会议室使用申请查询',
             iconCls: 'x-fa fa-search',
             xtype: 'meetingApplySearchForm'
         },
         {
             xtype: 'meetingApplyGrid',
-            title: '用车申请列表',
-            iconCls: 'x-fa fa-car',
+            title: '会议室使用申请列表',
+            iconCls: 'fa fa-university',
             margin: 10
         }
     ]

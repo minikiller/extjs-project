@@ -38,10 +38,7 @@ Ext.define('kalix.demo.meetingApply.view.MeetingApplyGrid', {
                 text: '编号',
                 dataIndex: 'id'
             },
-            {
-                text: '当前环节',
-                dataIndex: 'currentNode'
-            },
+
             {
                 text: '申请部门',
                 dataIndex: 'department'
@@ -60,15 +57,24 @@ Ext.define('kalix.demo.meetingApply.view.MeetingApplyGrid', {
             },
             {
                 text: '会议日期',
-                dataIndex: 'meetingDate'
+                dataIndex: 'meetingDate',
+                xtype: 'datecolumn',
+                format:'Y年m月d日',
+                renderer: null
             },
             {
-                text: '会议开始时间',
-                dataIndex: 'beginTime'
+                text: '开始时间',
+                dataIndex: 'beginTime',
+                xtype: 'datecolumn',
+                format:'H时i分',
+                renderer: null
             },
             {
-                text: '会议结束时间',
-                dataIndex: 'endTime'
+                text: '结束时间',
+                dataIndex: 'endTime',
+                xtype: 'datecolumn',
+                format:'H时i分',
+                renderer: null
             },
             {
                 text: '联系人',
@@ -82,11 +88,14 @@ Ext.define('kalix.demo.meetingApply.view.MeetingApplyGrid', {
                 text: '经办人',
                 dataIndex: 'createBy'
             },
-             {
-                 text: '审批结果',
-                 dataIndex: 'auditResult'
-             }
-            ,
+            {
+                text: '审批结果',
+                dataIndex: 'auditResult'
+            },
+            {
+                text: '当前环节',
+                dataIndex: 'currentNode'
+            },
             {
                 text: '工作流状态',
                 xtype: 'dictGridColumn',
@@ -126,7 +135,7 @@ Ext.define('kalix.demo.meetingApply.view.MeetingApplyGrid', {
                         tooltip: '查看进度',
                         handler: 'onViewCurrentProcess',
                         getClass: function (v, meta, record) {
-                            if (1!= record.data.status) {
+                            if (1 != record.data.status) {
                                 return "kalix_hidden";
                             }
                         }

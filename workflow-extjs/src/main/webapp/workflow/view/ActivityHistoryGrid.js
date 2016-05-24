@@ -38,28 +38,10 @@ Ext.define('kalix.workflow.view.ActivityHistoryGrid', {
             {text: '编号', dataIndex: 'id', flex: 1, hidden: true},
             {text: '节点名称', dataIndex: 'activityName'},
             {text: '执行人', dataIndex: 'assignee'},
-
-            {
-                text: '开始时间', dataIndex: 'startTime', renderer: function (value) {
-                var createDate = new Date(value);
-                return createDate.format("yyyy-MM-dd hh:mm");
-            }
-            },
-            {
-                text: '结束时间', dataIndex: 'endTime', renderer: function (value) {
-                if (value && value != '') {
-                    var createDate = new Date(value);
-                    return createDate.format("yyyy-MM-dd hh:mm");
-                }
-                else {
-                    return "";
-                }
-            }
-            },
-             {text: '持续时长', dataIndex: 'durationInMillis'},
-            {
-                text: '审批意见', dataIndex: 'comment',
-            }
+            {text: '开始时间', dataIndex: 'startTime'},
+            {text: '结束时间', dataIndex: 'endTime'},
+            {text: '持续时长', dataIndex: 'durationInMillis'},
+            {text: '审批意见', dataIndex: 'comment'}
         ]
     }
 });
