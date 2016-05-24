@@ -81,8 +81,8 @@
       //set animation transition type
       transition: $jit.Trans.Quart.easeInOut,
       //set distance between node and its children
-      levelDistance: 50,
-      levelsToShow: 10,
+      levelDistance: 100,
+      levelsToShow: 1,
       constrained: false,
       //enable panning
       Navigation: {
@@ -93,8 +93,8 @@
       //set overridable=true for styling individual
       //nodes or edges
       Node: {
-        height: 33,
-        width: 150,
+        height: 31,
+        width: 181,
         type: 'stroke-rect',
         color: '#aaa',
         overridable: true,
@@ -105,7 +105,7 @@
       },
 
       Edge: {
-        type: 'line',
+        type: 'bezier',
         overridable: true,
         color: '#4b7fbc',
       },
@@ -122,20 +122,31 @@
       //Use this method to add event handlers and styles to
       //your node.
       onCreateLabel: function (label, node) {
-        label.className = 'org-chart-node'
+
+        if(node.dept){
+          label.className='org-chart-node-dept';
+        }
+        else{
+          label.className = 'org-chart-node'
+        }
+
         label.id = container.id + '_' + node.id;
         label.innerHTML = node.name;
 
+        label.onclick = function(){
+          st.onClick(node.id);
+        };
+
         //set label styles
         var style = label.style;
-        style.width = 150 + 'px';
-        style.height = 33 + 'px';
+        style.width = 180 + 'px';
+        style.height = 30 + 'px';
         style.cursor = 'pointer';
         style.color = '#333';
         style.fontSize = '0.8em';
         style.textAlign = 'center';
 
-        if (node.name.gblen() <= 24) {
+        if (node.name.gblen() <= 25) {
           style.paddingTop = '7px';
         }
         else {
@@ -180,15 +191,51 @@
     var st = view.orgTree;
 
     if (st && view.autoLoad && view.jsonData) {
-
-      //load json data
-      st.loadJSON(view.jsonData);
-      //compute node positions and layout
-      st.compute();
-      //optional: make a translation of the tree
-      st.geom.translate(new $jit.Complex(-200, 0), "current");
-      //emulate a click on the root node.
-      st.onClick(st.root);
+      ////load json data
+      //st.loadJSON(view.jsonData);
+      ////compute node positions and layout
+      //st.compute();
+      ////optional: make a translation of the tree
+      //st.geom.translate(new $jit.Complex(-200, 0), "current");
+      ////emulate a click on the root node.
+      //st.onClick(st.root);
+      this.loadData(view.jsonData);
     }
+  },
+  loadData:function(data){
+    var view = this.getView();
+    var st = view.orgTree;
+
+    //load json data
+    st.loadJSON(data);
+    //compute node positions and layout
+    st.compute();
+    //optional: make a translation of the tree
+    st.geom.translate(new $jit.Complex(-200, 0), "current");
+    //emulate a click on the root node.
+    st.onClick(st.root);
+  },
+  levelChange:function( slider, newValue, thumb, eOpts ){
+    var view = this.getView();
+    var st = view.orgTree;
+
+    st.config.levelsToShow=newValue;
+    st.onClick(st.root);
+  },
+  buttonToggle:function(target,toggle){
+    var view = this.getView();
+    var st = view.orgTree;
+    var vm=view.lookupViewModel();
+
+    if(toggle){
+      vm.set('toggleTip','关闭自适应模式')
+      st.config.constrained=true;
+    }
+    else{
+      vm.set('toggleTip','开启自适应模式')
+      st.config.constrained=false;
+    }
+
+    st.onClick(st.root);
   }
 });
