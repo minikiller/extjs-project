@@ -67,3 +67,8 @@ img.x-action-col-icon.x-action-col-2.x-hide-grid-column {
 .readmore {
     float: right;
 }
+
+/* http://localhost:1841/ext/classic/theme-neutral/sass/src/slider/Multi.scss:2 */
+.x-slider:before {
+    background-color: #7fb5e4;
+}
