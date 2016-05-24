@@ -166,14 +166,13 @@ Ext.define('kalix.demo.meetingApply.view.MeetingApplyGrid', {
                         },
                         permission: '',
                         handler: 'onWorkFlowStart'
+                    },
+                    {
+                        icon: "attachment/resources/images/attachment_manage.png",
+                        permission: '',
+                        tooltip: '附件管理',
+                        handler: 'onAttachmentManage'
                     }
-                    //,
-                    //{
-                    //    icon: "attachment/resources/images/attachment_manage.png",
-                    //    permission: '',
-                    //    tooltip: '附件管理',
-                    //    handler: 'onAttachmentManage'
-                    //}
                 ]
             }
         ]
