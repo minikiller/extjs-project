@@ -53,7 +53,7 @@ Ext.define('kalix.demo.meetingApply.view.MeetingApplyGrid', {
             },
             {
                 text: '会议地点',
-                dataIndex: 'meetingPlace'
+                dataIndex: 'meetingroomName'
             },
             {
                 text: '会议日期',
@@ -166,13 +166,14 @@ Ext.define('kalix.demo.meetingApply.view.MeetingApplyGrid', {
                         },
                         permission: '',
                         handler: 'onWorkFlowStart'
-                    },
-                    {
-                        icon: "attachment/resources/images/attachment_manage.png",
-                        permission: '',
-                        tooltip: '附件管理',
-                        handler: 'onAttachmentManage'
                     }
+                    //,
+                    //{
+                    //    icon: "attachment/resources/images/attachment_manage.png",
+                    //    permission: '',
+                    //    tooltip: '附件管理',
+                    //    handler: 'onAttachmentManage'
+                    //}
                 ]
             }
         ]

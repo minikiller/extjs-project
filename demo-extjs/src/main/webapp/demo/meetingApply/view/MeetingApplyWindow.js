@@ -11,7 +11,8 @@ Ext.define('kalix.demo.meetingApply.view.MeetingApplyWindow', {
         'kalix.view.components.common.TableFormRadioGroup',
         'kalix.controller.BaseWindowController',
         'kalix.demo.meetingApply.viewModel.MeetingApplyViewModel',
-        'kalix.view.components.common.TableFormDateTimeField'
+        'kalix.view.components.common.TableFormDateTimeField',
+        'kalix.app.meetingroom.component.MeetingroomComboBox'
     ],
     alias: 'widget.meetingApplyWindow',
     xtype: "meetingApplyWindow",
@@ -58,9 +59,9 @@ Ext.define('kalix.demo.meetingApply.view.MeetingApplyWindow', {
                     colspan: 2,
                     items: [
                         {
-                            xtype: 'tableFormField',
+                            xtype: 'meetingroomComboBox',
                             bind: {
-                                value: '{rec.meetingPlace}'
+                                value: '{rec.meetingroomId}'
                             }
                         }
                     ]
@@ -93,9 +94,9 @@ Ext.define('kalix.demo.meetingApply.view.MeetingApplyWindow', {
                             columns: 3,
                             fieldName: 'requireType',
                             items: [
-                                {boxLabel: '照像', inputValue: '0'},
-                                {boxLabel: '摄像', inputValue: '1'},
-                                {boxLabel: '记者', inputValue: '2'}
+                                {boxLabel: '照像', inputValue: '1'},
+                                {boxLabel: '摄像', inputValue: '2'},
+                                {boxLabel: '记者', inputValue: '3'}
                             ]
                         }
                     ]
@@ -133,7 +134,7 @@ Ext.define('kalix.demo.meetingApply.view.MeetingApplyWindow', {
                         {
                             xtype: 'datefield',
                             format:'Y年m月d日',
-                            width:150,
+                            width:155,
                             bind: {
                                 value: '{rec.meetingDate}'
                             },
@@ -155,7 +156,7 @@ Ext.define('kalix.demo.meetingApply.view.MeetingApplyWindow', {
                             maxValue: '18:00',
                             format:'H时i分',
                             increment: 30,
-                            width:100,
+                            width:110,
                             //width:30,
                             bind: {
                                 value: '{rec.beginTime}'
@@ -171,7 +172,7 @@ Ext.define('kalix.demo.meetingApply.view.MeetingApplyWindow', {
                             maxValue: '18:00',
                             format:'H时i分',
                             increment: 30,
-                            width:100,
+                            width:110,
                             //width:30,
                             bind: {
                                 value: '{rec.endTime}'

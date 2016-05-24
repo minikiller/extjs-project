@@ -8,7 +8,8 @@ Ext.define('kalix.demo.meetingApply.view.MeetingApplyViewForm', {
         'kalix.view.components.common.TableFormField',
         'kalix.view.components.common.TableFormRadioGroup',
         'kalix.view.components.common.TableFormDateTimeField',
-        'kalix.admin.dict.component.DictCombobox'
+        'kalix.admin.dict.component.DictCombobox',
+        'kalix.app.meetingroom.component.MeetingroomComboBox'
     ],
     alias: 'widget.meetingApplyViewForm',
     xtype: "meetingApplyViewForm",
@@ -41,10 +42,10 @@ Ext.define('kalix.demo.meetingApply.view.MeetingApplyViewForm', {
             colspan: 2,
             items: [
                 {
-                    xtype: 'tableFormField',
+                    xtype: 'meetingroomComboBox',
                     readOnly: true,
                     bind: {
-                        value: '{rec.meetingPlace}'
+                        value: '{rec.meetingroomId}'
                     }
                 }
             ]
@@ -131,9 +132,15 @@ Ext.define('kalix.demo.meetingApply.view.MeetingApplyViewForm', {
                 {
                     xtype: 'datefield',
                     format:'Y年m月d日',
-                    width:150,
+                    width:155,
                     bind: {
                         value: '{rec.meetingDate}'
+                    }
+                },
+                {
+                    xtype: 'tableFormField',
+                    bind: {
+                        value: '{rec.weekOfDay}'
                     }
                 },
                 {
