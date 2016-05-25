@@ -14,8 +14,6 @@ Ext.define('kalix.demo.mainWork.view.dashboard.WorkflowCategory', {
     viewTemplate: {
         height: 300,
         layout: 'fit',
-        
-        //title: 'Suggested Books',
         header: true,
         items: [
             {
@@ -23,18 +21,6 @@ Ext.define('kalix.demo.mainWork.view.dashboard.WorkflowCategory', {
                 bodyPadding: 5,
                 itemTpl: [],
                 store:null,
-                //store: {
-                //    storeId: 'books',
-                //    autoLoad: true,
-                //    fields: ['id', 'title', 'imgurl', 'desc'],
-                //    proxy: {
-                //        type: 'ajax',
-                //        url: 'demo/resources/images/senchabooks.json',
-                //        reader: {
-                //            rootProperty: 'books'
-                //        }
-                //    }
-                //},
                 itemSelector: 'div.thumb-wrap'
             }
         ]
@@ -47,10 +33,13 @@ Ext.define('kalix.demo.mainWork.view.dashboard.WorkflowCategory', {
         });
         view.items[0].itemTpl = new Ext.XTemplate(
             '<div class="thumb-wrap">',
-            '<img src="{imgurl}" height="80">',
+            '<tpl if="key.indexOf(\'.png\') &gt;-1">',
+            '<img src="{key}" height="80">',
+            '</tpl>',
             '<div class="detail">',
-            '<span class="title">{title}</span></br>',
-            '<span class="desc">{description}</span><a class="readmore" href="{readmore}" target="_blank">申请...</a></div>',
+            '<span class="title">{name}</span></br>',
+            '<span class="desc">{description}</span>' +
+            '<input type="button" onclick="kalix.getApplication()._mainView.controller.redirectTo(\'message/receiver\')">申请...</input></div>',
             '</div>');
         view.items[0].store = config.store;
         view.title = config.title;

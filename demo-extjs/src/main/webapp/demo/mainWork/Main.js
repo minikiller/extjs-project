@@ -7,8 +7,6 @@ Ext.define('kalix.demo.mainWork.Main', {
     requires: [
         'kalix.demo.mainWork.view.dashboard.DashBoardExtend'
     ],
-    viewModel: 'mainWorkViewModel',
-    //storeId: 'mainWorkStore',
     items: [
         {
             xtype: 'dashboardextend'

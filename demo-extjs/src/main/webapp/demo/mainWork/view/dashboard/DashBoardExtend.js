@@ -7,8 +7,8 @@ Ext.define('kalix.demo.mainWork.view.dashboard.DashBoardExtend', {
     requires: [
         'kalix.demo.mainWork.view.dashboard.WorkflowCategory'
     ],
-    maxColumns:2,
-    columnWidths: [ 0.5, 0.496 ],
+    maxColumns: 2,
+    columnWidths: [0.5, 0.496],
     defaultContent: [],
     parts: {
         'workflowCategory': 'workflowCategory'
@@ -17,34 +17,40 @@ Ext.define('kalix.demo.mainWork.view.dashboard.DashBoardExtend', {
         var scope = this;
         var defaultContent = {};
         Ext.Ajax.request({
-            async:false,
+            async: false,
             scope: scope,
             //url: CONFIG.restRoot + "/camel/rest/dicts/list/workflow_category",
-            url: CONFIG.restRoot + "/camel/rest/workflows/category",
+            url: CONFIG.restRoot + "/camel/rest/categorys/getAll",
             method: 'GET',
             success: function (response, opts) {
                 var obj = Ext.decode(response.responseText);
-                for(var i=0;i < obj.length;i++){
-                    var title = obj[i].title;
-                    var flowType = obj[i].id;
+                for (var i = 0; i < obj.length; i++) {
+                    var name = obj[i].name;
+                    var key = obj[i].key;
                     var newOjb = {
                         type: 'workflowCategory',
-                        store:Ext.create('Ext.data.Store',{
-                            storeId:'workflowCategory_'+flowType,
-                            //storeId: Ext.create('kalix.demo.mainWork.store.MainWorkStore'),
-                            autoLoad: false,
-                            fields: ['id', 'title', 'imgurl', 'description'],
+                        store: Ext.create('Ext.data.Store', {
+                            storeId: 'workflowCategory_' + key,
+                            autoLoad: true,
+                            fields: ['id', 'name', 'key', 'description'],
                             proxy: {
                                 type: 'ajax',
-                                url: CONFIG.restRoot + '/camel/rest/workflows?category=' + flowType,
+                                url: CONFIG.restRoot + '/camel/rest/categorys/getType?category=' + key,
                                 reader: {
                                     rootProperty: 'data'
                                 }
+                            },
+                            listeners: {
+                                load: function (target, records, successful, eOpts) {
+                                    for (var index = 0; index < records.length; ++index) {
+                                        records[index].set('key', CONFIG.restRoot + '/demo/resources/images/' + records[index].get('key') + '.png');
+                                    }
+                                }
                             }
                         }),
-                        columnIndex: i%2,
-                        title: title,
-                        responseIndex:i
+                        columnIndex: i % 2,
+                        title: name,
+                        responseIndex: i
                     };
 
                     scope.defaultContent.push(newOjb);
@@ -53,48 +59,8 @@ Ext.define('kalix.demo.mainWork.view.dashboard.DashBoardExtend', {
             failure: function (response, opts) {
                 console.log('server-side failure with status code ' + response.status);
             }
-        },scope);
+        }, scope);
 
         this.callParent(arguments);
-
-        //var itemsMark=[];
-
-        for(var i=0;i<scope.defaultContent.length;++i){
-            scope.defaultContent[i].store.on('load',function(target,records){
-                if(records.length==0){
-                    //itemsMark.push(this.itemIndex);
-                    //this.scope.items.getAt(0).items.getAt(this.itemIndex).hide();
-                    for(var colIndex=0;colIndex<this.scope.items.length;++colIndex){
-                        if(this.scope.items.getAt(colIndex).xtype=='dashboard-column'){
-                            for(var partIndex=0;partIndex<this.scope.items.getAt(colIndex).items.length;++partIndex){
-                                var tempPart=this.scope.items.getAt(colIndex).items.getAt(partIndex);
-
-                                if(tempPart.initialConfig._partConfig.responseIndex==this.itemIndex){
-                                   // tempPart.hide();
-                                    break;
-                                }
-                            }
-                        }
-                    }
-                }
-
-                //if(!this.scope.responseCount){
-                //   this.scope.responseCount=1;
-                //}
-                //else{
-                //    this.scope.responseCount+=1;
-                //}
-                //
-                //if(this.scope.responseCount==this.scope.defaultContent.length){
-                //    itemsMark.sort();
-                //    itemsMark.reverse();
-                //
-                //    for(var ii=0;ii<itemsMark.length;++ii){
-                //        this.scope.items.getAt(0).items;
-                //    }
-                //}
-            },{scope:scope,itemIndex:i});
-            scope.defaultContent[i].store.load();
-        }
     }
 });
