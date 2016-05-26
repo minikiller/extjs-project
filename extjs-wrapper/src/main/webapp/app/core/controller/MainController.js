@@ -56,7 +56,7 @@ Ext.define('kalix.core.controller.MainController', {
                 }
                 newView = existingItem;
                 var currentView=newView.items.getAt(existingItem.items.length - 1);
-                if (currentView!=null)
+                if (currentView!=null && currentView instanceof Ext.grid.Panel)
                     currentView.getStore().reload();
             } else {
                 // newView is set (did not exist already), so add it and make it the
@@ -67,7 +67,7 @@ Ext.define('kalix.core.controller.MainController', {
             }
         }
 
-        var node = node = Ext.getStore('NavigationTree').findNode('routeId', hashTag);
+        //var node = Ext.getStore('NavigationTree').findNode('routeId', hashTag);
 
         //this.getReferences().navigationTreeList.setSelection(node);
 
