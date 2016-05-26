@@ -5,6 +5,7 @@
 Ext.define('kalix.demo.meetingApply.view.MeetingApplyWindow', {
     extend: 'kalix.view.components.common.BaseWindow',
     requires: [
+        'kalix.demo.meetingApply.controller.MeetingApplyWindowController',
         'kalix.demo.meetingApply.view.MeetingApplyViewForm',
         'kalix.view.components.common.TableFormPanel',
         'kalix.view.components.common.TableFormField',
@@ -18,7 +19,7 @@ Ext.define('kalix.demo.meetingApply.view.MeetingApplyWindow', {
     xtype: "meetingApplyWindow",
     viewModel: 'meetingApplyViewModel',
     controller: {
-        type: 'baseWindowController',
+        type: 'meetingApplyWindowController',
         storeId: 'meetingApplyStore'
     },
     width: 900,
@@ -134,6 +135,7 @@ Ext.define('kalix.demo.meetingApply.view.MeetingApplyWindow', {
                         {
                             xtype: 'datefield',
                             format:'Y年m月d日',
+                            minValue: new Date(),
                             width:155,
                             bind: {
                                 value: '{rec.meetingDate}'
