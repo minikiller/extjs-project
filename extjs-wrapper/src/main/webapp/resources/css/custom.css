@@ -11,6 +11,10 @@
     background-image: url(../../admin/resources/images/control_pause_blue.png) !important;
 }
 
+.kalix_workflow_readmore{
+    background-image: url(../../resources/images/magnifier.png) !important;
+}
+
 .kalix_hidden {
     width: 0px !important;
 }
@@ -66,6 +70,10 @@ img.x-action-col-icon.x-action-col-2.x-hide-grid-column {
 
 .readmore {
     float: right;
+    width:16px;
+    height:16px;
+    cursor: pointer;
+    margin-left: 3px;
 }
 
 /* http://localhost:1841/ext/classic/theme-neutral/sass/src/slider/Multi.scss:2 */

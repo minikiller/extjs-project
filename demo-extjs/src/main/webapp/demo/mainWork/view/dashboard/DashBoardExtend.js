@@ -7,8 +7,8 @@ Ext.define('kalix.demo.mainWork.view.dashboard.DashBoardExtend', {
     requires: [
         'kalix.demo.mainWork.view.dashboard.WorkflowCategory'
     ],
-    maxColumns: 2,
-    columnWidths: [0.5, 0.496],
+    maxColumns: 4,
+    columnWidths: [0.25, 0.25, 0.25, 0.24],
     defaultContent: [],
     parts: {
         'workflowCategory': 'workflowCategory'
@@ -19,7 +19,6 @@ Ext.define('kalix.demo.mainWork.view.dashboard.DashBoardExtend', {
         Ext.Ajax.request({
             async: false,
             scope: scope,
-            //url: CONFIG.restRoot + "/camel/rest/dicts/list/workflow_category",
             url: CONFIG.restRoot + "/camel/rest/categorys/getAll",
             method: 'GET',
             success: function (response, opts) {
@@ -32,7 +31,7 @@ Ext.define('kalix.demo.mainWork.view.dashboard.DashBoardExtend', {
                         store: Ext.create('Ext.data.Store', {
                             storeId: 'workflowCategory_' + key,
                             autoLoad: true,
-                            fields: ['id', 'name', 'key', 'description'],
+                            fields: ['id', 'name', 'key', 'description','processId'],
                             proxy: {
                                 type: 'ajax',
                                 url: CONFIG.restRoot + '/camel/rest/categorys/getType?category=' + key,
@@ -48,7 +47,7 @@ Ext.define('kalix.demo.mainWork.view.dashboard.DashBoardExtend', {
                                 }
                             }
                         }),
-                        columnIndex: i % 2,
+                        columnIndex: i % 4,
                         title: name,
                         responseIndex: i
                     };
