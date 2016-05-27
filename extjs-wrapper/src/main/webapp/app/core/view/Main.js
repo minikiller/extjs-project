@@ -15,10 +15,10 @@ Ext.define('kalix.core.view.Main', {
         'kalix.core.view.MainContainerWrap',
         'kalix.core.view.MainTreelist',
         'kalix.admin.dict.store.DictNoPageStore',
-        'kalix.view.components.common.ImageToolTip'
+        'kalix.plugin.ToolTipPlugin'
     ],
 
-    controller: 'main',
+    controller: 'mainController',
     viewModel: 'main',
 
     cls: 'sencha-dash-viewport',
