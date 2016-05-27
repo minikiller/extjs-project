@@ -26,6 +26,7 @@ Ext.define('kalix.demo.mainWork.view.dashboard.DashBoardExtend', {
                 for (var i = 0; i < obj.length; i++) {
                     var name = obj[i].name;
                     var key = obj[i].key;
+                    var icon=obj[i].icon;
                     var newOjb = {
                         type: 'workflowCategory',
                         store: Ext.create('Ext.data.Store', {
@@ -49,6 +50,7 @@ Ext.define('kalix.demo.mainWork.view.dashboard.DashBoardExtend', {
                         }),
                         columnIndex: i % 4,
                         title: name,
+                        iconCls: icon,
                         responseIndex: i
                     };
 

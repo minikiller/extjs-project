@@ -8,10 +8,12 @@ Ext.define('kalix.demo.mainWork.view.dashboard.WorkflowCategory', {
     alias: 'part.workflowCategory',
     title:'',
     store:null,
+
     viewTemplate: {
         height: 300,
         layout: 'fit',
         header: true,
+        //iconCls: 'x-fa fa-search',
         items: [
             {
                 xtype: 'dataview',
@@ -28,6 +30,7 @@ Ext.define('kalix.demo.mainWork.view.dashboard.WorkflowCategory', {
         view.scrollable = Ext.scroll.Scroller.create({
             y: true,x:false
         });
+        view.iconCls=config.iconCls;
         view.items[0].itemTpl = new Ext.XTemplate(
             '<div class="thumb-wrap">',
             '<tpl if="key.indexOf(\'.png\') &gt;-1">',
