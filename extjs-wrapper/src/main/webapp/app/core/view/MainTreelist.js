@@ -59,5 +59,37 @@ Ext.define('kalix.core.view.MainTreelist', {
 
         }, this);
 
+    },
+    selectTreeItem:function(routeId){
+        console.log(routeId);
+
+        if(routeId&&routeId.split('/').length==2){
+            var routeSplit=routeId.split('/');
+
+            for(var levelIndex1=0;levelIndex1<this.rootItem._node.childNodes.length;++levelIndex1){
+                var hasFind=false;
+                var node=this.rootItem._node.childNodes[levelIndex1];
+
+                for(var levelIndex2=0;levelIndex2<node.childNodes.length;++levelIndex2){
+                    if(node.childNodes[levelIndex2].get('routeId').split('/')[1]==routeSplit[1]){
+                        hasFind=true;
+
+                        var treeItem=this.getItem(node);
+
+                        treeItem.expand();
+                        this.setSelection(node.childNodes[levelIndex2]);
+
+                        break;
+                    }
+                }
+
+                if(hasFind){
+                    break;
+                }
+            }
+        }
+
+
+
     }
 });
