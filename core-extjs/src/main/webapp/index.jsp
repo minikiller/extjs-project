@@ -15,8 +15,8 @@
     <script type="text/javascript">CONFIG.restRoot = '<%=path %>';</script>
     <script type="text/javascript" src="<%=path %>/resources/ext/locale/locale-zh_CN.js"></script>
     <script type="text/javascript" src="<%=path %>/resources/js/underscore-min.js"></script>
-    <%--<link type="text/css" rel="stylesheet" href="<%=path %>/resources/css/custom.css"/>--%>
     <link type="text/css" rel="stylesheet" href="<%=path %>/resources/css/notify.css"/>
+    <%--<link type="text/css" rel="stylesheet" href="<%=path %>/resources/css/custom.css"/>--%>
     <%--<script type="text/javascript" src="<%=path %>/resources/js/Picker.js"></script>--%>
     <%--<script type="text/javascript" src="<%=path %>/resources/js/Exporter.js"></script>--%>
     <%--<script type="text/javascript" src="<%=path %>/resources/js/DateFormat.js"></script>--%>

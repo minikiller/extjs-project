@@ -16,14 +16,8 @@
     <script type="text/javascript" src="<%=path %>/resources/ext/locale/locale-zh_CN.js"></script>
     <script type="text/javascript" src="<%=path %>/resources/js/underscore-min.js"></script>
     <link type="text/css" rel="stylesheet" href="<%=path %>/resources/css/notify.css"/>
-    <%--<link type="text/css" rel="stylesheet" href="<%=path %>/resources/css/custom.css"/>--%>
-    <%--<script type="text/javascript" src="<%=path %>/resources/js/Picker.js"></script>--%>
-    <%--<script type="text/javascript" src="<%=path %>/resources/js/Exporter.js"></script>--%>
-    <%--<script type="text/javascript" src="<%=path %>/resources/js/DateFormat.js"></script>--%>
-    <%--<script type="text/javascript" src="<%=path %>/resources/js/tinymce/tinymce.js"></script>--%>
-    <!-- 引入Font Awesome的css文件 -->
-    <%--<link type="text/css" rel="stylesheet" href="<%=path %>/resources/css/KitchenSink-all_2.css"/>--%>
     <script type="text/javascript">
+        Ext.Loader.setConfig({ enabled: true, disableCaching: false });
         Ext.onReady(function () {
             Ext.Ajax.request({
                 async:false,
