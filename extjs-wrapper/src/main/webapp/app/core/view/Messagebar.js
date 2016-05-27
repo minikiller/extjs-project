@@ -22,9 +22,11 @@ Ext.define('kalix.core.view.Messagebar', {
             text: '{message.count}',
             iconCls: '{message.iconCls}'
         },
-        href: '#workflow/receiver',
-        hrefTarget: '_self',
-        margin: '0 5 0 10'
+        //href: '#workflow/receiver',
+        //hrefTarget: '_self',
+        routeId:'workflow/receiver',
+        margin: '0 5 0 10',
+        handler:'onNavigationSpecial'
     }
     ]
 });
