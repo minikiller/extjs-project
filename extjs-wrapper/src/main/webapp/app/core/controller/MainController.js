@@ -6,7 +6,7 @@
 
 Ext.define('kalix.core.controller.MainController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.main',
+    alias: 'controller.mainController',
 
     listen: {
         controller: {
@@ -74,8 +74,6 @@ Ext.define('kalix.core.controller.MainController', {
         if (newView.isFocusable(true)) {
             newView.focus();
         }
-
-        //vmData.currentView = newView;
     },
 
     onToggleNavigationSize: function () {
@@ -331,5 +329,10 @@ Ext.define('kalix.core.controller.MainController', {
                 }
             });
         }
+    },
+    //this method called when Navigation Tree Select from a button
+    //in different module
+    onNavigationSpecial: function (target) {
+       this.getReferences().navigationTreeList.selectTreeItem(target.routeId);
     }
 });
