@@ -33,10 +33,7 @@ Ext.define('kalix.admin.dutyNoArea.view.DutyNoAreaGrid', {
         {text: '所属部门', dataIndex: 'depid'},
         {text: '创建人', dataIndex: 'createBy'},
         {
-            text: '创建日期', dataIndex: 'creationDate', renderer: function (value) {
-            var createDate = new Date(value);
-            return createDate.format("yyyy-MM-dd hh:mm:ss");
-        }
+            text: '创建日期', dataIndex: 'creationDate'
         },
         {
             header: '操作',

@@ -16,7 +16,7 @@ Ext.define('kalix.admin.depNoArea.model.DepNoAreaModel', {
         {name: 'parentName', type: 'string'},
         {name: 'orgId', type: 'int'},
         {name: 'createBy', type: 'string'},
-        {name: 'creationDate', type: 'int'},
+        {name: 'creationDate'},
         {name: 'updateBy', type: 'string'},
         {name: 'updateDate', type: 'int'}
     ]
