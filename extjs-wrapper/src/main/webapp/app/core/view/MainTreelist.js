@@ -60,18 +60,29 @@ Ext.define('kalix.core.view.MainTreelist', {
         }, this);
 
     },
+    //The routeId:
+    //module/menu
+    //menu
     selectTreeItem:function(routeId){
         console.log(routeId);
 
-        if(routeId&&routeId.split('/').length==2){
+        if(routeId&&(routeId.split('/').length==2||routeId.split('/').length==1)){
             var routeSplit=routeId.split('/');
+            var menuRouteId='';
+
+            if(routeSplit.length==2){
+                menuRouteId=routeSplit[1].toLowerCase();
+            }
+            else{
+                menuRouteId=routeId.toLowerCase();;
+            }
 
             for(var levelIndex1=0;levelIndex1<this.rootItem._node.childNodes.length;++levelIndex1){
                 var hasFind=false;
                 var node=this.rootItem._node.childNodes[levelIndex1];
 
                 for(var levelIndex2=0;levelIndex2<node.childNodes.length;++levelIndex2){
-                    if(node.childNodes[levelIndex2].get('routeId').split('/')[1]==routeSplit[1]){
+                    if(node.childNodes[levelIndex2].get('routeId').split('/')[1].toLowerCase()==menuRouteId){
                         hasFind=true;
 
                         var treeItem=this.getItem(node);
@@ -88,6 +99,7 @@ Ext.define('kalix.core.view.MainTreelist', {
                 }
             }
         }
+
 
 
 

@@ -333,6 +333,11 @@ Ext.define('kalix.core.controller.MainController', {
     //this method called when Navigation Tree Select from a button
     //in different module
     onNavigationSpecial: function (target) {
-       this.getReferences().navigationTreeList.selectTreeItem(target.routeId);
+        if(target&&target.routeId){
+            this.getReferences().navigationTreeList.selectTreeItem(target.routeId);
+        }
+        else{
+            this.getReferences().navigationTreeList.selectTreeItem(target);
+        }
     }
 });
