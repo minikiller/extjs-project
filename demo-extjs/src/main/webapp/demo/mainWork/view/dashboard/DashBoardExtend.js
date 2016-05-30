@@ -43,7 +43,7 @@ Ext.define('kalix.demo.mainWork.view.dashboard.DashBoardExtend', {
                             listeners: {
                                 load: function (target, records, successful, eOpts) {
                                     for (var index = 0; index < records.length; ++index) {
-                                        records[index].set('key', CONFIG.restRoot + '/demo/resources/images/' + records[index].get('key') + '.png');
+                                        records[index].set('imgUrl', CONFIG.restRoot + '/demo/resources/images/' + records[index].get('key') + '.png');
                                     }
                                 }
                             }
