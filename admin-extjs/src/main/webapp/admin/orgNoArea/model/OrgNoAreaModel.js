@@ -16,7 +16,7 @@ Ext.define('kalix.admin.orgNoArea.model.OrgNoAreaModel', {
         {name: 'parentId', type: 'int'},
         {name: 'parentName', type: 'string'},
         {name: 'createBy', type: 'string'},
-        {name: 'creationDate', type: 'int'},
+        {name: 'creationDate'},
         {name: 'updateBy', type: 'string'},
         {name: 'updateDate', type: 'int'}
     ]

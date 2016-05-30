@@ -31,10 +31,7 @@ Ext.define('kalix.admin.orgNoArea.view.OrgNoAreaGrid', {
         {text: '机构代码', dataIndex: 'code'},
         {text: '创建人', dataIndex: 'createBy'},
         {
-            text: '创建日期', dataIndex: 'creationDate', renderer: function (value) {
-            var createDate = new Date(value);
-            return createDate.format("yyyy-MM-dd hh:mm:ss");
-        }
+            text: '创建日期', dataIndex: 'creationDate'
         },
         {
             header: '操作',

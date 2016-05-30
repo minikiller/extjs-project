@@ -64,12 +64,7 @@ Ext.define('kalix.admin.area.view.AreaGrid', {
     }, {
         text: '创建日期',
         dataIndex: 'creationDate',
-        flex: 2,
-        //width: 160,
-        renderer: function (value) {
-            var createDate = new Date(value);
-            return createDate.format("yyyy-MM-dd hh:mm:ss");
-        }
+        flex: 2
     }, /*{
      text: '更新人',
      dataIndex: 'updateBy',

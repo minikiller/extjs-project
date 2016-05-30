@@ -41,10 +41,7 @@ Ext.define('kalix.app.function.view.FunctionGrid', {
         {text: '功能代码', dataIndex: 'code'},
         {text: '创建人', dataIndex: 'createBy'},
         {
-            text: '创建日期', dataIndex: 'creationDate', renderer: function (value) {
-            var createDate = new Date(value);
-            return createDate.format("yyyy-MM-dd hh:mm:ss");
-        }
+            text: '创建日期', dataIndex: 'creationDate'
         },
         /*{text: '更新人', dataIndex: 'updateBy'},
         {

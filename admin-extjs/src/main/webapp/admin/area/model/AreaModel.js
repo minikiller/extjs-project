@@ -20,7 +20,7 @@ Ext.define('kalix.admin.area.model.AreaModel', {
         {name: 'parentName', type: 'string'},
         {name: 'areaId', type: 'int'},
         {name: 'createBy', type: 'string'},
-        {name: 'creationDate', type: 'int'},
+        {name: 'creationDate'},
         {name: 'updateBy', type: 'string'},
         {name: 'updateDate', type: 'int'}
     ]
