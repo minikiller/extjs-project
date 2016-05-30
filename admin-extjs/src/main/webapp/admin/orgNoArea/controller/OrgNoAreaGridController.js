@@ -110,10 +110,12 @@ Ext.define('kalix.admin.orgNoArea.controller.OrgNoAreaGridController', {
                     method: 'DELETE',
                     callback: function (options, success, response) {
                         var resp = Ext.JSON.decode(response.responseText);
-                        Ext.MessageBox.alert(CONFIG.ALTER_TITLE_INFO, resp.msg);
-                        if (resp.success) {
+                        if (resp != null && resp.success) {
+                            kalix.core.Notify.success(resp.msg, CONFIG.ALTER_TITLE_SUCCESS);
                             var store = grid.getStore();
                             store.reload();
+                        } else {
+                            Ext.Msg.alert(CONFIG.ALTER_TITLE_FAILURE, resp.msg);
                         }
                     }
                 });
