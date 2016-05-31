@@ -34,6 +34,7 @@ Ext.define('kalix.admin.dict.view.DictGrid', {
                 renderer: this.update
             },
             {text: '编号', dataIndex: 'id', hidden: true},
+            {text: '字典名称', dataIndex: 'dictName'},
             {text: '标签名', dataIndex: 'label'},
             {text: '数据值', dataIndex: 'value'},
             {text: '类型', dataIndex: 'type'},

@@ -8,6 +8,7 @@
 Ext.define('kalix.admin.dict.model.DictModel', {
     extend: 'kalix.model.BaseModel',
     fields: [
+        {name: 'dictName', type: 'string'},
         {name: 'label', type: 'string'},
         {name: 'value', type: 'string'},
         {name: 'type', type: 'string'},

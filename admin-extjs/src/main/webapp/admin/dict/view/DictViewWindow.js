@@ -20,6 +20,12 @@ Ext.define('kalix.admin.dict.view.DictViewWindow', {
         xtype: 'baseForm',
         items: [
             {
+                fieldLabel: '字典名称',
+                bind: {
+                    value: '{rec.dictName}'
+                }
+            },
+            {
                 fieldLabel: '标签名',
                 bind: {
                     value: '{rec.label}'
