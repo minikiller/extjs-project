@@ -32,7 +32,7 @@ Ext.define('kalix.admin.dutyNoArea.controller.DutyNoAreaGridController', {
             return;
         }
         var addFormPanel = Ext.create('kalix.admin.dutyNoArea.view.DutyNoAreaAddForm');
-        var model=Ext.create('Ext.data.Model')
+        var model=Ext.create('Ext.data.Model');
         addFormPanel.lookupViewModel().set('rec',model);
         model.set('depid',dep_selected_row[0].data.id);
         model.set('depName',dep_selected_row[0].data.name);

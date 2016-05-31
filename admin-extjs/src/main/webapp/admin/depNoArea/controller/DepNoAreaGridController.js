@@ -58,8 +58,8 @@ Ext.define('kalix.admin.depNoArea.controller.DepNoAreaGridController', {
                 model.set('parentId',dep_selected_row[0].data.id);
             }
         }else{
-            model.set('parentName','根部门');
-            model.set('parentId',-1);
+            model.set('parentName',org_selected_row[0].data.name);
+            model.set('parentId',org_selected_row[0].data.id);
         }
         model.modified = {};
         model.dirty = false;
