@@ -15,7 +15,7 @@ Ext.define('kalix.controller.BaseGridController', {
         var vm = view.lookupViewModel();
 
         vm.set('rec', selModel);
-        vm.set('icon', viewModel.get('view_image_path'));
+        vm.set('iconCls', 'iconfont icon-view');
         vm.set('title', viewModel.get('view_title'));
         vm.set('view_operation', true);
         view.show();
@@ -55,7 +55,7 @@ Ext.define('kalix.controller.BaseGridController', {
         var vm = view.lookupViewModel();
 
         vm.set('rec', Ext.create(this.cfgModel));
-        vm.set('icon', viewModel.get('add_image_path'));
+        vm.set('iconCls', 'iconfont icon-add');
         vm.set('title', viewModel.get('add_title'));
         view.show();
     },
@@ -72,8 +72,9 @@ Ext.define('kalix.controller.BaseGridController', {
         var vm = view.lookupViewModel();
 
         vm.set('rec', selModel);
-        vm.set('icon', viewModel.get('edit_image_path'));
+        vm.set('iconCls', 'iconfont icon-edit');
         vm.set('title', viewModel.get('edit_title'));
+
         view.show();
         grid.setSelection(selModel);
     },

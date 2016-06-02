@@ -13,6 +13,9 @@ Ext.define('kalix.view.components.common.BaseGrid', {
     xtype: 'baseGrid',
     autoLoad: true,
     stripeRows: true,
+    bind:{
+        iconCls:'{grid_iconCls}'
+    },
     listeners: {
         itemdblclick: 'itemdblclick'
     },

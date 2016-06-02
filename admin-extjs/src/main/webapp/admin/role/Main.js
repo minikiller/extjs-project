@@ -17,13 +17,11 @@ Ext.define('kalix.admin.role.Main', {
     items: [
         {
             title: '角色查询',
-            iconCls: 'x-fa fa-search',
             xtype: 'roleSearchForm'
         }, {
             xtype: 'roleGridPanel',
             id: 'roleGridPanel',
             title: '角色列表',
-            iconCls: 'x-fa fa-users',
             margin: 10
         }
     ]

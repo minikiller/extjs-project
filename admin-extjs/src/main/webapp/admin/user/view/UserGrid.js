@@ -101,23 +101,23 @@ Ext.define('kalix.admin.user.view.UserGrid', {
             {
                 xtype: 'securityGridColumnCommon',
                 items:[{
-                    icon: "resources/images/read.png",
+                    iconCls:'iconfont icon-view-column',
                     permission: 'admin:permissionModule:userMenu:view',
                     tooltip: '查看',
                     handler: 'onView'
                 },
                     {
-                        icon: "resources/images/edit.png",
+                        iconCls:'iconfont icon-edit-column',
                         permission: 'admin:permissionModule:userMenu:edit',
                         tooltip: '编辑',
                         handler: 'onEdit'
                     }, {
-                        icon: "resources/images/delete.png",
+                        iconCls:'iconfont icon-delete',
                         permission: 'admin:permissionModule:userMenu:delete',
                         tooltip: '删除',
                         handler: 'onDelete'
                     },{
-                        icon: CONFIG.restRoot + '/admin/resources/images/user_key.png',
+                        iconCls:'iconfont icon-password-reset',
                         permission: 'admin:permissionModule:userMenu:key',
                         tooltip: '重置密码',
                         handler: 'onKey',
@@ -131,7 +131,7 @@ Ext.define('kalix.admin.user.view.UserGrid', {
                 text: '添加',
                 xtype: 'button',
                 permission: 'admin:permissionModule:userMenu:add',
-                bind: {icon: '{add_image_path}'},
+                iconCls:'iconfont icon-add',
                 handler: 'onAdd'
             }
         ]

@@ -11,7 +11,6 @@ Ext.define('kalix.admin.user.viewModel.UserViewModel', {
     data: {
         rec: null,
         validation: {},  //验证错误信息
-        icon: '',
         title: '',
         view_operation: false,
         view_title: '查看用户',

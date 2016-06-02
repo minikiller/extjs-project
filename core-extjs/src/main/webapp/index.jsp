@@ -49,6 +49,7 @@
             });
 
             DynamicLoading.css(CONFIG.restRoot + '/resources/css/custom.css');
+            DynamicLoading.css(CONFIG.restRoot + '/resources/css/iconfont/icon-font.css');
         });
     </script>
 </head>
