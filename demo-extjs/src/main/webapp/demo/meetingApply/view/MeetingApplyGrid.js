@@ -186,6 +186,13 @@ Ext.define('kalix.demo.meetingApply.view.MeetingApplyGrid', {
                 permission: '',
                 bind: {icon: '{add_image_path}'},
                 handler: 'onAdd'
+            },
+            {
+                text: '会议室占用情况',
+                xtype: 'button',
+                permission: '',
+                bind: {icon: '{add_image_path}'},
+                handler: 'onReservation'
             }
         ]
     }

@@ -19,7 +19,7 @@ Ext.define('kalix.demo.meetingApply.Main', {
         {
             xtype: 'meetingApplyGrid',
             title: '会议室使用申请列表',
-            iconCls: 'fa fa-university',
+            iconCls: 'fa fa-users',
             margin: 10
         }
     ]

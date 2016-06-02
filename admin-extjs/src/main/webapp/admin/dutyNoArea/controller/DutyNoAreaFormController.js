@@ -36,7 +36,12 @@ Ext.define('kalix.admin.dutyNoArea.controller.DutyNoAreaFormController', {
         if (form.isValid()) {
             form.submit({
                 success: function (form, action) {
-                    Ext.Msg.alert(CONFIG.ALTER_TITLE_SUCCESS, action.result.msg);
+                    if (action.result.failure) {
+                        Ext.MessageBox.alert(CONFIG.ALTER_TITLE_FAILURE, action.result.msg);
+                        return;
+                    }
+                    kalix.core.Notify.success(action.result.msg, CONFIG.ALTER_TITLE_SUCCESS);
+
                     var grid = Ext.ComponentQuery.query('dutyNoAreaGridPanel')[0];
                     var store = grid.getStore();
                     store.reload();
@@ -56,7 +61,12 @@ Ext.define('kalix.admin.dutyNoArea.controller.DutyNoAreaFormController', {
         if (form.isValid()) {
             form.submit({
                 success: function (form, action) {
-                    Ext.Msg.alert(CONFIG.ALTER_TITLE_SUCCESS, action.result.msg);
+                    if (action.result.failure) {
+                        Ext.MessageBox.alert(CONFIG.ALTER_TITLE_FAILURE, action.result.msg);
+                        return;
+                    }
+                    kalix.core.Notify.success(action.result.msg, CONFIG.ALTER_TITLE_SUCCESS);
+
                     var grid = Ext.ComponentQuery.query('dutyNoAreaGridPanel')[0];
                     var store = grid.getStore();
                     store.reload();

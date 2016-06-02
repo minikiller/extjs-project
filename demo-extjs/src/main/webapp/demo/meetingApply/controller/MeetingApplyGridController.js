@@ -36,5 +36,11 @@ Ext.define('kalix.demo.meetingApply.controller.MeetingApplyGridController', {
             imgUrl: imgUrl
         });
         win.show();
+    },
+    onReservation: function(){
+        var win = Ext.create('', {
+
+        });
+        win.show();
     }
 });

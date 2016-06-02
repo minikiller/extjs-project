@@ -58,8 +58,8 @@ Ext.define('kalix.admin.depNoArea.controller.DepNoAreaGridController', {
                 model.set('parentId',dep_selected_row[0].data.id);
             }
         }else{
-            model.set('parentName','根部门');
-            model.set('parentId',-1);
+            model.set('parentName',org_selected_row[0].data.name);
+            model.set('parentId',org_selected_row[0].data.id);
         }
         model.modified = {};
         model.dirty = false;
@@ -83,7 +83,7 @@ Ext.define('kalix.admin.depNoArea.controller.DepNoAreaGridController', {
     onEdit: function (grid, rowIndex, colIndex) {
         var rec = grid.getStore().getAt(rowIndex);
         var editFormPanel = Ext.create('kalix.admin.depNoArea.view.DepNoAreaEditForm');
-        var model=Ext.create('Ext.data.Model')
+        var model=Ext.create('Ext.data.Model');
         editFormPanel.lookupViewModel().set('rec',model);
         model.set('id',rec.data.id);
         model.set('orgId',rec.data.orgId);
@@ -96,6 +96,7 @@ Ext.define('kalix.admin.depNoArea.controller.DepNoAreaGridController', {
         model.modified = {};
         model.dirty = false;
         var win = Ext.create('Ext.Window', {
+            id: 'depNoAreaEditWindow',
             width: 400,
             border: false,
             modal: true,
@@ -234,10 +235,12 @@ Ext.define('kalix.admin.depNoArea.controller.DepNoAreaGridController', {
                     method: 'DELETE',
                     callback: function (options, success, response) {
                         var resp = Ext.JSON.decode(response.responseText);
-                        Ext.MessageBox.alert(CONFIG.ALTER_TITLE_INFO, resp.msg);
-                        if (resp.success) {
+                        if (resp != null && resp.success) {
+                            kalix.core.Notify.success(resp.msg, CONFIG.ALTER_TITLE_SUCCESS);
                             var store = grid.getStore();
                             store.reload();
+                        } else {
+                            Ext.Msg.alert(CONFIG.ALTER_TITLE_FAILURE, resp.msg);
                         }
                     }
                 });

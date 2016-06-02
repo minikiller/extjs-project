@@ -32,7 +32,7 @@ Ext.define('kalix.admin.dutyNoArea.controller.DutyNoAreaGridController', {
             return;
         }
         var addFormPanel = Ext.create('kalix.admin.dutyNoArea.view.DutyNoAreaAddForm');
-        var model=Ext.create('Ext.data.Model')
+        var model=Ext.create('Ext.data.Model');
         addFormPanel.lookupViewModel().set('rec',model);
         model.set('depid',dep_selected_row[0].data.id);
         model.set('depName',dep_selected_row[0].data.name);
@@ -211,10 +211,12 @@ Ext.define('kalix.admin.dutyNoArea.controller.DutyNoAreaGridController', {
                     method: 'DELETE',
                     callback: function (options, success, response) {
                         var resp = Ext.JSON.decode(response.responseText);
-                        Ext.MessageBox.alert(CONFIG.ALTER_TITLE_INFO, resp.msg);
-                        if (resp.success) {
+                        if (resp != null && resp.success) {
+                            kalix.core.Notify.success(resp.msg, CONFIG.ALTER_TITLE_SUCCESS);
                             var store = grid.getStore();
                             store.reload();
+                        } else {
+                            Ext.Msg.alert(CONFIG.ALTER_TITLE_FAILURE, resp.msg);
                         }
                     }
                 });

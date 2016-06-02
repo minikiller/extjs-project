@@ -32,6 +32,7 @@ Ext.define('kalix.admin.depNoArea.view.DepNoAreaEditForm', {
         {xtype: 'hiddenfield', name: 'id', bind:{value:'{rec.id}'}},
         {xtype: 'hiddenfield', name: 'orgId', bind:{value:'{rec.orgId}'}},
         {xtype: 'hiddenfield', name: 'isLeaf',value:'1'},
+        {xtype: 'hiddenfield', name: 'dept',value:true},
         {
             fieldLabel: '所属机构',
             editable:false,
