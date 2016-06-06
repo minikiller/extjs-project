@@ -21,14 +21,14 @@ Ext.define('kalix.core.view.Profilebar', {
         bind: {
             text: '{user.name}'
         },
-        glyph: 'xf007@FontAwesome',
+        iconCls:'iconfont icon-user',
         href: '#profile',
         hrefTarget: '_self',
         margin: '0 5 0 10'
     }, {
         xtype: 'button',
         text: '退出',
-        glyph: 'xf08b@FontAwesome',
+        iconCls:'iconfont icon-exit',
         bind: {
             href: '{user.quit}'
         },

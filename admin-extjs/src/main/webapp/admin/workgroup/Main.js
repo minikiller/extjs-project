@@ -17,13 +17,11 @@ Ext.define('kalix.admin.workgroup.Main', {
     items: [
         {
             title: '工作组查询',
-            iconCls: 'x-fa fa-search',
             xtype: 'workgroupSearchForm'
         }, {
             xtype: 'workgroupGridPanel',
             id: 'workgroupGridPanel',
             title: '工作组列表',
-            iconCls: 'x-fa fa-user-plus',
             margin: 10
         }
     ]

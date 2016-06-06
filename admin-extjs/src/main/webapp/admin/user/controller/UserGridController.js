@@ -15,7 +15,7 @@ Ext.define('kalix.admin.user.controller.UserGridController', {
         var vm = view.lookupViewModel();
 
         vm.set('rec', selModel);
-        vm.set('icon', viewModel.get('edit_image_path'));
+        vm.set('iconCls', 'iconfont icon-edit');
         vm.set('title', viewModel.get('edit_title'));
         view.show();
         grid.setSelection(selModel);

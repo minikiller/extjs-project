@@ -26,7 +26,7 @@ Ext.define('kalix.view.components.common.BaseWindow', {
     },
     bind: {
         title: '{title}',
-        icon: '{icon}'
+        iconCls: '{iconCls}'
     },
     defaults: {
         layout: 'form',

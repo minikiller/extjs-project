@@ -80,3 +80,12 @@ img.x-action-col-icon.x-action-col-2.x-hide-grid-column {
 .x-slider:before {
     background-color: #7fb5e4;
 }
+
+
+/* http://localhost:1841/ext/packages/core/sass/src/list/TreeItem.scss:170 */
+.x-treelist-navigation .x-treelist-item-icon,
+.x-treelist-navigation .x-treelist-item-tool {
+    color: #adb3b8;
+    font-size: 22px;
+    width: 44px;
+}

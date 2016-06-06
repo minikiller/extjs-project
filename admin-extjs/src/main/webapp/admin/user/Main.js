@@ -16,13 +16,11 @@ Ext.define('kalix.admin.user.Main', {
     items: [
         {
             title: '用户查询',
-            iconCls: 'x-fa fa-search',
             xtype: 'userSearchForm'
         }, {
             xtype: 'userGridPanel',
             id: 'userGridPanel',
             title: '用户列表',
-            iconCls: 'x-fa fa-user',
             margin: 10
         }
     ]

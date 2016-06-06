@@ -30,7 +30,7 @@ Ext.define('kalix.core.view.MainToolbar', {
                 id: item.id,
                 href: '#' + item.id,
                 text: item.title,
-                icon: item.icon,
+                iconCls: item.icon,
                 hrefTarget: '_self',
                 border: 1,
                 margin: '0 5 0 10',
