@@ -29,5 +29,11 @@ Ext.define('kalix.workflow.approve.controller.ApproveWindowController', {
                 }
             }
         });
+    },
+    onEnd: function (btn) {
+        this.onApprove(btn);
+    },
+    onModify: function (btn) {
+        this.onApprove(btn);
     }
 });

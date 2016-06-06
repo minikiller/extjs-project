@@ -53,7 +53,12 @@ Ext.define('kalix.workflow.task.controller.TaskGridController', {
                         method: "GET",
                         callback: function (options, success, response) {
                             var component = Ext.JSON.decode(response.responseText);
-                            var approvalWindow = Ext.create('kalix.workflow.approve.view.ApproveWindow');
+                            if(component.windowClass == null || component.windowClass == ''){
+                                Ext.Msg.alert(CONFIG.ALTER_TITLE_FAILURE, "没有窗口类.");
+                                return;
+                            }
+                            //var approvalWindow = Ext.create('kalix.workflow.approve.view.ApproveWindow');
+                            var approvalWindow = Ext.create(component.windowClass);
                             var vm = approvalWindow.lookupViewModel();
 
                             vm.set('title', rec.data.name);
@@ -61,7 +66,7 @@ Ext.define('kalix.workflow.task.controller.TaskGridController', {
                             vm.set('taskId', rec.data.id);
                             vm.set('businessKey', bizUrl);
 
-                            approvalWindow.insert(0, Ext.create(component.componentClass, {
+                            approvalWindow.insert(0, Ext.create(component.formClass, {
                                 layout: {
                                     type: 'table',
                                     columns: 6
