@@ -25,7 +25,6 @@ Ext.define('kalix.demo.sealApply.view.SealApplyModifyForm', {
             items: [
                 {
                     xtype: 'tableFormField',
-                    readOnly: true,
                     bind: {
                         value: '{rec.department}'
                     }

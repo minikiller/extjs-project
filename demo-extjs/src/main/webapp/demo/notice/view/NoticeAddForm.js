@@ -49,8 +49,7 @@ Ext.define('kalix.demo.notice.view.NoticeAddForm', {
             beforeLabelTpl: [
                 '<span style="color:red;font-weight:bold" data-qtip="必填选项">*</span>'
             ]
-        },
-
+        }
     ],
     buttons: [
         {

@@ -5,11 +5,11 @@ Ext.define('kalix.workflow.approve.controller.ApproveWindowController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.approveWindowController',
     requires: ['kalix.core.Notify'],
-    onApprove: function (btn) {
+    onApprove: function () {
         var scope = this;
         var status, approveOpinion, businessKey, taskId;
 
-        status = btn.text;
+        //status = btn.text;
         approveOpinion = this.getViewModel().get('approveOpinion');
         businessKey = this.getViewModel().get('businessKey');
         taskId = this.getViewModel().get('taskId');
@@ -30,10 +30,34 @@ Ext.define('kalix.workflow.approve.controller.ApproveWindowController', {
             }
         });
     },
-    onEnd: function (btn) {
-        this.onApprove(btn);
+    onEnd: function () {
+        this.onApprove();
     },
-    onModify: function (btn) {
-        this.onApprove(btn);
+    onModify: function () {
+        //var sealModifyForm = this.getView().items.items[0];
+        var businessKey;
+        var entity=this.getViewModel().get('rec');
+        businessKey = this.getViewModel().get('businessKey');
+
+        Ext.Ajax.request({
+            url: CONFIG.restRoot + '/camel/rest/'+businessKey+'s/'+entity.id,
+            scope: this,
+            defaultPostHeader : 'application/json;charset=utf-8',
+            method: 'PUT',
+            params :Ext.encode(entity),
+            callback: function (options, success, response) {
+                var rtn = Ext.JSON.decode(response.responseText);
+
+                if (rtn.success) {
+                    this.onApprove();
+                }
+                else{
+
+                }
+            }
+        });
+
+
+        //this.onApprove(btn);
     }
 });
