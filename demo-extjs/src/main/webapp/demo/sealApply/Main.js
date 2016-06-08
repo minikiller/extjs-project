@@ -13,13 +13,12 @@ Ext.define('kalix.demo.sealApply.Main', {
     items: [
          {
             title: '印章申请查询',
-            iconCls: 'x-fa fa-search',
             xtype: 'sealApplySearchForm'
         },
         {
             xtype: 'sealApplyGrid',
             title: '印章申请列表',
-            iconCls: 'x-fa fa-credit-card',
+            iconCls: 'iconfont icon-seal',
             margin: 10
         }
     ]

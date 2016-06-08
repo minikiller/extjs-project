@@ -73,11 +73,11 @@ Ext.define('kalix.workflow.processdefinition.view.ProcessDefinitionGrid', {
                 xtype: "actioncolumn",
                 itemId: 'operationColumn',
                 items: [{
-                    icon: "resources/images/pencil.png",
+                    iconCls: 'iconfont icon-edit-column',
                     tooltip: '编辑',
                     handler: 'onEdit'
                 }, {
-                    icon: "resources/images/cancel.png",
+                    iconCls: 'iconfont icon-delete',
                     tooltip: '删除',
                     handler: 'onDelete'
 
@@ -85,9 +85,9 @@ Ext.define('kalix.workflow.processdefinition.view.ProcessDefinitionGrid', {
                     itemId: 'activateButton',
                     getClass: function (v, meta, record) {
                         if (record.data.suspensionState == 1) {
-                            return "kalix_stop";
+                            return "iconfont icon-stop";
                         }
-                        return "kalix_start";
+                        return "iconfont icon-start";
                     },
                     getTip: function (value, metadata, record, row, col, store) {
                         if (record.data.suspensionState == 1) {
@@ -97,7 +97,7 @@ Ext.define('kalix.workflow.processdefinition.view.ProcessDefinitionGrid', {
                     },
                     handler: 'onIsActivate'
                 }, {
-                    icon: "resources/images/magnifier.png",
+                    iconCls: 'iconfont icon-view-column',
                     tooltip: '查看',
                     handler: 'onOpenProcessDefinition'
                 }]
@@ -111,7 +111,7 @@ Ext.define('kalix.workflow.processdefinition.view.ProcessDefinitionGrid', {
                 text: '添加',
                 xtype: 'button',
                 permission: '',
-                //bind: {icon: '{add_image_path}'},
+                iconCls: 'iconfont icon-add',
                 handler: 'onAdd'
             }
         ]

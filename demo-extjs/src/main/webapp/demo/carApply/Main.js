@@ -13,13 +13,11 @@ Ext.define('kalix.demo.carApply.Main', {
     items: [
          {
             title: '用车申请查询',
-            iconCls: 'x-fa fa-search',
             xtype: 'carApplySearchForm'
         },
         {
             xtype: 'carApplyGrid',
             title: '用车申请列表',
-            iconCls: 'x-fa fa-car',
             margin: 10
         }
     ]

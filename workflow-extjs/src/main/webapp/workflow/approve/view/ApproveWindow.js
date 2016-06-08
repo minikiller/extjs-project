@@ -13,6 +13,7 @@ Ext.define('kalix.workflow.approve.view.ApproveWindow', {
     xtype: 'approveWindow',
     controller: 'approveWindowController',
     viewModel: 'approveViewModel',
+    iconCls: 'iconfont icon-workflow-approval',
     width: 900,
     buttonAlign: "center",
     border: false,

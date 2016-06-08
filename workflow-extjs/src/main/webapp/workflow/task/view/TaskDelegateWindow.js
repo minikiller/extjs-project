@@ -18,7 +18,7 @@ Ext.define('kalix.workflow.task.view.TaskDelegateWindow', {
     resizable: false,
     title:'请选择委托人',
     buttonAlign: 'center',
-
+    iconCls: 'iconfont icon-workflow-delegate',
     layout: {
         type: 'hbox',
         align: 'stretch'
@@ -50,4 +50,4 @@ Ext.define('kalix.workflow.task.view.TaskDelegateWindow', {
         iconCls:'iconfont icon-reset iconfont-btn-small',
         handler: 'onReset'
     }]
-})
+});

@@ -16,13 +16,11 @@ Ext.define('kalix.workflow.category.Main', {
     items: [
         {
             title: '流程分类查询',
-            iconCls: 'x-fa fa-search',
             xtype: 'categorySearchForm'
         }, {
             xtype: 'categoryGridPanel',
             id: 'categoryGridPanel',
             title: '流程分类列表',
-            iconCls: 'x-fa fa-newspaper-o',
             margin: 10
         }
     ]

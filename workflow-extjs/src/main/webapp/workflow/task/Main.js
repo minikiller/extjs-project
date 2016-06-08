@@ -16,12 +16,10 @@ Ext.define('kalix.workflow.task.Main', {
     viewModel:'taskViewModel',
     items: [{
         xtype: 'taskSearchForm',
-        title: '待办任务查询',
-        iconCls: 'x-fa fa-search'
+        title: '待办任务查询'
     }, {
         xtype: 'taskGrid',
         title: '待办任务列表',
-        iconCls: 'x-fa fa-cutlery',
         margin: 10
     }]
 });

@@ -27,12 +27,11 @@ Ext.define('kalix.workflow.task.view.TaskGrid', {
     },
     stripeRows: true,
     manageHeight: true,
-    forceFit : true,
+    forceFit: true,
     selModel: {selType: 'checkboxmodel', mode: 'simple'},
     columns: {
         defaults: {
-            flex: 1,
-            //renderer: 'addTooltip'
+            flex: 1
         },
         items: [
             {
@@ -46,23 +45,23 @@ Ext.define('kalix.workflow.task.view.TaskGrid', {
             {
                 text: '编号',
                 dataIndex: 'id',
-                hidden: true,
+                hidden: true
 
             },
             {
                 text: '业务主键',
                 dataIndex: 'businessKey',
-                renderer: 'addTooltip',
+                renderer: 'addTooltip'
             },
             {
                 text: '任务名称',
                 dataIndex: 'name',
-                renderer: 'addTooltip',
+                renderer: 'addTooltip'
             },
             {
                 text: '任务描述',
                 dataIndex: 'description',
-                renderer: 'addTooltip',
+                renderer: 'addTooltip'
             },
             /*{
              text: '执行人',
@@ -71,36 +70,36 @@ Ext.define('kalix.workflow.task.view.TaskGrid', {
             {
                 text: '创建时间',
                 dataIndex: 'createTime',
-                renderer: 'addTooltip',
+                renderer: 'addTooltip'
             },
             {
                 header: '操作',
                 xtype: "actioncolumn",
-                flex:1,
+                flex: 1,
                 items: [
                     {
-                        icon: "resources/images/magnifier.png",
+                        iconCls: 'iconfont icon-current-process',
                         tooltip: '查看进度',
                         handler: 'onOpenCurrentProcess'
                     },
                     {
-                        icon: "admin/resources/images/control_play_blue.png",
+                        iconCls: 'iconfont icon-workflow-approval',
                         tooltip: '流程审批',
                         handler: 'onCompleteTask'
                     }
                 ]
             }]
     },
-         tbar: {
-             xtype: 'securityToolbar',
-             verifyItems: [
-                 {
-                     text: '委托',
-                     xtype: 'button',
-                     permission: '',
-                     bind: {icon: '{delegate_image_path}'},
-                     handler: 'onDelegate'
-                 }
-             ]
-         }
+    tbar: {
+        xtype: 'securityToolbar',
+        verifyItems: [
+            {
+                text: '委托',
+                xtype: 'button',
+                permission: '',
+                iconCls: 'iconfont icon-workflow-delegate',
+                handler: 'onDelegate'
+            }
+        ]
+    }
 });

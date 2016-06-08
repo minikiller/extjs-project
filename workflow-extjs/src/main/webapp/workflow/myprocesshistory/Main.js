@@ -10,13 +10,11 @@ Ext.define('kalix.workflow.myprocesshistory.Main', {
     items: [
         {
             xtype: 'processHistorySearchForm',
-            title: '我的流程查询',
-            iconCls: 'x-fa fa-search'
+            title: '我的流程查询'
         },
         {
             xtype: 'processHistoryGrid',
             title: '我的流程列表',
-            iconCls: 'x-fa fa-calendar',
             store: {
                 type: 'processHistoryStore',
                 proxyUrl: CONFIG.restRoot + '/camel/rest/workflow/myHistory'

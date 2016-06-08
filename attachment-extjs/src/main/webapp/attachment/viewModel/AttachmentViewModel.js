@@ -7,7 +7,8 @@ Ext.define('kalix.attachment.viewModel.AttachmentViewModel', {
     data: {
         rec: null,
         validation: {},  //验证错误信息
-        icon: 'attachment/resources/images/attachment_manage.png',
+        //icon: 'attachment/resources/images/attachment_manage.png',
+        iconCls: 'iconfont icon-attachment-column',
         title: '附件管理',
         view_operation: true,
         view_title: '',

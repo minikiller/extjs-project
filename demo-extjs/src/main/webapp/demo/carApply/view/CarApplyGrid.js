@@ -10,6 +10,7 @@ Ext.define('kalix.demo.carApply.view.CarApplyGrid', {
     ],
     alias: 'widget.carApplyGrid',
     xtype: 'carApplyGrid',
+    iconCls: 'iconfont icon-public-car',
     controller: {
         type: 'carApplyGridController',
         storeId: 'carApplyStore',
@@ -100,13 +101,12 @@ Ext.define('kalix.demo.carApply.view.CarApplyGrid', {
                 xtype: 'securityGridColumnCommon',
                 items: [
                     {
-                        icon: "resources/images/read.png",
+                        iconCls: 'iconfont icon-vie-column',
                         permission: '',
                         tooltip: '查看',
                         handler: 'onView'
                     },
                     {
-                        icon: "resources/images/edit.png",
                         permission: '',
                         tooltip: '编辑',
                         handler: 'onEdit',
@@ -114,10 +114,10 @@ Ext.define('kalix.demo.carApply.view.CarApplyGrid', {
                             if (0 != record.data.status) {
                                 return "kalix_hidden";
                             }
+                            return "iconfont icon-edit-column";
                         }
                     },
                     {
-                        icon: "resources/images/magnifier.png",
                         permission: '',
                         tooltip: '查看进度',
                         handler: 'onViewCurrentProcess',
@@ -125,10 +125,10 @@ Ext.define('kalix.demo.carApply.view.CarApplyGrid', {
                             if (1 != record.data.status) {
                                 return "kalix_hidden";
                             }
+                            return "iconfont icon-current-process";
                         }
                     },
                     {
-                        icon: "resources/images/delete.png",
                         permission: '',
                         tooltip: '删除',
                         handler: 'onDelete',
@@ -136,6 +136,7 @@ Ext.define('kalix.demo.carApply.view.CarApplyGrid', {
                             if (0 != record.data.status) {
                                 return "kalix_hidden";
                             }
+                            return "iconfont icon-delete";
                         }
                     },
                     {
@@ -143,7 +144,7 @@ Ext.define('kalix.demo.carApply.view.CarApplyGrid', {
                             if (record.data.status) {
                                 return "kalix_hidden";
                             }
-                            return "kalix_start";
+                            return "iconfont icon-start";
                         },
                         getTip: function (value, metadata, record, row, col, store) {
                             if (record.data.status) {
@@ -155,7 +156,7 @@ Ext.define('kalix.demo.carApply.view.CarApplyGrid', {
                         handler: 'onWorkFlowStart'
                     },
                     {
-                        icon: "attachment/resources/images/attachment_manage.png",
+                        iconCls: 'iconfont icon-attachment-column',
                         permission: '',
                         tooltip: '附件管理',
                         handler: 'onAttachmentManage'
@@ -171,7 +172,7 @@ Ext.define('kalix.demo.carApply.view.CarApplyGrid', {
                 text: '添加',
                 xtype: 'button',
                 permission: '',
-                bind: {icon: '{add_image_path}'},
+                iconCls: 'iconfont icon-add',
                 handler: 'onAdd'
             }
         ]

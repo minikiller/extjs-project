@@ -30,7 +30,7 @@ Ext.define('kalix.workflow.processhistory.controller.ProcessHistoryGridControlle
                         method: 'GET',
                         callback: function (options, success, response) {
                             var component = Ext.JSON.decode(response.responseText);
-                            var approvalWindow = Ext.create('kalix.workflow.approve.view.ApproveWindow');
+                            var approvalWindow = Ext.create('kalix.workflow.approve.view.ApproveWindow',{iconCls:'iconfont icon-history'});
                             var vm = approvalWindow.lookupViewModel();
 
                             vm.set('title', '流程历史查看');

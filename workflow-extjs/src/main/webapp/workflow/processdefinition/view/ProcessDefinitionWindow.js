@@ -12,6 +12,8 @@ Ext.define('kalix.workflow.processdefinition.view.ProcessDefinitionWindow', {
     ],
     alias: 'widget.processDefinitionWindow',
     xtype: "processDefinitionWindow",
+    iconCls: 'iconfont icon-add',
+    title: '新增流程定义',
     controller: 'processDefinitionWindowController',
     width: 1024,
     height:768,

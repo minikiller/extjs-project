@@ -17,13 +17,11 @@ Ext.define('kalix.workflow.processdefinition.Main', {
     items: [
     {
         xtype: 'processDefinitionSearchForm',
-        title: '流程定义查询',
-        iconCls: 'x-fa fa-search'
+        title: '流程定义查询'
     },
     {
         xtype: 'processDefinitionGrid',
         title: '流程定义列表',
-        iconCls: 'x-fa fa-file-text',
         margin: 10
     }]
 });

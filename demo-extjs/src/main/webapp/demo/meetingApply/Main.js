@@ -13,13 +13,11 @@ Ext.define('kalix.demo.meetingApply.Main', {
     items: [
          {
             title: '会议室使用申请查询',
-            iconCls: 'x-fa fa-search',
             xtype: 'meetingApplySearchForm'
         },
         {
             xtype: 'meetingApplyGrid',
             title: '会议室使用申请列表',
-            iconCls: 'fa fa-users',
             margin: 10
         }
     ]

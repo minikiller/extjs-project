@@ -37,7 +37,7 @@ Ext.define('kalix.workflow.category.view.CategoryGrid', {
             {
                 text: '编号',
                 dataIndex: 'id',
-                hidden: true,
+                hidden: true
             },
             	{
             		text: '分类名称',
@@ -60,27 +60,25 @@ Ext.define('kalix.workflow.category.view.CategoryGrid', {
                 xtype: 'securityGridColumnCommon',
                 items: [
                     {
-                        icon: "resources/images/read.png",
+                        iconCls: 'iconfont icon-view-column',
                         permission: '',
                         tooltip: '查看',
                         handler: 'onView'
                     },
                     {
-                        //bind: {icon: ''},
-                        icon: "resources/images/edit.png",
+                        iconCls: 'iconfont icon-edit-column',
                         permission: '',
                         tooltip: '编辑',
                         handler: 'onEdit'
                     },
                     {
-                        icon: "resources/images/delete.png",
+                        iconCls: 'iconfont icon-delete',
                         permission: '',
                         tooltip: '删除',
                         handler: 'onDelete'
                     }
                 ]
             }
-
         ]
     },
     tbar: {
@@ -91,7 +89,7 @@ Ext.define('kalix.workflow.category.view.CategoryGrid', {
                 xtype: 'button',
                 //todo change permission
                 permission:'',// 'workflow:workFlowModule:categoryMenu:add',
-                bind: {icon: '{add_image_path}'},
+                iconCls: 'iconfont icon-add',
                 handler: 'onAdd'
             }
         ]

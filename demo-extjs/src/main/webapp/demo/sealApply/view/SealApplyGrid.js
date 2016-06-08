@@ -84,13 +84,13 @@ Ext.define('kalix.demo.sealApply.view.SealApplyGrid', {
                 xtype: 'securityGridColumnCommon',
                 items: [
                     {
-                        icon: "resources/images/read.png",
+                        iconCls: 'iconfont icon-view-column',
                         permission: '',
                         tooltip: '查看',
                         handler: 'onView'
                     },
                     {
-                        icon: "resources/images/workflow.png",
+                        //icon: "resources/images/workflow.png",
                         permission: '',
                         tooltip: '查看当前流程',
                         handler: 'onViewCurrentProcess',
@@ -98,16 +98,18 @@ Ext.define('kalix.demo.sealApply.view.SealApplyGrid', {
                             if (1!= record.data.status) {
                                 return "kalix_hidden";
                             }
+                            return "iconfont icon-workflow-view-column";
                         }
                     },
                     {
-                        icon: "resources/images/delete.png",
                         permission: '',
                         tooltip: '删除',
                         handler: 'onDelete',
                         getClass: function (v, meta, record) {
                             if (0 != record.data.status) {
                                 return "kalix_hidden";
+                            }else{
+                                return "iconfont icon-delete";
                             }
                         }
                     },
@@ -116,7 +118,7 @@ Ext.define('kalix.demo.sealApply.view.SealApplyGrid', {
                             if (record.data.status) {
                                 return "kalix_hidden";
                             }
-                            return "kalix_start";
+                            return "iconfont icon-start";
                         },
                         getTip: function (value, metadata, record, row, col, store) {
                             if (record.data.status) {
@@ -128,7 +130,7 @@ Ext.define('kalix.demo.sealApply.view.SealApplyGrid', {
                         handler: 'onWorkFlowStart'
                     },
                     {
-                        icon: "attachment/resources/images/attachment_manage.png",
+                        iconCls: 'iconfont icon-attachment-column',
                         permission: '',
                         tooltip: '附件管理',
                         handler: 'onAttachmentManage'
@@ -144,7 +146,7 @@ Ext.define('kalix.demo.sealApply.view.SealApplyGrid', {
                 text: '添加',
                 xtype: 'button',
                 permission: '',
-                bind: {icon: '{add_image_path}'},
+                iconCls: 'iconfont icon-add',
                 handler: 'onAdd'
             }
         ]

@@ -89,7 +89,7 @@ Ext.define('kalix.workflow.processhistory.view.ProcessHistoryGrid', {
                 header: '操作',
                 xtype: "actioncolumn",
                 items: [{
-                    icon: "resources/images/workflow.png",
+                    iconCls: 'iconfont icon-history',
                     tooltip: '查看流程历史',
                     handler: 'onOpenHistoryActivity'
                 }]

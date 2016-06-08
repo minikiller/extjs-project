@@ -16,12 +16,10 @@ Ext.define('kalix.workflow.processhistory.Main', {
     viewModel: 'processHistoryViewModel',
     items: [{
         xtype: 'processHistorySearchForm',
-        title: '流程历史查询',
-        iconCls: 'x-fa fa-search'
+        title: '流程历史查询'
     }, {
         xtype: 'processHistoryGrid',
         title: '流程历史列表',
-        iconCls: 'x-fa fa-calendar',
         margin: 10
     }]
 });

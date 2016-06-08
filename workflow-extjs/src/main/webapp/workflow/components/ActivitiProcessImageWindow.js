@@ -13,6 +13,7 @@ Ext.define('kalix.workflow.components.ActivitiProcessImageWindow', {
     modal: true,
     buttonAlign: 'center',
     imgUrl: '',
+    iconCls: 'iconfont icon-view',
     constructor: function () {
         this.callParent(arguments);
 
