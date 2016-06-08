@@ -77,12 +77,12 @@ Ext.define('kalix.admin.depNoArea.view.DepNoAreaAddForm', {
         {
             text: '保存',
             type: 'submit',
-            glyph: 'xf0c7@FontAwesome',
+            iconCls:'iconfont icon-save iconfont-btn-small',
             handler: 'onSave'
         },
         {
             text: '重置',
-            glyph: 'xf0e2@FontAwesome',
+            iconCls:'iconfont icon-reset iconfont-btn-small',
             handler: 'onAddReset'
         }
     ]

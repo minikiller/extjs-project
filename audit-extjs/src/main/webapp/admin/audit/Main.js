@@ -16,13 +16,11 @@ Ext.define('kalix.admin.audit.Main', {
     items: [
         {
             title: '审计查询',
-            iconCls: 'x-fa fa-search',
             xtype: 'auditSearchForm'
         }, {
             xtype: 'auditGridPanel',
             id: 'auditGridPanel',
             title: '审计列表',
-            iconCls: 'x-fa fa-file-o',
             margin: 10
         }
     ]

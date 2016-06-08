@@ -17,16 +17,11 @@ Ext.define('kalix.admin.area.Main', {
     //viewModel: 'areaViewModel',
     items: [{
         xtype: 'areaGridPanel',
-
         title: '区域列表',
-        iconCls: 'x-fa fa-home',
+        iconCls: 'iconfont icon-area-management',
         margin: 10,
-
         manageHeight: true,
         rootVisible: false,
-
-
-
-            store: Ext.create('kalix.admin.area.store.AreaStore')
+        store: Ext.create('kalix.admin.area.store.AreaStore')
     }]
 });

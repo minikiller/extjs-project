@@ -30,18 +30,21 @@ Ext.define('kalix.admin.orgNoArea.view.OrgNoAreaTreeList', {
     autoScroll: true,
     rootVisible: false,
     title: '机构列表',
-    iconCls: 'x-fa fa-building',
+    iconCls: 'iconfont icon-organization-management',
     tbar: [
         {
-            tooltip: '刷新', icon: 'admin/resources/images/arrow_refresh.png',
+            tooltip: '刷新',
+            iconCls:'iconfont icon-refresh',
             handler: 'onRefersh'
         },
         {
-            tooltip: '展开', icon: 'admin/resources/images/arrow_down.png',
+            tooltip: '展开',
+            iconCls: 'iconfont icon-tree-expand',
             handler: 'onOrgExpandAll'
         },
         {
-            tooltip: '收起', icon: 'admin/resources/images/arrow_up.png',
+            tooltip: '收起',
+            iconCls: 'iconfont icon-tree-collapse',
             handler: 'onOrgCollapseAll'
         }]
 });

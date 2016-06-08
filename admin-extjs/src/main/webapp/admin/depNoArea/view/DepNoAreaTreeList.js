@@ -23,18 +23,21 @@ Ext.define('kalix.admin.depNoArea.view.DepNoAreaTreeList', {
 
     store: Ext.create('kalix.admin.depNoArea.store.DepNoAreaStore'),
     title: '部门列表',
-    iconCls: 'x-fa fa-building',
+    iconCls: 'iconfont icon-department-management',
     tbar: [
         {
-            tooltip: '刷新', icon: 'admin/resources/images/arrow_refresh.png',
+            tooltip: '刷新',
+            iconCls:'iconfont icon-refresh',
             handler: 'onRefersh'
         },
         {
-            tooltip: '展开', icon: 'admin/resources/images/arrow_down.png',
+            tooltip: '展开',
+            iconCls: 'iconfont icon-tree-expand',
             handler: 'onExpandAll'
         },
         {
-            tooltip: '收起', icon: 'admin/resources/images/arrow_up.png',
+            tooltip: '收起',
+            iconCls: 'iconfont icon-tree-collapse',
             handler: 'onCollapseAll'
         }]
 });

@@ -46,28 +46,28 @@ Ext.define('kalix.admin.role.view.RoleGrid', {
                 xtype: 'securityGridColumnCommon',
                 items: [
                     {
-                        icon: "resources/images/read.png",
+                        iconCls:'iconfont icon-view-column',
                         permission: 'admin:permissionModule:roleMenu:view',
                         tooltip: '查看',
                         handler: 'onView'
                     },
                     {
-                        icon: "resources/images/edit.png",
+                        iconCls:'iconfont icon-edit-column',
                         permission: 'admin:permissionModule:roleMenu:edit',
                         tooltip: '编辑',
                         handler: 'onEdit'
                     }, {
-                        icon: "resources/images/delete.png",
+                        iconCls:'iconfont icon-delete',
                         permission: 'admin:permissionModule:roleMenu:delete',
                         tooltip: '删除',
                         handler: 'onDelete'
                     }, {
-                        icon: "admin/resources/images/group_add.png",
+                        iconCls:'iconfont icon-add-user-column',
                         permission: 'admin:permissionModule:roleMenu:addUser',
                         tooltip: '添加用户',
-                        handler: 'onAddUser',
+                        handler: 'onAddUser'
                     }, {
-                        icon: "admin/resources/images/application_add.png",
+                        iconCls:'iconfont icon-permission-column',
                         permission: 'admin:permissionModule:roleMenu:auth',
                         tooltip: '权限分配',
                         handler: 'onAuthorization'
@@ -82,7 +82,7 @@ Ext.define('kalix.admin.role.view.RoleGrid', {
                 tooltip: '添加角色',
                 xtype: 'button',
                 permission: 'admin:permissionModule:roleMenu:add',
-                bind: {icon: '{add_image_path}'},
+                iconCls:'iconfont icon-add',
                 handler: 'onAdd'
             }
         ]

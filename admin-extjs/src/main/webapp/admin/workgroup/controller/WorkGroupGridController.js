@@ -80,7 +80,7 @@ Ext.define('kalix.admin.workgroup.controller.WorkGroupGridController', {
             border: false,
             modal: true,
             //resizable:false,
-            icon: 'admin/resources/images/group_add.png',
+            iconCls:'iconfont icon-add-user-column',
             title: '添加用户',
             items: [
                 {
@@ -124,17 +124,21 @@ Ext.define('kalix.admin.workgroup.controller.WorkGroupGridController', {
                     ],
                     buttons: [
                         {
-                            text: '保存', glyph: 'xf0c7@FontAwesome', handler: function () {
-                            me.onSaveAddUser(workGroupUserUrl, this.up('#addUserForm'), rec);
-                        }
+                            text: '保存',
+                            iconCls:'iconfont icon-save iconfont-btn-small',
+                            handler: function () {
+                                me.onSaveAddUser(workGroupUserUrl, this.up('#addUserForm'), rec);
+                            }
                         },
                         {
-                            text: '重置', glyph: 'xf0e2@FontAwesome', handler: function () {
-                            var field = this.up('#addUserForm').down('#userAddItemSelector');
-                            if (!field.disabled) {
-                                field.clearValue();
+                            text: '重置',
+                            iconCls:'iconfont icon-reset iconfont-btn-small',
+                            handler: function () {
+                                var field = this.up('#addUserForm').down('#userAddItemSelector');
+                                if (!field.disabled) {
+                                    field.clearValue();
+                                }
                             }
-                        }
                         }
                     ]
                 });
@@ -161,7 +165,7 @@ Ext.define('kalix.admin.workgroup.controller.WorkGroupGridController', {
             border: false,
             modal: true,
             //resizable:false,
-            icon: 'admin/resources/images/user_add.png',
+            iconCls:'iconfont icon-role-management-column',
             title: '添加角色',
             items: [
                 {
@@ -205,12 +209,12 @@ Ext.define('kalix.admin.workgroup.controller.WorkGroupGridController', {
                     ],
                     buttons: [
                         {
-                            text: '保存', glyph: 'xf0c7@FontAwesome', handler: function () {
+                            text: '保存', iconCls:'iconfont icon-save iconfont-btn-small', handler: function () {
                             me.onSaveAddRole(workGroupRoleUrl, this.up('#addRoleForm'), rec);
                         }
                         },
                         {
-                            text: '重置', glyph: 'xf0e2@FontAwesome', handler: function () {
+                            text: '重置', iconCls:'iconfont icon-reset iconfont-btn-small', handler: function () {
                             var field = this.up('#addRoleForm').down('#roleAddItemSelector');
                             if (!field.disabled) {
                                 field.clearValue();

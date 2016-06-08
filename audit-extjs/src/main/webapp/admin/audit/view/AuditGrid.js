@@ -20,7 +20,7 @@ Ext.define('kalix.admin.audit.view.AuditGrid', {
     store: {
         type: 'auditStore'
     },
-    forceFit : true,
+    forceFit: true,
     selModel: {selType: 'checkboxmodel', mode: 'simple'},
     columns: {
         defaults: {flex: 1},
@@ -47,28 +47,29 @@ Ext.define('kalix.admin.audit.view.AuditGrid', {
                 xtype: 'securityGridColumnCommon',
                 items: [
                     {
-                        icon: "resources/images/read.png",
+                        iconCls: 'iconfont icon-view-column',
                         permission: 'admin:sysModule:auditMenu:view',
                         tooltip: '查看',
                         handler: 'onView'
                     }, {
-                        icon: "resources/images/delete.png",
+                        iconCls: 'iconfont icon-delete',
                         permission: 'admin:sysModule:auditMenu:delete',
                         tooltip: '删除',
                         handler: 'onDelete'
                     }]
-            }]
+            }
+        ]
     },
-              tbar: {
-                  xtype: 'securityToolbar',
-                  verifyItems: [
-                      {
-                          text: '批量删除',
-                          xtype: 'button',
-                          permission: '',
-                          iconCls: 'fa fa-trash',
-                          handler: 'onBatchDelete'
-                      }
-                  ]
-              }
+    tbar: {
+        xtype: 'securityToolbar',
+        verifyItems: [
+            {
+                text: '批量删除',
+                xtype: 'button',
+                permission: '',
+                iconCls: 'iconfont icon-delete',
+                handler: 'onBatchDelete'
+            }
+        ]
+    }
 });

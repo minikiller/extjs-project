@@ -27,7 +27,7 @@ Ext.define('kalix.workflow.processdefinition.view.ProcessDefinitionWindow', {
     ],
     buttons: [{
         text: '保存',
-        glyph: 'xf0c7@FontAwesome',
+        iconCls:'iconfont icon-save iconfont-btn-small',
         handler: 'onSave'
     },
         {

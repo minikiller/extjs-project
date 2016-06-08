@@ -68,7 +68,7 @@ Ext.define('kalix.admin.audit.view.AuditEditForm', {
             text: '保存', glyph: 0xf0c7, type: 'submit', handler: 'onUpdate',
         },
         {
-            text: '重置', glyph: 'xf0e2@FontAwesome', handler: 'onEditReset'
+            text: '重置', iconCls:'iconfont icon-reset iconfont-btn-small', handler: 'onEditReset'
         }
     ]
 });

@@ -63,10 +63,10 @@ Ext.define('kalix.admin.dutyNoArea.view.DutyNoAreaEditForm', {
     ],
     buttons: [
         {
-            text: '保存', glyph: 'xf0c7@FontAwesome', type: 'submit', handler: 'onUpdate'
+            text: '保存', iconCls:'iconfont icon-save iconfont-btn-small', type: 'submit', handler: 'onUpdate'
         },
         {
-            text: '重置', glyph: 'xf0e2@FontAwesome', handler: 'onEditReset'
+            text: '重置', iconCls:'iconfont icon-reset iconfont-btn-small', handler: 'onEditReset'
         }
     ]
 });

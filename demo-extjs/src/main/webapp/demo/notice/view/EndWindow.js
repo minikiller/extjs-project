@@ -79,7 +79,7 @@ Ext.define('kalix.demo.notice.view.EndWindow', {
             }
             },
             {
-                text: '关闭', glyph: 'xf0e2@FontAwesome', handler: function () {
+                text: '关闭', iconCls:'iconfont icon-reset iconfont-btn-small', handler: function () {
                 Ext.ComponentQuery.query('endWindow')[0].close();
             }
             }

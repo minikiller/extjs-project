@@ -67,7 +67,7 @@ Ext.define('kalix.admin.depNoArea.controller.DepNoAreaGridController', {
             width: 400,
             border: false,
             modal: true,
-            icon: 'admin/resources/images/building_add.png',
+            iconCls: 'iconfont icon-add',
             title: this.getView().getViewModel().get('addTitle'),
             items: [addFormPanel]
         });
@@ -100,7 +100,7 @@ Ext.define('kalix.admin.depNoArea.controller.DepNoAreaGridController', {
             width: 400,
             border: false,
             modal: true,
-            icon: 'admin/resources/images/building_edit.png',
+            iconCls: 'iconfont icon-edit',
             title: this.getView().getViewModel().get('editTitle'),
             items: [editFormPanel]
         });
@@ -148,7 +148,7 @@ Ext.define('kalix.admin.depNoArea.controller.DepNoAreaGridController', {
             width: 710,
             border: false,
             modal: true,
-            icon: 'admin/resources/images/group_add.png',
+            iconCls:'iconfont icon-add-user-column',
             title: '添加用户',
             items: [
                 {
@@ -200,12 +200,12 @@ Ext.define('kalix.admin.depNoArea.controller.DepNoAreaGridController', {
                     ],
                     buttons: [
                         {
-                            text: '保存', glyph: 'xf0c7@FontAwesome', handler: function () {
+                            text: '保存', iconCls:'iconfont icon-save iconfont-btn-small', handler: function () {
                             me.onSaveAddUser(departmentUserUrl, this.up('#addUserForm'), rec);
                         }
                         },
                         {
-                            text: '重置', glyph: 'xf0e2@FontAwesome', handler: function () {
+                            text: '重置', iconCls:'iconfont icon-reset iconfont-btn-small', handler: function () {
                             var field = this.up('#addUserForm').down('#userAddItemSelector');
                             if (!field.disabled) {
                                 field.clearValue();

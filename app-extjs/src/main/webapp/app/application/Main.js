@@ -16,13 +16,12 @@ Ext.define('kalix.app.application.Main', {
     items: [
         {
             title: '应用查询',
-            iconCls: 'x-fa fa-search',
             xtype: 'applicationSearchForm'
         }, {
             xtype: 'applicationGridPanel',
             id: 'applicationGridPanel',
             title: '应用列表',
-            iconCls: 'x-fa fa-cubes',
+            iconCls: 'iconfont icon-application-management',
             margin: 10
         }
     ]

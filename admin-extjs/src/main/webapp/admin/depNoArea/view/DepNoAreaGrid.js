@@ -21,7 +21,7 @@ Ext.define('kalix.admin.depNoArea.view.DepNoAreaGrid', {
         depName: null
     },
     title: '部门列表',
-    iconCls: 'x-fa fa-university',
+    iconCls: 'iconfont icon-department-management',
     stripeRows: true,
     manageHeight: true,
     rootVisible: false,
@@ -43,14 +43,14 @@ Ext.define('kalix.admin.depNoArea.view.DepNoAreaGrid', {
                 header: '操作',
                 xtype: "actioncolumn",
                 items: [{
-                    icon: "admin/resources/images/pencil.png",
+                    iconCls:'iconfont icon-edit-column',
                     tooltip: '编辑',
                     handler: 'onEdit',
                     isDisabled: function (view, rowIdx, colIdx, item, record) {
                         return record.data.name == "根部门" ? true : false;
                     }
                 }, {
-                    icon: "admin/resources/images/cancel.png",
+                    iconCls:'iconfont icon-delete',
                     tooltip: '删除',
                     handler: 'onDelete',
                     isDisabled: function (view, rowIdx, colIdx, item, record) {
@@ -58,7 +58,7 @@ Ext.define('kalix.admin.depNoArea.view.DepNoAreaGrid', {
                     }
 
                 }, {
-                    icon: "admin/resources/images/group_add.png",
+                    iconCls:'iconfont icon-add-user-column',
                     tooltip: '添加用户',
                     handler: 'onAddUser'
                 }]
@@ -67,9 +67,13 @@ Ext.define('kalix.admin.depNoArea.view.DepNoAreaGrid', {
     },
     tbar: [
         {
-            text: '添加', icon: 'admin/resources/images/building_add.png', handler: 'onAdd'
+            text: '添加',
+            iconCls:'iconfont icon-add',
+            handler: 'onAdd'
         }, {
-            text: '刷新', icon: 'admin/resources/images/arrow_refresh.png', handler: 'onRefersh'
-        }]
-
+            text: '刷新',
+            iconCls:'iconfont icon-refresh',
+            handler: 'onRefersh'
+        }
+    ]
 });

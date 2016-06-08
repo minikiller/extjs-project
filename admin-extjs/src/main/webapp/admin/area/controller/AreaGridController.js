@@ -43,8 +43,7 @@ Ext.define('kalix.admin.area.controller.AreaGridController', {
             //height: 280,
             border: false,
             modal: true,
-            //resizable:false,
-            icon: 'admin/resources/images/shape_square_add.png',
+            iconCls: 'iconfont icon-add',
             title: '新增区域',
             items: [addFormPanel]
         });
@@ -67,11 +66,9 @@ Ext.define('kalix.admin.area.controller.AreaGridController', {
 
         var win = Ext.create('Ext.Window', {
             width: 400,
-            //height: 280,
             border: false,
             modal: true,
-            //resizable:false,
-            icon: 'admin/resources/images/shape_square_edit.png',
+            iconCls: 'iconfont icon-edit',
             title: '编辑区域',
             items: [editFormPanel]
         });

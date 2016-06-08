@@ -88,7 +88,7 @@ Ext.define('kalix.view.login.LoginMain', {
         text: '重置',
         handler: 'onReset',
         iconAlign: 'right',
-        glyph: 'xf0e2@FontAwesome',
+        iconCls:'iconfont icon-reset iconfont-btn-small',
     }
     ],
     initComponent: function () {

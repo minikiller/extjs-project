@@ -23,7 +23,8 @@ Ext.define('kalix.admin.role.controller.RoleGridController', {
             border: false,
             modal: true,
             //resizable:false,
-            icon: 'admin/resources/images/group_add.png',
+            //icon: 'admin/resources/images/group_add.png',
+            iconCls:'iconfont icon-add-user-column',
             title: '添加用户',
             items: [
                 {
@@ -66,12 +67,12 @@ Ext.define('kalix.admin.role.controller.RoleGridController', {
                     ],
                     buttons: [
                         {
-                            text: '保存', glyph: 'xf0c7@FontAwesome', handler: function () {
+                            text: '保存', iconCls:'iconfont icon-save iconfont-btn-small', handler: function () {
                             me.onSaveAddUser(roleUserUrl, this.up('#addUserForm'), rec);
                         }
                         },
                         {
-                            text: '重置', glyph: 'xf0e2@FontAwesome', handler: function () {
+                            text: '重置', iconCls:'iconfont icon-reset iconfont-btn-small', handler: function () {
                             var field = this.up('#addUserForm').down('#userAddItemSelector');
                             if (!field.disabled) {
                                 field.clearValue();

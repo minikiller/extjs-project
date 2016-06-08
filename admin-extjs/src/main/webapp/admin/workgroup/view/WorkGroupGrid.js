@@ -45,28 +45,28 @@ Ext.define('kalix.admin.workgroup.view.WorkGroupGrid', {
                 xtype: 'securityGridColumnCommon',
                 items: [
                     {
-                        icon: "resources/images/read.png",
+                        iconCls:'iconfont icon-view-column',
                         permission: 'admin:permissionModule:workGroupMenu:view',
                         tooltip: '查看',
                         handler: 'onView'
                     },
                     {
-                        icon: "resources/images/edit.png",
+                        iconCls:'iconfont icon-edit-column',
                         permission: 'admin:permissionModule:workGroupMenu:edit',
                         tooltip: '编辑',
                         handler: 'onEdit'
                     }, {
-                        icon: "resources/images/delete.png",
+                        iconCls:'iconfont icon-delete',
                         permission: 'admin:permissionModule:workGroupMenu:delete',
                         tooltip: '删除',
                         handler: 'onDelete'
                     }, {
-                        icon: "admin/resources/images/group_add.png",
+                        iconCls:'iconfont icon-add-user-column',
                         permission: 'admin:permissionModule:workGroupMenu:addUser',
                         tooltip: '添加用户',
-                        handler: 'onAddUser',
+                        handler: 'onAddUser'
                     }, {
-                        icon: "admin/resources/images/user_add.png",
+                        iconCls:'iconfont icon-role-management-column',
                         permission: 'admin:permissionModule:workGroupMenu:addRole',
                         tooltip: '添加角色',
                         handler: 'onAddRole'
@@ -82,7 +82,7 @@ Ext.define('kalix.admin.workgroup.view.WorkGroupGrid', {
                 tooltip: '添加工作组',
                 xtype: 'button',
                 permission: 'admin:permissionModule:workGroupMenu:add',
-                bind: {icon: '{add_image_path}'},
+                iconCls:'iconfont icon-add',
                 handler: 'onAdd'
             }
         ]

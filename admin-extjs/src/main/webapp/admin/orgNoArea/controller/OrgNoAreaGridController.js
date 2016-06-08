@@ -41,7 +41,7 @@ Ext.define('kalix.admin.orgNoArea.controller.OrgNoAreaGridController', {
     onAdd: function () {
         var rows = this.getView().getSelectionModel().getSelection();
         var addFormPanel = Ext.create('kalix.admin.orgNoArea.view.OrgNoAreaAddForm');
-        var model=Ext.create('Ext.data.Model')
+        var model=Ext.create('Ext.data.Model');
         addFormPanel.lookupViewModel().set('rec',model);
 
         if(rows!=null&&rows.length>0){
@@ -59,7 +59,7 @@ Ext.define('kalix.admin.orgNoArea.controller.OrgNoAreaGridController', {
             width: 400,
             border: false,
             modal: true,
-            icon: 'admin/resources/images/script_add.png',
+            iconCls: 'iconfont icon-add',
             title: this.getView().getViewModel().get("addTitle"),
             items: [addFormPanel]
         });
@@ -75,7 +75,7 @@ Ext.define('kalix.admin.orgNoArea.controller.OrgNoAreaGridController', {
     onEdit: function (grid, rowIndex, colIndex) {
         var rec = grid.getStore().getAt(rowIndex);
         var editFormPanel = Ext.create('kalix.admin.orgNoArea.view.OrgNoAreaEditForm');
-        var model=Ext.create('Ext.data.Model')
+        var model=Ext.create('Ext.data.Model');
         editFormPanel.lookupViewModel().set('rec',model);
         model.set('id',rec.data.id);
         model.set('name',rec.data.name);
@@ -88,7 +88,7 @@ Ext.define('kalix.admin.orgNoArea.controller.OrgNoAreaGridController', {
             width: 400,
             border: false,
             modal: true,
-            icon: 'admin/resources/images/script_edit.png',
+            iconCls: 'iconfont icon-edit',
             title: this.getView().getViewModel().get("editTitle"),
             items: [editFormPanel]
         });

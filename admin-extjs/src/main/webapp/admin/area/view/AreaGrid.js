@@ -7,19 +7,19 @@
 Ext.define('kalix.admin.area.view.AreaGrid', {
     extend: 'Ext.tree.Panel',
     requires: [
-        //'kalix.admin.area.view.AreaViewModel',
+        'kalix.admin.area.viewModel.AreaViewModel',
         'kalix.admin.area.controller.AreaGridController',
         'kalix.view.components.common.SecurityToolbar',
         'kalix.view.components.common.SecurityGridColumnCommon'
     ],
     alias: 'widget.areaGrid',
     xtype: 'areaGridPanel',
-    iconCls: 'x-fa fa-home',
+    iconCls: 'icon-area-management',
     autoLoad: true,
     stripeRows: true,
 
     controller: 'areaGridController',
-    //viewModel: 'areaViewModel',
+    viewModel: 'areaViewModel',
     columns: [{
         text: '编号',
         dataIndex: 'id',
@@ -34,32 +34,32 @@ Ext.define('kalix.admin.area.view.AreaGrid', {
         xtype: 'treecolumn',
         text: '名称',
         dataIndex: 'name',
-        flex: 3,
+        flex: 3
         //width: 255
     }, {
         text: '区域代码',
         dataIndex: 'code',
-        flex: 1,
+        flex: 1
         //width: 60
     }, {
         text: '中心代码',
         dataIndex: 'centerCode',
-        flex: 1,
+        flex: 1
         //width: 60
     }, {
         text: '经度',
         dataIndex: 'jd',
-        flex: 1,
+        flex: 1
         //width: 60
     }, {
         text: '纬度',
         dataIndex: 'wd',
-        flex: 1,
+        flex: 1
         //width: 60
     }, {
         text: '创建人',
         dataIndex: 'createBy',
-        flex: 1,
+        flex: 1
         //width: 60
     }, {
         text: '创建日期',
@@ -84,7 +84,7 @@ Ext.define('kalix.admin.area.view.AreaGrid', {
         width: 60,
         xtype: "securityGridColumnCommon",
         items: [{
-            icon: "admin/resources/images/pencil.png",
+            iconCls:'iconfont icon-edit-column',
             tooltip: '编辑',
             handler: 'onEdit',
             permission: 'admin:constructModule:areaMenu:edit',
@@ -92,7 +92,7 @@ Ext.define('kalix.admin.area.view.AreaGrid', {
                 return record.data.name == "根机构" ? true : false;
             }
         }, {
-            icon: "admin/resources/images/cancel.png",
+            iconCls:'iconfont icon-delete',
             tooltip: '删除',
             handler: 'onDelete',
             permission: 'admin:constructModule:areaMenu:delete',
@@ -109,15 +109,14 @@ Ext.define('kalix.admin.area.view.AreaGrid', {
         verifyItems: [
             {
                 text: '添加',
-                //xtype: 'button',
                 permission: 'admin:constructModule:areaMenu:add',
-                icon: 'admin/resources/images/shape_square_add.png',
+                iconCls:'iconfont icon-add',
                 handler: 'onAdd'
             },
             {
                 text: '刷新',
                 permission: '',
-                icon: 'admin/resources/images/arrow_refresh.png',
+                iconCls: 'iconfont icon-refresh',
                 handler: 'onRefersh'
             }]
     }

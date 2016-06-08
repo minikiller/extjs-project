@@ -21,7 +21,7 @@ Ext.define('kalix.admin.orgNoArea.view.OrgNoAreaGrid', {
     manageHeight: true,
     rootVisible : false,
     title: '机构列表',
-    iconCls: 'x-fa fa-building',
+    iconCls: 'iconfont icon-organization-management',
     columns: {
         defaults: {flex: 1},
         items:
@@ -38,28 +38,31 @@ Ext.define('kalix.admin.orgNoArea.view.OrgNoAreaGrid', {
             //width: 60,
             xtype: "actioncolumn",
             items: [{
-                icon: "admin/resources/images/pencil.png",
+                iconCls:'iconfont icon-edit-column',
                 tooltip: '编辑',
                 handler: 'onEdit',
                 isDisabled: function(view, rowIdx, colIdx, item, record) {
                     return record.data.name=="根机构"?true:false;
                 }
             }, {
-                icon: "admin/resources/images/cancel.png",
+                iconCls:'iconfont icon-delete',
                 tooltip: '删除',
                 handler: 'onDelete',
                 isDisabled: function(view, rowIdx, colIdx, item, record) {
                     return record.data.name=="根机构"?true:false;
                 }
-
             }]
         }
     ]},
     tbar: [
         {
-            text: '添加', icon: 'admin/resources/images/script_add.png', handler: 'onAdd'
+            text: '添加',
+            iconCls:'iconfont icon-add',
+            handler: 'onAdd'
         }, {
-            text: '刷新', icon: 'admin/resources/images/arrow_refresh.png', handler: 'onRefersh'
+            text: '刷新',
+            iconCls:'iconfont icon-refresh',
+            handler: 'onRefersh'
         }]
 
 });

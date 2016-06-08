@@ -24,7 +24,7 @@ Ext.define('kalix.demo.notice.view.NoticeShowForm', {
     ],
     buttons: [
         {
-            text: '关闭', glyph: 'xf0e2@FontAwesome',
+            text: '关闭', iconCls:'iconfont icon-reset iconfont-btn-small',
             handler: function () {
                 Ext.ComponentQuery.query('noticeShowForm')[0].close();
             }

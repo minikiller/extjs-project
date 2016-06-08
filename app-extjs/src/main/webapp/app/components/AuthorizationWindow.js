@@ -7,7 +7,8 @@
 Ext.define('kalix.app.components.AuthorizationWindow', {
     extend: 'Ext.Window',
     xtype: 'authorizationWindow',
-    icon: 'admin/resources/images/application_add.png',
+    //icon: 'admin/resources/images/application_add.png',
+    iconCls:'iconfont icon-permission-column',
     width: 680,
     //height: 500,
     border: false,

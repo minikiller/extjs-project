@@ -14,6 +14,7 @@ Ext.define('kalix.admin.orgchart.Main', {
     type: 'fit'
   },
   title:'组织结构树',
+  iconCls:'iconfont icon-organization-chart',
   padding:5,
   items: [
     {

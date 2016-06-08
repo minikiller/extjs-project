@@ -17,7 +17,6 @@ Ext.define('kalix.admin.dict.Main', {
     items: [
         {
             title: '字典查询',
-            iconCls: 'x-fa fa-search',
             xtype: 'dictSearchForm'
         }, {
             xtype: 'dictGridPanel',

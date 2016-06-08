@@ -6,6 +6,5 @@
  */
 Ext.define('kalix.admin.audit.controller.AuditGridController', {
     extend: 'kalix.controller.BaseGridController',
-    alias: 'controller.auditGridController',
-
+    alias: 'controller.auditGridController'
 });

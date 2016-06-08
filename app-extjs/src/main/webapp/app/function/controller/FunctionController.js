@@ -25,7 +25,7 @@ Ext.define('kalix.app.function.controller.FunctionController', {
             items: [
                 {xtype:'container', padding:10, flex: 1, items:[this.onInitApplicationList()]},
                 {xtype:'container', padding:'10 10 10 0', flex:3, items:[this.onInitDataGrid()]}]
-        })
+        });
 
         return panel;
     },
@@ -77,13 +77,14 @@ Ext.define('kalix.app.function.controller.FunctionController', {
             region: 'west',
             itemId: 'applicationList',
             title: '应用列表',
-            iconCls: 'x-fa fa-cubes',
+            iconCls: 'iconfont icon-application-management',
             listeners: {
                 itemClick: this.onApplicationClick
             },
             tbar: [
                 {
-                    text: '刷新', icon: 'app/resources/images/arrow_refresh.png',
+                    text: '刷新',
+                    iconCls:'iconfont icon-refresh',
                     handler: this.onApplicationRefersh
                 }]
         });

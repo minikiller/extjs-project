@@ -49,14 +49,14 @@ Ext.define('kalix.admin.area.view.AreaEditForm', {
             itemId: 'codeId',
             name: 'code',
             allowBlank: false,
-            blankText: '区域不能为空!',
+            blankText: '区域不能为空!'
         },
         {
             fieldLabel: '中心代码',
             itemId: 'centerCodeId',
             name: 'centerCode',
             allowBlank: false,
-            blankText: '中心代码不能为空!',
+            blankText: '中心代码不能为空!'
         },
         {
             fieldLabel: '纬度',
@@ -71,10 +71,10 @@ Ext.define('kalix.admin.area.view.AreaEditForm', {
     ],
     buttons: [
         {
-            text: '保存', glyph: 'xf0c7@FontAwesome', type: 'submit', handler: 'onUpdate'
+            text: '保存', iconCls:'iconfont icon-save iconfont-btn-small', type: 'submit', handler: 'onUpdate'
         },
         {
-            text: '重置', glyph: 'xf0e2@FontAwesome', handler: 'onEditReset'
+            text: '重置', iconCls:'iconfont icon-reset iconfont-btn-small', handler: 'onEditReset'
         }
     ]
 });

@@ -60,7 +60,7 @@ Ext.define('kalix.admin.dict.view.DictGrid', {
                 tooltip: '添加字典',
                 xtype: 'button',
                 permission: 'admin:sysModule:dictMenu:add',
-                bind: {icon: '{add_image_path}'},
+                iconCls:'iconfont icon-add',
                 handler: 'onAdd'
             }
         ]

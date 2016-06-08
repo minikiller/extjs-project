@@ -38,14 +38,14 @@ Ext.define('kalix.view.components.common.BaseWindow', {
     },
     buttons: [{
         text: '保存',
-        glyph: 'xf0c7@FontAwesome',
+        iconCls:'iconfont icon-save iconfont-btn-small',
         handler: 'onSave',
         bind: {
             hidden: '{view_operation}'
         }
     }, {
         text: '重置',
-        glyph: 'xf0e2@FontAwesome',
+        iconCls:'iconfont icon-reset iconfont-btn-small',
         handler: 'onReset',
         bind: {
             hidden: '{view_operation}'

@@ -85,7 +85,7 @@ Ext.define('kalix.workflow.notice.controller.NoticeController', {
                 }
             }, {
                 text: '重置',
-                glyph: 'xf0e2@FontAwesome',
+                iconCls:'iconfont icon-reset iconfont-btn-small',
                 handler: function () {
                     formPanel.getForm().reset();
                 }

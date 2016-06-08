@@ -13,16 +13,16 @@ Ext.define('kalix.view.components.common.SecurityGridColumnRUD', {
     },
     items: [
         {
-            icon: "resources/images/read.png",
+            iconCls: 'iconfont icon-view-column',
             tooltip: '查看',
             handler: 'onView'
         },
         {
-            icon: "resources/images/edit.png",
+            iconCls: 'iconfont icon-edit-column',
             tooltip: '编辑',
             handler: 'onEdit'
         }, {
-            icon: "resources/images/delete.png",
+            iconCls: 'iconfont icon-delete',
             tooltip: '删除',
             handler: 'onDelete'
         }],

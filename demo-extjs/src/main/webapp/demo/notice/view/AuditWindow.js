@@ -76,7 +76,7 @@ Ext.define('kalix.demo.notice.view.AuditWindow', {
         }],
     buttons: [
         {
-            text: '保存', glyph: 'xf0c7@FontAwesome', type: 'submit',
+            text: '保存', iconCls:'iconfont icon-save iconfont-btn-small', type: 'submit',
             handler: function () {
                 var approvalForm = Ext.ComponentQuery.query('auditWindow')[0].down("#approvalForm");
                 var status = approvalForm.down("#approvalStatus").getValue();
@@ -114,7 +114,7 @@ Ext.define('kalix.demo.notice.view.AuditWindow', {
             }
         },
         {
-            text: '关闭', glyph: 'xf0e2@FontAwesome',
+            text: '关闭', iconCls:'iconfont icon-reset iconfont-btn-small',
             handler: function () {
                 Ext.ComponentQuery.query('auditWindow')[0].close();
             }

@@ -24,7 +24,7 @@ Ext.define('kalix.app.function.controller.FunctionGridController', {
     onAdd: function () {
 
         if (this.getView().applicationId == null || this.getView().applicationName == null || this.getView().applicationCode == null) {
-            Ext.Msg.alert(CONFIG.ALTER_TITLE_FAILURE, "请选择一个区域!");
+            Ext.Msg.alert(CONFIG.ALTER_TITLE_FAILURE, "请选择一个应用!");
             return;
         }
         var rows = this.getView().getSelectionModel().getSelection();
@@ -49,8 +49,7 @@ Ext.define('kalix.app.function.controller.FunctionGridController', {
             //height: 285,
             border: false,
             modal: true,
-            //resizable:false,
-            icon: 'app/resources/images/note_add.png',
+            iconCls: 'iconfont icon-add',
             title: this.getView().getViewModel().get("addTitle"),
             items: [addFormPanel]
         });
@@ -78,8 +77,7 @@ Ext.define('kalix.app.function.controller.FunctionGridController', {
             //height: 285,
             border: false,
             modal: true,
-            //resizable:false,
-            icon: 'app/resources/images/note_edit.png',
+            iconCls: 'iconfont icon-edit',
             title: this.getView().getViewModel().get("editTitle"),
             items: [editFormPanel]
         });

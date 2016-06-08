@@ -30,7 +30,7 @@ Ext.define('kalix.app.function.view.FunctionGrid', {
     manageHeight: true,
     rootVisible: false,
     title: '功能列表',
-    iconCls: 'x-fa fa-cube',
+    iconCls: 'iconfont icon-function-management',
     columns: {
         defaults: {flex: 1},
         items:[
@@ -55,14 +55,14 @@ Ext.define('kalix.app.function.view.FunctionGrid', {
             flex:0.5,
             xtype: "actioncolumn",
             items: [{
-                icon: "admin/resources/images/pencil.png",
+                iconCls: 'iconfont icon-edit-column',
                 tooltip: '编辑',
                 handler: 'onEdit',
                 isDisabled: function (view, rowIdx, colIdx, item, record) {
                     return record.data.name == "根功能" ? true : false;
                 }
             }, {
-                icon: "admin/resources/images/cancel.png",
+                iconCls: 'iconfont icon-delete',
                 tooltip: '删除',
                 handler: 'onDelete',
                 isDisabled: function (view, rowIdx, colIdx, item, record) {
@@ -74,9 +74,13 @@ Ext.define('kalix.app.function.view.FunctionGrid', {
     ]},
     tbar: [
         {
-            text: '添加', icon: 'app/resources/images/note_add.png', handler: 'onAdd'
+            text: '添加',
+            iconCls: 'iconfont icon-add',
+            handler: 'onAdd'
         }, {
-            text: '刷新', icon: 'app/resources/images/arrow_refresh.png', handler: 'onRefersh'
+            text: '刷新',
+            iconCls:'iconfont icon-refresh',
+            handler: 'onRefersh'
         }]
 
 });

@@ -8,7 +8,7 @@ Ext.define('kalix.app.application.view.ApplicationGrid', {
     extend: 'kalix.view.components.common.BaseGrid',
     requires: [
         'kalix.app.application.controller.ApplicationGridController',
-        'kalix.app.application.store.ApplicationStore',
+        'kalix.app.application.store.ApplicationStore'
     ],
     alias: 'widget.applicationGrid',
     xtype: 'applicationGridPanel',
@@ -23,32 +23,32 @@ Ext.define('kalix.app.application.view.ApplicationGrid', {
         type: 'applicationStore'
     },
     columns: {
-        defaults: {flex: 1,renderer: 'addTooltip'},
+        defaults: {flex: 1, renderer: 'addTooltip'},
         items: [
-        {
-            xtype: "rownumberer",
-            text: "行号",
-            width: 50,
-            flex:0,
-            align: 'center',
-            renderer:this.update
-        },
-        {text: '编号', dataIndex: 'id', hidden: true},
-        {text: '名称', dataIndex: 'name'},
-        {text: '应用代码', dataIndex: 'code'},
-        {text: '创建人', dataIndex: 'createBy'},
-        {
-            text: '创建日期', dataIndex: 'creationDate'
-        },
+            {
+                xtype: "rownumberer",
+                text: "行号",
+                width: 50,
+                flex: 0,
+                align: 'center',
+                renderer: this.update
+            },
+            {text: '编号', dataIndex: 'id', hidden: true},
+            {text: '名称', dataIndex: 'name'},
+            {text: '应用代码', dataIndex: 'code'},
+            {text: '创建人', dataIndex: 'createBy'},
+            {
+                text: '创建日期', dataIndex: 'creationDate'
+            },
             {
                 xtype: 'securityGridColumnCommon',
                 items: [
                     {
                         getClass: function (v, meta, record) {
                             if (record.data.status) {
-                                return "kalix_stop";
+                                return "iconfont icon-stop";
                             }
-                            return "kalix_start";
+                            return "iconfont icon-start";
                         },
                         getTip: function (value, metadata, record, row, col, store) {
                             if (record.data.status) {
@@ -60,25 +60,26 @@ Ext.define('kalix.app.application.view.ApplicationGrid', {
                         handler: 'onAppStartStop'
                     },
                     {
-                        icon: "resources/images/read.png",
+                        iconCls: 'iconfont icon-view-column',
                         permission: 'admin:appModule:applicationMenu:view',
                         tooltip: '查看',
                         handler: 'onView'
                     },
                     {
-                        icon: "resources/images/edit.png",
+                        iconCls: 'iconfont icon-edit-column',
                         permission: 'admin:appModule:applicationMenu:edit',
                         tooltip: '编辑',
                         handler: 'onEdit'
                     }, {
-                        icon: "resources/images/delete.png",
+                        iconCls: 'iconfont icon-delete',
                         permission: 'admin:appModule:applicationMenu:delete',
                         tooltip: '删除',
                         handler: 'onDelete'
                     }
                 ]
             }
-    ]},
+        ]
+    },
     tbar: {
         xtype: 'securityToolbar',
         verifyItems: [
@@ -86,7 +87,7 @@ Ext.define('kalix.app.application.view.ApplicationGrid', {
                 text: '添加',
                 xtype: 'button',
                 permission: 'admin:appModule:applicationMenu:add',
-                bind: {icon: '{add_image_path}'},
+                iconCls: 'iconfont icon-add',
                 handler: 'onAdd'
             }
         ]
@@ -114,7 +115,7 @@ Ext.define('kalix.app.application.view.ApplicationGrid', {
                         else {
                             record.set('status', false);
                         }
-                        record.dirty=false;
+                        record.dirty = false;
                     });
                 },
                 failure: function (response, opts) {
