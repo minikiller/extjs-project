@@ -40,8 +40,9 @@ Ext.define('kalix.demo.mainWork.view.dashboard.WorkflowCategory', {
       '<span class="title">{name}</span></br>',
       '<span class="desc">{description}</span>',
       '<tpl if="key !=\'empty\'">',
-      '<div class="readmore  kalix_start " data-qtip="申请" onclick="kalix.getApplication()._mainView.controller.onNavigationSpecial(\'{key}\')"></div>',
-      '<div class="readmore kalix_workflow_readmore" data-qtip="查看" onclick="Ext.create(\'kalix.demo.mainWork.controller.DashboardController\')' +
+      '<div class="readmore">&nbsp;&nbsp;</div>',
+      '<div class="readmore iconfont icon-workflow-apply" data-qtip="申请" onclick="kalix.getApplication()._mainView.controller.onNavigationSpecial(\'{key}\')"></div>',
+      '<div class="readmore iconfont icon-workflow-view" data-qtip="查看" onclick="Ext.create(\'kalix.demo.mainWork.controller.DashboardController\')' +
       '.onOpenProcessDefinition(\'{name}\',\'{processId}\')"></div>',
       '</div>',
       '</div>',

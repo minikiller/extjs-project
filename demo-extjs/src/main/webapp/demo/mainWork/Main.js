@@ -6,7 +6,7 @@ Ext.define('kalix.demo.mainWork.Main', {
     extend: 'Ext.container.Container',
     requires: [
         'kalix.demo.mainWork.view.dashboard.DashBoardExtend',
-        'kalix.workflow.processdefinition.viewModel.ProcessDefinitionViewModel',
+        'kalix.workflow.processdefinition.viewModel.ProcessDefinitionViewModel'
     ],
     viewModel:'processDefinitionViewModel',
     items: [
