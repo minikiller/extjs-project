@@ -11,7 +11,6 @@ Ext.define('kalix.admin.dutyNoArea.Main', {
         'kalix.admin.dutyNoArea.viewModel.DutyNoAreaViewModel',
         'kalix.admin.dutyNoArea.controller.DutyNoAreaController',
         'kalix.admin.orgNoArea.view.OrgNoAreaTreeList',
-        'kalix.admin.depNoArea.view.DepNoAreaTreeList',
         'kalix.admin.dutyNoArea.view.DutyNoAreaGrid'
     ],
     xtype: 'dutyNoAreaPanel',
@@ -31,14 +30,6 @@ Ext.define('kalix.admin.dutyNoArea.Main', {
             flex: 1,
             listeners: {
                 itemClick: 'onOrgClick'
-            }
-        },
-        {
-            xtype: 'depNoAreaTreeList',
-            region : 'center',
-            flex: 1,
-            listeners: {
-                itemClick: 'onDepClick'
             }
         },
         {

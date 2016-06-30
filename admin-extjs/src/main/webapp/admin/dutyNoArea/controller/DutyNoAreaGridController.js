@@ -25,7 +25,7 @@ Ext.define('kalix.admin.dutyNoArea.controller.DutyNoAreaGridController', {
      * @returns {Ext.panel.Panel}
      */
     onAdd: function () {
-        var DepTreeList = this.getView().findParentByType('panel').items.getAt(1).items.getAt(0);
+        var DepTreeList = this.getView().findParentByType('panel').items.getAt(0).items.getAt(0);
         var dep_selected_row = DepTreeList.getSelectionModel().getSelection();
         if(dep_selected_row.length<=0){
             Ext.Msg.alert(CONFIG.ALTER_TITLE_FAILURE, '请选择一个部门!');
