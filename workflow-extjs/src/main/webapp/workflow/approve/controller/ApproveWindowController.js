@@ -9,7 +9,7 @@ Ext.define('kalix.workflow.approve.controller.ApproveWindowController', {
         var scope = this;
         var status, approveOpinion, businessKey, taskId;
 
-        //status = btn.text;
+        status = arguments[0].text;
         approveOpinion = this.getViewModel().get('approveOpinion');
         businessKey = this.getViewModel().get('businessKey');
         taskId = this.getViewModel().get('taskId');
